@@ -139,6 +139,9 @@ const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows',
 if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
 const js = await fs.readFile(path.join(root, 'assets', 'site.js'), 'utf8');
+const generatedHtml = await Promise.all(htmlFiles.map(file => fs.readFile(file, 'utf8')));
+if (/fonts\.(?:googleapis|gstatic)\.com|@import\s+url\(/i.test(css) || generatedHtml.some(html => /fonts\.(?:googleapis|gstatic)\.com/i.test(html))) failures.push('Generated site still depends on remote font files.');
+if (!/--font-sans:\s*system-ui/.test(css) || !/--font-mono:\s*ui-monospace/.test(css)) failures.push('System font stacks are missing.');
 const projectIconFiles = (await fs.readdir(path.join(root, 'assets', 'project-icons'))).filter(file => file.endsWith('.png'));
 for (const file of projectIconFiles) {
   const icon = await fs.stat(path.join(root, 'assets', 'project-icons', file));
