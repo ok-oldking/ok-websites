@@ -61,7 +61,7 @@ const copy = {
     faqKicker: 'FAQ',
     stars: 'GitHub stars', release: 'Latest release', updated: 'Code updated', online: 'Open source',
     capabilities: 'Capabilities', capabilitiesTitle: 'Made for real automation work', capabilitiesLead: 'From visual perception to input, development diagnostics to continuous releases—the complete workflow in one toolkit.',
-    projectsKicker: 'Project ecosystem', projectsTitle: 'One framework, many projects', projectsLead: 'Each project gets its own home and multilingual documentation while sharing one consistent, focused experience.',
+    projectsKicker: 'Projects', projectsTitle: 'One framework, many projects', projectsLead: 'Each project gets its own home and multilingual documentation while sharing one consistent, focused experience.',
     explore: 'Explore project →', active: 'Active', community: 'Community', archived: 'Archived',
     ctaTitle: 'Start with the template. Build your own automation.', ctaLead: 'Follow the quick start, connect a Windows window or ADB device, and run your first computer vision task.', ctaButton: 'Open quick start',
     docsFor: 'Documentation', onPage: 'On this page', editGithub: 'View source on GitHub', lastGenerated: 'Page generated',
@@ -680,7 +680,6 @@ function documentShell({ title, description, project, locale, body, destination 
   const framework = config.projects.find(item => item.type === 'framework') || project;
   const frameworkLocale = framework.locales.find(item => item.code === locale.code) || framework.locales.find(item => item.code === 'en') || framework.locales[0];
   const allProjectsUrl = relativeSiteUrl(project, currentUrl, framework, landingUrl(framework, frameworkLocale));
-  const socialImage = `${config.site.url}/assets/og.png`;
   const pageType = destination === 'docs' ? 'article' : 'website';
   const defaultLocale = project.locales.find(item => item.code === config.site.defaultLocale) || project.locales[0];
   const alternateLinks = destination === 'landing'
@@ -706,8 +705,8 @@ function documentShell({ title, description, project, locale, body, destination 
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
   <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="keywords" content="${escapeHtml(keywords)}"><meta name="author" content="${escapeHtml(project.github.split('/')[0])}">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="${escapeHtml(canonical)}">${alternateLinks}
-  <meta property="og:type" content="${pageType}"><meta property="og:site_name" content="${escapeHtml(config.site.name)}"><meta property="og:locale" content="${escapeHtml(locale.code.replace('-', '_'))}">${alternateLocales}<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:image" content="${socialImage}"><meta property="og:image:alt" content="${escapeHtml(`${project.name} — ${title}`)}">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${escapeHtml(`${project.name} — ${title}`)}">
+  <meta property="og:type" content="${pageType}"><meta property="og:site_name" content="${escapeHtml(config.site.name)}"><meta property="og:locale" content="${escapeHtml(locale.code.replace('-', '_'))}">${alternateLocales}<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${escapeHtml(canonical)}">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}">
   <script type="application/ld+json">${structuredData}</script>
   ${languageRouting}
   <link rel="icon" href="${asset('favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="${asset(`site.css?v=${assetVersion}`)}">
@@ -767,7 +766,7 @@ function landingPage(project, locale, meta, faq = null) {
   const ctaSection = isFramework ? `<section class="section"><div class="container"><div class="cta"><div><h2>${t.ctaTitle}</h2><p>${t.ctaLead}</p></div><a class="button" href="${primaryUrl}">${t.ctaButton} →</a></div></div></section>` : '';
   const community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
   const body = `<main id="main">
-  <section class="hero"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div><h1><span class="title-line">${escapeHtml(titleA)}</span><span class="title-line gradient-text">${escapeHtml(titleB)}</span></h1><p class="hero-copy">${lead}</p>
+  <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div><h1><span class="title-line">${escapeHtml(titleA)}</span><span class="title-line gradient-text">${escapeHtml(titleB)}</span></h1><p class="hero-copy">${lead}</p>
   <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
   ${capabilitiesSection}${projectsSection}${faqSection}${ctaSection}</main>`;
   const title = `${project.name} — ${titleA.replace(/[，,.。]/g,'')}`;
@@ -830,7 +829,6 @@ async function writeSharedAssets() {
   await Promise.all([
     fs.copyFile(path.join(root, 'src', 'site.css'), path.join(staticDir, 'assets', 'site.css')),
     fs.copyFile(path.join(root, 'src', 'site.js'), path.join(staticDir, 'assets', 'site.js')),
-    fs.copyFile(path.join(root, 'src', 'og.png'), path.join(staticDir, 'assets', 'og.png')),
     fs.copyFile(path.join(root, 'src', 'github-mark.svg'), path.join(staticDir, 'assets', 'github-mark.svg')),
     fs.copyFile(path.join(root, 'src', 'qq.svg'), path.join(staticDir, 'assets', 'qq.svg')),
     fs.copyFile(path.join(root, 'src', 'discord.svg'), path.join(staticDir, 'assets', 'discord.svg')),

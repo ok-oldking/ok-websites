@@ -39,7 +39,8 @@ for (const file of htmlFiles) {
   if (!/<html lang="[^"]+"/.test(html)) failures.push(`Missing language: ${path.relative(root, file)}`);
   if (!/<meta name="description"/.test(html)) failures.push(`Missing description: ${path.relative(root, file)}`);
   if (!/<meta name="robots" content="index,follow/.test(html) || !/<meta name="keywords"/.test(html)) failures.push(`Missing search metadata: ${path.relative(root, file)}`);
-  if (!/<meta property="og:site_name"/.test(html) || !/<meta name="twitter:card" content="summary_large_image"/.test(html)) failures.push(`Missing social metadata: ${path.relative(root, file)}`);
+  if (!/<meta property="og:site_name"/.test(html) || !/<meta name="twitter:card" content="summary"/.test(html)) failures.push(`Missing social metadata: ${path.relative(root, file)}`);
+  if (/<meta (?:property="og:image|name="twitter:image)/.test(html)) failures.push(`Share image metadata is still present: ${path.relative(root, file)}`);
   const structuredData = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
   if (!structuredData) failures.push(`Missing structured data: ${path.relative(root, file)}`);
   else { try { JSON.parse(structuredData); } catch { failures.push(`Invalid structured data: ${path.relative(root, file)}`); } }
@@ -59,7 +60,8 @@ if (!/href="https:\/\/pypi\.org\/project\/ok-script\/"/.test(rootLanding) || !/p
 if (rootLanding.includes('meta-release-button')) failures.push('Release download is still present in the stats row.');
 if (rootLanding.includes('data-copy=')) failures.push('Non-Chinese pages expose QQ groups.');
 if (!rootChinese.includes('data-copy="938132715"') || !rootChinese.includes('开发者群938132715')) failures.push('ok-script developer QQ group is not identified correctly.');
-if (!/<section class="hero"><div class="container landing-container hero-grid/.test(rootLanding) || !/<section class="section section-muted"><div class="container landing-container">/.test(rootLanding) || !/id="projects"><div class="container landing-container">/.test(rootLanding)) failures.push('Hero, features, and projects do not share the landing container.');
+if (!/<section class="hero hero-framework"><div class="container landing-container hero-grid/.test(rootLanding) || !/<section class="section section-muted"><div class="container landing-container">/.test(rootLanding) || !/id="projects"><div class="container landing-container">/.test(rootLanding)) failures.push('Hero, features, and projects do not share the landing container.');
+if (!/class="section-kicker">Projects<\/div>/.test(rootLanding)) failures.push('English projects section label is incorrect.');
 if (!/data-language-routing[\s\S]*navigator\.languages[\s\S]*select\('en'\)/.test(rootChinese) || !/data-language-code="en"/.test(rootChinese)) failures.push('Root landing page does not detect browser language with an English fallback.');
 if (/data-language-routing/.test(rootLanding)) failures.push('Explicit English URL should not automatically redirect.');
 if (rootLanding.indexOf('section-muted') > rootLanding.indexOf('id="projects"')) failures.push('Feature grid does not appear before projects.');
@@ -140,6 +142,7 @@ if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*f
 if (!/\.feature-card[^}]*grid-template-columns:\s*45px/.test(css) || /\.feature-icon[^}]*margin-bottom/.test(css)) failures.push('Feature cards are not using the compact horizontal layout.');
 if (/\.hero \.container[^}]*1740px/.test(css) || !/\.landing-container[^}]*1180px/.test(css) || !/\.download-toggle[^}]*align-items:\s*center/.test(css)) failures.push('Landing-section width or dropdown-arrow alignment is incorrect.');
 if (!/\.section-kicker[^}]*font-size:\s*18px/.test(css) || !/\.section-head p[^}]*width:\s*66\.666%/.test(css)) failures.push('Project ecosystem heading or lead width is incorrect.');
+if (!/\.hero-framework h1[^}]*font-size:\s*clamp\(48px,\s*6vw,\s*88px\)/.test(css)) failures.push('Framework hero headline was not reduced.');
 if (!/\.faq-content[^}]*width:\s*100%[^}]*max-width:\s*none/.test(css) || !/<section class="section faq-section"><div class="container landing-container">/.test(wwLanding)) failures.push('FAQ does not share the feature-grid width.');
 if (!/\.faq-section \.section-head h2[^}]*color:\s*var\(--accent-strong\)[^}]*font-size:\s*clamp\(24px,\s*2\.4vw,\s*32px\)/.test(css) || !/\.faq-section \.faq-content > h2[^}]*font-size:\s*clamp\(20px,\s*2vw,\s*25px\)/.test(css)) failures.push('FAQ heading hierarchy is not visually distinct and compact.');
 const rootSitemap = await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8');
