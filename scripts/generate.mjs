@@ -543,7 +543,7 @@ function languageSwitcher(project, currentLocale, destination = 'landing', curre
   const options = project.locales.map(locale => {
     const targetUrl = destination === 'docs' ? `${docRoot(project, locale)}/` : landingUrl(project, locale);
     const href = relativeSiteUrl(project, currentUrl, project, targetUrl);
-    return `<a class="dropdown-option language-option" role="menuitem" href="${href}"${locale.code === currentLocale.code ? ' aria-current="page"' : ''}><span class="language-code">${escapeHtml(locale.code)}</span><span>${escapeHtml(locale.label)}</span></a>`;
+    return `<a class="dropdown-option language-option" role="menuitem" href="${href}" data-language-code="${escapeHtml(locale.code)}"${locale.code === currentLocale.code ? ' aria-current="page"' : ''}><span class="language-code">${escapeHtml(locale.code)}</span><span>${escapeHtml(locale.label)}</span></a>`;
   }).join('');
   return `<div class="custom-dropdown language-dropdown" data-dropdown>
     <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>${escapeHtml(currentLocale.label)}</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
@@ -656,6 +656,10 @@ function documentShell({ title, description, project, locale, body, destination 
     ? `${project.locales.map(item => `<link rel="alternate" hreflang="${escapeHtml(item.code)}" href="${escapeHtml(`${projectOrigin(project)}${landingUrl(project, item)}`)}">`).join('')}<link rel="alternate" hreflang="x-default" href="${escapeHtml(`${projectOrigin(project)}${landingUrl(project, defaultLocale)}`)}">`
     : '';
   const alternateLocales = project.locales.filter(item => item.code !== locale.code).map(item => `<meta property="og:locale:alternate" content="${escapeHtml(item.code.replace('-', '_'))}">`).join('');
+  const languageRoutes = Object.fromEntries(project.locales.map(item => [item.code, relativeSiteUrl(project, currentUrl, project, landingUrl(project, item))]));
+  const languageRouting = destination === 'landing' && currentUrl === landingUrl(project, project.locales.find(item => item.code === 'zh-CN') || project.locales[0]) && project.locales.length > 1
+    ? `<script data-language-routing>(()=>{try{const routes=${JSON.stringify(languageRoutes).replace(/</g, '\\u003c')};const available=Object.keys(routes);const select=raw=>{const value=String(raw||'').toLowerCase();if(!value)return null;const exact=available.find(code=>code.toLowerCase()===value);if(exact)return exact;if(value.startsWith('zh-')&&/(?:hant|tw|hk|mo)/.test(value)){const traditional=available.find(code=>code.toLowerCase()==='zh-tw');if(traditional)return traditional;}if(value.startsWith('zh')){const simplified=available.find(code=>code.toLowerCase()==='zh-cn');if(simplified)return simplified;}const base=value.split('-')[0];return available.find(code=>code.toLowerCase().split('-')[0]===base)||null};const saved=localStorage.getItem('ok-language');const requested=saved?[saved]:Array.from(navigator.languages||[navigator.language]);const selected=requested.map(select).find(Boolean)||select('${escapeHtml(config.site.defaultLocale)}')||available[0];if(selected&&selected!=='${escapeHtml(locale.code)}')location.replace(routes[selected])}catch{}})();</script>`
+    : '';
   const keywords = [project.name, 'ok-script', destination === 'docs' ? 'documentation' : 'game automation', 'computer vision', 'Python', 'Windows'].join(', ');
   const structuredData = JSON.stringify(destination === 'docs' ? {
     '@context': 'https://schema.org', '@type': 'TechArticle', headline: title, description, url: canonical,
@@ -674,6 +678,7 @@ function documentShell({ title, description, project, locale, body, destination 
   <meta property="og:type" content="${pageType}"><meta property="og:site_name" content="${escapeHtml(config.site.name)}"><meta property="og:locale" content="${escapeHtml(locale.code.replace('-', '_'))}">${alternateLocales}<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:image" content="${socialImage}"><meta property="og:image:alt" content="${escapeHtml(`${project.name} — ${title}`)}">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${escapeHtml(`${project.name} — ${title}`)}">
   <script type="application/ld+json">${structuredData}</script>
+  ${languageRouting}
   <link rel="icon" href="${asset('favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="${asset(`site.css?v=${assetVersion}`)}">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body>${header(project, locale, destination, currentUrl)}${body}

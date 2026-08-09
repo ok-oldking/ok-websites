@@ -4,6 +4,10 @@
   const preferred = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   root.dataset.theme = stored || preferred;
 
+  document.querySelectorAll('[data-language-code]').forEach(link => {
+    link.addEventListener('click', () => localStorage.setItem('ok-language', link.dataset.languageCode));
+  });
+
   document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     localStorage.setItem('ok-theme', root.dataset.theme);

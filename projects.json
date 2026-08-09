@@ -2,7 +2,7 @@
   "site": {
     "url": "https://ok-script.com",
     "name": "OK Automation",
-    "defaultLocale": "zh-CN"
+    "defaultLocale": "en"
   },
   "projects": [
     {

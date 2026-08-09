@@ -60,6 +60,8 @@ if (rootLanding.includes('meta-release-button')) failures.push('Release download
 if (rootLanding.includes('data-copy=')) failures.push('Non-Chinese pages expose QQ groups.');
 if (!rootChinese.includes('data-copy="938132715"') || !rootChinese.includes('开发者群938132715')) failures.push('ok-script developer QQ group is not identified correctly.');
 if (!/<section class="hero"><div class="container landing-container hero-grid/.test(rootLanding) || !/<section class="section section-muted"><div class="container landing-container">/.test(rootLanding) || !/id="projects"><div class="container landing-container">/.test(rootLanding)) failures.push('Hero, features, and projects do not share the landing container.');
+if (!/data-language-routing[\s\S]*navigator\.languages[\s\S]*select\('en'\)/.test(rootChinese) || !/data-language-code="en"/.test(rootChinese)) failures.push('Root landing page does not detect browser language with an English fallback.');
+if (/data-language-routing/.test(rootLanding)) failures.push('Explicit English URL should not automatically redirect.');
 if (rootLanding.indexOf('section-muted') > rootLanding.indexOf('id="projects"')) failures.push('Feature grid does not appear before projects.');
 if (!/community-meta-row[\s\S]*?community-row[\s\S]*?community-stars/.test(rootLanding)) failures.push('Community links and GitHub stars are not combined in one row.');
 if (!/community-meta-row[\s\S]*?community-stars[\s\S]*?community-updated/.test(rootLanding) || rootLanding.includes('class="meta-row"')) failures.push('Code-updated metadata is not merged into the community/stars row.');
@@ -112,6 +114,7 @@ if (!/href="https:\/\/github\.com\/BnanZ0\/ok-nte\/tree\/[a-f0-9]+\/src\/char"/.
 const starResonance = await fs.readFile(path.join(root, 'ok-star-resonance', 'index.html'), 'utf8');
 if (!starResonance.includes('星痕旅程') || !starResonance.includes('https://ok-script.com/ok-star-resonance/') || !starResonance.includes('ok-star-resonance-win32-China-setup.exe')) failures.push('ok-star-resonance landing page is incomplete.');
 if (!starResonance.includes('faq-section') || !starResonance.includes('生活玩法自动化') || !starResonance.includes('夸克网盘')) failures.push('ok-star-resonance project content is incomplete.');
+if (starResonance.includes('data-language-routing')) failures.push('Single-language projects should not run language redirects.');
 if (!rootChinese.includes('href="./ok-star-resonance/"')) failures.push('Project ecosystem does not link to the local ok-star-resonance site.');
 await fs.access(path.join(root, 'ok-star-resonance', 'docs', 'guide', 'troubleshooting', 'index.html')).catch(() => failures.push('ok-star-resonance MkDocs routes are missing.'));
 const kesChinese = await fs.readFile(path.join(root, 'ok-kes', 'index.html'), 'utf8');
@@ -127,6 +130,8 @@ await fs.access(path.join(root, 'ok-kes', 'en', 'docs', 'index.html')).catch(() 
 const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows', 'deploy.yml'), 'utf8');
 if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
+const js = await fs.readFile(path.join(root, 'assets', 'site.js'), 'utf8');
+if (!/localStorage\.setItem\('ok-language', link\.dataset\.languageCode\)/.test(js)) failures.push('Manual language preference is not persisted.');
 if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*font-size:\s*15px/.test(css)) failures.push('Header typography was not enlarged.');
 if (!/\.feature-card[^}]*grid-template-columns:\s*45px/.test(css) || /\.feature-icon[^}]*margin-bottom/.test(css)) failures.push('Feature cards are not using the compact horizontal layout.');
 if (/\.hero \.container[^}]*1740px/.test(css) || !/\.landing-container[^}]*1180px/.test(css) || !/\.download-toggle[^}]*align-items:\s*center/.test(css)) failures.push('Landing-section width or dropdown-arrow alignment is incorrect.');
