@@ -149,6 +149,38 @@
       "locales": [
         { "code": "zh-CN", "label": "简体中文", "source": "docs", "index": "index.md" }
       ]
+    },
+    {
+      "id": "ok-kes",
+      "name": "ok-kes",
+      "repository": "https://github.com/baoxin1100/ok-kes.git",
+      "github": "baoxin1100/ok-kes",
+      "domain": "https://ok-script.com/ok-kes",
+      "outputFolder": "ok-kes",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "violet",
+      "type": "application",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 81,
+        "forks": 20,
+        "release": "v1.3.36",
+        "releaseUrl": "https://github.com/baoxin1100/ok-kes/releases/tag/v1.3.36",
+        "releaseAssets": [
+          { "name": "ok-kes-win32-China-setup.exe", "browser_download_url": "https://github.com/baoxin1100/ok-kes/releases/download/v1.3.36/ok-kes-win32-China-setup.exe" }
+        ],
+        "mirrors": [
+          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=ok-kes" },
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/13b266aa8e80" },
+          { "label": "百度网盘", "url": "https://pan.baidu.com/s/156h76VWpUwPIffkZqFy_dw?pwd=okes" },
+          { "label": "UC网盘", "url": "https://drive.uc.cn/s/fee4cb3d65cd4?public=1" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": "docs/zh-CN", "index": "index.md" },
+        { "code": "en", "label": "English", "source": "docs/en", "index": "index.md" }
+      ]
     }
   ],
   "relatedProjects": [
@@ -166,6 +198,11 @@
     ] },
     { "name": "ok-starrailassistant", "description": { "zh-CN": "支持 PC 后台运行的崩坏：星穹铁道自动化助手", "en": "A Honkai: Star Rail automation assistant for PC with background operation" }, "url": "https://github.com/Shasnow/ok-starrailassistant", "github": "Shasnow/ok-starrailassistant", "status": "community", "stars": 56 },
     { "name": "ok-star-resonance", "description": { "zh-CN": "基于 ok-script 的星痕共鸣自动化工具", "en": "A Star Resonance automation tool built with ok-script" }, "url": "https://github.com/Sanheiii/ok-star-resonance", "github": "Sanheiii/ok-star-resonance", "status": "community", "stars": 114 },
+    { "name": "ok-kes", "description": { "zh-CN": "卡厄思梦境自动出击、自动卡厄思与半自动剧情工具", "en": "Automation for Chaos Zero Nightmare sorties, Chaos Mode, and story progression" }, "url": "https://github.com/baoxin1100/ok-kes", "github": "baoxin1100/ok-kes", "status": "community", "stars": 81, "communityLinks": [
+      { "type": "qq", "label": "QQ 901988096", "value": "901988096" },
+      { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/eopggnxcu" },
+      { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
+    ] },
     { "name": "ok-duet-night-abyss", "description": { "zh-CN": "二重螺旋后台副本挂机自动化", "en": "Background dungeon farming automation for Duet Night Abyss" }, "url": "https://github.com/BnanZ0/ok-duet-night-abyss", "github": "BnanZ0/ok-duet-night-abyss", "status": "community", "stars": 656, "communityLinks": [
       { "type": "qq", "label": "QQ 1063846003", "value": "1063846003" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },

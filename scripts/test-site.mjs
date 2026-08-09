@@ -38,6 +38,11 @@ for (const file of htmlFiles) {
   const html = await fs.readFile(file, 'utf8');
   if (!/<html lang="[^"]+"/.test(html)) failures.push(`Missing language: ${path.relative(root, file)}`);
   if (!/<meta name="description"/.test(html)) failures.push(`Missing description: ${path.relative(root, file)}`);
+  if (!/<meta name="robots" content="index,follow/.test(html) || !/<meta name="keywords"/.test(html)) failures.push(`Missing search metadata: ${path.relative(root, file)}`);
+  if (!/<meta property="og:site_name"/.test(html) || !/<meta name="twitter:card" content="summary_large_image"/.test(html)) failures.push(`Missing social metadata: ${path.relative(root, file)}`);
+  const structuredData = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+  if (!structuredData) failures.push(`Missing structured data: ${path.relative(root, file)}`);
+  else { try { JSON.parse(structuredData); } catch { failures.push(`Invalid structured data: ${path.relative(root, file)}`); } }
   if (/<select\b/i.test(html)) failures.push(`Native select found in ${path.relative(root, file)}`);
   const attributes = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(match => match[1]);
   for (const value of attributes) {
@@ -65,7 +70,8 @@ const firstLastProject = projectCardClasses.findIndex(className => className.inc
 if (firstLastProject >= 0 && projectCardClasses.slice(firstLastProject).some(className => !className.includes('project-last'))) failures.push('Fresh projects appear after archived or six-month-stale projects.');
 const projectsMarkup = rootLanding.match(/<section class="section" id="projects">([\s\S]*?)<\/section>/)?.[1] || '';
 if (/community-(?:row|chip|icon)|class="status\b/.test(projectsMarkup)) failures.push('Project cards still expose community links or status badges.');
-if (!/class="project-top-meta">\s*<span>★[^<]+<\/span><a class="github-link"/.test(projectsMarkup)) failures.push('Project-card stars and GitHub link are not in the compact top row.');
+if (!/class="project-top-meta">\s*<a class="project-stars" href="https:\/\/github\.com\/[^"\/]+\/[^"\/]+\/stargazers"[^>]*>★[^<]+<\/a><a class="github-link"/.test(projectsMarkup)) failures.push('Project-card stars are not clickable in the compact top row.');
+if (!/class="community-stars" href="https:\/\/github\.com\/ok-oldking\/ok-script\/stargazers"/.test(rootLanding)) failures.push('Hero GitHub Stars are not clickable.');
 if (/<a\b[^>]*href="https:\/\/(?:ok-script\.com|ok-ww\.ok-script\.com|app\.ok-script\.com)/i.test(rootLanding)) failures.push('Root landing page still contains domain-based internal navigation.');
 const wwLanding = await fs.readFile(path.join(root, 'ok-ww', 'index.html'), 'utf8');
 if (!wwLanding.includes('https://ok-ww.ok-script.com/')) failures.push('ok-ww canonical domain is missing.');
@@ -108,6 +114,16 @@ if (!starResonance.includes('星痕旅程') || !starResonance.includes('https://
 if (!starResonance.includes('faq-section') || !starResonance.includes('生活玩法自动化') || !starResonance.includes('夸克网盘')) failures.push('ok-star-resonance project content is incomplete.');
 if (!rootChinese.includes('href="./ok-star-resonance/"')) failures.push('Project ecosystem does not link to the local ok-star-resonance site.');
 await fs.access(path.join(root, 'ok-star-resonance', 'docs', 'guide', 'troubleshooting', 'index.html')).catch(() => failures.push('ok-star-resonance MkDocs routes are missing.'));
+const kesChinese = await fs.readFile(path.join(root, 'ok-kes', 'index.html'), 'utf8');
+const kesEnglish = await fs.readFile(path.join(root, 'ok-kes', 'en', 'index.html'), 'utf8');
+if (!kesChinese.includes('突破卡厄思') || !kesChinese.includes('https://ok-script.com/ok-kes/') || !kesChinese.includes('ok-kes-win32-China-setup.exe')) failures.push('ok-kes Chinese landing page is incomplete.');
+if (!kesEnglish.includes('Face the Chaos') || !kesEnglish.includes('https://github.com/baoxin1100/ok-kes/releases/tag/v1.3.36')) failures.push('ok-kes English landing page is incomplete.');
+if (!kesChinese.includes('faq-section') || !kesChinese.includes('自动卡厄思') || !kesChinese.includes('data-copy="901988096"')) failures.push('ok-kes Chinese project content is incomplete.');
+if (kesEnglish.includes('data-copy=') || /qq\.svg/.test(kesEnglish)) failures.push('ok-kes English landing page exposes QQ links.');
+if (!/<link rel="alternate" hreflang="zh-CN" href="https:\/\/ok-script\.com\/ok-kes\/">/.test(kesChinese) || !/hreflang="en" href="https:\/\/ok-script\.com\/ok-kes\/en\/"/.test(kesChinese)) failures.push('ok-kes locale SEO links are missing.');
+if (!rootChinese.includes('href="./ok-kes/"')) failures.push('Project ecosystem does not link to the local ok-kes site.');
+await fs.access(path.join(root, 'ok-kes', 'docs', 'index.html')).catch(() => failures.push('ok-kes Chinese MkDocs routes are missing.'));
+await fs.access(path.join(root, 'ok-kes', 'en', 'docs', 'index.html')).catch(() => failures.push('ok-kes English MkDocs routes are missing.'));
 const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows', 'deploy.yml'), 'utf8');
 if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
@@ -115,6 +131,10 @@ if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*f
 if (!/\.feature-card[^}]*grid-template-columns:\s*45px/.test(css) || /\.feature-icon[^}]*margin-bottom/.test(css)) failures.push('Feature cards are not using the compact horizontal layout.');
 if (/\.hero \.container[^}]*1740px/.test(css) || !/\.landing-container[^}]*1180px/.test(css) || !/\.download-toggle[^}]*align-items:\s*center/.test(css)) failures.push('Landing-section width or dropdown-arrow alignment is incorrect.');
 if (!/\.section-kicker[^}]*font-size:\s*18px/.test(css) || !/\.section-head p[^}]*width:\s*66\.666%/.test(css)) failures.push('Project ecosystem heading or lead width is incorrect.');
+if (!/\.faq-content[^}]*width:\s*100%[^}]*max-width:\s*none/.test(css) || !/<section class="section faq-section"><div class="container landing-container">/.test(wwLanding)) failures.push('FAQ does not share the feature-grid width.');
+if (!/\.faq-section \.section-head h2[^}]*color:\s*var\(--accent-strong\)[^}]*font-size:\s*clamp\(24px,\s*2\.4vw,\s*32px\)/.test(css) || !/\.faq-section \.faq-content > h2[^}]*font-size:\s*clamp\(20px,\s*2vw,\s*25px\)/.test(css)) failures.push('FAQ heading hierarchy is not visually distinct and compact.');
+const rootSitemap = await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8');
+if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(rootSitemap)) failures.push('Sitemap entries are missing last-modified dates.');
 
 if (failures.length) {
   console.error([...new Set(failures)].slice(0, 40).join('\n'));

@@ -25,6 +25,8 @@ const copy = {
     nteLead: '面向《异环》的计算机视觉自动化工具，支持后台运行、一键日常、智能战斗与都市闲趣，不读取游戏内存、不修改游戏文件。',
     starEyebrow: '星痕共鸣 · 视觉自动化 · Windows', starTitle: '星痕旅程，\n交给 ok-star-resonance。',
     starLead: '面向《星痕共鸣》的视觉与网络自动化工具，覆盖钓鱼、采集、副本和 MIDI 演奏等玩法，通过 Windows 接口模拟操作，不读取游戏内存、不修改游戏文件。',
+    kesEyebrow: '卡厄思梦境 · 后台自动化 · Windows', kesTitle: '突破卡厄思，\n日常交给 ok-kes。',
+    kesLead: '面向《卡厄思梦境》的计算机视觉自动化工具，支持自动卡厄思、自动出击、半自动剧情和后台运行，不读取游戏内存、不修改游戏文件。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
     getStarted: '开始使用', download: '下载最新版本', downloadGithub: '从 GitHub 下载', viewSource: '查看源码', readDocs: '阅读文档',
@@ -48,6 +50,8 @@ const copy = {
     nteLead: 'Computer-vision automation for Neverness to Everness with background operation, one-click dailies, intelligent combat, and city activities—without reading memory or modifying game files.',
     starEyebrow: 'Star Resonance · Visual automation · Windows', starTitle: 'Enjoy the adventure.\nLeave the routine to ok-star-resonance.',
     starLead: 'Visual and network-assisted automation for Star Resonance, covering fishing, gathering, dungeons, and MIDI performances through simulated Windows input without reading memory or modifying game files.',
+    kesEyebrow: 'Chaos Zero Nightmare · Background automation · Windows', kesTitle: 'Face the Chaos.\nLeave the routine to ok-kes.',
+    kesLead: 'Computer-vision automation for Chaos Zero Nightmare with Auto Chaos, Auto Sortie, semi-automatic story progression, and background operation—without reading memory or modifying game files.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
     getStarted: 'Get started', download: 'Download latest', downloadGithub: 'Download from GitHub', viewSource: 'View source', readDocs: 'Read docs',
@@ -101,6 +105,10 @@ const features = {
   'ok-star-resonance': {
     'zh-CN': [['✓','生活玩法自动化','支持钓鱼、简易采集、月卡领取、组队确认与协会狩猎。'],['16:9','广泛分辨率支持','适配任意 16:9 分辨率、窗口模式和全屏模式。'],['♪','MIDI 与谱面演奏','自动演奏 MIDI 文件和教学谱面，扩展游戏内音乐体验。'],['{ }','自定义脚本','允许用户编写自己的自动化脚本，并通过 PushDeer 接收状态通知。']],
     en: [['✓','Activity automation','Fishing, gathering, daily rewards, team confirmation, and guild hunting.'],['16:9','Flexible resolution','Works at any 16:9 resolution in windowed or fullscreen mode.'],['♪','MIDI performances','Play MIDI files and teaching scores automatically.'],['{ }','Custom scripts','Extend automation with user scripts and PushDeer status notifications.']]
+  },
+  'ok-kes': {
+    'zh-CN': [['◎','自动卡厄思','自动处理路线、事件、战斗、商店、卡牌管理与奖励结算。'],['✓','自动出击','按可配置优先级自动出牌、选择主战员并处理路线节点。'],['◫','后台运行','游戏窗口最小化或被遮挡时继续执行自动化任务。'],['↗','配置共享','支持配置导入导出、热门配置和匿名胜率统计。']],
+    en: [['◎','Auto Chaos','Handle routes, events, battles, shops, card management, and rewards.'],['✓','Auto Sortie','Play cards, select members, and navigate nodes using configurable priorities.'],['◫','Background operation','Continue automation while the game is minimized or covered.'],['↗','Shared configurations','Import, export, and discover popular configurations with anonymous statistics.']]
   },
   template: {
     'zh-CN': [['GUI','可运行界面','内置任务、配置控件与调试工具示例。'],['OCR','视觉能力','演示 OCR、相对区域识别和模板匹配。'],['{ }','任务模板','一次性任务、触发任务与自动化测试开箱即用。'],['↗','发布流程','包含打包配置与 GitHub Actions 发布工作流。']],
@@ -641,10 +649,31 @@ function documentShell({ title, description, project, locale, body, destination 
   const framework = config.projects.find(item => item.type === 'framework') || project;
   const frameworkLocale = framework.locales.find(item => item.code === locale.code) || framework.locales.find(item => item.code === 'en') || framework.locales[0];
   const allProjectsUrl = relativeSiteUrl(project, currentUrl, framework, landingUrl(framework, frameworkLocale));
+  const socialImage = `${config.site.url}/assets/og.png`;
+  const pageType = destination === 'docs' ? 'article' : 'website';
+  const defaultLocale = project.locales.find(item => item.code === config.site.defaultLocale) || project.locales[0];
+  const alternateLinks = destination === 'landing'
+    ? `${project.locales.map(item => `<link rel="alternate" hreflang="${escapeHtml(item.code)}" href="${escapeHtml(`${projectOrigin(project)}${landingUrl(project, item)}`)}">`).join('')}<link rel="alternate" hreflang="x-default" href="${escapeHtml(`${projectOrigin(project)}${landingUrl(project, defaultLocale)}`)}">`
+    : '';
+  const alternateLocales = project.locales.filter(item => item.code !== locale.code).map(item => `<meta property="og:locale:alternate" content="${escapeHtml(item.code.replace('-', '_'))}">`).join('');
+  const keywords = [project.name, 'ok-script', destination === 'docs' ? 'documentation' : 'game automation', 'computer vision', 'Python', 'Windows'].join(', ');
+  const structuredData = JSON.stringify(destination === 'docs' ? {
+    '@context': 'https://schema.org', '@type': 'TechArticle', headline: title, description, url: canonical,
+    inLanguage: locale.code, dateModified: project.state.updated, author: { '@type': 'Organization', name: project.name, url: `https://github.com/${project.github}` },
+    isPartOf: { '@type': 'WebSite', name: config.site.name, url: config.site.url }
+  } : {
+    '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: project.name, description, url: canonical,
+    inLanguage: locale.code, applicationCategory: 'UtilitiesApplication', operatingSystem: 'Windows',
+    codeRepository: `https://github.com/${project.github}`, dateModified: project.state.updated,
+    author: { '@type': 'Organization', name: project.github.split('/')[0], url: `https://github.com/${project.github.split('/')[0]}` }
+  }).replace(/</g, '\\u003c');
   return `<!doctype html><html lang="${locale.code}" data-theme="light"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><link rel="canonical" href="${canonical}">
-  <meta property="og:type" content="website"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${config.site.url}/assets/og.png">
+  <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="keywords" content="${escapeHtml(keywords)}"><meta name="author" content="${escapeHtml(project.github.split('/')[0])}">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="${escapeHtml(canonical)}">${alternateLinks}
+  <meta property="og:type" content="${pageType}"><meta property="og:site_name" content="${escapeHtml(config.site.name)}"><meta property="og:locale" content="${escapeHtml(locale.code.replace('-', '_'))}">${alternateLocales}<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${escapeHtml(canonical)}"><meta property="og:image" content="${socialImage}"><meta property="og:image:alt" content="${escapeHtml(`${project.name} — ${title}`)}">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${escapeHtml(`${project.name} — ${title}`)}">
+  <script type="application/ld+json">${structuredData}</script>
   <link rel="icon" href="${asset('favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="${asset(`site.css?v=${assetVersion}`)}">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body>${header(project, locale, destination, currentUrl)}${body}
@@ -655,7 +684,7 @@ function documentShell({ title, description, project, locale, body, destination 
 function landingPage(project, locale, meta, faq = null) {
   const t = localeCopy(locale.code); const isFramework = project.type === 'framework';
   const currentUrl = landingUrl(project, locale);
-  const marketingKey = project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
+  const marketingKey = project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
   const eyebrow = t[`${marketingKey}Eyebrow`];
   const [titleA, titleB] = t[`${marketingKey}Title`].split('\n');
   const lead = t[`${marketingKey}Lead`];
@@ -675,7 +704,7 @@ function landingPage(project, locale, meta, faq = null) {
     const itemUrl = localProject ? relativeSiteUrl(project, currentUrl, localProject, landingUrl(localProject, targetLocale)) : item.url;
     const projectLinkIcon = /^https:\/\/github\.com\//.test(itemUrl) ? githubIcon(project, currentUrl) : '';
     const lastGroup = item.status === 'archived' || item.stale;
-    return `<article class="project-card${lastGroup ? ' project-last' : ''}" data-description-source="${item.descriptionSource || 'fallback'}"><div class="project-top"><a class="project-logo" href="${itemUrl}">${icon}</a><div class="project-top-meta"><span>★ ${Number(item.stars || 0).toLocaleString()}</span><a class="github-link" href="https://github.com/${item.github}">${githubIcon(project, currentUrl)}GitHub</a></div></div><h3><a href="${itemUrl}">${escapeHtml(item.name)}</a></h3><p class="project-description">${escapeHtml(desc)}</p><div class="project-meta"><span><small>${t.release}</small><strong>${escapeHtml(item.release || '—')}</strong></span><span><small>${t.updated}</small><time datetime="${escapeHtml(item.updatedAt || '')}">${formatDate(item.updatedAt, locale.code)}</time></span></div><a class="project-link github-link" href="${itemUrl}">${projectLinkIcon}${t.explore}</a></article>`;
+    return `<article class="project-card${lastGroup ? ' project-last' : ''}" data-description-source="${item.descriptionSource || 'fallback'}"><div class="project-top"><a class="project-logo" href="${itemUrl}">${icon}</a><div class="project-top-meta"><a class="project-stars" href="https://github.com/${item.github}/stargazers" aria-label="${escapeHtml(`${item.name}: ${Number(item.stars || 0).toLocaleString()} GitHub stars`)}">★ ${Number(item.stars || 0).toLocaleString()}</a><a class="github-link" href="https://github.com/${item.github}">${githubIcon(project, currentUrl)}GitHub</a></div></div><h3><a href="${itemUrl}">${escapeHtml(item.name)}</a></h3><p class="project-description">${escapeHtml(desc)}</p><div class="project-meta"><span><small>${t.release}</small><strong>${escapeHtml(item.release || '—')}</strong></span><span><small>${t.updated}</small><time datetime="${escapeHtml(item.updatedAt || '')}">${formatDate(item.updatedAt, locale.code)}</time></span></div><a class="project-link github-link" href="${itemUrl}">${projectLinkIcon}${t.explore}</a></article>`;
   }).join('');
   const sourceButton = `<a class="button" href="https://github.com/${project.github}">${githubIcon(project, currentUrl)}${t.viewSource}</a>`;
   const chinaLabel = locale.code === 'zh-CN' ? '大陆版' : 'China';
@@ -696,13 +725,13 @@ function landingPage(project, locale, meta, faq = null) {
   const mirrorLinks = !isFramework && locale.code === 'zh-CN' && meta.mirrors?.length
     ? `<div class="download-alternatives"><span>${t.githubUnavailable}</span>${meta.mirrors.map(link => `<a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join('')}</div>` : '';
   const projectsSection = isFramework ? `<section class="section" id="projects"><div class="container landing-container"><div class="section-head compact"><div class="section-kicker">${t.projectsKicker}</div><p>${t.projectsLead}</p></div><div class="project-grid">${related}</div></div></section>` : '';
-  const faqSection = faq ? `<section class="section faq-section"><div class="container"><div class="section-head compact"><h2>${t.faqKicker}</h2></div><div class="faq-content markdown-body">${faq.html}</div></div></section>` : '';
+  const faqSection = faq ? `<section class="section faq-section"><div class="container landing-container"><div class="section-head compact"><h2>${t.faqKicker}</h2></div><div class="faq-content markdown-body">${faq.html}</div></div></section>` : '';
   const capabilitiesSection = `<section class="section section-muted"><div class="container landing-container"><div class="feature-grid">${featureSet.map(f => `<article class="feature-card"><div class="feature-icon">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></article>`).join('')}</div></div></section>`;
   const ctaSection = isFramework ? `<section class="section"><div class="container"><div class="cta"><div><h2>${t.ctaTitle}</h2><p>${t.ctaLead}</p></div><a class="button" href="${primaryUrl}">${t.ctaButton} →</a></div></div></section>` : '';
   const community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
   const body = `<main id="main">
   <section class="hero"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div><h1><span class="title-line">${escapeHtml(titleA)}</span><span class="title-line gradient-text">${escapeHtml(titleB)}</span></h1><p class="hero-copy">${lead}</p>
-  <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<span class="community-stars">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</span><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
+  <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}/stargazers" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
   ${capabilitiesSection}${projectsSection}${faqSection}${ctaSection}</main>`;
   const title = `${project.name} — ${titleA.replace(/[，,.。]/g,'')}`;
   return documentShell({ title, description: lead, project, locale, body, canonical: `${projectOrigin(project)}${landingUrl(project, locale)}` });
@@ -794,7 +823,8 @@ for (const project of config.projects) {
     const rel = posix(path.relative(folder, file));
     return rel === 'index.html' ? '/' : `/${rel.replace(/index\.html$/, '')}`;
   });
-  await fs.writeFile(path.join(folder, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${projectOrigin(project)}${url}</loc></url>`).join('\n')}\n</urlset>\n`);
+  const lastModified = (project.state.meta?.updated || project.state.updated || generatedAt).slice(0, 10);
+  await fs.writeFile(path.join(folder, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${projectOrigin(project)}${url}</loc><lastmod>${lastModified}</lastmod></url>`).join('\n')}\n</urlset>\n`);
   await fs.writeFile(path.join(folder, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${projectOrigin(project)}/sitemap.xml\n`);
 }
 await fs.writeFile(path.join(staticDir, '.nojekyll'), '');
