@@ -1,0 +1,1242 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>API 参考 · ok-script</title><meta name="description" content="API 参考 — ok-script"><link rel="canonical" href="https://ok-script.com/docs/api_doc/">
+  <meta property="og:type" content="website"><meta property="og:title" content="API 参考 · ok-script"><meta property="og:description" content="API 参考 — ok-script"><meta property="og:url" content="https://ok-script.com/docs/api_doc/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="../intro_to_automation/">游戏自动化入门</a><a href="../quick_start/">快速开始</a><a href="../interface/">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="./" class="active" aria-current="page">API 参考</a><a href="../building-site/">构建文档网站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="ok-script-api-文档">ok-script API 文档</h1>
+<p><a href="../../en/docs/api_reference/">English</a> · <a href="../">文档中心</a> · <a href="../quick_start/">快速开始</a> · <a href="../after_quick_start/">进阶指南</a></p>
+<p>本文档是任务开发时的 API 参考。第一次使用 ok-script 时，请先完成<a href="../quick_start/">快速开始</a>；查找具体方法时，可以使用浏览器的页面搜索功能按方法名定位。</p>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#box">Box</a><ul>
+<li><a href="#box__init__">Box.__init__</a></li>
+<li><a href="#boxarea">Box.area</a></li>
+<li><a href="#boxin_boundary">Box.in_boundary</a></li>
+<li><a href="#boxscale">Box.scale</a></li>
+<li><a href="#boxcenter">Box.center</a></li>
+<li><a href="#boxcopy">Box.copy</a></li>
+<li><a href="#boxcrop_frame">Box.crop_frame</a></li>
+<li><a href="#boxcenter_distance">Box.center_distance</a></li>
+<li><a href="#boxclosest_distance">Box.closest_distance</a></li>
+<li><a href="#boxrelative_with_variance">Box.relative_with_variance</a></li>
+<li><a href="#boxfind_closest_box">Box.find_closest_box</a></li>
+</ul>
+</li>
+<li><a href="#basetask">BaseTask</a><ul>
+<li><a href="#%E5%90%8D%E7%A7%B0%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99-match--names">名称匹配规则 (match / names)</a></li>
+<li><a href="#%E5%B8%A7%E5%88%B7%E6%96%B0%E4%B8%8E%E7%AD%89%E5%BE%85">帧刷新与等待</a></li>
+<li><a href="#%E6%88%AA%E5%9B%BE-screenshot">截图 (Screenshot)</a><ul>
+<li><a href="#frame">frame</a></li>
+<li><a href="#next_frame">next_frame</a></li>
+<li><a href="#screenshot">screenshot</a></li>
+<li><a href="#adb_ui_dump">adb_ui_dump</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5-input">输入 (Input)</a><ul>
+<li><a href="#click">click</a></li>
+<li><a href="#click_box">click_box</a></li>
+<li><a href="#click_box_if_name_match">click_box_if_name_match</a></li>
+<li><a href="#click_relative">click_relative</a></li>
+<li><a href="#wait_click_box">wait_click_box</a></li>
+<li><a href="#right_click">right_click</a></li>
+<li><a href="#middle_click">middle_click</a></li>
+<li><a href="#swipe">swipe</a></li>
+<li><a href="#swipe_relative">swipe_relative</a></li>
+<li><a href="#input_text">input_text</a></li>
+<li><a href="#send_key">send_key</a></li>
+<li><a href="#send_key_down">send_key_down</a></li>
+<li><a href="#send_key_up">send_key_up</a></li>
+<li><a href="#scroll">scroll</a></li>
+<li><a href="#scroll_relative">scroll_relative</a></li>
+<li><a href="#mouse_down">mouse_down</a></li>
+<li><a href="#mouse_up">mouse_up</a></li>
+<li><a href="#move">move</a></li>
+<li><a href="#move_relative">move_relative</a></li>
+<li><a href="#back">back</a></li>
+</ul>
+</li>
+<li><a href="#config-%E7%9B%B8%E5%85%B3">Config 相关</a><ul>
+<li><a href="#load_config">load_config</a></li>
+<li><a href="#validate_config">validate_config</a></li>
+<li><a href="#get_global_config">get_global_config</a></li>
+<li><a href="#get_global_config_desc">get_global_config_desc</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E9%85%8D%E7%BD%AE-task-configuration">任务配置 (Task Configuration)</a></li>
+<li><a href="#%E5%B1%8F%E5%B9%95%E7%94%BB%E5%9B%BE-screen-drawing">屏幕画图 (Screen drawing)</a><ul>
+<li><a href="#draw_boxes">draw_boxes</a></li>
+<li><a href="#get_overlay_view">get_overlay_view</a></li>
+<li><a href="#clear_box">clear_box</a></li>
+</ul>
+</li>
+<li><a href="#ocr">OCR</a><ul>
+<li><a href="#ocr">ocr</a></li>
+<li><a href="#wait_ocr">wait_ocr</a></li>
+<li><a href="#wait_click_ocr">wait_click_ocr</a></li>
+<li><a href="#add_text_fix">add_text_fix</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%BE%E5%9B%BE-image-finding">找图 (Image finding)</a><ul>
+<li><a href="#find_feature">find_feature</a></li>
+<li><a href="#find_one">find_one</a></li>
+<li><a href="#wait_feature">wait_feature</a></li>
+<li><a href="#wait_click_feature">wait_click_feature</a></li>
+<li><a href="#get_box_by_name">get_box_by_name</a></li>
+<li><a href="#get_feature_by_name">get_feature_by_name</a></li>
+<li><a href="#feature_exists">feature_exists</a></li>
+<li><a href="#find_feature_and_set">find_feature_and_set</a></li>
+<li><a href="#find_best_match_in_box">find_best_match_in_box</a></li>
+<li><a href="#find_first_match_in_box">find_first_match_in_box</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%BE%E8%89%B2-color-finding">找色 (Color finding)</a><ul>
+<li><a href="#calculate_color_percentage">calculate_color_percentage</a></li>
+</ul>
+</li>
+<li><a href="#%E6%98%BE%E7%A4%BA%E4%BF%A1%E6%81%AF-display-information">显示信息 (Display information)</a><ul>
+<li><a href="#notification">notification</a></li>
+<li><a href="#info_set">info_set</a></li>
+<li><a href="#info_get">info_get</a></li>
+<li><a href="#info_incr">info_incr</a></li>
+<li><a href="#info_add">info_add</a></li>
+<li><a href="#info_add_to_list">info_add_to_list</a></li>
+<li><a href="#info_clear">info_clear</a></li>
+</ul>
+</li>
+<li><a href="#%E6%97%A5%E5%BF%97-logging">日志 (Logging)</a><ul>
+<li><a href="#log_info">log_info</a></li>
+<li><a href="#log_debug">log_debug</a></li>
+<li><a href="#log_error">log_error</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E4%BB%96-other">其他 (Other)</a><ul>
+<li><a href="#is_adb">is_adb</a></li>
+<li><a href="#is_browser">is_browser</a></li>
+<li><a href="#adb_shell">adb_shell</a></li>
+<li><a href="#ensure_in_front">ensure_in_front</a></li>
+<li><a href="#box_of_screen">box_of_screen</a></li>
+<li><a href="#box_of_screen_scaled">box_of_screen_scaled</a></li>
+<li><a href="#screen_width">screen_width</a></li>
+<li><a href="#screen_height">screen_height</a></li>
+<li><a href="#width_of_screen">width_of_screen</a></li>
+<li><a href="#wait_until">wait_until</a></li>
+<li><a href="#wait_scene">wait_scene</a></li>
+<li><a href="#sleep">sleep</a></li>
+<li><a href="#sleep_check">sleep_check</a></li>
+<li><a href="#run_task_by_class">run_task_by_class</a></li>
+<li><a href="#tr">tr</a></li>
+<li><a href="#should_trigger">should_trigger</a></li>
+<li><a href="#go_to_tab">go_to_tab</a></li>
+<li><a href="#find_boxes">find_boxes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="box">Box</h2>
+<p><code>Box</code> 类用于表示屏幕上的一个矩形区域，通常用于标识UI元素、图像特征等。</p>
+<p><a name="box__init__"></a></p>
+<h3 id="box-init">Box.__init__</h3>
+<pre><code class="language-python">def __init__(self, x, y, width=0, height=0, confidence=1.0, name=None, to_x=-1, to_y=-1)
+</code></pre>
+<p>初始化一个 <code>Box</code> 对象。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code> (int): 矩形左上角的 x 坐标。</li>
+<li><code>y</code> (int): 矩形左上角的 y 坐标。</li>
+<li><code>width</code> (int): 矩形的宽度。如果提供了 <code>to_x</code>，则会自动计算。</li>
+<li><code>height</code> (int): 矩形的高度。如果提供了 <code>to_y</code>，则会自动计算。</li>
+<li><code>confidence</code> (float): 置信度，默认为 1.0。</li>
+<li><code>name</code> (any): 矩形的名称或标识符。</li>
+<li><code>to_x</code> (int): 矩形右下角的 x 坐标，用于计算宽度。</li>
+<li><code>to_y</code> (int): 矩形右下角的 y 坐标，用于计算高度。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxarea"></a></p>
+<h3 id="box-area">Box.area</h3>
+<pre><code class="language-python">def area(self) -&gt; int
+</code></pre>
+<p>计算并返回矩形的面积。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>int</code>: 矩形的面积 (width * height)。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxin_boundary"></a></p>
+<h3 id="box-in-boundary">Box.in_boundary</h3>
+<pre><code class="language-python">def in_boundary(self, boxes) -&gt; list[Box]
+</code></pre>
+<p>返回一个列表，其中包含传入参数 <code>boxes</code> 中所有位于当前 <code>Box</code> 边界内的 <code>Box</code> 对象。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>boxes</code> (list[Box]): 要检查的 <code>Box</code> 对象列表。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>list[Box]</code>: 位于边界内的 <code>Box</code> 列表。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxscale"></a></p>
+<h3 id="box-scale">Box.scale</h3>
+<pre><code class="language-python">def scale(self, width_ratio: float, height_ratio: float = None)
+</code></pre>
+<p>按给定的宽高比缩放矩形，保持中心点不变。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>width_ratio</code> (float): 宽度的缩放比例。</li>
+<li><code>height_ratio</code> (float): 高度的缩放比例，如果为 <code>None</code> 则使用 <code>width_ratio</code>。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code>: 一个新的、经过缩放的 <code>Box</code> 对象。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxcenter"></a></p>
+<h3 id="box-center">Box.center</h3>
+<pre><code class="language-python">def center(self)
+</code></pre>
+<p>计算并返回矩形的中心点坐标。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>tuple</code>: 包含中心点 (x, y) 坐标的元组。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxcopy"></a></p>
+<h3 id="box-copy">Box.copy</h3>
+<pre><code class="language-python">def copy(self, x_offset=0, y_offset=0, width_offset=0, height_offset=0, name=None)
+</code></pre>
+<p>创建一个带有偏移量的新 <code>Box</code> 副本。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x_offset</code> (int): x 坐标的偏移量。</li>
+<li><code>y_offset</code> (int): y 坐标的偏移量。</li>
+<li><code>width_offset</code> (int): 宽度的偏移量。</li>
+<li><code>height_offset</code> (int): 高度的偏移量。</li>
+<li><code>name</code> (any): 新矩形的名称。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code>: 一个新的 <code>Box</code> 对象。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxcrop_frame"></a></p>
+<h3 id="box-crop-frame">Box.crop_frame</h3>
+<pre><code class="language-python">def crop_frame(self, frame)
+</code></pre>
+<p>从给定的图像帧中裁剪出矩形区域。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>frame</code> (numpy.ndarray): 要裁剪的图像帧。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>numpy.ndarray</code>: 裁剪后的图像区域。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxcenter_distance"></a></p>
+<h3 id="box-center-distance">Box.center_distance</h3>
+<pre><code class="language-python">def center_distance(self, other) -&gt; float
+</code></pre>
+<p>计算当前矩形与另一个矩形中心点之间的距离。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>other</code> (Box): 另一个 <code>Box</code> 对象。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>float</code>: 两个矩形中心点之间的欧几里得距离。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxclosest_distance"></a></p>
+<h3 id="box-closest-distance">Box.closest_distance</h3>
+<pre><code class="language-python">def closest_distance(self, other) -&gt; float
+</code></pre>
+<p>计算两个矩形边界之间的最短距离。如果两个矩形相交，则距离为 0。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>other</code> (Box): 另一个 <code>Box</code> 对象。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>float</code>: 两个矩形之间的最短距离。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxrelative_with_variance"></a></p>
+<h3 id="box-relative-with-variance">Box.relative_with_variance</h3>
+<pre><code class="language-python">def relative_with_variance(self, relative_x=0.5, relative_y=0.5) -&gt; tuple[int, int]
+</code></pre>
+<p>返回矩形内的一个坐标点。支持相对位置并带有微小的随机偏移，模拟真实的人工点击。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>relative_x</code> (float): 相对 x 坐标 (0.0 - 1.0)。</li>
+<li><code>relative_y</code> (float): 相对 y 坐标 (0.0 - 1.0)。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>tuple[int, int]</code>: 计算出的 (x, y) 坐标。</li>
+</ul>
+</li>
+</ul>
+<p><a name="boxfind_closest_box"></a></p>
+<h3 id="box-find-closest-box">Box.find_closest_box</h3>
+<pre><code class="language-python">def find_closest_box(self, direction, boxes, condition=None)
+</code></pre>
+<p>在给定方向上查找并返回距离最近的 <code>Box</code> 对象。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>direction</code> (str): 查找方向 (&#39;up&#39;, &#39;down&#39;, &#39;left&#39;, &#39;right&#39;, &#39;all&#39;)。</li>
+<li><code>boxes</code> (list[Box]): 要在其中搜索的 <code>Box</code> 对象列表。</li>
+<li><code>condition</code> (callable, optional): 一个可选的过滤函数，用于筛选 <code>Box</code>。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code> 或 <code>None</code>: 找到的最近的 <code>Box</code> 对象，如果未找到则返回 <code>None</code>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="basetask">BaseTask</h2>
+<p><code>BaseTask</code> 是所有任务类的基类，它提供了任务执行所需的基础功能，如截图、输入、日志记录等。它继承自 <code>OCR</code>、<code>FindFeature</code> 和
+<code>ExecutorOperation</code>，因此包含了这些父类的所有方法。</p>
+<p><a name="名称匹配规则-match--names"></a></p>
+<h3 id="名称匹配规则-match-names">名称匹配规则 (match / names)</h3>
+<p>多个 API 会用 <code>match</code> 或 <code>names</code> 参数过滤 <code>Box.name</code>，例如 <code>ocr</code>、<code>wait_ocr</code>、<code>wait_click_ocr</code>、<code>find_boxes</code>
+和 <code>click_box_if_name_match</code>。</p>
+<ul>
+<li><code>str</code>: 精确匹配，只有 <code>box.name == match</code> 才算匹配。</li>
+<li><code>re.Pattern</code>: 正则匹配，使用 <code>re.search(pattern, box.name)</code>，所以可以匹配文本中的任意一段。</li>
+<li><code>list[str | re.Pattern]</code>: 可以把字符串和正则任意组合在一个列表里，命中其中任意一个就会保留该 <code>Box</code>。</li>
+<li>匹配默认区分大小写；需要忽略大小写时，用 <code>re.compile(..., re.IGNORECASE)</code>。</li>
+<li>这不是模糊匹配，也不会自动做 <code>contains</code>。如果要匹配包含某段文字，请用正则，例如 <code>re.compile(&quot;开始|Start&quot;)</code>。</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-python">import re
+
+self.ocr(match=&quot;确定&quot;)                         # 只匹配 name 正好是 &quot;确定&quot; 的 OCR 结果
+self.ocr(match=re.compile(r&quot;确定|OK&quot;))         # 匹配包含 &quot;确定&quot; 或 &quot;OK&quot; 的结果
+self.ocr(match=[&quot;确定&quot;, re.compile(r&quot;^OK$&quot;)])  # 字符串和正则可以混用
+</code></pre>
+<p>在需要检测多个字符串或多个正则时，优先使用 <code>match=[...]</code> 一次 OCR 后统一过滤，通常比多次调用 <code>ocr</code> 更高效。</p>
+<p><a name="帧刷新与等待"></a></p>
+<h3 id="帧刷新与等待">帧刷新与等待</h3>
+<p><code>frame</code> 是当前缓存的屏幕帧。<code>next_frame()</code> 和 <code>sleep()</code> 都会重置场景并清空当前缓存帧；带有 <code>after_sleep</code>
+参数的方法也会在动作后调用 <code>sleep</code>，因此同样会清空当前帧。</p>
+<p>当循环检测界面，或点击、滑动、按键后界面可能发生变化时，通常需要等待一下再读取新界面，例如：</p>
+<pre><code class="language-python">self.click_box(button, after_sleep=0)
+self.sleep(0.5)
+boxes = self.ocr(match=&quot;确认&quot;)
+</code></pre>
+<p>更推荐的写法是优先使用 <code>wait_</code> 开头的方法，例如 <code>wait_ocr</code>、<code>wait_click_ocr</code>、<code>wait_feature</code>
+和 <code>wait_click_feature</code>。这些方法会自动循环获取新的 frame，调用前通常不需要额外 <code>sleep</code>。编写或生成脚本代码时，能用
+<code>wait_</code> 方法表达的等待逻辑，尽量使用 <code>wait_</code> 方法。</p>
+<h3 id="截图-screenshot-截图-screenshot">截图 (Screenshot) { #截图-screenshot }</h3>
+<p><a name="frame"></a></p>
+<h3 id="frame">frame</h3>
+<pre><code class="language-python">@property
+def frame(self)
+</code></pre>
+<p>获取当前有效的屏幕帧。此属性会确保返回的是最新的、可用的图像帧。如果脚本暂停，它会等待直到脚本恢复。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>numpy.ndarray</code>: 当前的屏幕图像帧。</li>
+</ul>
+</li>
+</ul>
+<p><a name="next_frame"></a></p>
+<h3 id="next-frame">next_frame</h3>
+<pre><code class="language-python">def next_frame(self)
+</code></pre>
+<p>强制获取并返回一个新的屏幕帧。这会先重置场景并清空当前缓存帧，然后触发一次截图操作，而不是直接使用旧缓存。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>numpy.ndarray</code>: 新捕获的屏幕图像帧。</li>
+</ul>
+</li>
+</ul>
+<p><a name="screenshot"></a></p>
+<h3 id="screenshot">screenshot</h3>
+<pre><code class="language-python">def screenshot(self, name=None, frame=None, show_box=False, frame_box=None)
+</code></pre>
+<p>将当前屏幕或指定帧的图像保存到 <code>screenshots</code> 目录中，主要用于调试。保存的截图会显示在软件的UI界面中。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>name</code> (str): 截图的名称，必须提供。</li>
+<li><code>frame</code> (numpy.ndarray, optional): 如果提供，则保存该帧，否则保存当前屏幕帧。</li>
+<li><code>show_box</code> (bool): 是否在截图上显示一个默认的框。</li>
+<li><code>frame_box</code> (Box, optional): 在截图上显示的特定 <code>Box</code> 区域。</li>
+</ul>
+</li>
+</ul>
+<p><a name="adb_ui_dump"></a></p>
+<h3 id="adb-ui-dump">adb_ui_dump</h3>
+<pre><code class="language-python">def adb_ui_dump(self) -&gt; str
+</code></pre>
+<p>通过 ADB 获取当前屏幕的 UI 层级结构 XML 字符串（仅限安卓/模拟器模式）。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>str</code>: UI 结构的 XML 字符串。</li>
+</ul>
+</li>
+</ul>
+<h3 id="输入-input-输入-input">输入 (Input) { #输入-input }</h3>
+<p><a name="click"></a></p>
+<h3 id="click">click</h3>
+<pre><code class="language-python">def click(self, x: int | Box | List[Box] = -1, y=-1, move_back=False, name=None, interval=-1, move=True, down_time=0.02,
+          after_sleep=0, key=&#39;left&#39;, hcenter=False, vcenter=False)
+</code></pre>
+<p>在指定坐标或 <code>Box</code> 位置执行鼠标点击。坐标可以是绝对坐标（整数），也可以是相对于屏幕宽高的相对坐标（0.0到1.0之间的小数）。如果只提供了
+<code>x</code> 参数且其类型为 <code>Box</code>，则会点击该 <code>Box</code> 的中心点。如果 <code>x</code> 是一个 <code>Box</code> 列表，则会点击列表中第一个 <code>Box</code> 的中心点。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code> (int | float | Box | list[Box]): x 坐标、相对 x 坐标或一个 <code>Box</code> 对象（或列表）。</li>
+<li><code>y</code> (int | float): y 坐标或相对 y 坐标。</li>
+<li><code>move_back</code> (bool): 点击后是否将鼠标移回原位。</li>
+<li><code>name</code> (str, optional): 点击操作的名称，用于日志记录。</li>
+<li><code>interval</code> (float): 距离上次点击的最小时间间隔（秒）。</li>
+<li><code>move</code> (bool): 是否在点击前移动鼠标。</li>
+<li><code>down_time</code> (float): 鼠标按下的持续时间（秒）。</li>
+<li><code>after_sleep</code> (float): 点击后等待的时间（秒）；会调用 <code>sleep</code>，因此会清空当前缓存帧。</li>
+<li><code>key</code> (str): 要点击的鼠标按键 (&#39;left&#39;, &#39;right&#39;, &#39;middle&#39;)。</li>
+<li><code>hcenter</code>, <code>vcenter</code> (bool): 如果点击相对坐标且设为 True，则以屏幕中心为原点。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>bool</code>: 如果操作成功执行，返回 <code>True</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="click_box"></a></p>
+<h3 id="click-box">click_box</h3>
+<pre><code class="language-python">def click_box(self, box: Box | List[Box] = None, relative_x=0.5, relative_y=0.5, raise_if_not_found=False,
+              move_back=False, move=True, down_time=0.01, after_sleep=1)
+</code></pre>
+<p>点击一个 <code>Box</code> 对象的相对位置。<code>box</code> 也可以传入 <code>Box</code> 列表（点击第一个）或预定义区域/特征名称字符串。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>box</code> (Box | list[Box] | str): 要点击的 <code>Box</code> 对象、<code>Box</code> 列表（默认点击第一个）或可通过 <code>get_box_by_name</code> 找到的名称。</li>
+<li><code>relative_x</code> (float): 相对于 <code>Box</code> 宽度的 x 坐标比例 (0.0 - 1.0)。</li>
+<li><code>relative_y</code> (float): 相对于 <code>Box</code> 高度的 y 坐标比例 (0.0 - 1.0)。</li>
+<li><code>raise_if_not_found</code> (bool): 如果 <code>box</code> 为 <code>None</code> 是否抛出异常。</li>
+<li><code>move_back</code> (bool): 点击后是否将鼠标移回原位。</li>
+<li><code>move</code> (bool): 是否在点击前移动鼠标。</li>
+<li><code>down_time</code> (float): 鼠标按下的持续时间（秒）。</li>
+<li><code>after_sleep</code> (float): 点击后等待的时间（秒）；会调用 <code>sleep</code>，因此会清空当前缓存帧。</li>
+</ul>
+</li>
+</ul>
+<p><a name="click_box_if_name_match"></a></p>
+<h3 id="click-box-if-name-match">click_box_if_name_match</h3>
+<pre><code class="language-python">def click_box_if_name_match(self, boxes, names, relative_x=0.5, relative_y=0.5)
+</code></pre>
+<p>在 <code>Box</code> 列表中查找名称匹配的 <code>Box</code> 并点击。匹配规则见 <a href="#%E5%90%8D%E7%A7%B0%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99-match--names">名称匹配规则</a>。
+当 <code>names</code> 是列表时，列表越靠前优先级越高；如果多个框匹配，会返回并点击优先级最高的匹配项。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>boxes</code> (list[Box]): <code>Box</code> 列表。</li>
+<li><code>names</code> (str | re.Pattern | list[str | re.Pattern]): 要匹配的名称或正则模式，可以混用。</li>
+<li><code>relative_x</code> (float): 相对于匹配 <code>Box</code> 宽度的 x 坐标比例。</li>
+<li><code>relative_y</code> (float): 相对于匹配 <code>Box</code> 高度的 y 坐标比例。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code> 或 <code>None</code>: 匹配并点击的 <code>Box</code>，未找到时返回 <code>None</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="click_relative"></a></p>
+<h3 id="click-relative">click_relative</h3>
+<pre><code class="language-python">def click_relative(self, x, y, move_back=False, hcenter=False, vcenter=False, move=True, after_sleep=0, name=None, interval=-1,
+                   down_time=0.02, key=&quot;left&quot;)
+</code></pre>
+<p>在屏幕的相对位置执行点击。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code> (float): 相对于屏幕宽度的 x 坐标比例 (0.0 - 1.0)。</li>
+<li><code>y</code> (float): 相对于屏幕高度的 y 坐标比例 (0.0 - 1.0)。</li>
+</ul>
+</li>
+</ul>
+<p><a name="wait_click_box"></a></p>
+<h3 id="wait-click-box">wait_click_box</h3>
+<pre><code class="language-python">def wait_click_box(self, condition, time_out=0, pre_action=None, post_action=None, raise_if_not_found=False)
+</code></pre>
+<p>等待一个返回 <code>Box</code> 的条件函数成立，并点击该 <code>Box</code>。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>condition</code> (callable): 返回 <code>Box</code> 或 <code>list[Box]</code> 的函数。</li>
+</ul>
+</li>
+</ul>
+<p><a name="right_click"></a></p>
+<h3 id="right-click">right_click</h3>
+<pre><code class="language-python">def right_click(self, *args, **kwargs)
+</code></pre>
+<p>执行鼠标右键点击。参数与 <code>click</code> 方法相同，但 <code>key</code> 固定为 &#39;right&#39;。</p>
+<p><a name="middle_click"></a></p>
+<h3 id="middle-click">middle_click</h3>
+<pre><code class="language-python">def middle_click(self, *args, **kwargs)
+</code></pre>
+<p>执行鼠标中键点击。参数与 <code>click</code> 方法相同，但 <code>key</code> 固定为 &#39;middle&#39;。</p>
+<p><a name="swipe"></a></p>
+<h3 id="swipe">swipe</h3>
+<pre><code class="language-python">def swipe(self, from_x, from_y, to_x, to_y, duration=0.5, after_sleep=0.1, settle_time=0)
+</code></pre>
+<p>执行滑动操作。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>from_x</code>, <code>from_y</code> (int): 滑动起点的绝对坐标。</li>
+<li><code>to_x</code>, <code>to_y</code> (int): 滑动终点的绝对坐标。</li>
+<li><code>duration</code> (float): 滑动持续时间（秒）。</li>
+<li><code>after_sleep</code> (float): 滑动后等待的时间（秒）；会调用 <code>sleep</code>，因此会清空当前缓存帧。</li>
+<li><code>settle_time</code> (float): 到达终点后，在松开手指前停留的时间（秒）。</li>
+</ul>
+</li>
+</ul>
+<p><a name="swipe_relative"></a></p>
+<h3 id="swipe-relative">swipe_relative</h3>
+<pre><code class="language-python">def swipe_relative(self, from_x, from_y, to_x, to_y, duration=0.5, settle_time=0)
+</code></pre>
+<p>在屏幕的相对位置之间执行滑动操作。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>from_x</code>, <code>from_y</code> (float): 滑动起点的相对坐标 (0.0 - 1.0)。</li>
+<li><code>to_x</code>, <code>to_y</code> (float): 滑动终点的相对坐标 (0.0 - 1.0)。</li>
+</ul>
+</li>
+</ul>
+<p><a name="input_text"></a></p>
+<h3 id="input-text">input_text</h3>
+<pre><code class="language-python">def input_text(self, text)
+</code></pre>
+<p>输入指定的文本。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>text</code> (str): 要输入的字符串。</li>
+</ul>
+</li>
+</ul>
+<p><a name="send_key"></a></p>
+<h3 id="send-key">send_key</h3>
+<pre><code class="language-python">def send_key(self, key, down_time=0.02, interval=-1, after_sleep=0)
+</code></pre>
+<p>模拟按下并释放一个键盘按键。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>key</code> (str): 要发送的按键（例如 &#39;a&#39;, &#39;enter&#39;, &#39;f1&#39;）。</li>
+</ul>
+</li>
+</ul>
+<p><a name="send_key_down"></a></p>
+<h3 id="send-key-down">send_key_down</h3>
+<pre><code class="language-python">def send_key_down(self, key, after_sleep=0)
+</code></pre>
+<p>模拟按下键盘按键（不释放）。</p>
+<p><a name="send_key_up"></a></p>
+<h3 id="send-key-up">send_key_up</h3>
+<pre><code class="language-python">def send_key_up(self, key, after_sleep=0)
+</code></pre>
+<p>模拟释放键盘按键。</p>
+<p><a name="scroll"></a></p>
+<h3 id="scroll">scroll</h3>
+<pre><code class="language-python">def scroll(self, x, y, count)
+</code></pre>
+<p>在指定坐标位置执行鼠标滚轮滚动。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code>, <code>y</code> (int): 滚动的绝对坐标。</li>
+<li><code>count</code> (int): 滚动量，正数向上，负数向下。</li>
+</ul>
+</li>
+</ul>
+<p><a name="scroll_relative"></a></p>
+<h3 id="scroll-relative">scroll_relative</h3>
+<pre><code class="language-python">def scroll_relative(self, x, y, count)
+</code></pre>
+<p>在屏幕的相对位置执行鼠标滚轮滚动。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code>, <code>y</code> (float): 滚动的相对坐标 (0.0 - 1.0)。</li>
+</ul>
+</li>
+</ul>
+<p><a name="mouse_down"></a></p>
+<h3 id="mouse-down">mouse_down</h3>
+<pre><code class="language-python">def mouse_down(self, x=-1, y=-1, name=None, key=&quot;left&quot;)
+</code></pre>
+<p>在指定位置按下鼠标按键（不释放）。</p>
+<p><a name="mouse_up"></a></p>
+<h3 id="mouse-up">mouse_up</h3>
+<pre><code class="language-python">def mouse_up(self, name=None, key=&quot;left&quot;)
+</code></pre>
+<p>释放鼠标按键。</p>
+<p><a name="move"></a></p>
+<h3 id="move">move</h3>
+<pre><code class="language-python">def move(self, x, y)
+</code></pre>
+<p>将鼠标移动到指定的绝对坐标。</p>
+<p><a name="move_relative"></a></p>
+<h3 id="move-relative">move_relative</h3>
+<pre><code class="language-python">def move_relative(self, x, y)
+</code></pre>
+<p>将鼠标移动到指定的相对坐标。</p>
+<p><a name="back"></a></p>
+<h3 id="back">back</h3>
+<pre><code class="language-python">def back(self, *args, after_sleep=0, **kwargs)
+</code></pre>
+<p>模拟返回操作，通常是发送 &#39;esc&#39; 键（PC）或返回键（Android）。支持 <code>after_sleep</code> 参数。</p>
+<h3 id="config-相关-config-相关">Config 相关 { #config-相关 }</h3>
+<p><a name="load_config"></a></p>
+<h3 id="load-config">load_config</h3>
+<pre><code class="language-python">def load_config(self)
+</code></pre>
+<p>加载当前任务的配置文件。通常在任务初始化时自动调用。</p>
+<p><a name="validate_config"></a></p>
+<h3 id="validate-config">validate_config</h3>
+<pre><code class="language-python">def validate_config(self, key, value)
+</code></pre>
+<p>验证一个配置项是否合法。子类可以重写此方法以实现自定义验证逻辑。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>str</code> 或 <code>None</code>: 如果验证失败，返回错误信息字符串；否则返回 <code>None</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="get_global_config"></a></p>
+<h3 id="get-global-config">get_global_config</h3>
+<pre><code class="language-python">def get_global_config(self, option)
+</code></pre>
+<p>获取一个全局配置对象的值。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>option</code> (ConfigOption): 全局配置选项的定义。</li>
+</ul>
+</li>
+</ul>
+<p><a name="get_global_config_desc"></a></p>
+<h3 id="get-global-config-desc">get_global_config_desc</h3>
+<pre><code class="language-python">def get_global_config_desc(self, option) -&gt; str
+</code></pre>
+<p>获取一个全局配置选项的描述。</p>
+<hr>
+<h3 id="任务配置-task-configuration-任务配置-task-configuration">任务配置 (Task Configuration) { #任务配置-task-configuration }</h3>
+<p><code>BaseTask</code> 允许通过 <code>default_config</code> 和 <code>config_type</code> 来定义任务在 GUI 界面中的配置表单。</p>
+<h4 id="默认配置-self-default-config">默认配置 (self.default_config)</h4>
+<p>在 <code>__init__</code> 中定义 <code>self.default_config</code>。框架会根据值的 Python 类型自动推断 GUI 控件：</p>
+<ul>
+<li><code>bool</code>: 开关按钮 (SwitchButton)</li>
+<li><code>int</code>: 整数输入框 (SpinBox)</li>
+<li><code>float</code>: 浮点数输入框 (DoubleSpinBox)</li>
+<li><code>list</code>: 列表修改项 (ModifyListItem)<ul>
+<li>可通过 <code>config_type</code> 提供 <code>options_available</code> (list[str])，限制列表可添加的选项。</li>
+<li>配合 <code>options_available</code> 使用 <code>allow_duplication</code> (bool, 默认 <code>False</code>) 时，可允许重复添加相同选项。</li>
+</ul>
+</li>
+<li><code>str</code>: <ul>
+<li>长度 &gt; 16 或包含 <code>\n</code>: 多行文本框 (TextEdit)</li>
+<li>其他情况: 单行文本框 (LineEdit)</li>
+</ul>
+</li>
+</ul>
+<h4 id="显示指定配置类型-self-config-type">显示指定配置类型 (self.config_type)</h4>
+<p>如果需要更复杂的控件（如下拉菜单、多选框或按钮），可以使用 <code>self.config_type</code> 进行显式定义。
+<code>type</code> 是可选的；当配置项提供 <code>options</code> 时，会根据默认值自动推断为下拉框或多选框。</p>
+<p>目前支持以下类型：</p>
+<ul>
+<li><strong><code>drop_down</code></strong>: 下拉选择框。<ul>
+<li><strong>参数:</strong> <code>options</code> (list[str]): 选项列表。</li>
+</ul>
+</li>
+<li><strong><code>multi_selection</code></strong>: 多选列表。<ul>
+<li><strong>参数:</strong> <code>options</code> (list[str]): 选项列表。</li>
+</ul>
+</li>
+<li><strong><code>text_edit</code></strong>: 强制使用多行文本框。</li>
+<li><strong><code>file_selector</code></strong>: 文件或文件夹选择器。配置值必须是 <code>str</code>，界面会以只读文本显示当前值并提供按钮打开选择器。<ul>
+<li><strong>参数:</strong> <code>selector_type</code> (str, 可选): 选择器类型，<code>&quot;file&quot;</code> 或 <code>&quot;folder&quot;</code>，默认 <code>&quot;file&quot;</code>。</li>
+<li><strong>参数:</strong> <code>dialog_title</code> (str, 可选): 选择器窗口标题。</li>
+<li><strong>参数:</strong> <code>filter</code> (str, 可选): 文件选择器过滤器，例如 <code>&quot;Images (*.png *.jpg);;All Files (*)&quot;</code>，仅在 <code>selector_type</code> 为 <code>&quot;file&quot;</code> 时生效。</li>
+</ul>
+</li>
+<li><strong><code>global</code></strong>: 引用全局配置项。</li>
+<li><strong><code>button</code> (NEW)</strong>: 在配置区域显示一个或多个按钮，用于触发特定方法。<ul>
+<li><strong>参数:</strong><ul>
+<li><code>text</code> (str): 按钮上显示的文本（该文本会参与 <code>og.app.tr</code> 翻译）。</li>
+<li><code>icon</code> (FluentIcon): 可选图标。</li>
+<li><code>callback</code> (callable): 点击按钮时触发的函数或方法。</li>
+<li><code>buttons</code> (list[dict]): 如果需要显示多个按钮，可以提供一个按钮配置列表，每个元素包含上述 <code>text</code>, <code>icon</code>, <code>callback</code>。</li>
+</ul>
+</li>
+<li><strong>注意:</strong> <code>button</code> 类型的配置项其 key 和 value 只用于 GUI 渲染展示，<strong>不会</strong> 被保存到本地配置文件中。</li>
+</ul>
+</li>
+</ul>
+<p>通用可选参数：</p>
+<ul>
+<li><strong><code>sub_configs</code></strong>: 可用于下拉选择框、布尔开关或多选列表，根据当前值控制其他配置项是否显示。key 是选项值或 <code>True</code>/<code>False</code>，value 是需要显示的配置项名称列表。对于多选列表，所有已选选项对应的配置项会按选项顺序合并，重复项只显示一次；未选择任何选项时，所有关联配置项都会隐藏。</li>
+</ul>
+<p><strong>示例代码:</strong></p>
+<pre><code class="language-python">class MyTask(BaseTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.default_config = {
+            &#39;Run Count&#39;: 1,
+            &#39;Mode&#39;: &#39;Default&#39;,
+            &#39;Features&#39;: [&#39;Logging&#39;],
+            &#39;Log Level&#39;: &#39;Info&#39;,
+            &#39;Output Path&#39;: &#39;&#39;,
+            &#39;Input Path&#39;: &#39;&#39;,
+            &#39;Advanced Tool&#39;: &#39;Action&#39; # 占位符
+        }
+        self.config_type = {
+            &#39;Mode&#39;: {
+                &#39;options&#39;: [&#39;Default&#39;, &#39;Fast&#39;],
+                &#39;sub_configs&#39;: {
+                    &#39;Fast&#39;: [&#39;Advanced Tool&#39;]
+                }
+            },
+            &#39;Features&#39;: {
+                &#39;type&#39;: &#39;multi_selection&#39;,
+                &#39;options&#39;: [&#39;Logging&#39;, &#39;Export&#39;],
+                &#39;sub_configs&#39;: {
+                    &#39;Logging&#39;: [&#39;Log Level&#39;],
+                    &#39;Export&#39;: [&#39;Output Path&#39;]
+                }
+            },
+            &#39;Input Path&#39;: {
+                &#39;type&#39;: &#39;file_selector&#39;,
+                &#39;selector_type&#39;: &#39;folder&#39;,
+                &#39;dialog_title&#39;: &#39;Select Input&#39;
+            },
+            &#39;Advanced Tool&#39;: {
+                &#39;type&#39;: &#39;button&#39;,
+                &#39;buttons&#39;: [
+                    {
+                        &#39;text&#39;: &#39;Run Diagnosis&#39;,
+                        &#39;icon&#39;: FluentIcon.SEARCH,
+                        &#39;callback&#39;: self.run_diagnosis
+                    },
+                    {
+                        &#39;text&#39;: &#39;Clean Cache&#39;,
+                        &#39;icon&#39;: FluentIcon.DELETE,
+                        &#39;callback&#39;: self.clean_cache
+                    }
+                ]
+            }
+        }
+        self.config_description = {
+            &#39;Advanced Tool&#39;: &#39;Click to run advanced operations&#39;
+        }
+
+    def run_diagnosis(self):
+        self.log_info(&quot;Starting diagnosis...&quot;)
+</code></pre>
+<hr>
+<h3 id="屏幕画图-screen-drawing-屏幕画图-screen-drawing">屏幕画图 (Screen drawing) { #屏幕画图-screen-drawing }</h3>
+<p><a name="draw_boxes"></a></p>
+<h3 id="draw-boxes">draw_boxes</h3>
+<pre><code class="language-python">def draw_boxes(feature_name=None, boxes=None, color=&quot;red&quot;, debug=True)
+</code></pre>
+<p>在屏幕上绘制一个或多个 <code>Box</code>，用于调试。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>feature_name</code> (str, optional): 绘制的图层名称。</li>
+<li><code>boxes</code> (list[Box] | Box): 要绘制的 <code>Box</code> 对象或列表。</li>
+</ul>
+</li>
+</ul>
+<p><a name="clear_box"></a></p>
+<h3 id="clear-box">clear_box</h3>
+<pre><code class="language-python">def clear_box(self)
+</code></pre>
+<p>清除屏幕上由 <code>draw_boxes</code> 绘制的所有框。</p>
+<p><a name="get_overlay_view"></a></p>
+<h3 id="get-overlay-view">get_overlay_view</h3>
+<pre><code class="language-python">def get_overlay_view(self)
+</code></pre>
+<p>返回覆盖在捕获窗口上的原始 Qt overlay widget。<code>BaseTask</code> 和 <code>CustomTab</code> 可直接调用此方法；
+配置的 <code>my_app</code> 实例也会获得同名方法。无界面运行时返回 <code>None</code>。</p>
+<p>任务线程需要通过 <code>overlay_view.draw(key, callback, duration=None)</code> 注册自定义绘制。回调会在
+Qt 绘制线程中执行，参数为 <code>(painter, overlay_view)</code>，可使用 <code>QPainter</code> 绘制任意内容。存在
+自定义绘制内容时 overlay 会自动显示，不受 <code>Enable Boxes</code> 开关影响。<code>duration</code> 为秒数；不传
+时持续显示，直到调用 <code>overlay_view.clear_draw(key)</code> 或 <code>overlay_view.clear_draw()</code>：</p>
+<pre><code class="language-python">from PySide6.QtGui import QColor, QFont, QPen
+from ok import TriggerTask
+
+
+class StatusOverlayTask(TriggerTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.default_config = {&#39;_enabled&#39;: True}
+        self.trigger_interval = 0.5
+
+    def run(self):
+        overlay = self.get_overlay_view()
+        if overlay is None:
+            return
+
+        status = &quot;Tracking&quot;
+
+        def paint(painter, view):
+            painter.setPen(QPen(QColor(0, 255, 120), 2))
+            painter.drawRect(30, 30, 240, 64)
+            painter.setFont(QFont(&quot;Arial&quot;, 16))
+            painter.drawText(48, 70, status)
+
+        overlay.draw(&quot;status&quot;, paint, duration=1)
+
+    def on_destroy(self):
+        overlay = self.get_overlay_view()
+        if overlay is not None:
+            overlay.clear_draw(&quot;status&quot;)
+</code></pre>
+<p>应用配置可提供 <code>blur_area(width, height)</code> 回调，返回一个 <code>Box</code> 或 <code>list[Box]</code>，用于遮挡
+游戏 UID 等静态区域：</p>
+<pre><code class="language-python">from ok import Box
+
+def blur_area(width, height):
+    return Box(width - 240, height - 42, 240, 42)
+
+config = {
+    &#39;blur_area&#39;: blur_area,
+}
+</code></pre>
+<p>配置后，基本设置中会出现 <code>Enable Blur</code> 开关，启用后可通过子配置 <code>Blur Algorithm</code> 选择
+<code>Inpaint</code>（默认）或 <code>Blur</code>。<code>Inpaint</code> 会使用区域周围的像素重建内容，适用于从较简单背景上移除 UID。
+开启时只在游戏窗口位于前台时显示处理后的区域；按 <code>Blur Interval</code> 检查变化，默认为 <code>1</code>
+秒，设为 <code>0</code> 时每个 <code>next_frame</code> 均检查。保存截图时始终应用所选算法，与该开关无关。若还配置了
+<code>screenshot_processor</code>，它会在处理完成后执行。调试面板中的
+<code>Enable Boxes</code> 仅启用框绘制；overlay 只在有框、处理区域或自定义绘制内容需要显示时出现。</p>
+<h3 id="ocr">OCR</h3>
+<p><a name="ocr"></a></p>
+<h3 id="ocr-2">ocr</h3>
+<pre><code class="language-python">def ocr(self, x=0, y=0, to_x=1, to_y=1, match=None, width=0, height=0, box=None, name=None,
+        threshold=0, frame=None, target_height=0, use_grayscale=False, log=False,
+        screenshot=False, frame_processor=None, lib=&#39;default&#39;)
+</code></pre>
+<p>对屏幕指定区域进行光学字符识别（OCR）。如果不传 <code>match</code>，返回识别出的全部文本框；如果传了 <code>match</code>，只返回名称匹配的文本框。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code>, <code>y</code>, <code>to_x</code>, <code>to_y</code> (float): 识别区域的相对坐标；未传 <code>box</code> 时使用。</li>
+<li><code>match</code> (str | re.Pattern | list[str | re.Pattern] | None): 用于过滤识别结果的名称匹配条件，见 <a href="#%E5%90%8D%E7%A7%B0%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99-match--names">名称匹配规则</a>。</li>
+<li><code>width</code>, <code>height</code> (float): 识别区域的相对宽高；为 <code>0</code> 时使用 <code>to_x - x</code>、<code>to_y - y</code>。</li>
+<li><code>box</code> (Box | str, optional): 指定一个 <code>Box</code> 或预定义区域/特征名称作为识别区域，优先级高于相对坐标。</li>
+<li><code>name</code> (str, optional): 给识别区域命名，主要用于日志和调试绘制。</li>
+<li><code>threshold</code> (float): OCR 结果的置信度阈值；为 <code>0</code> 时使用 <code>self.ocr_default_threshold</code>。</li>
+<li><code>frame</code> (numpy.ndarray, optional): 指定图像帧；不传时使用当前屏幕帧。</li>
+<li><code>target_height</code> (int): 识别前将图像缩放到的目标高度，可以提高识别准确率或速度。</li>
+<li><code>use_grayscale</code> (bool): 识别前是否转为灰度图。</li>
+<li><code>log</code> (bool): 是否输出 OCR 结果日志。</li>
+<li><code>screenshot</code> (bool): 是否保存 OCR 调试截图。</li>
+<li><code>frame_processor</code> (callable, optional): OCR 前对裁剪图像做自定义处理。</li>
+<li><code>lib</code> (str): 使用 <code>config[&#39;ocr&#39;]</code> 中哪个 OCR 配置，默认 <code>&quot;default&quot;</code>。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>list[Box]</code>: 包含识别结果的 <code>Box</code> 对象列表，<code>Box.name</code> 为识别出的文本。</li>
+</ul>
+</li>
+</ul>
+<p><a name="wait_ocr"></a></p>
+<h3 id="wait-ocr">wait_ocr</h3>
+<pre><code class="language-python">def wait_ocr(self, x=0, y=0, to_x=1, to_y=1, width=0, height=0, name=None, box=None, match=None,
+             threshold=0, frame=None, target_height=0, time_out=0, post_action=None,
+             raise_if_not_found=False, log=False, screenshot=False, settle_time=-1, lib=&quot;default&quot;)
+</code></pre>
+<p>等待直到在指定区域内 OCR 识别到文本。大多数参数与 <code>ocr</code> 相同；<code>match</code> 支持字符串、正则以及两者混合列表，见 <a href="#%E5%90%8D%E7%A7%B0%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99-match--names">名称匹配规则</a>。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>list[Box]</code> 或 <code>None</code>: 找到的文本 <code>Box</code> 列表；超时且未抛异常时返回 <code>None</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="wait_click_ocr"></a></p>
+<h3 id="wait-click-ocr">wait_click_ocr</h3>
+<pre><code class="language-python">def wait_click_ocr(self, x=0, y=0, to_x=1, to_y=1, width=0, height=0, box=None, name=None, match=None,
+                   threshold=0, frame=None, target_height=0, time_out=0, raise_if_not_found=False,
+                   recheck_time=0, after_sleep=0, post_action=None, log=False, screenshot=False,
+                   settle_time=-1, lib=&quot;default&quot;)
+</code></pre>
+<p>等待直到 OCR 识别到匹配的文本，并点击找到的结果中的第一个框。参数与 <code>ocr</code> 类似；<code>recheck_time &gt; 0</code> 时会在等待命中后短暂等待并再 OCR 一次。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>list[Box]</code> 或 <code>None</code>: 被点击前得到的 OCR <code>Box</code> 列表；未找到时返回 <code>None</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="add_text_fix"></a></p>
+<h3 id="add-text-fix">add_text_fix</h3>
+<pre><code class="language-python">def add_text_fix(self, fix)
+</code></pre>
+<p>添加 OCR 文本修正规则。用于修正 OCR 引擎常见的识别错误。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>fix</code> (dict): 一个字典，键为错误文本，值为正确文本。</li>
+</ul>
+</li>
+</ul>
+<h3 id="找图-image-finding-找图-image-finding">找图 (Image finding) { #找图-image-finding }</h3>
+<p><a name="find_feature"></a></p>
+<h3 id="find-feature">find_feature</h3>
+<pre><code class="language-python">def find_feature(self, feature_name=None, horizontal_variance=0, vertical_variance=0, threshold=0,
+                 use_gray_scale=False, x=-1, y=-1, to_x=-1, to_y=-1, width=-1, height=-1, box=None,
+                 canny_lower=0, canny_higher=0, frame_processor=None, template=None,
+                 match_method=cv2.TM_CCOEFF_NORMED, screenshot=False, mask_function=None,
+                 frame=None, limit=0, target_height=0) -&gt; List[Box]
+</code></pre>
+<p>在指定区域内查找一个或多个图像特征。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>feature_name</code> (str | list[str]): 要查找的特征名称。</li>
+<li><code>box</code> (Box | str, optional): 在该 <code>Box</code> 区域内进行搜索；字符串会通过 <code>get_box_by_name</code> 转为区域。</li>
+<li><code>threshold</code> (float): 匹配的置信度阈值。</li>
+<li><code>limit</code> (int): 限制返回数量；<code>0</code> 表示不限制。</li>
+<li><code>frame</code> (numpy.ndarray, optional): 指定搜索帧；不传时使用当前屏幕帧。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>list[Box]</code>: 找到的所有匹配特征的 <code>Box</code> 对象列表。</li>
+</ul>
+</li>
+</ul>
+<p><a name="find_one"></a></p>
+<h3 id="find-one">find_one</h3>
+<pre><code class="language-python">def find_one(self, feature_name=None, horizontal_variance=0, vertical_variance=0, threshold=0,
+             use_gray_scale=False, box=None, canny_lower=0, canny_higher=0,
+             frame_processor=None, template=None, mask_function=None, frame=None,
+             match_method=cv2.TM_CCOEFF_NORMED, screenshot=False, limit=1, target_height=0) -&gt; Box
+</code></pre>
+<p>查找单个图像特征，并返回置信度最高的一个。参数与 <code>find_feature</code> 相同。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code> 或 <code>None</code>: 找到的置信度最高的 <code>Box</code> 对象，如果未找到则返回 <code>None</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="wait_feature"></a></p>
+<h3 id="wait-feature">wait_feature</h3>
+<pre><code class="language-python">def wait_feature(self, feature, horizontal_variance=0, vertical_variance=0, threshold=0,
+                 time_out=0, pre_action=None, post_action=None, use_gray_scale=False, box=None,
+                 raise_if_not_found=False, canny_lower=0, canny_higher=0, settle_time=-1,
+                 frame_processor=None, target_height=0)
+</code></pre>
+<p>等待直到在屏幕上找到指定的图像特征。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>feature</code> (str): 要等待的特征名称。</li>
+<li><code>time_out</code> (int): 等待的超时时间（秒）。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code> 或 <code>None</code>: 找到的 <code>Box</code> 对象。</li>
+</ul>
+</li>
+</ul>
+<p><a name="wait_click_feature"></a></p>
+<h3 id="wait-click-feature">wait_click_feature</h3>
+<pre><code class="language-python">def wait_click_feature(self, feature, horizontal_variance=0, vertical_variance=0, threshold=0,
+                       relative_x=0.5, relative_y=0.5, time_out=0, pre_action=None,
+                       post_action=None, box=None, raise_if_not_found=True, use_gray_scale=False,
+                       canny_lower=0, canny_higher=0, click_after_delay=0, settle_time=-1,
+                       after_sleep=0, target_height=0)
+</code></pre>
+<p>等待直到找到指定的图像特征，并对其进行点击。</p>
+<ul>
+<li><strong>返回:</strong><ul>
+<li><code>bool</code>: 如果成功找到并点击，返回 <code>True</code>。</li>
+</ul>
+</li>
+</ul>
+<p><a name="get_box_by_name"></a></p>
+<h3 id="get-box-by-name">get_box_by_name</h3>
+<pre><code class="language-python">def get_box_by_name(self, name) -&gt; Box
+</code></pre>
+<p>根据名称获取一个预定义的 <code>Box</code>。名称可以是定义的特征名，也可以是内置预设区域。</p>
+<ul>
+<li><strong>可选预设名称:</strong><ul>
+<li><code>full_screen</code></li>
+<li><code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code></li>
+<li><code>top_left</code>, <code>top_right</code>, <code>bottom_left</code>, <code>bottom_right</code></li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>Box</code>: 对应的 <code>Box</code> 对象。</li>
+</ul>
+</li>
+</ul>
+<p><a name="get_feature_by_name"></a></p>
+<h3 id="get-feature-by-name">get_feature_by_name</h3>
+<pre><code class="language-python">def get_feature_by_name(self, name)
+</code></pre>
+<p>根据名称获取特性的详细定义和原始图像。</p>
+<p><a name="feature_exists"></a></p>
+<h3 id="feature-exists">feature_exists</h3>
+<pre><code class="language-python">def feature_exists(self, feature_name: str) -&gt; bool
+</code></pre>
+<p>检查指定的特征名称是否在已加载的任务特征集中。</p>
+<p><a name="find_feature_and_set"></a></p>
+<h3 id="find-feature-and-set">find_feature_and_set</h3>
+<pre><code class="language-python">def find_feature_and_set(self, features, horizontal_variance=0, vertical_variance=0, threshold=0) -&gt; bool
+</code></pre>
+<p>查找多个特征并将结果作为同名属性设置到当前任务对象中。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>features</code> (str | list[str]): 要查找的特征名称。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>bool</code>: 是否所有指定的特征都找到了。</li>
+</ul>
+</li>
+</ul>
+<p><a name="find_best_match_in_box"></a></p>
+<h3 id="find-best-match-in-box">find_best_match_in_box</h3>
+<pre><code class="language-python">def find_best_match_in_box(self, box, to_find, threshold, use_gray_scale=False,
+                           canny_lower=0, canny_higher=0,
+                           frame_processor=None, mask_function=None) -&gt; Box
+</code></pre>
+<p>在给定的 <code>Box</code> 内寻找 <code>to_find</code> 列表中置信度最高的一个特征。<code>to_find</code> 应为特征名称列表。</p>
+<p><a name="find_first_match_in_box"></a></p>
+<h3 id="find-first-match-in-box">find_first_match_in_box</h3>
+<pre><code class="language-python">def find_first_match_in_box(self, box, to_find, threshold, use_gray_scale=False,
+                            canny_lower=0, canny_higher=0,
+                            frame_processor=None, mask_function=None) -&gt; Box
+</code></pre>
+<p>在给定的 <code>Box</code> 内按 <code>to_find</code> 顺序查找，第一个找到的特征会被立即返回。</p>
+<h3 id="找色-color-finding-找色-color-finding">找色 (Color finding) { #找色-color-finding }</h3>
+<p><a name="calculate_color_percentage"></a></p>
+<h3 id="calculate-color-percentage">calculate_color_percentage</h3>
+<pre><code class="language-python">def calculate_color_percentage(self, color, box: Box | str) -&gt; float
+</code></pre>
+<p>计算指定 <code>Box</code> 区域内特定颜色的像素百分比。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>color</code> (dict): 颜色范围字典，格式为 <code>{&#39;r&#39;: (min, max), &#39;g&#39;: (min, max), &#39;b&#39;: (min, max)}</code>。</li>
+<li><code>box</code> (Box | str): 要计算的 <code>Box</code> 对象或其名称。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>float</code>: 颜色像素所占的百分比 (0.0 - 1.0)。</li>
+</ul>
+</li>
+</ul>
+<h3 id="显示信息-display-information-显示信息-display-information">显示信息 (Display information) { #显示信息-display-information }</h3>
+<p><a name="notification"></a></p>
+<h3 id="notification">notification</h3>
+<pre><code class="language-python">def notification(self, message, title=None, error=False, tray=False, show_tab=None, params=None)
+</code></pre>
+<p>在主界面显示一个通知信息条或系统托盘通知。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>message</code> (str): 通知内容。</li>
+<li><code>tray</code> (bool): 是否同时显示系统托盘通知。</li>
+<li><code>show_tab</code> (str): 点击通知时跳转到的 UI 选项卡。</li>
+<li><code>params</code> (any): 随通知一起传递给 UI 的附加参数。</li>
+</ul>
+</li>
+</ul>
+<p><a name="info_set"></a></p>
+<h3 id="info-set">info_set</h3>
+<pre><code class="language-python">def info_set(self, key, value)
+</code></pre>
+<p>在任务的监控信息中设置一个键值对（会显示在 UI 的任务卡片中）。</p>
+<p><a name="info_get"></a></p>
+<h3 id="info-get">info_get</h3>
+<pre><code class="language-python">def info_get(self, key, default=None)
+</code></pre>
+<p>从任务的监控信息中获取一个值。</p>
+<p><a name="info_incr"></a></p>
+<h3 id="info-incr">info_incr</h3>
+<pre><code class="language-python">def info_incr(self, key, inc=1)
+</code></pre>
+<p>增加监控信息中的数值。</p>
+<p><a name="info_add"></a></p>
+<h3 id="info-add">info_add</h3>
+<pre><code class="language-python">def info_add(self, key, count=1)
+</code></pre>
+<p>同 <code>info_incr</code>。</p>
+<p><a name="info_add_to_list"></a></p>
+<h3 id="info-add-to-list">info_add_to_list</h3>
+<pre><code class="language-python">def info_add_to_list(self, key, item)
+</code></pre>
+<p>将一个项添加到监控信息中的列表（如果键不存在则创建列表）。</p>
+<p><a name="info_clear"></a></p>
+<h3 id="info-clear">info_clear</h3>
+<pre><code class="language-python">def info_clear(self)
+</code></pre>
+<p>清除当前任务的所有监控信息。</p>
+<h3 id="日志-logging-日志-logging">日志 (Logging) { #日志-logging }</h3>
+<p><a name="log_info"></a></p>
+<h3 id="log-info">log_info</h3>
+<pre><code class="language-python">def log_info(self, message, notify=False)
+</code></pre>
+<p>记录一条信息级别的日志。</p>
+<p><a name="log_debug"></a></p>
+<h3 id="log-debug">log_debug</h3>
+<pre><code class="language-python">def log_debug(self, message, notify=False)
+</code></pre>
+<p>记录一条调试级别的日志。</p>
+<p><a name="log_error"></a></p>
+<h3 id="log-error">log_error</h3>
+<pre><code class="language-python">def log_error(self, message, exception=None, notify=False)
+</code></pre>
+<p>记录一条错误级别的日志。</p>
+<h3 id="其他-other-其他-other">其他 (Other) { #其他-other }</h3>
+<p><a name="is_adb"></a></p>
+<h3 id="is-adb">is_adb</h3>
+<pre><code class="language-python">def is_adb(self) -&gt; bool
+</code></pre>
+<p>判断当前是否连接的是 ADB 设备（安卓/模拟器）。</p>
+<p><a name="is_browser"></a></p>
+<h3 id="is-browser">is_browser</h3>
+<pre><code class="language-python">def is_browser(self) -&gt; bool
+</code></pre>
+<p>判断当前是否正在控制浏览器设备。</p>
+<p><a name="adb_shell"></a></p>
+<h3 id="adb-shell">adb_shell</h3>
+<pre><code class="language-python">def adb_shell(self, *args, **kwargs) -&gt; str
+</code></pre>
+<p>执行一条 ADB shell 指令并返回输出字符串。</p>
+<p><a name="ensure_in_front"></a></p>
+<h3 id="ensure-in-front">ensure_in_front</h3>
+<pre><code class="language-python">def ensure_in_front(self)
+</code></pre>
+<p>确保游戏窗口或 ADB 模拟器处于前台显示状态。只有目标应用或游戏必须在前台才能接收输入时，才需要主动调用此方法；大部分支持后台输入的设备或窗口交互方式不需要调用。</p>
+<p><a name="box_of_screen"></a></p>
+<h3 id="box-of-screen">box_of_screen</h3>
+<pre><code class="language-python">def box_of_screen(self, x, y, to_x=1.0, to_y=1.0, width=0.0, height=0.0, name=None,
+                  hcenter=False, vcenter=False, confidence=1.0) -&gt; Box
+</code></pre>
+<p>根据相对比例创建一个相对于当前屏幕尺寸的 <code>Box</code> 对象。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>x</code>, <code>y</code> (float): 相对于屏幕的相对坐标 (0.0 - 1.0)。</li>
+<li><code>to_x</code>, <code>to_y</code> (float): 右下角相对坐标；未显式指定 <code>width</code>/<code>height</code> 时用于计算大小。</li>
+<li><code>width</code>, <code>height</code> (float): 相对宽高；为 <code>0</code> 时根据 <code>to_x</code>/<code>to_y</code> 计算。</li>
+<li><code>name</code> (str, optional): 生成的 <code>Box</code> 名称。</li>
+<li><code>hcenter</code>, <code>vcenter</code> (bool): 在非标准屏幕比例下按水平/垂直居中规则缩放坐标。</li>
+<li><code>confidence</code> (float): 写入返回 <code>Box.confidence</code> 的置信度。</li>
+</ul>
+</li>
+</ul>
+<p><a name="box_of_screen_scaled"></a></p>
+<h3 id="box-of-screen-scaled">box_of_screen_scaled</h3>
+<pre><code class="language-python">def box_of_screen_scaled(self, original_screen_width, original_screen_height, x_original, y_original,
+                         to_x=0, to_y=0, width_original=0, height_original=0,
+                         name=None, hcenter=False, vcenter=False, confidence=1.0) -&gt; Box
+</code></pre>
+<p>根据原始参考屏幕的分辨率，将坐标缩放到当前屏幕分辨率并创建一个 <code>Box</code>。</p>
+<p><a name="screen_width"></a></p>
+<h3 id="screen-width">screen_width</h3>
+<pre><code class="language-python">@property
+def screen_width(self) -&gt; int
+</code></pre>
+<p>获取当前屏幕的像素宽度。</p>
+<p><a name="screen_height"></a></p>
+<h3 id="screen-height">screen_height</h3>
+<pre><code class="language-python">@property
+def screen_height(self) -&gt; int
+</code></pre>
+<p>获取当前屏幕的像素高度。</p>
+<p><a name="width_of_screen"></a></p>
+<h3 id="width-of-screen">width_of_screen</h3>
+<pre><code class="language-python">def width_of_screen(self, percent) -&gt; int
+</code></pre>
+<p>根据传入的百分比计算并返回对应的屏幕像素宽度。</p>
+<p><a name="wait_until"></a></p>
+<h3 id="wait-until">wait_until</h3>
+<pre><code class="language-python">def wait_until(self, condition, time_out=0, pre_action=None, post_action=None, settle_time=-1, raise_if_not_found=False)
+</code></pre>
+<p>等待直到 <code>condition</code> 函数返回一个真值（或非空值）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>condition</code> (callable): 无参数的可调用函数。</li>
+<li><code>time_out</code> (int): 超时时间（秒），0 表示无限等待。</li>
+</ul>
+</li>
+</ul>
+<p><a name="wait_scene"></a></p>
+<h3 id="wait-scene">wait_scene</h3>
+<pre><code class="language-python">def wait_scene(self, scene_type=None, time_out=0, pre_action=None, post_action=None)
+</code></pre>
+<p>等待当前场景变为指定的 <code>scene_type</code>。</p>
+<p><a name="sleep"></a></p>
+<h3 id="sleep">sleep</h3>
+<pre><code class="language-python">def sleep(self, timeout)
+</code></pre>
+<p>让当前任务休眠指定秒数。调用时会重置场景并清空当前缓存帧；休眠期间会处理脚本暂停和 <code>sleep_check</code>。
+如果刚执行了会改变界面的操作，常用 <code>sleep(0.5)</code> 等待界面稳定后再读取新的 <code>frame</code>；如果使用 <code>wait_</code> 开头的方法，则通常不需要在调用前手动 <code>sleep</code>。</p>
+<p><a name="sleep_check"></a></p>
+<h3 id="sleep-check">sleep_check</h3>
+<pre><code class="language-python">def sleep_check(self)
+</code></pre>
+<p>当脚本休眠时，若设置了 <code>sleep_check_interval</code>，会定期调用此方法执行背景检查逻辑。</p>
+<p><a name="run_task_by_class"></a></p>
+<h3 id="run-task-by-class">run_task_by_class</h3>
+<pre><code class="language-python">def run_task_by_class(self, cls)
+</code></pre>
+<p>在当前任务上下文中实例化并运行指定的另一个任务类。</p>
+<p><a name="tr"></a></p>
+<h3 id="tr">tr</h3>
+<pre><code class="language-python">def tr(self, message) -&gt; str
+</code></pre>
+<p>翻译指定的字符串消息（使用应用级的 i18n 系统）。</p>
+<p><a name="should_trigger"></a></p>
+<h3 id="should-trigger">should_trigger</h3>
+<pre><code class="language-python">def should_trigger(self) -&gt; bool
+</code></pre>
+<p>根据配置的 <code>trigger_interval</code> 判断当前是否应该触发任务执行。</p>
+<p><a name="go_to_tab"></a></p>
+<h3 id="go-to-tab">go_to_tab</h3>
+<pre><code class="language-python">def go_to_tab(self, tab)
+</code></pre>
+<p>通知 UI 界面跳转到指定的选项卡。</p>
+<p><a name="find_boxes"></a></p>
+<h3 id="find-boxes">find_boxes</h3>
+<pre><code class="language-python">def find_boxes(self, boxes, match=None, boundary=None) -&gt; list[Box]
+</code></pre>
+<p>对 <code>Box</code> 列表进行过滤，支持名称匹配和边界筛选。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>boxes</code> (list[Box]): 待过滤的 <code>Box</code> 列表。</li>
+<li><code>match</code> (str | re.Pattern | list[str | re.Pattern] | None): 名称匹配条件，见 <a href="#%E5%90%8D%E7%A7%B0%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99-match--names">名称匹配规则</a>。</li>
+<li><code>boundary</code> (Box | str | None): 只保留完全位于该边界内的 <code>Box</code>；字符串会通过 <code>get_box_by_name</code> 转为边界。</li>
+</ul>
+</li>
+<li><strong>返回:</strong><ul>
+<li><code>list[Box]</code>: 过滤后的 <code>Box</code> 列表。</li>
+</ul>
+</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/api_doc/README.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#目录" style="margin-left:0px">目录</a><a href="#box" style="margin-left:0px">Box</a><a href="#box-init" style="margin-left:10px">Box.__init__</a><a href="#box-area" style="margin-left:10px">Box.area</a><a href="#box-in-boundary" style="margin-left:10px">Box.in_boundary</a><a href="#box-scale" style="margin-left:10px">Box.scale</a><a href="#box-center" style="margin-left:10px">Box.center</a><a href="#box-copy" style="margin-left:10px">Box.copy</a><a href="#box-crop-frame" style="margin-left:10px">Box.crop_frame</a><a href="#box-center-distance" style="margin-left:10px">Box.center_distance</a><a href="#box-closest-distance" style="margin-left:10px">Box.closest_distance</a><a href="#box-relative-with-variance" style="margin-left:10px">Box.relative_with_variance</a><a href="#box-find-closest-box" style="margin-left:10px">Box.find_closest_box</a><a href="#basetask" style="margin-left:0px">BaseTask</a><a href="#名称匹配规则-match-names" style="margin-left:10px">名称匹配规则 (match / names)</a><a href="#帧刷新与等待" style="margin-left:10px">帧刷新与等待</a><a href="#截图-screenshot-截图-screenshot" style="margin-left:10px">截图 (Screenshot) { #截图-screenshot }</a><a href="#frame" style="margin-left:10px">frame</a><a href="#next-frame" style="margin-left:10px">next_frame</a><a href="#screenshot" style="margin-left:10px">screenshot</a><a href="#adb-ui-dump" style="margin-left:10px">adb_ui_dump</a><a href="#输入-input-输入-input" style="margin-left:10px">输入 (Input) { #输入-input }</a><a href="#click" style="margin-left:10px">click</a><a href="#click-box" style="margin-left:10px">click_box</a><a href="#click-box-if-name-match" style="margin-left:10px">click_box_if_name_match</a><a href="#click-relative" style="margin-left:10px">click_relative</a><a href="#wait-click-box" style="margin-left:10px">wait_click_box</a><a href="#right-click" style="margin-left:10px">right_click</a><a href="#middle-click" style="margin-left:10px">middle_click</a><a href="#swipe" style="margin-left:10px">swipe</a><a href="#swipe-relative" style="margin-left:10px">swipe_relative</a><a href="#input-text" style="margin-left:10px">input_text</a><a href="#send-key" style="margin-left:10px">send_key</a><a href="#send-key-down" style="margin-left:10px">send_key_down</a><a href="#send-key-up" style="margin-left:10px">send_key_up</a><a href="#scroll" style="margin-left:10px">scroll</a><a href="#scroll-relative" style="margin-left:10px">scroll_relative</a><a href="#mouse-down" style="margin-left:10px">mouse_down</a><a href="#mouse-up" style="margin-left:10px">mouse_up</a><a href="#move" style="margin-left:10px">move</a><a href="#move-relative" style="margin-left:10px">move_relative</a><a href="#back" style="margin-left:10px">back</a><a href="#config-相关-config-相关" style="margin-left:10px">Config 相关 { #config-相关 }</a><a href="#load-config" style="margin-left:10px">load_config</a><a href="#validate-config" style="margin-left:10px">validate_config</a><a href="#get-global-config" style="margin-left:10px">get_global_config</a><a href="#get-global-config-desc" style="margin-left:10px">get_global_config_desc</a><a href="#任务配置-task-configuration-任务配置-task-configuration" style="margin-left:10px">任务配置 (Task Configuration) { #任务配置-task-configuration }</a><a href="#屏幕画图-screen-drawing-屏幕画图-screen-drawing" style="margin-left:10px">屏幕画图 (Screen drawing) { #屏幕画图-screen-drawing }</a><a href="#draw-boxes" style="margin-left:10px">draw_boxes</a><a href="#clear-box" style="margin-left:10px">clear_box</a><a href="#get-overlay-view" style="margin-left:10px">get_overlay_view</a><a href="#ocr" style="margin-left:10px">OCR</a><a href="#ocr-2" style="margin-left:10px">ocr</a><a href="#wait-ocr" style="margin-left:10px">wait_ocr</a><a href="#wait-click-ocr" style="margin-left:10px">wait_click_ocr</a><a href="#add-text-fix" style="margin-left:10px">add_text_fix</a><a href="#找图-image-finding-找图-image-finding" style="margin-left:10px">找图 (Image finding) { #找图-image-finding }</a><a href="#find-feature" style="margin-left:10px">find_feature</a><a href="#find-one" style="margin-left:10px">find_one</a><a href="#wait-feature" style="margin-left:10px">wait_feature</a><a href="#wait-click-feature" style="margin-left:10px">wait_click_feature</a><a href="#get-box-by-name" style="margin-left:10px">get_box_by_name</a><a href="#get-feature-by-name" style="margin-left:10px">get_feature_by_name</a><a href="#feature-exists" style="margin-left:10px">feature_exists</a><a href="#find-feature-and-set" style="margin-left:10px">find_feature_and_set</a><a href="#find-best-match-in-box" style="margin-left:10px">find_best_match_in_box</a><a href="#find-first-match-in-box" style="margin-left:10px">find_first_match_in_box</a><a href="#找色-color-finding-找色-color-finding" style="margin-left:10px">找色 (Color finding) { #找色-color-finding }</a><a href="#calculate-color-percentage" style="margin-left:10px">calculate_color_percentage</a><a href="#显示信息-display-information-显示信息-display-information" style="margin-left:10px">显示信息 (Display information) { #显示信息-display-information }</a><a href="#notification" style="margin-left:10px">notification</a><a href="#info-set" style="margin-left:10px">info_set</a><a href="#info-get" style="margin-left:10px">info_get</a><a href="#info-incr" style="margin-left:10px">info_incr</a><a href="#info-add" style="margin-left:10px">info_add</a><a href="#info-add-to-list" style="margin-left:10px">info_add_to_list</a><a href="#info-clear" style="margin-left:10px">info_clear</a><a href="#日志-logging-日志-logging" style="margin-left:10px">日志 (Logging) { #日志-logging }</a><a href="#log-info" style="margin-left:10px">log_info</a><a href="#log-debug" style="margin-left:10px">log_debug</a><a href="#log-error" style="margin-left:10px">log_error</a><a href="#其他-other-其他-other" style="margin-left:10px">其他 (Other) { #其他-other }</a><a href="#is-adb" style="margin-left:10px">is_adb</a><a href="#is-browser" style="margin-left:10px">is_browser</a><a href="#adb-shell" style="margin-left:10px">adb_shell</a><a href="#ensure-in-front" style="margin-left:10px">ensure_in_front</a><a href="#box-of-screen" style="margin-left:10px">box_of_screen</a><a href="#box-of-screen-scaled" style="margin-left:10px">box_of_screen_scaled</a><a href="#screen-width" style="margin-left:10px">screen_width</a><a href="#screen-height" style="margin-left:10px">screen_height</a><a href="#width-of-screen" style="margin-left:10px">width_of_screen</a><a href="#wait-until" style="margin-left:10px">wait_until</a><a href="#wait-scene" style="margin-left:10px">wait_scene</a><a href="#sleep" style="margin-left:10px">sleep</a><a href="#sleep-check" style="margin-left:10px">sleep_check</a><a href="#run-task-by-class" style="margin-left:10px">run_task_by_class</a><a href="#tr" style="margin-left:10px">tr</a><a href="#should-trigger" style="margin-left:10px">should_trigger</a><a href="#go-to-tab" style="margin-left:10px">go_to_tab</a><a href="#find-boxes" style="margin-left:10px">find_boxes</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
+  <script src="../../assets/site.js?v=20260809114348" defer></script></body></html>

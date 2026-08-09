@@ -1,0 +1,8 @@
+{
+  "host": "your-server.example.com",
+  "port": 22,
+  "username": "root",
+  "password": "use-a-local-file-or-environment-secret",
+  "remotePath": "/var/www/ok-websites",
+  "hostFingerprint": "SHA256:replace-with-ssh-host-key-fingerprint"
+}

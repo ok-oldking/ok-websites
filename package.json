@@ -1,0 +1,23 @@
+{
+  "name": "ok-websites",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static, multilingual documentation portal for ok-script projects",
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "serve": "node scripts/serve.mjs",
+    "start": "npm run generate && npm run serve",
+    "test": "node scripts/test-site.mjs",
+    "deploy": "node scripts/deploy.mjs",
+    "status": "node scripts/server-status.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "marked": "^16.2.1",
+    "ssh2": "^1.17.0",
+    "yaml": "^2.9.0"
+  }
+}

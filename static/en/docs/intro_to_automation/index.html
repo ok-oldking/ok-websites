@@ -1,0 +1,96 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Introduction to automation · ok-script</title><meta name="description" content="Introduction to automation — ok-script"><link rel="canonical" href="https://ok-script.com/en/docs/intro_to_automation/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Introduction to automation · ok-script"><meta property="og:description" content="Introduction to automation — ok-script"><meta property="og:url" content="https://ok-script.com/en/docs/intro_to_automation/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../#projects">Projects</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="./" class="active" aria-current="page">Introduction to automation</a><a href="../quick_start/">Quick start</a><a href="../interface/">Interface and developer tools</a><a href="../advanced/">Advanced guide</a><a href="../api_reference/">API reference</a><a href="../building-site/">Build the documentation site</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="introduction-to-computer-vision-game-automation">Introduction to computer-vision game automation</h1>
+<p><a href="../">Documentation</a> · <a href="../quick_start/">Quick start</a> · <a href="../api_reference/">API reference</a> · <a href="../../../docs/intro_to_automation/">简体中文</a></p>
+<p>This guide introduces the basic ideas and tools behind game automation with computer vision. No prior image-processing experience is required.</p>
+<h2 id="1-how-a-computer-plays-a-game">1. How a computer “plays” a game</h2>
+<p>Most visual automation follows the same loop:</p>
+<ol>
+<li><strong>Observe:</strong> capture the game window or device screen.</li>
+<li><strong>Decide:</strong> analyze pixels, text, or detected objects to determine the current state.</li>
+<li><strong>Act:</strong> click, press a key, swipe, or wait for the next state.</li>
+</ol>
+<p>The loop repeats until the task succeeds, fails, or is stopped.</p>
+<h3 id="capture">Capture</h3>
+<p>A screenshot is a matrix of pixels. A 1920×1080 image contains more than two million pixels, usually represented as blue, green, and red channel values. The capture backend determines whether automation can continue while a window is covered or minimized.</p>
+<h3 id="decision-making">Decision making</h3>
+<p>A task turns visual observations into state. Examples include:</p>
+<ul>
+<li>a button template is visible, so it can be clicked;</li>
+<li>OCR reads “Battle Complete,” so the result screen is ready;</li>
+<li>a health-bar region contains less than a threshold of green pixels, so healing is required;</li>
+<li>an object detector finds an enemy, so the cursor should move toward its bounding box.</li>
+</ul>
+<h3 id="input">Input</h3>
+<p>After choosing an action, the framework sends mouse, keyboard, touch, or ADB input. Some actions happen immediately; others wait for a visual condition before continuing.</p>
+<h2 id="2-image-analysis-approaches">2. Image-analysis approaches</h2>
+<h3 id="traditional-computer-vision">Traditional computer vision</h3>
+<p>Traditional OpenCV methods are lightweight, deterministic, and often the best first choice for game interfaces.</p>
+<p><strong>Template matching</strong> searches the screenshot for a small reference image. It works well for stable buttons, icons, and UI elements. ok-script adds position hints and resolution scaling through COCO annotations.</p>
+<p><strong>Color matching</strong> measures or searches for pixels in a color range. Typical uses include health bars, highlighted controls, and status indicators.</p>
+<p><strong>Geometry and contours</strong> identify edges, shapes, and filled regions. They can measure progress bars or locate objects with a distinctive silhouette.</p>
+<h3 id="neural-network-inference">Neural-network inference</h3>
+<p>Neural models are useful when appearance varies too much for a fixed template.</p>
+<ul>
+<li><strong>OCR</strong> extracts text such as player names, counters, or quest descriptions.</li>
+<li><strong>Object detection</strong> locates multiple objects and returns bounding boxes. It is more tolerant of scale, rotation, and partial occlusion than template matching.</li>
+<li><strong>Segmentation</strong> returns detailed object regions and is useful for navigation or irregular shapes.</li>
+<li><strong>Classification</strong> selects one state from a set, such as menu, combat, or map.</li>
+<li><strong>Vision-language models</strong> can interpret broader visual scenes, but they are usually slower and less deterministic than purpose-built recognition.</li>
+</ul>
+<p>Start with the simplest technique that reliably distinguishes the states your task needs.</p>
+<h2 id="3-why-python">3. Why Python</h2>
+<p>Python is a practical choice for visual automation because it combines readable task code with a mature ecosystem:</p>
+<ul>
+<li><a href="https://opencv.org/">OpenCV</a> for image processing and template matching</li>
+<li><a href="https://numpy.org/">NumPy</a> for efficient pixel and array operations</li>
+<li>OCR libraries for reading interface text</li>
+<li><a href="https://pytorch.org/">PyTorch</a> and <a href="https://onnxruntime.ai/">ONNX Runtime</a> for model inference</li>
+<li><a href="https://doc.qt.io/qtforpython-6/">PySide6</a> for desktop interfaces</li>
+<li>pytest or unittest for repeatable task tests</li>
+</ul>
+<p>ok-script integrates these concerns so application projects can focus on task logic.</p>
+<h2 id="4-development-tools">4. Development tools</h2>
+<ul>
+<li><strong>IDE:</strong> <a href="https://www.jetbrains.com/pycharm/download/">PyCharm</a> or <a href="https://code.visualstudio.com/download">Visual Studio Code</a></li>
+<li><strong>Version control:</strong> <a href="https://git-scm.com/">Git</a> and <a href="https://github.com/">GitHub</a></li>
+<li><strong>CI/CD:</strong> GitHub Actions for tests, builds, and releases</li>
+<li><strong>Annotation:</strong> any tool that exports compatible COCO data; the advanced guide describes the workflow</li>
+</ul>
+<h2 id="5-a-practical-first-task">5. A practical first task</h2>
+<p>A useful first automation should have a small number of distinct states:</p>
+<ol>
+<li>Capture a screenshot of a stable screen.</li>
+<li>Annotate one button as a template.</li>
+<li>Use <code>find_one</code> or <code>wait_feature</code> to locate it.</li>
+<li>Click the returned <code>Box</code>.</li>
+<li>Assert the next screen appears.</li>
+</ol>
+<p>This exercise introduces the full observe–decide–act loop without requiring a neural model.</p>
+<p>Continue with the <a href="../quick_start/">quick-start guide</a> to create a runnable project.</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/en/intro_to_automation.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 9, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-how-a-computer-plays-a-game" style="margin-left:0px">1. How a computer “plays” a game</a><a href="#capture" style="margin-left:10px">Capture</a><a href="#decision-making" style="margin-left:10px">Decision making</a><a href="#input" style="margin-left:10px">Input</a><a href="#2-image-analysis-approaches" style="margin-left:0px">2. Image-analysis approaches</a><a href="#traditional-computer-vision" style="margin-left:10px">Traditional computer vision</a><a href="#neural-network-inference" style="margin-left:10px">Neural-network inference</a><a href="#3-why-python" style="margin-left:0px">3. Why Python</a><a href="#4-development-tools" style="margin-left:0px">4. Development tools</a><a href="#5-a-practical-first-task" style="margin-left:0px">5. A practical first task</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">All projects</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260809114348" defer></script></body></html>

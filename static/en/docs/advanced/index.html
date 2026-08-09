@@ -1,0 +1,125 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Advanced guide · ok-script</title><meta name="description" content="Advanced guide — ok-script"><link rel="canonical" href="https://ok-script.com/en/docs/advanced/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Advanced guide · ok-script"><meta property="og:description" content="Advanced guide — ok-script"><meta property="og:url" content="https://ok-script.com/en/docs/advanced/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../#projects">Projects</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../intro_to_automation/">Introduction to automation</a><a href="../quick_start/">Quick start</a><a href="../interface/">Interface and developer tools</a><a href="./" class="active" aria-current="page">Advanced guide</a><a href="../api_reference/">API reference</a><a href="../building-site/">Build the documentation site</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="advanced-guide">Advanced guide</h1>
+<p><a href="../">Documentation</a> · <a href="../quick_start/">Quick start</a> · <a href="../api_reference/">API reference</a> · <a href="../../../docs/after_quick_start/">简体中文</a></p>
+<p>This guide covers the workflows normally needed after the template project is running: template assets, localization, repeatable tests, and automated releases.</p>
+<h2 id="1-template-matching-with-coco-assets">1. Template matching with COCO assets</h2>
+<p>ok-script stores template annotations in COCO format.</p>
+<h3 id="why-coco-annotations-help">Why COCO annotations help</h3>
+<ul>
+<li><strong>Position hints:</strong> an annotation records the template&#39;s relative position in the source screenshot. The matcher can search a smaller region for better speed and accuracy.</li>
+<li><strong>Resolution independence:</strong> annotate screenshots at the highest supported resolution, such as 4K. ok-script scales templates down for lower-resolution users.</li>
+<li><strong>Centralized asset management:</strong> screenshots, categories, and bounding boxes remain connected instead of becoming an unstructured folder of cropped images.</li>
+</ul>
+<h3 id="workflow">Workflow</h3>
+<ol>
+<li>Capture representative screenshots at the highest supported resolution.</li>
+<li>Annotate each reusable UI feature with a COCO-compatible tool. <code>label-studio==1.15.0</code> is known to produce compatible exports; newer export formats may differ.</li>
+<li>Place <code>result.json</code> and its image directory under the application&#39;s <code>assets</code> directory.</li>
+<li>Run <code>python main_debug.py</code> and start the application. Debug mode detects the COCO data, crops annotated regions, and optimizes the templates.</li>
+<li>Reference category names from methods such as <code>find_feature</code>, <code>find_one</code>, and <code>wait_feature</code>.</li>
+</ol>
+<p>Use distinctive regions with minimal animation. Avoid including large backgrounds or changing text in a button template.</p>
+<h2 id="2-internationalization">2. Internationalization</h2>
+<p>Application translations follow the Qt <code>.ts</code>/<code>.qm</code> workflow.</p>
+<h3 id="translation-directories">Translation directories</h3>
+<p>Store gettext application-language files in this structure when the template project uses <code>.po</code> files:</p>
+<pre><code class="language-text">i18n/
+├── en_US/LC_MESSAGES/ok.po
+└── zh_CN/LC_MESSAGES/ok.po
+</code></pre>
+<p>After editing translations, use <strong>Compile i18n</strong> in the application&#39;s developer tools to generate the binary files loaded at runtime.</p>
+<p>For changes to ok-script itself, update every language file under <code>ok/gui/i18n/</code>, ensure no translation remains unfinished, and run:</p>
+<pre><code class="language-powershell">.\compile_i18n.cmd
+</code></pre>
+<h2 id="3-automated-task-tests">3. Automated task tests</h2>
+<p><code>TaskTestCase</code> supplies a controlled task runtime. The key technique is <code>self.set_image()</code>, which replaces live capture with a stable screenshot.</p>
+<pre><code class="language-python">from ok.test.TaskTestCase import TaskTestCase
+from src.tasks.MyProblematicTask import MyProblematicTask
+
+
+class TestUserIssue(TaskTestCase):
+    task_class = MyProblematicTask
+
+    def test_scenario_from_user_screenshot(self):
+        self.set_image(&quot;tests/user_screenshots/user_bug_report_01.png&quot;)
+
+        result = self.task.some_method_that_failed()
+
+        self.assertIsNotNone(result)
+</code></pre>
+<p>This makes recognition tests deterministic and allows a user&#39;s uploaded screenshot to become a permanent regression test.</p>
+<p>Run all tests from the repository root:</p>
+<pre><code class="language-powershell">python -m pytest tests
+</code></pre>
+<p>When running an individual test from PyCharm, set the working directory to the project root so relative paths such as <code>tests/images/</code> resolve correctly.</p>
+<h2 id="4-packaging-and-publishing-with-github-actions">4. Packaging and publishing with GitHub Actions</h2>
+<p>The boilerplate project&#39;s <code>.github/workflows/build.yml</code> can test, package, and publish releases when a version tag such as <code>v1.0.0</code> is pushed. Packaging is driven by <a href="https://github.com/ok-oldking/pyappify">PyAppify</a> and <code>pyappify.yml</code>.</p>
+<p>The typical pipeline is:</p>
+<ol>
+<li>A <code>v*</code> tag triggers the workflow.</li>
+<li>Python and project dependencies are installed.</li>
+<li>Small Python dependencies may be copied into the update repository.</li>
+<li>Automated tests run as a release gate.</li>
+<li>update repositories are synchronized and release notes are generated.</li>
+<li>PyAppify creates Windows artifacts.</li>
+<li>GitHub Release publishes the notes and installers.</li>
+</ol>
+<h3 id="inline-small-source-dependencies">Inline small source dependencies</h3>
+<p><code>inline_ok_requirements</code> includes <code>ok-script</code> and <code>pyappify</code> by default. Additional small, pure-Python packages can be included with repeated arguments:</p>
+<pre><code class="language-powershell">python -m ok.update.inline_ok_requirements --tag &quot;$env:RELEASE_TAG&quot; `
+  --add-inlined-requirement custom-package=custom_package `
+  --add-inlined-requirement another-package=another_package
+</code></pre>
+<p><code>PACKAGE</code> is the distribution name in <code>requirements.txt</code>; <code>FOLDER</code> is the package directory in <code>site-packages</code>. Large assets and platform-specific binaries should stay in the normal dependency and packaging flow.</p>
+<h3 id="regional-update-sources">Regional update sources</h3>
+<p>Multiple <code>profiles</code> in <code>pyappify.yml</code> can produce builds with different update repositories:</p>
+<pre><code class="language-yaml">name: &quot;my-app&quot;
+uac: true
+
+profiles:
+  - name: &quot;China&quot;
+    git_url: &quot;https://example.cn/owner/update.git&quot;
+  - name: &quot;Global&quot;
+    git_url: &quot;https://github.com/owner/update.git&quot;
+</code></pre>
+<p>Each profile embeds its own update URL. A mainland China mirror can therefore coexist with a global GitHub source.</p>
+<h3 id="build-artifacts">Build artifacts</h3>
+<p>A release commonly contains:</p>
+<ul>
+<li>a complete installer for each profile;</li>
+<li>an online installer that downloads resources;</li>
+<li>a launcher archive used to accelerate the next build.</li>
+</ul>
+<p>The launcher archive is a build cache and is not normally intended for end users.</p>
+<h3 id="reuse-a-previous-launcher">Reuse a previous launcher</h3>
+<p>If only task code changed, a workflow can reference a launcher from an earlier release and avoid rebuilding it:</p>
+<pre><code class="language-yaml">use_release: https://api.github.com/repos/OWNER/REPOSITORY/releases/tags/v1.0.0
+</code></pre>
+<p>Update the URL to a release containing the compatible launcher archive.</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/en/advanced.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 9, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-template-matching-with-coco-assets" style="margin-left:0px">1. Template matching with COCO assets</a><a href="#why-coco-annotations-help" style="margin-left:10px">Why COCO annotations help</a><a href="#workflow" style="margin-left:10px">Workflow</a><a href="#2-internationalization" style="margin-left:0px">2. Internationalization</a><a href="#translation-directories" style="margin-left:10px">Translation directories</a><a href="#3-automated-task-tests" style="margin-left:0px">3. Automated task tests</a><a href="#4-packaging-and-publishing-with-github-actions" style="margin-left:0px">4. Packaging and publishing with GitHub Actions</a><a href="#inline-small-source-dependencies" style="margin-left:10px">Inline small source dependencies</a><a href="#regional-update-sources" style="margin-left:10px">Regional update sources</a><a href="#build-artifacts" style="margin-left:10px">Build artifacts</a><a href="#reuse-a-previous-launcher" style="margin-left:10px">Reuse a previous launcher</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">All projects</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260809114348" defer></script></body></html>

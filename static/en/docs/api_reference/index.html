@@ -1,0 +1,514 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>API reference · ok-script</title><meta name="description" content="API reference — ok-script"><link rel="canonical" href="https://ok-script.com/en/docs/api_reference/">
+  <meta property="og:type" content="website"><meta property="og:title" content="API reference · ok-script"><meta property="og:description" content="API reference — ok-script"><meta property="og:url" content="https://ok-script.com/en/docs/api_reference/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../#projects">Projects</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../intro_to_automation/">Introduction to automation</a><a href="../quick_start/">Quick start</a><a href="../interface/">Interface and developer tools</a><a href="../advanced/">Advanced guide</a><a href="./" class="active" aria-current="page">API reference</a><a href="../building-site/">Build the documentation site</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="api-reference">API reference</h1>
+<p><a href="../">Documentation</a> · <a href="../quick_start/">Quick start</a> · <a href="../advanced/">Advanced guide</a> · <a href="../../../docs/api_doc/">简体中文</a></p>
+<p>This is a practical reference for task authors. The implementation is available in <a href="https://github.com/ok-oldking/ok-script/blob/master/ok/task/task.py"><code>ok/task/task.py</code></a> and <a href="https://github.com/ok-oldking/ok-script/blob/master/ok/feature/Box.py"><code>ok/feature/Box.py</code></a>. Optional parameters are omitted from some summaries; inspect the linked source or your IDE signature help for the complete signature.</p>
+<h2 id="importing-task-apis">Importing task APIs</h2>
+<p>A typical application task inherits from <code>BaseTask</code>:</p>
+<pre><code class="language-python">from ok import BaseTask
+
+
+class ClaimRewardTask(BaseTask):
+    def run(self):
+        reward = self.wait_feature(&quot;reward_button&quot;, time_out=5)
+        if reward:
+            self.click_box(reward)
+</code></pre>
+<p>Recognition methods generally return a <code>Box</code>, a list of boxes, or <code>None</code>/an empty list when no match is found.</p>
+<h2 id="box"><code>Box</code></h2>
+<p><code>Box</code> represents a rectangular screen region.</p>
+<pre><code class="language-python">from ok import Box
+
+box = Box(x=100, y=200, width=80, height=40, name=&quot;confirm&quot;)
+</code></pre>
+<p>Important attributes include <code>x</code>, <code>y</code>, <code>width</code>, <code>height</code>, <code>confidence</code>, and <code>name</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Box(x, y, width=0, height=0, confidence=1.0, name=None, to_x=-1, to_y=-1)</code></td>
+<td>Create a box from a position and size, or from opposite corners.</td>
+</tr>
+<tr>
+<td><code>area()</code></td>
+<td>Return <code>width × height</code>.</td>
+</tr>
+<tr>
+<td><code>center()</code></td>
+<td>Return the center coordinates.</td>
+</tr>
+<tr>
+<td><code>scale(width_ratio, height_ratio=None)</code></td>
+<td>Return a scaled box.</td>
+</tr>
+<tr>
+<td><code>copy(...)</code></td>
+<td>Copy the box with optional position and size offsets.</td>
+</tr>
+<tr>
+<td><code>crop_frame(frame)</code></td>
+<td>Crop this region from an image frame.</td>
+</tr>
+<tr>
+<td><code>in_boundary(boxes)</code></td>
+<td>Test whether the box lies within supplied boundaries.</td>
+</tr>
+<tr>
+<td><code>center_distance(other)</code></td>
+<td>Calculate distance between box centers.</td>
+</tr>
+<tr>
+<td><code>closest_distance(other)</code></td>
+<td>Calculate the shortest edge-to-edge distance.</td>
+</tr>
+<tr>
+<td><code>relative_with_variance(relative_x=0.5, relative_y=0.5)</code></td>
+<td>Convert a relative position inside the box to screen coordinates with variance.</td>
+</tr>
+<tr>
+<td><code>find_closest_box(direction, boxes, condition=None)</code></td>
+<td>Find the nearest box in a direction.</td>
+</tr>
+</tbody></table>
+<h2 id="frames-and-screenshots">Frames and screenshots</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>frame()</code></td>
+<td>Return the current cached frame.</td>
+</tr>
+<tr>
+<td><code>next_frame()</code></td>
+<td>Request and return a fresh frame.</td>
+</tr>
+<tr>
+<td><code>screenshot(name=None, frame=None, show_box=False, frame_box=None)</code></td>
+<td>Save a screenshot for debugging or test data.</td>
+</tr>
+<tr>
+<td><code>screen_width()</code> / <code>screen_height()</code></td>
+<td>Return the active capture dimensions.</td>
+</tr>
+<tr>
+<td><code>width_of_screen(percent)</code></td>
+<td>Convert a screen-width ratio to pixels.</td>
+</tr>
+<tr>
+<td><code>box_of_screen(...)</code></td>
+<td>Build a <code>Box</code> from relative screen coordinates.</td>
+</tr>
+<tr>
+<td><code>box_of_screen_scaled(...)</code></td>
+<td>Convert coordinates from a reference resolution to the current screen.</td>
+</tr>
+</tbody></table>
+<p>Use relative screen coordinates where possible so a task can adapt to different resolutions.</p>
+<h2 id="mouse-keyboard-and-touch-input">Mouse, keyboard, and touch input</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>click(x, y, ...)</code></td>
+<td>Click coordinates, a <code>Box</code>, or a list of boxes.</td>
+</tr>
+<tr>
+<td><code>click_box(box, relative_x=0.5, relative_y=0.5, ...)</code></td>
+<td>Click a relative position inside a box.</td>
+</tr>
+<tr>
+<td><code>click_box_if_name_match(boxes, names, ...)</code></td>
+<td>Click boxes whose recognized names match.</td>
+</tr>
+<tr>
+<td><code>click_relative(x, y, ...)</code></td>
+<td>Click at screen-relative coordinates.</td>
+</tr>
+<tr>
+<td><code>wait_click_box(condition, time_out=0, ...)</code></td>
+<td>Wait for a callable to return a box, then click it.</td>
+</tr>
+<tr>
+<td><code>right_click(...)</code> / <code>middle_click(...)</code></td>
+<td>Send alternate mouse-button clicks.</td>
+</tr>
+<tr>
+<td><code>move(x, y)</code> / <code>move_relative(x, y)</code></td>
+<td>Move the pointer without clicking.</td>
+</tr>
+<tr>
+<td><code>mouse_down(...)</code> / <code>mouse_up(...)</code></td>
+<td>Control mouse-button state directly.</td>
+</tr>
+<tr>
+<td><code>scroll(x, y, count)</code></td>
+<td>Scroll at absolute coordinates.</td>
+</tr>
+<tr>
+<td><code>scroll_relative(x, y, count)</code></td>
+<td>Scroll at relative coordinates.</td>
+</tr>
+<tr>
+<td><code>swipe(from_x, from_y, to_x, to_y, duration=0.5, ...)</code></td>
+<td>Swipe between absolute coordinates.</td>
+</tr>
+<tr>
+<td><code>swipe_relative(...)</code></td>
+<td>Swipe between relative coordinates.</td>
+</tr>
+<tr>
+<td><code>input_text(text)</code></td>
+<td>Enter text through the active interaction backend.</td>
+</tr>
+<tr>
+<td><code>send_key(key, down_time=0.02, ...)</code></td>
+<td>Press and release a key.</td>
+</tr>
+<tr>
+<td><code>send_key_down(key)</code> / <code>send_key_up(key)</code></td>
+<td>Control key state directly.</td>
+</tr>
+<tr>
+<td><code>back(...)</code></td>
+<td>Send the platform-appropriate back action.</td>
+</tr>
+</tbody></table>
+<p>Input methods normally include timing and post-action delay parameters. Use those delays instead of raw <code>time.sleep()</code> so task cancellation remains responsive.</p>
+<h2 id="template-matching">Template matching</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Return value and purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>find_feature(feature_name, ...)</code></td>
+<td>Return all matches for one or more named COCO features.</td>
+</tr>
+<tr>
+<td><code>find_one(feature_name, ...)</code></td>
+<td>Return the best single match.</td>
+</tr>
+<tr>
+<td><code>wait_feature(feature, time_out=0, ...)</code></td>
+<td>Poll until a feature appears or timeout expires.</td>
+</tr>
+<tr>
+<td><code>wait_click_feature(feature, ...)</code></td>
+<td>Wait for a feature and click it.</td>
+</tr>
+<tr>
+<td><code>feature_exists(feature_name)</code></td>
+<td>Return whether a named feature is available in the asset set.</td>
+</tr>
+<tr>
+<td><code>get_feature_by_name(name)</code></td>
+<td>Return the stored feature definition.</td>
+</tr>
+<tr>
+<td><code>get_box_by_name(name)</code></td>
+<td>Return the annotated reference box.</td>
+</tr>
+<tr>
+<td><code>find_feature_and_set(features, ...)</code></td>
+<td>Match several features and return the matching set.</td>
+</tr>
+<tr>
+<td><code>find_best_match_in_box(box, to_find, threshold, ...)</code></td>
+<td>Match a supplied image inside a box and return the best result.</td>
+</tr>
+<tr>
+<td><code>find_first_match_in_box(box, to_find, threshold, ...)</code></td>
+<td>Return the first acceptable image match inside a box.</td>
+</tr>
+</tbody></table>
+<p>Frequently used matching options include:</p>
+<ul>
+<li><code>threshold</code>: minimum similarity;</li>
+<li><code>horizontal_variance</code> and <code>vertical_variance</code>: expand the expected search region;</li>
+<li><code>use_gray_scale</code>: ignore color where supported;</li>
+<li><code>frame</code>: reuse a known frame to keep several recognition calls consistent.</li>
+</ul>
+<pre><code class="language-python">confirm = self.find_one(&quot;confirm_button&quot;, threshold=0.8)
+if confirm:
+    self.click_box(confirm)
+</code></pre>
+<h2 id="ocr">OCR</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ocr(...)</code></td>
+<td>Recognize text in a relative region or <code>Box</code>.</td>
+</tr>
+<tr>
+<td><code>wait_ocr(..., time_out=0, ...)</code></td>
+<td>Poll until matching text is recognized.</td>
+</tr>
+<tr>
+<td><code>wait_click_ocr(...)</code></td>
+<td>Wait for recognized text and click its box.</td>
+</tr>
+<tr>
+<td><code>add_text_fix(fix)</code></td>
+<td>Add an OCR correction rule for common recognition errors.</td>
+</tr>
+</tbody></table>
+<p><code>match</code> accepts the text-matching expression used by the configured OCR engine. Restrict OCR to the smallest stable region that contains the target text; this improves both speed and accuracy.</p>
+<pre><code class="language-python">result = self.wait_ocr(box=self.box_of_screen(0.6, 0.7, 0.95, 0.95),
+                       match=&quot;Confirm|OK&quot;, time_out=5)
+</code></pre>
+<h2 id="color-analysis">Color analysis</h2>
+<p><code>calculate_color_percentage(color, box)</code> returns the proportion of a region that matches a color definition. <code>box</code> may be a <code>Box</code> or a named feature region.</p>
+<pre><code class="language-python">health_ratio = self.calculate_color_percentage(&quot;#34c759&quot;, &quot;health_bar&quot;)
+</code></pre>
+<h2 id="waiting-and-task-flow">Waiting and task flow</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>wait_until(condition, time_out=0, ...)</code></td>
+<td>Poll a callable until it returns a truthy result.</td>
+</tr>
+<tr>
+<td><code>wait_scene(scene_type=None, time_out=0, ...)</code></td>
+<td>Wait for a scene transition.</td>
+</tr>
+<tr>
+<td><code>sleep(timeout)</code></td>
+<td>Cancellation-aware task sleep.</td>
+</tr>
+<tr>
+<td><code>sleep_check()</code></td>
+<td>Hook called during managed sleeps.</td>
+</tr>
+<tr>
+<td><code>run_task_by_class(cls)</code></td>
+<td>Run another registered task class while sharing task info.</td>
+</tr>
+<tr>
+<td><code>should_trigger()</code></td>
+<td>Enforce <code>trigger_interval</code> for trigger tasks.</td>
+</tr>
+</tbody></table>
+<p>Callbacks such as <code>pre_action</code> and <code>post_action</code> can perform work before or after polling. Set <code>raise_if_not_found=True</code> where absence is an actual task error rather than a normal branch.</p>
+<h2 id="device-helpers">Device helpers</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>is_adb()</code></td>
+<td>Return whether the active target uses ADB or an emulator device.</td>
+</tr>
+<tr>
+<td><code>is_browser()</code></td>
+<td>Return whether the active interaction is browser-based.</td>
+</tr>
+<tr>
+<td><code>adb_ui_dump()</code></td>
+<td>Retrieve the current Android UI hierarchy.</td>
+</tr>
+<tr>
+<td><code>adb_shell(*args, **kwargs)</code></td>
+<td>Execute an ADB shell command through the device manager.</td>
+</tr>
+<tr>
+<td><code>ensure_in_front()</code></td>
+<td>Bring or keep the target in an interactable state.</td>
+</tr>
+</tbody></table>
+<p>Check <code>is_adb()</code> before calling device-specific operations in tasks that support both Windows and Android.</p>
+<h2 id="configuration">Configuration</h2>
+<p>Configure task controls in the task constructor:</p>
+<pre><code class="language-python">class ExampleTask(BaseTask):
+    def __init__(self):
+        super().__init__()
+        self.default_config = {
+            &quot;Enabled&quot;: True,
+            &quot;Attempts&quot;: 3,
+            &quot;Mode&quot;: &quot;Normal&quot;,
+        }
+        self.config_description = {
+            &quot;Attempts&quot;: &quot;Maximum number of attempts&quot;,
+        }
+        self.config_type = {
+            &quot;Mode&quot;: {&quot;type&quot;: &quot;drop_down&quot;, &quot;options&quot;: [&quot;Normal&quot;, &quot;Safe&quot;]},
+        }
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>API or attribute</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>default_config</code></td>
+<td>Default values shown in the task UI.</td>
+</tr>
+<tr>
+<td><code>config_description</code></td>
+<td>Human-readable help for configuration keys.</td>
+</tr>
+<tr>
+<td><code>config_type</code></td>
+<td>UI editor definitions for non-default input types.</td>
+</tr>
+<tr>
+<td><code>load_config()</code></td>
+<td>Load persisted task configuration.</td>
+</tr>
+<tr>
+<td><code>validate_config(key, value)</code></td>
+<td>Validate or normalize a changed value.</td>
+</tr>
+<tr>
+<td><code>get_global_config(option)</code></td>
+<td>Read a global application option.</td>
+</tr>
+<tr>
+<td><code>get_global_config_desc(option)</code></td>
+<td>Read a global option description.</td>
+</tr>
+</tbody></table>
+<h2 id="task-status-and-messages">Task status and messages</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>info_set(key, value)</code> / <code>info_get(...)</code></td>
+<td>Store or retrieve values displayed for the running task.</td>
+</tr>
+<tr>
+<td><code>info_incr(key, inc=1)</code></td>
+<td>Increment a numeric task value.</td>
+</tr>
+<tr>
+<td><code>info_add(key, count=1)</code></td>
+<td>Add to a task counter.</td>
+</tr>
+<tr>
+<td><code>info_add_to_list(key, item)</code></td>
+<td>Append one or more items to a task list.</td>
+</tr>
+<tr>
+<td><code>info_clear()</code></td>
+<td>Clear all task information.</td>
+</tr>
+<tr>
+<td><code>log_info(message, notify=False)</code></td>
+<td>Log an informational message and expose it in task info.</td>
+</tr>
+<tr>
+<td><code>log_debug(message, notify=False)</code></td>
+<td>Log a debug message.</td>
+</tr>
+<tr>
+<td><code>log_error(message, exception=None, notify=False)</code></td>
+<td>Log an error and optionally notify the user.</td>
+</tr>
+<tr>
+<td><code>notification(message, title=None, ...)</code></td>
+<td>Show an application or tray notification.</td>
+</tr>
+<tr>
+<td><code>tr(message)</code></td>
+<td>Translate a task string through the application translator.</td>
+</tr>
+<tr>
+<td><code>go_to_tab(tab)</code></td>
+<td>Navigate the application UI to a tab.</td>
+</tr>
+</tbody></table>
+<h2 id="debug-overlays">Debug overlays</h2>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>draw_boxes(feature_name=None, boxes=None, color=&quot;red&quot;, debug=True)</code></td>
+<td>Draw recognition boxes on the debug overlay.</td>
+</tr>
+<tr>
+<td><code>clear_box()</code></td>
+<td>Clear overlay boxes.</td>
+</tr>
+<tr>
+<td><code>get_overlay_view()</code></td>
+<td>Return the active overlay view.</td>
+</tr>
+</tbody></table>
+<p>Overlays should be treated as debug output; production task logic must rely on recognition results, not overlay state.</p>
+<h2 id="finding-related-boxes">Finding related boxes</h2>
+<p><code>find_boxes(boxes, match=None, boundary=None)</code> filters or relates recognized boxes by text/name and boundary. <code>Box.find_closest_box()</code> is useful for directional UI navigation when several candidates are present.</p>
+<h2 id="testing">Testing</h2>
+<p>Use <code>TaskTestCase</code> to run task methods against fixed screenshots:</p>
+<pre><code class="language-python">from ok.test.TaskTestCase import TaskTestCase
+
+
+class TestClaimReward(TaskTestCase):
+    task_class = ClaimRewardTask
+
+    def test_reward_button(self):
+        self.set_image(&quot;tests/images/reward_screen.png&quot;)
+        self.assertIsNotNone(self.task.find_one(&quot;reward_button&quot;))
+</code></pre>
+<p>See the <a href="../advanced/#3-automated-task-tests">advanced guide</a> for the complete testing workflow.</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/en/api_reference.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 9, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#importing-task-apis" style="margin-left:0px">Importing task APIs</a><a href="#box" style="margin-left:0px">Box</a><a href="#frames-and-screenshots" style="margin-left:0px">Frames and screenshots</a><a href="#mouse-keyboard-and-touch-input" style="margin-left:0px">Mouse, keyboard, and touch input</a><a href="#template-matching" style="margin-left:0px">Template matching</a><a href="#ocr" style="margin-left:0px">OCR</a><a href="#color-analysis" style="margin-left:0px">Color analysis</a><a href="#waiting-and-task-flow" style="margin-left:0px">Waiting and task flow</a><a href="#device-helpers" style="margin-left:0px">Device helpers</a><a href="#configuration" style="margin-left:0px">Configuration</a><a href="#task-status-and-messages" style="margin-left:0px">Task status and messages</a><a href="#debug-overlays" style="margin-left:0px">Debug overlays</a><a href="#finding-related-boxes" style="margin-left:0px">Finding related boxes</a><a href="#testing" style="margin-left:0px">Testing</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">All projects</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260809114348" defer></script></body></html>

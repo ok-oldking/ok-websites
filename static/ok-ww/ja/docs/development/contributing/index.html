@@ -1,0 +1,127 @@
+<!doctype html><html lang="ja" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Contributing · ok-ww</title><meta name="description" content="Contributing — ok-ww"><link rel="canonical" href="https://ok-ww.ok-script.com/ja/docs/development/contributing/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Contributing · ok-ww"><meta property="og:description" content="Contributing — ok-ww"><meta property="og:url" content="https://ok-ww.ok-script.com/ja/docs/development/contributing/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">本文へ移動</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">ドキュメント</a>
+      <a href="../../../../../en/#projects">プロジェクト</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-wuthering-waves"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>日本語</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/"><span class="language-code">zh-TW</span><span>繁體中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">ja</span><span>日本語</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="テーマを切り替え" title="テーマを切り替え">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="メニューを開く" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>ドキュメント</h2><nav class="docs-nav" aria-label="ドキュメント"><a href="../../">日本語</a><a href="./" class="active" aria-current="page">Contributing</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-ww</a><span>/</span><span>ドキュメント</span></div><div class="markdown-body"><h1 id="贡献指南-contributing-guide">贡献指南 / Contributing Guide</h1>
+<p>感谢你愿意为 <code>ok-ww</code> 做贡献。本项目是基于图像识别的《鸣潮》自动化工具，使用 <a href="https://github.com/ok-oldking/ok-script">ok-script</a> 开发，仅供个人学习与交流使用。提交贡献前，请先阅读<a href="../../../../docs/">简体中文文档</a>中的免责声明、开发者专区和社区信息。</p>
+<p>Thank you for contributing to <code>ok-ww</code>. This project is an image-recognition-based automation tool for Wuthering Waves, developed with <a href="https://github.com/ok-oldking/ok-script">ok-script</a>, and is intended only for personal learning and communication. Before contributing, please read the disclaimer, developer section, and community information in the <a href="../../../../en/docs/">English documentation</a>.</p>
+<h2 id="提交-pr-前-before-opening-a-pr">提交 PR 前 / Before Opening a PR</h2>
+<p>请先确认你的修改范围：</p>
+<p>Please check the scope of your change first:</p>
+<ul>
+<li><p>Bug 修复、文档修正、翻译修正、小型兼容性修复：可以直接提交 PR。</p>
+</li>
+<li><p>新功能、重构、架构调整、角色逻辑大改、任务行为大改、会显著改变现有功能体验的修改：请在提交 PR 前先联系作者或在社区中讨论，确认方向后再开始或提交。</p>
+</li>
+<li><p>不确定是否属于“大改”的修改：请先联系作者。</p>
+</li>
+<li><p>Bug fixes, documentation fixes, translation fixes, and small compatibility fixes: you may open a PR directly.</p>
+</li>
+<li><p>New features, refactors, architecture changes, major character logic changes, major task behavior changes, or changes that significantly alter existing behavior: please contact the author or discuss with the community before opening a PR.</p>
+</li>
+<li><p>If you are unsure whether a change is major, please contact the author first.</p>
+</li>
+</ul>
+<h2 id="联系方式-contact">联系方式 / Contact</h2>
+<ul>
+<li>开发者群 / Developer QQ group: <code>926858895</code></li>
+<li>Discord: <a href="https://discord.gg/vVyCatEBgA">https://discord.gg/vVyCatEBgA</a></li>
+</ul>
+<p>开发者群仅面向有开发能力、希望参与贡献的开发者。入群前请确保你已经能够从源码成功运行项目。</p>
+<p>The developer group is for developers who can contribute to the project. Please make sure you can run the project from source before joining.</p>
+<h2 id="开发环境-development-environment">开发环境 / Development Environment</h2>
+<p>本项目仅支持 Python 3.12。建议使用仓库内的本地虚拟环境运行命令。</p>
+<p>This project only supports Python 3.12. Prefer using the repository-local virtual environment when running commands.</p>
+<pre><code class="language-powershell"># 安装或更新依赖 / Install or update dependencies
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt --upgrade
+
+# 如需开发测试依赖 / For development test dependencies
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt --upgrade
+
+# 运行 Release 版本 / Run release version
+.\.venv\Scripts\python.exe main.py
+
+# 运行 Debug 版本 / Run debug version
+.\.venv\Scripts\python.exe main_debug.py
+</code></pre>
+<p>如果没有 <code>.venv</code>，可以使用 <code>python</code> 代替上面的解释器路径。</p>
+<p>If <code>.venv</code> does not exist, use <code>python</code> instead of the interpreter path above.</p>
+<h2 id="测试-testing">测试 / Testing</h2>
+<p>提交 PR 前，请尽量运行相关测试，并在 PR 描述中说明测试结果。</p>
+<p>Before opening a PR, please run the relevant tests when possible and include the results in the PR description.</p>
+<pre><code class="language-powershell">.\run_tests.ps1
+</code></pre>
+<p>也可以直接运行指定测试：</p>
+<p>You can also run a specific test directly:</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m unittest tests\TestChar.py
+</code></pre>
+<h2 id="pr-要求-pr-requirements">PR 要求 / PR Requirements</h2>
+<ul>
+<li><p>保持修改范围清晰，避免把无关格式化、重构和功能修改混在同一个 PR 中。</p>
+</li>
+<li><p>说明改动目的、主要实现方式、影响范围和测试结果。</p>
+</li>
+<li><p>修改用户可见行为时，请补充截图、录屏或清晰的复现说明。</p>
+</li>
+<li><p>修改配置、任务、角色逻辑或识别逻辑时，请说明适用场景和可能影响。</p>
+</li>
+<li><p>不要提交日志、缓存、临时文件、个人配置或无关生成文件。</p>
+</li>
+<li><p>Keep the PR focused. Avoid mixing unrelated formatting, refactoring, and feature changes in one PR.</p>
+</li>
+<li><p>Describe the purpose, implementation, impact, and test results.</p>
+</li>
+<li><p>For user-visible behavior changes, include screenshots, recordings, or clear reproduction notes.</p>
+</li>
+<li><p>For configuration, task, character logic, or recognition logic changes, describe the applicable scenarios and possible impact.</p>
+</li>
+<li><p>Do not commit logs, caches, temporary files, personal settings, or unrelated generated files.</p>
+</li>
+</ul>
+<h2 id="提交流程-submission-flow">提交流程 / Submission Flow</h2>
+<ol>
+<li><p>Fork 本仓库并创建你的功能分支。</p>
+</li>
+<li><p>完成修改并运行相关测试。</p>
+</li>
+<li><p>确认是否需要先联系作者，尤其是新功能或大幅修改现有功能。</p>
+</li>
+<li><p>提交 PR，并填写 PR 模板中的所有相关内容。</p>
+</li>
+<li><p>根据维护者反馈调整修改。</p>
+</li>
+<li><p>Fork this repository and create your feature branch.</p>
+</li>
+<li><p>Make the changes and run relevant tests.</p>
+</li>
+<li><p>Confirm whether author contact is needed, especially for new features or major changes to existing behavior.</p>
+</li>
+<li><p>Open a PR and fill in all relevant sections of the PR template.</p>
+</li>
+<li><p>Update the PR based on maintainer feedback.</p>
+</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-wuthering-waves/blob/eea9cf3d2607976b661de3e376c5ed23806f90ee/docs/development/contributing.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub でソースを見る ↗</a> · ページ生成日時: 2026年8月9日</div></article><aside class="docs-toc"><h2>このページ</h2><nav class="toc-list"><a href="#提交-pr-前-before-opening-a-pr" style="margin-left:0px">提交 PR 前 / Before Opening a PR</a><a href="#联系方式-contact" style="margin-left:0px">联系方式 / Contact</a><a href="#开发环境-development-environment" style="margin-left:0px">开发环境 / Development Environment</a><a href="#测试-testing" style="margin-left:0px">测试 / Testing</a><a href="#pr-要求-pr-requirements" style="margin-left:0px">PR 要求 / PR Requirements</a><a href="#提交流程-submission-flow" style="margin-left:0px">提交流程 / Submission Flow</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>AGPL-3.0 でオープンソース。ドキュメントはプロジェクトソースから自動生成されます。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-wuthering-waves"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">全プロジェクト</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260809114348" defer></script></body></html>

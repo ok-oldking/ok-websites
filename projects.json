@@ -1,0 +1,125 @@
+{
+  "site": {
+    "url": "https://ok-script.com",
+    "name": "OK Automation",
+    "defaultLocale": "zh-CN"
+  },
+  "projects": [
+    {
+      "id": "ok-script",
+      "name": "ok-script",
+      "repository": "https://github.com/ok-oldking/ok-script.git",
+      "github": "ok-oldking/ok-script",
+      "domain": "https://ok-script.com",
+      "outputFolder": "",
+      "pypi": "ok-script",
+      "siteIcon": "/assets/project-icons/ok-script.svg",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "cyan",
+      "type": "framework",
+      "fallbackMetadata": { "stars": 681, "forks": 188, "release": "1.0.184" },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": "docs", "index": "index.md" },
+        { "code": "en", "label": "English", "source": "docs/en", "index": "index.md" }
+      ]
+    },
+    {
+      "id": "ok-ww",
+      "name": "ok-ww",
+      "repository": "https://github.com/ok-oldking/ok-wuthering-waves.git",
+      "github": "ok-oldking/ok-wuthering-waves",
+      "domain": "https://ok-ww.ok-script.com",
+      "outputFolder": "ok-ww",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "violet",
+      "type": "application",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 6971,
+        "forks": 588,
+        "release": "v3.5.27",
+        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.5.27",
+        "releaseAssets": [
+          { "name": "ok-ww-win32-China-setup.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-China-setup.exe" },
+          { "name": "ok-ww-win32-Global-setup.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-Global-setup.exe" }
+        ],
+        "mirrors": [
+          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=okww&source=ok-ww-release" },
+          { "label": "百度网盘", "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww" },
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/418018ddf7a0" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": "docs/zh-CN", "index": "index.md" },
+        { "code": "en", "label": "English", "source": "docs/en", "index": "index.md" },
+        { "code": "zh-TW", "label": "繁體中文", "source": "docs/zh-TW", "index": "index.md" },
+        { "code": "ja", "label": "日本語", "source": "docs/ja", "index": "index.md" }
+      ]
+    },
+    {
+      "id": "ok-script-app",
+      "name": "ok-script-app",
+      "repository": "https://github.com/ok-oldking/ok-script-app.git",
+      "github": "ok-oldking/ok-script-app",
+      "domain": "https://app.ok-script.com",
+      "outputFolder": "app",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "amber",
+      "type": "template",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 178,
+        "forks": 266,
+        "release": "v1.0.29",
+        "releaseUrl": "https://github.com/ok-oldking/ok-script-app/releases/tag/v1.0.29",
+        "releaseAssets": [
+          { "name": "ok-script-app-win32-China-setup.exe", "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-China-setup.exe" },
+          { "name": "ok-script-app-win32-Global-setup.exe", "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-Global-setup.exe" }
+        ],
+        "mirrors": [
+          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=ok-script-app&source=ok-script-app-release" },
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/a1052cec4d13" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": ".", "index": "README.md" },
+        { "code": "en", "label": "English", "source": ".", "index": "README_en.md" }
+      ]
+    }
+  ],
+  "relatedProjects": [
+    { "name": "ok-ww", "description": { "zh-CN": "鸣潮后台自动战斗、自动刷声骸与一键日常", "en": "Background combat, Echo farming, and one-click daily automation for Wuthering Waves" }, "url": "https://ok-ww.ok-script.com/", "github": "ok-oldking/ok-wuthering-waves", "status": "active", "stars": 6971, "communityLinks": [
+      { "type": "qq", "label": "QQ 1035795301", "value": "1035795301" },
+      { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
+      { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
+    ] },
+    { "name": "ok-script-app", "description": { "zh-CN": "基于 ok-script 开发的 Python 版按键精灵", "en": "A Python automation toolkit built with ok-script" }, "url": "https://app.ok-script.com/", "github": "ok-oldking/ok-script-app", "status": "active", "stars": 178, "communityLinks": [
+      { "type": "qq", "label": "QQ 1097603920", "value": "1097603920" },
+      { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
+    ] },
+    { "name": "ok-gf2", "description": { "zh-CN": "少女前线 2：追放 PC 版后台一键日常自动化", "en": "Background, one-click daily automation for Girls' Frontline 2: Exilium on PC" }, "url": "https://github.com/ok-oldking/ok-gf2", "github": "ok-oldking/ok-gf2", "status": "active", "stars": 257, "communityLinks": [
+      { "type": "qq", "label": "QQ 1033950808", "value": "1033950808" }
+    ] },
+    { "name": "ok-starrailassistant", "description": { "zh-CN": "支持 PC 后台运行的崩坏：星穹铁道自动化助手", "en": "A Honkai: Star Rail automation assistant for PC with background operation" }, "url": "https://github.com/Shasnow/ok-starrailassistant", "github": "Shasnow/ok-starrailassistant", "status": "community", "stars": 56 },
+    { "name": "ok-star-resonance", "description": { "zh-CN": "基于 ok-script 的星痕共鸣自动化工具", "en": "A Star Resonance automation tool built with ok-script" }, "url": "https://github.com/Sanheiii/ok-star-resonance", "github": "Sanheiii/ok-star-resonance", "status": "community", "stars": 114 },
+    { "name": "ok-duet-night-abyss", "description": { "zh-CN": "二重螺旋后台副本挂机自动化", "en": "Background dungeon farming automation for Duet Night Abyss" }, "url": "https://github.com/BnanZ0/ok-duet-night-abyss", "github": "BnanZ0/ok-duet-night-abyss", "status": "community", "stars": 656, "communityLinks": [
+      { "type": "qq", "label": "QQ 1063846003", "value": "1063846003" },
+      { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
+      { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
+    ] },
+    { "name": "ok-end-field", "description": { "zh-CN": "基于 ok-script 开发的明日方舟：终末地自动化", "en": "Arknights: Endfield automation built with ok-script" }, "url": "https://github.com/AliceJump/ok-end-field", "github": "AliceJump/ok-end-field", "status": "community", "stars": 530, "communityLinks": [
+      { "type": "qq", "label": "QQ 940581952", "value": "940581952" },
+      { "type": "qq", "label": "QQ 1079581542", "value": "1079581542" },
+      { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" }
+    ] },
+    { "name": "ok-nte", "description": { "zh-CN": "异环后台副本挂机自动化", "en": "Background dungeon farming automation for Neverness to Everness" }, "url": "https://github.com/BnanZ0/ok-nte", "github": "BnanZ0/ok-nte", "status": "community", "stars": 1097, "communityLinks": [
+      { "type": "qq", "label": "QQ 1105569444", "url": "https://qm.qq.com/q/bIiSLoUTVS" },
+      { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
+      { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
+    ] },
+    { "name": "ok-genshin-impact", "description": { "zh-CN": "原神自动拾取、后台剧情与后台一条龙自动化", "en": "Genshin Impact automation for auto-loot, background story, and daily routines" }, "url": "https://github.com/ok-oldking/ok-genshin-impact", "github": "ok-oldking/ok-genshin-impact", "status": "archived", "stars": 250 }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-08-09T11:43:48.459Z",
+  "projects": [
+    {
+      "id": "ok-script",
+      "commit": "1b01637ef8fc6e1438f9a7ebc4ce7403677552d2",
+      "updated": "2026-08-09T13:46:24+08:00",
+      "locales": [
+        "zh-CN",
+        "en"
+      ],
+      "meta": {
+        "stars": 681,
+        "forks": 189,
+        "description": "现代Python游戏自动化框架(支持Windows/模拟器/浏览器)",
+        "release": "1.0.184",
+        "releaseUrl": "https://github.com/ok-oldking/ok-script/releases",
+        "releaseAssets": [],
+        "mirrors": [],
+        "updated": "2026-08-09T05:46:28Z"
+      }
+    },
+    {
+      "id": "ok-ww",
+      "commit": "eea9cf3d2607976b661de3e376c5ed23806f90ee",
+      "updated": "2026-08-09T13:11:37+08:00",
+      "locales": [
+        "zh-CN",
+        "en",
+        "zh-TW",
+        "ja"
+      ],
+      "meta": {
+        "stars": 6973,
+        "forks": 587,
+        "description": "鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves",
+        "release": "v3.5.27",
+        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.5.27",
+        "releaseAssets": [
+          {
+            "name": "ok-ww-win32-China-setup.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-China-setup.exe",
+            "size": 455793064
+          },
+          {
+            "name": "ok-ww-win32-Global-setup.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-Global-setup.exe",
+            "size": 593132797
+          },
+          {
+            "name": "ok-ww-win32-online-setup.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-online-setup.exe",
+            "size": 3986469
+          },
+          {
+            "name": "ok-ww-win32.zip",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32.zip",
+            "size": 4907765
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/win32_sha256.txt",
+            "size": 64
+          }
+        ],
+        "mirrors": [
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=okww&source=ok-ww-release"
+          },
+          {
+            "label": "百度网盘",
+            "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww"
+          },
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/418018ddf7a0"
+          }
+        ],
+        "updated": "2026-08-09T05:11:41Z"
+      }
+    },
+    {
+      "id": "ok-script-app",
+      "commit": "590715469a91ed7de66cffa3f8a808b62e364592",
+      "updated": "2026-07-28T19:38:08+08:00",
+      "locales": [
+        "zh-CN",
+        "en"
+      ],
+      "meta": {
+        "stars": 178,
+        "forks": 266,
+        "description": "Python版按键精灵基于ok-script开发",
+        "release": "v1.0.29",
+        "releaseUrl": "https://github.com/ok-oldking/ok-script-app/releases/tag/v1.0.29",
+        "releaseAssets": [
+          {
+            "name": "ok-script-app-win32-China-setup.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-China-setup.exe",
+            "size": 320738339
+          },
+          {
+            "name": "ok-script-app-win32-Global-setup.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-Global-setup.exe",
+            "size": 329821505
+          },
+          {
+            "name": "ok-script-app-win32-online-setup.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-online-setup.exe",
+            "size": 4143616
+          },
+          {
+            "name": "ok-script-app-win32.zip",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32.zip",
+            "size": 4768987
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/win32_sha256.txt",
+            "size": 64
+          }
+        ],
+        "mirrors": [
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=ok-script-app&source=ok-script-app-release"
+          },
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/a1052cec4d13"
+          }
+        ],
+        "updated": "2026-07-28T11:38:11Z"
+      }
+    }
+  ]
+}

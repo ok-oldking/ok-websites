@@ -1,0 +1,93 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Interface and developer tools · ok-script</title><meta name="description" content="Interface and developer tools — ok-script"><link rel="canonical" href="https://ok-script.com/en/docs/interface/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Interface and developer tools · ok-script"><meta property="og:description" content="Interface and developer tools — ok-script"><meta property="og:url" content="https://ok-script.com/en/docs/interface/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../#projects">Projects</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../intro_to_automation/">Introduction to automation</a><a href="../quick_start/">Quick start</a><a href="./" class="active" aria-current="page">Interface and developer tools</a><a href="../advanced/">Advanced guide</a><a href="../api_reference/">API reference</a><a href="../building-site/">Build the documentation site</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="interface-and-developer-tools">Interface and developer tools</h1>
+<p><a href="../../../docs/interface/">简体中文</a> · <a href="../">Documentation</a> · <a href="../quick_start/">Quick start</a> · <a href="../api_reference/">API reference</a></p>
+<p>ok-script brings task configuration, device connection, scripting, template management, and recognition debugging into one desktop interface. This page explains the tools shown in the current UI screenshots and how they fit together.</p>
+<h2 id="configure-and-run-tasks">Configure and run tasks</h2>
+<p><img src="../../../assets/sources/ok-script/docs/ok_py/image_tasks.png" alt="Task configuration and execution interface"></p>
+<p>The task page lists the one-time and composite tasks supplied by an application. Expand a task card to:</p>
+<ul>
+<li>change dropdown, numeric, toggle, and multi-select options;</li>
+<li>read help text for each option;</li>
+<li>start an individual task and inspect its state;</li>
+<li>reset the task configuration;</li>
+<li>collapse tasks that do not need editing.</li>
+</ul>
+<p>Application developers create these controls with <code>BaseTask.default_config</code>, <code>config_description</code>, and <code>config_type</code>. Users can adjust runtime behavior without editing Python code.</p>
+<h2 id="select-capture-and-interaction-backends">Select capture and interaction backends</h2>
+<p><img src="../../../assets/sources/ok-script/docs/ok_py/image_capture.png" alt="Capture and interaction interface"></p>
+<p>The capture page connects a target and selects the screen-capture and input backends:</p>
+<ol>
+<li>Connect a Windows game, emulator, or ADB device under the target list.</li>
+<li>Select a capture backend. WGC is generally fast, while BitBlt offers broader compatibility.</li>
+<li>Select an interaction backend, such as <code>PostMessage</code> for supported background input.</li>
+<li>Use the screenshot and OCR developer tools to verify the captured image.</li>
+<li>Enable recognition boxes while debugging.</li>
+</ol>
+<p>If capture works but input does not, check the interaction backend and administrator privileges. See the <a href="../quick_start/">quick-start guide</a> for setup details.</p>
+<h2 id="browse-scripts-and-apis">Browse scripts and APIs</h2>
+<p><img src="../../../assets/sources/ok-script/docs/ok_py/image_scripting.png" alt="Script and API browser"></p>
+<p>The scripting page keeps task source and reusable API templates together:</p>
+<ul>
+<li>browse APIs by mouse, keyboard, OCR, template matching, ADB, and other categories;</li>
+<li>switch application tasks with the task selector;</li>
+<li>run or record scripts to validate a small automation sequence;</li>
+<li>insert common calls from templates to reduce typing errors.</li>
+</ul>
+<p>The built-in editor is useful for inspection and quick experiments. Use PyCharm or VS Code with automated tests for larger changes.</p>
+<h2 id="manage-template-assets">Manage template assets</h2>
+<p><img src="../../../assets/sources/ok-script/docs/ok_py/image_template.png" alt="Template asset management interface"></p>
+<p>The template page presents COCO source screenshots and annotation categories as cards. It supports:</p>
+<ul>
+<li>capturing new source screenshots;</li>
+<li>searching by name or category;</li>
+<li>seeing which recognition features belong to each image;</li>
+<li>opening the annotation tool to adjust regions;</li>
+<li>saving optimized template assets.</li>
+</ul>
+<p>Annotate at the highest resolution you plan to support. Choose stable, distinctive regions and exclude animated text. See <a href="../advanced/#1-template-matching-with-coco-assets">Template matching with COCO assets</a> for the complete workflow.</p>
+<h2 id="inspect-the-debug-overlay">Inspect the debug overlay</h2>
+<p><img src="../../../assets/sources/ok-script/docs/ok_py/image_overlay.png" alt="Debug overlay with template-matching results"></p>
+<p>The debug overlay draws recognition state over the captured frame:</p>
+<ul>
+<li>rectangles show search regions and matches;</li>
+<li>labels identify features and may show thresholds or confidence values;</li>
+<li>center guides help verify relative coordinates and screen regions;</li>
+<li>overlapping results reveal templates that are too broad, thresholds that are too low, or inaccurate search regions.</li>
+</ul>
+<p>The overlay is a development and diagnostic aid. Production task logic must use values returned by APIs such as <code>find_one</code>, <code>wait_feature</code>, and <code>ocr</code>, not overlay state.</p>
+<h2 id="recommended-workflow">Recommended workflow</h2>
+<ol>
+<li>Connect the target on the capture page and verify screenshots.</li>
+<li>Capture and annotate stable features on the template page.</li>
+<li>Implement the smallest recognition-and-click sequence in the script page or an IDE.</li>
+<li>Enable the debug overlay and inspect search regions and matches.</li>
+<li>Package stable behavior into a task and verify its configuration UI.</li>
+<li>Add regression tests with fixed screenshots before publishing a build.</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/en/interface.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 9, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#configure-and-run-tasks" style="margin-left:0px">Configure and run tasks</a><a href="#select-capture-and-interaction-backends" style="margin-left:0px">Select capture and interaction backends</a><a href="#browse-scripts-and-apis" style="margin-left:0px">Browse scripts and APIs</a><a href="#manage-template-assets" style="margin-left:0px">Manage template assets</a><a href="#inspect-the-debug-overlay" style="margin-left:0px">Inspect the debug overlay</a><a href="#recommended-workflow" style="margin-left:0px">Recommended workflow</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">All projects</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260809114348" defer></script></body></html>

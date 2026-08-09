@@ -1,0 +1,120 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>快速开始 · ok-script</title><meta name="description" content="快速开始 — ok-script"><link rel="canonical" href="https://ok-script.com/docs/quick_start/">
+  <meta property="og:type" content="website"><meta property="og:title" content="快速开始 · ok-script"><meta property="og:description" content="快速开始 — ok-script"><meta property="og:url" content="https://ok-script.com/docs/quick_start/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="../intro_to_automation/">游戏自动化入门</a><a href="./" class="active" aria-current="page">快速开始</a><a href="../interface/">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="../api_doc/">API 参考</a><a href="../building-site/">构建文档网站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="快速开始">快速开始</h1>
+<p><a href="../../en/docs/quick_start/">English</a> · <a href="../">文档中心</a> · <a href="../after_quick_start/">进阶指南</a> · <a href="../api_doc/">API 参考</a></p>
+<p>本指南帮助你使用 ok-script 模板项目 <code>ok-script-app</code> 创建并运行自己的自动化项目。完成后，你将能连接 Windows 游戏或安卓设备、运行诊断，并开始编写任务。</p>
+<h2 id="开始之前">开始之前</h2>
+<ul>
+<li>Windows 10 或 Windows 11</li>
+<li>Python 3.11 或更高版本（推荐 Python 3.12）</li>
+<li>Git</li>
+<li>Windows 客户端游戏，或已启用 ADB 的安卓模拟器/设备</li>
+</ul>
+<h2 id="1-fork-项目">1. Fork 项目</h2>
+<p>访问 <a href="https://github.com/ok-oldking/ok-script-app"><code>ok-script-app</code></a>，点击页面右上角的 <strong>Use this template</strong>，从模板创建自己的 GitHub 仓库。</p>
+<h2 id="2-clone-项目">2. Clone 项目</h2>
+<p>将您复刻的项目克隆到本地。建议为您自己的项目起一个新名字。</p>
+<pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/your-project-name.git
+cd your-project-name
+</code></pre>
+<p><em>请将 <code>YOUR_USERNAME</code> 和 <code>your-project-name</code> 替换为您的 GitHub 用户名和您项目的名称。</em></p>
+<h2 id="3-安装-python">3. 安装 Python</h2>
+<p>框架支持 Python 3.11 及以上版本，推荐使用 <strong>Python 3.12</strong>。可以从 <a href="https://www.python.org/downloads/">Python 官网</a> 下载。安装后确认版本：</p>
+<h3 id="python-下载渠道">Python 下载渠道</h3>
+<p>中国大陆用户推荐优先使用国内镜像站：</p>
+<ul>
+<li><strong>清华大学开源镜像站</strong>：访问<a href="https://mirrors.tuna.tsinghua.edu.cn/python/">清华大学 Python 镜像仓库</a>，选择所需版本并下载安装包。</li>
+<li><strong>华为云镜像站</strong>：访问<a href="https://mirrors.huaweicloud.com/python/">华为云 Python 镜像</a>，选择对应版本下载。</li>
+<li><strong>官方渠道</strong>：网络顺畅时，可前往 <a href="https://www.python.org/downloads/">Python 官方网站 Downloads 页面</a>下载。</li>
+</ul>
+<p>在版本目录中，Windows 64 位系统通常应选择名称包含 <code>amd64.exe</code> 的安装程序。安装时建议勾选 <strong>Add Python to PATH</strong>。</p>
+<pre><code class="language-powershell">python --version
+</code></pre>
+<h2 id="4-创建虚拟环境">4. 创建虚拟环境</h2>
+<p>建议为项目创建独立的虚拟环境，避免依赖冲突。</p>
+<pre><code class="language-powershell">python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+</code></pre>
+<p>如果 PowerShell 阻止激活脚本，可以直接使用 <code>.\.venv\Scripts\python.exe</code> 执行后续命令。</p>
+<h2 id="5-安装依赖">5. 安装依赖</h2>
+<p>使用 pip 安装项目所需的所有依赖包。</p>
+<pre><code class="language-powershell">python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+</code></pre>
+<h2 id="6-修改-config-py">6. 修改 <code>config.py</code></h2>
+<p>此文件是项目的核心配置文件。您<strong>必须</strong>根据您要适配的游戏类型，正确配置 <code>windows</code> 或 <code>adb</code> 部分，<strong>至少需要配置其中一项</strong>。</p>
+<p>打开 <code>src/config.py</code> 文件，找到并修改以下配置：</p>
+<ul>
+<li><strong><code>windows</code></strong>：适配 Windows 客户端游戏时填写。<ul>
+<li><code>exe</code>：游戏可执行文件名列表，例如 <code>[&#39;StarRail.exe&#39;]</code>。</li>
+<li><code>start_exe</code>：是否由脚本启动并检查游戏进程，默认为 <code>True</code>。设为 <code>False</code> 后，启动任务时不会自动启动或检查游戏。</li>
+<li><code>start_method</code>：启动游戏的方式，默认为 <code>start</code>，也可使用 <code>os.startfile</code>。</li>
+<li><code>interaction</code>：交互方式，例如 <code>Genshin</code>、<code>PostMessage</code> 或 <code>Pynput</code>。</li>
+</ul>
+</li>
+<li><strong><code>adb</code></strong>：适配安卓模拟器或真机时填写。<ul>
+<li><code>packages</code>：游戏包名列表，例如 <code>[&#39;com.abc.efg1&#39;]</code>。</li>
+</ul>
+</li>
+</ul>
+<p><em>您可以同时保留 <code>windows</code> 和 <code>adb</code> 的配置，脚本会根据实际运行的游戏窗口或设备进行匹配。</em></p>
+<h2 id="7-运行脚本">7. 运行脚本</h2>
+<p>项目提供了两种运行模式：</p>
+<ul>
+<li><p><strong>调试模式</strong></p>
+<pre><code class="language-powershell">python main_debug.py
+</code></pre>
+<p>此模式会产生额外的日志，并在游戏界面上绘制方框来标注正在寻找的目标和区域，方便开发和调试。</p>
+</li>
+<li><p><strong>正式模式</strong></p>
+<pre><code class="language-powershell">python main.py
+</code></pre>
+<p>此模式为正式运行版本，不会在游戏界面上绘制额外内容。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>重要提示：</strong> Windows 游戏的输入方式可能需要管理员权限。如果交互没有响应，请以管理员身份启动终端或 IDE。模拟器和 ADB 设备通常不需要管理员权限。</p>
+</blockquote>
+<h2 id="8-测试截图功能">8. 测试截图功能</h2>
+<p>在程序界面中，点击 &quot;截图测试&quot; 按钮。程序会截取当前屏幕并保存。请检查项目 <code>screenshots</code> 目录下是否生成了新的截图文件，以确认功能正常。</p>
+<h2 id="9-运行诊断任务">9. 运行诊断任务</h2>
+<p>点击界面上的 &quot;运行诊断任务&quot; 按钮。这将执行一个预设的诊断任务，帮助您检查环境和配置是否正确。</p>
+<h2 id="10-自定义你的任务">10. 自定义你的任务</h2>
+<p>项目的核心在于任务的扩展。您可以根据您的具体需求，修改示例任务文件或创建新的任务文件：</p>
+<ul>
+<li><strong><code>src/tasks/MyOneTimeTask.py</code></strong>：用于实现只需要执行一次的单次任务（例如，点击签到）。</li>
+<li><strong><code>src/tasks/MyTriggerTask.py</code></strong>：用于实现基于特定触发器（如时间、图像识别）循环执行的任务（例如，自动战斗）。</li>
+</ul>
+<p>通过模仿这两个文件的结构，您可以创建更多符合您业务逻辑的 Task。</p>
+<h2 id="下一步">下一步</h2>
+<ul>
+<li>阅读<a href="../after_quick_start/">进阶指南</a>，学习模板标注、测试、国际化和发布。</li>
+<li>在 <a href="../api_doc/">API 参考</a>中查询截图、输入、OCR 和找图方法。</li>
+<li>如果还不熟悉视觉自动化，先阅读<a href="../intro_to_automation/">游戏自动化入门</a>。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/quick_start/README.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#开始之前" style="margin-left:0px">开始之前</a><a href="#1-fork-项目" style="margin-left:0px">1. Fork 项目</a><a href="#2-clone-项目" style="margin-left:0px">2. Clone 项目</a><a href="#3-安装-python" style="margin-left:0px">3. 安装 Python</a><a href="#python-下载渠道" style="margin-left:10px">Python 下载渠道</a><a href="#4-创建虚拟环境" style="margin-left:0px">4. 创建虚拟环境</a><a href="#5-安装依赖" style="margin-left:0px">5. 安装依赖</a><a href="#6-修改-config-py" style="margin-left:0px">6. 修改 config.py</a><a href="#7-运行脚本" style="margin-left:0px">7. 运行脚本</a><a href="#8-测试截图功能" style="margin-left:0px">8. 测试截图功能</a><a href="#9-运行诊断任务" style="margin-left:0px">9. 运行诊断任务</a><a href="#10-自定义你的任务" style="margin-left:0px">10. 自定义你的任务</a><a href="#下一步" style="margin-left:0px">下一步</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
+  <script src="../../assets/site.js?v=20260809114348" defer></script></body></html>

@@ -179,3 +179,10 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Generated-site tooling
+node_modules/
+.cache/
+deploy.config.local.json
+*.local.pem
+*.local.key

@@ -1,0 +1,93 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>界面与开发工具 · ok-script</title><meta name="description" content="界面与开发工具 — ok-script"><link rel="canonical" href="https://ok-script.com/docs/interface/">
+  <meta property="og:type" content="website"><meta property="og:title" content="界面与开发工具 · ok-script"><meta property="og:description" content="界面与开发工具 — ok-script"><meta property="og:url" content="https://ok-script.com/docs/interface/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20260809114348">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="../intro_to_automation/">游戏自动化入门</a><a href="../quick_start/">快速开始</a><a href="./" class="active" aria-current="page">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="../api_doc/">API 参考</a><a href="../building-site/">构建文档网站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="界面与开发工具">界面与开发工具</h1>
+<p><a href="../../en/docs/interface/">English</a> · <a href="../">文档中心</a> · <a href="../quick_start/">快速开始</a> · <a href="../api_doc/">API 参考</a></p>
+<p>ok-script 将任务配置、设备连接、脚本开发、模板管理和识别调试集中在同一个桌面界面。本页通过界面截图说明各工具的用途和推荐工作流。</p>
+<h2 id="任务配置与执行">任务配置与执行</h2>
+<p><img src="../../assets/sources/ok-script/docs/ok_py/image_tasks.png" alt="任务配置与执行界面"></p>
+<p>任务页显示项目提供的单次任务与组合任务。展开任务卡片后可以：</p>
+<ul>
+<li>修改下拉选项、数字、开关和多选配置；</li>
+<li>阅读每个配置项的说明；</li>
+<li>启动单个任务并查看当前状态；</li>
+<li>重置任务配置；</li>
+<li>折叠暂时不需要修改的任务。</li>
+</ul>
+<p>项目开发者通过 <code>BaseTask.default_config</code>、<code>config_description</code> 和 <code>config_type</code> 定义这些控件。用户不需要修改 Python 代码即可调整运行行为。</p>
+<h2 id="截图与交互方式">截图与交互方式</h2>
+<p><img src="../../assets/sources/ok-script/docs/ok_py/image_capture.png" alt="截图与交互方式界面"></p>
+<p>截图方式页用于连接目标并选择截图、输入后端：</p>
+<ol>
+<li>在“选择窗口”区域连接 Windows 游戏、模拟器或 ADB 设备。</li>
+<li>选择适合目标的截图方式。WGC 通常速度较快，BitBlt 兼容性更好。</li>
+<li>选择交互方式，例如适合后台操作的 <code>PostMessage</code>。</li>
+<li>使用“截图”和“OCR”等开发工具验证画面是否正确。</li>
+<li>调试时启用标记框，观察识别区域与结果。</li>
+</ol>
+<p>如果画面正常但输入没有响应，请检查交互方式和管理员权限。更多配置步骤参见<a href="../quick_start/">快速开始</a>。</p>
+<h2 id="脚本与-api-浏览">脚本与 API 浏览</h2>
+<p><img src="../../assets/sources/ok-script/docs/ok_py/image_scripting.png" alt="脚本与 API 浏览界面"></p>
+<p>脚本页将任务源码与常用 API 模板放在同一界面：</p>
+<ul>
+<li>左侧按鼠标、按键、OCR、模板匹配、ADB 等类别浏览 API；</li>
+<li>在任务下拉框中切换项目任务；</li>
+<li>运行或录制脚本，快速验证较小的自动化片段；</li>
+<li>通过模板插入常见调用，减少手工输入错误。</li>
+</ul>
+<p>内置编辑器适合查看和快速实验；较大的代码修改仍建议使用 PyCharm 或 VS Code，并配合自动化测试。</p>
+<h2 id="模板素材管理">模板素材管理</h2>
+<p><img src="../../assets/sources/ok-script/docs/ok_py/image_template.png" alt="模板素材管理界面"></p>
+<p>模板页以图片卡片展示 COCO 截图和标注类别。你可以：</p>
+<ul>
+<li>截取新的模板源图；</li>
+<li>按名称或类别搜索；</li>
+<li>查看每张截图包含的识别特征；</li>
+<li>打开标注工具调整框选区域；</li>
+<li>保存压缩后的模板素材。</li>
+</ul>
+<p>标注时优先使用计划支持的最高分辨率，并选择稳定、具有区分度且不包含动态文字的区域。详细工作流参见<a href="../after_quick_start/#1-%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D-template-matching">进阶指南</a>。</p>
+<h2 id="调试浮层">调试浮层</h2>
+<p><img src="../../assets/sources/ok-script/docs/ok_py/image_overlay.png" alt="带模板识别结果的调试浮层"></p>
+<p>调试浮层把识别过程直接绘制在捕获画面上：</p>
+<ul>
+<li>矩形框显示搜索区域和匹配结果；</li>
+<li>标签显示特征名称、阈值或置信度；</li>
+<li>中心辅助线用于检查相对坐标和屏幕区域；</li>
+<li>多个重叠结果可以帮助发现模板过宽、阈值过低或搜索区域不准确等问题。</li>
+</ul>
+<p>浮层只用于开发和诊断。正式任务逻辑应依赖 <code>find_one</code>、<code>wait_feature</code>、<code>ocr</code> 等 API 的返回值，而不是浮层状态。</p>
+<h2 id="推荐工作流">推荐工作流</h2>
+<ol>
+<li>在截图方式页连接目标并验证截图。</li>
+<li>在模板页捕获和标注稳定的界面特征。</li>
+<li>在脚本页或 IDE 中实现最小识别与点击流程。</li>
+<li>启用调试浮层检查搜索区域和匹配结果。</li>
+<li>将稳定逻辑封装为任务，并在任务页验证配置体验。</li>
+<li>使用固定截图编写回归测试，然后再进行发布构建。</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/interface.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#任务配置与执行" style="margin-left:0px">任务配置与执行</a><a href="#截图与交互方式" style="margin-left:0px">截图与交互方式</a><a href="#脚本与-api-浏览" style="margin-left:0px">脚本与 API 浏览</a><a href="#模板素材管理" style="margin-left:0px">模板素材管理</a><a href="#调试浮层" style="margin-left:0px">调试浮层</a><a href="#推荐工作流" style="margin-left:0px">推荐工作流</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
+  <script src="../../assets/site.js?v=20260809114348" defer></script></body></html>

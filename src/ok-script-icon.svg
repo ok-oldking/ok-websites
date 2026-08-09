@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">ok-script</title>
+  <defs>
+    <linearGradient id="ok-gradient" x1="12" y1="8" x2="116" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16b6ad"/>
+      <stop offset="1" stop-color="#6555ed"/>
+    </linearGradient>
+  </defs>
+  <path d="M21 99 39 81v18H21Z" fill="#6555ed" opacity=".9"/>
+  <text x="64" y="80" fill="url(#ok-gradient)" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="850" letter-spacing="-6" text-anchor="middle">OK</text>
+</svg>
