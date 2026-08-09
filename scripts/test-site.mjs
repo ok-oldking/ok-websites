@@ -142,7 +142,7 @@ if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*f
 if (!/\.feature-card[^}]*grid-template-columns:\s*45px/.test(css) || /\.feature-icon[^}]*margin-bottom/.test(css)) failures.push('Feature cards are not using the compact horizontal layout.');
 if (/\.hero \.container[^}]*1740px/.test(css) || !/\.landing-container[^}]*1180px/.test(css) || !/\.download-toggle[^}]*align-items:\s*center/.test(css)) failures.push('Landing-section width or dropdown-arrow alignment is incorrect.');
 if (!/\.section-kicker[^}]*font-size:\s*18px/.test(css) || !/\.section-head p[^}]*width:\s*66\.666%/.test(css)) failures.push('Project ecosystem heading or lead width is incorrect.');
-if (!/\.hero-framework h1[^}]*font-size:\s*clamp\(48px,\s*6vw,\s*88px\)/.test(css)) failures.push('Framework hero headline was not reduced.');
+if (!/\.hero-framework[^}]*min-height:\s*460px[^}]*padding:\s*34px 0 28px/.test(css) || !/\.hero-framework h1[^}]*font-size:\s*clamp\(40px,\s*5vw,\s*72px\)/.test(css)) failures.push('Framework hero height or headline size was not reduced.');
 if (!/\.faq-content[^}]*width:\s*100%[^}]*max-width:\s*none/.test(css) || !/<section class="section faq-section"><div class="container landing-container">/.test(wwLanding)) failures.push('FAQ does not share the feature-grid width.');
 if (!/\.faq-section \.section-head h2[^}]*color:\s*var\(--accent-strong\)[^}]*font-size:\s*clamp\(24px,\s*2\.4vw,\s*32px\)/.test(css) || !/\.faq-section \.faq-content > h2[^}]*font-size:\s*clamp\(20px,\s*2vw,\s*25px\)/.test(css)) failures.push('FAQ heading hierarchy is not visually distinct and compact.');
 const rootSitemap = await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8');
