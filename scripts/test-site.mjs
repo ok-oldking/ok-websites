@@ -70,8 +70,8 @@ const firstLastProject = projectCardClasses.findIndex(className => className.inc
 if (firstLastProject >= 0 && projectCardClasses.slice(firstLastProject).some(className => !className.includes('project-last'))) failures.push('Fresh projects appear after archived or six-month-stale projects.');
 const projectsMarkup = rootLanding.match(/<section class="section" id="projects">([\s\S]*?)<\/section>/)?.[1] || '';
 if (/community-(?:row|chip|icon)|class="status\b/.test(projectsMarkup)) failures.push('Project cards still expose community links or status badges.');
-if (!/class="project-top-meta">\s*<a class="project-stars" href="https:\/\/github\.com\/[^"\/]+\/[^"\/]+\/stargazers"[^>]*>★[^<]+<\/a><a class="github-link"/.test(projectsMarkup)) failures.push('Project-card stars are not clickable in the compact top row.');
-if (!/class="community-stars" href="https:\/\/github\.com\/ok-oldking\/ok-script\/stargazers"/.test(rootLanding)) failures.push('Hero GitHub Stars are not clickable.');
+if (!/class="project-top-meta">\s*<a class="project-stars" href="https:\/\/github\.com\/[^"\/]+\/[^"\/]+"[^>]*>★[^<]+<\/a><a class="github-link"/.test(projectsMarkup)) failures.push('Project-card stars do not link to the GitHub repository.');
+if (!/class="community-stars" href="https:\/\/github\.com\/ok-oldking\/ok-script"/.test(rootLanding) || /class="community-stars" href="[^"]*\/stargazers"/.test(rootLanding)) failures.push('Hero GitHub Stars do not link to the repository.');
 if (/<a\b[^>]*href="https:\/\/(?:ok-script\.com|ok-ww\.ok-script\.com|app\.ok-script\.com)/i.test(rootLanding)) failures.push('Root landing page still contains domain-based internal navigation.');
 const wwLanding = await fs.readFile(path.join(root, 'ok-ww', 'index.html'), 'utf8');
 if (!wwLanding.includes('https://ok-ww.ok-script.com/')) failures.push('ok-ww canonical domain is missing.');
