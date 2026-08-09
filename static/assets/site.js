@@ -47,6 +47,29 @@
     open.querySelector('[data-dropdown-trigger]')?.focus();
   });
 
+  document.querySelectorAll('[data-download-control]').forEach(control => {
+    const links = [...control.querySelectorAll('[data-download-link]')];
+    const toggle = control.querySelector('[data-dropdown-trigger]');
+    const menu = control.querySelector('[data-dropdown-menu]');
+    const label = control.querySelector('[data-download-label]');
+
+    links.forEach(link => link.addEventListener('click', event => {
+      if (control.dataset.downloading === 'true') {
+        event.preventDefault();
+        return;
+      }
+
+      control.dataset.downloading = 'true';
+      links.forEach(item => {
+        item.setAttribute('aria-disabled', 'true');
+        item.setAttribute('tabindex', '-1');
+      });
+      if (toggle) toggle.disabled = true;
+      if (menu) menu.hidden = true;
+      if (label) label.textContent = control.dataset.downloadingLabel || 'Downloading…';
+    }));
+  });
+
   document.querySelectorAll('[data-copy]').forEach(button => {
     button.addEventListener('click', async () => {
       const value = button.dataset.copy;

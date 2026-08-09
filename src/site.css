@@ -96,7 +96,7 @@ img { max-width: 100%; }
 .inline-icon { width: 15px; height: 15px; flex: none; filter: var(--github-filter); }
 .menu-button { display: none; }
 
-.hero { min-height: 550px; padding: 56px 0 40px; overflow: hidden; }
+.hero { position: relative; z-index: 2; min-height: 550px; padding: 56px 0 40px; overflow: visible; }
 .landing-container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .hero-grid { display: grid; align-items: center; }
 .hero-single { grid-template-columns: minmax(0, 1fr); }
@@ -131,6 +131,11 @@ h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(54px, 7vw, 108px)
 .download-menu { left: 0; right: 0; min-width: 100%; }
 .download-option { justify-content: space-between; }
 .download-option strong { color: var(--accent-strong); font: 650 11px DM Mono, monospace; }
+.download-split[data-downloading="true"] .download-main { opacity: .72; cursor: progress; pointer-events: none; }
+.download-split[data-downloading="true"] .download-main > span:last-child { animation: download-pulse .8s ease-in-out infinite alternate; }
+.download-split[data-downloading="true"] .download-toggle { opacity: .62; cursor: not-allowed; }
+.download-option[aria-disabled="true"] { opacity: .6; pointer-events: none; }
+@keyframes download-pulse { to { transform: translateY(3px); } }
 .download-alternatives { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 16px; color: var(--muted); font-size: 12px; }
 .download-alternatives span { font-weight: 650; }.download-alternatives a { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
 .community-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 17px; }
@@ -158,6 +163,7 @@ a.community-chip:hover { color: var(--text); border-color: color-mix(in srgb,var
 .section-kicker { margin-bottom: 10px; color: var(--accent-strong); font-size: 18px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 h2 { margin: 0; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; letter-spacing: -.045em; }
 .section-head p { width: 66.666%; max-width: 780px; margin: 0; color: var(--muted); }
+#projects .section-head p { text-align: right; }
 .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .feature-card, .project-card { position: relative; border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); transition: transform .2s ease, border-color .2s ease; }
 .feature-card { min-height: 132px; display: grid; grid-template-columns: 45px minmax(0,1fr); grid-template-rows: auto 1fr; align-content: center; column-gap: 17px; padding: 22px; overflow: hidden; }
@@ -217,7 +223,7 @@ h2 { margin: 0; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; letter-spa
   .container { width: min(100% - 28px, 1180px); }.site-header { height: 62px; }.nav { gap: 12px; }.nav-links { display: none; position: absolute; left: 14px; right: 14px; top: 70px; padding: 18px; background: var(--surface-solid); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); }.nav-links.open { display: grid; }.menu-button { display: grid; }
   .hero { min-height: auto; padding: 42px 0 34px; }.hero-grid { grid-template-columns: 1fr; }.title-line { white-space: normal; }
   .hero-framework { padding: 28px 0 24px; }
-  .section { padding: 38px 0; }.section-head { align-items: start; flex-direction: column; gap: 8px; margin-bottom: 18px; }.section-head p { width: 100%; }.project-grid { grid-template-columns: 1fr; }.cta { align-items: start; flex-direction: column; padding: 30px; }.footer-row { align-items: start; flex-direction: column; }
+  .section { padding: 38px 0; }.section-head { align-items: start; flex-direction: column; gap: 8px; margin-bottom: 18px; }.section-head p { width: 100%; }#projects .section-head p { text-align: left; }.project-grid { grid-template-columns: 1fr; }.cta { align-items: start; flex-direction: column; padding: 30px; }.footer-row { align-items: start; flex-direction: column; }
   .docs-layout { width: min(100% - 28px, 820px); display: block; padding-top: 28px; }.docs-sidebar { position: static; max-height: none; margin-bottom: 28px; }.docs-sidebar h2 { display: none; }.docs-nav { display: flex; overflow: auto; padding-bottom: 8px; }.docs-nav a { white-space: nowrap; background: var(--surface); }.markdown-body h2 { font-size: 26px; }
 }
 @media (max-width: 520px) {

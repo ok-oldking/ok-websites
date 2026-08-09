@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:05:46.762Z",
+  "generatedAt": "2026-08-09T17:15:20.034Z",
   "projects": [
     {
       "id": "ok-script",
@@ -23,8 +23,8 @@
     },
     {
       "id": "ok-ww",
-      "commit": "18a8ebd4aa368efbab97fd206ab390607ab1ad8a",
-      "updated": "2026-08-09T23:15:50+08:00",
+      "commit": "9ec2bc3170b1c262d4b3c9b9b0298ced28482e98",
+      "updated": "2026-08-10T01:06:48+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -61,7 +61,7 @@
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-08-09T23:15:50+08:00"
+        "updated": "2026-08-10T01:06:48+08:00"
       }
     },
     {
@@ -179,8 +179,8 @@
     },
     {
       "id": "ok-kes",
-      "commit": "f0b57e7ec2c620b897d0c47b4e34e40f6b4cfe86",
-      "updated": "2026-08-09T22:16:12+08:00",
+      "commit": "10f906057b836da47d75131ba2ef5a7cc8eb6342",
+      "updated": "2026-08-10T01:09:55+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -216,7 +216,7 @@
             "url": "https://drive.uc.cn/s/fee4cb3d65cd4?public=1"
           }
         ],
-        "updated": "2026-08-09T22:16:12+08:00"
+        "updated": "2026-08-10T01:09:55+08:00"
       }
     }
   ]

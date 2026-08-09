@@ -62,6 +62,7 @@ if (rootLanding.includes('data-copy=')) failures.push('Non-Chinese pages expose 
 if (!rootChinese.includes('data-copy="938132715"') || !rootChinese.includes('开发者群938132715')) failures.push('ok-script developer QQ group is not identified correctly.');
 if (!/<section class="hero hero-framework"><div class="container landing-container hero-grid/.test(rootLanding) || !/<section class="section section-muted"><div class="container landing-container">/.test(rootLanding) || !/id="projects"><div class="container landing-container">/.test(rootLanding)) failures.push('Hero, features, and projects do not share the landing container.');
 if (!/class="section-kicker">Projects<\/div>/.test(rootLanding)) failures.push('English projects section label is incorrect.');
+if (!/class="section-kicker">项目<\/div>/.test(rootChinese)) failures.push('Chinese projects section label is incorrect.');
 if (!/data-language-routing[\s\S]*navigator\.languages[\s\S]*select\('en'\)/.test(rootChinese) || !/data-language-code="en"/.test(rootChinese)) failures.push('Root landing page does not detect browser language with an English fallback.');
 if (/data-language-routing/.test(rootLanding)) failures.push('Explicit English URL should not automatically redirect.');
 if (rootLanding.indexOf('section-muted') > rootLanding.indexOf('id="projects"')) failures.push('Feature grid does not appear before projects.');
@@ -87,6 +88,7 @@ if (/product-window|code-panel|float-card/.test(wwLanding)) failures.push('Decor
 if (wwLanding.includes('meta-release-button')) failures.push('Project release download is still present in the stats row.');
 if (!/class="button primary download-main"[^>]*href="[^"]*China-setup\.exe"[^>]*>[\s\S]*?<strong>v?\d[^<]*<\/strong>/.test(wwLanding)) failures.push('Simplified Chinese does not default to the versioned China download button.');
 if (!wwLanding.includes('class="dropdown-menu download-menu"') || !/China-setup\.exe/.test(wwLanding) || !/Global-setup\.exe/.test(wwLanding)) failures.push('China/Global download choices are missing.');
+if (!/data-download-control data-downloading-label="正在下载…"/.test(wwLanding) || !/data-download-link/.test(wwLanding)) failures.push('Download controls are missing their localized downloading state.');
 if (!wwLanding.includes('class="community-icon"')) failures.push('Community links are missing icons.');
 if (!wwLanding.includes('src="../assets/qq.svg"') || !wwLanding.includes('src="../assets/discord.svg"')) failures.push('maa.plus QQ/Discord icons are missing.');
 if (!wwLanding.includes('data-copy="1035795301"') || !wwLanding.includes('群1035795301')) failures.push('User QQ group is not formatted as a copy button.');
@@ -138,10 +140,13 @@ if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflo
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
 const js = await fs.readFile(path.join(root, 'assets', 'site.js'), 'utf8');
 if (!/localStorage\.setItem\('ok-language', link\.dataset\.languageCode\)/.test(js)) failures.push('Manual language preference is not persisted.');
+if (!/control\.dataset\.downloading === 'true'/.test(js) || !/toggle\.disabled = true/.test(js)) failures.push('Download controls do not prevent repeated clicks.');
 if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*font-size:\s*15px/.test(css)) failures.push('Header typography was not enlarged.');
+if (!/\.hero[^}]*z-index:\s*2[^}]*overflow:\s*visible/.test(css)) failures.push('Hero dropdowns can be covered by the following section.');
 if (!/\.feature-card[^}]*grid-template-columns:\s*45px/.test(css) || /\.feature-icon[^}]*margin-bottom/.test(css)) failures.push('Feature cards are not using the compact horizontal layout.');
 if (/\.hero \.container[^}]*1740px/.test(css) || !/\.landing-container[^}]*1180px/.test(css) || !/\.download-toggle[^}]*align-items:\s*center/.test(css)) failures.push('Landing-section width or dropdown-arrow alignment is incorrect.');
 if (!/\.section-kicker[^}]*font-size:\s*18px/.test(css) || !/\.section-head p[^}]*width:\s*66\.666%/.test(css)) failures.push('Project ecosystem heading or lead width is incorrect.');
+if (!/#projects \.section-head p[^}]*text-align:\s*right/.test(css)) failures.push('Projects description is not right-aligned.');
 if (!/\.hero-framework[^}]*min-height:\s*460px[^}]*padding:\s*34px 0 28px/.test(css) || !/\.hero-framework h1[^}]*font-size:\s*clamp\(40px,\s*5vw,\s*72px\)/.test(css)) failures.push('Framework hero height or headline size was not reduced.');
 if (!/\.faq-content[^}]*width:\s*100%[^}]*max-width:\s*none/.test(css) || !/<section class="section faq-section"><div class="container landing-container">/.test(wwLanding)) failures.push('FAQ does not share the feature-grid width.');
 if (!/\.faq-section \.section-head h2[^}]*color:\s*var\(--accent-strong\)[^}]*font-size:\s*clamp\(24px,\s*2\.4vw,\s*32px\)/.test(css) || !/\.faq-section \.faq-content > h2[^}]*font-size:\s*clamp\(20px,\s*2vw,\s*25px\)/.test(css)) failures.push('FAQ heading hierarchy is not visually distinct and compact.');
