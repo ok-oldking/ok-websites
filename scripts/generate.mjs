@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import YAML from 'yaml';
 import OpenCC from 'opencc-js';
+import sharp from 'sharp';
 
 const exec = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -398,6 +399,17 @@ async function collectProjectMarkdown(project) {
   return contents.join('\n');
 }
 
+async function writeProjectIcon(bytes, name) {
+  const destination = path.join(staticDir, 'assets', 'project-icons', `${name}.png`);
+  const optimized = await sharp(bytes)
+    .resize({ width: 128, height: 128, fit: 'inside', withoutEnlargement: true })
+    .png({ compressionLevel: 9, palette: true, quality: 85, effort: 10 })
+    .toBuffer();
+  await fs.mkdir(path.dirname(destination), { recursive: true });
+  await fs.writeFile(destination, optimized);
+  return `/assets/project-icons/${name}.png`;
+}
+
 async function saveRemoteImage(url, name) {
   if (!url) return null;
   try {
@@ -405,10 +417,14 @@ async function saveRemoteImage(url, name) {
     if (!response.ok || !/^image\//i.test(response.headers.get('content-type') || '')) return null;
     const bytes = Buffer.from(await response.arrayBuffer());
     if (!bytes.length || bytes.length > 5 * 1024 * 1024) return null;
-    const destination = path.join(staticDir, 'assets', 'project-icons', `${name}.png`);
-    await fs.mkdir(path.dirname(destination), { recursive: true });
-    await fs.writeFile(destination, bytes);
-    return `/assets/project-icons/${name}.png`;
+    return await writeProjectIcon(bytes, name);
+  } catch { return null; }
+}
+
+async function saveLocalProjectIcon(project) {
+  try {
+    const bytes = await fs.readFile(path.join(project.state.repoDir, project.icon));
+    return await writeProjectIcon(bytes, project.id);
   } catch { return null; }
 }
 
@@ -793,7 +809,7 @@ async function generateProject(project) {
   project.state = await syncProject(project);
   project.state.mkdocs = await loadMkDocs(project);
   project.locales = addAutomaticTraditionalLocale(discoverLocales(project, project.state.mkdocs));
-  project.state.iconUrl = project.siteIcon || (project.icon ? await copySourceAsset(project, path.join(project.state.repoDir, project.icon)) : null);
+  project.state.iconUrl = project.siteIcon || (project.icon ? await saveLocalProjectIcon(project) : null);
   project.state.communityLinks = extractCommunity(await collectProjectMarkdown(project));
   const meta = await githubMetadata(project, project.state);
   project.state.meta = meta;

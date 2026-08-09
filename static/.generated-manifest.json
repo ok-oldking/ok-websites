@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:15:20.034Z",
+  "generatedAt": "2026-08-09T17:23:31.082Z",
   "projects": [
     {
       "id": "ok-script",
@@ -179,8 +179,8 @@
     },
     {
       "id": "ok-kes",
-      "commit": "10f906057b836da47d75131ba2ef5a7cc8eb6342",
-      "updated": "2026-08-10T01:09:55+08:00",
+      "commit": "597b1fc91ba650fdc92c6564ac970ab094ecca57",
+      "updated": "2026-08-10T01:15:30+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -216,7 +216,7 @@
             "url": "https://drive.uc.cn/s/fee4cb3d65cd4?public=1"
           }
         ],
-        "updated": "2026-08-10T01:09:55+08:00"
+        "updated": "2026-08-10T01:15:30+08:00"
       }
     }
   ]

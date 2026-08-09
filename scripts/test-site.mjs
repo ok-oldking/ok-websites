@@ -139,6 +139,11 @@ const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows',
 if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
 const js = await fs.readFile(path.join(root, 'assets', 'site.js'), 'utf8');
+const projectIconFiles = (await fs.readdir(path.join(root, 'assets', 'project-icons'))).filter(file => file.endsWith('.png'));
+for (const file of projectIconFiles) {
+  const icon = await fs.stat(path.join(root, 'assets', 'project-icons', file));
+  if (icon.size > 100 * 1024) failures.push(`Project icon is not compressed: ${file} (${icon.size} bytes).`);
+}
 if (!/localStorage\.setItem\('ok-language', link\.dataset\.languageCode\)/.test(js)) failures.push('Manual language preference is not persisted.');
 if (!/control\.dataset\.downloading === 'true'/.test(js) || !/toggle\.disabled = true/.test(js)) failures.push('Download controls do not prevent repeated clicks.');
 if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*font-size:\s*15px/.test(css)) failures.push('Header typography was not enlarged.');

@@ -20,5 +20,8 @@
     "opencc-js": "^1.4.1",
     "ssh2": "^1.17.0",
     "yaml": "^2.9.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }
