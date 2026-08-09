@@ -101,11 +101,13 @@ const appChinese = await fs.readFile(path.join(root, 'app', 'index.html'), 'utf8
 if (!appChinese.includes('data-copy="1097603920"') || /938132715|开发者群/.test(appChinese)) failures.push('App community does not show only its user QQ group.');
 const nteChinese = await fs.readFile(path.join(root, 'ok-nte', 'index.html'), 'utf8');
 const nteEnglish = await fs.readFile(path.join(root, 'ok-nte', 'en', 'index.html'), 'utf8');
+const nteTraditional = await fs.readFile(path.join(root, 'ok-nte', 'zh-TW', 'index.html'), 'utf8');
 if (!nteChinese.includes('探索海特洛市') || !nteChinese.includes('https://ok-script.com/ok-nte/') || !nteChinese.includes('ok-nte-win32-China-setup.exe')) failures.push('ok-nte Chinese landing page is incomplete.');
 if (!nteEnglish.includes('Explore Hethereau') || !nteEnglish.includes('ok-nte-win32-Global-setup.exe')) failures.push('ok-nte English landing page is incomplete.');
 if (!nteChinese.includes('faq-section') || !nteEnglish.includes('faq-section')) failures.push('ok-nte FAQ content was not generated from MkDocs.');
 if ((nteChinese.match(/data-copy="1105569444"/g) || []).length !== 1 || /1087276729|开发者群/.test(nteChinese)) failures.push('ok-nte does not show exactly its user QQ group.');
 if (nteEnglish.includes('data-copy=') || /qq\.svg/.test(nteEnglish)) failures.push('ok-nte English landing page exposes QQ links.');
+if (!nteTraditional.includes('繁體中文') || !nteTraditional.includes('計算機視覺') || !nteTraditional.includes('遊戲檔案') || nteTraditional.includes('计算机视觉')) failures.push('ok-nte automatic Traditional Chinese translation is missing or incomplete.');
 if (!rootChinese.includes('href=".\/ok-nte\/"')) failures.push('Project ecosystem does not link to the local ok-nte site.');
 await fs.access(path.join(root, 'ok-nte', 'docs', 'guides', 'troubleshooting', 'index.html')).catch(() => failures.push('ok-nte Chinese MkDocs routes are missing.'));
 await fs.access(path.join(root, 'ok-nte', 'en', 'docs', 'getting-started', 'installation', 'index.html')).catch(() => failures.push('ok-nte English MkDocs routes are missing.'));
@@ -114,15 +116,17 @@ if (!/href="https:\/\/github\.com\/BnanZ0\/ok-nte\/tree\/[a-f0-9]+\/src\/char"/.
 const starResonance = await fs.readFile(path.join(root, 'ok-star-resonance', 'index.html'), 'utf8');
 if (!starResonance.includes('星痕旅程') || !starResonance.includes('https://ok-script.com/ok-star-resonance/') || !starResonance.includes('ok-star-resonance-win32-China-setup.exe')) failures.push('ok-star-resonance landing page is incomplete.');
 if (!starResonance.includes('faq-section') || !starResonance.includes('生活玩法自动化') || !starResonance.includes('夸克网盘')) failures.push('ok-star-resonance project content is incomplete.');
-if (starResonance.includes('data-language-routing')) failures.push('Single-language projects should not run language redirects.');
+if (!/data-language-routing[\s\S]*"zh-TW":"\.\/zh-TW\/"/.test(starResonance)) failures.push('Automatically translated projects do not expose Traditional Chinese language routing.');
 if (!rootChinese.includes('href="./ok-star-resonance/"')) failures.push('Project ecosystem does not link to the local ok-star-resonance site.');
 await fs.access(path.join(root, 'ok-star-resonance', 'docs', 'guide', 'troubleshooting', 'index.html')).catch(() => failures.push('ok-star-resonance MkDocs routes are missing.'));
 const kesChinese = await fs.readFile(path.join(root, 'ok-kes', 'index.html'), 'utf8');
 const kesEnglish = await fs.readFile(path.join(root, 'ok-kes', 'en', 'index.html'), 'utf8');
+const kesTraditionalDocs = await fs.readFile(path.join(root, 'ok-kes', 'zh-TW', 'docs', 'index.html'), 'utf8');
 if (!kesChinese.includes('突破卡厄思') || !kesChinese.includes('https://ok-script.com/ok-kes/') || !kesChinese.includes('ok-kes-win32-China-setup.exe')) failures.push('ok-kes Chinese landing page is incomplete.');
 if (!kesEnglish.includes('Face the Chaos') || !kesEnglish.includes('https://github.com/baoxin1100/ok-kes/releases/tag/v1.3.36')) failures.push('ok-kes English landing page is incomplete.');
 if (!kesChinese.includes('faq-section') || !kesChinese.includes('自动卡厄思') || !kesChinese.includes('data-copy="901988096"')) failures.push('ok-kes Chinese project content is incomplete.');
 if (kesEnglish.includes('data-copy=') || /qq\.svg/.test(kesEnglish)) failures.push('ok-kes English landing page exposes QQ links.');
+if (!kesTraditionalDocs.includes('軟體') || !kesTraditionalDocs.includes('遊戲') || kesTraditionalDocs.includes('游戏分辨率')) failures.push('ok-kes documentation was not converted to Traditional Chinese.');
 if (!/<link rel="alternate" hreflang="zh-CN" href="https:\/\/ok-script\.com\/ok-kes\/">/.test(kesChinese) || !/hreflang="en" href="https:\/\/ok-script\.com\/ok-kes\/en\/"/.test(kesChinese)) failures.push('ok-kes locale SEO links are missing.');
 if (!rootChinese.includes('href="./ok-kes/"')) failures.push('Project ecosystem does not link to the local ok-kes site.');
 await fs.access(path.join(root, 'ok-kes', 'docs', 'index.html')).catch(() => failures.push('ok-kes Chinese MkDocs routes are missing.'));
@@ -140,6 +144,8 @@ if (!/\.faq-content[^}]*width:\s*100%[^}]*max-width:\s*none/.test(css) || !/<sec
 if (!/\.faq-section \.section-head h2[^}]*color:\s*var\(--accent-strong\)[^}]*font-size:\s*clamp\(24px,\s*2\.4vw,\s*32px\)/.test(css) || !/\.faq-section \.faq-content > h2[^}]*font-size:\s*clamp\(20px,\s*2vw,\s*25px\)/.test(css)) failures.push('FAQ heading hierarchy is not visually distinct and compact.');
 const rootSitemap = await fs.readFile(path.join(root, 'sitemap.xml'), 'utf8');
 if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(rootSitemap)) failures.push('Sitemap entries are missing last-modified dates.');
+const manifest = JSON.parse(await fs.readFile(path.join(root, '.generated-manifest.json'), 'utf8'));
+if (manifest.projects.some(project => !project.locales.includes('zh-TW'))) failures.push('Projects with Simplified Chinese are missing automatic Traditional Chinese output.');
 
 if (failures.length) {
   console.error([...new Set(failures)].slice(0, 40).join('\n'));

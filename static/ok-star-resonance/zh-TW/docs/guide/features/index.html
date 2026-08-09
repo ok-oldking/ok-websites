@@ -1,0 +1,153 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>功能與相容性 · ok-star-resonance</title><meta name="description" content="功能與相容性 — ok-star-resonance"><meta name="keywords" content="ok-star-resonance, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="Sanheiii">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-star-resonance/zh-TW/docs/guide/features/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:title" content="功能與相容性 · ok-star-resonance"><meta property="og:description" content="功能與相容性 — ok-star-resonance"><meta property="og:url" content="https://ok-script.com/ok-star-resonance/zh-TW/docs/guide/features/"><meta property="og:image" content="https://ok-script.com/assets/og.png"><meta property="og:image:alt" content="ok-star-resonance — 功能與相容性 · ok-star-resonance">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="功能與相容性 · ok-star-resonance"><meta name="twitter:description" content="功能與相容性 — ok-star-resonance"><meta name="twitter:image" content="https://ok-script.com/assets/og.png"><meta name="twitter:image:alt" content="ok-star-resonance — 功能與相容性 · ok-star-resonance">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"功能與相容性 · ok-star-resonance","description":"功能與相容性 — ok-star-resonance","url":"https://ok-script.com/ok-star-resonance/zh-TW/docs/guide/features/","inLanguage":"zh-TW","dateModified":"2026-08-09T21:29:11+08:00","author":{"@type":"Organization","name":"ok-star-resonance","url":"https://github.com/Sanheiii/ok-star-resonance"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260809163926">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../getting-started/">快速開始</a><a href="./" class="active" aria-current="page">功能與相容性</a><a href="../troubleshooting/">疑難解答</a><a href="../../development/index/">從原始碼執行</a><a href="../../development/contributing/">貢獻指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-star-resonance</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="功能與相容性">功能與相容性</h1>
+<p>如果你希望支援其他語言，請提交 Issue。維護者可能會請你提供對應語言的遊戲截圖。</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th align="center">簡中</th>
+<th align="center">繁中</th>
+<th align="center">英文</th>
+<th align="center">日文</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>釣魚</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>領取月卡</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>簡易採集</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td>日文文本過長並換行時可能出錯</td>
+</tr>
+<tr>
+<td>將滑鼠指向購買按鈕</td>
+<td align="center">●</td>
+<td align="center"></td>
+<td align="center">●</td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td>連點技能</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>同意組隊</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>確認進入副本</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center"></td>
+<td>繁中不支援進入活動</td>
+</tr>
+<tr>
+<td>協會狩獵</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center"></td>
+<td align="center"></td>
+<td></td>
+</tr>
+<tr>
+<td>演奏 MIDI</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>打麻將</td>
+<td align="center">●</td>
+<td align="center"></td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>演奏教學譜面</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td></td>
+</tr>
+<tr>
+<td>刷單人副本</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td align="center">●</td>
+<td>其他語言可能無法在賽季商店優先購買限購商品</td>
+</tr>
+</tbody></table>
+<h2 id="特性">特性</h2>
+<ul>
+<li>支援任意 16:9 解析度，視窗化和全屏均可，最低 1280×720。</li>
+<li>支援基於 PushDeer 的狀態通知，配置方法見 <a href="https://www.pushdeer.com/">PushDeer 官方說明</a>。</li>
+<li>支援使用者自定義指令碼。</li>
+<li>通過螢幕捕獲、OCR、模板匹配、目標檢測與網路包捕獲感知遊戲狀態。</li>
+<li>通過 Windows 介面模擬鍵盤和滑鼠操作，不讀取遊戲記憶體，不修改遊戲檔案，不注入遊戲程序。</li>
+</ul>
+<p>!!! note</p>
+<pre><code>遊戲視窗必須保持在前臺；當前版本不支援後臺執行。
+</code></pre>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance/blob/012ae82dc9b7fbb8477733b6e2fc343aa8dd3054/docs/guide/features.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#特性" style="margin-left:0px">特性</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260809163926" defer></script></body></html>

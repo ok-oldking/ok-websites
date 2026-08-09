@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "marked": "^16.2.1",
+    "opencc-js": "^1.4.1",
     "ssh2": "^1.17.0",
     "yaml": "^2.9.0"
   }

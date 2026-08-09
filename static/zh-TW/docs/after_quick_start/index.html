@@ -1,0 +1,192 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>進階指南 · ok-script</title><meta name="description" content="進階指南 — ok-script"><meta name="keywords" content="ok-script, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/zh-TW/docs/after_quick_start/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="進階指南 · ok-script"><meta property="og:description" content="進階指南 — ok-script"><meta property="og:url" content="https://ok-script.com/zh-TW/docs/after_quick_start/"><meta property="og:image" content="https://ok-script.com/assets/og.png"><meta property="og:image:alt" content="ok-script — 進階指南 · ok-script">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="進階指南 · ok-script"><meta name="twitter:description" content="進階指南 — ok-script"><meta name="twitter:image" content="https://ok-script.com/assets/og.png"><meta name="twitter:image:alt" content="ok-script — 進階指南 · ok-script">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"進階指南 · ok-script","description":"進階指南 — ok-script","url":"https://ok-script.com/zh-TW/docs/after_quick_start/","inLanguage":"zh-TW","dateModified":"2026-08-09T13:46:24+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260809163926">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../#projects">專案</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件中心</a><a href="../intro_to_automation/">遊戲自動化入門</a><a href="../quick_start/">快速開始</a><a href="../interface/">介面與開發工具</a><a href="./" class="active" aria-current="page">進階指南</a><a href="../api_doc/">API 參考</a><a href="../building-site/">構建文件網站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="ok-script-進階使用指南">ok-script 進階使用指南</h1>
+<p><a href="../../../en/docs/advanced/">English</a> · <a href="../">文件中心</a> · <a href="../quick_start/">快速開始</a> · <a href="../api_doc/">API 參考</a></p>
+<p>本文件是 <a href="../quick_start/">ok-script 自動化指令碼開發指南</a> 的進階補充，旨在幫助開發者更深入地利用框架的高階功能，並結合
+CI/CD 流程實現專案的自動化管理。</p>
+<h2 id="目錄">目錄</h2>
+<ul>
+<li><a href="#1-%E6%A8%A1%E6%9D%BF%E5%8C%B9%E9%85%8D-template-matching">1. 模板匹配 (Template Matching)</a></li>
+<li><a href="#2-%E5%A4%9A%E8%AF%AD%E8%A8%80%E5%9B%BD%E9%99%85%E5%8C%96-i18n">2. 多語言國際化 (i18n)</a></li>
+<li><a href="#3-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95">3. 自動化測試</a></li>
+<li><a href="#4-%E4%BD%BF%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%93%E5%8C%85%E4%B8%8E%E5%8F%91%E5%B8%83">4. 使用 GitHub Actions 自動化打包與釋出</a><ul>
+<li><a href="#%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%E8%A7%A3%E6%9E%90">關鍵步驟解析</a><ul>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E9%A2%9D%E5%A4%96%E7%9A%84%E6%BA%90%E7%A0%81%E5%86%85%E8%81%94%E4%BE%9D%E8%B5%96">新增額外的原始碼內聯依賴</a></li>
+</ul>
+</li>
+<li><a href="#sync-repositories-%E7%9A%84%E5%9B%BD%E5%86%85%E9%95%9C%E5%83%8F%E5%8A%9F%E8%83%BD">Sync Repositories 的國內映象功能</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E5%A4%9A%E5%9C%B0%E5%8C%BA%E6%9B%B4%E6%96%B0%E6%BA%90">配置多地區更新源</a></li>
+<li><a href="#%E6%89%93%E5%8C%85%E4%BA%A7%E7%89%A9%E8%AF%B4%E6%98%8E">打包產物說明</a></li>
+<li><a href="#%E5%8A%A0%E9%80%9F%E6%9E%84%E5%BB%BA%E9%80%9F%E5%BA%A6">加速構建速度</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-模板匹配-template-matching-1-模板匹配-template-matching">1. 模板匹配 (Template Matching) { #1-模板匹配-template-matching }</h2>
+<p><code>ok-script</code> 的模板匹配工作流基於 COCO 資料集格式，這使得標註和管理特徵點（模板圖片）變得高效且精準。</p>
+<h3 id="核心優勢">核心優勢</h3>
+<ul>
+<li><strong>保留相對位置</strong>: COCO 格式可以記錄每個標註模板在原始截圖中的<strong>相對位置</strong>。<code>ok-script</code>
+利用這一資訊，在匹配時可以智慧地縮小搜尋區域，從而極大地提升匹配速度和準確度。</li>
+<li><strong>高解析度優先</strong>: 建議標註時使用的截圖採用您計劃支援的<strong>最高解析度</strong>（例如
+4K）。當終端使用者在較低解析度下執行時，框架會自動將高畫質的模板素材縮放以進行匹配，保證了向下的相容性和識別效果。</li>
+</ul>
+<h3 id="操作流程">操作流程</h3>
+<ol>
+<li><strong>標註工具</strong>: 使用任何支援匯出 COCO 格式的標註工具。推薦使用 <strong><code>label-studio==1.15.0</code></strong>，因為新版本匯出的 COCO
+格式存在相容性問題。</li>
+<li><strong>放置素材</strong>: 將標註工具匯出的 <code>result.json</code> 檔案以及對應的圖片資料夾（通常是 <code>images</code> 資料夾）完整地放入專案的
+<code>assets</code> 目錄下。</li>
+<li><strong>自動處理</strong>: 執行 <code>python main_debug.py</code> 啟動程式。在 Debug 模式下，點選開始按鈕後，<code>ok-script</code> 會自動檢測 <code>assets</code> 目錄下的 COCO
+檔案，並執行<strong>切圖和壓縮</strong>操作，將大圖中的各個標註區域切割成獨立的模板圖片，並進行最佳化，以備後續 <code>find_feature</code> 等方法呼叫。</li>
+</ol>
+<h2 id="2-多語言國際化-i18n-2-多語言國際化-i18n">2. 多語言國際化 (i18n) { #2-多語言國際化-i18n }</h2>
+<p>為指令碼新增多語言支援可以擴大使用者群體，<code>ok-script</code> 內建了簡便的國際化流程。</p>
+<h3 id="實現步驟">實現步驟</h3>
+<ol>
+<li><strong>建立語言檔案</strong>:
+在專案根目錄下，建立語言檔案。目錄結構必須遵循 <code>i18n/&lt;语言代码&gt;/LC_MESSAGES/</code> 的格式，例如：<ul>
+<li>英文: <code>i18n/en_US/LC_MESSAGES/ok.po</code></li>
+<li>簡體中文: <code>i18n/zh_CN/LC_MESSAGES/ok.po</code></li>
+</ul>
+</li>
+<li><strong>編輯 <code>.po</code> 檔案</strong>: 在這些檔案中，按照 <code>gettext</code> 格式編輯您的翻譯字串。</li>
+<li><strong>一鍵編譯</strong>: 修改 <code>.po</code> 檔案後，無需執行任何命令列操作。只需在 <code>ok-script</code> 客戶端的<strong>開發者工具</strong>中，點選**“編譯
+i18n”**按鈕。框架會自動將所有 <code>.po</code> 檔案編譯成二進位制的 <code>.mo</code> 檔案，程式執行時將自動載入對應的語言。</li>
+</ol>
+<h2 id="3-自動化測試-3-自動化測試">3. 自動化測試 { #3-自動化測試 }</h2>
+<p>為 Task 編寫單元測試是保證指令碼健壯性的關鍵。<code>ok-script</code> 提供了 <code>TaskTestCase</code> 基類，使得測試變得非常簡單。</p>
+<h3 id="測試實踐">測試實踐</h3>
+<ul>
+<li><strong>穩定環境</strong>: 測試的核心是使用 <code>self.set_image()</code> 將螢幕輸入固定為一張靜態圖片，從而創造一個穩定、可復現的執行環境。</li>
+<li><strong>使用者問題復現</strong>: 除了使用自己擷取的標準測試圖，您還可以將<strong>使用者打包上傳的截圖檔案</strong>
+作為測試圖片。這是一種非常高效的除錯手段，可以幫助您快速定位並解決在特定使用者環境中出現的問題。</li>
+</ul>
+<p><strong>示例：使用使用者截圖定位問題</strong></p>
+<pre><code class="language-python"># file: tests/test_user_issue.py
+from ok.test.TaskTestCase import TaskTestCase
+from src.tasks.MyProblematicTask import MyProblematicTask
+
+
+class TestUserIssue(TaskTestCase):
+    task_class = MyProblematicTask
+
+    def test_scenario_from_user_screenshot(self):
+        # 1. 使用用户提供的截图文件
+        self.set_image(&#39;tests/user_screenshots/user_bug_report_01.png&#39;)
+
+        # 2. 调用在用户环境中出错的特定方法
+        result = self.task.some_method_that_failed()
+
+        # 3. 断言修复后的行为是否符合预期
+        self.assertIsNotNone(result, &quot;The method should now handle this scenario correctly.&quot;)
+</code></pre>
+<h3 id="執行測試">執行測試</h3>
+<h4 id="執行所有測試">執行所有測試</h4>
+<p>要一次性執行 <code>tests/</code> 目錄下的所有測試用例，可以直接執行專案根目錄下的 <code>run_tests.ps1</code> 指令碼。</p>
+<h4 id="在-pycharm-中執行單個測試">在 PyCharm 中執行單個測試</h4>
+<p>為了進行更精細的除錯，例如只執行一個測試檔案或檔案中的某個特定方法，可以直接在 PyCharm 中操作：</p>
+<ol>
+<li>在程式碼編輯器中，右鍵點選測試檔案或某個 <code>test_...</code> 方法。</li>
+<li>選擇 &quot;Run &#39;Unittests in ...&#39;&quot;。</li>
+</ol>
+<p><strong>重要提示</strong>：首次在 PyCharm 中執行測試時，需要修改其“執行/除錯配置”(Run/Debug Configuration)。請確保**“工作目錄”(Working
+directory)** 設定為專案的<strong>根目錄</strong>。否則，測試指令碼會因為找不到 <code>tests/images/</code> 等相對路徑下的檔案而執行失敗。</p>
+<h2 id="4-使用-github-actions-自動化打包與釋出-4-使用-github-actions-自動化打包與釋出">4. 使用 GitHub Actions 自動化打包與釋出 { #4-使用-github-actions-自動化打包與釋出 }</h2>
+<p>您提供的 <code>.github/workflows/build.yml</code> 檔案定義了一個完整的自動化流程（CI/CD），它會在您每次推送新的版本標籤（如 <code>v1.0.0</code>
+）時，自動完成測試、打包和釋出。</p>
+<p>該流程的核心是 <strong>PyAppify</strong> (<a href="https://github.com/ok-oldking/pyappify">https://github.com/ok-oldking/pyappify</a>)，這是一個專門用於將
+Python 專案打包成獨立 Windows 執行檔的工具，它通過專案根目錄下的 <code>pyappify.yml</code> 配置檔案進行驅動。</p>
+<h3 id="關鍵步驟解析-關鍵步驟解析">關鍵步驟解析 { #關鍵步驟解析 }</h3>
+<ol>
+<li><strong>觸發條件 (<code>on</code>)</strong>: 工作流由推送 <code>v*</code> 格式的 Git 標籤觸發，是標準的版本釋出方式。</li>
+<li><strong>安裝依賴與環境設定 (<code>Install dependencies</code>)</strong>: 讀取 <code>requirements.txt</code> 並安裝所有依賴，為後續步驟做準備。</li>
+<li><strong>原始碼內聯 (<code>inline_ok_requirements</code>)</strong>: 將 <code>ok-script</code>、<code>pyappify</code> 以及額外配置的小型依賴庫整合到 Git 程式碼中，使其隨倉庫一起更新，無需單獨通過 pip 升級。</li>
+<li><strong>執行自動化測試 (<code>Run tests</code>)</strong>: 執行 <code>tests/</code> 目錄下的所有單元測試，作為釋出的“質量門禁”。任何測試失敗都會中斷流程。</li>
+<li><strong>同步倉庫與生成更新日誌 (<code>Sync Repositories</code>)</strong>: 一個自定義 Action，用於將部分程式碼同步到輕量級的更新庫，並自動生成兩個版本標籤之間的更新日誌。</li>
+<li><strong>打包執行檔 (<code>Build with PyAppify Action</code>)</strong>: 呼叫 PyAppify 工具將 Python 專案打包成獨立的 Windows 執行檔。</li>
+<li><strong>建立 GitHub Release (<code>Release</code>)</strong>: 在 GitHub 上建立新的 Release，使用自動生成的更新日誌作為描述，並將打包好的執行檔作為附件上傳。</li>
+</ol>
+<h4 id="新增額外的原始碼內聯依賴-新增額外的原始碼內聯依賴">新增額外的原始碼內聯依賴 { #新增額外的原始碼內聯依賴 }</h4>
+<p><code>inline_ok_requirements</code> 預設內聯 <code>ok-script</code> 和 <code>pyappify</code>。對於更新頻繁且體積較小、希望隨 Git
+倉庫分發的 Python pip 庫，可以重複使用可選引數 <code>--add-inlined-requirement PACKAGE=FOLDER</code>：</p>
+<pre><code class="language-powershell">python -m ok.update.inline_ok_requirements --tag &quot;$env:RELEASE_TAG&quot; `
+  --add-inlined-requirement custom-package=custom_package `
+  --add-inlined-requirement another-package=another_package
+</code></pre>
+<ul>
+<li><code>PACKAGE</code>：<code>requirements.txt</code> 中的 pip 發行包名稱，例如 <code>custom-package</code>。</li>
+<li><code>FOLDER</code>：該庫在 <code>site-packages</code> 中需要複製的原始碼目錄，例如 <code>custom_package</code>。</li>
+</ul>
+<p>使用 <code>--tag</code> 時，指令碼會從已安裝的依賴中複製 <code>FOLDER</code>，並從 <code>requirements.txt</code> 刪除對應的 <code>PACKAGE</code>。
+若 <code>deploy.txt</code> 尚未包含 <code>FOLDER</code> 或其子路徑，指令碼會自動追加該目錄；已有條目不會重複新增。
+此方式適合純 Python、小體積依賴；包含大型資源或依賴平臺二進位制檔案的庫，應繼續通過正常的依賴和打包流程管理。</p>
+<h3 id="sync-repositories-的國內映象功能-sync-repositories-的國內映象功能">Sync Repositories 的國內映象功能 { #sync-repositories-的國內映象功能 }</h3>
+<p><code>Sync Repositories</code> 步驟的一個主要用途是<strong>同步程式碼到國內映象倉庫</strong>。對於無法流暢訪問 GitHub 的國內使用者，他們可以通過配置好的國內
+Git URL 進行指令碼的自動更新，保證了更新渠道的暢通。</p>
+<h3 id="配置多地區更新源-配置多地區更新源">配置多地區更新源 { #配置多地區更新源 }</h3>
+<p>為了讓不同地區的使用者使用不同的更新源，您需要在 <code>pyappify.yml</code> 檔案中定義多個 <code>profiles</code>。這允許您為同一個專案打包出多個版本，每個版本內嵌了不同的更新地址。</p>
+<p><strong><code>pyappify.yml</code> 配置示例:</strong></p>
+<pre><code class="language-yaml">name: &quot;ok-ww&quot;
+uac: true
+
+profiles:
+  # 面向国内用户的配置
+  - name: &quot;China&quot;
+    git_url: &quot;https://cnb.cool/ok-oldking/ok-wuthering-waves.git&quot;
+    # ... 其他配置
+  # 面向全球用户的配置
+  - name: &quot;Global&quot;
+    git_url: &quot;https://github.com/ok-oldking/ok-ww-update.git&quot;
+    # ... 其他配置
+</code></pre>
+<h3 id="打包產物說明-打包產物說明">打包產物說明 { #打包產物說明 }</h3>
+<p><code>PyAppify Action</code> 成功執行後，通常會生成以下檔案：</p>
+<ul>
+<li><code>ok-ww-win32-China-setup.exe</code>: 面向國內使用者的完整安裝包。</li>
+<li><code>ok-ww-win32-Global-setup.exe</code>: 面向全球使用者的完整安裝包。</li>
+<li><code>ok-ww-win32-online-setup.exe</code>: 線上安裝包，需要聯網下載資源，不推薦普通使用者使用。</li>
+<li><code>ok-ww-win32.zip</code>: <strong>構建加速檔案</strong>。它包含了本次構建的啟動器 <code>.exe</code>，<strong>無法直接執行</strong>，其主要目的是用於加速下一次的構建流程。</li>
+</ul>
+<h3 id="加速構建速度-加速構建速度">加速構建速度 { #加速構建速度 }</h3>
+<p>啟動器 <code>.exe</code> 檔案（即 <code>ok-ww-win32.zip</code> 內的檔案）通常只在專案圖示變更或啟動器版本升級時才需要重新打包。在日常僅更新
+<code>Task</code> 指令碼程式碼的情況下，我們可以複用上一次釋出中的啟動器來大幅縮短 GitHub Actions 的構建時間。</p>
+<p>為此，可以在 <code>pyappify-action</code> 步驟中增加 <code>use_release</code> 配置：</p>
+<pre><code class="language-yaml">- name: Build with PyAppify Action
+  id: build-app
+  uses: ok-oldking/pyappify-action@master
+  with:
+    # 使用上一个稳定版本的 Release 来获取已打包的启动器，从而跳过耗时的打包过程
+    use_release: https://api.github.com/repos/ok-oldking/ok-wuthering-waves/releases/tags/v2.7.12
+</code></pre>
+<p><strong>注意</strong>: 您需要將上面的 URL 替換為您自己專案的上一個穩定 Release 的 API 地址。這樣配置後，Action 會直接下載並使用該版本中的
+<code>ok-ww-win32.zip</code>，從而跳過編譯啟動器exe的步驟。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/after_quick_start/README.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#目錄" style="margin-left:0px">目錄</a><a href="#1-模板匹配-template-matching-1-模板匹配-template-matching" style="margin-left:0px">1. 模板匹配 (Template Matching) { #1-模板匹配-template-matching }</a><a href="#核心優勢" style="margin-left:10px">核心優勢</a><a href="#操作流程" style="margin-left:10px">操作流程</a><a href="#2-多語言國際化-i18n-2-多語言國際化-i18n" style="margin-left:0px">2. 多語言國際化 (i18n) { #2-多語言國際化-i18n }</a><a href="#實現步驟" style="margin-left:10px">實現步驟</a><a href="#3-自動化測試-3-自動化測試" style="margin-left:0px">3. 自動化測試 { #3-自動化測試 }</a><a href="#測試實踐" style="margin-left:10px">測試實踐</a><a href="#執行測試" style="margin-left:10px">執行測試</a><a href="#4-使用-github-actions-自動化打包與釋出-4-使用-github-actions-自動化打包與釋出" style="margin-left:0px">4. 使用 GitHub Actions 自動化打包與釋出 { #4-使用-github-actions-自動化打包與釋出 }</a><a href="#關鍵步驟解析-關鍵步驟解析" style="margin-left:10px">關鍵步驟解析 { #關鍵步驟解析 }</a><a href="#sync-repositories-的國內映象功能-sync-repositories-的國內映象功能" style="margin-left:10px">Sync Repositories 的國內映象功能 { #sync-repositories-的國內映象功能 }</a><a href="#配置多地區更新源-配置多地區更新源" style="margin-left:10px">配置多地區更新源 { #配置多地區更新源 }</a><a href="#打包產物說明-打包產物說明" style="margin-left:10px">打包產物說明 { #打包產物說明 }</a><a href="#加速構建速度-加速構建速度" style="margin-left:10px">加速構建速度 { #加速構建速度 }</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部專案</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260809163926" defer></script></body></html>

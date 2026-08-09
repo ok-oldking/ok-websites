@@ -5,6 +5,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { marked } from 'marked';
 import YAML from 'yaml';
+import OpenCC from 'opencc-js';
 
 const exec = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -13,6 +14,7 @@ const cacheDir = path.join(root, '.cache', 'projects');
 const config = JSON.parse(await fs.readFile(path.join(root, 'projects.json'), 'utf8'));
 const generatedAt = new Date().toISOString();
 const assetVersion = generatedAt.replace(/\D/g, '').slice(0, 14);
+const simplifiedToTraditional = OpenCC.Converter({ from: 'cn', to: 'twp' });
 
 const copy = {
   'zh-CN': {
@@ -117,6 +119,29 @@ const features = {
 };
 
 function localeCopy(code) { return copy[code] || copy.en; }
+function translateToTraditional(value) {
+  if (typeof value === 'string') return simplifiedToTraditional(value);
+  if (Array.isArray(value)) return value.map(translateToTraditional);
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, translateToTraditional(item)]));
+  return value;
+}
+function translateMarkdownToTraditional(markdown) {
+  const protectedSegments = [];
+  const protectedMarkdown = markdown.replace(/```[\s\S]*?```|~~~[\s\S]*?~~~|`[^`\r\n]*`|\]\([^)]+\)|<[^>]+>/g, segment => {
+    const marker = `__OK_TRANSLATION_SEGMENT_${protectedSegments.length}__`;
+    protectedSegments.push(segment);
+    return marker;
+  });
+  let translated = simplifiedToTraditional(protectedMarkdown);
+  protectedSegments.forEach((segment, index) => { translated = translated.replace(`__OK_TRANSLATION_SEGMENT_${index}__`, segment); });
+  return translated;
+}
+function addAutomaticTraditionalLocale(locales) {
+  const simplified = locales.find(locale => locale.code.toLowerCase() === 'zh-cn');
+  const traditional = locales.some(locale => locale.code.toLowerCase() === 'zh-tw');
+  if (!simplified || traditional) return locales;
+  return [...locales, { ...simplified, code: 'zh-TW', label: '繁體中文', generatedFrom: simplified.code, autoTranslated: true }];
+}
 function escapeHtml(value = '') { return String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function posix(value) { return value.split(path.sep).join('/'); }
 function cleanSlug(value) { return value.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, '').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '') || 'section'; }
@@ -487,10 +512,14 @@ async function markdownToHtml(markdown, context) {
     if (/\.md$/i.test(clean) || /README\.md$/i.test(clean)) {
       const target = path.resolve(path.dirname(context.sourceFile), clean);
       const matchingLocale = context.project.locales.find(loc => path.resolve(target) === path.resolve(context.project.state.repoDir, loc.source, loc.index));
-      if (matchingLocale) return `href="${relativeSiteUrl(context.project, context.currentUrl, context.project, `${docRoot(context.project, matchingLocale)}/`)}"`;
+      if (matchingLocale) {
+        const linkedLocale = context.locale.generatedFrom === matchingLocale.code ? context.locale : matchingLocale;
+        return `href="${relativeSiteUrl(context.project, context.currentUrl, context.project, `${docRoot(context.project, linkedLocale)}/`)}"`;
+      }
       if (target === path.join(context.project.state.mkdocs.docsDir, 'index.md')) return `href="${relativeSiteUrl(context.project, context.currentUrl, context.project, landingUrl(context.project, context.locale))}"`;
       const targetLocale = owningLocale(context.project, target);
-      return `href="${relativeSiteUrl(context.project, context.currentUrl, context.project, localDocUrl(context.project, targetLocale || context.locale, target))}${hash}"`;
+      const linkedLocale = context.locale.generatedFrom === targetLocale?.code ? context.locale : (targetLocale || context.locale);
+      return `href="${relativeSiteUrl(context.project, context.currentUrl, context.project, localDocUrl(context.project, linkedLocale, target))}${hash}"`;
     }
     const target = path.resolve(path.dirname(context.sourceFile), clean);
     const repoRelative = path.relative(context.project.state.repoDir, target);
@@ -587,6 +616,7 @@ async function faqFromMarkdown(project, locale) {
   let sourceFile = path.resolve(project.state.repoDir, locale.source, locale.index);
   let markdown;
   try { markdown = await fs.readFile(sourceFile, 'utf8'); } catch { return null; }
+  if (locale.autoTranslated) markdown = translateMarkdownToTraditional(markdown);
   let lines = markdown.split(/\r?\n/);
   const headingPattern = /^(#{2,4})\s+(.+)$/;
   const faqPattern = /(?:\bFAQ\b|Frequently Asked|Troubleshooting|常见问题|常見問題|疑难解答|疑難排解|トラブルシューティング)/i;
@@ -600,13 +630,14 @@ async function faqFromMarkdown(project, locale) {
     if (!faqPage) return null;
     sourceFile = faqPage.file;
     try { markdown = await fs.readFile(sourceFile, 'utf8'); } catch { return null; }
+    if (locale.autoTranslated) markdown = translateMarkdownToTraditional(markdown);
     lines = markdown.split(/\r?\n/);
     const firstHeading = lines.findIndex(line => /^#\s+/.test(line));
     if (firstHeading >= 0) lines.splice(firstHeading, 1);
     const body = lines.join('\n').trim();
     if (!body) return null;
     const rendered = await markdownToHtml(body, { project, locale, sourceFile, currentUrl: landingUrl(project, locale) });
-    return { title: faqPage.title, html: rendered.html };
+    return { title: locale.autoTranslated ? simplifiedToTraditional(faqPage.title) : faqPage.title, html: rendered.html };
   }
   const heading = lines[start].match(headingPattern);
   const depth = heading[1].length;
@@ -690,9 +721,10 @@ function landingPage(project, locale, meta, faq = null) {
   const t = localeCopy(locale.code); const isFramework = project.type === 'framework';
   const currentUrl = landingUrl(project, locale);
   const marketingKey = project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
-  const eyebrow = t[`${marketingKey}Eyebrow`];
-  const [titleA, titleB] = t[`${marketingKey}Title`].split('\n');
-  const lead = t[`${marketingKey}Lead`];
+  const localizedMarketing = key => t[key] || (locale.autoTranslated ? simplifiedToTraditional(copy['zh-CN'][key]) : copy.en[key]);
+  const eyebrow = localizedMarketing(`${marketingKey}Eyebrow`);
+  const [titleA, titleB] = localizedMarketing(`${marketingKey}Title`).split('\n');
+  const lead = localizedMarketing(`${marketingKey}Lead`);
   const docsUrl = relativeSiteUrl(project, currentUrl, project, `${docRoot(project, locale)}/`);
   const downloads = releaseDownloads(meta);
   const chinaDefault = locale.code === 'zh-CN';
@@ -700,9 +732,9 @@ function landingPage(project, locale, meta, faq = null) {
   const pypiUrl = `https://pypi.org/project/${encodeURIComponent(project.pypi || 'ok-script')}/`;
   const primaryLabel = isFramework ? t.getStarted : `${t.downloadGithub}${locale.code === 'zh-CN' ? ' · 大陆版' : ' · Global'}`;
   const projectFeatures = features[project.id] || features[project.type];
-  const featureSet = projectFeatures[locale.code] || projectFeatures.en;
+  const featureSet = projectFeatures[locale.code] || (locale.autoTranslated ? translateToTraditional(projectFeatures[locale.generatedFrom] || projectFeatures['zh-CN']) : projectFeatures.en);
   const related = config.relatedProjects.map(item => {
-    const desc = item.description[locale.code] || item.description.en;
+    const desc = item.description[locale.code] || (locale.autoTranslated && item.description[locale.generatedFrom] ? simplifiedToTraditional(item.description[locale.generatedFrom]) : item.description.en);
     const icon = item.iconUrl ? `<img src="${relativeAssetUrl(project, currentUrl, item.iconUrl)}" alt="">` : escapeHtml(item.name.slice(0,2).toUpperCase());
     const localProject = config.projects.find(candidate => candidate.github === item.github);
     const targetLocale = localProject && (localProject.locales.find(candidate => candidate.code === locale.code) || localProject.locales.find(candidate => candidate.code === 'en') || localProject.locales[0]);
@@ -761,12 +793,13 @@ async function docsPage(project, locale, page, pages) {
 async function generateProject(project) {
   project.state = await syncProject(project);
   project.state.mkdocs = await loadMkDocs(project);
-  project.locales = discoverLocales(project, project.state.mkdocs);
+  project.locales = addAutomaticTraditionalLocale(discoverLocales(project, project.state.mkdocs));
   project.state.iconUrl = project.siteIcon || (project.icon ? await copySourceAsset(project, path.join(project.state.repoDir, project.icon)) : null);
   project.state.communityLinks = extractCommunity(await collectProjectMarkdown(project));
   const meta = await githubMetadata(project, project.state);
   project.state.meta = meta;
   for (const locale of project.locales) {
+    const sourceLocale = locale.generatedFrom ? project.locales.find(item => item.code === locale.generatedFrom) : locale;
     const faq = await faqFromMarkdown(project, locale);
     const landing = landingPage(project, locale, meta, faq);
     const landingFile = outputPathFromUrl(project, landingUrl(project, locale));
@@ -776,11 +809,12 @@ async function generateProject(project) {
     for (const navPage of project.state.mkdocs.nav) {
       const owner = owningLocale(project, navPage.file);
       const isMkDocsHome = navPage.file === path.join(project.state.mkdocs.docsDir, 'index.md') && !owner;
-      if (isMkDocsHome || (owner && owner !== locale)) continue;
-      const markdown = await fs.readFile(navPage.file, 'utf8');
-      pageData.push({ ...navPage, markdown, url: localDocUrl(project, locale, navPage.file) });
+      if (isMkDocsHome || (owner && owner !== sourceLocale)) continue;
+      const sourceMarkdown = await fs.readFile(navPage.file, 'utf8');
+      const markdown = locale.autoTranslated ? translateMarkdownToTraditional(sourceMarkdown) : sourceMarkdown;
+      pageData.push({ ...navPage, title: locale.autoTranslated ? simplifiedToTraditional(navPage.title) : navPage.title, markdown, url: localDocUrl(project, locale, navPage.file) });
     }
-    const indexFile = path.resolve(project.state.repoDir, locale.source, locale.index);
+    const indexFile = path.resolve(project.state.repoDir, sourceLocale.source, sourceLocale.index);
     pageData.sort((a, b) => a.file === indexFile ? -1 : b.file === indexFile ? 1 : 0);
     for (const page of pageData) {
       const html = await docsPage(project, locale, page, pageData);

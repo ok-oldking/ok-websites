@@ -1,0 +1,232 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>遊戲自動化入門 · ok-script</title><meta name="description" content="遊戲自動化入門 — ok-script"><meta name="keywords" content="ok-script, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/zh-TW/docs/intro_to_automation/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="遊戲自動化入門 · ok-script"><meta property="og:description" content="遊戲自動化入門 — ok-script"><meta property="og:url" content="https://ok-script.com/zh-TW/docs/intro_to_automation/"><meta property="og:image" content="https://ok-script.com/assets/og.png"><meta property="og:image:alt" content="ok-script — 遊戲自動化入門 · ok-script">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="遊戲自動化入門 · ok-script"><meta name="twitter:description" content="遊戲自動化入門 — ok-script"><meta name="twitter:image" content="https://ok-script.com/assets/og.png"><meta name="twitter:image:alt" content="ok-script — 遊戲自動化入門 · ok-script">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"遊戲自動化入門 · ok-script","description":"遊戲自動化入門 — ok-script","url":"https://ok-script.com/zh-TW/docs/intro_to_automation/","inLanguage":"zh-TW","dateModified":"2026-08-09T13:46:24+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260809163926">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../#projects">專案</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件中心</a><a href="./" class="active" aria-current="page">遊戲自動化入門</a><a href="../quick_start/">快速開始</a><a href="../interface/">介面與開發工具</a><a href="../after_quick_start/">進階指南</a><a href="../api_doc/">API 參考</a><a href="../building-site/">構建文件網站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="基於計算機視覺的遊戲自動化入門">基於計算機視覺的遊戲自動化入門</h1>
+<p><a href="../../../en/docs/intro_to_automation/">English</a> · <a href="../">文件中心</a> · <a href="../quick_start/">快速開始</a> · <a href="../api_doc/">API 參考</a></p>
+<p>本文件旨在為初學者提供一個關於如何使用計算機視覺技術實現遊戲自動化的快速入門指南。我們將從基本原理講起，逐步介紹所需的程式語言和開發工具。</p>
+<h2 id="目錄">目錄</h2>
+<ul>
+<li><a href="#%E4%B8%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A6%82%E4%BD%95%E7%8E%A9%E6%B8%B8%E6%88%8F">一、基本原理：計算機如何“玩”遊戲</a><ul>
+<li><a href="#%E6%A0%B8%E5%BF%83%E5%BE%AA%E7%8E%AF%E4%B8%89%E6%AD%A5%E8%B5%B0">核心迴圈：三步走</a></li>
+<li><a href="#%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E4%BB%8E%E5%83%8F%E7%B4%A0%E5%88%B0%E5%86%B3%E7%AD%96">影像分析：從畫素到決策</a><ul>
+<li><a href="#1-%E4%BC%A0%E7%BB%9F%E5%9B%BE%E8%89%B2%E7%AE%97%E6%B3%95-opencv-%E5%BA%93">傳統圖色演算法 (OpenCV 庫)</a></li>
+<li><a href="#2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%8E%A8%E7%90%86-inference">神經網路推理 (Inference)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9">二、程式語言選擇</a><ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%BA%93%E6%A6%82%E8%A7%88">常用庫概覽</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%89%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">三、開發工具</a></li>
+</ul>
+<h2 id="一-基本原理-計算機如何-玩-遊戲-一基本原理計算機如何玩遊戲">一、基本原理：計算機如何“玩”遊戲 { #一基本原理計算機如何玩遊戲 }</h2>
+<p>基於計算機視覺的遊戲自動化，本質上是模擬人類玩家通過“眼睛”觀察遊戲畫面，然後通過“大腦”分析決策，最後通過“手”執行操作的過程。這個過程可以被簡化為一個核心迴圈。</p>
+<h3 id="核心迴圈-三步走-核心迴圈三步走">核心迴圈：三步走 { #核心迴圈三步走 }</h3>
+<p><strong>遊戲截圖 → 影像分析 → 輸出操作</strong></p>
+<p><img src="../../../assets/sources/ok-script/docs/intro_to_automation/img.png" alt="核心迴圈示意圖">
+<em>圖：識別確定按鈕, 並點選</em></p>
+<ol>
+<li><p><strong>輸入 (Input) - 遊戲截圖</strong>：程式首先需要獲取遊戲的即時畫面。</p>
+<ul>
+<li><strong>資料量</strong>: 以一張 <code>1920x1080</code> 解析度的螢幕為例，每個畫素包含藍(B)、綠(G)、紅(R)三個顏色通道，每個通道的值域為
+0-255（即1個位元組）。</li>
+<li>計算：<code>1920 * 1080 * 3 bytes ≈ 6.22 MB</code>。這意味著每一幀影像都是一個相當大的資料塊，因此高效的分析演算法至關重要。</li>
+</ul>
+</li>
+<li><p><strong>處理 (Processing) - 影像分析</strong>：這是整個流程的核心和大腦。程式需要從充滿畫素點的截圖中提取出有意義的資訊，以做出決策。主要有兩種技術路徑。</p>
+</li>
+<li><p><strong>輸出 (Output) - 模擬操作</strong>：根據影像分析的結果，程式會模擬人類玩家的鍵盤和滑鼠操作。這不僅包括立即執行的動作，還包括策略性的等待。</p>
+<ul>
+<li><strong>立即操作</strong>: 移動滑鼠、點選按鈕、按下鍵盤等，從而與遊戲進行互動。</li>
+<li><strong>等待操作</strong>: 持續監控遊戲畫面，直到滿足特定條件再執行下一步。例如，程式可以迴圈截圖分析，直到畫面中出現“戰鬥結束”的文字，才進行點選“確定”按鈕的操作。</li>
+</ul>
+</li>
+</ol>
+<h3 id="影像分析-從畫素到決策-影像分析從畫素到決策">影像分析：從畫素到決策 { #影像分析從畫素到決策 }</h3>
+<p>我們將影像分析的方法分為兩大類：傳統的圖色演算法和現代的神經網路推理。</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法 (Method)</th>
+<th align="left">耗時 (Latency)</th>
+<th align="left">易用性 (Ease of Use)</th>
+<th align="left">主要計算單元 (CPU/GPU)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>找色/特徵分析</strong></td>
+<td align="left">極低 (ms級)</td>
+<td align="left">高(原理簡單) / 中(定製複雜演算法)</td>
+<td align="left">CPU</td>
+</tr>
+<tr>
+<td align="left"><strong>找圖 (模板匹配)</strong></td>
+<td align="left">1-50ms</td>
+<td align="left">中 (需要維護模板圖片庫)</td>
+<td align="left">CPU</td>
+</tr>
+<tr>
+<td align="left"><strong>OCR (文字識別)</strong></td>
+<td align="left">10-200ms</td>
+<td align="left">易(有現成模型) / 難(支援多語言)</td>
+<td align="left">CPU / GPU</td>
+</tr>
+<tr>
+<td align="left"><strong>目標檢測 (YOLO等)</strong></td>
+<td align="left">中~高 (20-500ms+)</td>
+<td align="left">難 (需要自己訓練模型)</td>
+<td align="left">CPU / GPU</td>
+</tr>
+<tr>
+<td align="left"><strong>多模態大模型</strong></td>
+<td align="left">高 (500ms+)</td>
+<td align="left">難 (付費, 接入遠端API)</td>
+<td align="left">GPU / (遠端API)</td>
+</tr>
+</tbody></table>
+<h4 id="1-傳統圖色演算法-opencv-庫-1-傳統圖色演算法-opencv-庫">1. 傳統圖色演算法 (<a href="https://opencv.org/">OpenCV 庫</a>) { #1-傳統圖色演算法-opencv-庫 }</h4>
+<p>這類演算法速度快、實現簡單，適用於處理介面固定、特徵明顯的場景。最常用的庫是 <strong>OpenCV</strong>。</p>
+<ul>
+<li><p><strong>找圖 (Template Matching)</strong></p>
+<ul>
+<li><strong>原理</strong>: 在整個遊戲截圖中，尋找一個預先準備好的小圖片（模板），比如一個按鈕、一個圖示。</li>
+<li><strong>應用</strong>: 點選確定的UI按鈕、識別特定怪物或道具圖示。
+<img src="../../../assets/sources/ok-script/docs/intro_to_automation/img_1.png" alt="模板匹配示意圖">
+<em>圖：在螢幕截圖中尋找“設定”按鈕的模板</em></li>
+</ul>
+</li>
+<li><p><strong>找色 (Color Finding)</strong></p>
+<ul>
+<li><strong>原理</strong>: 在指定區域內尋找特定顏色或顏色範圍的畫素點。</li>
+<li><strong>應用</strong>: 判斷角色的血條/藍條狀態、識別高亮的按鈕或文字、尋找特定顏色的目標。
+<img src="../../../assets/sources/ok-script/docs/intro_to_automation/img_2.png" alt="找色示意圖">
+<em>圖：通過識別紅色來定位敵人的血條</em></li>
+</ul>
+</li>
+<li><p><strong>特徵分析 (Feature Analysis)</strong></p>
+<ul>
+<li><strong>原理</strong>: 通過輪廓檢測、邊緣檢測等演算法，分析影像中特定物件的幾何特徵。</li>
+<li><strong>應用</strong>: 計算讀條或技能的進度、判斷某個區域是否出現特定形狀的物體。
+<img src="../../../assets/sources/ok-script/docs/intro_to_automation/img_3.png" alt="特徵分析示意圖">
+<em>圖：通過計算畫素比例來判斷進度條的完成度</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-神經網路推理-inference-2-神經網路推理-inference">2. 神經網路推理 (Inference) { #2-神經網路推理-inference }</h4>
+<p>當遊戲介面複雜、元素多變或需要識別更抽象的概念時，神經網路模型就派上了用場。這通常需要使用預先訓練好的模型進行“推理”。</p>
+<ul>
+<li><p><strong>OCR (光學字元識別)</strong></p>
+<ul>
+<li><strong>原理</strong>: 從影像中識別並提取文字資訊。</li>
+<li><strong>應用</strong>: 讀取角色的血量數值、識別NPC對話內容、獲取任務目標文本。
+<img src="../../../assets/sources/ok-script/docs/intro_to_automation/img_4.png" alt="OCR示意圖">
+<em>圖：識別遊戲中的傷害數字或角色名稱</em></li>
+</ul>
+</li>
+<li><p><strong>目標檢測 (Object Detection)</strong></p>
+<ul>
+<li><strong>原理</strong>: 在影像中找出所有感興趣的物件，並用方框標記出它們的位置。相比模板匹配，它對物體的縮放、旋轉和部分遮擋有更好的魯棒性。</li>
+<li><strong>應用</strong>: 即時定位螢幕上所有的敵人、隊友或可拾取的物品。
+<img src="../../../assets/sources/ok-script/docs/intro_to_automation/img_5.png" alt="目標檢測示意圖">
+<em>圖：使用<a href="https://ultralytics.com/yolo">YOLO</a>等模型框選出遊戲中的所有角色</em></li>
+</ul>
+</li>
+<li><p><strong>更多深度學習應用</strong></p>
+<ul>
+<li><strong>影像分割</strong>: 比目標檢測更精確，可以識別出物體不規則的輪廓。適用於判斷精確的可通行區域或攻擊範圍。</li>
+<li><strong>影像分類</strong>: 判斷當前遊戲處於何種“狀態”，例如是在主選單、在戰鬥中還是在地圖介面。
+<img src="../../../assets/sources/ok-script/docs/intro_to_automation/img_6.png" alt="深度學習應用示例">
+<em>圖：使用影像分割精確識別可攻擊的敵人輪廓</em></li>
+</ul>
+</li>
+<li><p><strong>前沿：多模態大模型</strong></p>
+<ul>
+<li><strong>原理</strong>: 這是目前最前沿的方向，結合了視覺和語言理解能力。模型可以直接“看懂”螢幕，並根據自然語言指令（例如“去找到那個紅色的寶箱”）來執行復雜任務。</li>
+<li><strong>應用</strong>: 實現更具通用性和智慧化的遊戲自動化代理（Agent）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二-程式語言選擇-二程式語言選擇">二、程式語言選擇 { #二程式語言選擇 }</h2>
+<p>對於初學者，我們強烈推薦使用 <strong>Python</strong> (<a href="https://www.python.org/">官網下載</a>)。</p>
+<ul>
+<li><strong>為什麼是Python？</strong><ol>
+<li><strong>生態系統強大</strong>: 擁有海量的第三方庫，幾乎所有你需要的功能都有現成的工具。</li>
+<li><strong>語法簡潔，上手快</strong>: Python的語法接近自然語言，讓你可以更專注於實現邏輯，而不是糾結於複雜的語法細節。非常適合快速原型開發和驗證想法。</li>
+<li><strong>社群活躍</strong>: 遇到任何問題，你都可以輕鬆地在網上找到大量的教程、文件和解決方案。</li>
+</ol>
+</li>
+</ul>
+<h3 id="常用庫概覽-常用庫概覽">常用庫概覽 { #常用庫概覽 }</h3>
+<ul>
+<li><strong><a href="https://opencv.org/">OpenCV</a></strong>: 計算機視覺的基礎庫，用於影像處理、模板匹配、特徵分析等所有視覺相關的底層操作。</li>
+<li><strong><a href="https://github.com/mhammond/pywin32">pywin32</a></strong>: Windows平臺專用庫，提供底層的API呼叫能力，常用於更穩定、更高效的視窗截圖和模擬鍵鼠操作。</li>
+<li><strong><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a></strong>: 百度開源的OCR工具庫，提供多語言、高精度的文字識別能力，開箱即用。</li>
+<li><strong><a href="https://onnxruntime.ai/">Onnxruntime</a></strong>: 微軟開源的推理引擎，用於高效執行深度學習模型（如YOLO），可以充分利用CPU或GPU進行加速。</li>
+<li><strong><a href="https://ultralytics.com/">YOLO (Ultralytics)</a></strong>: 目前最流行的目標檢測模型實現，提供了易於使用的Python介面，可以快速實現遊戲內目標的檢測。</li>
+<li><strong><a href="https://pytorch.org/">PyTorch</a></strong> &amp; <strong><a href="https://www.tensorflow.org/">TensorFlow</a></strong>:
+兩大主流的深度學習框架。主要用於訓練自定義的神經網路模型，適用於有更高定製化需求的進階使用者。</li>
+</ul>
+<h2 id="三-開發工具-三開發工具">三、開發工具 { #三開發工具 }</h2>
+<p>好的工具能讓開發事半功倍。</p>
+<ol>
+<li><p><strong>程式碼編輯器 (IDE)</strong></p>
+<ul>
+<li><strong><a href="https://www.jetbrains.com/pycharm/download/">PyCharm</a> (強烈推薦)</strong>: JetBrains出品的專業Python
+IDE，功能強大，擁有出色的程式碼補全、除錯和專案管理功能。推薦初學者以及熟悉JetBrains系列IDE的使用者使用。</li>
+<li><strong><a href="https://code.visualstudio.com/download">VS Code</a></strong>:
+微軟開發的輕量級程式碼編輯器，通過安裝外掛（如Python、Pylance）可以獲得媲美IDE的強大功能，啟動速度快，自定義性強。推薦熟悉VS
+Code生態的使用者使用。</li>
+</ul>
+</li>
+<li><p><strong><a href="https://github.com/">GitHub</a></strong></p>
+<ul>
+<li><strong>程式碼託管與學習</strong>: 使用 GitHub 來託管你的程式碼。這不僅是程式碼的備份，更是專案管理和與他人協作的基礎。同時，GitHub 上有各種遊戲自動化專案可以參考，是學習和尋找靈感的絕佳平臺。</li>
+<li><a href="https://desktop.github.com/">GitHub Desktop</a>: 對於不熟悉命令列的初學者，強烈推薦使用官方的
+<em><a href="https://desktop.github.com/">GitHub Desktop</a></em> 客戶端。它將複雜的 Git
+操作（如提交、推送、拉取、建立分支等）簡化為直觀的點選操作，極大地降低了版本控制的上手門檻。</li>
+<li><strong>自動化流程 (GitHub Actions)</strong>: GitHub Actions 提供了強大的自動化能力，可以免費用於專案的自動化測試、打包和釋出，是現代開發流程中不可或缺的一環。</li>
+</ul>
+</li>
+<li><p><strong>AI 程式設計助手</strong></p>
+<ul>
+<li><strong>作用</strong>: 在你遇到困難時，AI可以幫你解釋概念、除錯程式碼、生成程式碼片段，極大提高開發效率。</li>
+<li><strong>推薦</strong>:<ul>
+<li><strong>Gemini Pro 2.5或以上</strong>：Google的強大模型。可以通過免費的開發者API Key在你的IDE中整合,
+如<a href="https://www.cherry-ai.com/">Cherry Studio</a>。</li>
+<li><strong>免費使用渠道</strong>: <a href="https://aistudio.google.com/">Google AI Studio</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/1b01637ef8fc6e1438f9a7ebc4ce7403677552d2/docs/intro_to_automation/README.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#目錄" style="margin-left:0px">目錄</a><a href="#一-基本原理-計算機如何-玩-遊戲-一基本原理計算機如何玩遊戲" style="margin-left:0px">一、基本原理：計算機如何“玩”遊戲 { #一基本原理計算機如何玩遊戲 }</a><a href="#核心迴圈-三步走-核心迴圈三步走" style="margin-left:10px">核心迴圈：三步走 { #核心迴圈三步走 }</a><a href="#影像分析-從畫素到決策-影像分析從畫素到決策" style="margin-left:10px">影像分析：從畫素到決策 { #影像分析從畫素到決策 }</a><a href="#二-程式語言選擇-二程式語言選擇" style="margin-left:0px">二、程式語言選擇 { #二程式語言選擇 }</a><a href="#常用庫概覽-常用庫概覽" style="margin-left:10px">常用庫概覽 { #常用庫概覽 }</a><a href="#三-開發工具-三開發工具" style="margin-left:0px">三、開發工具 { #三開發工具 }</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部專案</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260809163926" defer></script></body></html>

@@ -1,0 +1,66 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Running from source · ok-nte</title><meta name="description" content="Running from source — ok-nte"><meta name="keywords" content="ok-nte, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="BnanZ0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-nte/zh-TW/docs/development/running-from-source/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="Running from source · ok-nte"><meta property="og:description" content="Running from source — ok-nte"><meta property="og:url" content="https://ok-script.com/ok-nte/zh-TW/docs/development/running-from-source/"><meta property="og:image" content="https://ok-script.com/assets/og.png"><meta property="og:image:alt" content="ok-nte — Running from source · ok-nte">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Running from source · ok-nte"><meta name="twitter:description" content="Running from source — ok-nte"><meta name="twitter:image" content="https://ok-script.com/assets/og.png"><meta name="twitter:image:alt" content="ok-nte — Running from source · ok-nte">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Running from source · ok-nte","description":"Running from source — ok-nte","url":"https://ok-script.com/ok-nte/zh-TW/docs/development/running-from-source/","inLanguage":"zh-TW","dateModified":"2026-08-09T21:25:05+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260809163926">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概覽</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題與反饋</a><a href="../contributing/">Contributing</a><a href="./" class="active" aria-current="page">Running from source</a><a href="../flow/">Flow author guide</a><a href="../combat-planner/">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="從原始碼執行">從原始碼執行</h1>
+<h2 id="環境準備">環境準備</h2>
+<ul>
+<li>Python 3.12 或更高版本。</li>
+<li>推薦安裝 <a href="https://docs.astral.sh/uv/">uv</a>。</li>
+<li>Windows 開發環境。</li>
+</ul>
+<pre><code class="language-bash">git clone https://github.com/BnanZ0/ok-nte.git
+cd ok-nte
+uv sync
+</code></pre>
+<h2 id="啟動">啟動</h2>
+<pre><code class="language-bash"># 正式入口
+python main.py
+
+# 调试入口，输出更详细的日志
+python main_debug.py
+</code></pre>
+<h2 id="測試與靜態檢查">測試與靜態檢查</h2>
+<p>倉庫使用 <code>unittest</code>。有本地虛擬環境時，優先使用它的直譯器：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m unittest discover -s tests -p &quot;*.py&quot;
+.\.venv\Scripts\python.exe -m py_compile src\flow.py
+</code></pre>
+<p>如已安裝 Ruff，可執行：</p>
+<pre><code class="language-powershell">ruff check .
+</code></pre>
+<h2 id="構建文件站點">構建文件站點</h2>
+<p>文件依賴與應用依賴分離。安裝後可生成可由任意靜態網站伺服器託管的 HTML：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-docs.txt
+.\.venv\Scripts\python.exe -m mkdocs build --strict
+</code></pre>
+<p>預設輸出目錄為 <code>site/</code>。本地預覽可執行：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m mkdocs serve
+</code></pre>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/4856c908f6e1137c8e47032bf9c418b051b93764/docs/development/running-from-source.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#環境準備" style="margin-left:0px">環境準備</a><a href="#啟動" style="margin-left:0px">啟動</a><a href="#測試與靜態檢查" style="margin-left:0px">測試與靜態檢查</a><a href="#構建文件站點" style="margin-left:0px">構建文件站點</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260809163926" defer></script></body></html>

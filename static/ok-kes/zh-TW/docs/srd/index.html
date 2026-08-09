@@ -1,0 +1,618 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>軟體需求與設計 · ok-kes</title><meta name="description" content="軟體需求與設計 — ok-kes"><meta name="keywords" content="ok-kes, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="baoxin1100">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-kes/zh-TW/docs/srd/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="軟體需求與設計 · ok-kes"><meta property="og:description" content="軟體需求與設計 — ok-kes"><meta property="og:url" content="https://ok-script.com/ok-kes/zh-TW/docs/srd/"><meta property="og:image" content="https://ok-script.com/assets/og.png"><meta property="og:image:alt" content="ok-kes — 軟體需求與設計 · ok-kes">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="軟體需求與設計 · ok-kes"><meta name="twitter:description" content="軟體需求與設計 — ok-kes"><meta name="twitter:image" content="https://ok-script.com/assets/og.png"><meta name="twitter:image:alt" content="ok-kes — 軟體需求與設計 · ok-kes">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"軟體需求與設計 · ok-kes","description":"軟體需求與設計 — ok-kes","url":"https://ok-script.com/ok-kes/zh-TW/docs/srd/","inLanguage":"zh-TW","dateModified":"2026-08-09T22:16:12+08:00","author":{"@type":"Organization","name":"ok-kes","url":"https://github.com/baoxin1100/ok-kes"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260809163926">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/sources/ok-kes/icons/icon.png" alt=""></span><span>ok-kes</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-kes/icons/icon.png" alt=""></span><span>ok-kes</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/baoxin1100/ok-kes"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">簡體中文</a><a href="../development/index/">開發指南</a><a href="./" class="active" aria-current="page">軟體需求與設計</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-kes</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="ok-kes-軟體需求文件-srd">ok-kes 軟體需求文件 (SRD)</h1>
+<h2 id="1-專案概述">1. 專案概述</h2>
+<p>ok-kes 是一個基於 ok-py 框架的《卡厄思夢境》遊戲自動化輔助工具。通過 OCR 識別遊戲畫面並模擬點選/按鍵操作，實現遊戲內各項功能的自動化。</p>
+<h3 id="1-1-專案定位">1.1 專案定位</h3>
+<ul>
+<li>目標使用者：卡厄思夢境玩家</li>
+<li>執行環境：Windows 11，Python 3.12，miniconda3/oknikke 環境</li>
+<li>框架依賴：ok-script（基於 PySide6 的 GUI 自動化框架）</li>
+</ul>
+<h3 id="1-2-技術棧">1.2 技術棧</h3>
+<table>
+<thead>
+<tr>
+<th>元件</th>
+<th>技術選型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GUI 框架</td>
+<td>ok-script (PySide6 + qfluentwidgets)</td>
+</tr>
+<tr>
+<td>OCR</td>
+<td>onnxocr-ppocrv5</td>
+</tr>
+<tr>
+<td>繁簡轉換</td>
+<td>OpenCC</td>
+</tr>
+<tr>
+<td>影像處理</td>
+<td>OpenCV + OpenVINO</td>
+</tr>
+<tr>
+<td>雲端儲存</td>
+<td>Supabase (PostgreSQL + REST API)</td>
+</tr>
+<tr>
+<td>版本控制</td>
+<td>Git + GitHub</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="2-功能模組">2. 功能模組</h2>
+<h3 id="2-1-自動卡厄思模式-chaosmode">2.1 自動卡厄思模式 (ChaosMode)</h3>
+<p><strong>檔案</strong>: <code>ok_tasks/ChaosMode.py</code>, <code>ok_tasks/utils_chaos.py</code></p>
+<h4 id="2-1-1-功能概述">2.1.1 功能概述</h4>
+<p>自動運行遊戲內卡厄思模式副本，處理戰鬥、路線選擇、卡牌操作等完整流程。</p>
+<h4 id="2-1-2-核心邏輯">2.1.2 核心邏輯</h4>
+<p>每秒觸發一次 <code>run()</code> 方法：</p>
+<ol>
+<li>OCR 識別當前畫面文本，繁體轉簡體</li>
+<li>依次嘗試約 50 個頁面處理函式（<code>PAGE_HANDLERS</code> 列表）</li>
+<li>命中某一頁面則執行對應操作並結束本輪迴圈</li>
+</ol>
+<h4 id="2-1-3-頁面處理函式型別">2.1.3 頁面處理函式型別</h4>
+<table>
+<thead>
+<tr>
+<th>類別</th>
+<th>函式示例</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>通用操作</td>
+<td><code>handle_confirm</code>, <code>handle_next_step</code></td>
+<td>確認、下一步等通用按鈕點選</td>
+</tr>
+<tr>
+<td>戰鬥相關</td>
+<td><code>handle_battle_auto_check</code></td>
+<td>檢測自動戰鬥開關，檢查手牌數</td>
+</tr>
+<tr>
+<td>路線選擇</td>
+<td><code>handle_route_selection</code></td>
+<td>按優先順序識別節點型別並選擇路線</td>
+</tr>
+<tr>
+<td>卡牌操作</td>
+<td><code>handle_select_card</code>, <code>handle_remove</code>, <code>handle_flash</code></td>
+<td>移除/閃光/複製卡牌</td>
+</tr>
+<tr>
+<td>商店</td>
+<td><code>handle_shop</code></td>
+<td>德朗商店購買卡牌</td>
+</tr>
+<tr>
+<td>休息</td>
+<td><code>handle_rest</code></td>
+<td>免費休息恢復</td>
+</tr>
+<tr>
+<td>事件</td>
+<td><code>handle_event_task</code></td>
+<td>事件任務選擇</td>
+</tr>
+<tr>
+<td>面具</td>
+<td><code>handle_mask_card</code>, <code>handle_chaos_mask_engraving</code></td>
+<td>面具卡牌選擇與刻印</td>
+</tr>
+<tr>
+<td>精神/治療</td>
+<td><code>handle_mental_breakdown</code>, <code>handle_trauma_center</code></td>
+<td>精神崩潰治療</td>
+</tr>
+<tr>
+<td>探險結算</td>
+<td><code>handle_expedition_result</code></td>
+<td>記錄勝負，更新勝率統計</td>
+</tr>
+<tr>
+<td>獎勵</td>
+<td><code>handle_chaos_reward_claim</code>, <code>handle_chaos_reward_settlement</code></td>
+<td>領取獎勵</td>
+</tr>
+</tbody></table>
+<h4 id="2-1-4-配置項">2.1.4 配置項</h4>
+<table>
+<thead>
+<tr>
+<th>配置項</th>
+<th>型別</th>
+<th>預設值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>任務優先順序</td>
+<td>列表</td>
+<td>[&quot;複製&quot;,&quot;信用點增加&quot;,&quot;移除&quot;]</td>
+<td>事件任務選擇優先順序</td>
+</tr>
+<tr>
+<td>拉黑任務</td>
+<td>列表</td>
+<td>[&quot;咒術卡牌&quot;,&quot;壓力&quot;]</td>
+<td>事件任務過濾，描述包含關鍵詞則不選</td>
+</tr>
+<tr>
+<td>閃光優先順序</td>
+<td>JSON</td>
+<td>{&quot;劍雨&quot;:[&quot;生成2張極光劍&quot;]}</td>
+<td>卡牌閃光效果優先順序</td>
+</tr>
+<tr>
+<td>移除卡牌列表</td>
+<td>列表</td>
+<td>[&quot;劍幕&quot;,&quot;劍光&quot;,...]</td>
+<td>移除操作的目標卡牌</td>
+</tr>
+<tr>
+<td>閃光卡牌列表</td>
+<td>列表</td>
+<td>[&quot;展開極光&quot;,&quot;劍雨&quot;,...]</td>
+<td>閃光操作的目標卡牌</td>
+</tr>
+<tr>
+<td>複製卡牌列表</td>
+<td>列表</td>
+<td>[&quot;展開極光&quot;,&quot;劍雨&quot;,...]</td>
+<td>複製操作的目標卡牌</td>
+</tr>
+<tr>
+<td>路線優先順序</td>
+<td>列表</td>
+<td>[&quot;休息&quot;,&quot;事件&quot;,&quot;小怪&quot;,&quot;boss&quot;]</td>
+<td>路線節點選擇順序</td>
+</tr>
+<tr>
+<td>優先使用金幣治療</td>
+<td>布林</td>
+<td>True</td>
+<td>創傷中心治療方式</td>
+</tr>
+<tr>
+<td>治療崩潰</td>
+<td>布林</td>
+<td>True</td>
+<td>精神崩潰時去創傷中心</td>
+</tr>
+<tr>
+<td>優先移除基礎牌</td>
+<td>布林</td>
+<td>True</td>
+<td>移除時優先選基礎牌</td>
+</tr>
+<tr>
+<td>進入商店</td>
+<td>布林</td>
+<td>False</td>
+<td>路線中是否進商店</td>
+</tr>
+<tr>
+<td>保留存檔</td>
+<td>布林</td>
+<td>False</td>
+<td>是否保留儲存資料</td>
+</tr>
+<tr>
+<td>領取獎勵(只使用驗證卡)</td>
+<td>布林</td>
+<td>False</td>
+<td>獎勵領取策略</td>
+</tr>
+<tr>
+<td>指定面具卡牌</td>
+<td>字串</td>
+<td>&quot;丟棄最多2張卡牌&quot;</td>
+<td>優先選擇的面具效果</td>
+</tr>
+<tr>
+<td>面具卡牌刻印</td>
+<td>字串</td>
+<td>&quot;自身攻擊卡牌傷害總量提升30%&quot;</td>
+<td>優先選的刻印效果</td>
+</tr>
+<tr>
+<td>只打第一層</td>
+<td>布林</td>
+<td>False</td>
+<td>通過一次最終boss後退出的圖層</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-2-自動出擊模式-sortiemode">2.2 自動出擊模式 (SortieMode)</h3>
+<p><strong>檔案</strong>: <code>ok_tasks/SortieMode.py</code>, <code>ok_tasks/utils_sortie.py</code></p>
+<h4 id="2-2-1-功能概述">2.2.1 功能概述</h4>
+<p>自動運行遊戲內出擊模式副本，包括手牌識別與出牌、主戰員選擇等。</p>
+<h4 id="2-2-2-核心邏輯">2.2.2 核心邏輯</h4>
+<p>與 ChaosMode 相同，使用 <code>PAGE_HANDLERS</code> 列表驅動頁面處理。</p>
+<h4 id="2-2-3-特色功能">2.2.3 特色功能</h4>
+<p><strong>手牌識別與出牌</strong> (<code>handle_battle_page</code>):</p>
+<ul>
+<li>OCR 識別手牌區域卡牌名</li>
+<li>按鍵識別（卡牌上的數字鍵位）</li>
+<li>出牌卡手檢測（連續 3 輪同一張牌未出掉則兜底出牌）</li>
+<li>EP 能量檢測（滿能量時釋放 Ego 技能）</li>
+<li>幀卡住檢測與恢復</li>
+</ul>
+<p><strong>主戰員選擇</strong> (<code>handle_member_selection</code>, <code>handle_battle_member_config</code>):</p>
+<ul>
+<li>按優先順序選擇主戰員</li>
+<li>支援拉黑列表（跳過指定角色）</li>
+<li>重新整理候選槽位</li>
+<li>出戰主戰員選擇（戰鬥前配置）</li>
+</ul>
+<p><strong>卡牌操作</strong>:</p>
+<ul>
+<li><code>handle_battle_hand_select</code>: 戰鬥中手牌選擇</li>
+<li><code>handle_get_card</code>: 獲得卡牌頁面按優先順序選擇</li>
+<li><code>handle_draw_card_event</code>: 抽牌事件選擇</li>
+<li><code>handle_discard_hand_card</code>: 丟棄手牌</li>
+<li><code>handle_curiosity_activate</code>: 尼婭的好奇心卡牌選擇</li>
+<li><code>handle_extra_card_use</code>: 額外使用卡牌</li>
+</ul>
+<p><strong>其他</strong>:</p>
+<ul>
+<li><code>handle_boss_selection</code>: 隨機選擇首領</li>
+<li><code>handle_rest_sortie</code>: 休息區閃光/休息選擇</li>
+<li><code>handle_sortie_reward_settlement</code>: 獎勵結算</li>
+<li><code>handle_rational_supply</code>, <code>handle_ether_supply</code>: 資源補充</li>
+</ul>
+<h4 id="2-2-4-配置項">2.2.4 配置項</h4>
+<table>
+<thead>
+<tr>
+<th>配置項</th>
+<th>型別</th>
+<th>預設值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>路線優先順序</td>
+<td>列表</td>
+<td>[&quot;休息&quot;,&quot;事件&quot;,&quot;小怪&quot;,&quot;boss&quot;]</td>
+<td>節點選擇順序</td>
+</tr>
+<tr>
+<td>主戰員優先順序</td>
+<td>列表</td>
+<td>[&quot;米卡&quot;,&quot;尼婭&quot;,...]</td>
+<td>會合主戰員選擇</td>
+</tr>
+<tr>
+<td>出戰主戰員優先順序</td>
+<td>列表</td>
+<td>[&quot;海德瑪麗&quot;,&quot;九&quot;,...]</td>
+<td>戰鬥前主戰員配置</td>
+</tr>
+<tr>
+<td>獲得卡牌優先順序</td>
+<td>列表</td>
+<td>[&quot;展開極光&quot;,&quot;劍雨&quot;,...]</td>
+<td>獲得卡牌時的選擇</td>
+</tr>
+<tr>
+<td>出牌優先順序</td>
+<td>列表</td>
+<td>[&quot;劍雨&quot;,&quot;水之源&quot;,...]</td>
+<td>戰鬥中出牌順序</td>
+</tr>
+<tr>
+<td>丟棄卡牌優先順序</td>
+<td>列表</td>
+<td>[&quot;展開極光&quot;,...]</td>
+<td>丟棄操作的目標</td>
+</tr>
+<tr>
+<td>任務優先順序</td>
+<td>列表</td>
+<td>[&quot;選取隨機3條命運&quot;,...]</td>
+<td>事件任務選擇</td>
+</tr>
+<tr>
+<td>拉黑任務</td>
+<td>列表</td>
+<td>[&quot;咒術卡牌&quot;,&quot;壓力&quot;]</td>
+<td>事件任務過濾</td>
+</tr>
+<tr>
+<td>拉黑主戰員</td>
+<td>列表</td>
+<td>[&quot;黛安娜&quot;,&quot;阿黛爾海特&quot;]</td>
+<td>跳過的角色</td>
+</tr>
+<tr>
+<td>移除/複製/閃光卡牌列表</td>
+<td>列表</td>
+<td>...</td>
+<td>各類卡牌操作的目標</td>
+</tr>
+<tr>
+<td>跳過非優先順序卡牌</td>
+<td>布林</td>
+<td>True</td>
+<td>獲得卡牌時跳過非優先順序</td>
+</tr>
+<tr>
+<td>優先移除基礎牌</td>
+<td>布林</td>
+<td>True</td>
+<td>移除時優先基礎牌</td>
+</tr>
+<tr>
+<td>領取獎勵</td>
+<td>布林</td>
+<td>False</td>
+<td>獎勵領取開關</td>
+</tr>
+<tr>
+<td>進入商店</td>
+<td>布林</td>
+<td>False</td>
+<td>路線中進商店</td>
+</tr>
+<tr>
+<td>只打第一層</td>
+<td>布林</td>
+<td>True</td>
+<td>通過最終boss後退出</td>
+</tr>
+<tr>
+<td>生命值大於多少優先閃光</td>
+<td>字串</td>
+<td>&quot;60&quot;</td>
+<td>HP 百分比閾值</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-3-配置同步與熱門配置">2.3 配置同步與熱門配置</h3>
+<p><strong>檔案</strong>: <code>ok_tasks/config_sync.py</code>, <code>ok_tasks/config_io.py</code></p>
+<h4 id="2-3-1-上傳機制">2.3.1 上傳機制</h4>
+<ul>
+<li><strong>觸發方式</strong>: 模式執行時每 300 秒（5 分鐘）自動檢查上傳</li>
+<li><strong>最低場數</strong>: 2 場（<code>MIN_ROUNDS = 2</code>，可配置）</li>
+<li><strong>上傳內容</strong>: 配置 base64 + 勝率 + 版本號 + 遊戲語言 + 匿名使用者 hash</li>
+<li><strong>不上傳</strong>: 個人身份資訊、遊戲賬號、截圖、IP 地址</li>
+</ul>
+<h4 id="2-3-2-匿名使用者標識">2.3.2 匿名使用者標識</h4>
+<p><code>_get_user_hash()</code>: 組合 MAC 地址 + 主機名 + 使用者名稱，取 SHA256 前 16 位。</p>
+<h4 id="2-3-3-雲端儲存-supabase">2.3.3 雲端儲存 (Supabase)</h4>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>BIGINT</td>
+<td>自增主鍵</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>TEXT</td>
+<td>&quot;chaos&quot; 或 &quot;sortie&quot;</td>
+</tr>
+<tr>
+<td>config_b64</td>
+<td>TEXT</td>
+<td>配置的 base64 編碼</td>
+</tr>
+<tr>
+<td>config_ver</td>
+<td>TEXT</td>
+<td>版本號</td>
+</tr>
+<tr>
+<td>game_lang</td>
+<td>TEXT</td>
+<td>遊戲語言</td>
+</tr>
+<tr>
+<td>win_rate</td>
+<td>REAL</td>
+<td>勝率 (0.0~1.0)</td>
+</tr>
+<tr>
+<td>total_rounds</td>
+<td>INTEGER</td>
+<td>總戰鬥場數</td>
+</tr>
+<tr>
+<td>user_hash</td>
+<td>TEXT</td>
+<td>匿名使用者標識</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>建立時間</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>TIMESTAMPTZ</td>
+<td>更新時間</td>
+</tr>
+</tbody></table>
+<p><strong>唯一約束</strong>: <code>(user_hash, mode, config_b64)</code> — 同一使用者同一配置只保留一條記錄</p>
+<h4 id="2-3-4-熱門配置展示">2.3.4 熱門配置展示</h4>
+<ul>
+<li>排序方式：按平均勝率降序 / 按使用人數降序</li>
+<li>展示上限：20 條</li>
+<li>展示資訊：排名、勝率、使用人數、遊戲語言、版本</li>
+</ul>
+<h4 id="2-3-5-配置匯入匯出">2.3.5 配置匯入匯出</h4>
+<ul>
+<li><code>_export_config_to_text()</code>: 匯出為 base64 編碼</li>
+<li><code>_import_config_from_text()</code>: 從 base64 匯入（合併到當前配置）</li>
+<li>按鈕功能：所有配置操作在 UI 的 config 按鈕中完成</li>
+</ul>
+<hr>
+<h3 id="2-4-通用功能">2.4 通用功能</h3>
+<h4 id="2-4-1-多語言支援">2.4.1 多語言支援</h4>
+<ul>
+<li>使用 OpenCC（繁轉簡）統一 OCR 文本處理</li>
+<li>i18n 通過 <code>.po</code> / <code>.mo</code> 檔案實現 UI 翻譯</li>
+<li>全域性配置「遊戲語言」支援：簡體中文、繁體中文、日文、英文</li>
+</ul>
+<h4 id="2-4-2-卡牌識別增強-劍雨合併">2.4.2 卡牌識別增強（劍雨合併）</h4>
+<p>在 <code>select_card</code> 中，如果 OCR 將&quot;劍雨&quot;識別為分離的&quot;劍&quot;和&quot;雨&quot;兩個單字框，自動合併為一個 <code>Box(name=&quot;剑雨&quot;)</code>，刪除舊的單字框，使後續匹配能正確識別。</p>
+<h4 id="2-4-3-幀卡住檢測">2.4.3 幀卡住檢測</h4>
+<p><code>is_frame_stuck()</code>: 基於畫素變化檢測畫面是否卡住（連續 30 秒變化比例 &lt; 0.5%），用于战斗恢复和日志输出。</p>
+<hr>
+<h2 id="3-架构设计">3. 架构设计</h2>
+<h3 id="3-1-整体架构">3.1 整体架构</h3>
+<pre><code>main.py (入口)
+  └── ok.OK(config) ──→ GUI 启动
+        ├── ChaosMode (TriggerTask)
+        │     └── run() → 遍历 utils_chaos.PAGE_HANDLERS
+        ├── SortieMode (TriggerTask)
+        │     └── run() → 遍历 utils_sortie.PAGE_HANDLERS
+        └── 全局配置 (Settings)
+              ├── 游戏语言
+              └── 配置上传开关
+</code></pre>
+<h3 id="3-2-任务调度">3.2 任务调度</h3>
+<ul>
+<li>继承 <code>ok.TriggerTask</code>，每秒触发一次 <code>run()</code></li>
+<li>每帧 OCR → 繁转简 → 依次尝试页面处理函数 → 命中即返回</li>
+<li>帧末尾检查是否需要上传配置</li>
+</ul>
+<h3 id="3-3-互斥机制">3.3 互斥机制</h3>
+<ul>
+<li>开启 ChaosMode 时自动禁用 SortieMode</li>
+<li>开启 SortieMode 时自动禁用 ChaosMode</li>
+</ul>
+<h3 id="3-4-数据流">3.4 数据流</h3>
+<pre><code>用户操作配置 → 保存到 configs/ 目录 JSON 文件
+      ↓
+每 5 分钟 → 读取配置 → base64 编码 → 上传到 Supabase
+      ↓
+热门配置按钮 → 从 Supabase 获取 → 聚合计算 → 展示列表 → 用户选择 → 导入配置
+</code></pre>
+<hr>
+<h2 id="4-配置项总览">4. 配置项总览</h2>
+<h3 id="4-1-全局配置-src-config-py">4.1 全局配置 (src/config.py)</h3>
+<table>
+<thead>
+<tr>
+<th>配置分类</th>
+<th>配置项</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>游戏语言</td>
+<td>游戏语言</td>
+<td>下拉框</td>
+<td>简体中文</td>
+</tr>
+<tr>
+<td>配置上传</td>
+<td>是否上传配置</td>
+<td>开关</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-卡厄思模式配置-18-项">4.2 卡厄思模式配置（18 项）</h3>
+<p>任务优先级、拉黑任务、闪光优先级、移除卡牌列表、闪光卡牌列表、复制卡牌列表、路线优先级、优先使用金币治疗、治疗崩溃、优先移除基础牌、进入商店、保留存档、领取奖励(只使用验证卡)、指定面具卡牌、面具卡牌刻印、只打第一层、导出配置、导入配置、热门配置</p>
+<h3 id="4-3-出击模式配置-20-项">4.3 出击模式配置（20 项）</h3>
+<p>路线优先级、主战员优先级、出战主战员优先级、获得卡牌优先级、移除卡牌列表、复制卡牌列表、闪光卡牌列表、领取奖励、出牌优先级、丢弃卡牌优先级、进入商店、卡牌奖励优先级、任务优先级、拉黑任务、拉黑主战员、跳过非优先级卡牌、优先移除基础牌、生命值大于多少优先闪光、只打第一层、导出配置、导入配置、热门配置</p>
+<hr>
+<h2 id="5-环境要求">5. 环境要求</h2>
+<h3 id="5-1-运行环境">5.1 运行环境</h3>
+<ul>
+<li>操作系统：Windows 11</li>
+<li>Python：3.12 (miniconda3/oknikke)</li>
+<li>游戏窗口：16:9 分辨率，最低 1280x720，推荐 1920x1080</li>
+<li>网络：可选（上传配置及获取热门配置需要）</li>
+</ul>
+<h3 id="5-2-依赖">5.2 依赖</h3>
+<pre><code>ok-script&gt;=1.0.163
+onnxocr-ppocrv5&gt;=0.0.18
+OpenCC&gt;=1.2.0
+opencv-python&gt;=4.12.0
+openvino&gt;=2026.0.0
+requests (用於配置同步)
+</code></pre>
+<h3 id="5-3-声明的-ocr-库配置">5.3 声明的 OCR 库配置</h3>
+<pre><code class="language-python">&#39;ocr&#39;: {
+    &#39;lib&#39;: &#39;onnxocr&#39;,
+    &#39;auto_simplify&#39;: True,
+    &#39;params&#39;: {
+        &#39;use_openvino&#39;: True,
+    }
+}
+</code></pre>
+<h3 id="5-4-windows-交互配置">5.4 Windows 交互配置</h3>
+<pre><code class="language-python">&#39;interaction&#39;: [&#39;Pynput&#39;, &#39;PostMessage&#39;, &#39;Genshin&#39;, &#39;PyDirect&#39;, &#39;ForegroundPostMessage&#39;]
+&#39;capture_method&#39;: [&#39;WGC&#39;, &#39;BitBlt_RenderFull&#39;, &#39;BitBlt&#39;]
+</code></pre>
+<hr>
+<h2 id="6-版本歷史">6. 版本歷史</h2>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>日期</th>
+<th>變更內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v1.3.5</td>
+<td>2026-07-22</td>
+<td>新增熱門配置同步功能；提高劍雨卡牌識別率；新增拉黑任務功能；程式碼去重最佳化</td>
+</tr>
+<tr>
+<td>v1.3.4</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>...</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/baoxin1100/ok-kes/blob/f0b57e7ec2c620b897d0c47b4e34e40f6b4cfe86/docs/srd.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-專案概述" style="margin-left:0px">1. 專案概述</a><a href="#1-1-專案定位" style="margin-left:10px">1.1 專案定位</a><a href="#1-2-技術棧" style="margin-left:10px">1.2 技術棧</a><a href="#2-功能模組" style="margin-left:0px">2. 功能模組</a><a href="#2-1-自動卡厄思模式-chaosmode" style="margin-left:10px">2.1 自動卡厄思模式 (ChaosMode)</a><a href="#2-2-自動出擊模式-sortiemode" style="margin-left:10px">2.2 自動出擊模式 (SortieMode)</a><a href="#2-3-配置同步與熱門配置" style="margin-left:10px">2.3 配置同步與熱門配置</a><a href="#2-4-通用功能" style="margin-left:10px">2.4 通用功能</a><a href="#3-架构设计" style="margin-left:0px">3. 架构设计</a><a href="#3-1-整体架构" style="margin-left:10px">3.1 整体架构</a><a href="#3-2-任务调度" style="margin-left:10px">3.2 任务调度</a><a href="#3-3-互斥机制" style="margin-left:10px">3.3 互斥机制</a><a href="#3-4-数据流" style="margin-left:10px">3.4 数据流</a><a href="#4-配置项总览" style="margin-left:0px">4. 配置项总览</a><a href="#4-1-全局配置-src-config-py" style="margin-left:10px">4.1 全局配置 (src/config.py)</a><a href="#4-2-卡厄思模式配置-18-项" style="margin-left:10px">4.2 卡厄思模式配置（18 项）</a><a href="#4-3-出击模式配置-20-项" style="margin-left:10px">4.3 出击模式配置（20 项）</a><a href="#5-环境要求" style="margin-left:0px">5. 环境要求</a><a href="#5-1-运行环境" style="margin-left:10px">5.1 运行环境</a><a href="#5-2-依赖" style="margin-left:10px">5.2 依赖</a><a href="#5-3-声明的-ocr-库配置" style="margin-left:10px">5.3 声明的 OCR 库配置</a><a href="#5-4-windows-交互配置" style="margin-left:10px">5.4 Windows 交互配置</a><a href="#6-版本歷史" style="margin-left:0px">6. 版本歷史</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/baoxin1100/ok-kes"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260809163926" defer></script></body></html>
