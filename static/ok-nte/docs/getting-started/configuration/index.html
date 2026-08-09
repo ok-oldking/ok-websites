@@ -1,0 +1,53 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>使用前配置 · ok-nte</title><meta name="description" content="使用前配置 — ok-nte"><link rel="canonical" href="https://ok-script.com/ok-nte/docs/getting-started/configuration/">
+  <meta property="og:type" content="website"><meta property="og:title" content="使用前配置 · ok-nte"><meta property="og:description" content="使用前配置 — ok-nte"><meta property="og:url" content="https://ok-script.com/ok-nte/docs/getting-started/configuration/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260809135917">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../installation/">安装</a><a href="./" class="active" aria-current="page">使用前配置</a><a href="../../features/overview/">功能概览</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题与反馈</a><a href="../../development/contributing/">Contributing</a><a href="../../development/running-from-source/">Running from source</a><a href="../../development/flow/">Flow author guide</a><a href="../../development/combat-planner/">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="使用前配置">使用前配置</h1>
+<p>运行自动化前，请确认以下设置。它们直接影响画面识别与输入的稳定性。</p>
+<h2 id="游戏画面">游戏画面</h2>
+<ul>
+<li>使用游戏默认亮度。</li>
+<li>不要使用会改变默认界面的设置；UI 透明度应为 <code>1.0</code>。</li>
+<li>关闭 NVIDIA Freestyle、AMD FidelityFX 等显卡滤镜和锐化效果。</li>
+<li>AMD 显卡用户应保证显示色彩接近默认 NVIDIA 色彩；如有色彩识别问题，可尝试启用 Windows 的“自动管理应用的颜色”。</li>
+<li>使用 1920×1080 或更高的 16:9 分辨率。</li>
+<li>关闭 MSI Afterburner 等在游戏画面上显示帧率或其他信息的悬浮层。</li>
+</ul>
+<h2 id="游戏控制">游戏控制</h2>
+<ul>
+<li>使用游戏默认按键绑定。</li>
+<li>将“移动镜头修正”设为禁用。</li>
+<li>将“按下锁定镜头回正”设为启用。</li>
+</ul>
+<h2 id="windows-与窗口状态">Windows 与窗口状态</h2>
+<p>!!! warning
+    游戏可位于后台，但不能最小化。运行期间不要熄屏或锁屏。</p>
+<ul>
+<li>当游戏在前台时，请不要移动鼠标，以免干扰模拟点击。</li>
+<li>开始长时间任务前，先确认目标游戏窗口处于可截图、可接收输入的状态。</li>
+<li>若使用声音驱动功能，请确认游戏音频输出正常。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/4856c908f6e1137c8e47032bf9c418b051b93764/docs/zh-CN/getting-started/configuration.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#游戏画面" style="margin-left:0px">游戏画面</a><a href="#游戏控制" style="margin-left:0px">游戏控制</a><a href="#windows-与窗口状态" style="margin-left:0px">Windows 与窗口状态</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260809135917" defer></script></body></html>

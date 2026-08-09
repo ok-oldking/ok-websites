@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Contributing · ok-nte</title><meta name="description" content="Contributing — ok-nte"><link rel="canonical" href="https://ok-script.com/ok-nte/docs/development/contributing/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Contributing · ok-nte"><meta property="og:description" content="Contributing — ok-nte"><meta property="og:url" content="https://ok-script.com/ok-nte/docs/development/contributing/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260809135917">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概览</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题与反馈</a><a href="./" class="active" aria-current="page">Contributing</a><a href="../running-from-source/">Running from source</a><a href="../flow/">Flow author guide</a><a href="../combat-planner/">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="贡献与验证">贡献与验证</h1>
+<h2 id="变更原则">变更原则</h2>
+<ul>
+<li>保持改动小且可审查；不要顺手重构无关文件。</li>
+<li>自动化仍应只通过 UI、OCR、系统音频和常规输入与游戏交互。</li>
+<li>不要提交用户日志、截图、配置、账号信息、密钥或个人路径。</li>
+<li>涉及战斗 planner、战斗状态、声音捕获或用户数据兼容性时，补充相应测试并说明风险。</li>
+</ul>
+<h2 id="文档贡献">文档贡献</h2>
+<ul>
+<li>将面向用户的说明放在“开始使用”“功能”或“指南”。</li>
+<li>将 API、架构和实现说明放在“开发”。</li>
+<li>新页面必须添加到根目录 <code>mkdocs.yml</code> 的 <code>nav</code>，否则不会出现在网站导航中。</li>
+<li>使用相对 Markdown 链接；提交前运行严格构建检查断链和配置错误。</li>
+</ul>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m mkdocs build --strict
+</code></pre>
+<h2 id="代码验证">代码验证</h2>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m unittest discover -s tests -p &quot;*.py&quot;
+</code></pre>
+<p>请在提交说明中写明已运行的验证，以及因环境限制未运行的验证。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/4856c908f6e1137c8e47032bf9c418b051b93764/docs/development/contributing.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#变更原则" style="margin-left:0px">变更原则</a><a href="#文档贡献" style="margin-left:0px">文档贡献</a><a href="#代码验证" style="margin-left:0px">代码验证</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260809135917" defer></script></body></html>

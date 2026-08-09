@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>从源码运行 · ok-star-resonance</title><meta name="description" content="从源码运行 — ok-star-resonance"><link rel="canonical" href="https://ok-script.com/ok-star-resonance/docs/development/index/">
+  <meta property="og:type" content="website"><meta property="og:title" content="从源码运行 · ok-star-resonance"><meta property="og:description" content="从源码运行 — ok-star-resonance"><meta property="og:url" content="https://ok-script.com/ok-star-resonance/docs/development/index/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260809135917">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../../guide/getting-started/">快速开始</a><a href="../../guide/features/">功能与兼容性</a><a href="../../guide/troubleshooting/">疑难解答</a><a href="./" class="active" aria-current="page">从源码运行</a><a href="../contributing/">贡献指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-star-resonance</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="从源码运行">从源码运行</h1>
+<p>本项目仅支持 Windows 与 Python 3.12。建议使用 <a href="https://docs.astral.sh/uv/">uv</a> 管理本地虚拟环境。</p>
+<h2 id="准备环境">准备环境</h2>
+<pre><code class="language-powershell">git clone https://github.com/Sanheiii/ok-star-resonance.git
+cd ok-star-resonance
+uv venv --python 3.12
+uv pip sync requirements.txt
+</code></pre>
+<h2 id="启动程序">启动程序</h2>
+<pre><code class="language-powershell"># 开发模式：开启调试日志和截图
+.\.venv\Scripts\python.exe main_debug.py
+
+# 发布模式
+.\.venv\Scripts\python.exe main.py
+</code></pre>
+<h2 id="运行测试">运行测试</h2>
+<pre><code class="language-powershell"># 运行仓库中的全部 unittest 文件
+.\run_tests.ps1
+
+# 运行不依赖真实游戏窗口的单个测试
+.\.venv\Scripts\python.exe -m unittest tests.test_packet_parser
+</code></pre>
+<p><code>tests/TestMain.py</code> 依赖测试截图和 <code>ok.test.TaskTestCase</code>，缺少 <code>tests/images/test.png</code> 时不能作为可靠的无头测试。</p>
+<h2 id="构建文档网站">构建文档网站</h2>
+<p>文档依赖与应用依赖分开管理：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m pip install -r requirements-docs.txt
+.\.venv\Scripts\python.exe -m mkdocs serve
+</code></pre>
+<p>浏览器访问终端显示的本地地址即可预览。生成静态 HTML：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m mkdocs build --strict
+</code></pre>
+<p>生成结果位于 <code>site/</code>，可部署到 GitHub Pages 或任意静态网站托管服务。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance/blob/012ae82dc9b7fbb8477733b6e2fc343aa8dd3054/docs/development/index.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#准备环境" style="margin-left:0px">准备环境</a><a href="#启动程序" style="margin-left:0px">启动程序</a><a href="#运行测试" style="margin-left:0px">运行测试</a><a href="#构建文档网站" style="margin-left:0px">构建文档网站</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260809135917" defer></script></body></html>

@@ -1,11 +1,11 @@
-name: Generate and deploy to GitHub Pages
+name: Generate and deploy to GitHub Pages hourly
 
 on:
   workflow_dispatch:
   push:
     branches: [main]
   schedule:
-    - cron: '17 19 * * *'
+    - cron: '17 * * * *'
 
 permissions:
   contents: read

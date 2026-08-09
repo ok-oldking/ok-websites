@@ -1,0 +1,46 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Quick start · ok-nte</title><meta name="description" content="Quick start — ok-nte"><link rel="canonical" href="https://ok-script.com/ok-nte/en/docs/guides/quick-start/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Quick start · ok-nte"><meta property="og:description" content="Quick start — ok-nte"><meta property="og:url" content="https://ok-script.com/ok-nte/en/docs/guides/quick-start/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260809135917">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Home</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../features/overview/">Overview</a><a href="./" class="active" aria-current="page">Quick start</a><a href="../troubleshooting/">FAQ and feedback</a><a href="../../development/contributing/">Contributing</a><a href="../../development/running-from-source/">Running from source</a><a href="../../development/flow/">Flow author guide</a><a href="../../development/combat-planner/">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="quick-start">Quick start</h1>
+<ol>
+<li>Review <a href="../../getting-started/configuration/">Before you start</a>.</li>
+<li>Launch ok-nte.</li>
+<li>Enter the level or scene you want to automate.</li>
+<li>Select a task and click <strong>Start</strong> in the application.</li>
+</ol>
+<p>If screen recognition fails, stop the task first. Check the resolution, graphics settings, keybindings, and game-window state before starting again.</p>
+<h2 id="command-line-arguments">Command-line arguments</h2>
+<pre><code class="language-bash"># Run the second task after startup, then exit when it completes
+ok-nte.exe -t 2 -e
+</code></pre>
+<ul>
+<li><code>-t</code> or <code>--task</code>: Run the N-th task in the task list after startup; <code>1</code> is the first task.</li>
+<li><code>-e</code> or <code>--exit</code>: Exit after the task completes.</li>
+</ul>
+<p>!!! warning
+    Task numbers depend on the current application task list. Confirm the target task in the UI before automating startup.</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/4856c908f6e1137c8e47032bf9c418b051b93764/docs/en/guides/quick-start.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 9, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#command-line-arguments" style="margin-left:0px">Command-line arguments</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260809135917" defer></script></body></html>

@@ -1,0 +1,54 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>贡献指南 · ok-star-resonance</title><meta name="description" content="贡献指南 — ok-star-resonance"><link rel="canonical" href="https://ok-script.com/ok-star-resonance/docs/development/contributing/">
+  <meta property="og:type" content="website"><meta property="og:title" content="贡献指南 · ok-star-resonance"><meta property="og:description" content="贡献指南 — ok-star-resonance"><meta property="og:url" content="https://ok-script.com/ok-star-resonance/docs/development/contributing/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260809135917">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-star-resonance/icons/icon.png" alt=""></span><span>ok-star-resonance</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../../guide/getting-started/">快速开始</a><a href="../../guide/features/">功能与兼容性</a><a href="../../guide/troubleshooting/">疑难解答</a><a href="../index/">从源码运行</a><a href="./" class="active" aria-current="page">贡献指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-star-resonance</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="贡献指南">贡献指南</h1>
+<p>感谢你愿意为 <code>ok-star-resonance</code> 做贡献。提交修改前，请先阅读首页的<a href="../../">免责声明</a>并确保项目能从源码运行。</p>
+<h2 id="开发约定">开发约定</h2>
+<ul>
+<li>仅使用 Python 3.12。</li>
+<li><code>requirements.in</code> 是直接依赖的唯一来源；修改后使用 <code>uv pip compile</code> 生成 <code>requirements.txt</code>。</li>
+<li>持续任务继承 <code>SRTriggerTask</code>，一次性任务继承 <code>SRTask</code>，并在 <code>src/config.py</code> 注册。</li>
+<li>OCR 文本应覆盖适用的简中、繁中、英文与日文客户端。</li>
+<li>游戏坐标优先使用相对画面的 0–1 比例，不直接硬编码像素坐标。</li>
+<li>长循环使用框架提供的可中断等待方法，并确保异常路径释放按键和鼠标。</li>
+<li>不要实现读取游戏内存、修改游戏文件或注入游戏进程的功能。</li>
+</ul>
+<p>编写任务时优先参考 <a href="https://github.com/ok-oldking/ok-script/blob/master/docs/api_doc/README.md">ok-script API 文档</a>。</p>
+<h2 id="提交-pr-前">提交 PR 前</h2>
+<ol>
+<li>保持改动范围清晰，不混入无关格式化或重构。</li>
+<li>运行与改动相关的测试，并在 PR 描述中写明结果。</li>
+<li>用户可见行为发生变化时，提供截图、录屏或清晰的复现步骤。</li>
+<li>不要提交日志、截图、缓存、个人配置、真实抓包或其他敏感数据。</li>
+<li>修改 protobuf 时同时提交 <code>.proto</code> 和生成的 <code>_pb2.py</code>，并运行解析器测试。</li>
+</ol>
+<h2 id="文档贡献">文档贡献</h2>
+<p>文档源文件位于 <code>docs/</code>，导航与主题配置位于仓库根目录的 <code>mkdocs.yml</code>。新增页面后请同步更新 <code>nav</code>，并运行：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m mkdocs build --strict
+</code></pre>
+<p>严格构建会把无效链接、遗漏导航等问题作为错误报告。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance/blob/012ae82dc9b7fbb8477733b6e2fc343aa8dd3054/docs/development/contributing.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#开发约定" style="margin-left:0px">开发约定</a><a href="#提交-pr-前" style="margin-left:0px">提交 PR 前</a><a href="#文档贡献" style="margin-left:0px">文档贡献</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/Sanheiii/ok-star-resonance"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260809135917" defer></script></body></html>

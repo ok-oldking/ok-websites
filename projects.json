@@ -88,6 +88,67 @@
         { "code": "zh-CN", "label": "简体中文", "source": ".", "index": "README.md" },
         { "code": "en", "label": "English", "source": ".", "index": "README_en.md" }
       ]
+    },
+    {
+      "id": "ok-nte",
+      "name": "ok-nte",
+      "repository": "https://github.com/BnanZ0/ok-nte.git",
+      "github": "BnanZ0/ok-nte",
+      "domain": "https://ok-script.com/ok-nte",
+      "outputFolder": "ok-nte",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "indigo",
+      "type": "application",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 1097,
+        "forks": 77,
+        "release": "v1.2.29",
+        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.2.29",
+        "releaseAssets": [
+          { "name": "ok-nte-win32-China-setup.exe", "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.2.29/ok-nte-win32-China-setup.exe" },
+          { "name": "ok-nte-win32-Global-setup.exe", "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.2.29/ok-nte-win32-Global-setup.exe" }
+        ],
+        "mirrors": [
+          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte&channel=stable" },
+          { "label": "百度网盘", "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww" },
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/418018ddf7a0" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": "docs/zh-CN", "index": "index.md" },
+        { "code": "en", "label": "English", "source": "docs/en", "index": "index.md" }
+      ]
+    },
+    {
+      "id": "ok-star-resonance",
+      "name": "ok-star-resonance",
+      "repository": "https://github.com/Sanheiii/ok-star-resonance.git",
+      "github": "Sanheiii/ok-star-resonance",
+      "domain": "https://ok-script.com/ok-star-resonance",
+      "outputFolder": "ok-star-resonance",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "blue",
+      "type": "application",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 114,
+        "forks": 19,
+        "release": "v1.4.5",
+        "releaseUrl": "https://github.com/Sanheiii/ok-star-resonance/releases/tag/v1.4.5",
+        "releaseAssets": [
+          { "name": "ok-star-resonance-win32-China-setup.exe", "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.4.5/ok-star-resonance-win32-China-setup.exe" },
+          { "name": "ok-star-resonance-win32-Global-setup.exe", "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.4.5/ok-star-resonance-win32-Global-setup.exe" }
+        ],
+        "mirrors": [
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/53ef87577da9?pwd=nVL9" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": "docs", "index": "index.md" }
+      ]
     }
   ],
   "relatedProjects": [

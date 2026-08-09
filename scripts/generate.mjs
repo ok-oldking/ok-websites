@@ -21,6 +21,10 @@ const copy = {
     frameworkLead: '一个现代、纯 Python 的计算机视觉自动化框架。用几百行代码构建支持 Windows、模拟器与 ADB 的工业级自动化工具。',
     appEyebrow: '鸣潮 · 后台自动化 · Windows', appTitle: '重复的日常，\n交给 ok-ww。',
     appLead: '基于计算机视觉的鸣潮自动化工具。支持后台运行、智能角色识别与 4K 分辨率，不读取内存、不修改游戏文件。',
+    nteEyebrow: '异环 · 后台自动化 · Windows', nteTitle: '探索海特洛市，\n日常交给 ok-nte。',
+    nteLead: '面向《异环》的计算机视觉自动化工具，支持后台运行、一键日常、智能战斗与都市闲趣，不读取游戏内存、不修改游戏文件。',
+    starEyebrow: '星痕共鸣 · 视觉自动化 · Windows', starTitle: '星痕旅程，\n交给 ok-star-resonance。',
+    starLead: '面向《星痕共鸣》的视觉与网络自动化工具，覆盖钓鱼、采集、副本和 MIDI 演奏等玩法，通过 Windows 接口模拟操作，不读取游戏内存、不修改游戏文件。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
     getStarted: '开始使用', download: '下载最新版本', downloadGithub: '从 GitHub 下载', viewSource: '查看源码', readDocs: '阅读文档',
@@ -40,6 +44,10 @@ const copy = {
     frameworkLead: 'A modern, pure-Python computer-vision automation framework. Build production-grade tools for Windows, emulators, and ADB with only a few hundred lines of code.',
     appEyebrow: 'Wuthering Waves · Background automation · Windows', appTitle: 'Leave the routine\nto ok-ww.',
     appLead: 'Computer-vision automation for Wuthering Waves with background mode, intelligent character detection, and 4K support—without reading memory or changing game files.',
+    nteEyebrow: 'Neverness to Everness · Background automation · Windows', nteTitle: 'Explore Hethereau.\nLeave the routine to ok-nte.',
+    nteLead: 'Computer-vision automation for Neverness to Everness with background operation, one-click dailies, intelligent combat, and city activities—without reading memory or modifying game files.',
+    starEyebrow: 'Star Resonance · Visual automation · Windows', starTitle: 'Enjoy the adventure.\nLeave the routine to ok-star-resonance.',
+    starLead: 'Visual and network-assisted automation for Star Resonance, covering fishing, gathering, dungeons, and MIDI performances through simulated Windows input without reading memory or modifying game files.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
     getStarted: 'Get started', download: 'Download latest', downloadGithub: 'Download from GitHub', viewSource: 'View source', readDocs: 'Read docs',
@@ -85,6 +93,14 @@ const features = {
     en: [['◫','Background mode','Keep running while the game is minimized or covered.'],['◎','Smart recognition','Detect characters without hand-authored skill rotations.'],['4K','High resolution','From 720p through 4K, with partial ultrawide support.'],['♪','Automatic mute','Silence the game while automation runs in the background.']],
     'zh-TW': [['◫','背景模式','遊戲最小化或被遮擋時仍可執行。'],['◎','智慧辨識','自動辨識角色，不必手動設定技能序列。'],['4K','高解析度','支援 720p 至 4K，並相容部分超寬螢幕。'],['♪','自動靜音','背景執行時可自動靜音。']],
     ja: [['◫','バックグラウンド','最小化・遮蔽された状態でも動作。'],['◎','自動認識','キャラクターを認識し、手動設定を削減。'],['4K','高解像度','720p から 4K、一部ウルトラワイドに対応。'],['♪','自動ミュート','バックグラウンド実行中の音声を自動消音。']]
+  },
+  'ok-nte': {
+    'zh-CN': [['✓','一键日常','自动完成经验与材料、咖啡舍、影院约会和羁遇赠礼。'],['◫','后台运行','游戏窗口置于后台时继续执行自动化任务。'],['◎','智能战斗','角色中心、特征管理与声音反馈共同驱动战斗。'],['♪','都市闲趣','自动完成钓鱼、鼓组音游与粉爪大劫案等活动。']],
+    en: [['✓','One-click dailies','Automate experience, materials, café tasks, cinema dates, and gifts.'],['◫','Background operation','Keep automation running while the game window stays in the background.'],['◎','Intelligent combat','Character profiles, feature recognition, and audio feedback drive combat.'],['♪','City activities','Automate fishing, rhythm games, and other Hethereau activities.']]
+  },
+  'ok-star-resonance': {
+    'zh-CN': [['✓','生活玩法自动化','支持钓鱼、简易采集、月卡领取、组队确认与协会狩猎。'],['16:9','广泛分辨率支持','适配任意 16:9 分辨率、窗口模式和全屏模式。'],['♪','MIDI 与谱面演奏','自动演奏 MIDI 文件和教学谱面，扩展游戏内音乐体验。'],['{ }','自定义脚本','允许用户编写自己的自动化脚本，并通过 PushDeer 接收状态通知。']],
+    en: [['✓','Activity automation','Fishing, gathering, daily rewards, team confirmation, and guild hunting.'],['16:9','Flexible resolution','Works at any 16:9 resolution in windowed or fullscreen mode.'],['♪','MIDI performances','Play MIDI files and teaching scores automatically.'],['{ }','Custom scripts','Extend automation with user scripts and PushDeer status notifications.']]
   },
   template: {
     'zh-CN': [['GUI','可运行界面','内置任务、配置控件与调试工具示例。'],['OCR','视觉能力','演示 OCR、相对区域识别和模板匹配。'],['{ }','任务模板','一次性任务、触发任务与自动化测试开箱即用。'],['↗','发布流程','包含打包配置与 GitHub Actions 发布工作流。']],
@@ -211,14 +227,14 @@ function extractReleaseMirrors(body = '') {
 function extractCommunity(markdown = '') {
   const links = [];
   const add = item => {
-    const identity = item.url || item.value || item.label;
-    if (!links.some(existing => existing.type === item.type && (existing.url || existing.value || existing.label) === identity)) links.push(item);
+    const identity = item.value || item.url || item.label;
+    if (!links.some(existing => existing.type === item.type && (existing.value || existing.url || existing.label) === identity)) links.push(item);
   };
   for (const [, label, url] of markdown.matchAll(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g)) {
     const developer = /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(label);
     if (/discord(?:\.gg|\.com\/invite)/i.test(url)) add({ type: 'discord', label: 'Discord', url });
     else if (/pd\.qq\.com/i.test(url)) add({ type: 'qq-channel', label: /频道|頻道/i.test(label) ? label : 'QQ Channel', url });
-    else if (/qm\.qq\.com/i.test(url)) add({ type: 'qq', label: label || 'QQ', url, groupKind: developer ? 'developer' : 'user' });
+    else if (/qm\.qq\.com/i.test(url)) add({ type: 'qq', label: label || 'QQ', value: label.match(/\d{6,12}/)?.[0], url, groupKind: developer ? 'developer' : 'user' });
   }
   for (const line of markdown.split(/\r?\n/)) {
     if (!/(?:QQ|用户群|用戶群|交流群|開發者群|开发者群)/i.test(line)) continue;
@@ -242,7 +258,10 @@ async function githubMetadata(project, fallback) {
       stars: repo.stargazers_count, forks: repo.forks_count, description: repo.description,
       release: release?.tag_name || pypi?.info?.version || configured.release || '—', releaseUrl: release?.html_url || configured.releaseUrl || `https://github.com/${project.github}/releases`,
       releaseAssets: release ? release.assets.map(asset => ({ name: asset.name, browser_download_url: asset.browser_download_url, size: asset.size })) : (configured.releaseAssets || []),
-      mirrors: release ? extractReleaseMirrors(release.body) : (configured.mirrors || []), updated: repo.pushed_at || fallback.updated
+      mirrors: release
+        ? [...extractReleaseMirrors(release.body), ...(configured.mirrors || [])].filter((item, index, all) => all.findIndex(other => other.url === item.url) === index)
+        : (configured.mirrors || []),
+      updated: repo.pushed_at || fallback.updated
     };
   } catch (error) {
     console.warn(`Metadata fallback for ${project.id}: ${error.message}`);
@@ -465,6 +484,16 @@ async function markdownToHtml(markdown, context) {
       const targetLocale = owningLocale(context.project, target);
       return `href="${relativeSiteUrl(context.project, context.currentUrl, context.project, localDocUrl(context.project, targetLocale || context.locale, target))}${hash}"`;
     }
+    const target = path.resolve(path.dirname(context.sourceFile), clean);
+    const repoRelative = path.relative(context.project.state.repoDir, target);
+    const docsRelative = path.relative(context.project.state.mkdocs.docsDir, target);
+    const insideRepo = repoRelative === '' || (!repoRelative.startsWith(`..${path.sep}`) && repoRelative !== '..' && !path.isAbsolute(repoRelative));
+    const insideDocs = docsRelative === '' || (!docsRelative.startsWith(`..${path.sep}`) && docsRelative !== '..' && !path.isAbsolute(docsRelative));
+    if (insideRepo && !insideDocs) {
+      const githubPath = repoRelative.split(path.sep).map(encodeURIComponent).join('/');
+      const kind = path.extname(target) ? 'blob' : 'tree';
+      return `href="https://github.com/${context.project.github}/${kind}/${context.project.state.commit}/${githubPath}${hash}"`;
+    }
     return match;
   });
 
@@ -547,17 +576,30 @@ function communityLinks(links = [], label = '', compact = false, localeCode = 'e
 }
 
 async function faqFromMarkdown(project, locale) {
-  const sourceFile = path.resolve(project.state.repoDir, locale.source, locale.index);
+  let sourceFile = path.resolve(project.state.repoDir, locale.source, locale.index);
   let markdown;
   try { markdown = await fs.readFile(sourceFile, 'utf8'); } catch { return null; }
-  const lines = markdown.split(/\r?\n/);
+  let lines = markdown.split(/\r?\n/);
   const headingPattern = /^(#{2,4})\s+(.+)$/;
   const faqPattern = /(?:\bFAQ\b|Frequently Asked|Troubleshooting|常见问题|常見問題|疑难解答|疑難排解|トラブルシューティング)/i;
-  const start = lines.findIndex(line => {
+  let start = lines.findIndex(line => {
     const match = line.match(headingPattern);
     return match && faqPattern.test(match[2]);
   });
-  if (start < 0) return null;
+  if (start < 0) {
+    const localeRoot = path.resolve(project.state.repoDir, locale.source);
+    const faqPage = project.state.mkdocs.nav.find(page => page.file.startsWith(localeRoot + path.sep) && faqPattern.test(`${page.title} ${page.source}`));
+    if (!faqPage) return null;
+    sourceFile = faqPage.file;
+    try { markdown = await fs.readFile(sourceFile, 'utf8'); } catch { return null; }
+    lines = markdown.split(/\r?\n/);
+    const firstHeading = lines.findIndex(line => /^#\s+/.test(line));
+    if (firstHeading >= 0) lines.splice(firstHeading, 1);
+    const body = lines.join('\n').trim();
+    if (!body) return null;
+    const rendered = await markdownToHtml(body, { project, locale, sourceFile, currentUrl: landingUrl(project, locale) });
+    return { title: faqPage.title, html: rendered.html };
+  }
   const heading = lines[start].match(headingPattern);
   const depth = heading[1].length;
   let end = lines.length;
@@ -613,7 +655,7 @@ function documentShell({ title, description, project, locale, body, destination 
 function landingPage(project, locale, meta, faq = null) {
   const t = localeCopy(locale.code); const isFramework = project.type === 'framework';
   const currentUrl = landingUrl(project, locale);
-  const marketingKey = isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
+  const marketingKey = project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
   const eyebrow = t[`${marketingKey}Eyebrow`];
   const [titleA, titleB] = t[`${marketingKey}Title`].split('\n');
   const lead = t[`${marketingKey}Lead`];
@@ -623,7 +665,8 @@ function landingPage(project, locale, meta, faq = null) {
   const primaryUrl = isFramework ? docsUrl : downloads[chinaDefault ? 'china' : 'global'];
   const pypiUrl = `https://pypi.org/project/${encodeURIComponent(project.pypi || 'ok-script')}/`;
   const primaryLabel = isFramework ? t.getStarted : `${t.downloadGithub}${locale.code === 'zh-CN' ? ' · 大陆版' : ' · Global'}`;
-  const featureSet = features[project.type][locale.code] || features[project.type].en;
+  const projectFeatures = features[project.id] || features[project.type];
+  const featureSet = projectFeatures[locale.code] || projectFeatures.en;
   const related = config.relatedProjects.map(item => {
     const desc = item.description[locale.code] || item.description.en;
     const icon = item.iconUrl ? `<img src="${relativeAssetUrl(project, currentUrl, item.iconUrl)}" alt="">` : escapeHtml(item.name.slice(0,2).toUpperCase());

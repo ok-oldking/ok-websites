@@ -1,0 +1,75 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Flow author guide · ok-nte</title><meta name="description" content="Flow author guide — ok-nte"><link rel="canonical" href="https://ok-script.com/ok-nte/docs/development/flow/">
+  <meta property="og:type" content="website"><meta property="og:title" content="Flow author guide · ok-nte"><meta property="og:description" content="Flow author guide — ok-nte"><meta property="og:url" content="https://ok-script.com/ok-nte/docs/development/flow/"><meta property="og:image" content="https://ok-script.com/assets/og.png">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260809135917">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-ww/icons/icon.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-script-app/icons/icon.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/sources/ok-nte/icons/icon.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/"><span class="language-code">en</span><span>English</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概览</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题与反馈</a><a href="../contributing/">Contributing</a><a href="../running-from-source/">Running from source</a><a href="./" class="active" aria-current="page">Flow author guide</a><a href="../combat-planner/">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="flow-作者指南">Flow 作者指南</h1>
+<p><code>Flow</code> 是任务的反应式场景监督器。它在中断、节点动作失败和未知画面后重新观察屏幕, 不恢复旧调用栈。</p>
+<p>它不负责业务点击、路线规划或跨任务页面导航。节点 action 继续使用任务原有的 <code>wait_until</code>、<code>wait_click_confirm</code> 和输入 helper。</p>
+<h2 id="最小接入">最小接入</h2>
+<p><code>BaseNTETask</code> 已为每个 Task 单例创建 <code>self.flow</code>, 刷新帧, 注册月卡中断, 并让 Flow 运行期间的 <code>wait_until()</code> 自动成为安全点。任务只需要声明自己的场景:</p>
+<pre><code class="language-python">class Node(Enum):
+    READY = &quot;ready&quot;
+    RESULT = &quot;result&quot;
+    TEAM = &quot;team&quot;
+
+def _configure_flow(self):
+    self.flow.node(Node.RESULT, self.has_result, self._on_result)
+    self.flow.node(Node.READY, self.is_ready, self._on_ready)
+    self.flow.node(Node.TEAM, self.is_in_team, self._enter_task)
+    self.flow.fallback(self._press_escape_for_recovery, timeout=360)
+</code></pre>
+<p>在任务入口中运行它:</p>
+<pre><code class="language-python">completed = self.flow.loop(
+    lambda: self._session.is_finished,
+    on_error=self._handle_flow_error,
+    poll_interval=0.1,
+)
+</code></pre>
+<h2 id="节点-action-契约">节点 action 契约</h2>
+<ul>
+<li>detector 必须是无副作用的当前画面判断。优先级只用于 detector 同时命中时的消歧, 默认按注册顺序。</li>
+<li>action 可能在画面持续可见时重复执行。它必须幂等, 或使用已有的 <code>interval</code> / <code>wait_until</code> 节流, 不能假定每次 action 都会立刻切换页面。</li>
+<li>action 的返回值不参与转移判断; Flow 只根据下一次画面检测决定下一步。</li>
+<li>可恢复的业务失败抛出既有异常, 通常是 <code>WaitFailedException</code>。Flow 刷新画面后先检查原节点: 原节点仍在才交给 <code>on_error</code>; 原节点消失就直接重新分类。</li>
+<li>自定义高频循环中调用 <code>self.flow.safe_point()</code>。它发现中断会抛出 <code>FlowReplan</code>; 如 action 需要记录本轮状态, 记录后必须继续抛出它。</li>
+</ul>
+<pre><code class="language-python">try:
+    self._control_until_finished()
+except FlowReplan:
+    session.interrupted_control_round = session.round_index
+    raise
+</code></pre>
+<p>不要在任务代码中调用 Flow 的内部中断检查。普通等待已经自动检查; 自定义循环只使用 <code>safe_point()</code>。</p>
+<h2 id="中断与恢复语义">中断与恢复语义</h2>
+<ul>
+<li>中断 handler 返回非 <code>False</code> 表示已处理。Flow 丢弃旧调用栈, 先观察原节点。</li>
+<li>原节点在中断后暂时未匹配时, Flow 最多等待 3 秒; 期间重新匹配则继续原节点, 超时后才全量分类。</li>
+<li>handler 返回 <code>False</code> 表示处理失败。Flow 不会继续旧 action, 而是立即执行 fallback, 不会重复执行该 handler 后才恢复。</li>
+<li>允许 handler 返回 <code>False</code> 的 Flow 必须注册 fallback; 否则 <code>loop()</code> 会失败而不是冒险继续旧 action。</li>
+<li>未识别画面会先容忍 5 秒; 之后反复执行 fallback; 达到任务配置的 fallback timeout 才失败。</li>
+<li><code>TaskDisabledException</code> 是控制流, 会直接离开 Flow, 不会被恢复逻辑吞掉。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/4856c908f6e1137c8e47032bf9c418b051b93764/docs/development/flow.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月9日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#最小接入" style="margin-left:0px">最小接入</a><a href="#节点-action-契约" style="margin-left:0px">节点 action 契约</a><a href="#中断与恢复语义" style="margin-left:0px">中断与恢复语义</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260809135917" defer></script></body></html>
