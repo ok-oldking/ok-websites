@@ -92,7 +92,7 @@ if (wwEnglish.includes('data-copy=') || /qq\.svg/.test(wwEnglish)) failures.push
 const appChinese = await fs.readFile(path.join(root, 'app', 'index.html'), 'utf8');
 if (!appChinese.includes('data-copy="1097603920"') || /938132715|开发者群/.test(appChinese)) failures.push('App community does not show only its user QQ group.');
 const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows', 'daily-deploy.yml'), 'utf8');
-if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only.');
+if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
 if (!/\.nav-links[^}]*font-size:\s*16px/.test(css) || !/\.dropdown-trigger[^}]*font-size:\s*15px/.test(css)) failures.push('Header typography was not enlarged.');
 if (!/\.feature-card[^}]*grid-template-columns:\s*45px/.test(css) || /\.feature-icon[^}]*margin-bottom/.test(css)) failures.push('Feature cards are not using the compact horizontal layout.');
