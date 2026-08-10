@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/update/送货地区维护工作流/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="送货地区维护 · ok-end-field"><meta property="og:description" content="送货地区维护 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/update/送货地区维护工作流/">
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="送货地区维护 · ok-end-field"><meta name="twitter:description" content="送货地区维护 — ok-end-field">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"送货地区维护 · ok-end-field","description":"送货地区维护 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/update/送货地区维护工作流/","inLanguage":"en","dateModified":"2026-08-10T18:20:49+08:00","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"送货地区维护 · ok-end-field","description":"送货地区维护 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/update/送货地区维护工作流/","inLanguage":"en","dateModified":"2026-08-10T18:27:13+08:00","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810102210">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810120748">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -42,7 +42,7 @@
 </ol>
 <hr>
 <h2 id="二-先改数据">二、先改数据</h2>
-<p>送货地区的主配置集中在 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/delivery_area.py">src/data/delivery_area.py</a>。</p>
+<p>送货地区的主配置集中在 <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/data/delivery_area.py">src/data/delivery_area.py</a>。</p>
 <h3 id="2-1-地区配置结构">2.1 地区配置结构</h3>
 <p>每个地区通常需要补齐以下字段：</p>
 <table>
@@ -77,9 +77,9 @@
 <td>预留的 OCR 地点优先顺序；当前只有 service 访问器，任务流程尚未调用。</td>
 </tr>
 </tbody></table>
-<p>读取和校验这些字段的入口位于 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/delivery_area_service.py">src/data/delivery_area_service.py</a>，任务流程不应自行复制地区映射。</p>
+<p>读取和校验这些字段的入口位于 <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/data/delivery_area_service.py">src/data/delivery_area_service.py</a>，任务流程不应自行复制地区映射。</p>
 <h3 id="2-2-新增地区时的最小修改">2.2 新增地区时的最小修改</h3>
-<p>如果只是新增一个地区，建议直接参考 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/delivery_area.py">src/data/delivery_area.py</a> 里现有的“武陵”配置，补一份完整块：</p>
+<p>如果只是新增一个地区，建议直接参考 <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/data/delivery_area.py">src/data/delivery_area.py</a> 里现有的“武陵”配置，补一份完整块：</p>
 <ol>
 <li>先填写地区名。</li>
 <li>再填写对应区域名列表和每个地点对应的目标 NPC。</li>
@@ -122,14 +122,14 @@
 <p>如果新增地区需要接单特征模板：</p>
 <ol>
 <li>先在 <code>feature_label_area_code</code> 中定义地区前缀。</li>
-<li>再确认 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/FeatureList.py">src/data/FeatureList.py</a> 里已经存在对应标签，例如 <code>wuling_7_31w</code>。</li>
+<li>再确认 <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/data/FeatureList.py">src/data/FeatureList.py</a> 里已经存在对应标签，例如 <code>wuling_7_31w</code>。</li>
 <li>如果没有，在模板 Tab 里框选裁图后保存；命名格式为 <code>{feature_label_area_code}_{券价格码}</code>。</li>
 <li>保存时建议勾选“保存枚举”，填入 <code>src/data/FeatureList</code>，这样会自动生成对应 <code>FeatureList</code> 枚举，后续代码可直接引用，避免手写标签字符串导致拼写错误。</li>
 <li>建议一并补齐 <code>_2k</code>、<code>_4k</code> 等变体。</li>
 </ol>
 <p>当前代码会在任务配置里自动读取地区列表，所以只要 <code>DELIVERY_AREA_CONFIG</code> 里增加了新地区，UI 下拉框也会自动出现新选项。</p>
 <h3 id="2-4-地点-npc-与本地化">2.4 地点、NPC 与本地化</h3>
-<p><code>delivery_area.py</code> 使用简体中文规范名作为数据键。新增地区、地点或目标 NPC 后，还要在 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/assets/lang/world_map.json"><code>assets/lang/world_map.json</code></a> 中补齐对应条目和现有 locale：</p>
+<p><code>delivery_area.py</code> 使用简体中文规范名作为数据键。新增地区、地点或目标 NPC 后，还要在 <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/assets/lang/world_map.json"><code>assets/lang/world_map.json</code></a> 中补齐对应条目和现有 locale：</p>
 <ol>
 <li>地区和地点用于地图文本、地点提取与传送区域回填。</li>
 <li>NPC 名用于 <code>get_delivery_target_ocr_pattern()</code> 生成当前语言 OCR 匹配器。</li>
@@ -163,12 +163,12 @@
 <hr>
 <h2 id="五-维护原则">五、维护原则</h2>
 <ol>
-<li>地区数据优先放在 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/delivery_area.py">src/data/delivery_area.py</a>，不要把地区逻辑散落到任务类里。</li>
+<li>地区数据优先放在 <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/data/delivery_area.py">src/data/delivery_area.py</a>，不要把地区逻辑散落到任务类里。</li>
 <li>等长字符混淆的匹配容错由 <code>assets/ocr_fix/ocr_text_fix.json</code> 统一维护；它扩展匹配条件而不改写识别结果。长度变化、词序变化或业务专属规则应维护在语言 pattern 或对应解析逻辑中。</li>
 <li>使用框架的模板 Tab 功能添加模板。</li>
 <li>新地区先补数据，再补模板，最后做一次最小闭环验证。</li>
 </ol>
 <p>相关文档：<a href="../../../../docs/自动送货/">自动送货</a> / <a href="../../dev/滑索与送货逻辑/">滑索与送货逻辑</a></p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/docs/update/送货地区维护工作流.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#一-适用场景" style="margin-left:0px">一、适用场景</a><a href="#二-先改数据" style="margin-left:0px">二、先改数据</a><a href="#2-1-地区配置结构" style="margin-left:10px">2.1 地区配置结构</a><a href="#2-2-新增地区时的最小修改" style="margin-left:10px">2.2 新增地区时的最小修改</a><a href="#2-3-接单特征标签" style="margin-left:10px">2.3 接单特征标签</a><a href="#2-4-地点-npc-与本地化" style="margin-left:10px">2.4 地点、NPC 与本地化</a><a href="#四-验证顺序" style="margin-left:0px">四、验证顺序</a><a href="#五-维护原则" style="margin-left:0px">五、维护原则</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/docs/update/送货地区维护工作流.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#一-适用场景" style="margin-left:0px">一、适用场景</a><a href="#二-先改数据" style="margin-left:0px">二、先改数据</a><a href="#2-1-地区配置结构" style="margin-left:10px">2.1 地区配置结构</a><a href="#2-2-新增地区时的最小修改" style="margin-left:10px">2.2 新增地区时的最小修改</a><a href="#2-3-接单特征标签" style="margin-left:10px">2.3 接单特征标签</a><a href="#2-4-地点-npc-与本地化" style="margin-left:10px">2.4 地点、NPC 与本地化</a><a href="#四-验证顺序" style="margin-left:0px">四、验证顺序</a><a href="#五-维护原则" style="margin-left:0px">五、维护原则</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
-  <script src="../../../../../assets/site.js?v=20260810102210" defer></script></body></html>
+  <script src="../../../../../assets/site.js?v=20260810120748" defer></script></body></html>

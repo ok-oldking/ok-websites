@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/切换账户流程分析/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="賬戶切換流程 · ok-end-field"><meta property="og:description" content="賬戶切換流程 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/切换账户流程分析/">
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="賬戶切換流程 · ok-end-field"><meta name="twitter:description" content="賬戶切換流程 — ok-end-field">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"賬戶切換流程 · ok-end-field","description":"賬戶切換流程 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/切换账户流程分析/","inLanguage":"zh-TW","dateModified":"2026-08-10T18:20:49+08:00","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"賬戶切換流程 · ok-end-field","description":"賬戶切換流程 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/切换账户流程分析/","inLanguage":"zh-TW","dateModified":"2026-08-10T18:27:13+08:00","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810102210">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810120748">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -98,7 +98,7 @@
     H --&gt; I[_confirm_logged_in]
 </code></pre>
 <h3 id="2-1-入口-iter-multi-account-context-賬號迴圈排程">2.1 入口：<code>iter_multi_account_context()</code> — 賬號迴圈排程</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/BaseEfTask.py"><code>src/core/BaseEfTask.py</code></a> <code>::</code> <code>BaseEfTask.iter_multi_account_context</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/BaseEfTask.py"><code>src/core/BaseEfTask.py</code></a> <code>::</code> <code>BaseEfTask.iter_multi_account_context</code>
 <strong>來源：</strong> ✅ 本專案實現（框架 <code>BaseTask</code> 無此概念）</p>
 <pre><code>iter_multi_account_context(repeat_times, empty_accounts_message, ...)
   │
@@ -131,7 +131,7 @@
     H --&gt;|成功| I[返回任务流程]
     H --&gt;|失败| J[记录失败并重试或中止]
 </code></pre>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/mixin/login_mixin.py"><code>src/tasks/mixin/login_mixin.py</code></a> <code>::</code> <code>LoginMixin.login_flow</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/mixin/login_mixin.py"><code>src/tasks/mixin/login_mixin.py</code></a> <code>::</code> <code>LoginMixin.login_flow</code>
 <strong>來源：</strong> ✅ <strong>本專案完全自實現</strong></p>
 <pre><code>login_flow(username)
   │
@@ -162,7 +162,7 @@
 </code></pre>
 <hr>
 <h3 id="2-3-click-text-ocr-找字-點選-核心登入互動">2.3 <code>click_text()</code> — OCR 找字 + 點選（核心登入互動）</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/mixin/login_mixin.py"><code>src/tasks/mixin/login_mixin.py</code></a> <code>::</code> <code>LoginMixin.click_text</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/mixin/login_mixin.py"><code>src/tasks/mixin/login_mixin.py</code></a> <code>::</code> <code>LoginMixin.click_text</code>
 <strong>來源：</strong> ✅ <strong>本專案完全自實現，不經過框架點選鏈路</strong></p>
 <pre><code>click_text(match, box, need_wait_disappear, success_match)
   │
@@ -188,7 +188,7 @@
 </code></pre>
 <hr>
 <h3 id="2-4-login-screenshot-自定義截圖">2.4 <code>login_screenshot()</code> — 自定義截圖</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/game_flow_mixin.py"><code>src/core/base_mixin/game_flow_mixin.py</code></a> <code>::</code> <code>GameFlowMixin.login_screenshot</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/game_flow_mixin.py"><code>src/core/base_mixin/game_flow_mixin.py</code></a> <code>::</code> <code>GameFlowMixin.login_screenshot</code>
 <strong>來源：</strong> ✅ <strong>本專案獨立實現</strong></p>
 <pre><code>login_screenshot(need_active=True)
   │
@@ -205,7 +205,7 @@
 </code></pre>
 <hr>
 <h3 id="2-5-login-ocr-登入場景-ocr">2.5 <code>login_ocr()</code> — 登入場景 OCR</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/game_flow_mixin.py"><code>src/core/base_mixin/game_flow_mixin.py</code></a> <code>::</code> <code>GameFlowMixin.login_ocr</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/game_flow_mixin.py"><code>src/core/base_mixin/game_flow_mixin.py</code></a> <code>::</code> <code>GameFlowMixin.login_ocr</code>
 <strong>來源：</strong> 🔀 混合（自定義截圖 + 框架 OCR 引擎）</p>
 <pre><code>login_ocr(match, box, ...)
   │
@@ -218,7 +218,7 @@
 </code></pre>
 <hr>
 <h3 id="2-6-find-feature-find-one-模板匹配">2.6 <code>find_feature()</code> / <code>find_one()</code> — 模板匹配</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/runtime_mixin.py"><code>src/core/base_mixin/runtime_mixin.py</code></a> <code>::</code> <code>RuntimeMixin.find_feature</code> / <code>RuntimeMixin.find_one</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/runtime_mixin.py"><code>src/core/base_mixin/runtime_mixin.py</code></a> <code>::</code> <code>RuntimeMixin.find_feature</code> / <code>RuntimeMixin.find_one</code>
 <strong>來源：</strong> 🔀 本專案封裝 + 框架引擎</p>
 <pre><code>find_feature(feature_name, ...)
   │
@@ -235,7 +235,7 @@ find_one(...)
 </code></pre>
 <hr>
 <h3 id="2-7-click-通用點選-非-click-text">2.7 <code>click()</code> — 通用點選（非 <code>click_text</code>）</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/runtime_mixin.py"><code>src/core/base_mixin/runtime_mixin.py</code></a> <code>::</code> <code>RuntimeMixin.click</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/runtime_mixin.py"><code>src/core/base_mixin/runtime_mixin.py</code></a> <code>::</code> <code>RuntimeMixin.click</code>
 <strong>來源：</strong> 🔀 本專案封裝 + 本專案 <code>EfInteraction</code></p>
 <pre><code>click(x, y, ...)
   │
@@ -253,7 +253,7 @@ find_one(...)
 </code></pre>
 <hr>
 <h3 id="2-8-efinteraction-click-框架級點選的最終執行者">2.8 <code>EfInteraction.click()</code> — 框架級點選的最終執行者</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/interaction/EfInteraction.py#L30"><code>src/interaction/EfInteraction.py#L30</code></a> <code>::</code> <code>class EfInteraction</code> / <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/interaction/EfInteraction.py#L39"><code>EfInteraction.py#L39</code></a> <code>::</code> <code>EfInteraction.click</code><br><strong>來源：</strong> ✅ <strong>本專案重寫</strong>（繼承框架 <code>PostMessageInteraction</code>）</p>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/interaction/EfInteraction.py#L30"><code>src/interaction/EfInteraction.py#L30</code></a> <code>::</code> <code>class EfInteraction</code> / <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/interaction/EfInteraction.py#L39"><code>EfInteraction.py#L39</code></a> <code>::</code> <code>EfInteraction.click</code><br><strong>來源：</strong> ✅ <strong>本專案重寫</strong>（繼承框架 <code>PostMessageInteraction</code>）</p>
 <pre><code>EfInteraction.click(x, y, down_time, key, ...)
   │
   ├─ try_activate()                              → 本项目（激活窗口）
@@ -269,7 +269,7 @@ find_one(...)
 </code></pre>
 <hr>
 <h3 id="2-9-accountoverridemixin-執行時覆蓋注入">2.9 <code>AccountOverrideMixin</code> — 執行時覆蓋注入</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/account_override_mixin.py"><code>src/core/base_mixin/account_override_mixin.py</code></a> <code>::</code> <code>_bind_account_aware_config_get</code>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/account_override_mixin.py"><code>src/core/base_mixin/account_override_mixin.py</code></a> <code>::</code> <code>_bind_account_aware_config_get</code>
 <strong>來源：</strong> ✅ <strong>本專案完全自實現</strong></p>
 <pre><code>_bind_account_aware_config_get()
   │
@@ -292,7 +292,7 @@ find_one(...)
 </code></pre>
 <hr>
 <h3 id="2-10-account-scope-store-整個持久化層">2.10 <code>account_scope_store</code> — 整個持久化層</h3>
-<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py"><code>src/tasks/account/account_scope_store.py</code></a><br><strong>來源：</strong> ✅ <strong>本專案完全自實現</strong></p>
+<p><strong>定義位置：</strong> <a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py"><code>src/tasks/account/account_scope_store.py</code></a><br><strong>來源：</strong> ✅ <strong>本專案完全自實現</strong></p>
 <table>
 <thead>
 <tr>
@@ -303,57 +303,57 @@ find_one(...)
 </thead>
 <tbody><tr>
 <td><code>get_store_path()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L22"><code>#L22</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L22"><code>#L22</code></a></td>
 <td>返回 <code>configs/account_scoped_overrides.json</code> 路徑</td>
 </tr>
 <tr>
 <td><code>parse_account_list_text()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L70"><code>#L70</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L70"><code>#L70</code></a></td>
 <td>解析賬號列表文本（相容 <code>账号,密码</code> 格式）</td>
 </tr>
 <tr>
 <td><code>_normalize()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L227"><code>#L227</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L227"><code>#L227</code></a></td>
 <td>資料清洗：登錄檔、覆蓋和地圖 content 標準化，舊使用者名稱鍵遷移為 ID</td>
 </tr>
 <tr>
 <td><code>load_overrides()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L324"><code>#L324</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L324"><code>#L324</code></a></td>
 <td>載入覆蓋檔案（帶 mtime 快取 + 執行緒鎖）</td>
 </tr>
 <tr>
 <td><code>save_overrides()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L352"><code>#L352</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L352"><code>#L352</code></a></td>
 <td>儲存標準化覆蓋檔案</td>
 </tr>
 <tr>
 <td><code>sync_account_list_text()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L397"><code>#L397</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L397"><code>#L397</code></a></td>
 <td>同步賬號列表 → 登錄檔 ID 對映，並移除持久化密碼</td>
 </tr>
 <tr>
 <td><code>resolve_account_id()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L412"><code>#L412</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L412"><code>#L412</code></a></td>
 <td>使用者名稱 → account_id 解析，可選擇是否建立</td>
 </tr>
 <tr>
 <td><code>get_account_task_overrides()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L435"><code>#L435</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L435"><code>#L435</code></a></td>
 <td>按 account_id + task_name 讀取覆蓋，相容使用者名稱舊鍵</td>
 </tr>
 <tr>
 <td><code>set_account_task_overrides()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L541"><code>#L541</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L541"><code>#L541</code></a></td>
 <td>寫入完整任務覆蓋字典</td>
 </tr>
 <tr>
 <td><code>_find_account_id_by_username()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L158"><code>#L158</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L158"><code>#L158</code></a></td>
 <td>在登錄檔中按當前使用者名稱查詢 ID，可選匹配 aliases</td>
 </tr>
 <tr>
 <td><code>_generate_account_id()</code></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py#L186"><code>#L186</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py#L186"><code>#L186</code></a></td>
 <td><code>uuid4</code> 生成 <code>acc_xxxxxxxxxxxx</code> 格式 ID</td>
 </tr>
 </tbody></table>
@@ -439,85 +439,85 @@ find_one(...)
 </thead>
 <tbody><tr>
 <td><strong>賬號 ID 登錄檔</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py"><code>account_scope_store.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py"><code>account_scope_store.py</code></a></td>
 <td><code>_find_account_id_by_username()</code> / <code>_generate_account_id()</code></td>
 <td><code>acc_uuid</code> 生成、使用者名稱 ↔ ID 對映、<code>aliases</code> 管理</td>
 </tr>
 <tr>
 <td><strong>賬號覆蓋儲存</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_scope_store.py"><code>account_scope_store.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_scope_store.py"><code>account_scope_store.py</code></a></td>
 <td><code>load_overrides()</code> / <code>update_overrides()</code></td>
 <td>JSON 檔案讀寫、mtime 快取、執行緒鎖</td>
 </tr>
 <tr>
 <td><strong>執行時覆蓋注入</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/account_override_mixin.py"><code>account_override_mixin.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/account_override_mixin.py"><code>account_override_mixin.py</code></a></td>
 <td><code>_bind_account_aware_config_get</code></td>
 <td>首次包裝 <code>config.get()</code>，讀取時按當前 context 解析覆蓋</td>
 </tr>
 <tr>
 <td><strong>多賬號配置項宣告</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_mixin.py"><code>account_mixin.py</code></a></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_mixin.py#L5"><code>#L5</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_mixin.py"><code>account_mixin.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_mixin.py#L5"><code>#L5</code></a></td>
 <td>&quot;多賬戶模式&quot;、&quot;多賬戶獨立配置&quot;、&quot;賬號列表&quot;</td>
 </tr>
 <tr>
 <td><strong>賬號列表解析</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/account/account_mixin.py"><code>account_mixin.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/account/account_mixin.py"><code>account_mixin.py</code></a></td>
 <td><code>get_account_list()</code></td>
 <td>解析使用者名稱並非建立式呼叫 <code>resolve_account_id()</code></td>
 </tr>
 <tr>
 <td><strong>多賬號迴圈執行</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/BaseEfTask.py"><code>BaseEfTask.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/BaseEfTask.py"><code>BaseEfTask.py</code></a></td>
 <td><code>iter_multi_account_context()</code></td>
 <td>設定/清理賬號 context 並生成執行輪次</td>
 </tr>
 <tr>
 <td><strong>登出→切賬號→登入</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/mixin/login_mixin.py"><code>login_mixin.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/mixin/login_mixin.py"><code>login_mixin.py</code></a></td>
 <td><code>login_flow()</code></td>
 <td>整個登入切換流程</td>
 </tr>
 <tr>
 <td><strong>OCR 文字點選</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/mixin/login_mixin.py"><code>login_mixin.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/mixin/login_mixin.py"><code>login_mixin.py</code></a></td>
 <td><code>click_text()</code></td>
 <td>自定義截圖 + pyautogui 點選</td>
 </tr>
 <tr>
 <td><strong>自定義截圖</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/image/login_screenshot.py"><code>login_screenshot.py</code></a></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/image/login_screenshot.py#L55"><code>#L55</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/image/login_screenshot.py"><code>login_screenshot.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/image/login_screenshot.py#L55"><code>#L55</code></a></td>
 <td><code>capture_window_by_screen()</code> — pyautogui + 裁剪</td>
 </tr>
 <tr>
 <td><strong>自定義滑鼠點選</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/interaction/EfInteraction.py"><code>EfInteraction.py</code></a></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/interaction/EfInteraction.py#L39"><code>#L39</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/interaction/EfInteraction.py"><code>EfInteraction.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/interaction/EfInteraction.py#L39"><code>#L39</code></a></td>
 <td>繼承框架，重寫 <code>click()</code> 新增視窗啟用邏輯</td>
 </tr>
 <tr>
 <td><strong>危險態檢測與處置</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/core/base_mixin/runtime_mixin.py"><code>runtime_mixin.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/core/base_mixin/runtime_mixin.py"><code>runtime_mixin.py</code></a></td>
 <td><code>find_danger()</code> / <code>click()</code></td>
 <td>本專案在通用點選前匹配 <code>danger_1</code>～<code>danger_5</code>（按解析度對映到現有 <code>_2k</code> 資源），命中後結束遊戲並丟擲異常；框架只提供底層模板匹配能力</td>
 </tr>
 <tr>
 <td><strong>GUI 覆蓋編輯器</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/gui/AccountConfigTab.py"><code>AccountConfigTab.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/gui/AccountConfigTab.py"><code>AccountConfigTab.py</code></a></td>
 <td><code>render_task_editor()</code> / <code>_save_pending_changes()</code></td>
 <td>以虛擬配置編輯並儲存當前賬號的完整任務配置快照，同時合併併發檔案變化</td>
 </tr>
 <tr>
 <td><strong>覆蓋編輯虛擬配置</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/gui/AccountConfigTab.py"><code>AccountConfigTab.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/gui/AccountConfigTab.py"><code>AccountConfigTab.py</code></a></td>
 <td><code>InMemoryConfig</code> / <code>_coerce_like()</code></td>
 <td>包裝配置控制元件並按基礎值轉換型別</td>
 </tr>
 <tr>
 <td><strong>任務編排器</strong></td>
-<td><a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/daily/daily_task_runner.py"><code>daily_task_runner.py</code></a></td>
+<td><a href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/src/tasks/daily/daily_task_runner.py"><code>daily_task_runner.py</code></a></td>
 <td><code>DailyTaskRunner</code></td>
 <td>按賬號分組記錄失敗、輪次彙總</td>
 </tr>
@@ -590,6 +590,6 @@ find_one(...)
 <li><p><strong>為什麼 <code>login_screenshot</code> 不用框架的 <code>self.executor.frame</code>？</strong><br>遊戲彈窗/登入介面可能無法被框架的 <code>DesktopDuplication</code> / <code>BitBlt</code> 捕獲（如 UWP 彈窗或某些渲染層覆蓋），<code>pyautogui.screenshot()</code> 是後備方案。</p>
 </li>
 </ol>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/docs/dev/切换账户流程分析.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#一-整體架構" style="margin-left:0px">一、整體架構</a><a href="#二-函式呼叫鏈逐級分析" style="margin-left:0px">二、函式呼叫鏈逐級分析</a><a href="#2-1-入口-iter-multi-account-context-賬號迴圈排程" style="margin-left:10px">2.1 入口：iter_multi_account_context() — 賬號迴圈排程</a><a href="#2-2-login-flow-實際切換賬號流程" style="margin-left:10px">2.2 login_flow() — 實際切換賬號流程</a><a href="#2-3-click-text-ocr-找字-點選-核心登入互動" style="margin-left:10px">2.3 click_text() — OCR 找字 + 點選（核心登入互動）</a><a href="#2-4-login-screenshot-自定義截圖" style="margin-left:10px">2.4 login_screenshot() — 自定義截圖</a><a href="#2-5-login-ocr-登入場景-ocr" style="margin-left:10px">2.5 login_ocr() — 登入場景 OCR</a><a href="#2-6-find-feature-find-one-模板匹配" style="margin-left:10px">2.6 find_feature() / find_one() — 模板匹配</a><a href="#2-7-click-通用點選-非-click-text" style="margin-left:10px">2.7 click() — 通用點選（非 click_text）</a><a href="#2-8-efinteraction-click-框架級點選的最終執行者" style="margin-left:10px">2.8 EfInteraction.click() — 框架級點選的最終執行者</a><a href="#2-9-accountoverridemixin-執行時覆蓋注入" style="margin-left:10px">2.9 AccountOverrideMixin — 執行時覆蓋注入</a><a href="#2-10-account-scope-store-整個持久化層" style="margin-left:10px">2.10 account_scope_store — 整個持久化層</a><a href="#三-使用框架-vs-本專案的精確邊界" style="margin-left:0px">三、使用框架 vs 本專案的精確邊界</a><a href="#3-1-使用框架的部分" style="margin-left:10px">3.1 ✅ 使用框架的部分</a><a href="#3-2-本專案的部分-框架沒有提供任何能力" style="margin-left:10px">3.2 ❌ 本專案的部分（框架沒有提供任何能力）</a><a href="#3-3-混合-框架-本專案各一部分" style="margin-left:10px">3.3 🔀 混合（框架 + 本專案各一部分）</a><a href="#四-流程圖" style="margin-left:0px">四、流程圖</a><a href="#五-關鍵設計決策" style="margin-left:0px">五、關鍵設計決策</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/3c231e67036abca1a6cdf4bab7d946917b49d8b4/docs/dev/切换账户流程分析.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#一-整體架構" style="margin-left:0px">一、整體架構</a><a href="#二-函式呼叫鏈逐級分析" style="margin-left:0px">二、函式呼叫鏈逐級分析</a><a href="#2-1-入口-iter-multi-account-context-賬號迴圈排程" style="margin-left:10px">2.1 入口：iter_multi_account_context() — 賬號迴圈排程</a><a href="#2-2-login-flow-實際切換賬號流程" style="margin-left:10px">2.2 login_flow() — 實際切換賬號流程</a><a href="#2-3-click-text-ocr-找字-點選-核心登入互動" style="margin-left:10px">2.3 click_text() — OCR 找字 + 點選（核心登入互動）</a><a href="#2-4-login-screenshot-自定義截圖" style="margin-left:10px">2.4 login_screenshot() — 自定義截圖</a><a href="#2-5-login-ocr-登入場景-ocr" style="margin-left:10px">2.5 login_ocr() — 登入場景 OCR</a><a href="#2-6-find-feature-find-one-模板匹配" style="margin-left:10px">2.6 find_feature() / find_one() — 模板匹配</a><a href="#2-7-click-通用點選-非-click-text" style="margin-left:10px">2.7 click() — 通用點選（非 click_text）</a><a href="#2-8-efinteraction-click-框架級點選的最終執行者" style="margin-left:10px">2.8 EfInteraction.click() — 框架級點選的最終執行者</a><a href="#2-9-accountoverridemixin-執行時覆蓋注入" style="margin-left:10px">2.9 AccountOverrideMixin — 執行時覆蓋注入</a><a href="#2-10-account-scope-store-整個持久化層" style="margin-left:10px">2.10 account_scope_store — 整個持久化層</a><a href="#三-使用框架-vs-本專案的精確邊界" style="margin-left:0px">三、使用框架 vs 本專案的精確邊界</a><a href="#3-1-使用框架的部分" style="margin-left:10px">3.1 ✅ 使用框架的部分</a><a href="#3-2-本專案的部分-框架沒有提供任何能力" style="margin-left:10px">3.2 ❌ 本專案的部分（框架沒有提供任何能力）</a><a href="#3-3-混合-框架-本專案各一部分" style="margin-left:10px">3.3 🔀 混合（框架 + 本專案各一部分）</a><a href="#四-流程圖" style="margin-left:0px">四、流程圖</a><a href="#五-關鍵設計決策" style="margin-left:0px">五、關鍵設計決策</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
-  <script src="../../../../../assets/site.js?v=20260810102210" defer></script></body></html>
+  <script src="../../../../../assets/site.js?v=20260810120748" defer></script></body></html>

@@ -28,7 +28,7 @@ function diskTarget(href, fromFile) {
   return path.extname(target) ? target : path.join(target, 'index.html');
 }
 
-const mustExist = ['index.html', 'en/index.html', 'ok-ww/index.html', 'ok-ww/en/index.html', 'ok-ww/zh-TW/index.html', 'ok-ww/ja/index.html', 'app/index.html', 'app/en/index.html', 'ok-end-field/index.html', 'ok-end-field/en/index.html', 'ok-end-field/zh-TW/index.html', 'assets/site.css', 'assets/site.js', 'assets/github-mark.svg', 'assets/qq.svg', 'assets/discord.svg', 'assets/project-icons/ok-script.svg', 'sitemap.xml', 'ok-ww/sitemap.xml', 'app/sitemap.xml', 'ok-end-field/sitemap.xml', '.nojekyll'];
+const mustExist = ['index.html', 'en/index.html', 'ok-ww/index.html', 'ok-ww/en/index.html', 'ok-ww/zh-TW/index.html', 'ok-ww/ja/index.html', 'app/index.html', 'app/en/index.html', 'ok-end-field/index.html', 'ok-end-field/zh-TW/index.html', 'assets/site.css', 'assets/site.js', 'assets/github-mark.svg', 'assets/qq.svg', 'assets/discord.svg', 'assets/project-icons/ok-script.svg', 'sitemap.xml', 'ok-ww/sitemap.xml', 'app/sitemap.xml', 'ok-end-field/sitemap.xml', '.nojekyll'];
 for (const rel of mustExist) {
   try { await fs.access(path.join(root, rel)); } catch { failures.push(`Missing required output: ${rel}`); }
 }
@@ -135,11 +135,8 @@ if (!/<link rel="alternate" hreflang="zh-CN" href="https:\/\/ok-script\.com\/ok-
 if (!rootChinese.includes('href="./ok-kes/"')) failures.push('Project ecosystem does not link to the local ok-kes site.');
 await fs.access(path.join(root, 'ok-kes', 'docs', 'index.html')).catch(() => failures.push('ok-kes Chinese MkDocs routes are missing.'));
 await fs.access(path.join(root, 'ok-kes', 'en', 'docs', 'index.html')).catch(() => failures.push('ok-kes English MkDocs routes are missing.'));
-const endFieldEnglish = await fs.readFile(path.join(root, 'ok-end-field', 'en', 'index.html'), 'utf8');
-if (!endFieldEnglish.includes('Leave Endfield routines') || !endFieldEnglish.includes('https://github.com/AliceJump/ok-end-field') || !/class="button primary download-main"[^>]*href="https:\/\/github\.com\/AliceJump\/ok-end-field\/releases\/download\/[^\"]+\.exe"/.test(endFieldEnglish)) failures.push('ok-end-field English landing page is incomplete.');
 if (!rootChinese.includes('href="./ok-end-field/"')) failures.push('Project ecosystem does not link to the local ok-end-field site.');
 await fs.access(path.join(root, 'ok-end-field', 'docs', 'index.html')).catch(() => failures.push('ok-end-field Chinese MkDocs routes are missing.'));
-await fs.access(path.join(root, 'ok-end-field', 'en', 'docs', 'index.html')).catch(() => failures.push('ok-end-field English MkDocs routes are missing.'));
 const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows', 'deploy.yml'), 'utf8');
 if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T10:22:10.056Z",
+  "generatedAt": "2026-08-10T12:07:48.530Z",
   "projects": [
     {
       "id": "ok-script",
@@ -146,8 +146,8 @@
     },
     {
       "id": "ok-star-resonance",
-      "commit": "38b852a3f912d731855672c83a9a8e4144951cbf",
-      "updated": "2026-08-10T14:50:38+08:00",
+      "commit": "81d45011698ff08c454b25d7401d400db5df1cab",
+      "updated": "2026-08-10T18:27:42+08:00",
       "locales": [
         "zh-CN",
         "zh-TW"
@@ -174,7 +174,7 @@
             "url": "https://pan.quark.cn/s/53ef87577da9?pwd=nVL9"
           }
         ],
-        "updated": "2026-08-10T14:50:38+08:00"
+        "updated": "2026-08-10T18:27:42+08:00"
       }
     },
     {
@@ -221,8 +221,8 @@
     },
     {
       "id": "ok-end-field",
-      "commit": "141e802be407467dde27bebac6efce87901e0f3e",
-      "updated": "2026-08-10T18:20:49+08:00",
+      "commit": "3c231e67036abca1a6cdf4bab7d946917b49d8b4",
+      "updated": "2026-08-10T18:27:13+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -241,7 +241,7 @@
           }
         ],
         "mirrors": [],
-        "updated": "2026-08-10T18:20:49+08:00"
+        "updated": "2026-08-10T18:27:13+08:00"
       }
     }
   ]

@@ -609,7 +609,7 @@ function githubIcon(project, currentUrl) {
 }
 
 function releaseDownloads(meta) {
-  const fallbackAsset = meta.releaseAssets?.find(asset => /setup\.exe$/i.test(asset.name))?.browser_download_url;
+  const fallbackAsset = meta.releaseAssets?.find(asset => /\.exe$/i.test(asset.name))?.browser_download_url;
   const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url || fallbackAsset || meta.releaseUrl;
   return { china: find(/China-setup\.exe$/i), global: find(/Global-setup\.exe$/i) };
 }
