@@ -1,0 +1,239 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>i18n 與 OCR · ok-end-field</title><meta name="description" content="i18n 與 OCR — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/i18n_OCR配置流程/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="i18n 與 OCR · ok-end-field"><meta property="og:description" content="i18n 與 OCR — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/i18n_OCR配置流程/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="i18n 與 OCR · ok-end-field"><meta name="twitter:description" content="i18n 與 OCR — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"i18n 與 OCR · ok-end-field","description":"i18n 與 OCR — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/i18n_OCR配置流程/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../API/">API 參考</a><a href="./" class="active" aria-current="page">i18n 與 OCR</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../装备词条识别轮子/">裝備詞條識別</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="i18n-與-ocr-配置流程">i18n 與 OCR 配置流程</h1>
+<p>返回：<a href="../../">文件索引</a> / <a href="../../../">README</a></p>
+<p>本文區分兩套用途不同的語言資源：</p>
+<ul>
+<li><code>i18n/&lt;locale&gt;/LC_MESSAGES/ok.po</code>：GUI/gettext 翻譯。</li>
+<li><code>assets/lang/&lt;module&gt;.json</code>：任務 OCR 匹配器和本地化業務文本。</li>
+</ul>
+<p>兩者不能互相替代。</p>
+<h2 id="1-執行鏈路">1. 執行鏈路</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[executor.locale 或 task.locale] --&gt; B[BaseEfTask.runtime_locale]
+    A --&gt; C[get_lang_accessor]
+    C --&gt; D[规范化为活动 locale]
+    D --&gt; E[assets/lang/module.json]
+    E --&gt; F[选择 key 下的 locale 节点]
+    F --&gt; G[self.lang.module.key]
+    G --&gt; H[ocr / wait_ocr / 业务比较]
+    I[assets/ocr_fix/ocr_text_fix.json] --&gt; J[install_ocr_text_fix_patch]
+    J --&gt; K[扩展 OCR match 参数]
+    K --&gt; H
+</code></pre>
+<p>入口 <code>main.py</code>/<code>main_debug.py</code> 在匯入並啟動 <code>ok</code> 應用前呼叫 <code>install_startup_patches()</code>。OCR 補丁對 <code>TaskExecutor.__init__</code> 和 <code>OCR.fix_match_regex</code> 安裝一次性 monkey patch。</p>
+<h2 id="2-活動-locale">2. 活動 locale</h2>
+<p>活動 OCR locale 由 <code>src/data/lang/__init__.py</code> 的 <code>ACTIVE_LOCALES_CONFIG</code> 明確控制：</p>
+<pre><code class="language-python">ACTIVE_LOCALES_CONFIG = {
+    &quot;zh_CN&quot;: True,
+    &quot;zh_TW&quot;: True,
+    &quot;en_US&quot;: False,
+    &quot;ja_JP&quot;: False,
+    &quot;ko_KR&quot;: False,
+    &quot;es_ES&quot;: False,
+}
+</code></pre>
+<p>因此當前 <code>SUPPORTED_LOCALES == (&quot;zh_CN&quot;, &quot;zh_TW&quot;)</code>。JSON 和 gettext 目錄中存在英語、日語、韓語、西班牙語內容，不代表這些語言已啟用為任務 OCR locale。</p>
+<p>locale 來源和規範化規則：</p>
+<ol>
+<li>有 executor 時讀取 <code>self.executor.locale</code>；否則讀取 <code>self.locale</code>。</li>
+<li>支援 <code>Enum</code>、帶 <code>name</code> 屬性/方法的 locale 物件和字串。</li>
+<li><code>-</code> 轉為 <code>_</code>，並對活動 locale 做大小寫寬容匹配。</li>
+<li>非活動、未知或空 locale 回退 <code>zh_CN</code>。</li>
+</ol>
+<p><code>BaseEfTask.runtime_locale</code> 只暴露提取到的原始字串；真正的活動 locale 規範化發生在 <code>LangAccessor</code> 中。</p>
+<h2 id="3-統一-json-schema">3. 統一 JSON schema</h2>
+<p>資源路徑是單檔案：</p>
+<pre><code class="language-text">assets/lang/&lt;module&gt;.json
+</code></pre>
+<p>不存在執行時使用的 <code>assets/lang/&lt;module&gt;/&lt;locale&gt;.json</code> 目錄結構。統一檔案以業務 key 為第一層，以 locale 為第二層：</p>
+<pre><code class="language-json">{
+  &quot;k_confirm&quot;: {
+    &quot;zh_CN&quot;: {&quot;string&quot;: &quot;确认&quot;},
+    &quot;zh_TW&quot;: {&quot;string&quot;: &quot;確認&quot;},
+    &quot;en_US&quot;: {&quot;string&quot;: &quot;Confirm&quot;}
+  },
+  &quot;k_number&quot;: {
+    &quot;zh_CN&quot;: {&quot;pattern&quot;: &quot;^\\d+$&quot;},
+    &quot;zh_TW&quot;: {&quot;pattern&quot;: &quot;^\\d+$&quot;}
+  },
+  &quot;k_accept&quot;: {
+    &quot;zh_CN&quot;: {&quot;terms&quot;: [&quot;接取&quot;, &quot;接受&quot;]},
+    &quot;zh_TW&quot;: {&quot;terms&quot;: [&quot;接取&quot;, &quot;接受&quot;]}
+  }
+}
+</code></pre>
+<p>每個 locale 節點應只使用一種值：</p>
+<table>
+<thead>
+<tr>
+<th>節點</th>
+<th>訪問結果</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>{&quot;string&quot;: &quot;确认&quot;}</code></td>
+<td><code>str</code></td>
+<td>固定文本或業務顯示文本</td>
+</tr>
+<tr>
+<td><code>{&quot;pattern&quot;: &quot;^\\d+$&quot;}</code></td>
+<td>編譯後的 <code>re.Pattern</code></td>
+<td>正則 OCR 匹配</td>
+</tr>
+<tr>
+<td><code>{&quot;terms&quot;: [&quot;A&quot;, &quot;B&quot;]}</code></td>
+<td><code>list</code></td>
+<td>多個候選值</td>
+</tr>
+</tbody></table>
+<p>如果 locale 節點本身不是字典，則原樣返回。直接屬性解析檢查順序為 <code>string</code>、<code>pattern</code>、<code>terms</code>；<code>build_matcher</code> 檢查順序為 <code>pattern</code>、<code>string</code>、<code>terms</code>。不要在同一個 locale 節點混放這些欄位。</p>
+<p>載入一個 key 時的值回退順序：</p>
+<ol>
+<li>當前規範化 locale。</li>
+<li>當前為 <code>zh_TW</code> 時仍回退 <code>zh_TW</code>，否則回退 <code>zh_CN</code>。</li>
+<li>該 key 下第一個可用 locale 值。</li>
+</ol>
+<p>模組檔案不存在、JSON 讀取失敗或 key 不存在時返回空模組/<code>None</code>；不會按舊目錄結構尋找其它檔案。</p>
+<h2 id="4-程式碼訪問">4. 程式碼訪問</h2>
+<pre><code class="language-python">result = self.wait_ocr(
+    match=self.lang.DeliveryTask.k_ae8fb114,
+    box=self.box.bottom,
+    time_out=5,
+)
+
+self.wait_click_ocr(
+    match=self.lang.daily_battle_mixin.k_b56d9ac6,
+    box=self.box.bottom_right,
+    time_out=5,
+)
+</code></pre>
+<p>安全讀取並提供程式碼級 fallback：</p>
+<pre><code class="language-python">from src.data.lang import get_lang_module_value
+
+matcher = get_lang_module_value(
+    self.lang,
+    &quot;DeliveryTask&quot;,
+    &quot;k_ae8fb114&quot;,
+    fallback=&quot;确认&quot;,
+)
+</code></pre>
+<p>業務資料仍以中文 canonical key 儲存時，使用現有工具轉換：</p>
+<ul>
+<li><code>src/data/world_map_utils.py</code>：<code>get_world_map_matcher</code>、<code>get_world_map_text</code>、<code>is_world_map_text</code>。</li>
+<li><code>src/data/characters_utils.py</code>：<code>get_localized_name_by_canonical</code>、<code>get_contact_list_with_feature_list</code>。</li>
+</ul>
+<h2 id="5-ocr-混淆補丁">5. OCR 混淆補丁</h2>
+<p>配置檔案：</p>
+<pre><code class="language-text">assets/ocr_fix/ocr_text_fix.json
+</code></pre>
+<p>schema 是完整文本的 <code>OCR 错误文本 -&gt; 正确文本</code>：</p>
+<pre><code class="language-json">{
+  &quot;乾員聯絡&quot;: &quot;幹員聯絡&quot;
+}
+</code></pre>
+<p>當前補丁 <strong>不會替換 OCR 輸出文本，也不會寫入 <code>TaskExecutor.text_fix</code></strong>。實際行為是：</p>
+<ol>
+<li>只讀取長度相同的錯誤/正確文本對。</li>
+<li>對每個不同字元構建 <code>正确字符 -&gt; OCR 错误字符</code>，例如 <code>幹 -&gt; 乾</code>。</li>
+<li>同一正確字元對映到多個不同錯字時，保留先前對映並跳過沖突。</li>
+<li>在框架原有 <code>OCR.fix_match_regex</code> 處理後，擴充套件呼叫方的 <code>match</code>。</li>
+</ol>
+<p>不同 <code>match</code> 型別的行為：</p>
+<table>
+<thead>
+<tr>
+<th>輸入</th>
+<th>補丁行為</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>str</code></td>
+<td>生成原文和混淆變體，最多 4 個；有多個時返回列表</td>
+</tr>
+<tr>
+<td><code>re.Pattern</code></td>
+<td>只擴充套件安全的字面字元；字元類內追加錯字，保留 flags</td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>遞迴擴充套件並攤平結果</td>
+</tr>
+<tr>
+<td>其它</td>
+<td>原樣返回</td>
+</tr>
+</tbody></table>
+<p>正則轉義、量詞、分組和其它結構標記不會被重寫；混淆字元本身是正則元字元時跳過。編譯或處理失敗會返回原始 match。這是一層匹配相容，不是 OCR 結果標準化，因此業務程式碼讀取 <code>box.name</code> 時仍可能看到原始誤識文本。</p>
+<p>舊 <code>src/data/ocr_normalize_map.py</code> 機制已不存在。若需要業務輸出標準化，應在明確的業務解析層實現，不能假定全域性補丁已改寫文本。</p>
+<h2 id="6-新增-ocr-文本">6. 新增 OCR 文本</h2>
+<ol>
+<li>確定模組名，通常與使用它的任務類或 Python 模組一致，例如 <code>DeliveryTask</code>、<code>login_mixin</code>。</li>
+<li>編輯 <code>assets/lang/&lt;module&gt;.json</code>，新增頂層 key。</li>
+<li>至少為當前活動 locale <code>zh_CN</code>、<code>zh_TW</code> 增加同名節點。</li>
+<li>節點只選 <code>string</code>、<code>pattern</code>、<code>terms</code> 之一。</li>
+<li>在程式碼中引用 <code>self.lang.&lt;module&gt;.&lt;key&gt;</code>。</li>
+<li>執行語言引用測試並實測 OCR 區域。</li>
+</ol>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m unittest tests.TestCheckLang
+</code></pre>
+<p><code>TestCheckLang</code> 當前只掃描形如 <code>self.lang.&lt;module&gt;.k_xxx</code> 的引用，只校驗 <code>zh_CN</code> 和 <code>zh_TW</code>：</p>
+<ul>
+<li>模組檔案不存在或兩個 locale 都缺 key：失敗。</li>
+<li>只缺一個活動 locale：記錄 warning，不導致失敗。</li>
+<li>非 <code>k_</code> 命名的訪問（例如 <code>self.lang.login_mixin.ms</code>）不在該測試正則的覆蓋範圍內，需要人工檢查。</li>
+</ul>
+<h2 id="7-gui-gettext">7. GUI gettext</h2>
+<p>GUI 文本使用：</p>
+<pre><code class="language-text">i18n/&lt;locale&gt;/LC_MESSAGES/ok.po
+</code></pre>
+<p>當前倉庫有 <code>zh_CN</code>、<code>zh_TW</code>、<code>en_US</code>、<code>ja_JP</code>、<code>ko_KR</code>、<code>es_ES</code> catalog。相關驗證：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m unittest tests.TestGuiI18n
+.\.venv\Scripts\python.exe -m unittest tests.TestPoLocaleConsistency
+</code></pre>
+<p><code>TestPoLocaleConsistency</code> 檢查 catalog 重複/空翻譯、佔位符一致性、部分語言不應複製英文 fallback，以及已知執行時汙染 msgid。它不決定 OCR <code>SUPPORTED_LOCALES</code>。</p>
+<h2 id="8-工具狀態">8. 工具狀態</h2>
+<p><code>tools/lang_batch_translate.py</code> 當前仍按舊的 <code>assets/lang/&lt;module&gt;/&lt;locale&gt;.json</code> 目錄結構掃描，並且只列舉目錄；它與執行時統一單檔案 schema 不相容。不要對當前資源執行該指令碼，否則不能正確發現或更新模組。<code>scripts/migrate_lang.py</code> 是舊格式遷移用途，也不是日常維護入口。</p>
+<p>當前可靠流程是手工編輯統一 JSON，使用 <code>TestCheckLang</code> 校驗引用，再人工複核正則和遊戲專有名詞。</p>
+<h2 id="9-排查清單">9. 排查清單</h2>
+<p>語言節點未生效時依次檢查：</p>
+<ol>
+<li>檔案是否為 <code>assets/lang/&lt;module&gt;.json</code>。</li>
+<li>頂層 key 和程式碼屬性是否完全一致。</li>
+<li>執行時 locale 是否在 <code>ACTIVE_LOCALES_CONFIG</code> 中啟用。</li>
+<li>locale 節點是否只包含一個合法型別欄位。</li>
+<li>正則字串是否為有效 Python 正則。</li>
+<li><code>TestCheckLang</code> 未覆蓋的非 <code>k_</code> key 是否人工補齊。</li>
+</ol>
+<p>OCR 穩定誤識時，先確認是否只是匹配問題。只有等長字元混淆適合加入 <code>ocr_text_fix.json</code>；長度變化、詞序變化或僅某一業務成立的糾錯應在語言 pattern 或業務解析中處理。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/i18n_OCR配置流程.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-執行鏈路" style="margin-left:0px">1. 執行鏈路</a><a href="#2-活動-locale" style="margin-left:0px">2. 活動 locale</a><a href="#3-統一-json-schema" style="margin-left:0px">3. 統一 JSON schema</a><a href="#4-程式碼訪問" style="margin-left:0px">4. 程式碼訪問</a><a href="#5-ocr-混淆補丁" style="margin-left:0px">5. OCR 混淆補丁</a><a href="#6-新增-ocr-文本" style="margin-left:0px">6. 新增 OCR 文本</a><a href="#7-gui-gettext" style="margin-left:0px">7. GUI gettext</a><a href="#8-工具狀態" style="margin-left:0px">8. 工具狀態</a><a href="#9-排查清單" style="margin-left:0px">9. 排查清單</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

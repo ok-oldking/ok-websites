@@ -1,0 +1,180 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>滑索與送貨邏輯 · ok-end-field</title><meta name="description" content="滑索與送貨邏輯 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/滑索与送货逻辑/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="滑索與送貨邏輯 · ok-end-field"><meta property="og:description" content="滑索與送貨邏輯 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/滑索与送货逻辑/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="滑索與送貨邏輯 · ok-end-field"><meta name="twitter:description" content="滑索與送貨邏輯 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"滑索與送貨邏輯 · ok-end-field","description":"滑索與送貨邏輯 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/滑索与送货逻辑/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../API/">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="./" class="active" aria-current="page">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../装备词条识别轮子/">裝備詞條識別</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="滑索與送貨邏輯">滑索與送貨邏輯</h1>
+<p>返回：<a href="../../">文件索引</a> / <a href="../../../">README</a></p>
+<p>本文記錄滑索和自動送貨兩個模組的核心思想與邏輯推演過程，供後續開發和維護參考。</p>
+<hr>
+<h2 id="一-總體思路">一、總體思路</h2>
+<p>整個送貨自動化可拆分為三個相互獨立但順序依賴的子問題：</p>
+<ol>
+<li><strong>搶單</strong>：在委託列表中識別並接取符合條件的委託。(已有)</li>
+<li><strong>取貨</strong>：通過滑索系統到達倉儲節點，拾取貨物。</li>
+<li><strong>送達</strong>：通過滑索系統到達目標 NPC，提交貨物完成委託。</li>
+</ol>
+<hr>
+<h2 id="二-滑索系統-ziplinemixin">二、滑索系統（ZipLineMixin）</h2>
+<h3 id="2-1-核心問題">2.1 核心問題</h3>
+<p>滑索可能有多個可連通的滑索，每個連線點對應一個可識別的距離數字（如 14m、108m）。程式無法直接知道&quot;當前哪個連線點在螢幕中央&quot;，只能通過 OCR 掃描當前畫面中的數字來判斷。</p>
+<p>因此，<strong>到達特定連線點</strong>等價於：<strong>將目標距離數字移動到螢幕中心</strong>。</p>
+<h3 id="2-2-對齊演算法">2.2 對齊演算法</h3>
+<p>流程如下：</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[开始对齐目标距离] --&gt; B[OCR 扫描距离文本]
+    B --&gt; C{找到目标距离}
+    C --&gt;|是| D[计算目标与屏幕中心偏差]
+    C --&gt;|否| E{有历史位置}
+    E --&gt;|是| F[按指数衰减预测位置]
+    E --&gt;|否| G[随机探索视角]
+    F --&gt; D
+    G --&gt; B
+    D --&gt; H{偏差在容差内}
+    H --&gt;|否| I[移动视角]
+    I --&gt; B
+    H --&gt;|是| J[点击连接点]
+    J --&gt; K[持续按 E 推进]
+    K --&gt; L{出现移动或离开提示}
+    L --&gt;|否| K
+    L --&gt;|是| M[本段完成]
+</code></pre>
+<ol>
+<li>對螢幕做 OCR，同時用 HSV 顏色過濾器（金色文字 + 白色文字）隔離噪聲，提高數字識別準確率。</li>
+<li>如果找到目標數字，計算其中心與螢幕中心的偏差 <code>(dx, dy)</code>。</li>
+<li>若偏差超出容差（預設 50px），向偏差方向移動攝像頭，反覆迭代直至對齊。</li>
+<li>目標對中、短暫丟失後的預測和搜尋策略由 <code>NavigationMixin.align_ocr_or_find_target_to_center()</code> 統一實現；<code>ZipLineMixin</code> 負責提供距離正則、HSV 處理器和 <code>max_time=100</code>。</li>
+<li>對中失敗、序列格式非法等錯誤直接向上丟擲，由任務統一異常處理。
+這一分層使滑索程式碼只維護“距離序列 + 互動”，通用導航搜尋策略集中在 <code>navigation_mixin.py</code>。<blockquote>
+<p>可利用的部分特性：固定角色模型可以遮住複雜背景，因此可以先切換到特定角色，然後藉助角色模型遮擋來提高 OCR 的穩定性。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-3-發射與推進">2.3 發射與推進</h3>
+<p>對齊完成後：</p>
+<ol>
+<li>點選連線點（滑鼠左鍵）。</li>
+<li>進入迴圈，<strong>持續按 E 鍵</strong>，每 0.1 秒檢查一次螢幕底部的狀態文字。</li>
+<li>出現本地化資源 <code>zip_line_mixin</code> 中的「向目標移動」或「離開滑索架」匹配項時，代表本段滑索已觸發或完成，退出迴圈，進入下一段。</li>
+<li>等待首次登上滑索的超時為 60 秒；每一段推進的超時為 240 秒，超時均丟擲異常。</li>
+</ol>
+<p>持續按 E 的原因是：遊戲在滑索距離很短的情況下，程式如果再進行ocr容易因為延遲錯過按E的時機導致異常，採用<strong>高頻重複輸入</strong>來確保不錯過觸發視窗。
+實現上使用底層按鍵傳送 <code>send_key(&quot;e&quot;)</code>，因為遊戲內該互動鍵不可改綁，因此不走通用熱鍵對映。</p>
+<h3 id="2-4-多段序列">2.4 多段序列</h3>
+<p>配置中每個目的地對應一個距離序列（如 <code>&quot;14,108,64,109,60&quot;</code>），由 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/sequence_parser.py"><code>parse_int_sequence</code></a> 解析；支援逗號字串或整數列表，非法 token 會拋 <code>ValueError</code>。程式按順序逐段執行，並按 <code>need_v</code>、目標導航和底部提示決定右鍵收尾。</p>
+<hr>
+<h2 id="三-送貨任務編排-deliverytask">三、送貨任務編排（DeliveryTask）</h2>
+<h3 id="3-1-整體流程串聯">3.1 整體流程串聯</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[接取委托] --&gt; B[传送至出发点]
+    B --&gt; C[滑索前往仓储节点]
+    C --&gt; D[取货并回到滑索]
+    D --&gt; E[OCR 识别当前地区配置的目标 NPC]
+    E --&gt; F[按目标滑索序列前往]
+    F --&gt; G[到达并提交货物]
+    G --&gt; H{还有接取机会}
+    H --&gt;|是| A
+    H --&gt;|否| I[结束]
+</code></pre>
+<p>按以下順序執行一次完整送貨：</p>
+<pre><code>接取委托
+    ↓
+传送至出发点（task_to_transfer_point）
+    ↓
+滑索前往仓储节点取货并回到滑索（to_storage_point_and_back_zip_line）
+    ↓
+OCR 识别目标 NPC（来自当前地区 `delivery_targets_by_location`）
+    ↓
+滑索前往目标 NPC（on_zip_line_start）
+    ↓
+到达并提交货物（to_end_and_submit）
+</code></pre>
+<p>迴圈最多重試 3 次(因為最多有三次接取機會)</p>
+<h3 id="3-2-取貨邏輯">3.2 取貨邏輯</h3>
+<p>滑索前往倉儲節點取貨並回到滑索 的思路：</p>
+<blockquote>
+<p>前提:上一步完成後，落地有滑索的情況下可以直接上滑索</p>
+</blockquote>
+<ol>
+<li>等待「登上滑索架」提示出現，點選並上滑索。</li>
+<li>按配置的「通向{地點}送貨點」序列滑行（每個送貨地點一個鍵，如「通向武陵城送貨點」「通向試驗園區送貨點」）。</li>
+<li>下滑索後，任務小藍點可能變暗此時使用追蹤鍵(<em>v</em>),使其變亮,然後再次上滑索進行一次關於小藍點的對中</li>
+<li>到達倉儲節點附近後，通過任務小藍點進行輔助對齊，步行靠近倉儲節點。</li>
+<li>檢測到「倉儲節點」及「取貨」提示後點擊取貨。</li>
+<li>取貨後需檢測最近滑索架並前往後續送達流程。</li>
+</ol>
+<h3 id="3-3-目標-npc-識別">3.3 目標 NPC 識別</h3>
+<p>倉儲點取貨後，遊戲介面左側會顯示送達點或目標 NPC。候選項來自當前地區 <code>delivery_targets_by_location</code> 的並集，並通過 <code>assets/lang/world_map.json</code> 取得當前語言匹配器；識別到的規範目標名用於選擇同名滑索序列和後續導航。</p>
+<h3 id="3-4-送達邏輯">3.4 送達邏輯</h3>
+<p>在到達目標 NPC 後：</p>
+<ol>
+<li>檢測 NPC 名稱或「提交」等互動提示出現。</li>
+<li>點選提交完成委託。</li>
+<li>等待結算 UI 消失後返回，準備下一次迴圈。</li>
+</ol>
+<h3 id="3-5-功能開關設計">3.5 功能開關設計</h3>
+<p>提供「僅接取」和「僅送貨」兩個開關，方便在除錯或特殊場景下只跑流程的某一段，而不必修改程式碼。「選擇測試物件」則允許單獨測試某段滑索序列或完整迴圈，降低除錯成本。</p>
+<hr>
+<h2 id="四-關鍵設計取捨">四、關鍵設計取捨</h2>
+<table>
+<thead>
+<tr>
+<th>問題</th>
+<th>取捨思路</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>滑索對齊為何用 OCR 而非影像特徵匹配</td>
+<td>距離數字是滑索到滑索間最直觀的資訊，OCR 更通用,使用者輸入配置也更直觀；圖示模板維護成本高</td>
+</tr>
+<tr>
+<td>為何持續按 E 而非判斷時機後按一次</td>
+<td>滑索距離短時互動觸發時機很短，高頻輸入容錯性更強；且該互動鍵在遊戲內不可改綁，故直接傳送底層 E 鍵輸入</td>
+</tr>
+<tr>
+<td>OCR 失敗時為何用預測而非立即重試</td>
+<td>相機還在移動時目標短暫消失屬正常，立即重置會導致震盪</td>
+</tr>
+<tr>
+<td>為何走完一條完整滑索鏈後要再次上滑索</td>
+<td>防止下滑索後，小藍點特徵被互動UI遮住導致無法識別，而上滑索後不會出現此種UI遮擋情況</td>
+</tr>
+</tbody></table>
+<h2 id="五-可能的替代方案">五、可能的替代方案</h2>
+<h3 id="滑索對齊改進">滑索對齊改進</h3>
+<ol>
+<li><strong>地圖上獲取線路，降低ocr依賴</strong> ：若能夠通過遊戲地圖獲取滑索線路，在滑索上開啟地圖，點選下一個滑索的追蹤按鈕，小地圖上就會顯示出相對方向，一定程度上可以解決橫向對齊問題，豎向校準則需進一步考慮</li>
+<li><strong>對中利用影像特徵匹配</strong> ：通過影像特徵匹配，如模板匹配，來識別滑索圖示，針對識別到的模板位置來進行進一步識別該模板對應的距離</li>
+</ol>
+<h2 id="六-部分已知問題">六、部分已知問題</h2>
+<ol>
+<li><a href="https://github.com/AliceJump/ok-end-field/issues/24">下滑索後無法立刻上滑索</a></li>
+</ol>
+<p>相關文件：<a href="../../自动送货/">自動送貨</a> / <a href="../../update/送货地区维护工作流/">送貨地區維護工作流</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/滑索与送货逻辑.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#一-總體思路" style="margin-left:0px">一、總體思路</a><a href="#二-滑索系統-ziplinemixin" style="margin-left:0px">二、滑索系統（ZipLineMixin）</a><a href="#2-1-核心問題" style="margin-left:10px">2.1 核心問題</a><a href="#2-2-對齊演算法" style="margin-left:10px">2.2 對齊演算法</a><a href="#2-3-發射與推進" style="margin-left:10px">2.3 發射與推進</a><a href="#2-4-多段序列" style="margin-left:10px">2.4 多段序列</a><a href="#三-送貨任務編排-deliverytask" style="margin-left:0px">三、送貨任務編排（DeliveryTask）</a><a href="#3-1-整體流程串聯" style="margin-left:10px">3.1 整體流程串聯</a><a href="#3-2-取貨邏輯" style="margin-left:10px">3.2 取貨邏輯</a><a href="#3-3-目標-npc-識別" style="margin-left:10px">3.3 目標 NPC 識別</a><a href="#3-4-送達邏輯" style="margin-left:10px">3.4 送達邏輯</a><a href="#3-5-功能開關設計" style="margin-left:10px">3.5 功能開關設計</a><a href="#四-關鍵設計取捨" style="margin-left:0px">四、關鍵設計取捨</a><a href="#五-可能的替代方案" style="margin-left:0px">五、可能的替代方案</a><a href="#滑索對齊改進" style="margin-left:10px">滑索對齊改進</a><a href="#六-部分已知問題" style="margin-left:0px">六、部分已知問題</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

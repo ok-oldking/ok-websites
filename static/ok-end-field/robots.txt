@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ok-script.com/ok-end-field/sitemap.xml

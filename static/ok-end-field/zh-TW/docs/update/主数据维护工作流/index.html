@@ -1,0 +1,178 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>主資料維護 · ok-end-field</title><meta name="description" content="主資料維護 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/update/主数据维护工作流/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="主資料維護 · ok-end-field"><meta property="og:description" content="主資料維護 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/update/主数据维护工作流/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="主資料維護 · ok-end-field"><meta name="twitter:description" content="主資料維護 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"主資料維護 · ok-end-field","description":"主資料維護 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/update/主数据维护工作流/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="./" class="active" aria-current="page">主資料維護</a><a href="../送货地区维护工作流/">送貨地區維護</a><a href="../日常送礼维护工作流/">日常送禮維護</a><a href="../../dev/QUICKSTART/">從原始碼執行</a><a href="../../dev/DEVELOPMENT/">開發指南</a><a href="../../dev/API/">API 參考</a><a href="../../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../../dev/键盘操作体系/">鍵盤操作體系</a><a href="../../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../../dev/文字识别示例/">文字識別示例</a><a href="../../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../../dev/切换账户流程分析/">賬戶切換流程</a><a href="../../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="世界地圖維護工作流">世界地圖維護工作流</h1>
+<p>返回：<a href="../../">文件索引</a> / <a href="../../../">README</a></p>
+<blockquote>
+<p>資料已剝離為 JSON：<code>assets/data/world_map.json</code>（純資料），由 <code>src/data/world_map.py</code>（薄載入器）讀取，保持原匯入路徑相容；涉及 FeatureList 列舉的 <code>higher_order_feature_dict</code> 仍在載入器中。<code>permanent_dict</code>（影拓豐碑敵人列表）在 JSON 中維護。</p>
+</blockquote>
+<h2 id="主要維護點">主要維護點</h2>
+<h3 id="1-地區列表-驅動任務遍歷">1. 地區列表：驅動任務遍歷</h3>
+<p><strong>影響的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_trade_mixin.py">daily_trade_mixin.py</a> 中的買賣貨任務會按 <code>areas_list</code> 逐區執行</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 中的據點兌換任務會按 <code>areas_list</code> 遍歷所有地區</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_buy_mixin.py">daily_buy_mixin.py</a> 中的買物資流程也依賴地區列表</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_logistics_mixin.py">daily_logistics_mixin.py</a> 的物流相關流程也讀取地區列表</li>
+</ul>
+<p><strong>維護要點</strong>：</p>
+<ul>
+<li>新增地區時，必須先把地區名加入 <code>areas_list</code></li>
+<li>地區名會直接影響日常任務的遍歷範圍和配置項名稱</li>
+<li>地區順序會影響任務執行順序</li>
+</ul>
+<hr>
+<h3 id="2-據點字典-決定地區內可處理的據點">2. 據點字典：決定地區內可處理的據點</h3>
+<p><strong>影響的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 通過 <code>get_area_by_outpost_name()</code> 反查據點所屬地區，並由 <code>get_goods_by_outpost_name()</code> 返回該地區的 <code>goods_dict</code></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 的據點兌換任務會從 <code>outpost_dict</code> 逐個取出據點執行兌換</li>
+<li>當前直接業務呼叫方只有據點兌換流程；自動送貨使用獨立的 <code>delivery_area.py</code> 地點/NPC 資料，不讀取 <code>outpost_dict</code></li>
+</ul>
+<p><strong>維護要點</strong>：</p>
+<ul>
+<li>新增或調整據點時，要同步更新 <code>outpost_dict</code>（注意：應統一使用&quot;據點&quot;術語，避免與其他模組混淆）</li>
+<li>修改據點名稱後，要檢查所有按名稱反查地區的流程是否還能匹配</li>
+</ul>
+<hr>
+<h3 id="3-商品字典-驅動據點兌換識別與優先項">3. 商品字典：驅動據點兌換識別與優先項</h3>
+<p><strong>影響的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 的 <code>get_goods_by_outpost_name()</code> 會按據點所屬地區返回可交易貨物</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 的據點兌換任務按據點所屬地區讀取 <code>goods_dict</code></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_routine_mixin.py">daily_routine_mixin.py</a> 會彙總 <code>goods_dict</code>，生成「交易貨品優先序列」的可選項</li>
+<li>買賣貨任務只按 <code>areas_list</code> 遍歷並從介面 OCR 採集交易資訊，不讀取 <code>goods_dict</code></li>
+</ul>
+<p><strong>維護要點</strong>：</p>
+<ul>
+<li>新增據點兌換可識別/可排序的貨物時，更新 <code>goods_dict</code>；送貨貨物和買賣貨掃描不由該字典驅動</li>
+<li>商品必須按地區分組，否則據點兌換無法拿到正確的可交易物品列表</li>
+<li>商品變動會影響據點兌換的 OCR 候選、規範化和「交易貨品優先序列」配置選項，不會改變遊戲內兌換 UI 自身的商品列表</li>
+</ul>
+<hr>
+<h3 id="4-兌換商品字典-當前主要是預留配置">4. 兌換商品字典：當前主要是預留配置</h3>
+<p><strong>影響的功能</strong>：</p>
+<ul>
+<li>目前程式碼裡沒有直接消費 <code>exchange_goods_dict</code> 的業務邏輯</li>
+<li>文件和配置層面保留了這個結構，便於後續擴充套件兌換 UI 或交易邏輯</li>
+</ul>
+<p><strong>維護要點</strong>：</p>
+<ul>
+<li>現在不要把它當作主流程資料來源</li>
+<li>如果後續要接入真正的兌換功能，再補充呼叫方</li>
+</ul>
+<hr>
+<h3 id="5-關卡字典和消耗表-驅動戰鬥任務">5. 關卡字典和消耗表：驅動戰鬥任務</h3>
+<p><strong>影響的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_battle_mixin.py">daily_battle_mixin.py</a> 會用 <code>stages_dict</code> 生成關卡選擇項</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 的 <code>get_stage_category()</code> 會反查關卡所屬分類</li>
+<li><code>stages_cost</code> 會影響體力/消耗計算</li>
+<li><code>higher_order_feature_dict</code> 只服務高階關卡的模板識別和特殊處理</li>
+</ul>
+<p><strong>維護要點</strong>：</p>
+<ul>
+<li>新關卡先放進 <code>stages_dict</code></li>
+<li>關卡消耗統一維護在 <code>stages_cost</code></li>
+<li>只有高階關卡才需要維護 <code>higher_order_feature_dict</code></li>
+<li><code>stages_list</code> 是派生資料，不要手改</li>
+</ul>
+<hr>
+<h3 id="6-倉庫對映-驅動物品轉移">6. 倉庫對映：驅動物品轉移</h3>
+<p><strong>影響的功能</strong>：</p>
+<ul>
+<li><a href="../../仓库物品转移/">倉庫物品轉移.md</a> 對應的物品選擇依賴 <code>item_to_warehouse_dict</code></li>
+<li>倉庫轉移任務會按這個字典把物品歸類到礦物、產物等倉庫類別</li>
+</ul>
+<p><strong>維護要點</strong>：</p>
+<ul>
+<li>新增物品類別時補充對映</li>
+<li>對映變更會直接影響倉庫轉移任務的可選項和分類結果</li>
+</ul>
+<hr>
+<h2 id="通用維護流程">通用維護流程</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[确认数据变更需求] --&gt; B[定位调用方]
+    B --&gt; C[修改 assets/data/world_map.json 或加载器]
+    C --&gt; D{是否涉及模板特征}
+    D --&gt;|是| E[更新 ok_templates 和 FeatureList]
+    D --&gt;|否| F[运行 main_debug.py 验证加载]
+    E --&gt; F
+    F --&gt; G[运行相关单元测试]
+    G --&gt; H[同步 assets/lang/world_map.json]
+    H --&gt; I[同步功能文档和维护文档]
+</code></pre>
+<ol>
+<li>先確認呼叫方使用了哪些資料</li>
+<li>修改對應配置（均在 <code>assets/data/world_map.json</code>）：<ul>
+<li>地區：<code>areas_list</code></li>
+<li>據點：<code>outpost_dict</code></li>
+<li>商品：<code>goods_dict</code></li>
+<li>關卡：<code>stages_dict</code></li>
+<li>消耗：<code>stages_cost</code></li>
+<li>倉庫對映：<code>item_to_warehouse_dict</code></li>
+<li>影拓豐碑敵人：<code>permanent_dict</code></li>
+</ul>
+</li>
+<li>如有高階關卡，再補 <code>higher_order_feature_dict</code>（在 <code>src/data/world_map.py</code> 載入器內，因含 FeatureList 列舉）</li>
+<li><code>scripts/sync_world_map_langs.py</code> 會自動為主資料新增的名稱補齊 <code>assets/lang/world_map.json</code> 節點（官方有譯名則填，無則至少 zh_CN）；官方新增名稱會列印 MANUAL 提示人工決定是否加入主資料</li>
+<li>執行相關任務驗證資料是否生效</li>
+</ol>
+<hr>
+<h2 id="關鍵注意事項">關鍵注意事項</h2>
+<ul>
+<li><strong>先看呼叫方，再改資料</strong>：<code>world_map.py</code> 裡的欄位不是孤立配置，改之前先確認哪些任務模組在用</li>
+<li><strong>商品字典影響範圍有限</strong>：<code>goods_dict</code> 影響據點兌換識別、篩選和優先序列配置，不驅動買賣貨掃描、自動送貨或遊戲內商品列表</li>
+<li><strong>關卡分兩層維護</strong>：普通關卡只維護分類和消耗，高階關卡才維護模板特徵</li>
+<li><strong>兌換商品目前偏預留</strong>：<code>exchange_goods_dict</code> 暫時不是主流程資料來源</li>
+<li><strong>派生資料不要手改</strong>：<code>stages_list</code> 由 <code>stages_dict</code> 自動生成</li>
+</ul>
+<hr>
+<h2 id="依賴關係">依賴關係</h2>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_trade_mixin.py">daily_trade_mixin.py</a> 只讀取地區列表，不讀取 <code>goods_dict</code></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 讀取地區列表、據點列表和商品配置</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_routine_mixin.py">daily_routine_mixin.py</a> 彙總商品配置以生成交易貨品優先序列</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_logistics_mixin.py">daily_logistics_mixin.py</a> 讀取地區列表</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_battle_mixin.py">daily_battle_mixin.py</a> 讀取關卡分類、消耗和高階特徵</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 負責據點到地區、據點到商品、關卡到分類的反查</li>
+<li><a href="../../仓库物品转移/">倉庫物品轉移.md</a> 對應倉庫對映字典的使用說明</li>
+</ul>
+<hr>
+<h2 id="通用驗證步驟">通用驗證步驟</h2>
+<ol>
+<li>執行 <code>python -m compileall src/data src/tasks/daily</code> 檢查語法和匯入前的基礎結構。</li>
+<li>執行 <code>python -m unittest tests.TestCheckLang tests.TestPoLocaleConsistency tests.TestOutpostExchange</code>；涉及送貨地區時追加 <code>tests.TestDeliveryAreaConfig</code>，涉及倉庫對映時追加 <code>tests.TestWarehouseSwitchOCR</code>。</li>
+<li>執行 <code>python main_debug.py</code> 驗證配置控制元件和資料載入。</li>
+<li>檢查日誌並遍歷受影響的日常任務，確認當前語言 OCR、據點順序和商品選項均正確。</li>
+</ol>
+<p>相關文件：<a href="../../日常任务/">日常任務</a> / <a href="../../体力本/">刷體力</a> / <a href="../../仓库物品转移/">倉庫物品轉移</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/update/主数据维护工作流.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#主要維護點" style="margin-left:0px">主要維護點</a><a href="#1-地區列表-驅動任務遍歷" style="margin-left:10px">1. 地區列表：驅動任務遍歷</a><a href="#2-據點字典-決定地區內可處理的據點" style="margin-left:10px">2. 據點字典：決定地區內可處理的據點</a><a href="#3-商品字典-驅動據點兌換識別與優先項" style="margin-left:10px">3. 商品字典：驅動據點兌換識別與優先項</a><a href="#4-兌換商品字典-當前主要是預留配置" style="margin-left:10px">4. 兌換商品字典：當前主要是預留配置</a><a href="#5-關卡字典和消耗表-驅動戰鬥任務" style="margin-left:10px">5. 關卡字典和消耗表：驅動戰鬥任務</a><a href="#6-倉庫對映-驅動物品轉移" style="margin-left:10px">6. 倉庫對映：驅動物品轉移</a><a href="#通用維護流程" style="margin-left:0px">通用維護流程</a><a href="#關鍵注意事項" style="margin-left:0px">關鍵注意事項</a><a href="#依賴關係" style="margin-left:0px">依賴關係</a><a href="#通用驗證步驟" style="margin-left:0px">通用驗證步驟</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

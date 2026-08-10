@@ -1,0 +1,196 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Stamina Farming · ok-end-field</title><meta name="description" content="Stamina Farming — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/stamina-farming/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Stamina Farming · ok-end-field"><meta property="og:description" content="Stamina Farming — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/stamina-farming/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Stamina Farming · ok-end-field"><meta name="twitter:description" content="Stamina Farming — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Stamina Farming · ok-end-field","description":"Stamina Farming — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/stamina-farming/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/API/">API 参考</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/装备词条识别轮子/">装备词条识别</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务执行情况汇总报告/">任务执行情况汇总</a><a href="../getting-started/installation/">Installation</a><a href="../getting-started/configuration/">Before you start</a><a href="../guides/quick-start/">Quick start</a><a href="../features/overview/">Overview</a><a href="../daily-tasks/">Daily Tasks</a><a href="./" class="active" aria-current="page">Stamina Farming</a><a href="../auto-combat/">Auto Combat</a><a href="../action-sequence/">Action Sequences</a><a href="../delivery-pickup/">Delivery Commission Pickup</a><a href="../auto-delivery/">Auto Delivery</a><a href="../warehouse-transfer/">Warehouse Transfer</a><a href="../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../account-configuration/">Account Configuration</a><a href="../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../windows-task-scheduler/">Windows Task Scheduler</a><a href="../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="stamina-farming">Stamina Farming</h1>
+<p>Back: <a href="../">Documentation home</a> / <a href="../../">README</a></p>
+<h2 id="configuration-requirements">Configuration requirements</h2>
+<blockquote>
+<p>Make sure the resolution is at least <strong>1920x1080 (1080P)</strong>; below 1080P is not guaranteed to work</p>
+</blockquote>
+<h2 id="combat-logic">Combat logic</h2>
+<p>There are two combat logics: normal combat and action-sequence combat. All battle configurations (skill release order, skill points to start, action sequence, etc.) are now managed centrally in <strong>「Global Config → Battle Config」</strong> — configure once and it applies to Stamina Farming, Auto Combat, Daily Tasks, etc., with no need for repeated setup.</p>
+<p>At the start of every battle it first locks onto the target and holds the left mouse button for continuous normal attacks, then waits for the <strong>initial wait time after entering battle</strong> (default 3 seconds) before releasing skills. The left mouse button is released when the battle exits or an exception occurs.</p>
+<h3 id="normal-combat">Normal combat</h3>
+<p>The logic is:</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[Enter battle] --&gt; B[Start normal attack]
+    B --&gt; C[Wait initial time]
+    C --&gt; D{Action sequence enabled}
+    D --&gt;|Yes| E[Execute action sequence]
+    E --&gt; F{Succeeded within 5s}
+    F --&gt;|No| G[Fall back to normal combat for this battle]
+    F --&gt;|Yes| H[Continue to next item]
+    D --&gt;|No| G
+    G --&gt; I{Conjunction available}
+    I --&gt;|Yes| L[Release conjunction]
+    I --&gt;|No| J{Ultimate available}
+    J --&gt;|Yes| L[Release ultimate]
+    J --&gt;|No| K{Skill points reached}
+    K --&gt;|Yes| O[Release skills in order]
+    K --&gt;|No| P[Get close to enemy and read next frame]
+    L --&gt; M{Battle ended}
+    O --&gt; M
+    P --&gt; M
+    H --&gt; M
+    M --&gt;|No| D
+    M --&gt;|Yes| N[Stop normal attack and settle]
+</code></pre>
+<p>In normal mode each frame first tries the conjunction, then any available ultimate; if neither is released and skill points reach the <strong>skill points to start</strong> (default 2), skills are cycled from the <strong>skill release</strong> order (default <code>1,2,3</code>). During battle it also periodically re-locks the target and dodges forward on the <strong>no-digit operation interval</strong> (default 6 seconds, clamped to 1–30 seconds at runtime).</p>
+<h3 id="action-sequence-combat">Action-sequence combat</h3>
+<p>When enabled, the action sequence is executed. If the last successful action was more than 5 seconds ago and the current one still fails, this battle permanently falls back to normal mode and never re-enables the sequence even after later successes. <code>sleep_n</code> and <code>normal_n</code> count as successful actions when they complete and reset the timer.</p>
+<p>Action sequence notes: <a href="../action-sequence/">Action Sequence</a></p>
+<h2 id="consuming-time-limited-stamina-items">Consuming time-limited stamina items</h2>
+<p>If the option 『Consume time-limited stamina items』 is enabled, the program checks the remaining validity and quantity of time-limited emergency stamina boosters in the backpack before each stamina-farming run:</p>
+<ul>
+<li><strong>If the currently selected stamina item is measured in &quot;hours&quot;, the entire stock of that type is used directly; this branch does not cap the usable quantity at the 1000-stamina limit.</strong></li>
+<li><strong>If measured in &quot;days&quot;, it is consumed by the following formula:</strong></li>
+</ul>
+<blockquote>
+<p>Used = min(max(1, ceil(2 × quantity ÷ remaining days)), quantity, quantity usable up to the 1000-stamina limit)</p>
+</blockquote>
+<p>That is, &quot;day&quot; items consume roughly 2/n of the stock each day (rounded up), bounded by the 1000-stamina cap; &quot;hour&quot; items have no such quantity cap. The program sorts by &quot;hours first, then ascending remaining validity&quot;, but each run only processes the first item after sorting — it does not drain every type.</p>
+<hr>
+<h2 id="normal-stages">Normal stages</h2>
+<p>Stages need to be unlocked in advance, and <strong>all first-clear rewards at every difficulty must be claimed.</strong></p>
+<p>Characters need some investment to avoid dying; at least raise <strong>character and weapon level to 81</strong>.</p>
+<p>If the option 『Stand still only』 for 「Heavy Energy Silt Points」 is enabled, choose the character with the <strong>highest HP</strong> to stay on the front line to avoid dying. That character needs to be <strong>maxed at level 90</strong> and carry <strong>HP-restoring items</strong>.</p>
+<p>It is recommended to bring <strong>characters with crowd-control/grouping abilities</strong> to reduce battle time.</p>
+<h3 id="low-high-reward-self-select">Low/high reward self-select</h3>
+<p>Supports automatically switching reward tiers in the following stages:</p>
+<ul>
+<li>Operator EXP</li>
+<li>Operator promotion</li>
+<li>Skill enhancement</li>
+<li>Weapon promotion</li>
+</ul>
+<p>The 『Stamina reward tier』 option can be configured in both 『Task / Daily Tasks / Stamina Farming』 and 『Task / Stamina Farming』, with the following choices:</p>
+<ul>
+<li>Keep current: do not switch the reward tier.</li>
+<li>Low tier: after clicking &quot;Go&quot;, automatically enters &quot;Self-select&quot; and picks the tier corresponding to the top button.</li>
+<li>High tier: after clicking &quot;Go&quot;, automatically enters &quot;Self-select&quot; and picks the tier corresponding to the bottom button.</li>
+</ul>
+<p>Priority notes:</p>
+<ul>
+<li>When the &quot;stage sequence&quot; is not enabled, the 『Stamina reward tier』 config is used.</li>
+<li>When the &quot;stage sequence&quot; is enabled, the 『Stamina reward tier』 config is ignored and controlled by the sequence item suffix (see below).</li>
+</ul>
+<p>Switching flow notes:</p>
+<ul>
+<li>After clicking &quot;Go&quot;, recognizes the &quot;Self-select&quot; button at the bottom right and clicks it.</li>
+<li>Recognizes where &quot;Current&quot; is: top means the current tier is low, bottom means the current tier is high.</li>
+<li>If it differs from the target tier, clicks the &quot;Select/Current&quot; button of the target tier.</li>
+<li>Then executes Back until &quot;Enter&quot; is recognized at the bottom right, then returns to the main flow to continue farming.</li>
+</ul>
+<h2 id="crisis-recurrence">Crisis Recurrence</h2>
+<p>「Crisis Recurrence」 is a boss-type stage that costs <strong>120 stamina</strong> per run.</p>
+<p>Supported stages: Rodan, Trinity, Chalk Realm Guard, Ruan Yi, Nephes.</p>
+<hr>
+<h2 id="crisis-rehearsal-high-tier-stages">Crisis Rehearsal (high-tier stages)</h2>
+<p>「Crisis Rehearsal」 is a high-tier material stage that costs <strong>80 stamina</strong> per run. The program uses image features (not OCR) to locate stages, to handle the special layout.</p>
+<p>Supported stages: D96 Steel, Ultra-range Luminance Tube, Tachyon Filter Lattice, Quadrant Fitting Fluid, Three-phase Nanosheet.</p>
+<hr>
+<h2 id="heavy-energy-silt-points">Heavy Energy Silt Points</h2>
+<p>Checklist:</p>
+<ol>
+<li>The 「Pre-inscribed attribute」 of the Heavy Energy Silt Point is set. Not sure how to choose? Try this <a href="https://ef.yituliu.cn/tools/essence-calculator/">essence calculator</a>.</li>
+<li>The nearest 「Protocol Transfer Point」 to the Heavy Energy Silt Point can be teleported to. If after teleporting you can <strong>walk straight (no obstacles)</strong> (e.g. 「Hub Zone」 and 「Qingbo Village」), you can <strong>skip the remaining checklist items</strong>.</li>
+<li>After teleporting you can <strong>directly board the 1st 「Long-range Zip Line Frame」</strong>. Make sure that after passing the 1st, 2nd, 3rd...nth 「Long-range Zip Line Frame」 in order, the character can <strong>walk straight (no obstacles)</strong> to the Heavy Energy Silt Point.</li>
+<li>Make sure the 2nd–nth frames can be moved through continuously with E. (Setup: in game, move along the zip line in order and press R 「Assign continuous movement connection points」.)</li>
+<li>Record the distance between the 1st and 2nd frames and fill it into 「Global Config / Zip Line Config」 under the corresponding stage name (e.g. 「Source Stone Research Park」).</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li>The program locates transfer points by image features. To ensure recognition succeeds, the character <strong>must not be near the Protocol Transfer Point</strong>, otherwise the character position icon breaks the transfer-point feature.</li>
+<li>The program uses OCR to read the distance between the 1st and 2nd frames to determine which is the 2nd. To ensure recognition succeeds, this distance must be <strong>unique</strong> — i.e. <strong>it must not equal the distance to any other visible frame (reachable or not) from the 1st frame.</strong></li>
+<li>For recognition to succeed, when boarding the 1st frame and looking at the 2nd, the distance label is best placed on a <strong>dark, solid, simple background</strong>.</li>
+<li>If the character ends up far from the Heavy Energy Silt Point after clearing enemies, the program will <strong>re-path via teleport + zip line (second pathfinding) after a recognition failure (timeout)</strong> to claim the reward; execution time may increase.</li>
+</ul>
+<p>Special reminders:</p>
+<ul>
+<li>Heavy Energy Silt Points are located in the open world with a complex environment, so <strong>the chance of failure is relatively high.</strong></li>
+<li>You can find the file <code>DailyBattleMixin_battleGather_Exception</code> under <code>./screenshots</code> for failure screenshots. (Note: the screenshot folder is cleared before each run; back it up yourself if needed.)</li>
+<li>(Recommended) Upload the screenshot to issue <a href="https://github.com/AliceJump/ok-end-field/issues/58">#58</a> to help the developers. Providing some logs (in <code>./logs</code>) would be even better.</li>
+</ul>
+<p>Related code:</p>
+<ul>
+<li>Nearest transfer point <code>to_near_transfer_point</code></li>
+<li>Zip line movement <code>zip_line_list_go</code></li>
+<li>Walking <code>navigate_until_target</code></li>
+</ul>
+<h2 id="continue-farming-after-stamina-runs-out">Continue farming after stamina runs out</h2>
+<p>When the option 『Continue farming count after stamina runs out』 is greater than 0:</p>
+<ul>
+<li>After stamina is insufficient, the program keeps entering battle and clicks 「Give up」 at settlement (no reward claimed, no stamina spent).</li>
+<li>Only supported for 「Heavy Energy Silt Points」 (challenge mode).</li>
+<li>If the current stage is not a Heavy Energy Silt Point, this config is ignored and a log entry is shown.</li>
+</ul>
+<p>This feature suits cases where you need extra defeat/battle actions but do not need the reward.</p>
+<h2 id="specified-squad-number">Specified squad number</h2>
+<p>The default is 「No squad switch」; alternatively choose <code>1</code> to <code>5</code>. Normal stages switch before re-entering after the first entry; Heavy Energy Silt Points open the squad panel to switch before activation. If the target squad number is not recognized, a log entry is recorded and it continues — it does not force-stop.</p>
+<h2 id="automatic-stage-rotation">Automatic stage rotation</h2>
+<p>Supports automatic stage rotation via 「Stamina farming start date」 and 「Stage sequence」:</p>
+<ul>
+<li><p>&quot;Stamina farming start date&quot;: defaults to the date when the task config was first built, in the format &quot;2026-04-05&quot;; can be changed to today or any past date.</p>
+</li>
+<li><p>&quot;Stage sequence&quot;: fill in multiple stage names (comma-separated), e.g. &quot;干员经验,干员进阶,钱币收集&quot;.</p>
+</li>
+<li><p>Supports the suffixes &quot;低阶/高阶&quot; (low/high), e.g. &quot;干员经验低阶,技能提升高阶,钱币收集&quot;.</p>
+</li>
+<li><p>The suffix only applies to &quot;干员经验/干员进阶/技能提升/武器进阶&quot;.</p>
+</li>
+<li><p>Without a suffix (e.g. &quot;干员经验&quot;), the current reward tier is kept unchanged.</p>
+</li>
+<li><p>Stage names must be one of the following:</p>
+<p>  干员经验, 干员进阶, 钱币收集, 技能提升,
+  武器经验, 武器进阶,
+  罗丹, 三位一体, 白垩界卫, 阮一, 聂菲斯,
+  D96钢, 超距辉映管, 快子遴捡晶格, 象限拟合液, 三相纳米片,
+  枢纽区, 源石研究园, 试验园区, 矿脉源区, 供能高地, 武陵城, 清波寨, 首墩, 藏剑谷, 应龙关, 北部禁区</p>
+</li>
+<li><p>The program automatically computes which stage to farm today based on the &quot;Stamina farming start date&quot; and &quot;Stage sequence&quot;.</p>
+</li>
+<li><p>If the &quot;Stage sequence&quot; is empty, automatic rotation is disabled and the &quot;Stamina stage&quot; config is used.</p>
+</li>
+<li><p>If an invalid stage name is entered (i.e. any name not in the supported list), the whole rotation is abandoned and the &quot;Stamina stage&quot; config is used directly.</p>
+</li>
+<li><p>If the &quot;Stamina farming start date&quot; is in the future, it automatically falls back to the &quot;Stamina stage&quot; config.</p>
+</li>
+<li><p>The automatic selection process is logged.</p>
+</li>
+</ul>
+<p>Related documents: <a href="../auto-combat/">Auto Combat</a> / <a href="../action-sequence/">Action Sequence</a> / <a href="../daily-tasks/">Daily Tasks</a></p>
+<p>Example:</p>
+<ul>
+<li>Stamina farming start date: 2026-04-05</li>
+<li>Stage sequence: 干员经验,武器经验,钱币收集</li>
+</ul>
+<p>Then day 1 farms &quot;干员经验&quot;, day 2 farms &quot;武器经验&quot;, day 3 farms &quot;钱币收集&quot;, day 4 loops back to &quot;干员经验&quot;…</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/en/stamina-farming.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#configuration-requirements" style="margin-left:0px">Configuration requirements</a><a href="#combat-logic" style="margin-left:0px">Combat logic</a><a href="#normal-combat" style="margin-left:10px">Normal combat</a><a href="#action-sequence-combat" style="margin-left:10px">Action-sequence combat</a><a href="#consuming-time-limited-stamina-items" style="margin-left:0px">Consuming time-limited stamina items</a><a href="#normal-stages" style="margin-left:0px">Normal stages</a><a href="#low-high-reward-self-select" style="margin-left:10px">Low/high reward self-select</a><a href="#crisis-recurrence" style="margin-left:0px">Crisis Recurrence</a><a href="#crisis-rehearsal-high-tier-stages" style="margin-left:0px">Crisis Rehearsal (high-tier stages)</a><a href="#heavy-energy-silt-points" style="margin-left:0px">Heavy Energy Silt Points</a><a href="#continue-farming-after-stamina-runs-out" style="margin-left:0px">Continue farming after stamina runs out</a><a href="#specified-squad-number" style="margin-left:0px">Specified squad number</a><a href="#automatic-stage-rotation" style="margin-left:0px">Automatic stage rotation</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

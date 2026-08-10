@@ -1,0 +1,147 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>物品导航与实时检测 · ok-end-field</title><meta name="description" content="物品导航与实时检测 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/物品导航与实时检测/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="物品导航与实时检测 · ok-end-field"><meta property="og:description" content="物品导航与实时检测 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/物品导航与实时检测/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="物品导航与实时检测 · ok-end-field"><meta name="twitter:description" content="物品导航与实时检测 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"物品导航与实时检测 · ok-end-field","description":"物品导航与实时检测 — ok-end-field","url":"https://ok-script.com/ok-end-field/docs/物品导航与实时检测/","inLanguage":"zh-CN","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档首页</a><a href="../getting-started/installation/">安装</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常见问题</a><a href="../features/overview/">功能概览</a><a href="../日常任务/">日常任务</a><a href="../体力本/">刷体力</a><a href="../自动战斗/">自动战斗</a><a href="../排轴/">排轴</a><a href="../运送委托接取/">运送委托接取</a><a href="../自动送货/">自动送货</a><a href="../仓库物品转移/">仓库物品转移</a><a href="./" class="active" aria-current="page">物品导航与实时检测</a><a href="../账号配置用户指南/">账号配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 与覆盖逻辑</a><a href="../Windows 计划任务/">Windows 计划任务</a><a href="../鼠标转向标定汇总/">鼠标转向标定</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/API/">API 参考</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/装备词条识别轮子/">装备词条识别</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务执行情况汇总报告/">任务执行情况汇总</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="物品导航与实时检测">物品导航与实时检测</h1>
+<p>返回：<a href="../">文档索引</a> / <a href="../../">README</a></p>
+<h2 id="概述">概述</h2>
+<p>本文覆盖两个触发式/调试类任务：</p>
+<ul>
+<li><code>ItemNavigatorTask</code>（界面名称：物品导航）：有有效 <code>content</code> 时使用官方地图 WebSocket；未取得任何 <code>content</code> 时启动本地 WebSocket 服务，指向所选物品的最近采集点，并支持按键标记已获取。</li>
+<li><code>RealtimeDetectTask</code>（界面名称：实时检测）：循环运行 YOLO 检测，用于在线观察模型、目标类别和置信度表现。</li>
+</ul>
+<hr>
+<h2 id="物品导航">物品导航</h2>
+<h3 id="使用前提">使用前提</h3>
+<ul>
+<li>推荐在账号配置页保存官方地图同步 <code>content</code>，或在任务配置中直接填写 <code>content</code>。</li>
+<li>未配置 <code>content</code> 时，需要启用外部脚本或工具向本地 <code>ws://127.0.0.1:3001</code> 推送位置数据。</li>
+<li>物品点位数据来自 <code>assets/items/map/summary.json</code> 和 <code>assets/items/map/item_names.json</code>。</li>
+<li>标记结果写入 <code>configs/marked_points.json</code>，用于避免重复指向已经标记的点位。</li>
+</ul>
+<h3 id="配置项">配置项</h3>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th align="right">默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>content</code></td>
+<td align="right">空字符串</td>
+<td>可选。直接填写 <code>web-api.skland.com/account/info/hg/check</code> 返回 JSON 中的 <code>data.content</code>。有值时优先使用官方地图 WebSocket。</td>
+</tr>
+<tr>
+<td><code>地图账号</code></td>
+<td align="right">空字符串</td>
+<td>可选。<code>content</code> 为空时，从账号配置页读取该账号保存的地图同步 content。</td>
+</tr>
+<tr>
+<td><code>选择物品</code></td>
+<td align="right"><code>[]</code></td>
+<td>参与导航的物品名称列表；为空时不会筛选出目标。</td>
+</tr>
+<tr>
+<td><code>标记按键</code></td>
+<td align="right"><code>f</code></td>
+<td>接近目标后用于标记“已获取”的按键。</td>
+</tr>
+<tr>
+<td><code>标记按住时长</code></td>
+<td align="right"><code>0.8</code></td>
+<td>当前界面保留项；运行实现尚未读取该值。实际需要在目标水平距离 20 内连续按住标记键 2 秒。</td>
+</tr>
+</tbody></table>
+<h3 id="数据流">数据流</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[任务 content] --&gt; D{是否有 content}
+    B[账号配置页 map_contents] --&gt; D
+    C[本地 WS 端口 3001] --&gt; H[统一位置队列]
+    D --&gt;|有| E[OAuth 换取官方凭证]
+    E --&gt; F[获取官方 WS token]
+    F --&gt; G[连接 ws.skland.com]
+    D --&gt;|无| C
+    G --&gt; H
+    H --&gt; I[解析 mapId 和坐标]
+    I --&gt; J[查询 assets/items/map 数据]
+    J --&gt; K[绘制方向箭头]
+    K --&gt; L[按住标记键写入 configs/marked_points.json]
+</code></pre>
+<h3 id="注意事项">注意事项</h3>
+<ul>
+<li>物品导航依赖当前地图 ID 与坐标数据，点位数据缺失时不会产生有效指向。</li>
+<li>任务会在窗口上绘制方向箭头；若看不到箭头，先确认 WebSocket 位置数据是否正常。</li>
+<li>“本地 WS 回退”只发生在任务没有取得 <code>content</code> 时。若已配置 <code>content</code> 但官方鉴权或连接失败，当前运行不会自动改用本地 WS；应清空任务 <code>content</code> 并取消/清空地图账号后再使用本地模式。</li>
+<li>标记必须在水平距离 20 内连续按住 2 秒；中途松键或离开范围会取消本次计时。</li>
+<li>油猴脚本帮助按钮会打开临时帮助文档和脚本目录。</li>
+</ul>
+<hr>
+<h2 id="实时检测">实时检测</h2>
+<h3 id="使用场景">使用场景</h3>
+<p>实时检测用于调试 YOLO 模型，不是面向日常自动化流程的任务。它会持续截图并执行目标检测，便于观察某个模型和目标类别的命中情况。</p>
+<h3 id="配置项-2">配置项</h3>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th align="right">默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>YOLO模型</code></td>
+<td align="right"><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/config.py">src/config.py</a> 中 <code>yolo.default_model</code></td>
+<td>模型配置键，实际模型和标签维护在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/yolo/models.py">src/yolo/models.py</a>。</td>
+</tr>
+<tr>
+<td><code>检测目标</code></td>
+<td align="right">当前模型 labels 的第一个目标</td>
+<td>要观察的目标类别。</td>
+</tr>
+<tr>
+<td><code>检测置信度</code></td>
+<td align="right"><code>0.7</code></td>
+<td>取值范围 <code>0</code> 到 <code>1</code>，值越高越严格。</td>
+</tr>
+<tr>
+<td><code>扫描间隔(秒)</code></td>
+<td align="right"><code>0.2</code></td>
+<td>每次检测后的等待时间。</td>
+</tr>
+</tbody></table>
+<h3 id="注意事项-2">注意事项</h3>
+<ul>
+<li>目标名称必须存在于所选模型的 labels 中，否则任务会直接报错。</li>
+<li>该任务会循环运行，停止时会输出总扫描次数、命中轮次和最高置信度。</li>
+</ul>
+<p>相关文档：<a href="../dev/地图官方WS客户端实现/">地图官方 WS 客户端实现</a> / <a href="../账号配置用户指南/">账号配置用户指南</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/物品导航与实时检测.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#物品导航" style="margin-left:0px">物品导航</a><a href="#使用前提" style="margin-left:10px">使用前提</a><a href="#配置项" style="margin-left:10px">配置项</a><a href="#数据流" style="margin-left:10px">数据流</a><a href="#注意事项" style="margin-left:10px">注意事项</a><a href="#实时检测" style="margin-left:0px">实时检测</a><a href="#使用场景" style="margin-left:10px">使用场景</a><a href="#配置项-2" style="margin-left:10px">配置项</a><a href="#注意事项-2" style="margin-left:10px">注意事项</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../">全部项目</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260810101001" defer></script></body></html>

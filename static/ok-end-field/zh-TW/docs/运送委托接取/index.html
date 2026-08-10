@@ -1,0 +1,105 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>運送委託接取 · ok-end-field</title><meta name="description" content="運送委託接取 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/运送委托接取/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="運送委託接取 · ok-end-field"><meta property="og:description" content="運送委託接取 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/运送委托接取/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="運送委託接取 · ok-end-field"><meta name="twitter:description" content="運送委託接取 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"運送委託接取 · ok-end-field","description":"運送委託接取 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/运送委托接取/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件首頁</a><a href="../getting-started/installation/">安裝</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常見問題</a><a href="../features/overview/">功能概覽</a><a href="../日常任务/">日常任務</a><a href="../体力本/">刷體力</a><a href="../自动战斗/">自動戰鬥</a><a href="../排轴/">排軸</a><a href="./" class="active" aria-current="page">運送委託接取</a><a href="../自动送货/">自動送貨</a><a href="../仓库物品转移/">倉庫物品轉移</a><a href="../物品导航与实时检测/">物品導航與即時檢測</a><a href="../账号配置用户指南/">賬號配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../Windows 计划任务/">Windows 計劃任務</a><a href="../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../update/主数据维护工作流/">主資料維護</a><a href="../update/送货地区维护工作流/">送貨地區維護</a><a href="../update/日常送礼维护工作流/">日常送禮維護</a><a href="../dev/QUICKSTART/">從原始碼執行</a><a href="../dev/DEVELOPMENT/">開發指南</a><a href="../dev/API/">API 參考</a><a href="../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../dev/键盘操作体系/">鍵盤操作體系</a><a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../dev/文字识别示例/">文字識別示例</a><a href="../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../dev/切换账户流程分析/">賬戶切換流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="運送委託接取">運送委託接取</h1>
+<p>返回：<a href="../">文件索引</a> / <a href="../../">README</a></p>
+<h2 id="概述">概述</h2>
+<p>自動在「地區建設/倉儲結點/運送委託列表」中搶單，篩選符合條件的高價值委託並自動接取。</p>
+<hr>
+<h2 id="前置條件">前置條件</h2>
+<p>保持在遊戲主介面即可。任務啟動後會自動執行：</p>
+<ol>
+<li>按 <code>Y</code> 開啟地區建設。</li>
+<li>點選「倉儲節點」。</li>
+<li>點選「運送委託列表」。</li>
+</ol>
+<p>隨後進入自動篩選與接取流程，接取成功後自動退出。</p>
+<hr>
+<h2 id="選項和配置">選項和配置</h2>
+<h3 id="接取谷地券">接取谷地券</h3>
+<p>是否搶取「四號谷地」型別的運送委託。</p>
+<p>預設：關閉</p>
+<hr>
+<h3 id="接取谷地券最低金額-萬">接取谷地券最低金額(萬)</h3>
+<p>接取谷地券委託的最低報酬金額（萬），低於此金額的委託不接取。</p>
+<p>預設：<code>5.0</code></p>
+<hr>
+<h3 id="接取谷地券最高金額-萬">接取谷地券最高金額(萬)</h3>
+<p>接取谷地券委託的最高報酬金額（萬），高於此金額的委託不接取（防止 OCR 誤識別導致接取異常委託）。</p>
+<p>預設：<code>40.0</code></p>
+<hr>
+<h3 id="接取武陵券">接取武陵券</h3>
+<p>是否搶取「武陵」型別的運送委託。</p>
+<p>預設：開啟</p>
+<hr>
+<h3 id="接取武陵券最低金額-萬">接取武陵券最低金額(萬)</h3>
+<p>接取武陵券委託的最低報酬金額（萬）。</p>
+<p>預設：<code>5.0</code></p>
+<hr>
+<h3 id="接取武陵券最高金額-萬">接取武陵券最高金額(萬)</h3>
+<p>接取武陵券委託的最高報酬金額（萬）。</p>
+<p>預設：<code>15.0</code></p>
+<hr>
+<h2 id="工作流程">工作流程</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[启动任务] --&gt; B[按 Y 打开地区建设]
+    B --&gt; C[点击仓储节点]
+    C --&gt; D[打开运送委托列表]
+    D --&gt; E{启用武陵券}
+    E --&gt;|是| F[切换武陵列表]
+    E --&gt;|否| G{启用谷地券}
+    G --&gt;|是| H[切换四号谷地列表]
+    G --&gt;|否| Z[无券种启用并退出]
+    F --&gt; I[OCR 读取金额和按钮]
+    H --&gt; I
+    I --&gt; J[按金额范围筛选]
+    J --&gt; K[按券种图标匹配]
+    K --&gt; L{找到目标委托}
+    L --&gt;|是| M[点击接取并等待请尽快送达]
+    M --&gt; N[接取成功后退出]
+    L --&gt;|否| O[滚动列表]
+    O --&gt; P{有已记录的刷新按钮}
+    P --&gt;|是| Q[满足 5.6 秒间隔后点击刷新]
+    P --&gt;|否| R[等待 1 秒后继续重试]
+    R --&gt; I
+    Q --&gt; I
+</code></pre>
+<hr>
+<h2 id="注意事項">注意事項</h2>
+<ul>
+<li>本任務繼承 <code>TriggerTask</code>，但註冊在 <code>onetime_tasks</code> 中，作為使用者手動啟動的一次性搶單流程使用。接取成功後自動退出，不執行送貨操作（送貨請使用 <a href="../自动送货/">自動送貨</a>）。</li>
+<li>同時開啟兩種券時，任務先進入武陵列表，但會在當前列表內按券圖示匹配兩種券；它不會自動切換到四號谷地列表繼續搜尋。只開啟谷地券時才進入四號谷地列表。</li>
+<li>列表每輪滾動一次，重新整理後反轉滾動方向；重新整理點選間隔至少 5.6 秒。</li>
+<li>當前未定位到重新整理按鈕時會每秒繼續重試，不會因累計 10 次失敗自動退出；需要時請手動停止任務。</li>
+<li>若程式提示「許可權不足」，請以 <strong>管理員身份</strong> 執行程式。</li>
+</ul>
+<p>相關文件：<a href="../自动送货/">自動送貨</a> / <a href="../update/送货地区维护工作流/">送貨地區維護工作流</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/运送委托接取.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#前置條件" style="margin-left:0px">前置條件</a><a href="#選項和配置" style="margin-left:0px">選項和配置</a><a href="#接取谷地券" style="margin-left:10px">接取谷地券</a><a href="#接取谷地券最低金額-萬" style="margin-left:10px">接取谷地券最低金額(萬)</a><a href="#接取谷地券最高金額-萬" style="margin-left:10px">接取谷地券最高金額(萬)</a><a href="#接取武陵券" style="margin-left:10px">接取武陵券</a><a href="#接取武陵券最低金額-萬" style="margin-left:10px">接取武陵券最低金額(萬)</a><a href="#接取武陵券最高金額-萬" style="margin-left:10px">接取武陵券最高金額(萬)</a><a href="#工作流程" style="margin-left:0px">工作流程</a><a href="#注意事項" style="margin-left:0px">注意事項</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

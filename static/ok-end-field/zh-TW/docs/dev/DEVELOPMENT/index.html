@@ -1,0 +1,674 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>開發指南 · ok-end-field</title><meta name="description" content="開發指南 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/DEVELOPMENT/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="開發指南 · ok-end-field"><meta property="og:description" content="開發指南 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/DEVELOPMENT/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="開發指南 · ok-end-field"><meta name="twitter:description" content="開發指南 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"開發指南 · ok-end-field","description":"開發指南 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/DEVELOPMENT/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="./" class="active" aria-current="page">開發指南</a><a href="../API/">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../装备词条识别轮子/">裝備詞條識別</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="ok-ef-開發指南">ok-ef 開發指南</h1>
+<p>返回：<a href="../../">文件索引</a> / <a href="../../../">README</a></p>
+<p>本文以當前原始碼、<code>src/config.py</code>、測試目錄和 workflow 為準，說明專案結構和貢獻流程。具體專案自有介面見 <a href="../API/">API 參考</a>。</p>
+<h2 id="1-執行架構">1. 執行架構</h2>
+<p>ok-ef 是基於 <a href="https://github.com/ok-oldking/ok-script">ok-script</a> 的 Windows 遊戲自動化應用。倉庫負責業務任務、專案級識別/互動封裝、資源和自定義 GUI；截圖、基礎 OCR/Feature API、任務排程和主 GUI 由 <code>ok-script</code> 提供。</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[main.py / main_debug.py] --&gt; B[src.config.config]
+    A --&gt; C[install_startup_patches]
+    C --&gt; D[ok.OK config]
+    B --&gt; D
+    D --&gt; E[onetime_tasks]
+    D --&gt; F[trigger_tasks]
+    D --&gt; G[custom_tabs]
+    E --&gt; H[业务 Mixin / BaseEfTask]
+    F --&gt; H
+    H --&gt; I[src/core/base_mixin]
+    I --&gt; J[ok.BaseTask]
+    H --&gt; K[Feature / OCR / YOLO / Win32 interaction]
+</code></pre>
+<p>當前關鍵技術配置：</p>
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>當前實現</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Python</td>
+<td>CI 和 China 打包使用 3.12</td>
+</tr>
+<tr>
+<td>平臺</td>
+<td>Windows；遊戲程序 <code>Endfield.exe</code>、視窗類 <code>UnityWndClass</code></td>
+</tr>
+<tr>
+<td>捕獲</td>
+<td>優先 WGC，後備 <code>BitBlt_RenderFull</code></td>
+</tr>
+<tr>
+<td>OCR</td>
+<td><code>onnxocr</code>，啟用 OpenVINO 和 NPU 引數</td>
+</tr>
+<tr>
+<td>Feature</td>
+<td>COCO 標註區域 + OpenCV 模板匹配</td>
+</tr>
+<tr>
+<td>YOLO</td>
+<td>ONNX/OpenVINO，多模型註冊和按目標路由</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>ok-script GUI + qfluentwidgets 自定義頁</td>
+</tr>
+<tr>
+<td>打包</td>
+<td>PyAppify；China/Global profile</td>
+</tr>
+</tbody></table>
+<h2 id="2-基類與組合">2. 基類與組合</h2>
+<h3 id="2-1-baseeftask">2.1 BaseEfTask</h3>
+<p>基礎設施 Mixin 已從任務目錄移動到 <code>src/core/base_mixin/</code>：</p>
+<pre><code class="language-text">BaseEfTask(
+    WindowArrowDrawingMixin,
+    AccountOverrideMixin,
+    GameFlowMixin,
+    RuntimeMixin,
+    ok.BaseTask,
+    ProcessManager,
+)
+</code></pre>
+<p>職責：</p>
+<table>
+<thead>
+<tr>
+<th>類</th>
+<th>檔案</th>
+<th>職責</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WindowArrowDrawingMixin</code></td>
+<td><code>src/core/base_mixin/window_arrow_drawing_mixin.py</code></td>
+<td>導航箭頭視窗繪製</td>
+</tr>
+<tr>
+<td><code>AccountOverrideMixin</code></td>
+<td><code>src/core/base_mixin/account_override_mixin.py</code></td>
+<td>按穩定賬號 ID 覆蓋任務配置</td>
+</tr>
+<tr>
+<td><code>GameFlowMixin</code></td>
+<td><code>src/core/base_mixin/game_flow_mixin.py</code></td>
+<td>主介面、地圖、登入截圖、彈窗和場景流程</td>
+</tr>
+<tr>
+<td><code>RuntimeMixin</code></td>
+<td><code>src/core/base_mixin/runtime_mixin.py</code></td>
+<td>Feature、點選、按鍵、移動、UI 穩定、YOLO</td>
+</tr>
+<tr>
+<td><code>ProcessManager</code></td>
+<td><code>src/core/base_mixin/process_manager.py</code></td>
+<td>遊戲程序終止能力</td>
+</tr>
+</tbody></table>
+<p>不要再引用舊的 <code>src/tasks/mixin/runtime_mixin.py</code>、<code>game_flow_mixin.py</code>、<code>process_manager.py</code> 或 <code>window_arrow_drawing_mixin.py</code> 路徑。</p>
+<h3 id="2-2-業務-mixin">2.2 業務 Mixin</h3>
+<p><code>src/tasks/mixin/</code> 保留跨任務業務能力：</p>
+<pre><code class="language-text">BaseEfTask
+├── Common
+├── MapMixin
+├── BattleMixin
+├── MouseScanMixin
+├── NavigationMixin
+│   ├── LiaisonMixin
+│   └── ZipLineMixin
+└── LoginMixin
+    └── AccountMixin
+</code></pre>
+<p><code>EndCommandMixin</code>、<code>WsPositionMixin</code> 是無 <code>BaseEfTask</code> 基類的協作 Mixin，通過最終任務組合獲得任務能力。</p>
+<h3 id="2-3-實際任務-mro">2.3 實際任務 MRO</h3>
+<p>主要組合以類宣告順序為準：</p>
+<pre><code class="language-text">DailyTask(
+    Common, MapMixin, ZipLineMixin, BattleMixin, LiaisonMixin,
+    EndCommandMixin, AccountMixin, MouseScanMixin
+)
+
+BattleTask(Common, MapMixin, ZipLineMixin, BattleMixin)
+DeliveryTask(AccountMixin, ZipLineMixin, MapMixin)
+AutoCombatTask(BattleMixin, TriggerTask)
+ItemNavigatorTask(WsPositionMixin, BaseEfTask, TriggerTask)
+</code></pre>
+<p><code>DailyTask</code> 的日常子功能不再全部作為 Python 基類混入。它在 <code>__init__</code> 中組合 <code>DailyBuyFeature</code>、<code>DailyBattleFeature</code>、<code>DailyTradeFeature</code>、<code>DailyShopFeature</code>、<code>DailyRoutineFeature</code>、<code>DailyLiaisonFeature</code>、<code>DailyDemoFeature</code> 物件，並由 <code>DailyTaskRunner</code> 執行 <code>build_task_plan()</code>。</p>
+<p>所有協作式 <code>__init__</code> 都應呼叫 <code>super()</code>。配置字典使用 <code>update</code> 增量合併，避免破壞 MRO 前序類註冊的資料。</p>
+<h2 id="3-註冊清單">3. 註冊清單</h2>
+<p><code>src/config.py</code> 是 GUI 註冊的唯一權威來源。</p>
+<h3 id="一次性任務">一次性任務</h3>
+<table>
+<thead>
+<tr>
+<th>順序</th>
+<th>類</th>
+<th>模組</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>DailyTask</code></td>
+<td><code>src.tasks.onetime.DailyTask</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>TakeDeliveryTask</code></td>
+<td><code>src.tasks.onetime.TakeDeliveryTask</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>WarehouseTransferTask</code></td>
+<td><code>src.tasks.onetime.WarehouseTransferTask</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>DeliveryTask</code></td>
+<td><code>src.tasks.onetime.DeliveryTask</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>BattleTask</code></td>
+<td><code>src.tasks.onetime.BattleTask</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>DemoDrawTask</code></td>
+<td><code>src.tasks.onetime.DemoDrawTask</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>YingTuoTask</code></td>
+<td><code>src.tasks.onetime.YingTuoTask</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>TestStartGame</code></td>
+<td><code>src.tasks.onetime.TestStartGame</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>TestBattleToEnd</code></td>
+<td><code>src.tasks.test.TestBattleToEnd</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>TestArrowAngle</code></td>
+<td><code>src.tasks.test.TestArrowAngle</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>TestDragScan</code></td>
+<td><code>src.tasks.test.TestDragScan</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>TestPauseTiming</code></td>
+<td><code>src.tasks.test.TestPauseTiming</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>TestBlueDotAlign</code></td>
+<td><code>src.tasks.test.TestBlueDotAlign</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>TestLevelRead</code></td>
+<td><code>src.tasks.test.TestLevelRead</code></td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>TestDemoGraphic</code></td>
+<td><code>src.tasks.test.TestDemoGraphic</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>RealtimeDetectTask</code></td>
+<td><code>src.tasks.test.RealtimeDetectTask</code></td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>DiagnosisTask</code></td>
+<td><code>src.tasks.test.DiagnosisTask</code></td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>TestBattleSlotDetect</code></td>
+<td><code>src.tasks.test.TestBattleSlotDetect</code></td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>TestCombatTemplateMatch</code></td>
+<td><code>src.tasks.test.TestCombatTemplateMatch</code></td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>MouseRotationCalibration</code></td>
+<td><code>src.tasks.test.MouseRotationCalibration</code></td>
+</tr>
+</tbody></table>
+<p>一次性任務按「業務任務（<code>src.tasks.onetime.*</code>）→ 除錯/測試任務（<code>src.tasks.test.*</code>）」分組排列。</p>
+<p><code>PeriodicScreenshotTask.py</code> 存在但未註冊。<code>TakeDeliveryTask</code> 的類宣告還包含 <code>TriggerTask</code>，但它當前只註冊在一次性任務列表中。</p>
+<h3 id="觸發式任務">觸發式任務</h3>
+<table>
+<thead>
+<tr>
+<th>順序</th>
+<th>類</th>
+<th>模組</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><code>AutoCombatTask</code></td>
+<td><code>src.tasks.trigger.AutoCombatTask</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>AutoInteractionTask</code></td>
+<td><code>src.tasks.trigger.AutoInteractionTask</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>AutoPickTask</code></td>
+<td><code>src.tasks.trigger.AutoPickTask</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>ItemNavigatorTask</code></td>
+<td><code>src.tasks.trigger.ItemNavigatorTask</code></td>
+</tr>
+</tbody></table>
+<p>當前沒有 <code>AutoLoginTask.py</code> 或觸發式自動登入註冊。登入切換能力由 <code>LoginMixin</code>/<code>AccountMixin</code> 供多賬號任務呼叫。</p>
+<h3 id="自定義頁">自定義頁</h3>
+<ul>
+<li><code>GlobalConfigTab</code>：全域性戰鬥、鍵位和基礎配置。</li>
+<li><code>AccountConfigTab</code>：賬號資料及按任務覆蓋配置。</li>
+</ul>
+<h2 id="4-當前目錄">4. 當前目錄</h2>
+<p>以下只列開發時需要理解和維護的檔案，不包含執行快取、日誌、截圖、IDE 後設資料和生成的檔案、目錄。</p>
+<pre><code class="language-text">ok-end-field/
+├── main.py / main_debug.py       # 正式/调试入口，均安装启动补丁
+├── pyproject.toml                # 项目 Python 依赖声明
+├── requirements.txt              # 由 uv 针对平台生成，供发布流水线 pip 使用
+├── run_tests.ps1                 # 逐个运行 tests/*.py（经 uv run）
+├── pyappify.yml                  # China/Global 打包 profile
+├── deploy.txt                    # tag 构建时同步到更新仓库的清单
+├── auto_release.py/.ps1/.sh      # tag 辅助脚本
+├── src/
+│   ├── config.py                 # ok-script 应用配置、任务和 tab 注册
+│   ├── globals.py                # 应用级共享对象
+│   ├── icons.py                  # 图标定义
+│   ├── core/
+│   │   ├── BaseEfTask.py
+│   │   ├── BattleConfig.py
+│   │   ├── config_migration.py
+│   │   ├── global_config_store.py
+│   │   ├── sequence_parser.py
+│   │   └── base_mixin/
+│   │       ├── account_override_mixin.py
+│   │       ├── game_flow_mixin.py
+│   │       ├── process_manager.py
+│   │       ├── runtime_mixin.py
+│   │       └── window_arrow_drawing_mixin.py
+│   ├── tasks/
+│   │   ├── onetime/              # 一次性任务和 AutoCombatLogic
+│   │   ├── trigger/              # 四个已注册后台任务
+│   │   ├── mixin/                # 业务能力 Mixin
+│   │   ├── account/              # 账号解析、稳定 ID 和覆盖存储
+│   │   └── daily/                # Feature 组合、runner、汇总和 misc 子功能
+│   ├── data/
+│   │   ├── FeatureList.py        # 模板名称字符串枚举
+│   │   ├── characters*.py
+│   │   ├── delivery_area*.py
+│   │   ├── item_map_query.py
+│   │   ├── world_map*.py
+│   │   ├── zh_en.py
+│   │   └── lang/__init__.py      # 统一 JSON 语言访问器
+│   ├── interaction/              # Win32 输入、键位、鼠标、屏幕区域
+│   ├── image/                    # HSV、登录截图、旋转模板
+│   ├── yolo/                     # 模型定义、注册、加载和 OpenVINO 检测
+│   ├── essence/                  # 装备词条 OCR 纯算法轮子
+│   ├── patches/                  # 启动 monkey patches
+│   └── gui/                      # 全局/账号配置页、WebView 对话框
+├── assets/
+│   ├── coco_annotations.json
+│   ├── images/                   # Feature 图片
+│   ├── items/                    # 物品和地图数据
+│   ├── lang/*.json              # 每模块一个统一多 locale JSON
+│   ├── models/yolo/              # ONNX 模型
+│   └── ocr_fix/ocr_text_fix.json
+├── i18n/&lt;locale&gt;/LC_MESSAGES/   # gettext ok.po/ok.mo
+├── configs/                      # 任务、全局、账号作用域配置
+├── tests/                        # unittest 测试
+├── tools/                        # 辅助工具；部分语言工具仍针对旧 schema
+├── scripts/                      # 下载统计、迁移等脚本
+├── ok_tasks/                     # 用户自定义任务
+├── ok_templates/                 # 模板标注子模块
+└── .github/workflows/            # 构建、统计、地图数据和维护 workflow
+</code></pre>
+<h2 id="5-開發環境">5. 開發環境</h2>
+<pre><code class="language-powershell">git clone --recurse-submodules https://github.com/AliceJump/ok-end-field.git
+Set-Location ok-end-field
+uv sync
+uv run python main_debug.py
+</code></pre>
+<p>約束：</p>
+<ul>
+<li>使用 Python 3.12 與當前 CI/打包環境保持一致。</li>
+<li>依賴通過 <a href="https://docs.astral.sh/uv/">uv</a> 管理：<code>uv sync</code> 依照 <code>uv.lock</code> 建立 <code>.venv</code>；<code>uv run python ...</code> 在該環境中執行 Python。<code>requirements.txt</code> 是面向釋出流水線的派生產物，不要手動編輯。</li>
+<li>Windows 互動需要程序許可權不低於遊戲，開發時通常以管理員許可權啟動 IDE/終端。</li>
+<li>從倉庫根目錄執行，資源和配置路徑大量以當前工作目錄解析。</li>
+<li>遊戲視窗配置要求 16:9，最低 <code>1920x1080</code>（1080P）。</li>
+<li>WGC 常規截圖不適合登入介面；登入 Mixin 使用 Win32 螢幕捕獲，通常需要視窗可見並可啟用。</li>
+</ul>
+<h2 id="6-開發流程">6. 開發流程</h2>
+<h3 id="6-1-新增任務">6.1 新增任務</h3>
+<p>一次性任務通常直接繼承 <code>BaseEfTask</code> 或業務 Mixin：</p>
+<pre><code class="language-python">from src.core.BaseEfTask import BaseEfTask
+
+
+class MyTask(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;我的任务&quot;
+        self.description = &quot;任务说明&quot;
+        self.default_config.update({&quot;选项 A&quot;: True})
+        self.config_description.update({&quot;选项 A&quot;: &quot;控制该步骤。&quot;})
+
+    def run(self):
+        self.ensure_main()
+</code></pre>
+<p>註冊格式：</p>
+<pre><code class="language-python">[&quot;src.tasks.onetime.MyTask&quot;, &quot;MyTask&quot;],
+</code></pre>
+<p>觸發式任務還需在最終 MRO 中包含 <code>ok.TriggerTask</code>，並註冊到 <code>trigger_tasks</code>。完整最小示例見 <a href="../QUICKSTART/">QUICKSTART</a>。</p>
+<h3 id="6-2-新增業務-mixin">6.2 新增業務 Mixin</h3>
+<ul>
+<li>跨任務業務能力放 <code>src/tasks/mixin/</code>。</li>
+<li>基礎執行時能力才放 <code>src/core/base_mixin/</code>。</li>
+<li>Mixin 不定義最終任務的 <code>name</code>、<code>description</code> 或 <code>run()</code>。</li>
+<li>若繼承 <code>BaseEfTask</code>，使用協作式 <code>super()</code>。</li>
+<li>如果 Mixin 只是依賴最終任務提供能力，可像 <code>EndCommandMixin</code> 一樣不繼承 <code>BaseEfTask</code>，但必須明確它的依賴。</li>
+<li>增加基類前用 Python 的 <code>Class.__mro__</code> 檢查 C3 線性化，避免重複基類順序衝突。</li>
+</ul>
+<h3 id="6-3-任務配置">6.3 任務配置</h3>
+<p>框架任務配置使用：</p>
+<pre><code class="language-python">self.default_config.update({...})
+self.config_description.update({...})
+self.config_type[key] = {...}
+self.default_config_group.update({...})
+</code></pre>
+<p><code>BaseEfTask.register_config_groups(groups)</code> 可建立一個帶 <code>sub_configs</code> 的分組下拉框。配置舊鍵遷移通過類屬性 <code>config_key_migrations</code> 宣告，<code>BaseEfTask.load_config()</code> 會沿 MRO 合併後呼叫 <code>migrate_config_file_keys</code>。</p>
+<p>全域性配置定義在 <code>src/core/global_config_store.py</code>：</p>
+<ul>
+<li><code>Game Hotkey Config</code></li>
+<li><code>Battle Config</code></li>
+<li><code>Ensure Main Once Action Sleep</code></li>
+<li><code>Zip Line Config</code></li>
+</ul>
+<p>戰鬥任務通過 <code>BattleMixin.get_battle_config()</code> 讀取。任務可選擇全域性或獨立戰鬥配置；繫結賬號上下文後，賬號任務覆蓋優先順序最高。不要在多個任務中複製全域性戰鬥預設值。</p>
+<h3 id="6-4-feature-資源">6.4 Feature 資源</h3>
+<p><code>src/config.py</code> 的 <code>template_tab</code> 會生成 <code>src/data/FeatureList</code> 標籤列舉，Feature 影像和標註以 <code>assets/images/</code>、<code>assets/coco_annotations.json</code> 及 <code>ok_templates/</code> 資料為準。</p>
+<pre><code class="language-python">from src.data.FeatureList import FeatureList as fL
+
+box = self.find_one(fL.transfer_go)
+boxes = self.find_feature([fL.monthly_card, fL.monthly_card2])
+</code></pre>
+<p>解析度名稱約定為無後綴、<code>_2k</code>、<code>_4k</code>。<code>RuntimeMixin.get_feature_by_resolution()</code> 只會選擇 <code>FeatureList</code> 中實際存在的名稱，缺失時拋 <code>AttributeError</code>。</p>
+<h3 id="6-5-ocr-與語言">6.5 OCR 與語言</h3>
+<p>OCR 業務文本儲存在單檔案 <code>assets/lang/&lt;module&gt;.json</code>，不是 locale 子目錄：</p>
+<pre><code class="language-python">self.wait_ocr(match=self.lang.login_mixin.k_20275ef2, time_out=5)
+</code></pre>
+<p>當前活動 OCR locale 是 <code>zh_CN</code>、<code>zh_TW</code>。全域性混淆補丁只擴充套件 match，不改寫 OCR 輸出。新增資源和糾錯前閱讀 <a href="../i18n_OCR配置流程/">i18n 與 OCR 配置流程</a>。</p>
+<h3 id="6-6-鍵位">6.6 鍵位</h3>
+<p>可改鍵操作不得直接傳送預設字面值：</p>
+<pre><code class="language-python">self.press_key(&quot;f&quot;)             # common
+self.press_industry_key(&quot;y&quot;)    # industry
+self.press_combat_key(&quot;e&quot;)      # combat
+</code></pre>
+<p><code>KeyConfigManager</code> 只有 <code>resolve_key(key, key_type)</code>。方向移動、固定角色數字鍵、固定滑索鍵和 <code>alt</code> 等系統修飾鍵可按明確的不改鍵語義使用底層介面。若遊戲設定允許改鍵，對應 UI 圖示也不應做成固定按鍵字樣模板。</p>
+<h3 id="6-7-登入和多賬號">6.7 登入和多賬號</h3>
+<p><code>LoginMixin.login_flow(username, password=None)</code> 通過登入介面的“最近賬號”列表選擇賬號，不輸入密碼。舊賬號行中的逗號後密碼欄位會被忽略且不儲存。</p>
+<p>多賬號任務應使用 <code>iter_multi_account_context()</code> 或現有 <code>AccountMixin</code> 流程，並在讀取賬號覆蓋配置前設定 <code>current_account_id</code>。賬號覆蓋優先穩定 ID，使用者名稱僅作為後備。</p>
+<h2 id="7-測試清單">7. 測試清單</h2>
+<p>當前 <code>tests/</code> 有 37 個測試模組：</p>
+<table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>主要覆蓋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>TestAccountBattleConfig.py</code></td>
+<td>賬號配置可見性、快照合併、戰鬥配置優先順序</td>
+</tr>
+<tr>
+<td><code>TestAccountConfigBlacklist.py</code></td>
+<td>任務賬號配置黑名單</td>
+</tr>
+<tr>
+<td><code>TestAccountOverrideMixin.py</code></td>
+<td>賬號覆蓋 Mixin：僅任務執行時啟用覆蓋、其餘回退預設</td>
+</tr>
+<tr>
+<td><code>TestAutoCombat.py</code></td>
+<td>戰鬥圖片識別、技能條、等級和排軸解析</td>
+</tr>
+<tr>
+<td><code>TestAutoPick.py</code></td>
+<td>自動拾取規則（可生產植物預設跳過與開關）</td>
+</tr>
+<tr>
+<td><code>TestCheckLang.py</code></td>
+<td>原始碼語言 key 與統一 JSON 的 <code>zh_CN/zh_TW</code> 引用</td>
+</tr>
+<tr>
+<td><code>TestConditionalRotation.py</code></td>
+<td>排軸條件旋轉 AST 歸一化</td>
+</tr>
+<tr>
+<td><code>TestConditionalRotationCombat.py</code></td>
+<td>條件旋轉戰鬥執行（if/else 分支）</td>
+</tr>
+<tr>
+<td><code>TestConditionalRotationGui.py</code></td>
+<td>條件旋轉 GUI 動作/條件格式化</td>
+</tr>
+<tr>
+<td><code>TestDailyBattleToEnd.py</code></td>
+<td>日常刷本到結束：YOLO 命中停用中鍵點選、獎勵等待</td>
+</tr>
+<tr>
+<td><code>TestDailyBoatState.py</code></td>
+<td>日常聯運狀態共享範圍</td>
+</tr>
+<tr>
+<td><code>TestDailyConfigMigration.py</code></td>
+<td>日常地區布林鍵合併遷移</td>
+</tr>
+<tr>
+<td><code>TestDailyRegionalRunner.py</code></td>
+<td>日常地區執行器（僅購買/回撥/重試）</td>
+</tr>
+<tr>
+<td><code>TestDailyRewardWaits.py</code></td>
+<td>日常獎勵領取等待邏輯</td>
+</tr>
+<tr>
+<td><code>TestDailyTaskFinallyFile.py</code></td>
+<td>日常彙總檔案生成和清理</td>
+</tr>
+<tr>
+<td><code>TestDeliveryAreaConfig.py</code></td>
+<td>送貨地區、搜尋區域、目標和券種配置</td>
+</tr>
+<tr>
+<td><code>TestDeliveryRewardsClaim.py</code></td>
+<td>送貨獎勵領取狀態處理</td>
+</tr>
+<tr>
+<td><code>TestEfInteraction.py</code></td>
+<td>視窗啟用與後臺訊息互動</td>
+</tr>
+<tr>
+<td><code>TestEssenceImageFeatures.py</code></td>
+<td>裝備詞條 Feature 資產存在性</td>
+</tr>
+<tr>
+<td><code>TestEssenceRecognizer.py</code></td>
+<td>裝備詞條 OCR 純解析和等級附加</td>
+</tr>
+<tr>
+<td><code>TestGameWindow.py</code></td>
+<td>遊戲視窗查詢（類名與執行檔匹配）</td>
+</tr>
+<tr>
+<td><code>TestGuiI18n.py</code></td>
+<td>GUI 翻譯呼叫和執行時採集汙染</td>
+</tr>
+<tr>
+<td><code>TestItemMapQuery.py</code></td>
+<td>物品地圖查詢和篩選</td>
+</tr>
+<tr>
+<td><code>TestLogZipDedup.py</code></td>
+<td>日誌打包圖片去重</td>
+</tr>
+<tr>
+<td><code>TestMouseRotationCalibration.py</code></td>
+<td>滑鼠視角旋轉系數標定角度差純函式與任務註冊</td>
+</tr>
+<tr>
+<td><code>TestOutpostExchange.py</code></td>
+<td>據點兌換優先順序與排除邏輯</td>
+</tr>
+<tr>
+<td><code>TestPoLocaleConsistency.py</code></td>
+<td>gettext catalog 完整性和一致性</td>
+</tr>
+<tr>
+<td><code>TestPressEsc.py</code></td>
+<td><code>press_esc</code> 走任務鍵盤控制器</td>
+</tr>
+<tr>
+<td><code>TestRuntimeMixinFeatureClick.py</code></td>
+<td>普通/Alt Feature 點選路徑</td>
+</tr>
+<tr>
+<td><code>TestScreenshotSidecar.py</code></td>
+<td>截圖側邊資料序列化</td>
+</tr>
+<tr>
+<td><code>TestSequenceParser.py</code></td>
+<td>中英文逗號序列和整數序列解析</td>
+</tr>
+<tr>
+<td><code>TestStateDrivenWaits.py</code></td>
+<td>狀態驅動的等待（ensure_main/ensure_map/safe_back 等）</td>
+</tr>
+<tr>
+<td><code>TestTakeDeliveryFunctions.py</code></td>
+<td>運送委託 OCR 樣本處理</td>
+</tr>
+<tr>
+<td><code>TestWarehouseSwitchOCR.py</code></td>
+<td>倉庫狀態 OCR 樣本</td>
+</tr>
+<tr>
+<td><code>TestYoloDetect.py</code></td>
+<td>檢測注入、ROI/overlay 和引數驗證</td>
+</tr>
+<tr>
+<td><code>TestYoloModelRegistry.py</code></td>
+<td>模型配置合併及目標路由</td>
+</tr>
+<tr>
+<td><code>TestZipLineConfig.py</code></td>
+<td>滑索全域性配置分組與舊配置遷移</td>
+</tr>
+</tbody></table>
+<p>推薦從倉庫根目錄執行：</p>
+<pre><code class="language-powershell">uv run python -m unittest discover -s tests -p &quot;Test*.py&quot;
+</code></pre>
+<p>或使用倉庫指令碼：</p>
+<pre><code class="language-powershell">.\run_tests.ps1
+</code></pre>
+<p><code>run_tests.ps1</code> 通過 <code>uv run python</code> 在專案 <code>.venv</code> 中執行，無需手動啟用虛擬環境。</p>
+<p>測試並非全是無資源的純演算法測試。部分依賴 <code>assets</code> 圖片、OCR 樣本、OpenCV、<code>ok-script</code> 的 <code>TaskTestCase</code> 或 Windows 相關匯入。它們通常不要求正在運行遊戲，但視窗互動流程仍必須實機驗證。</p>
+<h2 id="8-ci-釋出與工具">8. CI、釋出與工具</h2>
+<p><code>.github/workflows/build.yml</code> 只在推送 <code>v*</code> tag 時觸發：</p>
+<pre><code class="language-text">checkout(LFS)
+-&gt; Python 3.12
+-&gt; pip install -r requirements.txt（requirements.txt 由 uv 从 pyproject.toml 生成）
+-&gt; inline ok-script requirements
+-&gt; 逐个运行 tests/*.py
+-&gt; 按 deploy.txt 同步更新仓库
+-&gt; PyAppify 打包
+-&gt; GitHub Release
+-&gt; 触发 MirrorChyan workflow
+</code></pre>
+<p>其它當前 workflow：</p>
+<ul>
+<li><code>download_stats.yml</code>：每日/手動生成並提交 <code>assets/downloads.svg</code>。</li>
+<li><code>mirrorchyan_uploading.yml</code>、<code>mirrorchyan_release_note.yml</code>：MirrorChyan 釋出流程。</li>
+<li><code>update-endfield-map-data.yml</code>：地圖資料更新。</li>
+<li><code>stale.yml</code>：issue/PR 維護。</li>
+</ul>
+<p><code>auto_release.py</code>、<code>auto_release.ps1</code>、<code>auto_release.sh</code> 是 tag 輔助指令碼。釋出行為以指令碼和 workflow 當前實現為準，不要假定測試在“打 tag 前”自動執行；CI 是 tag 已推送後啟動。</p>
+<p>語言工具狀態：<code>tools/lang_batch_translate.py</code> 仍掃描舊的 locale 子目錄 schema，不適用於當前統一 <code>assets/lang/*.json</code>；<code>scripts/migrate_lang.py</code> 是遷移指令碼。日常語言維護不要執行它們，詳見 i18n 文件。</p>
+<h2 id="9-維護檢查">9. 維護檢查</h2>
+<p>程式碼變更後按影響面檢查：</p>
+<ol>
+<li>任務註冊變化：同步 <code>src/config.py</code> 對應使用者/開發文件。</li>
+<li>Mixin 或基礎設施移動：同步匯入示例和 MRO 圖，搜尋舊路徑。</li>
+<li>API 引數或返回語義變化：更新 <a href="../API/">API.md</a> 並執行直接測試。</li>
+<li>配置變化：同步預設值、描述、型別、全域性/任務/賬號優先順序測試。</li>
+<li>OCR 文本變化：更新統一語言 JSON，執行 <code>TestCheckLang</code>。</li>
+<li>GUI gettext 變化：執行 <code>TestGuiI18n</code> 和 <code>TestPoLocaleConsistency</code>。</li>
+<li>Feature/YOLO 變化：驗證資源、模型路由、ROI 座標及 Debug overlay。</li>
+<li>互動流程變化：除單元測試外，用 <code>main_debug.py</code> 在支援解析度實測。</li>
+</ol>
+<p>權威來源：</p>
+<ul>
+<li>註冊和應用引數：<code>src/config.py</code></li>
+<li>核心組合：<code>src/core/BaseEfTask.py</code></li>
+<li>執行時介面：<code>src/core/base_mixin/*.py</code></li>
+<li>業務行為：<code>src/tasks/**/*.py</code></li>
+<li>全域性戰鬥配置：<code>src/core/BattleConfig.py</code></li>
+<li>OCR locale/schema：<code>src/data/lang/__init__.py</code></li>
+<li>測試範圍：<code>tests/*.py</code></li>
+<li>釋出：<code>.github/workflows/*.yml</code></li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/DEVELOPMENT.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-執行架構" style="margin-left:0px">1. 執行架構</a><a href="#2-基類與組合" style="margin-left:0px">2. 基類與組合</a><a href="#2-1-baseeftask" style="margin-left:10px">2.1 BaseEfTask</a><a href="#2-2-業務-mixin" style="margin-left:10px">2.2 業務 Mixin</a><a href="#2-3-實際任務-mro" style="margin-left:10px">2.3 實際任務 MRO</a><a href="#3-註冊清單" style="margin-left:0px">3. 註冊清單</a><a href="#一次性任務" style="margin-left:10px">一次性任務</a><a href="#觸發式任務" style="margin-left:10px">觸發式任務</a><a href="#自定義頁" style="margin-left:10px">自定義頁</a><a href="#4-當前目錄" style="margin-left:0px">4. 當前目錄</a><a href="#5-開發環境" style="margin-left:0px">5. 開發環境</a><a href="#6-開發流程" style="margin-left:0px">6. 開發流程</a><a href="#6-1-新增任務" style="margin-left:10px">6.1 新增任務</a><a href="#6-2-新增業務-mixin" style="margin-left:10px">6.2 新增業務 Mixin</a><a href="#6-3-任務配置" style="margin-left:10px">6.3 任務配置</a><a href="#6-4-feature-資源" style="margin-left:10px">6.4 Feature 資源</a><a href="#6-5-ocr-與語言" style="margin-left:10px">6.5 OCR 與語言</a><a href="#6-6-鍵位" style="margin-left:10px">6.6 鍵位</a><a href="#6-7-登入和多賬號" style="margin-left:10px">6.7 登入和多賬號</a><a href="#7-測試清單" style="margin-left:0px">7. 測試清單</a><a href="#8-ci-釋出與工具" style="margin-left:0px">8. CI、釋出與工具</a><a href="#9-維護檢查" style="margin-left:0px">9. 維護檢查</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

@@ -1,0 +1,261 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>地图 WebSocket 客户端 · ok-end-field</title><meta name="description" content="地图 WebSocket 客户端 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/地图官方WS客户端实现/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="地图 WebSocket 客户端 · ok-end-field"><meta property="og:description" content="地图 WebSocket 客户端 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/地图官方WS客户端实现/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="地图 WebSocket 客户端 · ok-end-field"><meta name="twitter:description" content="地图 WebSocket 客户端 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"地图 WebSocket 客户端 · ok-end-field","description":"地图 WebSocket 客户端 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/dev/地图官方WS客户端实现/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="./" class="active" aria-current="page">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../装备词条识别轮子/">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="地图官方-websocket-客户端实现">地图官方 WebSocket 客户端实现</h1>
+<p>返回：<a href="../../../../docs/">文档索引</a> / <a href="../../../">README</a></p>
+<h2 id="概述">概述</h2>
+<p>在保留油猴脚本转发兼容模式的同时，项目内集成终末地官方地图的 <code>wss://ws.skland.com/ws/v1/game/endfield/map</code> WebSocket 客户端。
+每个账号（玩家角色）需要独立的 <code>hg/check</code> credential 才能建立连接。
+凭证可填写在任务直接输入（<code>content</code> 字段）或存储在账号配置页（<code>map_contents</code> 中），项目自动执行 OAuth 换取流程。</p>
+<h2 id="凭证输入方式">凭证输入方式</h2>
+<h3 id="方式一-任务直接输入">方式一：任务直接输入</h3>
+<p><code>ItemNavigatorTask.default_config[&#39;content&#39;]</code> —— 直接填入 <code>hg/check</code> 接口返回的 <code>data.content</code> 字符串。</p>
+<h3 id="方式二-账号配置页-推荐">方式二：账号配置页（推荐）</h3>
+<p><code>AccountConfigTab</code> 中的&quot;地图同步 content&quot;区域，每个账号存储一份 <code>data.content</code>。
+数据持久化在 <code>configs/account_scoped_overrides.json</code> 的 <code>map_contents</code> 字段中。</p>
+<h3 id="凭证解析优先级">凭证解析优先级</h3>
+<ol>
+<li>任务 <code>content</code> 非空 → 直接使用</li>
+<li>任务 <code>地图账号</code> 非空 → 从 <code>map_contents</code> 读取该账号的 content</li>
+<li>任务当前登录账号 context → 从 <code>map_contents</code> 读取；触发任务自身没有 context 时，还会读取 executor 当前运行任务的 <code>current_account_id/current_user</code></li>
+</ol>
+<h3 id="不带凭证时的回退">不带凭证时的回退</h3>
+<p><code>content</code> 和 <code>地图账号</code> 均为空时，自动启动旧的本地 WS 服务端模式（监听 <code>ws://127.0.0.1:3001</code>），兼容油猴脚本或其他外部来源。</p>
+<h2 id="oauth-websocket-登录全链路">OAuth → WebSocket 登录全链路</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[hg/check data.content] --&gt; B[POST Hypergryph OAuth grant]
+    B --&gt; C[取得 oauth code]
+    C --&gt; D[POST zonai.skland.com/web/v1/user/auth/generate_cred_by_code]
+    D --&gt; E[取得 cred / sign token / userId]
+    E --&gt; F[GET user 和 player binding]
+    F --&gt; G[解析默认终末地角色]
+    G --&gt; H[GET websocket token]
+    H --&gt; I[连接官方地图 WS endpoint]
+    I --&gt; J[发送 type=1 token 鉴权]
+</code></pre>
+<h2 id="http-签名算法">HTTP 签名算法</h2>
+<pre><code>headers = {
+    &quot;platform&quot;: &quot;3&quot;,
+    &quot;vName&quot;: &quot;1.0.0&quot;,
+    &quot;timestamp&quot;: str(timestamp),
+    &quot;dId&quot;: device_id or &quot;&quot;,
+}
+
+sign_payload = path + (query if GET else body) + timestamp
+compact_headers = {&quot;platform&quot;:&quot;3&quot;,&quot;timestamp&quot;:&quot;...&quot;,&quot;dId&quot;:&quot;...&quot;,&quot;vName&quot;:&quot;1.0.0&quot;}
+sign_payload += json.dumps(compact_headers, separators=(&quot;,&quot;, &quot;:&quot;))
+
+digest = hmac.new(sign_token.encode(), sign_payload.encode(), sha256).hexdigest()
+sign = md5(digest.encode()).hexdigest()
+headers[&quot;sign&quot;] = sign
+</code></pre>
+<h3 id="timestamp-处理">timestamp 处理</h3>
+<p><code>clientTime</code> = 换取 cred 时的本地时间戳；<code>serverTime</code> = 换取 cred 时的服务器响应 timestamp。
+之后每次签名：<code>adjusted = serverTime + (now - clientTime)</code>，确保时间戳随流逝时间同步推进。</p>
+<h2 id="websocket-协议">WebSocket 协议</h2>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant C as ok-ef WS Client
+    participant S as skland WS
+    C-&gt;&gt;S: type=1 token 鉴权
+    S--&gt;&gt;C: type=2 auth 成功
+    loop 每 10 秒
+        C-&gt;&gt;S: type=3 心跳
+    end
+    loop 鉴权后每 5 秒
+        C-&gt;&gt;S: type=1011 roleId/serverId 初始化/刷新
+        S--&gt;&gt;C: type=1012 pos/mapId/levelId
+    end
+    S--&gt;&gt;C: type=6 token 过期
+    C-&gt;&gt;S: type=1 新 token 鉴权
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>方向</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>C→S</td>
+<td>token 鉴权：<code>{token: wss_token}</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>S→C</td>
+<td>auth 成功确认</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C→S</td>
+<td>心跳（每 10s）</td>
+</tr>
+<tr>
+<td>6</td>
+<td>S→C</td>
+<td>token 过期（<code>code=10002</code>），需重新获取 ws token 后发 type=1</td>
+</tr>
+<tr>
+<td>1011</td>
+<td>C→S</td>
+<td>初始化/刷新：<code>{roleId, serverId}</code>（鉴权后每 5s 发送一次）</td>
+</tr>
+<tr>
+<td>1012</td>
+<td>S→C</td>
+<td>位置数据：<code>{data: {pos: {x,y,z}, mapId, levelId}}</code></td>
+</tr>
+</tbody></table>
+<p>客户端收到的位置数据通过 <code>_push_ws_payload()</code> 放入统一队列，与本地 WS 服务端模式共用同一套消费逻辑。</p>
+<h3 id="角色解析规则">角色解析规则</h3>
+<ol>
+<li>先请求 <code>/web/v1/user</code>；再请求 <code>/api/v1/game/player/binding</code>。若后者失败且 cred 响应带 <code>userId</code>，则以 <code>uid=userId</code> 重试。</li>
+<li>优先读取 <code>data.gameMap.endfield</code>；缺失时在 <code>data.list</code> 中查找 <code>appCode == &quot;endfield&quot;</code>。</li>
+<li><code>bindingList</code> 优先选择 <code>isDefault</code> 项，否则取第一项。</li>
+<li>角色优先取该项的 <code>defaultRole</code>，否则取 <code>roles[0]</code>；最终必须同时有 <code>roleId</code> 与 <code>serverId</code>。</li>
+</ol>
+<h2 id="多账号架构">多账号架构</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[AccountConfigTab 保存地图同步 content] --&gt; B[account_scope_store.set_account_map_content]
+    B --&gt; C[configs/account_scoped_overrides.json]
+    C --&gt; D[map_contents account_id -&gt; content]
+    E[ItemNavigatorTask 地图账号配置] --&gt; F[get_account_map_content]
+    G[当前任务账号上下文] --&gt; F
+    D --&gt; F
+    F --&gt; H[官方地图 WS 凭证解析]
+</code></pre>
+<h3 id="数据流">数据流</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[account_registry] --&gt; B[account_id]
+    C[accounts] --&gt; B
+    D[map_contents] --&gt; B
+    B --&gt; E[读取账号任务覆盖]
+    B --&gt; F[读取地图同步 content]
+</code></pre>
+<pre><code class="language-text">configs/account_scoped_overrides.json
+├── map_contents          ← 账号 → hg/check content 映射
+│   ├── &quot;acc_xxx&quot;: &quot;data.content string&quot;
+│   └── ...
+├── accounts              ← 任务级覆盖（已有）
+└── account_registry      ← 账号 ID 注册表
+</code></pre>
+<h3 id="相关-api-account-scope-store-py">相关 API (<code>account_scope_store.py</code>)</h3>
+<ul>
+<li><code>get_account_map_content(account, account_name=&quot;&quot;)</code> → str</li>
+<li><code>set_account_map_content(account, content)</code> → None</li>
+<li>内部 <code>_resolve_account_id_for_read/write()</code> 处理 ID/用户名解析</li>
+</ul>
+<h3 id="ui-accountconfigtab-py">UI (<code>AccountConfigTab.py</code>)</h3>
+<ul>
+<li>重新构建账户下拉时，从 <code>map_contents</code> 键集合中也拉入账号列表</li>
+<li>地图 content 编辑区：单行 <code>LineEdit</code>，随当前账号配置统一保存</li>
+</ul>
+<h2 id="安全退出机制">安全退出机制</h2>
+<h3 id="1-游戏窗口退出检测">1. 游戏窗口退出检测</h3>
+<p><code>_is_game_window_alive()</code> 检查 <code>win32gui.IsWindow(hwnd) &amp;&amp; win32gui.IsWindowVisible(hwnd)</code>。</p>
+<ul>
+<li>WS 客户端主循环每轮收包前检查，窗口不存在则 <code>return</code> 退出协程，不会自动重连。</li>
+<li><code>ItemNavigatorTask.run()</code> 第一行也检查，失效时调用 <code>_cleanup_navigator_runtime()</code> 清理所有 WS 资源和箭头。</li>
+</ul>
+<h3 id="2-消费者空闲超时">2. 消费者空闲超时</h3>
+<p>导航任务每次通过 <code>_recv_ws_position_payload()</code> 或 <code>_recv_ws_position_payload_or_cached()</code> 读取位置时，更新 <code>_map_ws_last_consume_at = time.time()</code>。
+WS 客户端线程检查 <code>_map_ws_should_stop_for_idle_consumer()</code>，若超过 <code>_map_ws_consumer_idle_timeout</code>（初始化默认 10s）未被读取，则主动退出。每次从队列取得新位置，或在队列为空时返回有效缓存位置，都会刷新消费时间。
+解决 executor disable 任务后 WS 线程继续空转的问题。</p>
+<h2 id="itemnavigatortask-关键变更">ItemNavigatorTask 关键变更</h2>
+<h3 id="移除的功能">移除的功能</h3>
+<ul>
+<li><code>support_multi_account</code> 标记 —— 不再参与多账号覆盖 UI</li>
+<li>旧版 JSON/Cookie/<code>key=value</code> 格式凭证解析</li>
+</ul>
+<h3 id="新增配置项">新增配置项</h3>
+<table>
+<thead>
+<tr>
+<th>配置键</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>content</code></td>
+<td>str</td>
+<td>可选。直接填写 <code>hg/check data.content</code></td>
+</tr>
+<tr>
+<td><code>地图账号</code></td>
+<td>dropdown</td>
+<td>可选。从账号配置页选择已保存 content 的账号</td>
+</tr>
+</tbody></table>
+<h3 id="run-流程"><code>run()</code> 流程</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[ItemNavigatorTask.run] --&gt; B{游戏窗口是否存在}
+    B --&gt;|否| C[清理 WS 和箭头]
+    B --&gt;|是| D[读取 content 或地图账号 content]
+    D --&gt; E{有凭证}
+    E --&gt;|是| F[停止本地 WS 服务]
+    F --&gt; G[启动官方地图 WS 客户端]
+    E --&gt;|否| H[停止官方 WS 客户端]
+    H --&gt; I[启动本地 WS 服务]
+    G --&gt; J[读取位置 payload 或缓存]
+    I --&gt; J
+    J --&gt; K[匹配物品点位并绘制箭头]
+    K --&gt; L[处理标记按键]
+    L --&gt; M[延迟保存 marked_points.json]
+</code></pre>
+<h2 id="相关文件">相关文件</h2>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/tasks/mixin/ws_position_mixin.py</code></td>
+<td>WS 客户端核心：OAuth 换取、HTTP 签名、WS 协议、退出控制</td>
+</tr>
+<tr>
+<td><code>src/tasks/trigger/ItemNavigatorTask.py</code></td>
+<td>导航任务：凭证解析、位置消费、箭头渲染、标记逻辑</td>
+</tr>
+<tr>
+<td><code>src/tasks/account/account_scope_store.py</code></td>
+<td>持久化：<code>map_contents</code> 字段的读写、账号解析</td>
+</tr>
+<tr>
+<td><code>src/gui/AccountConfigTab.py</code></td>
+<td>UI：账号配置页，包含地图 content 编辑</td>
+</tr>
+</tbody></table>
+<p>相关文档：<a href="../../../../docs/物品导航与实时检测/">物品导航与实时检测</a> / <a href="../../../../docs/账号配置用户指南/">账号配置用户指南</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/地图官方WS客户端实现.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#凭证输入方式" style="margin-left:0px">凭证输入方式</a><a href="#方式一-任务直接输入" style="margin-left:10px">方式一：任务直接输入</a><a href="#方式二-账号配置页-推荐" style="margin-left:10px">方式二：账号配置页（推荐）</a><a href="#凭证解析优先级" style="margin-left:10px">凭证解析优先级</a><a href="#不带凭证时的回退" style="margin-left:10px">不带凭证时的回退</a><a href="#oauth-websocket-登录全链路" style="margin-left:0px">OAuth → WebSocket 登录全链路</a><a href="#http-签名算法" style="margin-left:0px">HTTP 签名算法</a><a href="#timestamp-处理" style="margin-left:10px">timestamp 处理</a><a href="#websocket-协议" style="margin-left:0px">WebSocket 协议</a><a href="#角色解析规则" style="margin-left:10px">角色解析规则</a><a href="#多账号架构" style="margin-left:0px">多账号架构</a><a href="#数据流" style="margin-left:10px">数据流</a><a href="#相关-api-account-scope-store-py" style="margin-left:10px">相关 API (account_scope_store.py)</a><a href="#ui-accountconfigtab-py" style="margin-left:10px">UI (AccountConfigTab.py)</a><a href="#安全退出机制" style="margin-left:0px">安全退出机制</a><a href="#1-游戏窗口退出检测" style="margin-left:10px">1. 游戏窗口退出检测</a><a href="#2-消费者空闲超时" style="margin-left:10px">2. 消费者空闲超时</a><a href="#itemnavigatortask-关键变更" style="margin-left:0px">ItemNavigatorTask 关键变更</a><a href="#移除的功能" style="margin-left:10px">移除的功能</a><a href="#新增配置项" style="margin-left:10px">新增配置项</a><a href="#run-流程" style="margin-left:10px">run() 流程</a><a href="#相关文件" style="margin-left:0px">相关文件</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

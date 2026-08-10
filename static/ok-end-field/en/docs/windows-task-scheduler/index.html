@@ -1,0 +1,211 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Windows Task Scheduler · ok-end-field</title><meta name="description" content="Windows Task Scheduler — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/windows-task-scheduler/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Windows Task Scheduler · ok-end-field"><meta property="og:description" content="Windows Task Scheduler — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/windows-task-scheduler/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Windows Task Scheduler · ok-end-field"><meta name="twitter:description" content="Windows Task Scheduler — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Windows Task Scheduler · ok-end-field","description":"Windows Task Scheduler — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/windows-task-scheduler/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/API/">API 参考</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/装备词条识别轮子/">装备词条识别</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务执行情况汇总报告/">任务执行情况汇总</a><a href="../getting-started/installation/">Installation</a><a href="../getting-started/configuration/">Before you start</a><a href="../guides/quick-start/">Quick start</a><a href="../features/overview/">Overview</a><a href="../daily-tasks/">Daily Tasks</a><a href="../stamina-farming/">Stamina Farming</a><a href="../auto-combat/">Auto Combat</a><a href="../action-sequence/">Action Sequences</a><a href="../delivery-pickup/">Delivery Commission Pickup</a><a href="../auto-delivery/">Auto Delivery</a><a href="../warehouse-transfer/">Warehouse Transfer</a><a href="../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../account-configuration/">Account Configuration</a><a href="../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="./" class="active" aria-current="page">Windows Task Scheduler</a><a href="../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="windows-task-scheduler">Windows Task Scheduler</h1>
+<p>Back: <a href="../">Documentation home</a> / <a href="../../">README</a></p>
+<p>ok-ef provides <a href="../daily-tasks/">daily task external commands</a> and built-in scheduled-task support.</p>
+<p>For more freedom, you can use the Windows Task Scheduler.</p>
+<h3 id="1-create-pre-hook-and-post-hook-files-from-the-templates">1. Create pre-hook and post-hook files from the templates</h3>
+<p>The following <code>终末地.pre.ps1</code> cleans up old logs before execution and optionally starts the game early to wait for a hot update. Modify the paths and save; the examples are compatible with the built-in Windows PowerShell 5.1:</p>
+<pre><code class="language-pwsh">$ErrorActionPreference = &quot;Stop&quot;
+$efDir = &quot;C:\Program Files\Hypergryph Launcher\games\Endfield Game&quot;
+$okefDir = &quot;C:\ok-ef&quot;
+$workingDir = Join-Path $okefDir &quot;data\apps\ok-ef\working&quot;
+$hotUpdateMinutes = 5 # set to 0 to skip early startup
+
+if (-not (Test-Path -LiteralPath $workingDir -PathType Container)) {
+  throw &quot;ok-ef working directory does not exist: $workingDir&quot;
+}
+
+$logDir = Join-Path $workingDir &quot;logs&quot;
+if (Test-Path -LiteralPath $logDir -PathType Container) {
+  $logs = @(Get-ChildItem -LiteralPath $logDir -File)
+  if ($logs.Count -gt 15) {
+    $cutoff = (Get-Date).AddDays(-30)
+    $logs | Where-Object { $_.CreationTime -lt $cutoff } | Remove-Item -Force
+  }
+
+  $currentLog = Join-Path $logDir &quot;ok-script.log&quot;
+  if (Test-Path -LiteralPath $currentLog -PathType Leaf) {
+    $timestamp = (Get-Item -LiteralPath $currentLog).CreationTime.ToString(&quot;yyyy-MM-dd.HH-mm-ss&quot;)
+    Move-Item -LiteralPath $currentLog -Destination &quot;$currentLog.$timestamp.log&quot; -Force
+  }
+}
+
+if ($hotUpdateMinutes -gt 0) {
+  $gameExe = Join-Path $efDir &quot;Endfield.exe&quot;
+  if (-not (Test-Path -LiteralPath $gameExe -PathType Leaf)) {
+    throw &quot;Game executable does not exist: $gameExe&quot;
+  }
+  Start-Process -FilePath $gameExe -WorkingDirectory $efDir
+  Start-Sleep -Seconds ($hotUpdateMinutes * 60)
+  Get-Process -Name &quot;Endfield&quot; -ErrorAction SilentlyContinue | Stop-Process -Force
+}
+
+# Add your custom code here (e.g. message notification)
+</code></pre>
+<p>The following <code>终末地.post.ps1</code> waits for the task to exit, ends the relevant processes on timeout, and archives logs and screenshots. <code>$maxMinutes</code> includes the pre-script&#39;s hot-update time:</p>
+<pre><code class="language-pwsh">$okefDir = &quot;C:\ok-ef&quot;
+$workingDir = Join-Path $okefDir &quot;data\apps\ok-ef\working&quot;
+$maxMinutes = 44
+$hotUpdateMinutes = 5
+$deadline = (Get-Date).AddMinutes([Math]::Max(1, $maxMinutes - $hotUpdateMinutes))
+
+# `cmd /c start` is non-blocking; leave startup time for ok-ef and the game process.
+Start-Sleep -Seconds 5
+do {
+  $gameProcesses = @(Get-Process -Name &quot;Endfield&quot; -ErrorAction SilentlyContinue)
+  $okefProcesses = @(Get-Process -Name &quot;ok-ef&quot; -ErrorAction SilentlyContinue)
+  if ($gameProcesses.Count -eq 0 -and $okefProcesses.Count -eq 0) { break }
+  Start-Sleep -Seconds 1
+} while ((Get-Date) -lt $deadline)
+
+$timedOut = $gameProcesses.Count -gt 0 -or $okefProcesses.Count -gt 0
+if ($timedOut) {
+  $gameProcesses | Stop-Process -Force
+  $okefProcesses | Stop-Process -Force
+  $message = &quot;Execution timed out; terminated the still-running game or ok-ef processes.&quot;
+} else {
+  $message = &quot;Execution finished.&quot;
+}
+
+$logPath = Join-Path $workingDir &quot;logs\ok-script.log&quot;
+$version = &quot;&quot;
+if (Test-Path -LiteralPath $logPath -PathType Leaf) {
+  $logLines = Get-Content -LiteralPath $logPath -Encoding UTF8
+  $summaryPatterns = @(&quot;已完成的任务列表&quot;, &quot;已失败的任务列表&quot;, &quot;已跳过的任务列表&quot;, &quot;未处理的任务列表&quot;, &quot;当前失败的任务&quot;)
+  foreach ($pattern in $summaryPatterns) {
+    $line = $logLines | Select-String -Pattern $pattern | Select-Object -Last 1
+    if ($null -ne $line) { $message += &quot;`n`n$line&quot; }
+  }
+  $versionLine = $logLines | Select-String -Pattern &quot;app_version:([^,]+)&quot; | Select-Object -Last 1
+  if ($null -ne $versionLine -and $versionLine -match &quot;app_version:([^,]+)&quot;) {
+    $version = &quot; &quot; + $matches[1]
+  }
+  $timestamp = (Get-Item -LiteralPath $logPath).CreationTime.ToString(&quot;yyyy-MM-dd.HH-mm-ss&quot;)
+  Move-Item -LiteralPath $logPath -Destination &quot;$logPath.$timestamp.log&quot; -Force
+}
+
+$screenshotDir = Join-Path $workingDir &quot;screenshots&quot;
+$backupDir = Join-Path $workingDir &quot;screenshots.backup&quot;
+if (Test-Path -LiteralPath $screenshotDir -PathType Container) {
+  $screenshots = @(Get-ChildItem -LiteralPath $screenshotDir -File -ErrorAction SilentlyContinue)
+  if ($screenshots.Count -gt 0) {
+    New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+    $screenshots | Move-Item -Destination $backupDir -Force
+  }
+}
+
+# Add your custom code here (e.g. send a notification using $message and $version)
+</code></pre>
+<h3 id="2-create-and-import-the-scheduled-task-file">2. Create and import the scheduled-task file</h3>
+<p>The scheduled-task template is as follows:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-16&quot;?&gt;
+&lt;Task version=&quot;1.3&quot; xmlns=&quot;http://schemas.microsoft.com/windows/2004/02/mit/task&quot;&gt;
+  &lt;RegistrationInfo&gt;
+    &lt;SecurityDescriptor&gt;&lt;/SecurityDescriptor&gt;
+  &lt;/RegistrationInfo&gt;
+  &lt;Triggers&gt;
+    &lt;CalendarTrigger&gt;
+      &lt;StartBoundary&gt;2026-01-01T04:00:00&lt;/StartBoundary&gt;
+      &lt;Enabled&gt;true&lt;/Enabled&gt;
+      &lt;ScheduleByDay&gt;
+        &lt;DaysInterval&gt;1&lt;/DaysInterval&gt;
+      &lt;/ScheduleByDay&gt;
+    &lt;/CalendarTrigger&gt;
+  &lt;/Triggers&gt;
+  &lt;Principals&gt;
+    &lt;Principal id=&quot;Author&quot;&gt;
+      &lt;LogonType&gt;InteractiveToken&lt;/LogonType&gt;
+      &lt;RunLevel&gt;HighestAvailable&lt;/RunLevel&gt;
+    &lt;/Principal&gt;
+  &lt;/Principals&gt;
+  &lt;Settings&gt;
+    &lt;MultipleInstancesPolicy&gt;IgnoreNew&lt;/MultipleInstancesPolicy&gt;
+    &lt;DisallowStartIfOnBatteries&gt;true&lt;/DisallowStartIfOnBatteries&gt;
+    &lt;StopIfGoingOnBatteries&gt;true&lt;/StopIfGoingOnBatteries&gt;
+    &lt;AllowHardTerminate&gt;true&lt;/AllowHardTerminate&gt;
+    &lt;StartWhenAvailable&gt;false&lt;/StartWhenAvailable&gt;
+    &lt;RunOnlyIfNetworkAvailable&gt;false&lt;/RunOnlyIfNetworkAvailable&gt;
+    &lt;IdleSettings&gt;
+      &lt;StopOnIdleEnd&gt;true&lt;/StopOnIdleEnd&gt;
+      &lt;RestartOnIdle&gt;false&lt;/RestartOnIdle&gt;
+    &lt;/IdleSettings&gt;
+    &lt;AllowStartOnDemand&gt;true&lt;/AllowStartOnDemand&gt;
+    &lt;Enabled&gt;true&lt;/Enabled&gt;
+    &lt;Hidden&gt;false&lt;/Hidden&gt;
+    &lt;RunOnlyIfIdle&gt;false&lt;/RunOnlyIfIdle&gt;
+    &lt;DisallowStartOnRemoteAppSession&gt;false&lt;/DisallowStartOnRemoteAppSession&gt;
+    &lt;UseUnifiedSchedulingEngine&gt;true&lt;/UseUnifiedSchedulingEngine&gt;
+    &lt;WakeToRun&gt;false&lt;/WakeToRun&gt;
+    &lt;ExecutionTimeLimit&gt;PT0S&lt;/ExecutionTimeLimit&gt;
+    &lt;Priority&gt;7&lt;/Priority&gt;
+  &lt;/Settings&gt;
+  &lt;Actions Context=&quot;Author&quot;&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;powershell.exe&lt;/Command&gt;
+      &lt;Arguments&gt;-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;终末地.pre.ps1&quot;&lt;/Arguments&gt;
+      &lt;WorkingDirectory&gt;PLACEHOLDER_PATH_TO_PRE_SCRIPT_DIRECTORY&lt;/WorkingDirectory&gt;
+    &lt;/Exec&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;cmd&lt;/Command&gt;
+      &lt;Arguments&gt;/c start &quot;&quot; &quot;ok-ef.exe&quot; -t 1 -e&lt;/Arguments&gt;
+      &lt;WorkingDirectory&gt;PLACEHOLDER_PATH_TO_OK_EF_APP_DIRECTORY&lt;/WorkingDirectory&gt;
+    &lt;/Exec&gt;
+    &lt;Exec&gt;
+      &lt;Command&gt;powershell.exe&lt;/Command&gt;
+      &lt;Arguments&gt;-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File &quot;终末地.post.ps1&quot;&lt;/Arguments&gt;
+      &lt;WorkingDirectory&gt;PLACEHOLDER_PATH_TO_POST_SCRIPT_DIRECTORY&lt;/WorkingDirectory&gt;
+    &lt;/Exec&gt;
+  &lt;/Actions&gt;
+&lt;/Task&gt;
+</code></pre>
+<p>Copy the content into a new xml file, make the following changes, and save:</p>
+<ol>
+<li>Change <code>PLACEHOLDER_PATH_TO_OK_EF_APP_DIRECTORY</code> to the absolute path of the ok-ef app.</li>
+<li>Change <code>PLACEHOLDER_PATH_TO_PRE_SCRIPT_DIRECTORY</code> to the location of the <code>终末地.pre.ps1</code> file.</li>
+<li>Change <code>PLACEHOLDER_PATH_TO_POST_SCRIPT_DIRECTORY</code> to the location of the <code>终末地.post.ps1</code> file.</li>
+</ol>
+<p><code>-t 1</code> runs the 1st item of <code>onetime_tasks</code> in <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/config.py">src/config.py</a>, i.e. Daily Tasks. The number changes when the list order changes; verify the current registration order before changing to another number. <code>-e</code> exits ok-ef after the task finishes.</p>
+<blockquote>
+<p><strong>Index auto-correction at startup</strong>: tasks created through ok-ef&#39;s built-in 「Scheduled Tasks」 feature (the 「Scheduled Tasks」 tab in the GUI) store their <code>-t</code> argument in <code>configs/schedule_tasks_cache.json</code> and in the Windows scheduled task. On every app startup, it reads this app&#39;s tasks (<code>\ok-ef\</code>) from the cache, compares each name against the current <code>onetime_tasks</code> order, automatically rewrites <code>-t</code> to the correct current index, and syncs the Windows scheduled task. So after reordering <code>onetime_tasks</code> you don&#39;t need to fix the number manually — the next startup corrects it automatically; if this run was triggered by the scheduled task, it also corrects before running, ensuring the right task runs. Other ok-* apps&#39; tasks (e.g. <code>\ok-gf2\</code>) are not modified.</p>
+</blockquote>
+<p>Use <code>Win + R</code> and run <code>taskschd.msc</code> to open the Task Scheduler. Click <code>Action &gt; Import Task</code> to add the xml file above. Change the <code>Name</code> and click <code>OK</code>.</p>
+<p>(After creation a scheduled task cannot be renamed or moved; to modify it, right-click the task, delete it, and re-import. The xml file above is no longer needed after import and can be deleted.)</p>
+<p>The scheduled task is now created. At 4:00 AM every day, the computer automatically runs ok-ef.</p>
+<h3 id="3-modify-the-scheduled-task">3. Modify the scheduled task</h3>
+<h4 id="basic-usage">Basic usage</h4>
+<p>Use <code>Win + R</code> and run <code>taskschd.msc</code> to open the Task Scheduler, then right-click the scheduled task.</p>
+<ul>
+<li>Click <code>Run</code> to run the scheduled task manually.</li>
+<li>Click <code>Stop</code> to stop a running scheduled task. Note that ok-ef runs non-blocking and must be closed manually.</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/en/windows-task-scheduler.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-create-pre-hook-and-post-hook-files-from-the-templates" style="margin-left:10px">1. Create pre-hook and post-hook files from the templates</a><a href="#2-create-and-import-the-scheduled-task-file" style="margin-left:10px">2. Create and import the scheduled-task file</a><a href="#3-modify-the-scheduled-task" style="margin-left:10px">3. Modify the scheduled task</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

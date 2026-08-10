@@ -1,0 +1,510 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>API 参考 · ok-end-field</title><meta name="description" content="API 参考 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/API/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="API 参考 · ok-end-field"><meta property="og:description" content="API 参考 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/API/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="API 参考 · ok-end-field"><meta name="twitter:description" content="API 参考 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"API 参考 · ok-end-field","description":"API 参考 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/dev/API/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="./" class="active" aria-current="page">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../装备词条识别轮子/">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="ok-ef-api-参考">ok-ef API 参考</h1>
+<p>返回：<a href="../../../../docs/">文档索引</a> / <a href="../../../">README</a></p>
+<p>本文只记录 <strong>ok-end-field 自己定义并由任务复用的接口</strong>。<code>ocr</code>、<code>wait_ocr</code>、<code>wait_feature</code>、<code>wait_until</code>、<code>back</code>、<code>sleep</code>、<code>send_key</code> 等框架接口来自 <code>ok-script</code>，其完整参数和返回类型应以当前安装版本为准，不在此复制。</p>
+<p>源码权威位置：</p>
+<ul>
+<li>基类组合：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/BaseEfTask.py">BaseEfTask.py</a></li>
+<li>核心能力：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/src/core/base_mixin">src/core/base_mixin/</a></li>
+<li>业务能力：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/src/tasks/mixin">src/tasks/mixin/</a></li>
+<li>配置：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/global_config_store.py">global_config_store.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/BattleConfig.py">BattleConfig.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/interaction/KeyConfig.py">KeyConfig.py</a></li>
+</ul>
+<h2 id="1-baseeftask-与-mro">1. BaseEfTask 与 MRO</h2>
+<pre><code class="language-python">from src.core.BaseEfTask import BaseEfTask
+</code></pre>
+<p><code>BaseEfTask</code> 的实际基类顺序为：</p>
+<pre><code class="language-text">BaseEfTask
+├── WindowArrowDrawingMixin       src/core/base_mixin/window_arrow_drawing_mixin.py
+├── AccountOverrideMixin         src/core/base_mixin/account_override_mixin.py
+├── GameFlowMixin                src/core/base_mixin/game_flow_mixin.py
+├── RuntimeMixin                 src/core/base_mixin/runtime_mixin.py
+├── ok.BaseTask
+└── ProcessManager               src/core/base_mixin/process_manager.py
+</code></pre>
+<p>任务层 Mixin 通常最终继承 <code>BaseEfTask</code>：</p>
+<pre><code class="language-text">BattleMixin ────────────────&gt; BaseEfTask
+MapMixin ───────────────────&gt; BaseEfTask
+NavigationMixin ────────────&gt; BaseEfTask
+├── LiaisonMixin
+└── ZipLineMixin
+LoginMixin ─────────────────&gt; BaseEfTask
+└── AccountMixin
+</code></pre>
+<p>所有参与多重继承的 <code>__init__</code> 必须调用 <code>super().__init__(*args, **kwargs)</code>。任务配置应使用 <code>self.default_config.update(...)</code> 等增量方式，避免覆盖前序 Mixin 已注册的数据。</p>
+<p>初始化后常用属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>self.box</code></td>
+<td><code>ScreenPosition(self)</code>，提供常用屏幕区域</td>
+</tr>
+<tr>
+<td><code>self.key_config</code></td>
+<td>全局 <code>Game Hotkey Config</code> 的持久化 <code>Config</code></td>
+</tr>
+<tr>
+<td><code>self.key_manager</code></td>
+<td><code>KeyConfigManager(self.key_config)</code></td>
+</tr>
+<tr>
+<td><code>self.lang</code></td>
+<td>按运行时 locale 加载 <code>assets/lang/&lt;module&gt;.json</code> 的访问器</td>
+</tr>
+<tr>
+<td><code>self.current_user</code> / <code>self.current_account_id</code></td>
+<td>当前账号上下文</td>
+</tr>
+<tr>
+<td><code>self.once_sleep_time</code></td>
+<td>全局 <code>Ensure Main Once Action Sleep.SingleActionWithDelay</code></td>
+</tr>
+</tbody></table>
+<h3 id="1-1-坐标">1.1 坐标</h3>
+<pre><code class="language-text">def box_of_screen(
+    self, x=0, y=0, to_x=1.0, to_y=1.0,
+    width=0.0, height=0.0, name=None,
+    hcenter=False, vcenter=False, confidence=1.0,
+)
+
+def box_of_screen_scaled(
+    self, original_screen_width, original_screen_height,
+    x_original, y_original, to_x=0, to_y=0,
+    width_original=0, height_original=0, name=None,
+    hcenter=False, vcenter=False, confidence=1.0,
+)
+</code></pre>
+<p>前者使用当前屏幕的比例坐标；后者将参考分辨率坐标缩放到当前窗口。<code>BaseEfTask</code> 会将传入的比例值统一保留三位小数后交给框架。</p>
+<pre><code class="language-python">left_panel = self.box_of_screen(0.0, 0.1, 0.35, 0.9)
+button = self.box_of_screen_scaled(1920, 1080, 1600, 900, 1800, 1020)
+</code></pre>
+<p><code>ScreenPosition</code> 当前提供：<code>top_left</code>、<code>top_right</code>、<code>bottom_left</code>、<code>bottom_right</code>、<code>bottom_right_quarter</code>、<code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code>、<code>center</code>，以及 <code>nav_b/nav_c/nav_esc/nav_panel</code>、<code>interact_pick_f</code>、<code>combat_skill_1..4</code>、<code>combat_ult_1..4</code>、<code>combat_default_link_skill</code>、<code>combat_skill_bar</code>、<code>combat_ult_bar</code>。</p>
+<h3 id="1-2-特征匹配">1.2 特征匹配</h3>
+<p>定义于 <code>src/core/base_mixin/runtime_mixin.py</code>。</p>
+<pre><code class="language-text">def find_feature(
+    self, feature_name=None, horizontal_variance=0, vertical_variance=0,
+    threshold=0, use_gray_scale=False,
+    x=-1, y=-1, to_x=-1, to_y=-1, width=-1, height=-1,
+    box=None, canny_lower=0, canny_higher=0,
+    frame_processor=None, template=None,
+    match_method=cv2.TM_CCOEFF_NORMED, screenshot=False,
+    mask_function=None, frame=None, limit=0, target_height=0,
+    feature=None,
+)
+
+def find_one(
+    self, feature_name=None, horizontal_variance=0, vertical_variance=0,
+    threshold=0, use_gray_scale=False, box=None,
+    canny_lower=0, canny_higher=0, frame_processor=None,
+    template=None, mask_function=None, frame=None,
+    match_method=cv2.TM_CCOEFF_NORMED, screenshot=False,
+    limit=1, target_height=0, feature=None,
+)
+</code></pre>
+<ul>
+<li><code>feature=</code> 是 <code>feature_name=</code> 的别名。</li>
+<li><code>find_feature</code> 接受单个特征或 <code>list/tuple</code>；每个名称都会先经过分辨率适配。</li>
+<li>返回语义沿用框架：<code>find_feature</code> 返回结果列表，<code>find_one</code> 返回首个结果或空值。</li>
+<li>未显式传 <code>box</code> 时，框架可使用 <code>assets/coco_annotations.json</code> 的标注区域及 <code>src/config.py</code> 中的默认 variance/threshold。</li>
+</ul>
+<pre><code class="language-python">from src.data.FeatureList import FeatureList as fL
+
+results = self.find_feature([fL.monthly_card, fL.monthly_card2])
+confirm = self.find_one(fL.skip_dialog_confirm, threshold=0.8)
+if confirm:
+    self.click(confirm)
+</code></pre>
+<pre><code class="language-text">def get_feature_by_resolution(self, base_name: str)
+</code></pre>
+<p>根据 <code>self.width</code> 和 <code>FeatureList</code> 中实际存在的枚举值选择名称：</p>
+<table>
+<thead>
+<tr>
+<th>窗口宽度</th>
+<th>尝试顺序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&gt;= 3800</code></td>
+<td><code>_4k</code>、<code>_2k</code>、无后缀</td>
+</tr>
+<tr>
+<td><code>&gt;= 2500</code></td>
+<td><code>_2k</code>、<code>_4k</code>、无后缀</td>
+</tr>
+<tr>
+<td>其它</td>
+<td>无后缀、<code>_2k</code>、<code>_4k</code></td>
+</tr>
+</tbody></table>
+<p>全部不存在时抛出 <code>AttributeError</code>。传入值必须能与字符串拼接，通常使用 <code>FeatureList</code>（其成员是字符串枚举）或字符串。</p>
+<pre><code class="language-text">def wait_click_feature(
+    self, feature, horizontal_variance=0, vertical_variance=0,
+    threshold=0, relative_x=0.5, relative_y=0.5,
+    time_out=0, pre_action=None, post_action=None, box=None,
+    raise_if_not_found=True, use_gray_scale=False,
+    canny_lower=0, canny_higher=0, click_after_delay=0,
+    settle_time=-1, after_sleep=0, target_height=0,
+    alt: bool = False,
+)
+</code></pre>
+<p>命中后点击框内相对位置，成功返回 <code>True</code>，未命中且不抛异常时返回 <code>False</code>。<code>alt=True</code> 走 <code>click_with_alt</code>。</p>
+<h3 id="1-3-ocr-与登录截图">1.3 OCR 与登录截图</h3>
+<p>普通 <code>ocr</code>、<code>wait_ocr</code> 来自 <code>ok-script</code>。项目覆盖了点击等待和登录截图入口：</p>
+<pre><code class="language-text">def wait_click_ocr(
+    self, x=0, y=0, to_x=1, to_y=1, width=0, height=0,
+    box=None, name=None, match=None, threshold=0, frame=None,
+    target_height=0, time_out=0, raise_if_not_found=False,
+    recheck_time=0, after_sleep=0, post_action=None, log=False,
+    screenshot=False, settle_time=-1, lib=&quot;default&quot;, alt=False,
+)
+</code></pre>
+<p>它调用 <code>wait_ocr</code>，命中后点击并返回 OCR 结果；否则记录日志并返回 <code>None</code>。注意：<code>recheck_time &gt; 0</code> 时会等待 <code>recheck_time</code> 秒后重新 OCR，以新坐标再执行点击。</p>
+<pre><code class="language-text">def login_screenshot(self, need_active=True)
+
+def login_ocr(
+    self, x=0, y=0, to_x=1, to_y=1, match=None,
+    width=0, height=0, box=None, name=None, threshold=0,
+    target_height=0, use_grayscale=False, log=False,
+    frame_processor=None, lib=&quot;default&quot;, need_active=True,
+)
+
+def login_find_feature(
+    self, feature=None, horizontal_variance=0, vertical_variance=0,
+    threshold=0, use_gray_scale=False,
+    x=-1, y=-1, to_x=-1, to_y=-1, width=-1, height=-1,
+    box=None, canny_lower=0, canny_higher=0,
+    frame_processor=None, template=None,
+    match_method=cv2.TM_CCOEFF_NORMED, screenshot=False,
+    mask_function=None, frame=None, limit=0, target_height=0,
+    need_active=True,
+)
+</code></pre>
+<p>这些入口使用 Win32 屏幕捕获绕过登录界面无法由常规 WGC 帧可靠捕获的问题。<code>login_find_feature</code> 总会获取新的登录截图，传入的 <code>frame</code> 不会成为最终识别帧。</p>
+<h3 id="1-4-点击-按键和移动">1.4 点击、按键和移动</h3>
+<pre><code class="language-text">def click(
+    self, x=-1, y=-1, move_back=False, name=None, interval=-1,
+    move=True, down_time=0.01, after_sleep=0,
+    key=&quot;left&quot;, hcenter=False, vcenter=False,
+)
+</code></pre>
+<p><code>click</code> 在调用框架点击前先做危险状态检查；检测到危险图标会终止游戏并抛异常。可将 <code>Box</code> 作为第一个位置参数传入：</p>
+<pre><code class="language-python">self.click(confirm_box, after_sleep=0.5)
+self.click(0.5, 0.5)
+</code></pre>
+<pre><code class="language-text">def click_with_alt(
+    self, x=-1, y=-1, move_back=False, name=None, interval=-1,
+    move=True, down_time=0.01, after_sleep=0, key=&quot;left&quot;,
+)
+
+def scroll(self, x: int, y: int, count: int) -&gt; None
+def scroll_relative(self, x: float, y: float, count: int) -&gt; None
+</code></pre>
+<p><code>scroll</code> 使用窗口内像素位置；<code>scroll_relative</code> 使用 <code>0..1</code> 比例位置。正数向上、负数向下。需要控制游戏视角滚轮的代码当前另有直接调用 <code>pyautogui.scroll</code> 的场景，不能假定 UI 滚动封装适合所有视角操作。</p>
+<pre><code class="language-text">def press_key(self, key: str, down_time=0.02, after_sleep=0, interval=-1)
+def press_industry_key(self, key: str, down_time=0.02, after_sleep=0, interval=-1)
+def press_combat_key(self, key: str, down_time=0.02, after_sleep=0, interval=-1)
+def press_esc(self)
+def move_keys(self, keys, duration, need_back=False)
+</code></pre>
+<p>前三个方法分别以 <code>common</code>、<code>industry</code>、<code>combat</code> 类型调用 <code>KeyConfigManager.resolve_key</code>，参数传默认按键值，例如 <code>self.press_key(&quot;m&quot;)</code>。<code>move_keys</code> 用于 <code>w/a/s/d</code> 等持续移动；当前实现不使用 <code>need_back</code> 参数。</p>
+<p><code>press_esc()</code> 仅用于过剧情（对话时）触发 ESC，底层使用 <code>BaseEfTask</code> 统一初始化的键盘控制器。其他返回主界面、关闭页面等流程不得使用该函数。</p>
+<pre><code class="language-text">def dodge_forward(self, pre_hold=0.004, dodge_down_time=0.003, after_sleep=0.005)
+def dodge_backward(self, pre_hold=0.004, dodge_down_time=0.003, after_sleep=0.005)
+
+def move_to_target_once(
+    self, ocr_obj, max_step=100, min_step=20,
+    slow_radius=200, deadzone=4,
+)
+</code></pre>
+<p>步长、减速半径和死区会按当前分辨率缩放。</p>
+<h3 id="1-5-场景与-ui">1.5 场景与 UI</h3>
+<pre><code class="language-text">def is_main(self, esc=False, need_active=True) -&gt; bool
+def ensure_main(self, esc=True, time_out=90, after_sleep=2, need_active=True)
+def in_world(self)
+def in_combat_world(self)
+</code></pre>
+<ul>
+<li><code>in_world</code> 通过 <code>esc</code> 特征判断处于大世界，并设置 <code>_logged_in=True</code>。</li>
+<li><code>in_combat_world</code> 通过 <code>top_left_tab</code> 特征判断战斗场景；它不是“非战斗大世界”判断。</li>
+<li><code>is_main</code> 会依次尝试大世界检测、登录奖励/月卡弹窗处理、已知确认弹窗和 OCR 规则；<code>esc=True</code> 时最后按返回。</li>
+<li><code>ensure_main</code> 反复调用 <code>is_main</code>，默认超时为 90 秒，失败抛异常。</li>
+</ul>
+<pre><code class="language-text">def ensure_map(self, addtional_feature=None, time_out=30)
+</code></pre>
+<p>反复发送配置化地图键 <code>m</code>，通过 <code>in_map</code>、<code>transaction_icon</code>、<code>main_centre_icon</code> 或附加特征确认地图。参数名源码中保留拼写 <code>addtional_feature</code>。</p>
+<pre><code class="language-text">def wait_ui_stable(
+    self, method=&quot;phash&quot;, threshold=5, stable_time=0.5,
+    max_wait=5, refresh_interval=1, box=None,
+)
+</code></pre>
+<p>支持 <code>phash</code>、<code>dhash</code>、<code>pixel</code>、<code>ssim</code>。<code>box</code> 可为 <code>Box</code> 或 <code>(x, y, width, height)</code>。对于 <code>ssim</code>，<code>threshold</code> 是相似度，调用方通常应传如 <code>0.98</code> 的浮点值，而不是默认整数 <code>5</code>。</p>
+<pre><code class="language-text">def safe_back(self, match=None, feature=None, box=None,
+              time_out=30, once_time_out=2) -&gt; bool
+</code></pre>
+<p>至少提供 <code>match</code> 或 <code>feature</code>；目标未出现时持续返回，成功返回 <code>True</code>，总超时返回 <code>False</code>。</p>
+<h3 id="1-6-yolo">1.6 YOLO</h3>
+<pre><code class="language-text">def yolo_detect(
+    self, name: str | list[str], frame=None, box=None, conf=0.7,
+    detections=None, model_key=None,
+) -&gt; list[Box]
+
+def list_yolo_models(self) -&gt; list[str]
+def list_yolo_targets(self, model_key: str | None = None) -&gt; list[str]
+def set_yolo_model(self, model_key: str)
+def release_yolo_detector(self)
+</code></pre>
+<p>模型注册以 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/yolo/models.py">src/yolo/models.py</a> 为准。未传 <code>model_key</code> 时，根据第一个目标名称路由模型；传 <code>detections</code> 可跳过推理用于测试。ROI 检测结果会映射回全屏坐标，按置信度降序返回。空 <code>name</code> 抛 <code>ValueError</code>。开启框架 <code>use_overlay</code> 后，原始结果画黄色框、筛选结果画红色框。</p>
+<h2 id="2-配置-api">2. 配置 API</h2>
+<h3 id="2-1-任务配置">2.1 任务配置</h3>
+<p>任务通过框架属性增量注册配置：</p>
+<pre><code class="language-python">self.default_config.update({&quot;启用功能&quot;: True})
+self.config_description.update({&quot;启用功能&quot;: &quot;控制是否执行该步骤。&quot;})
+self.config_type[&quot;模式&quot;] = {
+    &quot;type&quot;: &quot;drop_down&quot;,
+    &quot;options&quot;: [&quot;快速&quot;, &quot;稳定&quot;],
+}
+self.default_config_group.update({&quot;常用&quot;: [&quot;启用功能&quot;, &quot;模式&quot;]})
+</code></pre>
+<p>运行时使用 <code>self.config.get(key, default)</code>。<code>BaseEfTask.load_config()</code> 会按完整 MRO 收集各类的 <code>config_key_migrations</code>，先迁移 <code>configs/&lt;TaskClass&gt;.json</code> 的旧键，再调用框架加载。</p>
+<pre><code class="language-text">def register_config_groups(self, groups: dict, dropdown_name=&quot;配置选择&quot;)
+</code></pre>
+<p>该方法创建带 <code>sub_configs</code> 的下拉配置，并为分组内尚无默认值的键补 <code>None</code>。它会直接使用 <code>self.config_description.update(...)</code>，调用前应确保任务已按框架惯例初始化配置字典。</p>
+<h3 id="2-2-全局配置">2.2 全局配置</h3>
+<pre><code class="language-python">from src.core.global_config_store import (
+    KEY_CONFIG_NAME,
+    get_global_config,
+)
+
+hotkeys = get_global_config(KEY_CONFIG_NAME)
+map_key = hotkeys.get(&quot;Map Key&quot;, &quot;m&quot;)
+</code></pre>
+<p>当前全局配置项：</p>
+<table>
+<thead>
+<tr>
+<th>常量/名称</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Game Hotkey Config</code></td>
+<td>通用、工业、战斗键位</td>
+</tr>
+<tr>
+<td><code>Battle Config</code></td>
+<td><code>DEFAULT_BATTLE_CONFIG</code> 战斗参数</td>
+</tr>
+<tr>
+<td><code>Ensure Main Once Action Sleep</code></td>
+<td><code>SingleActionWithDelay</code></td>
+</tr>
+<tr>
+<td><code>Zip Line Config</code></td>
+<td>送货/淤积点滑索路线与滚动设置</td>
+</tr>
+</tbody></table>
+<p><code>get_global_config(name)</code> 返回持久化 <code>ok.util.config.Config</code>。未知名称只有在已加载配置中能找到对应键时才回退返回该配置，否则抛 <code>RuntimeError</code>。全局配置页由 <code>get_all_visible_configs()</code> 和 <code>GlobalConfigTab</code> 构建。</p>
+<h3 id="2-3-按键配置">2.3 按键配置</h3>
+<pre><code class="language-python">class KeyConfigManager:
+    def __init__(self, key_config: dict = None): ...
+    def update_config(self, key_config: dict): ...
+    def resolve_key(self, key: str, key_type: str = &quot;common&quot;) -&gt; str: ...
+</code></pre>
+<p>不存在 <code>resolve_common_key</code>、<code>resolve_industry_key</code> 或 <code>resolve_combat_key</code>。<code>resolve_key</code> 在指定默认表中按默认值反查配置名称，再读取用户值；找不到时原样返回。</p>
+<p>当前默认表比旧文档多出以下键：</p>
+<ul>
+<li>通用：<code>Handbook Key=f8</code>、<code>Recruitment Key=f9</code></li>
+<li>工业：<code>Area Build Key=y</code>、<code>Blueprint Key=f1</code>、<code>Product Icon Toggle Key=f4</code></li>
+</ul>
+<p>所有可改键操作应走 <code>press_key</code>/<code>press_industry_key</code>/<code>press_combat_key</code>。固定技能数字、方向键和系统修饰键等代码可按其明确语义使用底层发送接口。</p>
+<h3 id="2-4-战斗配置与账号覆盖">2.4 战斗配置与账号覆盖</h3>
+<pre><code class="language-text">def get_battle_config(self, key: str, default=None)
+</code></pre>
+<p><code>BattleMixin</code> 的读取顺序：</p>
+<ol>
+<li><code>BattleConfigManager</code> 从全局 <code>Battle Config</code> 取值。</li>
+<li>任务配置 <code>战斗配置</code> 为 <code>使用全局配置</code> 时直接返回全局值。</li>
+<li>为 <code>使用独立配置</code> 时读取当前任务配置，以全局值兜底。</li>
+<li><code>AccountOverrideMixin</code> 绑定后的 <code>self.config.get</code> 可再按当前稳定账号 ID 应用账号任务覆盖；账号覆盖优先级最高。</li>
+</ol>
+<p>账号上下文通过以下接口设置：</p>
+<pre><code class="language-text">def set_current_account(self, username, account_id)
+
+def iter_multi_account_context(
+    self, repeat_times=1, empty_accounts_message=None,
+    account_log_suffix=&quot;&quot;, allow_multi_account=True,
+)
+</code></pre>
+<p><code>iter_multi_account_context</code> 在多账户模式下解析账号列表、绑定账号覆盖并调用 <code>login_flow(username)</code>；单账号模式清空账号上下文。账号列表每行只需要账号，旧 <code>账号, 密码</code> 格式仅取逗号前账号，密码被忽略。</p>
+<h2 id="3-业务-mixin">3. 业务 Mixin</h2>
+<h3 id="3-1-battlemixin">3.1 BattleMixin</h3>
+<pre><code class="language-python">from src.tasks.mixin.battle_mixin import BattleMixin
+</code></pre>
+<pre><code class="language-text">def in_combat(self, required_yellow=0)
+def in_team(self)
+def is_combat_ended(self)
+def wait_in_combat(self, time_out=3, click=False)
+def get_skill_bar_count(self)
+def ocr_lv(self)
+def use_ult(self, ult_sequence: str = None)
+def use_link_skill(self)
+def approach_enemy(self)
+def auto_battle(self, no_battle: bool = False)
+</code></pre>
+<p>关键语义：</p>
+<ul>
+<li><code>in_team</code> 从首个框开始匹配 <code>skill_1</code>，随后再命中一个连续技能即确认队伍状态（至少 2 个特征；<code>skill_1</code> 位于最后一个框时为单人队伍，1 个即可）。</li>
+<li><code>in_combat</code> 要求技能条数量达到阈值、处于队伍且没有等级 UI。</li>
+<li><code>is_combat_ended</code> 要求内部退出条件连续命中两次；该条件是“出现等级 UI 或不在队伍”。</li>
+<li><code>use_ult(None)</code> 按 <code>1..4</code> 寻找可用终极技；传值时只尝试该角色。返回是否释放成功。</li>
+<li><code>use_link_skill</code> 仅在识别到连携技特征后发送配置化战斗键 <code>e</code>。</li>
+<li><code>auto_battle</code> 每轮委托 <code>AutoCombatLogic.run</code>，全局保护超时 420 秒；<code>no_battle=True</code> 传给战斗逻辑，使其等待而不主动战斗。成功/失败返回布尔值。</li>
+<li>战斗结束并非通过 YOLO 单一判断；当前循环还结合战斗时间和 <code>battle_space_left</code>/<code>b</code> 特征。</li>
+</ul>
+<h3 id="3-2-mapmixin">3.2 MapMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.map_mixin import MapMixin
+
+def task_to_transfer_point(self, need_location_list=None)
+def clear_icon_in_map(self, need_reserve_icon_name=None, ocr=False)
+def to_near_transfer_point(self, after_track, need_location_list=None)
+</code></pre>
+<p><code>task_to_transfer_point</code> 从任务界面定位地图，地图稳定后再调用 <code>to_near_transfer_point</code>。<code>to_near_transfer_point</code> 传送至附近传送点。</p>
+<h3 id="3-3-navigationmixin">3.3 NavigationMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.navigation_mixin import NavigationMixin
+
+def navigate_until_target(
+    self, target, nav=None,
+    target_is_ocr=True, nav_is_ocr=False,
+    time_out=60, pre_loop_callback=None,
+    found_special_callback=None,
+    target_is_yolo=False, nav_is_yolo=False,
+    box=None, target_vertical_variance=0.0,
+    need_v=False, max_run_time=-1,
+    allow_rotate_search=True,
+)
+</code></pre>
+<p>持续按 <code>W</code> 前进，目标和导航标识分别可用 OCR、YOLO 或 Feature。<code>nav=None</code> 表示纯直线搜索；<code>found_special_callback</code> 返回非 <code>None</code> 时该值直接作为函数结果。目标需持续稳定 2 秒（OCR）或 1 秒（其它方式）才返回 <code>True</code>。超时返回 <code>False</code>。<code>max_run_time</code> 只限制 <code>ctrl</code> 切换的奔跑累计时间，不限制按住 <code>W</code>：<code>-1</code> 不限制，<code>0</code> 全程步行，正数达到上限后切步行。<code>allow_rotate_search</code> 默认 <code>True</code>，导航连续丢失时旋转视角整圈搜索；送礼等不应转动视角的场景传 <code>False</code> 跳过旋转直接按中键并后退搜索。</p>
+<pre><code class="language-text">def start_tracking_and_align_target(
+    self, target_feature_in_map, target_feature_out_map,
+)
+</code></pre>
+<p>在地图点击目标并启动追踪，关闭地图，等待地图外图标并做水平对齐；返回布尔值。</p>
+<pre><code class="language-text">def align_ocr_or_find_target_to_center(
+    self, ocr_match_or_feature_name_list,
+    only_x=False, only_y=False, box=None, threshold=0.8,
+    max_time=50, ocr=True, use_yolo=False, back_prev=False,
+    raise_if_fail=True, is_num=False, need_scroll=False,
+    max_step=120, min_step=20, slow_radius=350, deadzone=8,
+    once_time=0.05, tolerance=50,
+    ocr_frame_processor_list=None, allow_random_move=True,
+)
+</code></pre>
+<p>在 OCR、Feature 或 YOLO 模式下将目标对齐屏幕中心。<code>max_time</code> 是算法尝试尺度，内部最多循环 <code>max_time * 2</code>，不是秒数。失败时默认抛异常；<code>raise_if_fail=False</code> 返回 <code>False</code>。<code>back_prev</code> 参数当前未被方法体使用。</p>
+<h3 id="3-4-liaisonmixin">3.4 LiaisonMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.liaison_mixin import LiaisonMixin
+
+def transfer_to_home_point(self, box=None, should_check_out_boat=False)
+def navigate_to_main_hall(self) -&gt; bool
+def navigate_to_operator_liaison_station(self)
+def perform_operator_liaison(self)
+def collect_gifts(self, time_out=30)
+def give_gifts(self, time_out=30, gift_entry_clicked=False)
+def collect_and_give_gifts(self)
+</code></pre>
+<ul>
+<li><code>transfer_to_home_point</code> 默认在地图左半屏找传送点；调用方传 <code>box=self.box.right</code> 才是右侧点。<code>should_check_out_boat=True</code> 的实际语义是：若点击不到帝江号入口，则认为已经在帝江号区域并直接返回主界面，不会执行“退出好友船”。</li>
+<li><code>navigate_to_main_hall</code> 最多向前移动两次并 OCR 区域名；即使未识别到也记录日志后返回 <code>True</code>，是宽松检查。</li>
+<li><code>navigate_to_operator_liaison_station</code> 使用地图追踪和 <code>navigate_until_target</code>；途中发现聊天图标可返回 <code>LiaisonResult.FIND_CHAT_ICON</code>，因此返回值不只布尔值。</li>
+<li><code>perform_operator_liaison</code> 选择配置的优先对象，找不到时回退任一可联络对象，完成联络界面、目标对齐和聊天交互；它不包含收礼/送礼步骤。</li>
+<li><code>collect_and_give_gifts</code> 处理当前交流界面中的收礼或送礼入口；收礼成功后继续尝试送礼。</li>
+</ul>
+<h3 id="3-5-ziplinemixin">3.5 ZipLineMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.zip_line_mixin import ZipLineMixin
+
+def on_zip_line_start(
+    self, delivery_to, need_scroll=None, target=None, need_v=True,
+)
+
+def zip_line_list_go(
+    self, zip_line_list, need_scroll=None, target=None, need_v=False,
+)
+
+def ensure_click_on_zip_line(self, max_attempts=5)
+</code></pre>
+<p><code>on_zip_line_start</code> 先等待滑索 UI，随后从 <code>self.config[delivery_to]</code> 读取整数序列并调用 <code>zip_line_list_go</code>；它不是接收距离列表的入口。每段距离通过金色/白色 HSV 预处理 OCR 并居中，点击进入滑索后持续发送固定键 <code>e</code>，直到滑索 UI 再次出现。单段等待上限 240 秒；初始滑索 UI 等待上限 60 秒，超时抛异常。</p>
+<p><code>target</code> 为 <code>(目标, &quot;ocr&quot; | &quot;yolo&quot; | 其它)</code>，用于最后一段后的目标对齐；其它类型按 Feature 处理。流程末尾确保回到主界面。</p>
+<h3 id="3-6-loginmixin">3.6 LoginMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.login_mixin import LoginMixin
+
+def login_flow(self, username: str, password: str | None = None)
+def click_text(
+    self, match: str, box=None,
+    need_wait_disappear=True, success_match=None,
+)
+</code></pre>
+<p><code>login_flow</code> 不是用户名密码输入流程。它用于切换到登录界面的“最近账号”：</p>
+<ol>
+<li>判断当前是否已登录，必要时回到主界面并退出当前账号。</li>
+<li>等待登录界面的 <code>logout</code> 特征并确认登出。</li>
+<li>点击“最近”，再用 <code>username</code> 后四位 OCR 点击最近账号。</li>
+<li>点击“登录”，通过重新出现 <code>logout</code> 特征确认成功。</li>
+</ol>
+<p><code>password</code> 仅为旧调用兼容参数，当前不存储、不输入、也不参与账号判定。失败路径可能返回 <code>False</code> 或抛 <code>RuntimeError</code>；成功无显式返回值。后四位匹配要求最近账号列表中后四位唯一。</p>
+<h2 id="4-语言资源-api">4. 语言资源 API</h2>
+<pre><code class="language-python">from src.data.lang import (
+    ACTIVE_LOCALES_CONFIG,
+    SUPPORTED_LOCALES,
+    get_lang_accessor,
+    get_lang_module_value,
+)
+</code></pre>
+<p>每个模块对应单个 <code>assets/lang/&lt;module&gt;.json</code>：</p>
+<pre><code class="language-json">{
+  &quot;k_confirm&quot;: {
+    &quot;zh_CN&quot;: {&quot;string&quot;: &quot;确认&quot;},
+    &quot;zh_TW&quot;: {&quot;string&quot;: &quot;確認&quot;}
+  },
+  &quot;k_amount&quot;: {
+    &quot;zh_CN&quot;: {&quot;pattern&quot;: &quot;^\\d+$&quot;},
+    &quot;zh_TW&quot;: {&quot;pattern&quot;: &quot;^\\d+$&quot;}
+  }
+}
+</code></pre>
+<p>访问 <code>self.lang.&lt;module&gt;.&lt;key&gt;</code> 时，<code>string</code> 返回字符串、<code>pattern</code> 返回编译后的正则、<code>terms</code> 返回列表。直接属性解析的优先级是 <code>string</code>、<code>pattern</code>、<code>terms</code>；<code>LangNode.as_matcher()</code>/<code>build_matcher()</code> 的优先级是 <code>pattern</code>、<code>string</code>、<code>terms</code>。正常资源节点应只设置其中一种，避免依赖该差异。</p>
+<p>当前活动 OCR locale 只有 <code>zh_CN</code> 和 <code>zh_TW</code>；其它四种 locale 虽可存在于 JSON 和 gettext 目录，但在 <code>ACTIVE_LOCALES_CONFIG</code> 中关闭，不会进入 <code>SUPPORTED_LOCALES</code>。完整维护流程见 <a href="../i18n_OCR配置流程/">i18n 与 OCR 配置流程</a>。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/API.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-baseeftask-与-mro" style="margin-left:0px">1. BaseEfTask 与 MRO</a><a href="#1-1-坐标" style="margin-left:10px">1.1 坐标</a><a href="#1-2-特征匹配" style="margin-left:10px">1.2 特征匹配</a><a href="#1-3-ocr-与登录截图" style="margin-left:10px">1.3 OCR 与登录截图</a><a href="#1-4-点击-按键和移动" style="margin-left:10px">1.4 点击、按键和移动</a><a href="#1-5-场景与-ui" style="margin-left:10px">1.5 场景与 UI</a><a href="#1-6-yolo" style="margin-left:10px">1.6 YOLO</a><a href="#2-配置-api" style="margin-left:0px">2. 配置 API</a><a href="#2-1-任务配置" style="margin-left:10px">2.1 任务配置</a><a href="#2-2-全局配置" style="margin-left:10px">2.2 全局配置</a><a href="#2-3-按键配置" style="margin-left:10px">2.3 按键配置</a><a href="#2-4-战斗配置与账号覆盖" style="margin-left:10px">2.4 战斗配置与账号覆盖</a><a href="#3-业务-mixin" style="margin-left:0px">3. 业务 Mixin</a><a href="#3-1-battlemixin" style="margin-left:10px">3.1 BattleMixin</a><a href="#3-2-mapmixin" style="margin-left:10px">3.2 MapMixin</a><a href="#3-3-navigationmixin" style="margin-left:10px">3.3 NavigationMixin</a><a href="#3-4-liaisonmixin" style="margin-left:10px">3.4 LiaisonMixin</a><a href="#3-5-ziplinemixin" style="margin-left:10px">3.5 ZipLineMixin</a><a href="#3-6-loginmixin" style="margin-left:10px">3.6 LoginMixin</a><a href="#4-语言资源-api" style="margin-left:0px">4. 语言资源 API</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

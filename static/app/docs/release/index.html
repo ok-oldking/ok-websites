@@ -1,0 +1,68 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>打包与发布 · ok-script-app</title><meta name="description" content="打包与发布 — ok-script-app"><meta name="keywords" content="ok-script-app, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://app.ok-script.com/docs/release/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="打包与发布 · ok-script-app"><meta property="og:description" content="打包与发布 — ok-script-app"><meta property="og:url" content="https://app.ok-script.com/docs/release/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="打包与发布 · ok-script-app"><meta name="twitter:description" content="打包与发布 — ok-script-app">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"打包与发布 · ok-script-app","description":"打包与发布 — ok-script-app","url":"https://app.ok-script.com/docs/release/","inLanguage":"zh-CN","dateModified":"2026-08-10T08:34:53+08:00","author":{"@type":"Organization","name":"ok-script-app","url":"https://github.com/ok-oldking/ok-script-app"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script-app"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">首页</a><a href="../getting-started/">快速开始</a><a href="../configuration/">应用配置</a><a href="../tasks/">任务开发</a><a href="./" class="active" aria-current="page">打包与发布</a><a href="../documentation/">文档网站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script-app</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="打包与发布">打包与发布</h1>
+<h2 id="发布相关文件">发布相关文件</h2>
+<ul>
+<li><code>.github/workflows/build.yml</code>：监听 <code>v*</code> tag，运行测试、同步更新文件、打包并创建 GitHub Release。</li>
+<li><code>pyappify.yml</code>：定义应用名称、入口、图标、Python 版本和更新仓库。</li>
+<li><code>deploy.txt</code>：定义同步到独立更新仓库的文件。</li>
+<li><code>.github/workflows/mirrorchyan_*.yml</code>：可选的 Mirror酱上传和更新日志工作流。</li>
+</ul>
+<h2 id="修改构建工作流">修改构建工作流</h2>
+<p>首次发布前，根据自己的项目修改 <code>.github/workflows/build.yml</code>：</p>
+<ul>
+<li>更新 Git 用户信息。</li>
+<li>更新源码库和更新库地址。</li>
+<li>更新安装包名称和 Release 下载链接。</li>
+<li>配置工作流需要的 GitHub Actions Secrets。</li>
+<li>删除不使用的 CNB、网盘或其他模板专用内容。</li>
+</ul>
+<h2 id="mirror酱">Mirror酱</h2>
+<h3 id="接入-mirror酱">接入 Mirror酱</h3>
+<p>保留并修改：</p>
+<ul>
+<li><code>.github/workflows/mirrorchyan_uploading.yml</code></li>
+<li><code>.github/workflows/mirrorchyan_release_note.yml</code></li>
+</ul>
+<p>更新其中的 <code>owner</code>、<code>repo</code>、<code>mirrorchyan_rid</code> 和安装包文件名，保留 <code>build.yml</code> 中触发这两个工作流的步骤，并配置 <code>MirrorChyanUploadToken</code>。</p>
+<h3 id="不接入-mirror酱">不接入 Mirror酱</h3>
+<p>删除两个 MirrorChyan workflow 文件，并删除 <code>build.yml</code> 中的 <code>Trigger MirrorChyanUploading</code> 步骤。</p>
+<h2 id="推送版本-tag">推送版本 tag</h2>
+<p>提交并推送初始化结果，再创建符合 <code>v*</code> 规则的 tag：</p>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Initialize project&quot;
+git push origin HEAD
+git tag v0.1.0
+git push origin v0.1.0
+</code></pre>
+<p>GitHub Actions 会运行测试、打包 EXE，并创建对应的 GitHub Release。发布前再次搜索 <code>.github/workflows</code>，确认没有遗留的模板仓库地址、项目名或未配置的 Secrets。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app/blob/adce86505f64b2676a957cc4d7cb2837012a3b05/docs/release.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#发布相关文件" style="margin-left:0px">发布相关文件</a><a href="#修改构建工作流" style="margin-left:0px">修改构建工作流</a><a href="#mirror酱" style="margin-left:0px">Mirror酱</a><a href="#接入-mirror酱" style="margin-left:10px">接入 Mirror酱</a><a href="#不接入-mirror酱" style="margin-left:10px">不接入 Mirror酱</a><a href="#推送版本-tag" style="margin-left:0px">推送版本 tag</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../">全部项目</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20260810101001" defer></script></body></html>

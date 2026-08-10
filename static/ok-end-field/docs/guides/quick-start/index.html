@@ -1,0 +1,45 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>快速上手 · ok-end-field</title><meta name="description" content="快速上手 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/guides/quick-start/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="快速上手 · ok-end-field"><meta property="og:description" content="快速上手 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/guides/quick-start/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="快速上手 · ok-end-field"><meta name="twitter:description" content="快速上手 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"快速上手 · ok-end-field","description":"快速上手 — ok-end-field","url":"https://ok-script.com/ok-end-field/docs/guides/quick-start/","inLanguage":"zh-CN","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">文档首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="./" class="active" aria-current="page">快速上手</a><a href="../troubleshooting/">常见问题</a><a href="../../features/overview/">功能概览</a><a href="../../日常任务/">日常任务</a><a href="../../体力本/">刷体力</a><a href="../../自动战斗/">自动战斗</a><a href="../../排轴/">排轴</a><a href="../../运送委托接取/">运送委托接取</a><a href="../../自动送货/">自动送货</a><a href="../../仓库物品转移/">仓库物品转移</a><a href="../../物品导航与实时检测/">物品导航与实时检测</a><a href="../../账号配置用户指南/">账号配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 与覆盖逻辑</a><a href="../../Windows 计划任务/">Windows 计划任务</a><a href="../../鼠标转向标定汇总/">鼠标转向标定</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../../dev/QUICKSTART/">从源码运行</a><a href="../../dev/DEVELOPMENT/">开发指南</a><a href="../../dev/API/">API 参考</a><a href="../../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../../dev/键盘操作体系/">键盘操作体系</a><a href="../../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../../dev/文字识别示例/">文字识别示例</a><a href="../../dev/装备词条识别轮子/">装备词条识别</a><a href="../../dev/切换账户流程分析/">账户切换流程</a><a href="../../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../../dev/任务执行情况汇总报告/">任务执行情况汇总</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="快速上手">快速上手</h1>
+<h2 id="启动任务">启动任务</h2>
+<ol>
+<li>按照<a href="../../getting-started/configuration/">使用前配置</a>检查游戏窗口、画面和按键设置。</li>
+<li>启动 <code>ok-ef</code>，进入与任务相符的游戏场景。</li>
+<li>在应用中选择任务，并检查任务的配置项与前置条件。</li>
+<li>点击开始，任务运行期间观察日志和游戏画面。</li>
+</ol>
+<p>日常任务、刷体力、自动战斗等功能的配置与限制见<a href="../../features/overview/">功能概览</a>。</p>
+<h2 id="停止与恢复">停止与恢复</h2>
+<p>画面与预期不一致、游戏窗口失焦或需要临时接管时，应立即在应用中停止任务。恢复前重新确认场景、窗口和前置条件，不要依赖长时间重复输入纠正异常画面。</p>
+<h2 id="定时执行">定时执行</h2>
+<p>日常任务、自动送货、影拓丰碑及游戏启动检查任务支持内置计划任务。也可以通过 <a href="../../Windows 计划任务/">Windows 计划任务</a> 调用已注册的一次性任务。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/guides/quick-start.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#启动任务" style="margin-left:0px">启动任务</a><a href="#停止与恢复" style="margin-left:0px">停止与恢复</a><a href="#定时执行" style="margin-left:0px">定时执行</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

@@ -1,0 +1,174 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>送貨地區維護 · ok-end-field</title><meta name="description" content="送貨地區維護 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/update/送货地区维护工作流/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="送貨地區維護 · ok-end-field"><meta property="og:description" content="送貨地區維護 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/update/送货地区维护工作流/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="送貨地區維護 · ok-end-field"><meta name="twitter:description" content="送貨地區維護 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"送貨地區維護 · ok-end-field","description":"送貨地區維護 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/update/送货地区维护工作流/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../主数据维护工作流/">主資料維護</a><a href="./" class="active" aria-current="page">送貨地區維護</a><a href="../日常送礼维护工作流/">日常送禮維護</a><a href="../../dev/QUICKSTART/">從原始碼執行</a><a href="../../dev/DEVELOPMENT/">開發指南</a><a href="../../dev/API/">API 參考</a><a href="../../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../../dev/键盘操作体系/">鍵盤操作體系</a><a href="../../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../../dev/文字识别示例/">文字識別示例</a><a href="../../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../../dev/切换账户流程分析/">賬戶切換流程</a><a href="../../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="送貨地區維護工作流">送貨地區維護工作流</h1>
+<p>返回：<a href="../../">文件索引</a> / <a href="../../../">README</a></p>
+<p>本文說明自動送貨模組在新增或調整地區時應該如何維護。通常只需要更新地區資料和對應模板資源，不必修改送貨流程本身。</p>
+<hr>
+<h2 id="一-適用場景">一、適用場景</h2>
+<p>以下情況建議按這份流程處理：</p>
+<ol>
+<li>新增一個送貨地區。</li>
+<li>調整現有地區的委託地點、目標 NPC 或 OCR 容錯規則。</li>
+<li>補充新的接單特徵標籤或模板標註。</li>
+<li>修正某個地區的傳送點搜尋區域。</li>
+<li>新增接單券數或補齊多語言地點/NPC 名稱。</li>
+</ol>
+<hr>
+<h2 id="二-先改資料">二、先改資料</h2>
+<p>送貨地區的主配置集中在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/delivery_area.py">src/data/delivery_area.py</a>。</p>
+<h3 id="2-1-地區配置結構">2.1 地區配置結構</h3>
+<p>每個地區通常需要補齊以下欄位：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>task_model_area</code></td>
+<td>地區名。若與地區名一致，可以省略。</td>
+</tr>
+<tr>
+<td><code>feature_label_area_code</code></td>
+<td>接單特徵標籤字首，例如武陵使用 <code>wuling</code>。</td>
+</tr>
+<tr>
+<td><code>delivery_locations</code></td>
+<td>當前地區可識別的區域名列表。</td>
+</tr>
+<tr>
+<td><code>delivery_targets_by_location</code></td>
+<td>每個地點對應的目標 NPC 列表。</td>
+</tr>
+<tr>
+<td><code>transfer_search_area</code></td>
+<td>每個地點在地圖裡搜尋傳送點時使用的區域。</td>
+</tr>
+<tr>
+<td><code>ocr_priority_locations</code></td>
+<td>預留的 OCR 地點優先順序；當前只有 service 訪問器，任務流程尚未呼叫。</td>
+</tr>
+</tbody></table>
+<p>讀取和校驗這些欄位的入口位於 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/delivery_area_service.py">src/data/delivery_area_service.py</a>，任務流程不應自行復制地區對映。</p>
+<h3 id="2-2-新增地區時的最小修改">2.2 新增地區時的最小修改</h3>
+<p>如果只是新增一個地區，建議直接參考 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/delivery_area.py">src/data/delivery_area.py</a> 裡現有的“武陵”配置，補一份完整塊：</p>
+<ol>
+<li>先填寫地區名。</li>
+<li>再填寫對應區域名列表和每個地點對應的目標 NPC。</li>
+<li>為每個地點補上傳送點搜尋區域。</li>
+<li>按需要補充新的接單特徵標籤。</li>
+</ol>
+<h3 id="2-3-接單特徵標籤">2.3 接單特徵標籤</h3>
+<p>接單券數需要先加入 <code>DELIVERY_TARGET_TICKET_NUM_OPTIONS</code>。<code>format_delivery_ticket_price_code()</code> 會自動把正整數轉換為萬券價格碼，無需維護第二張對映表。</p>
+<p>系統會把目標券數轉換成價格碼，再拼成形如 <code>wuling_7_31w</code> 的標籤。</p>
+<p>券價格碼的含義如下：</p>
+<table>
+<thead>
+<tr>
+<th>價格碼</th>
+<th>含義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>7_31w</code></td>
+<td>7.31 萬券</td>
+</tr>
+<tr>
+<td><code>7_98w</code></td>
+<td>7.98 萬券</td>
+</tr>
+<tr>
+<td><code>11_9w</code></td>
+<td>11.9 萬券</td>
+</tr>
+<tr>
+<td><code>15_9w</code></td>
+<td>15.9 萬券</td>
+</tr>
+<tr>
+<td><code>16_3w</code></td>
+<td>16.3 萬券</td>
+</tr>
+</tbody></table>
+<p>當前下拉值為 <code>163000</code>、<code>159000</code>、<code>119000</code>、<code>79800</code>、<code>73100</code>。新增數值後，必須存在 <code>{feature_label_area_code}_{价格码}</code> 的基礎標籤；否則 <code>get_accept_feature_labels()</code> 會返回空列表，即使 <code>_2k/_4k</code> 變體已經存在也不會啟用該券數。</p>
+<p>如果新增地區需要接單特徵模板：</p>
+<ol>
+<li>先在 <code>feature_label_area_code</code> 中定義地區字首。</li>
+<li>再確認 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/FeatureList.py">src/data/FeatureList.py</a> 裡已經存在對應標籤，例如 <code>wuling_7_31w</code>。</li>
+<li>如果沒有，在模板 Tab 裡框選裁圖後儲存；命名格式為 <code>{feature_label_area_code}_{券价格码}</code>。</li>
+<li>儲存時建議勾選“儲存列舉”，填入 <code>src/data/FeatureList</code>，這樣會自動生成對應 <code>FeatureList</code> 列舉，後續程式碼可直接引用，避免手寫標籤字串導致拼寫錯誤。</li>
+<li>建議一併補齊 <code>_2k</code>、<code>_4k</code> 等變體。</li>
+</ol>
+<p>當前程式碼會在任務配置裡自動讀取地區列表，所以只要 <code>DELIVERY_AREA_CONFIG</code> 裡增加了新地區，UI 下拉框也會自動出現新選項。</p>
+<h3 id="2-4-地點-npc-與本地化">2.4 地點、NPC 與本地化</h3>
+<p><code>delivery_area.py</code> 使用簡體中文規範名作為資料鍵。新增地區、地點或目標 NPC 後，還要在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/assets/lang/world_map.json"><code>assets/lang/world_map.json</code></a> 中補齊對應條目和現有 locale：</p>
+<ol>
+<li>地區和地點用於地圖文本、地點提取與傳送區域回填。</li>
+<li>NPC 名用於 <code>get_delivery_target_ocr_pattern()</code> 生成當前語言 OCR 匹配器。</li>
+<li>等長字元的穩定 OCR 混淆可加入 <code>assets/ocr_fix/ocr_text_fix.json</code>。執行時補丁會擴充套件傳入 OCR 的字串/正則匹配條件，使其容忍錯字，但不會改寫 OCR 輸出文本；不要把錯字寫進規範主資料。</li>
+</ol>
+<hr>
+<h2 id="四-驗證順序">四、驗證順序</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[新增或调整地区数据] --&gt; B[打开自动送货配置]
+    B --&gt; C{地区下拉是否出现}
+    C --&gt;|否| D[检查 DELIVERY_AREA_CONFIG]
+    C --&gt;|是| E[运行仅接取或仅送货]
+    E --&gt; F{地点识别正确}
+    F --&gt;|否| G[调整 OCR 容错或地点配置]
+    F --&gt;|是| H{目标 NPC 正确}
+    H --&gt;|否| I[调整目标列表或 OCR 修正]
+    H --&gt;|是| J[验证传送点和滑索序列]
+</code></pre>
+<p>建議按下面順序檢查，能最快定位問題：</p>
+<ol>
+<li>開啟任務配置頁，確認地區下拉框裡已經出現新地區。</li>
+<li>執行一次“僅接取”或“僅送貨”流程，驗證地點識別是否正確。</li>
+<li>檢查目標 NPC 是否能被 OCR 正確識別。</li>
+<li>如果傳送點選擇錯誤，再回頭調整 <code>transfer_search_area</code>；配置支援 <code>{&quot;preset&quot;: &quot;top&quot;}</code> 或 <code>x/y/to_x/to_y</code> 相對座標。</li>
+<li>如果接單按鈕識別失敗，確認基礎價格標籤存在，再補模板和解析度變體。</li>
+<li>執行聚焦測試：</li>
+</ol>
+<pre><code class="language-powershell">python -m unittest tests.TestDeliveryAreaConfig tests.TestCheckLang tests.TestPoLocaleConsistency
+</code></pre>
+<p>新增券數時應在 <code>TestDeliveryAreaConfig.test_get_accept_feature_labels_returns_mapping_by_target_ticket</code> 中補期望值；新增自定義區域欄位時補 service 層測試，不要只依賴手工執行。</p>
+<hr>
+<h2 id="五-維護原則">五、維護原則</h2>
+<ol>
+<li>地區資料優先放在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/delivery_area.py">src/data/delivery_area.py</a>，不要把地區邏輯散落到任務類裡。</li>
+<li>等長字元混淆的匹配容錯由 <code>assets/ocr_fix/ocr_text_fix.json</code> 統一維護；它擴充套件匹配條件而不改寫識別結果。長度變化、詞序變化或業務專屬規則應維護在語言 pattern 或對應解析邏輯中。</li>
+<li>使用框架的模板 Tab 功能新增模板。</li>
+<li>新地區先補資料，再補模板，最後做一次最小閉環驗證。</li>
+</ol>
+<p>相關文件：<a href="../../自动送货/">自動送貨</a> / <a href="../../dev/滑索与送货逻辑/">滑索與送貨邏輯</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/update/送货地区维护工作流.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#一-適用場景" style="margin-left:0px">一、適用場景</a><a href="#二-先改資料" style="margin-left:0px">二、先改資料</a><a href="#2-1-地區配置結構" style="margin-left:10px">2.1 地區配置結構</a><a href="#2-2-新增地區時的最小修改" style="margin-left:10px">2.2 新增地區時的最小修改</a><a href="#2-3-接單特徵標籤" style="margin-left:10px">2.3 接單特徵標籤</a><a href="#2-4-地點-npc-與本地化" style="margin-left:10px">2.4 地點、NPC 與本地化</a><a href="#四-驗證順序" style="margin-left:0px">四、驗證順序</a><a href="#五-維護原則" style="margin-left:0px">五、維護原則</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

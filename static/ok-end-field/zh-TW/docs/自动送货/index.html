@@ -1,0 +1,248 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>自動送貨 · ok-end-field</title><meta name="description" content="自動送貨 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/自动送货/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="自動送貨 · ok-end-field"><meta property="og:description" content="自動送貨 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/自动送货/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="自動送貨 · ok-end-field"><meta name="twitter:description" content="自動送貨 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"自動送貨 · ok-end-field","description":"自動送貨 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/自动送货/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件首頁</a><a href="../getting-started/installation/">安裝</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常見問題</a><a href="../features/overview/">功能概覽</a><a href="../日常任务/">日常任務</a><a href="../体力本/">刷體力</a><a href="../自动战斗/">自動戰鬥</a><a href="../排轴/">排軸</a><a href="../运送委托接取/">運送委託接取</a><a href="./" class="active" aria-current="page">自動送貨</a><a href="../仓库物品转移/">倉庫物品轉移</a><a href="../物品导航与实时检测/">物品導航與即時檢測</a><a href="../账号配置用户指南/">賬號配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../Windows 计划任务/">Windows 計劃任務</a><a href="../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../update/主数据维护工作流/">主資料維護</a><a href="../update/送货地区维护工作流/">送貨地區維護</a><a href="../update/日常送礼维护工作流/">日常送禮維護</a><a href="../dev/QUICKSTART/">從原始碼執行</a><a href="../dev/DEVELOPMENT/">開發指南</a><a href="../dev/API/">API 參考</a><a href="../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../dev/键盘操作体系/">鍵盤操作體系</a><a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../dev/文字识别示例/">文字識別示例</a><a href="../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../dev/切换账户流程分析/">賬戶切換流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="自動送貨">自動送貨</h1>
+<p>返回：<a href="../">文件索引</a> / <a href="../../">README</a></p>
+<h2 id="概述">概述</h2>
+<p>自動接取當前選擇地區的委託，按照配置路徑將貨物送至對應接收者。正常模式下每個賬號最多執行 3 輪接取與送貨。該任務支援多賬戶執行和多賬戶獨立配置；僅接取、僅送貨或路徑測試模式不進行多賬號輪換。</p>
+<p>配置、地區和目標來自 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/onetime/DeliveryTask.py">DeliveryTask.py</a> 與 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/delivery_area.py">delivery_area.py</a>。</p>
+<hr>
+<h2 id="選項和配置">選項和配置</h2>
+<h3 id="目標券數">目標券數</h3>
+<p>可選值來自 <code>DELIVERY_TARGET_TICKET_NUM_OPTIONS</code>，當前為 <code>163000</code>、<code>159000</code>、<code>119000</code>、<code>79800</code>、<code>73100</code>。</p>
+<p>介面將其顯示為目標券數優先順序序列，預設 <code>119000</code>，並允許配置多個券數。接單迴圈按照列表順序查詢，命中前面的券數後不會再查詢後續券數；前面的券數沒有可接委託時，才會繼續嘗試下一項。</p>
+<hr>
+<h3 id="多賬戶模式">多賬戶模式</h3>
+<p>自動送貨既可以作為獨立任務執行，也可以作為日常任務中的 <code>⭐自动送货</code> 子項執行。獨立任務保留完整的多賬號和測試入口；日常子項複用日常任務的賬號迴圈，只執行完整送貨流程。</p>
+<ul>
+<li>開啟「多賬戶模式」後，任務會按「賬號列表」逐個切換賬號執行自動送貨。</li>
+<li>開啟「多賬戶獨立配置」後，同一送貨任務可按賬號覆蓋目標券數、地區切換等常規配置；滑索配置位於「全域性配置 / 滑索配置」，跨任務共享，但也可在賬號頁為每個賬號設定獨立滑索覆蓋。</li>
+<li>賬號列表每行一個賬號；相容舊格式 <code>账号, 密码</code>，但密碼欄位會被忽略。賬號切換使用遊戲登入頁「最近」列表，不輸入密碼。</li>
+<li>獨立任務保留「選擇測試物件」「僅接取」「僅送貨」等除錯選項；日常任務入口不顯示這些選項。</li>
+</ul>
+<hr>
+<h3 id="地區切換">地區切換</h3>
+<blockquote>
+<p>通過下拉框選擇當前送貨地區</p>
+</blockquote>
+<p>切換後會使用該地區的：</p>
+<ul>
+<li>委託地點識別規則</li>
+<li>送貨目標列表</li>
+<li>對應的送貨點滑索配置（按地點匹配）</li>
+</ul>
+<hr>
+<h3 id="通向-地點-送貨點">通向{地點}送貨點</h3>
+<blockquote>
+<p>從委託地點前往對應送貨點的滑索距離序列</p>
+</blockquote>
+<p>送貨滑索和淤積點滑索在全域性滑索配置中通過分類下拉框分開顯示。賬號頁選擇「滑索配置」後，可以按賬號覆蓋其中任意路線。</p>
+<p>決定從已接委託地點前往取貨點的路徑。配置鍵按「通向{地點}送貨點」命名，每個送貨地點一個鍵，武陵當前包含：</p>
+<ul>
+<li>「通向武陵城送貨點」（武陵城）</li>
+<li>「通向試驗園區送貨點」（試驗園區）</li>
+</ul>
+<p>對應地點配置為空時，本輪送貨直接失敗，不會借用另一地點路線。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>50,34</p>
+</blockquote>
+<hr>
+<h2 id="工作流程">工作流程</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[启动自动送货] --&gt; A1{多账户模式}
+    A1 --&gt;|是| A2[按账号列表进入当前账号上下文]
+    A1 --&gt;|否| B[使用当前账号配置]
+    A2 --&gt; B[读取账号覆盖后的地区切换与目标券数]
+    B --&gt; C{选择测试对象}
+    C --&gt;|指定测试| D[执行单段或完整循环测试]
+    C --&gt;|无| E{仅送货}
+    E --&gt;|是| H[识别当前委托目标]
+    E --&gt;|否| F[按目标券数接取委托]
+    F --&gt; G{仅接取}
+    G --&gt;|是| Z[结束]
+    G --&gt;|否| H
+    H --&gt; I[传送到任务区域]
+    I --&gt; J[按通向{地点}送货点滑索序列取货]
+    J --&gt; K[OCR 识别目标 NPC 或回收目标]
+    K --&gt; L[按目标滑索序列前往]
+    L --&gt; M[提交货物]
+    M --&gt; N{还有接取次数}
+    N --&gt;|是| F
+    N --&gt;|否| A3{还有下一个账号}
+    A3 --&gt;|是| A2
+    A3 --&gt;|否| Z
+    D --&gt; Z
+</code></pre>
+<h3 id="常澐">常澐</h3>
+<blockquote>
+<p>從送貨點前往常澐 NPC 的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往常澐 NPC 的路徑。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>20,15,40</p>
+</blockquote>
+<hr>
+<h3 id="資源">資源</h3>
+<blockquote>
+<p>從送貨點前往資源回收站的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往資源回收站的路徑（用於回收類委託）。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>10,25</p>
+</blockquote>
+<hr>
+<h3 id="彥寧">彥寧</h3>
+<blockquote>
+<p>從送貨點前往彥寧 NPC 的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往彥寧 NPC 的路徑，用於完成對應委託的送貨流程。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>30,18,22</p>
+</blockquote>
+<hr>
+<h3 id="齊綸">齊綸</h3>
+<blockquote>
+<p>從送貨點前往齊綸 NPC 的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往齊綸 NPC 的路徑，用於完成對應委託的送貨流程。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>45,12</p>
+</blockquote>
+<hr>
+<h3 id="趙昭">趙昭</h3>
+<blockquote>
+<p>從送貨點前往趙昭 NPC 的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往趙昭 NPC 的路徑，用於完成對應委託的送貨流程。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>18,26</p>
+</blockquote>
+<hr>
+<h3 id="裴令容">裴令容</h3>
+<blockquote>
+<p>從送貨點前往裴令容 NPC 的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往裴令容 NPC 的路徑，用於完成對應委託的送貨流程。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>12,34</p>
+</blockquote>
+<hr>
+<h3 id="阿禾">阿禾</h3>
+<blockquote>
+<p>從送貨點前往阿禾 NPC 的滑索距離序列</p>
+</blockquote>
+<p>決定從送貨點前往阿禾 NPC 的路徑，用於完成對應委託的送貨流程。</p>
+<p><strong>示例：</strong></p>
+<blockquote>
+<p>22,16</p>
+</blockquote>
+<p>當前地區資料中的完整目標為：</p>
+<ul>
+<li>武陵城：常澐、資源、彥寧、齊綸、於施、蘇白易、普里莫</li>
+<li>試驗園區：趙昭、裴令容、阿禾</li>
+</ul>
+<hr>
+<h2 id="功能選項">功能選項</h2>
+<h3 id="是否啟用滾動放大視角">是否啟用滾動放大視角</h3>
+<p>該配置已移動到「全域性配置 / 滑索配置」，送貨和刷體力任務共用同一項設定。</p>
+<p>啟用後，在對齊滑索時會自動滾動放大視角。</p>
+<ul>
+<li>可能提高對齊成功率</li>
+<li>也可能在某些情況下<strong>明顯降低成功率</strong></li>
+</ul>
+<p><strong>建議：</strong></p>
+<ul>
+<li>啟用時儘量使用寬大頭髮或深色頭髮(帽子)(別禮、賽希)</li>
+<li>避免使用黃白頭髮或帽子（識別可能受影響）</li>
+</ul>
+<hr>
+<h3 id="僅接取">僅接取</h3>
+<blockquote>
+<p>前置：選擇測試物件 =「無」</p>
+</blockquote>
+<p>僅接取當前選擇地區委託，不執行送貨流程。</p>
+<p>支援 7.31w、7.98w、11.9w、15.9w 和 16.3w，並按照配置列表從前到後確定接單優先順序。</p>
+<hr>
+<h3 id="僅送貨">僅送貨</h3>
+<blockquote>
+<p>前置：選擇測試物件 =「無」，且已接取當前選擇地區委託並處於可送貨狀態</p>
+</blockquote>
+<p>啟動自動識別並執行送貨流程。</p>
+<hr>
+<h3 id="選擇測試物件">選擇測試物件</h3>
+<p>用於除錯或路徑測試。</p>
+<ul>
+<li><p>預設：<strong>無</strong>（正常執行完整流程）</p>
+</li>
+<li><p>可選：指定滑索分叉序列（用於單路徑測試）</p>
+</li>
+<li><p><strong>完整迴圈測試</strong>：</p>
+<ul>
+<li>會依次測試每個送貨目標的完整流程</li>
+<li>需要將任務鎖定在送貨點或其附近</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="發生異常時終止遊戲">發生異常時終止遊戲</h3>
+<p>當指令碼檢測到異常情況時，自動關閉遊戲和指令碼，防止後續指令碼其他任務卡死或遊戲資源佔用。</p>
+<hr>
+<h3 id="完成後退出">完成後退出</h3>
+<p>任務完成後自動執行：</p>
+<ul>
+<li>退出遊戲</li>
+<li>關閉 App</li>
+</ul>
+<hr>
+<h2 id="補充說明">補充說明</h2>
+<blockquote>
+<p>所有路徑均為「滑索距離序列」，按順序依次執行。</p>
+</blockquote>
+<ul>
+<li><p>當前僅配置「武陵」地區，預設地區也是武陵；無效地區值會回退到武陵。</p>
+</li>
+<li><p>接單時會從委託文本快取地點。武陵城在地圖頂部搜尋傳送點，試驗園區在地圖右側搜尋；未識別地點或缺少該地點配置時，本輪送貨失敗，不會使用通用地圖區域兜底。</p>
+</li>
+<li><p>滑索推進階段固定使用 E 鍵觸發連線點（底層按鍵輸入），不受通用熱鍵配置影響。</p>
+</li>
+<li><p>原因是該互動鍵在遊戲內不可改綁，且高頻重複輸入可降低短距離滑索漏觸發機率。</p>
+</li>
+</ul>
+<hr>
+<p>相關文件：<a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a> / <a href="../update/送货地区维护工作流/">送貨地區維護工作流</a> / <a href="../运送委托接取/">運送委託接取</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/自动送货.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#選項和配置" style="margin-left:0px">選項和配置</a><a href="#目標券數" style="margin-left:10px">目標券數</a><a href="#多賬戶模式" style="margin-left:10px">多賬戶模式</a><a href="#地區切換" style="margin-left:10px">地區切換</a><a href="#通向-地點-送貨點" style="margin-left:10px">通向{地點}送貨點</a><a href="#工作流程" style="margin-left:0px">工作流程</a><a href="#常澐" style="margin-left:10px">常澐</a><a href="#資源" style="margin-left:10px">資源</a><a href="#彥寧" style="margin-left:10px">彥寧</a><a href="#齊綸" style="margin-left:10px">齊綸</a><a href="#趙昭" style="margin-left:10px">趙昭</a><a href="#裴令容" style="margin-left:10px">裴令容</a><a href="#阿禾" style="margin-left:10px">阿禾</a><a href="#功能選項" style="margin-left:0px">功能選項</a><a href="#是否啟用滾動放大視角" style="margin-left:10px">是否啟用滾動放大視角</a><a href="#僅接取" style="margin-left:10px">僅接取</a><a href="#僅送貨" style="margin-left:10px">僅送貨</a><a href="#選擇測試物件" style="margin-left:10px">選擇測試物件</a><a href="#發生異常時終止遊戲" style="margin-left:10px">發生異常時終止遊戲</a><a href="#完成後退出" style="margin-left:10px">完成後退出</a><a href="#補充說明" style="margin-left:0px">補充說明</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

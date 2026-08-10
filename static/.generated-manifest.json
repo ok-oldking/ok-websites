@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:27:46.323Z",
+  "generatedAt": "2026-08-10T10:10:01.491Z",
   "projects": [
     {
       "id": "ok-script",
@@ -23,8 +23,8 @@
     },
     {
       "id": "ok-ww",
-      "commit": "9ec2bc3170b1c262d4b3c9b9b0298ced28482e98",
-      "updated": "2026-08-10T01:06:48+08:00",
+      "commit": "44dc14fd42d786cc8e3c4b0e634f5de4783d8abd",
+      "updated": "2026-08-10T09:21:23+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -61,13 +61,13 @@
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-08-10T01:06:48+08:00"
+        "updated": "2026-08-10T09:21:23+08:00"
       }
     },
     {
       "id": "ok-script-app",
-      "commit": "590715469a91ed7de66cffa3f8a808b62e364592",
-      "updated": "2026-07-28T19:38:08+08:00",
+      "commit": "adce86505f64b2676a957cc4d7cb2837012a3b05",
+      "updated": "2026-08-10T08:34:53+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -99,7 +99,7 @@
             "url": "https://pan.quark.cn/s/a1052cec4d13"
           }
         ],
-        "updated": "2026-07-28T19:38:08+08:00"
+        "updated": "2026-08-10T08:34:53+08:00"
       }
     },
     {
@@ -146,8 +146,8 @@
     },
     {
       "id": "ok-star-resonance",
-      "commit": "012ae82dc9b7fbb8477733b6e2fc343aa8dd3054",
-      "updated": "2026-08-09T21:29:11+08:00",
+      "commit": "38b852a3f912d731855672c83a9a8e4144951cbf",
+      "updated": "2026-08-10T14:50:38+08:00",
       "locales": [
         "zh-CN",
         "zh-TW"
@@ -174,13 +174,13 @@
             "url": "https://pan.quark.cn/s/53ef87577da9?pwd=nVL9"
           }
         ],
-        "updated": "2026-08-09T21:29:11+08:00"
+        "updated": "2026-08-10T14:50:38+08:00"
       }
     },
     {
       "id": "ok-kes",
-      "commit": "597b1fc91ba650fdc92c6564ac970ab094ecca57",
-      "updated": "2026-08-10T01:15:30+08:00",
+      "commit": "859059bede08d1fddd91c79a6ed56bd55f67305a",
+      "updated": "2026-08-10T17:10:10+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -216,7 +216,32 @@
             "url": "https://drive.uc.cn/s/fee4cb3d65cd4?public=1"
           }
         ],
-        "updated": "2026-08-10T01:15:30+08:00"
+        "updated": "2026-08-10T17:10:10+08:00"
+      }
+    },
+    {
+      "id": "ok-end-field",
+      "commit": "32cc731467837364d23c202f07b8db83b684466f",
+      "updated": "2026-08-10T01:59:59Z",
+      "locales": [
+        "zh-CN",
+        "en",
+        "zh-TW"
+      ],
+      "meta": {
+        "stars": 348,
+        "forks": 15,
+        "description": "",
+        "release": "v0.0.74",
+        "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v0.0.74",
+        "releaseAssets": [
+          {
+            "name": "ok-ef-win32-China-setup.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v0.0.74/ok-ef-win32-China-setup.exe"
+          }
+        ],
+        "mirrors": [],
+        "updated": "2026-08-10T01:59:59Z"
       }
     }
   ]

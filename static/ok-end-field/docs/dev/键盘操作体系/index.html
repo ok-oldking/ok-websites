@@ -1,0 +1,385 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>键盘操作体系 · ok-end-field</title><meta name="description" content="键盘操作体系 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/dev/键盘操作体系/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="键盘操作体系 · ok-end-field"><meta property="og:description" content="键盘操作体系 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/dev/键盘操作体系/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="键盘操作体系 · ok-end-field"><meta name="twitter:description" content="键盘操作体系 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"键盘操作体系 · ok-end-field","description":"键盘操作体系 — ok-end-field","url":"https://ok-script.com/ok-end-field/docs/dev/键盘操作体系/","inLanguage":"zh-CN","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">文档首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题</a><a href="../../features/overview/">功能概览</a><a href="../../日常任务/">日常任务</a><a href="../../体力本/">刷体力</a><a href="../../自动战斗/">自动战斗</a><a href="../../排轴/">排轴</a><a href="../../运送委托接取/">运送委托接取</a><a href="../../自动送货/">自动送货</a><a href="../../仓库物品转移/">仓库物品转移</a><a href="../../物品导航与实时检测/">物品导航与实时检测</a><a href="../../账号配置用户指南/">账号配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 与覆盖逻辑</a><a href="../../Windows 计划任务/">Windows 计划任务</a><a href="../../鼠标转向标定汇总/">鼠标转向标定</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="./" class="active" aria-current="page">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../装备词条识别轮子/">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="项目键盘操作体系说明">项目键盘操作体系说明</h1>
+<p>返回：<a href="../../">文档索引</a> / <a href="../../../">README</a></p>
+<p>本项目支持高度可配置的游戏键盘操作，所有热键均可通过配置自定义，支持多场景（通用、工业、战斗）下的快捷键映射。本文档详细介绍键盘操作的设计、默认键位、扩展方式及开发注意事项。</p>
+<hr>
+<h2 id="1-按键配置体系概览">1. 按键配置体系概览</h2>
+<ul>
+<li><strong>可配置热键统一管理</strong>：业务代码通过 <code>KeyConfigManager</code> 解析通用、工业和战斗键位；移动键、系统修饰键及少数游戏固定键保留底层发送路径。</li>
+<li><strong>三大类热键</strong>：<ul>
+<li>通用（common）：如地图、交互、背包等</li>
+<li>集成工业（industry）：如工业规划、放置传送带等</li>
+<li>战斗（combat）：如连携技等</li>
+</ul>
+</li>
+<li><strong>国际化支持</strong>：所有键名均有 i18n 支持，便于多语言适配。</li>
+</ul>
+<hr>
+<h2 id="2-默认键位表">2. 默认键位表</h2>
+<h3 id="通用-default-common-keys">通用（DEFAULT_COMMON_KEYS）</h3>
+<table>
+<thead>
+<tr>
+<th>配置键名</th>
+<th>默认按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dodge Key</td>
+<td>lshift</td>
+<td>闪避</td>
+</tr>
+<tr>
+<td>Jump Key</td>
+<td>space</td>
+<td>跳跃</td>
+</tr>
+<tr>
+<td>Interact Key</td>
+<td>f</td>
+<td>交互</td>
+</tr>
+<tr>
+<td>Backpack Key</td>
+<td>b</td>
+<td>背包</td>
+</tr>
+<tr>
+<td>Valuables Key</td>
+<td>n</td>
+<td>贵重品</td>
+</tr>
+<tr>
+<td>Team Key</td>
+<td>u</td>
+<td>队伍</td>
+</tr>
+<tr>
+<td>Operator Key</td>
+<td>c</td>
+<td>干员</td>
+</tr>
+<tr>
+<td>Mission Key</td>
+<td>j</td>
+<td>任务</td>
+</tr>
+<tr>
+<td>Track Key</td>
+<td>v</td>
+<td>追踪</td>
+</tr>
+<tr>
+<td>Map Key</td>
+<td>m</td>
+<td>地图</td>
+</tr>
+<tr>
+<td>Baker Key</td>
+<td>h</td>
+<td>帝江号</td>
+</tr>
+<tr>
+<td>Mail Key</td>
+<td>k</td>
+<td>邮件</td>
+</tr>
+<tr>
+<td>Handbook Key</td>
+<td>f8</td>
+<td>手册</td>
+</tr>
+<tr>
+<td>Recruitment Key</td>
+<td>f9</td>
+<td>招募</td>
+</tr>
+<tr>
+<td>Quick Tool Key</td>
+<td>r</td>
+<td>快捷工具</td>
+</tr>
+</tbody></table>
+<h3 id="集成工业-default-industry-keys">集成工业（DEFAULT_INDUSTRY_KEYS）</h3>
+<table>
+<thead>
+<tr>
+<th>配置键名</th>
+<th>默认按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Industry Plan Key</td>
+<td>t</td>
+<td>工业规划</td>
+</tr>
+<tr>
+<td>Place Belt Key</td>
+<td>e</td>
+<td>放置传送带</td>
+</tr>
+<tr>
+<td>Place Pipeline Key</td>
+<td>q</td>
+<td>放置管道</td>
+</tr>
+<tr>
+<td>Equipment List Key</td>
+<td>z</td>
+<td>设备列表</td>
+</tr>
+<tr>
+<td>Overview Mode Key</td>
+<td>capslock</td>
+<td>全局视图</td>
+</tr>
+<tr>
+<td>Storage Mode Key</td>
+<td>x</td>
+<td>仓库模式</td>
+</tr>
+<tr>
+<td>Area Build Key</td>
+<td>y</td>
+<td>区域建造</td>
+</tr>
+<tr>
+<td>Blueprint Key</td>
+<td>f1</td>
+<td>蓝图</td>
+</tr>
+<tr>
+<td>Product Icon Toggle Key</td>
+<td>f4</td>
+<td>产品图标切换</td>
+</tr>
+</tbody></table>
+<h3 id="战斗-default-combat-keys">战斗（DEFAULT_COMBAT_KEYS）</h3>
+<table>
+<thead>
+<tr>
+<th>配置键名</th>
+<th>默认按键</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Link Skill Key</td>
+<td>e</td>
+<td>连携技</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-按键调用方式">3. 按键调用方式</h2>
+<h3 id="3-1-业务层接口">3.1 业务层接口</h3>
+<ul>
+<li><code>press_key(key, **kwargs)</code>：发送通用按键（如地图、交互等）。</li>
+<li><code>press_industry_key(key, **kwargs)</code>：发送工业专用热键。</li>
+<li><code>press_combat_key(key, **kwargs)</code>：发送战斗专用热键。</li>
+<li><code>press_esc()</code>：仅过剧情（对话时）触发 ESC。</li>
+</ul>
+<p>前三个接口定义在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/base_mixin/runtime_mixin.py"><code>RuntimeMixin</code></a>，签名为 <code>(key, down_time=0.02, after_sleep=0, interval=-1)</code>，并把解析后的键传给 <code>send_key()</code>。<code>press_esc()</code> 定义在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/base_mixin/game_flow_mixin.py"><code>GameFlowMixin</code></a>，只允许用于剧情对话跳过。项目当前没有 <code>press_game_key()</code> 公共方法。</p>
+<h3 id="3-2-按键映射流程">3.2 按键映射流程</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[业务层调用 press_key / press_industry_key / press_combat_key] --&gt; B[选择 common / industry / combat 默认键表]
+    B --&gt; C[KeyConfigManager.resolve_key]
+    C --&gt; D{默认按键是否匹配配置项}
+    D --&gt;|是| E[读取用户自定义键]
+    D --&gt;|否| F[保留原始按键]
+    E --&gt; G[调用 send_key 发送实际按键]
+    F --&gt; G
+</code></pre>
+<ol>
+<li>业务层调用如 <code>press_key(&#39;m&#39;)</code>。</li>
+<li>通过 <code>KeyConfigManager.resolve_key(&#39;m&#39;, &#39;common&#39;)</code> 在对应默认键表中反查配置项名。</li>
+<li>若用户有自定义，则取自定义值，否则用默认值。</li>
+<li>最终通过底层 <code>send_key</code>进行物理按键模拟。</li>
+</ol>
+<h3 id="3-3-未知键与异常">3.3 未知键与异常</h3>
+<ul>
+<li><code>resolve_key()</code> 不校验键名：默认表中找不到键，或 <code>key_type</code> 不是 <code>common/industry/combat</code> 时，原样返回传入的 <code>key</code>。</li>
+<li><code>RuntimeMixin.send_key()</code> 会先激活游戏窗口，再委托框架 <code>BaseTask.send_key()</code>；框架会先用 <code>validate_key()</code> 校验单字符和已知命名键，无效键会抛出 <code>HotkeyConfigException</code>，项目层不捕获该异常。</li>
+<li>校验通过后，<code>EfInteraction._convert_key()</code> 再把常见别名（如 <code>esc</code>、<code>lctrl</code>、<code>pageup</code>）转换为 <code>pynput</code> 键对象；底层发送异常仍会向调用方传播。</li>
+<li>因此新增业务键位时应先加入 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/interaction/KeyConfig.py"><code>KeyConfig.py</code></a> 的对应默认表；不要依赖未知键的透传作为配置机制。</li>
+</ul>
+<hr>
+<h2 id="4-用户自定义与国际化">4. 用户自定义与国际化</h2>
+<ul>
+<li>用户可通过配置文件自定义所有热键。</li>
+<li>支持多语言键名，语言资源目录：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/i18n">i18n</a>。</li>
+</ul>
+<hr>
+<h2 id="5-开发注意事项">5. 开发注意事项</h2>
+<ul>
+<li><strong>可配置游戏热键不得直接使用 <code>send_key</code></strong>，必须通过 <code>press_key</code>、<code>press_industry_key</code> 或 <code>press_combat_key</code> 调用（第 6 节列出的例外除外）。</li>
+<li>若热键可自定义，则不可用作模板图片（否则模板匹配会因用户自定义失效）。</li>
+<li>详细开发规范：<a href="../DEVELOPMENT/">DEVELOPMENT.md</a>。</li>
+</ul>
+<hr>
+<h2 id="6-直接使用底层键盘接口的位置">6. 直接使用底层键盘接口的位置</h2>
+<p>以下是当前直接调用 <code>send_key</code> / <code>send_key_down</code> / <code>send_key_up</code> 或 Win32 <code>keybd_event</code> 的项目代码。部分调用没有就地注释，表中按当前行为记录，不代表所有绕过键位映射的调用都合理：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>行号/方法</th>
+<th>按键</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/core/base_mixin/runtime_mixin.py</code></td>
+<td><code>press_key</code> / <code>press_industry_key</code> / <code>press_combat_key</code> 方法体</td>
+<td>动态</td>
+<td>这三个方法本身就是对 <code>send_key</code> 的配置映射封装</td>
+</tr>
+<tr>
+<td><code>src/core/base_mixin/runtime_mixin.py</code></td>
+<td><code>click_with_alt</code> 方法</td>
+<td><code>alt</code></td>
+<td><code>alt</code> 为系统修饰键，用于 alt+点击操作</td>
+</tr>
+<tr>
+<td><code>src/interaction/Key.py</code></td>
+<td><code>move_keys</code> 方法</td>
+<td>动态移动键</td>
+<td>持续按下和释放移动键的底层辅助函数</td>
+</tr>
+<tr>
+<td><code>src/interaction/Mouse.py</code></td>
+<td><code>active_and_send_mouse_delta</code> 的窗口激活回退</td>
+<td>Win32 <code>VK_MENU</code></td>
+<td><code>SetForegroundWindow</code> 失败时用 <code>win32api.keybd_event</code> 短按 Alt 解除前台窗口限制</td>
+</tr>
+<tr>
+<td><code>src/core/base_mixin/game_flow_mixin.py</code></td>
+<td><code>skip_dialog</code> 方法</td>
+<td><code>esc</code></td>
+<td><code>esc</code> 为系统通用退出键</td>
+</tr>
+<tr>
+<td><code>src/tasks/onetime/AutoCombatLogic.py</code></td>
+<td>普通技能释放逻辑</td>
+<td>动态技能键</td>
+<td>技能键为游戏固定不可配置键，不经过 <code>KeyConfigManager</code> 管理</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/battle_mixin.py</code></td>
+<td><code>use_ult</code> 方法</td>
+<td><code>1</code>/<code>2</code>/<code>3</code>/<code>4</code></td>
+<td>终极技键位为游戏固定不可配置键，不经过 <code>KeyConfigManager</code> 管理</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/liaison_mixin.py</code></td>
+<td>干员交互导航回调 / <code>click_chat_box</code> 方法</td>
+<td><code>alt</code></td>
+<td><code>alt</code> 为系统修饰键，用于 alt+点击干员聊天框，非游戏可配置热键</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/liaison_mixin.py</code></td>
+<td>导航过程中释放移动键</td>
+<td><code>w</code></td>
+<td><code>w</code> 为方向移动键，不属于游戏可配置热键</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/navigation_mixin.py</code></td>
+<td><code>navigate_until_target</code> 方法</td>
+<td><code>w</code> / <code>s</code></td>
+<td><code>w</code>/<code>s</code> 为方向移动键，用于持续移动/后退搜索，不属于游戏可配置热键</td>
+</tr>
+<tr>
+<td><code>src/tasks/daily/misc/daily_reward_mixin.py</code></td>
+<td>每日奖励领取逻辑</td>
+<td><code>esc</code></td>
+<td><code>esc</code> 为系统通用退出键</td>
+</tr>
+<tr>
+<td><code>src/tasks/daily/daily_task_runner.py</code></td>
+<td>任务开始前切奔跑模式</td>
+<td><code>shift</code></td>
+<td><code>shift</code> 为奔跑切换键，游戏固定不可配置键</td>
+</tr>
+<tr>
+<td><code>src/tasks/trigger/AutoInteractionTask.py</code></td>
+<td><code>run</code> 方法</td>
+<td><code>esc</code></td>
+<td><code>esc</code> 为系统通用退出键，非游戏可配置热键</td>
+</tr>
+<tr>
+<td><code>src/tasks/onetime/WarehouseTransferTask.py</code></td>
+<td>仓库切换检测逻辑</td>
+<td><code>esc</code></td>
+<td><code>esc</code> 为系统通用退出键，非游戏可配置热键</td>
+</tr>
+<tr>
+<td><code>src/tasks/onetime/WarehouseTransferTask.py</code></td>
+<td><code>_ctrl_click</code> 方法</td>
+<td>Win32 <code>VK_CONTROL</code></td>
+<td>直接用 <code>win32api.keybd_event</code> 按下/释放 Ctrl，以配合点击多选；不经过 <code>send_key</code> 或 <code>KeyConfigManager</code></td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/zip_line_mixin.py</code></td>
+<td><code>zip_line_list_go</code> / <code>ensure_click_on_zip_line</code> 方法</td>
+<td><code>e</code></td>
+<td>滑索推进交互键为游戏固定不可改绑键，且短距离滑索需高频重复输入避免漏触发</td>
+</tr>
+<tr>
+<td><code>src/tasks/onetime/DeliveryTask.py</code></td>
+<td>取货/送达导航</td>
+<td><code>v</code></td>
+<td>导航循环中重置追踪视野；<code>v</code> 同时是可配置的 <code>Track Key</code> 默认值，当前直接发送会绕过用户改绑，是已知例外而非固定键</td>
+</tr>
+<tr>
+<td><code>src/tasks/onetime/YingTuoTask.py</code></td>
+<td>丰碑交互</td>
+<td><code>e</code></td>
+<td>当前任务直接发送固定交互键；修改该流程时应重新确认是否仍不可改绑</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>说明</strong>：大多数调用属于系统修饰/退出键、移动键或当前流程认定的固定游戏键。<code>DeliveryTask</code> 直接发送的 <code>v</code> 是可配置 <code>Track Key</code> 的默认值，因而不会遵循用户改绑；<code>YingTuoTask</code> 的固定 <code>e</code> 也应在修改流程时重新确认。当前并非每个例外都有代码注释；新增或调整直接底层调用时，应添加原因注释并同步本表。</p>
+</blockquote>
+<hr>
+<h2 id="7-参考">7. 参考</h2>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/interaction/KeyConfig.py">热键配置器代码</a></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/base_mixin/runtime_mixin.py">按键函数封装</a></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/config.py">应用配置</a></li>
+<li>开发文档：<a href="../API/">API.md</a>, <a href="../DEVELOPMENT/">DEVELOPMENT.md</a></li>
+<li>国际化资源：<code>../../i18n/</code></li>
+</ul>
+<hr>
+<p>扩展新热键时，请在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/interaction/KeyConfig.py">KeyConfig.py</a> 的默认键表中补充，并完善 <a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/i18n">i18n</a> 资源。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/键盘操作体系.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-按键配置体系概览" style="margin-left:0px">1. 按键配置体系概览</a><a href="#2-默认键位表" style="margin-left:0px">2. 默认键位表</a><a href="#通用-default-common-keys" style="margin-left:10px">通用（DEFAULT_COMMON_KEYS）</a><a href="#集成工业-default-industry-keys" style="margin-left:10px">集成工业（DEFAULT_INDUSTRY_KEYS）</a><a href="#战斗-default-combat-keys" style="margin-left:10px">战斗（DEFAULT_COMBAT_KEYS）</a><a href="#3-按键调用方式" style="margin-left:0px">3. 按键调用方式</a><a href="#3-1-业务层接口" style="margin-left:10px">3.1 业务层接口</a><a href="#3-2-按键映射流程" style="margin-left:10px">3.2 按键映射流程</a><a href="#3-3-未知键与异常" style="margin-left:10px">3.3 未知键与异常</a><a href="#4-用户自定义与国际化" style="margin-left:0px">4. 用户自定义与国际化</a><a href="#5-开发注意事项" style="margin-left:0px">5. 开发注意事项</a><a href="#6-直接使用底层键盘接口的位置" style="margin-left:0px">6. 直接使用底层键盘接口的位置</a><a href="#7-参考" style="margin-left:0px">7. 参考</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

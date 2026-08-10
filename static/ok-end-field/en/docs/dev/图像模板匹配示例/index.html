@@ -1,0 +1,251 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>图像模板匹配示例 · ok-end-field</title><meta name="description" content="图像模板匹配示例 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/图像模板匹配示例/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="图像模板匹配示例 · ok-end-field"><meta property="og:description" content="图像模板匹配示例 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/图像模板匹配示例/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="图像模板匹配示例 · ok-end-field"><meta name="twitter:description" content="图像模板匹配示例 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"图像模板匹配示例 · ok-end-field","description":"图像模板匹配示例 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/dev/图像模板匹配示例/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="./" class="active" aria-current="page">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../装备词条识别轮子/">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="find-feature-操作示例">find_feature 操作示例</h1>
+<p>返回：<a href="../../../../docs/">文档索引</a> / <a href="../../../">README</a></p>
+<blockquote>
+<p>本文演示 <code>find_feature</code> 系列函数的用法。
+每个示例都是<strong>可直接放入 <code>src/tasks/onetime/</code> 并注册运行</strong>的完整任务文件，
+风格与 <code>src/tasks/test/</code> 下的调试任务保持一致。</p>
+</blockquote>
+<hr>
+<h2 id="函数速览">函数速览</h2>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>何时用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>find_feature(feature_name, box, threshold)</code></td>
+<td>对当前帧做一次模板匹配；找到时返回 <code>List[Box]</code>，未找到时返回空列表；<code>feature_name</code> 也可传入列表</td>
+</tr>
+<tr>
+<td><code>find_one(feature_name, box, threshold)</code></td>
+<td><code>find_feature</code> 的便捷封装，只返回<strong>置信度最高</strong>的那个匹配结果（<code>Box</code> 或 <code>None</code>）；同样支持列表输入</td>
+</tr>
+</tbody></table>
+<p><code>feature_name</code> 接受 <code>FeatureList</code> 枚举值、枚举值组成的列表，或直接使用字符串。
+框架会根据当前分辨率自动选取 <code>_2k</code> / <code>_4k</code> 后缀变体（如有）；如果传入列表，会对列表中的每个元素分别做这一步处理。</p>
+<blockquote>
+<p><strong>不传 <code>box</code> 时的默认搜索区域</strong></p>
+<p>模板图片（<code>feature_name</code> 对应的素材文件）的推荐制作方式：
+直接对游戏进行截图，然后使用本软件 <strong>debug 模式左侧「模板」Tab</strong> 内的功能，
+对截图的某区域进行标记——该功能会自动将裁剪后的模板图片保存到 <code>assets/images/</code>，
+并将该区域的坐标写入 <code>assets/coco_annotations.json</code>，无需手动调整数据结构。</p>
+<blockquote>
+<p>⚠️ 若使用外部标注软件，需自行维护 <code>coco_annotations.json</code> 中的数据结构，不推荐。</p>
+</blockquote>
+<p>当调用时<strong>省略 <code>box</code> 参数</strong>，框架会自动从 <code>coco_annotations.json</code> 读取该模板的标注位置，
+并将其换算成<strong>相对比例</strong>，再映射到实际程序窗口的对应区域进行扫描。</p>
+<p>这意味着：<strong>你不需要手动计算坐标</strong>，只需通过「模板」Tab 正确标记模板在截图中的位置，
+框架就能自动把搜索范围限定在屏幕上的合理区域，避免全屏误匹配。</p>
+<p>如果需要在默认搜索区域的基础上增加容差，可使用 <code>vertical_variance</code> / <code>horizontal_variance</code>
+参数指定 y / x 方向的相对比例偏差，无需显式传入 <code>box</code>。</p>
+<p>如果你需要<strong>动态指定搜索范围</strong>（例如根据上一步操作的结果缩小区域），
+才需要显式传入 <code>box</code>。</p>
+</blockquote>
+<hr>
+<h2 id="示例一-检测单个图标并点击">示例一：检测单个图标并点击</h2>
+<blockquote>
+<p><strong>场景</strong>：等待关闭按钮（<code>×</code>）出现后点击。</p>
+</blockquote>
+<pre><code class="language-python"># src/tasks/onetime/ExampleFindFeature.py
+from src.data.FeatureList import FeatureList as fL
+from src.core.BaseEfTask import BaseEfTask
+
+
+class ExampleFindFeature(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;示例：find_feature 点击图标&quot;
+        self.description = &quot;检测关闭按钮并点击&quot;
+
+    def run(self):
+        # find_feature 返回 List[Box]，未找到时返回空列表
+        # 不传 box：框架自动从 coco_annotations.json 读取 fL.close 的标注位置限定搜索区域
+        result = self.find_feature(feature=fL.close)
+
+        if not result:
+            self.log_info(&quot;未找到关闭按钮&quot;)
+            return
+
+        # 取第一个匹配结果点击
+        self.click(result[0], after_sleep=0.5)
+        self.log_info(&quot;已点击关闭按钮&quot;)
+</code></pre>
+<hr>
+<h2 id="示例二-动态指定搜索区域-box-参数">示例二：动态指定搜索区域（<code>box</code> 参数）</h2>
+<blockquote>
+<p><strong>场景</strong>：上一步操作后 ESC 图标可能出现在右上角的<strong>不固定</strong>位置，
+需要动态限制搜索范围；或者你希望覆盖模板默认位置，手动控制扫描区域。</p>
+</blockquote>
+<pre><code class="language-python"># src/tasks/onetime/ExampleFindFeatureBox.py
+from src.data.FeatureList import FeatureList as fL
+from src.core.BaseEfTask import BaseEfTask
+
+
+class ExampleFindFeatureBox(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;示例：find_feature + box&quot;
+        self.description = &quot;动态指定搜索区域的模板匹配&quot;
+
+    def run(self):
+        # box_of_screen 的参数是 0.0~1.0 的相对比例
+        # 显式传入 box 会覆盖从 coco_annotations.json 读取的默认搜索位置
+        # 这里只在右上角 20%×15% 的区域搜索，比默认区域更宽松
+        top_right = self.box_of_screen(0.8, 0.0, 1.0, 0.15)
+
+        result = self.find_feature(
+            feature=fL.esc,
+            box=top_right,
+            threshold=0.8,   # 相似度阈值，越高越严格
+        )
+
+        if result:
+            self.log_info(f&quot;在右上角找到 ESC 图标，坐标：{result[0].x}, {result[0].y}&quot;)
+            self.click(result[0])
+        else:
+            self.log_info(&quot;右上角未找到 ESC 图标&quot;)
+</code></pre>
+<hr>
+<h2 id="示例三-检测多个候选图标之一">示例三：检测多个候选图标之一</h2>
+<blockquote>
+<p><strong>场景</strong>：列表中可能出现两种不同图标（例如聊天图标的亮色/暗色版本），
+任意找到一种即可点击。</p>
+</blockquote>
+<pre><code class="language-python"># src/tasks/onetime/ExampleFindFeatureMultiple.py
+from src.data.FeatureList import FeatureList as fL
+from src.core.BaseEfTask import BaseEfTask
+
+
+class ExampleFindFeatureMultiple(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;示例：find_feature 多候选图标&quot;
+        self.description = &quot;在多个候选图标中找到任意一个并点击&quot;
+
+    def run(self):
+        # 传入列表，框架会依次尝试每个 feature_name，返回所有命中结果
+        result = self.find_feature(
+            feature=[fL.chat_icon, fL.chat_icon_dark, fL.chat_icon_2],
+            box=self.box.right,
+            threshold=0.75,
+        )
+
+        if not result:
+            self.log_info(&quot;未找到聊天图标&quot;)
+            return
+
+        # find_feature 按置信度从高到低排列，result[0] 是最佳匹配
+        self.log_info(f&quot;找到图标：{result[0].name}，相似度：{result[0].confidence:.2f}&quot;)
+        self.click(result[0], after_sleep=0.5)
+</code></pre>
+<hr>
+<h2 id="示例四-用-find-one-取置信度最高的结果">示例四：用 <code>find_one</code> 取置信度最高的结果</h2>
+<blockquote>
+<p><strong>场景</strong>：屏幕上同时存在多个相似图标（例如列表里有若干个「关闭」按钮），
+只需要操作<strong>相似度最高</strong>的那个时，使用 <code>find_one</code> 更简洁。
+<code>find_one</code> 在内部调用 <code>find_feature</code> 后取置信度最大的 <code>Box</code> 返回；
+未找到时返回 <code>None</code>，无需手动取 <code>result[0]</code>。</p>
+</blockquote>
+<pre><code class="language-python"># src/tasks/onetime/ExampleFindOne.py
+from src.data.FeatureList import FeatureList as fL
+from src.core.BaseEfTask import BaseEfTask
+
+
+class ExampleFindOne(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;示例：find_one&quot;
+        self.description = &quot;取置信度最高的图标并点击&quot;
+
+    def run(self):
+        # find_one 直接返回 Box 或 None，不需要 result[0]
+        # 模板的默认搜索位置（由 coco_annotations.json 中的标注坐标决定）会被自动使用
+        best = self.find_one(feature=fL.close, threshold=0.8)
+
+        if not best:
+            self.log_info(&quot;未找到关闭按钮&quot;)
+            return
+
+        self.log_info(f&quot;找到关闭按钮，置信度：{best.confidence:.2f}&quot;)
+        self.click(best, after_sleep=0.5)
+</code></pre>
+<hr>
+<h2 id="示例五-轮询等待图标出现">示例五：轮询等待图标出现</h2>
+<blockquote>
+<p><strong>场景</strong>：某个图标需要等待数秒后才出现（如战斗结束后的奖励图标），
+<code>find_feature</code> 不会自动等待，需要用循环轮询。</p>
+</blockquote>
+<pre><code class="language-python"># src/tasks/onetime/ExampleFindFeatureWait.py
+from src.data.FeatureList import FeatureList as fL
+from src.core.BaseEfTask import BaseEfTask
+
+
+class ExampleFindFeatureWait(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;示例：find_feature 轮询等待&quot;
+        self.description = &quot;等待图标出现后再执行操作&quot;
+
+    def run(self):
+        # 最多等待 30 秒（60 次 × 0.5 秒）
+        result = None
+        for _ in range(60):
+            result = self.find_feature(
+                feature=fL.claim_gift,
+                box=self.box.bottom_right,
+                threshold=0.8,
+            )
+            if result:
+                break
+            self.next_frame()
+            self.sleep(0.5)
+
+        if not result:
+            self.log_info(&quot;等待领取礼物图标超时，任务结束&quot;)
+            return
+
+        self.log_info(&quot;检测到领取礼物图标，执行点击&quot;)
+        self.click(result[0], after_sleep=1)
+</code></pre>
+<hr>
+<h2 id="注册与运行">注册与运行</h2>
+<p>将上述任意示例文件保存到 <code>src/tasks/onetime/</code> 后，在 <code>src/config.py</code> 中注册：</p>
+<pre><code class="language-python">config[&quot;onetime_tasks&quot;].append(
+    [&quot;src.tasks.onetime.ExampleFindFeature&quot;, &quot;ExampleFindFeature&quot;]
+)
+</code></pre>
+<p>重启程序（<code>python main_debug.py</code>），在 GUI 任务列表中即可找到并运行。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/图像模板匹配示例.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#函数速览" style="margin-left:0px">函数速览</a><a href="#示例一-检测单个图标并点击" style="margin-left:0px">示例一：检测单个图标并点击</a><a href="#示例二-动态指定搜索区域-box-参数" style="margin-left:0px">示例二：动态指定搜索区域（box 参数）</a><a href="#示例三-检测多个候选图标之一" style="margin-left:0px">示例三：检测多个候选图标之一</a><a href="#示例四-用-find-one-取置信度最高的结果" style="margin-left:0px">示例四：用 find_one 取置信度最高的结果</a><a href="#示例五-轮询等待图标出现" style="margin-left:0px">示例五：轮询等待图标出现</a><a href="#注册与运行" style="margin-left:0px">注册与运行</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

@@ -1,0 +1,304 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>日常任務 · ok-end-field</title><meta name="description" content="日常任務 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="日常任務 · ok-end-field"><meta property="og:description" content="日常任務 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="日常任務 · ok-end-field"><meta name="twitter:description" content="日常任務 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"日常任務 · ok-end-field","description":"日常任務 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件首頁</a><a href="../getting-started/installation/">安裝</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常見問題</a><a href="../features/overview/">功能概覽</a><a href="./" class="active" aria-current="page">日常任務</a><a href="../体力本/">刷體力</a><a href="../自动战斗/">自動戰鬥</a><a href="../排轴/">排軸</a><a href="../运送委托接取/">運送委託接取</a><a href="../自动送货/">自動送貨</a><a href="../仓库物品转移/">倉庫物品轉移</a><a href="../物品导航与实时检测/">物品導航與即時檢測</a><a href="../账号配置用户指南/">賬號配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../Windows 计划任务/">Windows 計劃任務</a><a href="../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../update/主数据维护工作流/">主資料維護</a><a href="../update/送货地区维护工作流/">送貨地區維護</a><a href="../update/日常送礼维护工作流/">日常送禮維護</a><a href="../dev/QUICKSTART/">從原始碼執行</a><a href="../dev/DEVELOPMENT/">開發指南</a><a href="../dev/API/">API 參考</a><a href="../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../dev/键盘操作体系/">鍵盤操作體系</a><a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../dev/文字识别示例/">文字識別示例</a><a href="../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../dev/切换账户流程分析/">賬戶切換流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="日常任務">日常任務</h1>
+<p>返回：<a href="../">文件索引</a> / <a href="../../">README</a></p>
+<h2 id="概述">概述</h2>
+<p>子任務開關用⭐標出，自上而下順序執行。除「⭐帝江號一鍵存放」和「⭐執行外部命令」預設關閉外，其餘當前任務計劃子任務預設開啟；『⭐地區建設』中的「買物資」選項預設不啟用。『⭐執行外部命令』可通過「外部命令執行時機」下拉框選擇在任務最開始或最後執行。</p>
+<p>如果出現反覆按ESC的情形，請調高『設定/主介面單次動作後延遲』（建議1.5以上）。</p>
+<h3 id="子任務和執行順序">子任務和執行順序</h3>
+<p>子任務和執行順序定義在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/onetime/DailyTask.py">DailyTask.py</a> 的 <code>build_task_plan()</code>。簡短概括如下：</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[启动日常任务] --&gt; B[送礼\n传送到特定地点]
+    B --&gt; C[帝江号任务组]
+    C --&gt; C1{是否已确认位于帝江号}
+    C1 --&gt;|否| C2[帝江号一键存放\n执行一次确认]
+    C1 --&gt;|是| C2
+    C2 --&gt; C3[简易制作\n复用帝江号状态]
+    C3 --&gt; C4[帝江号收菜\n复用帝江号状态]
+    C4 --&gt; D[收邮件]
+    D --&gt; E[转交委托与奖励领取]
+    E --&gt; E1[自动送货]
+    E1 --&gt; F[地区建设循环]
+    F --&gt; F1[切换到当前地区]
+    F1 --&gt; F2{据点兑换已启用?}
+    F2 --&gt;|是| F3[据点兑换]
+    F2 --&gt;|否| F4{买卖货已启用?}
+    F3 --&gt; F4
+    F4 --&gt;|是| F6[买卖货：先执行买]
+    F4 --&gt;|否| F7{买物资已启用?}
+    F6 --&gt; F8{买物资已启用?}
+    F8 --&gt;|是| F9[切换到稳定物资需求\n执行买物资]
+    F9 --&gt; F10[直接切换到弹性需求物资\n继续执行卖]
+    F8 --&gt;|否| F10
+    F7 --&gt;|是| F11[买物资]
+    F7 --&gt;|否| F5[safe_back\n地区建设总览]
+    F10 --&gt; F5
+    F11 --&gt; F5
+    F5 --&gt; F12{还有下一个地区?}
+    F12 --&gt;|是| F1
+    F12 --&gt;|否| G[地区建设完成]
+    G --&gt; M[造装备]
+    M --&gt; N[收信用]
+    N --&gt; O[买信用商店]
+    O --&gt; P[刷体力]
+    P --&gt; Q[活动奖励]
+    Q --&gt; R[日常奖励]
+    R --&gt; S[演算]
+    S --&gt; T[传送到帝江号右侧传送点]
+    T --&gt; U[任务结束]
+</code></pre>
+<blockquote>
+<p>普通情況</p>
+</blockquote>
+<ol>
+<li>送禮：通過「帝江號/幹員聯絡臺/贈送禮物」提升幹員好感度；該任務需要傳送到特定地點</li>
+<li>帝江號一鍵存放：開啟背包並點選「一鍵存放」（預設關閉）</li>
+<li>簡易製作：前往「簡易製作介面」製作物品</li>
+<li>帝江號收菜：按『⭐帝江號收菜』選擇收集線索、製造艙、培養艙</li>
+<li>收郵件：前往「郵箱」領取郵件</li>
+<li>轉交委託與獎勵領取：首次進入任意地區的「倉儲結點」後先領取一次「我轉交的委託」獎勵，再轉交全部運送委託</li>
+<li>自動送貨：自動接取當前選擇地區的委託，按照配置路徑將貨物送至對應接收者</li>
+<li>地區建設：按地區先執行「據點兌換」，再執行買賣貨的買；如啟用「買物資」，直接切換到穩定物資需求購買，完成後再切回彈性需求物資執行賣</li>
+<li>造裝備：前往「裝備製造/套組裝備製造」並製作一件列表首位的裝備</li>
+<li>收信用：前往好友的「帝江號」並在「訪客終端」上進行助力獲得信用</li>
+<li>買信用商店：優先採購「武庫配額」「嵌晶玉」和識別到的折扣商品，重新整理結束後再嘗試購買其他可購商品</li>
+<li>刷體力：消耗「理智」刷取培養材料</li>
+<li>活動獎勵：按『⭐活動獎勵』選擇領取周常獎勵、理智補給和刮刮樂</li>
+<li>日常獎勵：領取「行動手冊/日常」和「通行證」中的獎勵</li>
+<li>演算：執行演武集算任務</li>
+<li>傳送到帝江號右側傳送點，等待下一次執行</li>
+</ol>
+<blockquote>
+<p>「帝江號一鍵存放」「簡易製作」「帝江號收菜」連續執行時，僅第一個任務確認是否位於帝江號，後續任務共享該狀態。送禮仍單獨傳送到劍橋等特定地點。</p>
+</blockquote>
+<blockquote>
+<p>外部命令預設在任務最後執行；可在配置中將「外部命令執行時機」改為「任務最開始」使其最先執行。</p>
+</blockquote>
+<h3 id="執行流程">執行流程</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[启动日常任务] --&gt; B{多账户模式}
+    B --&gt;|关闭| C[使用当前账号]
+    B --&gt;|开启| D[读取账号列表]
+    D --&gt; E[切换账号并登录]
+    C --&gt; F[构建 build_task_plan]
+    E --&gt; F
+    F --&gt; G{外部命令时机}
+    G --&gt;|任务最开始| H[执行外部命令]
+    G --&gt;|任务最后| I[逐项执行子任务]
+    H --&gt; I
+    I --&gt; J[执行日常奖励和传送]
+    J --&gt; K{外部命令在最后}
+    K --&gt;|是| L[执行外部命令]
+    K --&gt;|否| M[生成并打开临时汇总]
+    L --&gt; M
+    M --&gt; N[结束]
+</code></pre>
+<blockquote>
+<p>多賬號模式（必須先在遊戲中登入過列表內賬號，並保持任意賬號已登入）</p>
+</blockquote>
+<ol>
+<li>首先嚐試切換第一個賬號</li>
+<li>切換賬號後執行日常</li>
+<li>完成日常後嘗試切換第二個賬號</li>
+<li>迴圈直到沒有賬號可以切換</li>
+</ol>
+<h2 id="子任務介紹">子任務介紹</h2>
+<h3 id="送禮">送禮</h3>
+<blockquote>
+<p>檢查單：「帝江號/劍橋」可傳送，「幹員聯絡臺」可用，在『⭐地區建設』中啟用「買物資」，並開啟『是否買禮物』確保禮物充足。</p>
+</blockquote>
+<p>通過「帝江號/幹員聯絡臺/贈送禮物」提升員好感度。如果途中偶遇幹員，則直接互動完成送禮。</p>
+<p>角色會傳送到「帝江號/劍橋」，然後走向「幹員聯絡臺」，最後互動完成送禮。</p>
+<p>選項：『⭐送禮』『送禮任務最多嘗試次數』『一次送禮個數』『優先送禮物件』。當前預設分別為開啟、<code>2</code>、<code>2</code> 和角色列表首項。</p>
+<h3 id="帝江號一鍵存放">帝江號一鍵存放</h3>
+<blockquote>
+<p>檢查單：「帝江號」區域可達，背包介面可正常開啟。<strong>確認開啟前不會將治療藥等可用道具誤存入倉庫。</strong></p>
+</blockquote>
+<p>是否在「帝江號」開啟背包並點選「一鍵存放」。任務會傳送至帝江號，按 B 開啟背包，通過 OCR 識別「存放」按鈕後點擊。</p>
+<blockquote>
+<p>注意：僅直接點選「一鍵存放」，請確認一件存放選項中不含可用道具項再開啟此選項。</p>
+</blockquote>
+<p>選項：『⭐帝江號一鍵存放』</p>
+<h3 id="收郵件">收郵件</h3>
+<blockquote>
+<p>檢查單：「郵箱」可用。</p>
+</blockquote>
+<p>是否前往「郵箱」領取郵件。</p>
+<p>選項：『⭐收郵件』</p>
+<h3 id="據點兌換">據點兌換</h3>
+<blockquote>
+<p>檢查單：「地區建設/據點管理」可用，至少一個據點可交易。在『⭐地區建設』中啟用「買物資」確保排程券不溢位。</p>
+</blockquote>
+<p>在「地區建設/據點管理」中通過交易獲得排程券。</p>
+<p>程式會遍歷所有地區所有據點，儘可能獲得全部排程券。<strong>程式支援的交易貨品</strong> 詳見檔案 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map.py">world_map.py</a> 中的列表 <code>goods_dict</code> 。</p>
+<p>選項：『⭐據點兌換』『交易貨品優先序列』『據點兌換僅購買優先商品』</p>
+<p>開啟『據點兌換僅購買優先商品』後，僅當「交易貨品優先序列」不為空時，只兌換其中的商品；優先序列為空時按原邏輯兌換。</p>
+<h4 id="交易貨品優先序列">交易貨品優先序列</h4>
+<p>選項『交易貨品優先序列』預設為空，此時程式會識別 <em>據點接受的貨品</em>，對於其中 <em>程式支援的交易貨品</em> 按照 <strong>隨機順序</strong> 交易。</p>
+<p>如果想要程式按順序進行交易，可以在選項『交易貨品優先序列』中 <strong>依次填入 正規表示式 並用英文逗號 <code>,</code> 隔開</strong> ，如此以來：</p>
+<ul>
+<li>對於 <strong>優先貨品</strong> ，如果同時屬於 <em>據點接受的貨品</em> 和 <em>程式支援的交易貨品</em> ，那麼按照 <strong>填寫順序</strong> 交易。</li>
+<li>對於其它貨品，在優先貨品後按照隨機順序交易。</li>
+<li>錯誤的/據點不接受的/程式不支援的 貨品名稱會被忽略。</li>
+</ul>
+<h4 id="例子">例子</h4>
+<p>遊戲版本1.1，四號谷地 <code>20晶体外壳 + 24柑实罐头 + 18精选荞愈胶囊 + 18高容谷地电池</code> 畢業滿礦產線，武陵 <code>6优质芽针针剂 + 12中容武陵电池</code> 版本畢業產線。</p>
+<p>選項『交易貨品優先序列』可以填入 <code>晶体外壳,\b柑实罐头,精选荞愈,高容谷地,优质芽针,中容武陵</code>，這樣可以在四號谷地節餘電池（搬運發電減少武陵電池消耗）並且在武陵優先消耗藥品（防止藥品爆倉阻塞汙水堵住電池產線）。</p>
+<h3 id="轉交運送委託">轉交運送委託</h3>
+<blockquote>
+<p>檢查單：「地區建設/倉儲結點/委託運送列表」和「我轉交的委託」可用。</p>
+</blockquote>
+<p>是否在「地區建設/倉儲結點」中領取一次「我轉交的委託」獎勵，並轉交全部運送委託。程式會在首次進入任意地區的「倉儲結點」時先領取獎勵，然後遍歷所有區域轉交全部委託。</p>
+<p>可能出現 委託未領取/貨物摔壞 情形，不能確保獲得最大收益。</p>
+<p>選項：『⭐轉交運送委託』。獎勵領取預設啟用。</p>
+<h3 id="簡易製作">簡易製作</h3>
+<blockquote>
+<p>檢查單：「簡易製作介面有可製作的物品」可用。</p>
+</blockquote>
+<p>是否前往「簡易製作介面」製作物品。</p>
+<p>選項：『⭐簡易製作』</p>
+<h3 id="造裝備">造裝備</h3>
+<blockquote>
+<p>檢查單：「裝備製造/套組裝備製造」可用。裝備原件日產不小於50。</p>
+</blockquote>
+<p>是否前往「裝備製造/套組裝備製造」並製作一件 <strong>列表首位</strong> 的裝備。請確保有足夠的 <strong>裝備原件</strong> 和排程券。</p>
+<p>選項：『⭐造裝備』</p>
+<h3 id="收信用">收信用</h3>
+<blockquote>
+<p>檢查單：「帝江號」區域可達。擁有至少25個好友。「採購中心/信用交易所」可用。</p>
+</blockquote>
+<p>是否前往好友的「帝江號」並在「訪客終端」上進行助力獲得信用。助力結束後，前往「採購中心/信用交易所」收取全部助力。</p>
+<p>若選項『嘗試僅收培育室』開啟，則優先嚐試僅助力好友「帝江號」上的「培養倉」。如果不能，至少助力一次其它艙室。</p>
+<p>選項：『⭐收信用』『嘗試僅收培育室』</p>
+<h3 id="帝江號收菜">帝江號收菜</h3>
+<blockquote>
+<p>檢查單：「帝江號」區域可達。</p>
+</blockquote>
+<p>是否執行一下任務的總開關 <strong>收集線索</strong>,<strong>製造艙</strong></p>
+<p>選項：『⭐帝江號收菜』</p>
+<h4 id="收集線索">收集線索</h4>
+<blockquote>
+<p>檢查單：「帝江號/會客室」區域可達。</p>
+</blockquote>
+<p>是否前往「帝江號/會客室」收集全部線索。若集齊線索，則開啟情報交流。</p>
+<p>如果想要提高情報交流頻率（獲得更多的信用來兌換抽卡資源），建議多加好友。</p>
+<p>選項：『⭐帝江號收菜』中的「收集線索」</p>
+<h4 id="製造倉">製造倉</h4>
+<blockquote>
+<p>檢查單：所有的「帝江號/培養倉」區域可達。每個區域設好待制造物品。每個區域至少安排一名角色。</p>
+</blockquote>
+<p>是否前往「帝江號/製造倉」收取培養材料。收取後會補足待制造數量。</p>
+<p>如果想要提高製造效率，請安排天賦合適的角色。</p>
+<p>選項：『⭐帝江號收菜』中的「製造艙」</p>
+<h4 id="培養艙">培養艙</h4>
+<p>是否前往「帝江號/培養艙」收取培養材料並直接再次培養。</p>
+<p>選項：『⭐帝江號收菜』中的「培養艙」</p>
+<h3 id="買信用商店">買信用商店</h3>
+<blockquote>
+<p>檢查單：「採購中心/信用交易所」可用。</p>
+</blockquote>
+<p>是否在「採購中心/信用交易所」採購。每輪優先購買「武庫配額」「嵌晶玉」及識別到的折扣商品，並最多按 <code>80/120/160/201</code> 信用成本重新整理；只有預計重新整理後信用嚴格大於固定值 <code>210</code> 才會重新整理。不能繼續重新整理時，還會嘗試購買頁面中其他可購商品。</p>
+<p>『信用商店保留信用』是購買成功後的停止閾值：程式不會在購買前預留這部分信用，而是在扣除商品價格後，剩餘信用小於等於該值時停止後續採購。該配置不控制重新整理；重新整理始終使用上述固定 <code>210</code> 判定。</p>
+<p>選項：『⭐買信用商店』『信用商店保留信用』</p>
+<h3 id="買賣貨">買賣貨</h3>
+<blockquote>
+<p>檢查單：「帝江號」區域可達。擁有至少25個好友。「地區建設/物資排程/彈性需求物資」可用。在『⭐地區建設』中啟用「據點兌換」確保排程券充足、「買物資」確保排程券不溢位。</p>
+</blockquote>
+<p>是否在「彈性需求物資」與好友交易賺取排程券。自動獲取貨物資訊，然後用價格上下限判定是否交易。（除非可購買數量即將溢位，這種情況下必定交易。）</p>
+<p>只買不賣模式下，只進行購買操作，不進行賣出操作。並不會獲取所有資訊以加速任務流程。</p>
+<p>當前 <strong>程式支援的交易物資</strong> 詳見檔案 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map.py">world_map.py</a> 中的列表 <code>exchange_goods_dict</code> 。</p>
+<p>選項：『⭐地區建設』的「買賣貨」『只買不賣』『武陵買入價』『武陵賣出價』『武陵』『四號谷地買入價』『四號谷地賣出價』『四號谷地』</p>
+<h3 id="買物資">買物資</h3>
+<blockquote>
+<p>檢查單：「地區建設/物資排程/穩定物資需求」可用。在『⭐地區建設』中啟用「據點兌換」確保排程券充足。</p>
+</blockquote>
+<p>是否在「地區建設/物資排程/穩定物資需求」中通過排程券購買物資。依次購買「日用消耗」「工業貨品」「人文物產」首行某個物品。</p>
+<p>選項『購物白名單』預設留空，表示購買「日用消耗」「工業貨品」首行首個物資；若『是否買禮物』為 <code>true</code>，也會購買「人文物產」首行首個物資。</p>
+<p>該選項可以填入用 <strong>英文逗號(,)</strong> 隔開的若干 <strong>正規表示式</strong> ，如果任一可以匹配首行的某個物資，那麼購買，如果都不匹配，那麼跳過。推薦設為 <code>刻写,助剂,理智,寻访,高级,高阶,折金票</code> 。</p>
+<p><strong>建議手動購完 不重新整理的一次性物資</strong>，以避免奇怪的問題（雖然能相容）。</p>
+<p>選項：『⭐地區建設』的「買物資」『購物白名單』『是否買禮物』</p>
+<h3 id="刷體力">刷體力</h3>
+<p>詳見 <a href="../体力本/">體力本.md</a> 。</p>
+<h3 id="活動獎勵">活動獎勵</h3>
+<blockquote>
+<p>檢查單：「活動中心/每週事物」可用。</p>
+</blockquote>
+<p>是否按『⭐活動獎勵』多選項領取「活動中心」中的獎勵。當前三個選項預設全部選中。</p>
+<p>選項：『⭐活動獎勵』，可選「周常獎勵」「理智補給」「刮刮樂」</p>
+<h3 id="日常獎勵">日常獎勵</h3>
+<blockquote>
+<p>檢查單：「行動手冊/日常」和「通行證」可用。</p>
+</blockquote>
+<p>是否領取「行動手冊/日常」和「通行證」中的獎勵。</p>
+<p>選項：『⭐日常獎勵』</p>
+<h3 id="傳送到帝江號右側傳送點">傳送到帝江號右側傳送點</h3>
+<blockquote>
+<p>檢查單：帝江號區域可達。</p>
+</blockquote>
+<p>傳送到「帝江號」右側傳送點。</p>
+<p>選項：『⭐傳送到帝江號右側傳送點』</p>
+<h3 id="執行外部命令">執行外部命令</h3>
+<blockquote>
+<p>檢查單：外部程式可通過命令列直接啟動。</p>
+</blockquote>
+<p>在日常任務最開始或最後執行一次外部命令，通過「外部命令執行時機」下拉框選擇。可通過選項控制是否等待命令退出，也可在檢測到目標命令已執行時跳過本次啟動。可結合其他能夠通過命令列執行特定任務的指令碼使用，以更好地實現遊戲日常處理。</p>
+<p>選項：『⭐執行外部命令』『外部命令』『外部命令起始於』『外部命令等待退出』『外部命令已執行時跳過』『外部命令執行時機』</p>
+<p>命令示例（參考命令列啟動任務的寫法，儘量保持簡短）：</p>
+<pre><code class="language-bash"># MXU（Windows）：开机自启动模式，指定实例（任务标签页）名
+mxu.exe --autostart --instance 日常任务
+
+# MXU（Linux / macOS）：指定实例，执行完成后自动退出
+./mxu --autostart -i 日常任务 --quit-after-run
+
+# 通用：执行本地脚本
+python scripts/daily_extra.py
+</code></pre>
+<p>填寫說明：</p>
+<ul>
+<li>建議使用絕對路徑或穩定的相對路徑。</li>
+<li>『外部命令起始於』可選；填寫後作為命令工作目錄，不填則使用預設目錄。</li>
+<li>路徑或引數含空格時，請按當前系統 shell 規則加引號。</li>
+<li><code>mxu.exe</code> 僅適用於 Windows，Linux / macOS 通常是 <code>./mxu</code>。</li>
+<li><code>-i</code> / <code>--instance</code> 用於指定例項（任務標籤頁）名。</li>
+<li><code>-q</code> / <code>--quit-after-run</code> 表示自動執行完成後退出。</li>
+<li>開啟『外部命令等待退出』後，會等待該命令結束並根據退出碼判定成功與失敗。</li>
+<li>開啟『外部命令已執行時跳過』後，檢測到目標命令已在執行會直接跳過本次啟動。</li>
+<li>引數儘量簡短，避免超長單行命令。</li>
+</ul>
+<h3 id="其他選項">其他選項</h3>
+<ol>
+<li>發生異常時終止遊戲</li>
+<li>僅退出遊戲</li>
+<li>完成後退出</li>
+</ol>
+<p>相關文件：<a href="../体力本/">刷體力</a> / <a href="../账号配置用户指南/">賬號配置使用者指南</a> / <a href="../dev/API/">API 參考</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/日常任务.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#子任務和執行順序" style="margin-left:10px">子任務和執行順序</a><a href="#執行流程" style="margin-left:10px">執行流程</a><a href="#子任務介紹" style="margin-left:0px">子任務介紹</a><a href="#送禮" style="margin-left:10px">送禮</a><a href="#帝江號一鍵存放" style="margin-left:10px">帝江號一鍵存放</a><a href="#收郵件" style="margin-left:10px">收郵件</a><a href="#據點兌換" style="margin-left:10px">據點兌換</a><a href="#轉交運送委託" style="margin-left:10px">轉交運送委託</a><a href="#簡易製作" style="margin-left:10px">簡易製作</a><a href="#造裝備" style="margin-left:10px">造裝備</a><a href="#收信用" style="margin-left:10px">收信用</a><a href="#帝江號收菜" style="margin-left:10px">帝江號收菜</a><a href="#買信用商店" style="margin-left:10px">買信用商店</a><a href="#買賣貨" style="margin-left:10px">買賣貨</a><a href="#買物資" style="margin-left:10px">買物資</a><a href="#刷體力" style="margin-left:10px">刷體力</a><a href="#活動獎勵" style="margin-left:10px">活動獎勵</a><a href="#日常獎勵" style="margin-left:10px">日常獎勵</a><a href="#傳送到帝江號右側傳送點" style="margin-left:10px">傳送到帝江號右側傳送點</a><a href="#執行外部命令" style="margin-left:10px">執行外部命令</a><a href="#其他選項" style="margin-left:10px">其他選項</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

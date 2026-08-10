@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>任務開發 · ok-script-app</title><meta name="description" content="任務開發 — ok-script-app"><meta name="keywords" content="ok-script-app, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://app.ok-script.com/zh-TW/docs/tasks/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="任務開發 · ok-script-app"><meta property="og:description" content="任務開發 — ok-script-app"><meta property="og:url" content="https://app.ok-script.com/zh-TW/docs/tasks/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="任務開發 · ok-script-app"><meta name="twitter:description" content="任務開發 — ok-script-app">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"任務開發 · ok-script-app","description":"任務開發 — ok-script-app","url":"https://app.ok-script.com/zh-TW/docs/tasks/","inLanguage":"zh-TW","dateModified":"2026-08-10T08:34:53+08:00","author":{"@type":"Organization","name":"ok-script-app","url":"https://github.com/ok-oldking/ok-script-app"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script-app"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">首頁</a><a href="../getting-started/">快速開始</a><a href="../configuration/">應用配置</a><a href="./" class="active" aria-current="page">任務開發</a><a href="../release/">打包與釋出</a><a href="../documentation/">文件網站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script-app</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="任務開發">任務開發</h1>
+<p>一次性任務示例位於 <code>src/tasks/MyOneTimeTask.py</code>，後臺觸發任務示例位於 <code>src/tasks/MyTriggerTask.py</code>。</p>
+<h2 id="建立任務">建立任務</h2>
+<ul>
+<li>使用者點選後執行一次的任務繼承 <code>BaseTask</code>。</li>
+<li>需要後臺週期檢查的任務繼承 <code>TriggerTask</code>。</li>
+<li>通用能力可以放在 <code>src/tasks/MyBaseTask.py</code>。</li>
+</ul>
+<p>任務類通常在 <code>__init__()</code> 中設定名稱、描述、預設配置和配置控制元件，在 <code>run()</code> 中實現自動化邏輯。</p>
+<h2 id="註冊任務">註冊任務</h2>
+<p>在 <code>src/config.py</code> 中註冊模組路徑和類名：</p>
+<pre><code class="language-python">&#39;onetime_tasks&#39;: [
+    [&#39;src.tasks.MyFirstTask&#39;, &#39;MyFirstTask&#39;],
+    [&#39;ok&#39;, &#39;DiagnosisTask&#39;],
+],
+</code></pre>
+<p>後臺任務使用 <code>trigger_tasks</code> 列表。</p>
+<h2 id="常用能力">常用能力</h2>
+<ul>
+<li>修改 <code>default_config</code> 增加任務配置預設值。</li>
+<li>修改 <code>config_type</code> 選擇配置控制元件型別。</li>
+<li>使用 <code>self.ocr()</code> 識別文字。</li>
+<li>使用 <code>self.find_one()</code> 或 <code>self.find_feature()</code> 進行模板匹配。</li>
+<li>使用 <code>self.info_set()</code> 在 UI 中展示任務狀態。</li>
+<li>使用 <code>self.log_info(..., notify=True)</code> 傳送通知。</li>
+</ul>
+<p>啟用 <code>custom_tasks</code> 後，也可以在 GUI 中建立和編輯自定義任務指令碼。</p>
+<h2 id="使用-ai-輔助開發">使用 AI 輔助開發</h2>
+<p>倉庫內建以下 Agent Skills：</p>
+<ul>
+<li><code>$ok-script-tasks</code>：建立、修改和註冊任務類。</li>
+<li><code>$ok-script-codegen</code>：根據需求或截圖生成任務自動化邏輯。</li>
+<li><code>$ok-script-i18n</code>：同步任務名稱、描述和配置項翻譯。</li>
+</ul>
+<h2 id="驗證">驗證</h2>
+<pre><code class="language-powershell">python main_debug.py
+python -m unittest tests.TestMain
+</code></pre>
+<p>新增測試時，將檔案放在 <code>tests/</code> 下；釋出工作流會執行該目錄中的測試檔案。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app/blob/adce86505f64b2676a957cc4d7cb2837012a3b05/docs/tasks.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#建立任務" style="margin-left:0px">建立任務</a><a href="#註冊任務" style="margin-left:0px">註冊任務</a><a href="#常用能力" style="margin-left:0px">常用能力</a><a href="#使用-ai-輔助開發" style="margin-left:0px">使用 AI 輔助開發</a><a href="#驗證" style="margin-left:0px">驗證</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

@@ -1,0 +1,180 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>滑索与送货逻辑 · ok-end-field</title><meta name="description" content="滑索与送货逻辑 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/滑索与送货逻辑/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="滑索与送货逻辑 · ok-end-field"><meta property="og:description" content="滑索与送货逻辑 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/滑索与送货逻辑/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="滑索与送货逻辑 · ok-end-field"><meta name="twitter:description" content="滑索与送货逻辑 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"滑索与送货逻辑 · ok-end-field","description":"滑索与送货逻辑 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/dev/滑索与送货逻辑/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../键盘操作体系/">键盘操作体系</a><a href="./" class="active" aria-current="page">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../装备词条识别轮子/">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="滑索与送货逻辑">滑索与送货逻辑</h1>
+<p>返回：<a href="../../../../docs/">文档索引</a> / <a href="../../../">README</a></p>
+<p>本文记录滑索和自动送货两个模块的核心思想与逻辑推演过程，供后续开发和维护参考。</p>
+<hr>
+<h2 id="一-总体思路">一、总体思路</h2>
+<p>整个送货自动化可拆分为三个相互独立但顺序依赖的子问题：</p>
+<ol>
+<li><strong>抢单</strong>：在委托列表中识别并接取符合条件的委托。(已有)</li>
+<li><strong>取货</strong>：通过滑索系统到达仓储节点，拾取货物。</li>
+<li><strong>送达</strong>：通过滑索系统到达目标 NPC，提交货物完成委托。</li>
+</ol>
+<hr>
+<h2 id="二-滑索系统-ziplinemixin">二、滑索系统（ZipLineMixin）</h2>
+<h3 id="2-1-核心问题">2.1 核心问题</h3>
+<p>滑索可能有多个可连通的滑索，每个连接点对应一个可识别的距离数字（如 14m、108m）。程序无法直接知道&quot;当前哪个连接点在屏幕中央&quot;，只能通过 OCR 扫描当前画面中的数字来判断。</p>
+<p>因此，<strong>到达特定连接点</strong>等价于：<strong>将目标距离数字移动到屏幕中心</strong>。</p>
+<h3 id="2-2-对齐算法">2.2 对齐算法</h3>
+<p>流程如下：</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[开始对齐目标距离] --&gt; B[OCR 扫描距离文本]
+    B --&gt; C{找到目标距离}
+    C --&gt;|是| D[计算目标与屏幕中心偏差]
+    C --&gt;|否| E{有历史位置}
+    E --&gt;|是| F[按指数衰减预测位置]
+    E --&gt;|否| G[随机探索视角]
+    F --&gt; D
+    G --&gt; B
+    D --&gt; H{偏差在容差内}
+    H --&gt;|否| I[移动视角]
+    I --&gt; B
+    H --&gt;|是| J[点击连接点]
+    J --&gt; K[持续按 E 推进]
+    K --&gt; L{出现移动或离开提示}
+    L --&gt;|否| K
+    L --&gt;|是| M[本段完成]
+</code></pre>
+<ol>
+<li>对屏幕做 OCR，同时用 HSV 颜色过滤器（金色文字 + 白色文字）隔离噪声，提高数字识别准确率。</li>
+<li>如果找到目标数字，计算其中心与屏幕中心的偏差 <code>(dx, dy)</code>。</li>
+<li>若偏差超出容差（默认 50px），向偏差方向移动摄像头，反复迭代直至对齐。</li>
+<li>目标对中、短暂丢失后的预测和搜索策略由 <code>NavigationMixin.align_ocr_or_find_target_to_center()</code> 统一实现；<code>ZipLineMixin</code> 负责提供距离正则、HSV 处理器和 <code>max_time=100</code>。</li>
+<li>对中失败、序列格式非法等错误直接向上抛出，由任务统一异常处理。
+这一分层使滑索代码只维护“距离序列 + 交互”，通用导航搜索策略集中在 <code>navigation_mixin.py</code>。<blockquote>
+<p>可利用的部分特性：固定角色模型可以遮住复杂背景，因此可以先切换到特定角色，然后借助角色模型遮挡来提高 OCR 的稳定性。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-3-发射与推进">2.3 发射与推进</h3>
+<p>对齐完成后：</p>
+<ol>
+<li>点击连接点（鼠标左键）。</li>
+<li>进入循环，<strong>持续按 E 键</strong>，每 0.1 秒检查一次屏幕底部的状态文字。</li>
+<li>出现本地化资源 <code>zip_line_mixin</code> 中的「向目标移动」或「离开滑索架」匹配项时，代表本段滑索已触发或完成，退出循环，进入下一段。</li>
+<li>等待首次登上滑索的超时为 60 秒；每一段推进的超时为 240 秒，超时均抛出异常。</li>
+</ol>
+<p>持续按 E 的原因是：游戏在滑索距离很短的情况下，程序如果再进行ocr容易因为延迟错过按E的时机导致异常，采用<strong>高频重复输入</strong>来确保不错过触发窗口。
+实现上使用底层按键发送 <code>send_key(&quot;e&quot;)</code>，因为游戏内该交互键不可改绑，因此不走通用热键映射。</p>
+<h3 id="2-4-多段序列">2.4 多段序列</h3>
+<p>配置中每个目的地对应一个距离序列（如 <code>&quot;14,108,64,109,60&quot;</code>），由 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/sequence_parser.py"><code>parse_int_sequence</code></a> 解析；支持逗号字符串或整数列表，非法 token 会抛 <code>ValueError</code>。程序按顺序逐段执行，并按 <code>need_v</code>、目标导航和底部提示决定右键收尾。</p>
+<hr>
+<h2 id="三-送货任务编排-deliverytask">三、送货任务编排（DeliveryTask）</h2>
+<h3 id="3-1-整体流程串联">3.1 整体流程串联</h3>
+<pre><code class="language-mermaid">flowchart TD
+    A[接取委托] --&gt; B[传送至出发点]
+    B --&gt; C[滑索前往仓储节点]
+    C --&gt; D[取货并回到滑索]
+    D --&gt; E[OCR 识别当前地区配置的目标 NPC]
+    E --&gt; F[按目标滑索序列前往]
+    F --&gt; G[到达并提交货物]
+    G --&gt; H{还有接取机会}
+    H --&gt;|是| A
+    H --&gt;|否| I[结束]
+</code></pre>
+<p>按以下顺序执行一次完整送货：</p>
+<pre><code>接取委托
+    ↓
+传送至出发点（task_to_transfer_point）
+    ↓
+滑索前往仓储节点取货并回到滑索（to_storage_point_and_back_zip_line）
+    ↓
+OCR 识别目标 NPC（来自当前地区 `delivery_targets_by_location`）
+    ↓
+滑索前往目标 NPC（on_zip_line_start）
+    ↓
+到达并提交货物（to_end_and_submit）
+</code></pre>
+<p>循环最多重试 3 次(因为最多有三次接取机会)</p>
+<h3 id="3-2-取货逻辑">3.2 取货逻辑</h3>
+<p>滑索前往仓储节点取货并回到滑索 的思路：</p>
+<blockquote>
+<p>前提:上一步完成后，落地有滑索的情况下可以直接上滑索</p>
+</blockquote>
+<ol>
+<li>等待「登上滑索架」提示出现，点击并上滑索。</li>
+<li>按配置的「通向{地点}送货点」序列滑行（每个送货地点一个键，如「通向武陵城送货点」「通向试验园区送货点」）。</li>
+<li>下滑索后，任务小蓝点可能变暗此时使用追踪键(<em>v</em>),使其变亮,然后再次上滑索进行一次关于小蓝点的对中</li>
+<li>到达仓储节点附近后，通过任务小蓝点进行辅助对齐，步行靠近仓储节点。</li>
+<li>检测到「仓储节点」及「取货」提示后点击取货。</li>
+<li>取货后需检测最近滑索架并前往后续送达流程。</li>
+</ol>
+<h3 id="3-3-目标-npc-识别">3.3 目标 NPC 识别</h3>
+<p>仓储点取货后，游戏界面左侧会显示送达点或目标 NPC。候选项来自当前地区 <code>delivery_targets_by_location</code> 的并集，并通过 <code>assets/lang/world_map.json</code> 取得当前语言匹配器；识别到的规范目标名用于选择同名滑索序列和后续导航。</p>
+<h3 id="3-4-送达逻辑">3.4 送达逻辑</h3>
+<p>在到达目标 NPC 后：</p>
+<ol>
+<li>检测 NPC 名称或「提交」等交互提示出现。</li>
+<li>点击提交完成委托。</li>
+<li>等待结算 UI 消失后返回，准备下一次循环。</li>
+</ol>
+<h3 id="3-5-功能开关设计">3.5 功能开关设计</h3>
+<p>提供「仅接取」和「仅送货」两个开关，方便在调试或特殊场景下只跑流程的某一段，而不必修改代码。「选择测试对象」则允许单独测试某段滑索序列或完整循环，降低调试成本。</p>
+<hr>
+<h2 id="四-关键设计取舍">四、关键设计取舍</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>取舍思路</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>滑索对齐为何用 OCR 而非图像特征匹配</td>
+<td>距离数字是滑索到滑索间最直观的信息，OCR 更通用,用户输入配置也更直观；图标模板维护成本高</td>
+</tr>
+<tr>
+<td>为何持续按 E 而非判断时机后按一次</td>
+<td>滑索距离短时交互触发时机很短，高频输入容错性更强；且该交互键在游戏内不可改绑，故直接发送底层 E 键输入</td>
+</tr>
+<tr>
+<td>OCR 失败时为何用预测而非立即重试</td>
+<td>相机还在移动时目标短暂消失属正常，立即重置会导致震荡</td>
+</tr>
+<tr>
+<td>为何走完一条完整滑索链后要再次上滑索</td>
+<td>防止下滑索后，小蓝点特征被交互UI遮住导致无法识别，而上滑索后不会出现此种UI遮挡情况</td>
+</tr>
+</tbody></table>
+<h2 id="五-可能的替代方案">五、可能的替代方案</h2>
+<h3 id="滑索对齐改进">滑索对齐改进</h3>
+<ol>
+<li><strong>地图上获取线路，降低ocr依赖</strong> ：若能够通过游戏地图获取滑索线路，在滑索上打开地图，点击下一个滑索的追踪按钮，小地图上就会显示出相对方向，一定程度上可以解决横向对齐问题，竖向校准则需进一步考虑</li>
+<li><strong>对中利用图像特征匹配</strong> ：通过图像特征匹配，如模板匹配，来识别滑索图标，针对识别到的模板位置来进行进一步识别该模板对应的距离</li>
+</ol>
+<h2 id="六-部分已知问题">六、部分已知问题</h2>
+<ol>
+<li><a href="https://github.com/AliceJump/ok-end-field/issues/24">下滑索后无法立刻上滑索</a></li>
+</ol>
+<p>相关文档：<a href="../../../../docs/自动送货/">自动送货</a> / <a href="../../update/送货地区维护工作流/">送货地区维护工作流</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/滑索与送货逻辑.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#一-总体思路" style="margin-left:0px">一、总体思路</a><a href="#二-滑索系统-ziplinemixin" style="margin-left:0px">二、滑索系统（ZipLineMixin）</a><a href="#2-1-核心问题" style="margin-left:10px">2.1 核心问题</a><a href="#2-2-对齐算法" style="margin-left:10px">2.2 对齐算法</a><a href="#2-3-发射与推进" style="margin-left:10px">2.3 发射与推进</a><a href="#2-4-多段序列" style="margin-left:10px">2.4 多段序列</a><a href="#三-送货任务编排-deliverytask" style="margin-left:0px">三、送货任务编排（DeliveryTask）</a><a href="#3-1-整体流程串联" style="margin-left:10px">3.1 整体流程串联</a><a href="#3-2-取货逻辑" style="margin-left:10px">3.2 取货逻辑</a><a href="#3-3-目标-npc-识别" style="margin-left:10px">3.3 目标 NPC 识别</a><a href="#3-4-送达逻辑" style="margin-left:10px">3.4 送达逻辑</a><a href="#3-5-功能开关设计" style="margin-left:10px">3.5 功能开关设计</a><a href="#四-关键设计取舍" style="margin-left:0px">四、关键设计取舍</a><a href="#五-可能的替代方案" style="margin-left:0px">五、可能的替代方案</a><a href="#滑索对齐改进" style="margin-left:10px">滑索对齐改进</a><a href="#六-部分已知问题" style="margin-left:0px">六、部分已知问题</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

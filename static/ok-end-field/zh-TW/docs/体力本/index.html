@@ -1,0 +1,196 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>刷體力 · ok-end-field</title><meta name="description" content="刷體力 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/体力本/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="刷體力 · ok-end-field"><meta property="og:description" content="刷體力 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/体力本/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="刷體力 · ok-end-field"><meta name="twitter:description" content="刷體力 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"刷體力 · ok-end-field","description":"刷體力 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/体力本/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件首頁</a><a href="../getting-started/installation/">安裝</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常見問題</a><a href="../features/overview/">功能概覽</a><a href="../日常任务/">日常任務</a><a href="./" class="active" aria-current="page">刷體力</a><a href="../自动战斗/">自動戰鬥</a><a href="../排轴/">排軸</a><a href="../运送委托接取/">運送委託接取</a><a href="../自动送货/">自動送貨</a><a href="../仓库物品转移/">倉庫物品轉移</a><a href="../物品导航与实时检测/">物品導航與即時檢測</a><a href="../账号配置用户指南/">賬號配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../Windows 计划任务/">Windows 計劃任務</a><a href="../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../update/主数据维护工作流/">主資料維護</a><a href="../update/送货地区维护工作流/">送貨地區維護</a><a href="../update/日常送礼维护工作流/">日常送禮維護</a><a href="../dev/QUICKSTART/">從原始碼執行</a><a href="../dev/DEVELOPMENT/">開發指南</a><a href="../dev/API/">API 參考</a><a href="../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../dev/键盘操作体系/">鍵盤操作體系</a><a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../dev/文字识别示例/">文字識別示例</a><a href="../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../dev/切换账户流程分析/">賬戶切換流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="體力本">體力本</h1>
+<p>返回：<a href="../">文件索引</a> / <a href="../../">README</a></p>
+<h2 id="配置要求">配置要求</h2>
+<blockquote>
+<p>確保解析度大於等於<strong>1920x1080（1080P）</strong>，低於 1080P 不保證正常執行</p>
+</blockquote>
+<h2 id="戰鬥邏輯">戰鬥邏輯</h2>
+<p>有普通戰鬥和排軸戰鬥兩種戰鬥邏輯。所有戰鬥配置（技能釋放順序、啟動技能點數、排軸序列等）現在集中在 <strong>「全域性配置 → 戰鬥配置」</strong> 中統一管理，一次配置即可同時應用於「刷體力」「自動戰鬥」「日常任務」等任務，無需多處重複設定。</p>
+<p>每次戰鬥開始時先鎖敵並按住滑鼠左鍵持續普攻，再等待 <strong>進入戰鬥後的初始等待時間</strong>（預設 3 秒），然後開始釋放技能。戰鬥退出或異常時會釋放滑鼠左鍵。</p>
+<h3 id="普通戰鬥">普通戰鬥</h3>
+<p>邏輯如下：</p>
+<pre><code class="language-mermaid">flowchart TD
+    A[进入战斗] --&gt; B[开始普攻]
+    B --&gt; C[等待初始时间]
+    C --&gt; D{启用排轴}
+    D --&gt;|是| E[按排轴序列执行]
+    E --&gt; F{5 秒内执行成功}
+    F --&gt;|否| G[本场永久回退普通战斗]
+    F --&gt;|是| H[继续下一项]
+    D --&gt;|否| G
+    G --&gt; I{连携技可释放}
+    I --&gt;|是| L[释放连携技]
+    I --&gt;|否| J{终结技可释放}
+    J --&gt;|是| L[释放终结技]
+    J --&gt;|否| K{技力达到启动点数}
+    K --&gt;|是| O[按技能释放顺序释放战技]
+    K --&gt;|否| P[贴近敌人并读取下一帧]
+    L --&gt; M{战斗结束}
+    O --&gt; M
+    P --&gt; M
+    H --&gt; M
+    M --&gt;|否| D
+    M --&gt;|是| N[停止普攻并结算]
+</code></pre>
+<p>普通模式每幀先嚐試連攜技，再嘗試任意可用終結技；若都未釋放且技力達到 <strong>啟動技能點數</strong>（預設 2），按 <strong>技能釋放</strong>（預設 <code>1,2,3</code>）迴圈釋放戰技。戰鬥期間還會按 <strong>無數字操作間隔</strong>（預設 6 秒，執行時限制為 1 至 30 秒）週期鎖敵並向前閃避。</p>
+<h3 id="排軸戰鬥">排軸戰鬥</h3>
+<p>啟用排軸後按排軸序列執行。如果距上一個成功動作達到 5 秒仍未成功，當前這場戰鬥會永久回退普通模式，不會在後續動作成功後重新啟用排軸。<code>sleep_n</code> 與 <code>normal_n</code> 完成時都算成功動作並重置該計時。</p>
+<p>排軸說明：<a href="../排轴/">排軸</a></p>
+<h2 id="消耗限時體力藥">消耗限時體力藥</h2>
+<p>若啟用選項『消耗限時體力藥』，程式會在每次刷體力前檢測背包中限時應急理智加強劑的剩餘時效和數量：</p>
+<ul>
+<li><strong>若當前選擇到“小時”單位的體力藥，會直接使用該型別的全部庫存；此分支不按 1000 理智上限計算可用數量。</strong></li>
+<li><strong>若為“天”單位，則按以下公式消耗：</strong></li>
+</ul>
+<blockquote>
+<p>使用數量 = min(max(1, ceil(2 × 數量 ÷ 剩餘天數)), 數量, 距 1000 理智上限可使用的數量)</p>
+</blockquote>
+<p>即“天”單位藥每天消耗約 2/n 比例的庫存（向上取整），並受 1000 理智上限約束；“小時”單位藥沒有這項數量上限。程式按“小時優先、剩餘時效升序”排序，但每次執行只處理排序後的第一種藥，不會遍歷消耗所有型別。</p>
+<hr>
+<h2 id="一般副本">一般副本</h2>
+<p>副本需要提前開圖， <strong>領完所有等級的首通獎勵。</strong></p>
+<p>角色需要一定練度以避免暴斃，至少培養到 <strong>角色和武器等級81級</strong> 。</p>
+<p>如果開啟針對「重度能量淤積點」的選項『僅站樁』，請選擇 <strong>生命值最高</strong> 的角色前臺站場以避免暴斃。該角色需要 <strong>升滿90級</strong> 並攜帶 <strong>回覆生命值的藥物</strong> 。</p>
+<p>推薦攜帶 <strong>有聚怪能力的角色</strong> 以減少戰鬥時間。</p>
+<h3 id="低高階獎勵自選">低高階獎勵自選</h3>
+<p>支援在以下副本中自動切換獎勵檔位：</p>
+<ul>
+<li>幹員經驗</li>
+<li>幹員進階</li>
+<li>技能提升</li>
+<li>武器進階</li>
+</ul>
+<p>在『任務 / 日常任務 / 刷體力』與『任務 / 刷體力』中都可配置『體力本獎勵檔位』，可選：</p>
+<ul>
+<li>保持當前：不切換獎勵檔位。</li>
+<li>低階：點選“前往”後，自動進入“自選”，選擇上方（top）按鈕對應檔位。</li>
+<li>高階：點選“前往”後，自動進入“自選”，選擇下方（bottom）按鈕對應檔位。</li>
+</ul>
+<p>優先順序說明：</p>
+<ul>
+<li>未啟用“刷本序列”時，使用『體力本獎勵檔位』配置。</li>
+<li>啟用“刷本序列”時，忽略『體力本獎勵檔位』配置，由序列項字尾控制（見下文）。</li>
+</ul>
+<p>切換流程說明：</p>
+<ul>
+<li>點選“前往”後識別右下角“自選”並點選。</li>
+<li>識別“當前”所在位置：top 表示當前為低階，bottom 表示當前為高階。</li>
+<li>若與目標檔位不一致，點選目標檔位的“選擇/當前”按鈕。</li>
+<li>隨後執行返回，直到右下角識別到“進入”，再回到主流程繼續刷本。</li>
+</ul>
+<h2 id="危境再現">危境再現</h2>
+<p>「危境再現」是 Boss 類副本，每次消耗 <strong>120 理智</strong>。</p>
+<p>支援的副本：羅丹、三位一體、白堊界衛、阮一、聶菲斯。</p>
+<hr>
+<h2 id="危境預演-高階關卡">危境預演（高階關卡）</h2>
+<p>「危境預演」是高階材料副本，每次消耗 <strong>80 理智</strong>。程式使用影像特徵（而非 OCR）來定位關卡，以應對特殊介面佈局。</p>
+<p>支援的副本：D96鋼、超距輝映管、快子遴撿晶格、象限擬合液、三相奈米片。</p>
+<hr>
+<h2 id="重度能量淤積點">重度能量淤積點</h2>
+<p>檢查單：</p>
+<ol>
+<li>該「重度能量淤積點」的「預刻寫屬性」已設定。不知道怎麼選？試試這個<a href="https://ef.yituliu.cn/tools/essence-calculator/">基質計算器</a> 。</li>
+<li>該「重度能量淤積點」最近的「協議傳送點」可以傳送。若傳送後可以 <strong>直線前往（無障礙物）</strong> （比如「樞紐區」和「清波寨」），則可以 <strong>跳過後續檢查項</strong> 。</li>
+<li>傳送後可 <strong>直接登上第1個「長距滑索架」</strong> 。確保依次經過第1,2,3...n個「長距滑索架」後，角色下來可以 <strong>直線前往（無障礙物）</strong> 該「重度能量淤積點」。</li>
+<li>確保這些第2-n個「長距滑索架」可以按e連續移動。（設定方法：在遊戲中，用滑索依次移動，按R「指定連續移動連線點」。）</li>
+<li>記錄第1-2個「長距滑索架」之間的距離，填入「全域性配置 / 滑索配置」中對應副本名稱（比如「源石研究園」）的設定。</li>
+</ol>
+<p>注意事項：</p>
+<ul>
+<li>程式通過影像特徵來判斷傳送點。為了確保識別成功，角色 <strong>不能位於該「協議傳送點」附近</strong> ，否則角色位置圖示會破壞傳送點特徵。</li>
+<li>程式通過OCR識別第1-2個滑索之間的距離來判斷誰是第2個滑索。為了確保識別成功，這個距離應該是 <strong>唯一</strong> 的。也就是說， <strong>不可與第1個滑索可見（無論是否可達）的其它滑索的距離相同。</strong></li>
+<li>為了確保識別成功，登上第1個滑索觀察第2個滑索，距離標識最好處於 <strong>深色純色簡單背景</strong> 中。</li>
+<li>如果消滅敵人後角色遠離「重度能量淤積點」，那麼程式會 <strong>在識別失敗（超時）後進行傳送滑索移動（二次尋路）</strong> 領取獎勵，執行時間可能變長。</li>
+</ul>
+<p>特別提醒：</p>
+<ul>
+<li>「重度能量淤積點」位於大世界中，環境比較複雜， <strong>執行失敗的可能性比較大。</strong></li>
+<li>可以在資料夾 <code>./screenshots</code> 下查詢檔案 <code>DailyBattleMixin_battleGather_Exception</code> 獲取執行失敗時的截圖。（請注意，截圖資料夾每次執行前都會清空，如有需要請自行備份。）</li>
+<li>（推薦）將截圖上傳到 issue <a href="https://github.com/AliceJump/ok-end-field/issues/58">#58</a> 以幫助開發者解決問題。要是能提供部分日誌（位於資料夾 <code>./logs</code>）那就再好不過了。</li>
+</ul>
+<p>相關程式碼：</p>
+<ul>
+<li>最近的傳送點 <code>to_near_transfer_point</code></li>
+<li>滑索移動 <code>zip_line_list_go</code></li>
+<li>行走 <code>navigate_until_target</code></li>
+</ul>
+<h2 id="體力刷完後繼續刷取次數">體力刷完後繼續刷取次數</h2>
+<p>當選項『體力刷完後繼續刷取次數』大於 0 時：</p>
+<ul>
+<li>在理智不足後，程式會繼續進入戰鬥並在結算時點選「放棄」（不領取獎勵、不消耗理智）。</li>
+<li>僅支援「重度能量淤積點」（挑戰模式）。</li>
+<li>若當前副本不是「重度能量淤積點」，則該配置會被忽略並在日誌中提示。</li>
+</ul>
+<p>該功能適合在需要額外完成擊敗/戰鬥類行為但不需要領取獎勵時使用。</p>
+<h2 id="指定的隊伍編號">指定的隊伍編號</h2>
+<p>預設「不換隊伍」，也可選擇 <code>1</code> 至 <code>5</code>。一般副本在首次進入後、再次進入前切換；重度能量淤積點在激發前開啟隊伍介面切換。未識別到目標隊伍編號時會記錄日誌並繼續，不會強制中止。</p>
+<h2 id="刷體力自動輪換功能">刷體力自動輪換功能</h2>
+<p>支援通過“刷體力開始日期”與“刷本序列”實現副本自動輪換：</p>
+<ul>
+<li><p>“刷體力開始日期”：預設是首次構建任務配置時的當天日期，格式為“2026-04-05”；可改為當天或歷史某天。</p>
+</li>
+<li><p>“刷本序列”：填寫多個副本名（用逗號分隔），如“幹員經驗,幹員進階,錢幣收集”。</p>
+</li>
+<li><p>支援字尾“低階/高階”，例如“幹員經驗低階,技能提升高階,錢幣收集”。</p>
+</li>
+<li><p>字尾僅對“幹員經驗/幹員進階/技能提升/武器進階”生效。</p>
+</li>
+<li><p>未寫字尾（如“幹員經驗”）時，保持當前獎勵檔位不切換。</p>
+</li>
+<li><p>副本名必須為下列之一：</p>
+<p>  幹員經驗, 幹員進階, 錢幣收集, 技能提升,
+  武器經驗, 武器進階,
+  羅丹, 三位一體, 白堊界衛, 阮一, 聶菲斯,
+  D96鋼, 超距輝映管, 快子遴撿晶格, 象限擬合液, 三相奈米片,
+  樞紐區, 源石研究園, 試驗園區, 礦脈源區, 供能高地, 武陵城, 清波寨, 首墩, 藏劍谷, 應龍關, 北部禁區</p>
+</li>
+<li><p>程式會根據“刷體力開始日期”與“刷本序列”自動計算今天刷哪個副本。</p>
+</li>
+<li><p>若“刷本序列”留空，則不啟用自動輪換，使用“體力本”配置。</p>
+</li>
+<li><p>若填寫了無效副本名（即有任何一個不在支援列表中），則全部放棄自動輪換，直接使用“體力本”配置。</p>
+</li>
+<li><p>若“刷體力開始日期”在未來，則自動回退為“體力本”配置。</p>
+</li>
+<li><p>日誌會輸出自動選擇過程。</p>
+</li>
+</ul>
+<p>相關文件：<a href="../自动战斗/">自動戰鬥</a> / <a href="../排轴/">排軸</a> / <a href="../日常任务/">日常任務</a></p>
+<p>示例：</p>
+<ul>
+<li>刷體力開始日期：2026-04-05</li>
+<li>刷本序列：幹員經驗,武器經驗,錢幣收集</li>
+</ul>
+<p>則第1天刷“幹員經驗”，第2天刷“武器經驗”，第3天刷“錢幣收集”，第4天迴圈回“幹員經驗”……</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/体力本.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#配置要求" style="margin-left:0px">配置要求</a><a href="#戰鬥邏輯" style="margin-left:0px">戰鬥邏輯</a><a href="#普通戰鬥" style="margin-left:10px">普通戰鬥</a><a href="#排軸戰鬥" style="margin-left:10px">排軸戰鬥</a><a href="#消耗限時體力藥" style="margin-left:0px">消耗限時體力藥</a><a href="#一般副本" style="margin-left:0px">一般副本</a><a href="#低高階獎勵自選" style="margin-left:10px">低高階獎勵自選</a><a href="#危境再現" style="margin-left:0px">危境再現</a><a href="#危境預演-高階關卡" style="margin-left:0px">危境預演（高階關卡）</a><a href="#重度能量淤積點" style="margin-left:0px">重度能量淤積點</a><a href="#體力刷完後繼續刷取次數" style="margin-left:0px">體力刷完後繼續刷取次數</a><a href="#指定的隊伍編號" style="margin-left:0px">指定的隊伍編號</a><a href="#刷體力自動輪換功能" style="margin-left:0px">刷體力自動輪換功能</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

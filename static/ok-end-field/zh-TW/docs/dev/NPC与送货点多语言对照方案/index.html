@@ -1,0 +1,1317 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>NPC 與送貨點多語言 · ok-end-field</title><meta name="description" content="NPC 與送貨點多語言 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/NPC与送货点多语言对照方案/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="NPC 與送貨點多語言 · ok-end-field"><meta property="og:description" content="NPC 與送貨點多語言 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/NPC与送货点多语言对照方案/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="NPC 與送貨點多語言 · ok-end-field"><meta name="twitter:description" content="NPC 與送貨點多語言 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"NPC 與送貨點多語言 · ok-end-field","description":"NPC 與送貨點多語言 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/NPC与送货点多语言对照方案/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../API/">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="./" class="active" aria-current="page">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../装备词条识别轮子/">裝備詞條識別</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="npc-與送貨點多語言對照方案">NPC 與送貨點多語言對照方案</h1>
+<blockquote>
+<p>目標：讓配置區域（角色配置區域、送貨點配置區域）在 6 種語言下顯示官方譯名，與遊戲內實際名稱一致，各語言節點相互對應。</p>
+</blockquote>
+<h2 id="1-現狀">1. 現狀</h2>
+<p>遊戲是《明日方舟：終末地》（Arknights: Endfield，鷹角網路）。配置資料在 <code>src/data/delivery_area.py</code>：</p>
+<table>
+<thead>
+<tr>
+<th>配置區域</th>
+<th>資料來源</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>送貨點（地點）</td>
+<td><code>delivery_locations</code> + <code>transfer_search_area</code></td>
+<td>武陵城、試驗園區</td>
+</tr>
+<tr>
+<td>角色（目標 NPC）</td>
+<td><code>delivery_targets_by_location</code></td>
+<td>常澐、彥寧、齊綸、於施、蘇白易、普里莫（武陵城）；趙昭、裴令容、阿禾（試驗園區）</td>
+</tr>
+<tr>
+<td>送貨點配置鍵</td>
+<td><code>_to_delivery_point_config_key</code> → <code>通向{地点}送货点</code></td>
+<td>通向武陵城送貨點、通向試驗園區送貨點</td>
+</tr>
+</tbody></table>
+<h3 id="1-1-多語言通道">1.1 多語言通道</h3>
+<ul>
+<li><strong>OCR/識別文本</strong>：<code>assets/lang/world_map.json</code>（85 鍵，6 語言節點），經 <code>get_world_map_text</code>/<code>get_world_map_matcher</code> 讀取（<code>src/data/world_map_utils.py</code>），<code>get_delivery_targets(area, lang_accessor)</code> 已支援傳入 <code>lang_accessor</code>。</li>
+<li><strong>UI 顯示</strong>：配置鍵名（中文）經 gettext <code>og.app.tr()</code> 翻譯，<code>i18n/*/LC_MESSAGES/ok.po</code>。</li>
+<li><strong>語言啟用</strong>：<code>src/data/lang/__init__.py</code> <code>ACTIVE_LOCALES_CONFIG</code> 目前僅啟用 zh_CN/zh_TW，en_US/ja_JP/ko_KR/es_ES 節點存在但未啟用。</li>
+</ul>
+<h3 id="1-2-現有問題">1.2 現有問題</h3>
+<ol>
+<li><strong>NPC 名無任何語言節點</strong>：world_map.json 中沒有常澐/彥寧等條目，OCR 與本地化會 fallback 到中文。</li>
+<li><strong>現有地點譯名與官方不符</strong>（機翻/拼音）：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>中文</th>
+<th>現有 en_US</th>
+<th>官方英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>武陵城</td>
+<td>Wulingcheng</td>
+<td>Wuling City</td>
+</tr>
+<tr>
+<td>試驗園區</td>
+<td>Experimental Park</td>
+<td>Test Area</td>
+</tr>
+<tr>
+<td>武陵</td>
+<td>武陵</td>
+<td>Wuling</td>
+</tr>
+<tr>
+<td>四號谷地</td>
+<td>valley four</td>
+<td>Valley IV</td>
+</tr>
+<tr>
+<td>清波寨</td>
+<td>Qingbo Village</td>
+<td>Qingbo Stockade</td>
+</tr>
+</tbody></table>
+<p>日/韓/西同理（実験公園 / 실험공원 / Parque Experimental 均為非官方譯法）。</p>
+<h2 id="2-官方譯名資料來源">2. 官方譯名資料來源</h2>
+<p><strong>官方站點</strong>：<code>endfield.gryphline.com</code> 語言切換支援 <strong>13 種</strong>（English / 繁體中文 / 日本語 / 한국어 / Español / Português / Français / Deutsch / Русский / Italiano / Indonesia / ไทย / Tiếng Việt），URL 字首 <code>/en-us</code>、<code>/zh-tw</code>、<code>/ja-jp</code>、<code>/ko-kr</code> 等；簡中站 <code>endfield.hypergryph.com</code>。官方多語言 X 賬號：<code>@AKEndfieldJP</code>、<code>@AKEndfieldKR</code>。</p>
+<p><strong>官方地圖 API（最強穩定源，2026-08 已實測可用）</strong>：</p>
+<ul>
+<li>雙域名，語言由域名決定（<code>lang</code>/<code>language</code>/<code>locale</code>/<code>i18n_lang</code> query、<code>lang</code>/<code>x-language</code>/<code>accept-language</code> header、<code>lang</code>/<code>sk-language</code>/<code>x-language</code> cookie 全部實測無效，<code>sk-language: ja-jp</code> 等長程式碼返回空串）：<ul>
+<li><strong>國際服 <code>zonai.skport.com</code></strong> → 官方英文（mark/info.lang=<code>en</code>）</li>
+<li><strong>國服 <code>zonai.skland.com</code></strong> → 官方簡中（mark/info.lang=<code>zh_Hans</code>）</li>
+</ul>
+</li>
+<li><strong>四語擴充套件（2026-08 實測突破）</strong>：<code>sk-language</code> header 接受<strong>短程式碼</strong> <code>ja</code> / <code>ko</code> / <code>en</code> / <code>zh</code>，返回官方日/韓/英/簡中資料（如 map02：<code>sk-language: ja</code>→武陵、<code>ko</code>→무릉、<code>zh</code>→空/回退 skland 域、<code>en</code>→Wuling）。實測覆蓋：<code>ja</code> <code>ko</code> <code>en</code> <code>zh</code> 四碼有效；<code>zh-tw</code> <code>de</code> <code>es</code> <code>fr</code> <code>id</code> <code>it</code> <code>pt</code> <code>ru</code> <code>th</code> <code>vi</code> 及所有長程式碼返回空串（服務端僅釋出這 4 語）。<strong>注意</strong>：<code>zh</code> 在 skport 域返回空名，簡中須走 skland 域。</li>
+<li>端點：<code>/web/v1/game/endfield/map/{tree|catalog|mark/list|mark/info}</code>，公開免鑑權（<code>web/v1/wiki/*</code> 需簽名 401，不在本方案範圍）。</li>
+<li><code>tree</code>：地圖/層級/地區名對照（Wuling City=武陵城=武陵城=무릉성、Test Area=試驗園區=実験區域=실험 구역、Qingbo Stockade=清波寨=清波砦=청파채、Valley IV=四號谷地=四號谷地=4번 협곡、Yinglung Pass=應龍關=応龍関=응룡 관문、Jingyu Valley=景玉谷=景玉谷=경옥 골짜기、Sword Vault Dale=藏劍谷=蔵剣谷=장검 골짜기、Marker Stone=首墩=首礎=수돈、North Wuling Exclusion Zone=北部禁區=北部封鎖區域=북쪽 금지 구역 等，含全部 subLevel 與 region 層名）；<code>catalog</code>：POI 型別名對照（Depot Node=倉儲節點=保管ボックス=저장고 노드、Recycling Station=資源回收站=資源回収所=재활용센터、Zipline=滑索=ジップライン=집라인、TP Point=協議傳送點=協約転送ポイント=프로토콜 전송 지점、Stock Redistribution Terminal=物資排程終端=商品取引端末=물자 관리 단말기、Energy Alluvium=能量淤積點=超域活性點=에너지 응집점 等 160 項）；<code>mark/list</code>+<code>mark/info</code>：點位座標及型別（mark/info 的 lang 欄位隨 sk-language 變：en/zh_Hans/ja/ko）。</li>
+<li><strong>西語源（es_ES，2026-08 實測）</strong>：官方地圖 API 不提供 es。<code>github.com/Terra-Online/Atlos</code>（社群互動地圖倉庫，TypeScript）的 <code>talos/src/locale/data/region/es-ES.json</code> 提取自遊戲本地化，覆蓋 VL/WL/DJ 全地圖與 site 級：Valle IV=四號谷地、La Base=樞紐區、Meseta de poder=供能高地、Ciudad de Wuling=武陵城、Valle de Jingyu=景玉谷、Empalizada Qingbo=清波寨、Área de pruebas=試驗園區、Piedra Marcadora=首墩、Valle Ocultaespadas=藏劍谷、Cantera Aburrey=阿伯莉採石場 等（共 145/168 site，缺 應龍關 lv007 與 北部禁區 lv008 的 site 級——Atlos 全語言 region 資料均未收錄這兩區域）。該倉庫同時含 <code>locale/data/game/{en-us,zh-cn,ja-JP,ko-KR,es-ES}.json</code>（markerType 全部 POI 分類多語言）與 <code>locale/data/ui/*</code>（13 語 UI 文案）。</li>
+<li>前端參考：<code>game.skport.com/map/endfield</code>（webpack <code>main.aaa4ad7b.js</code> → chunk <code>871.e75ec14f.js</code>，確認域名由 <code>L</code> 標誌切換；語言選擇 UI 支援 13 種但 API 資料僅 英/簡中/日/韓 四語）。</li>
+<li>其它可程式設計源：<code>endfield.wiki.gg/api.php</code>、<code>endfield.fandom.com/api.php</code>（MediaWiki API，可查 Category:NPCs）。</li>
+<li>社群逆向文件：<code>github.com/AixLnyt/skport-api-docs</code>（Skport/Gryphline API 端點彙總，含簽名演算法；遊戲資料 API 需 cred/salt 簽名，不在本方案範圍）。<code>daydreamer-json/ak-endfield-api-archive</code>（官方 CDN 清單存檔，<code>archive</code> 分支 <code>output/</code>，包體在外部下載庫，過大不採用）。</li>
+<li><strong>wiki.gg NPC 源實測（2026-08）</strong>：<code>api.php?action=query&amp;list=categorymembers&amp;cmtitle=Category:NPCs&amp;cmlimit=500</code> 返回 176 個 NPC 標題，10 個送貨 NPC 全部命中（Chang Yun、Yan Ning、Qi Lun、Yu Shi、Su Baiyi、Primo Linde、Zhao Zhao、Pei Lingrong、Ah He、Ruan Yi），en_US 列以此為準。物品名規律：<code>opensearch</code> 可查電池類（中容谷地電池=LC Valley Battery、低容=SC、高容=HC、武陵電池=Wuling Battery）。<strong>注意</strong>：該分類混入明日方舟本體 NPC（Abner、Ace、Andoain 等），篩選時須排除。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>語言</th>
+<th>主要源</th>
+<th>備選源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>en_US</td>
+<td><strong>官方地圖 API（zonai.skport.com + <code>sk-language: en</code>，免鑑權）</strong>、endfield.wiki.gg（NPC 最全）、endfield.fandom.com（按地區+職責）</td>
+<td>官網 /en-us、endfieldhub.org、Game8 EN</td>
+</tr>
+<tr>
+<td>ja_JP</td>
+<td><strong>官方地圖 API（zonai.skport.com + <code>sk-language: ja</code>）</strong></td>
+<td>官網 /ja-jp、appmedia.jp/arknights_endfield、game8.jp/arknights-endfield、gamewith.jp/akendfield、gameranbu.jp/endfield</td>
+</tr>
+<tr>
+<td>ko_KR</td>
+<td><strong>官方地圖 API（zonai.skport.com + <code>sk-language: ko</code>）</strong></td>
+<td>官網 /ko-kr、namu.wiki/명일방주: 엔드필드、arca.live akendfield 頻道、game.naver.com 專區</td>
+</tr>
+<tr>
+<td>es_ES</td>
+<td><strong>Atlos 倉庫 <code>locale/data/region/es-ES.json</code>（遊戲本地化提取，GitHub raw 免鑑權）</strong></td>
+<td>官網 Español 版、guslok.com（Ciudad de Wuling 攻略）、vortexgaming.io/es、evelongames.com</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-已核實對照表-中-英-日-韓-西">2.1 已核實對照表（中 → 英/日/韓/西）</h3>
+<blockquote>
+<p>「待核實」= 該語言尚無官方來源證實（日/韓地名與 POI 型別已全部官方核實；es 地名除應龍關/北部禁區 site 級外已核實；NPC 名日/韓/西仍待核實），落地時節點留空回退 zh_CN（見 §3）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>中文</th>
+<th>en_US（官方）</th>
+<th>ja_JP（官方 API）</th>
+<th>ko_KR（官方 API）</th>
+<th>es_ES（Atlos）</th>
+<th>來源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>武陵</td>
+<td>Wuling</td>
+<td>武陵</td>
+<td>무릉</td>
+<td>Wuling</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>武陵城</td>
+<td>Wuling City</td>
+<td>武陵城</td>
+<td>무릉성</td>
+<td>Ciudad de Wuling</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>試驗園區</td>
+<td>Test Area</td>
+<td>実験區域</td>
+<td>실험 구역</td>
+<td>Área de pruebas</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>首墩</td>
+<td>Marker Stone</td>
+<td>首礎</td>
+<td>수돈</td>
+<td>Piedra Marcadora</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>清波寨</td>
+<td>Qingbo Stockade</td>
+<td>清波砦</td>
+<td>청파채</td>
+<td>Empalizada Qingbo</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>應龍關</td>
+<td>Yinglung Pass</td>
+<td>応龍関</td>
+<td>응룡 관문</td>
+<td>（Atlos 缺）</td>
+<td>官方地圖 API</td>
+</tr>
+<tr>
+<td>北部禁區</td>
+<td>North Wuling Exclusion Zone</td>
+<td>北部封鎖區域</td>
+<td>북쪽 금지 구역</td>
+<td>（Atlos 缺）</td>
+<td>官方地圖 API</td>
+</tr>
+<tr>
+<td>四號谷地</td>
+<td>Valley IV</td>
+<td>四號谷地</td>
+<td>4번 협곡</td>
+<td>Valle IV</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>樞紐區</td>
+<td>The Hub</td>
+<td>中樞エリア</td>
+<td>거점 지역</td>
+<td>La Base</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>谷地通道</td>
+<td>Valley Pass</td>
+<td>谷地通路</td>
+<td>협곡길</td>
+<td>Senda del valle</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>阿伯莉採石場</td>
+<td>Aburrey Quarry</td>
+<td>アブリー採石場</td>
+<td>아부레이 채석장</td>
+<td>Cantera Aburrey</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>源石研究園</td>
+<td>Originium Science Park</td>
+<td>源石研究パーク</td>
+<td>오리지늄 연구 구역</td>
+<td>Parque científico de originio</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>礦脈源區</td>
+<td>Origin Lodespring</td>
+<td>鉱山エリア</td>
+<td>광맥 구역</td>
+<td>Veta de origen</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>供能高地</td>
+<td>Power Plateau</td>
+<td>エネルギー高地</td>
+<td>에너지 공급 고지</td>
+<td>Meseta de poder</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>景玉谷</td>
+<td>Jingyu Valley</td>
+<td>景玉谷</td>
+<td>경옥 골짜기</td>
+<td>Valle de Jingyu</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>藏劍谷</td>
+<td>Sword Vault Dale</td>
+<td>蔵剣谷</td>
+<td>장검 골짜기</td>
+<td>Valle Ocultaespadas</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>常澐</td>
+<td>Chang Yun</td>
+<td>待核實</td>
+<td>상운（攻略站）</td>
+<td>待核實</td>
+<td>wiki.gg、arca.live zip-line 帖</td>
+</tr>
+<tr>
+<td>彥寧</td>
+<td>Yan Ning</td>
+<td>待核實</td>
+<td>언녕（攻略站）</td>
+<td>待核實</td>
+<td>wiki.gg、arca.live zip-line 帖</td>
+</tr>
+<tr>
+<td>齊綸</td>
+<td>Qi Lun</td>
+<td>待核實</td>
+<td>제륜（攻略站）</td>
+<td>Chi-Lun</td>
+<td>wiki.gg、arca.live zip-line 帖、vortexgaming.es</td>
+</tr>
+<tr>
+<td>於施</td>
+<td>Yu Shi</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>蘇白易</td>
+<td>Su Baiyi</td>
+<td>待核實</td>
+<td>소백（攻略站）</td>
+<td>待核實</td>
+<td>wiki.gg、naver lounge 帖</td>
+</tr>
+<tr>
+<td>普里莫</td>
+<td>Primo Linde</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>趙昭</td>
+<td>Zhao Zhao</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>裴令容</td>
+<td>Pei Lingrong</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>阿禾</td>
+<td>Ah He</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>阮藝（幹員）</td>
+<td>Ruan Yi</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg（Ruan Yi/NPC）</td>
+</tr>
+<tr>
+<td>資源回收站</td>
+<td>Recycling Station</td>
+<td>資源回収所</td>
+<td>재활용센터</td>
+<td>待核實（Atlos game 缺？）</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>倉儲節點</td>
+<td>Depot Node</td>
+<td>保管ボックス</td>
+<td>저장고 노드</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>滑索</td>
+<td>Zipline</td>
+<td>ジップライン</td>
+<td>집라인</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>物資排程終端</td>
+<td>Stock Redistribution Terminal</td>
+<td>商品取引端末</td>
+<td>물자 관리 단말기</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>能量淤積點</td>
+<td>Energy Alluvium</td>
+<td>超域活性點</td>
+<td>에너지 응집점</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>中容谷地電池</td>
+<td>LC Valley Battery</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg（LC=Low Capacity）；同類：低容=SC Valley Battery、高容=HC Valley Battery、武陵電池=Wuling Battery</td>
+</tr>
+<tr>
+<td>協議採錄樁</td>
+<td>Protocol Datalogger</td>
+<td>協約測定裝置</td>
+<td>프로토콜 데이터 수집기</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>協議傳送點</td>
+<td>TP Point</td>
+<td>協約転送ポイント</td>
+<td>프로토콜 전송 지점</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>襲擊預警終端</td>
+<td>EW Terminal</td>
+<td>襲撃警備端末</td>
+<td>습격 경보 단말기</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>危機合約</td>
+<td>Contingency Contract</td>
+<td>危機契約</td>
+<td>위기 협약</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>影拓豐碑</td>
+<td>Umbral Monument</td>
+<td>映像の記念碑</td>
+<td>그림자 이정표</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>待回收物品</td>
+<td>Salvageable</td>
+<td>未回収アイテム</td>
+<td>회수 대기 아이템</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>熾燃！競技大會！</td>
+<td>HEAT RAGE! MEGA ARENA!</td>
+<td>燃えよ！アリーナ！</td>
+<td>타올라라! 경기 대회!</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+</tbody></table>
+<p><strong>備註</strong>：</p>
+<ul>
+<li>官方地圖 API 四語資料同構（templateId/地圖 ID 完全一致），僅名稱語言不同（skport 域 + <code>sk-language</code> 短程式碼：en/ja/ko；skland 域=簡中），已實測指令碼化批次拉取（<code>/map/tree</code>、<code>/map/catalog</code>），產出 JSON 快照保存於 <code>C:\Users\26309\AppData\Local\Temp\opencode\skport\official_tree_{zh,en,ja,ko}.json</code>、<code>official_catalog_{zh,en,ja,ko}.json</code>、<code>official_five_lang.json</code>（含 es）。mark/list 含滑索/倉儲節點/資源回收站/物資排程終端/協議傳送點等 POI 座標（templateId 已確認一致），可用於 OCR 匹配詞校驗。</li>
+<li>日文地名多用漢字（武陵城/清波砦/景玉谷/首礎/蔵剣谷/応龍関），且官方日文與中文同名的情況不少（武陵、景玉谷、幽谷、南山 等）；韓文為純諺文轉寫（무릉/무릉성/실험 구역）。</li>
+<li>es 地名由 Atlos 倉庫（遊戲本地化提取）提供，覆蓋 145/168 site（應龍關 lv007 與北部禁區 lv008 的 site 級缺失，Atlos 全語言 region 資料均未收錄這兩區域——如需可後續用遊戲客戶端文本表補）；es NPC 名保留拼音轉寫（Chi-Lun），西語官方 NPC 譯名仍待核實。</li>
+<li>官方地圖 API 僅釋出 英/簡中/日/韓 四語（<code>sk-language</code> 短程式碼驗證），<strong>不含 es</strong>；<code>sk-language</code> 用長程式碼（ja-jp）返回空串而非報錯，排查語言問題時應優先用短程式碼。</li>
+</ul>
+<h2 id="3-各語言對上的規則">3. 各語言&quot;對上&quot;的規則</h2>
+<p>落地時每條翻譯必須滿足&quot;各語言節點相互對應&quot;：</p>
+<ol>
+<li><strong>zh_CN</strong>：保持現有中文（配置鍵名、OCR 主語言）。</li>
+<li><strong>zh_TW</strong>：官方繁中，用系統轉換（常澐→常澐、彥寧→彥寧、齊綸→齊綸、於施→於施、蘇白易→蘇白易、普里莫→普里莫、趙昭→趙昭、裴令容→裴令容、阿禾→阿禾；武陵城→武陵城、試驗園區→試驗園區、資源回收站→資源回收站、倉儲節點→倉儲節點）。</li>
+<li><strong>en_US</strong>：本方案核實填寫的官方英文（上表）。</li>
+<li><strong>ja_JP / ko_KR / es_ES</strong>：按 §2.1 對照表填入<strong>已多源核實的官方譯名</strong>；表中標「待核實」的節點留空（預設），LangAccessor 自動回退 zh_CN（<code>_load_module</code> 的 fallback 鏈：當前 locale → zh_CN/zh_TW → 首個可用）。留空優於機翻錯誤譯名。</li>
+<li><strong>停用手工翻譯校驗</strong>：任何語言節點的值必須是&quot;官方譯名或空&quot;，不允許拼音/機翻佔位（現有 Wulingcheng / Experimental Park 屬此類，需修正）。</li>
+</ol>
+<h2 id="4-落地設計">4. 落地設計</h2>
+<h3 id="4-1-world-map-json-擴充套件">4.1 world_map.json 擴充套件</h3>
+<p>為每個 NPC/地點新增鍵（鍵名沿用現有 hash 風格），如：</p>
+<pre><code class="language-json">&quot;k_changyun&quot;: {
+  &quot;zh_CN&quot;: {&quot;pattern&quot;: &quot;常沄&quot;},
+  &quot;zh_TW&quot;: {&quot;pattern&quot;: &quot;常沄&quot;},
+  &quot;en_US&quot;: {&quot;pattern&quot;: &quot;Chang Yun&quot;}
+}
+</code></pre>
+<p><code>pattern</code> 欄位用於 OCR 匹配（<code>get_world_map_matcher</code>），<code>string</code> 欄位用於顯示文本——按目標用途選擇。</p>
+<h3 id="4-2-配送鏈路適配">4.2 配送鏈路適配</h3>
+<ul>
+<li><code>delivery_area.py</code> 中 <code>delivery_locations</code> / <code>delivery_targets_by_location</code> 保持中文 canonical 名（鍵名不變，避免觸發 <code>config_key_migrations</code>）。</li>
+<li>所有對外顯示/OCR 處已通過 <code>get_delivery_locations(area, lang_accessor)</code> / <code>get_delivery_targets(area, lang_accessor)</code> 本地化（<code>delivery_area_service.py:40-69</code> 已支援）。</li>
+<li><strong>待辦</strong>：<code>DeliveryTask._configure_delivery_area</code> 目前呼叫 <code>get_delivery_targets(self.delivery_area)</code> 未傳 <code>lang_accessor</code>，需補傳，使 ends 列表本地化。</li>
+<li><code>通向{地点}送货点</code> 配置鍵：鍵名保持中文不變（儲存穩定性），顯示翻譯繼續走 gettext ok.po；po 中已存在的「通向武陵城送貨點」等 msgid 由 <code>scripts/sync_world_map_langs.py</code> 的 po 同步邏輯（§5.4）內嵌替換內舊譯名片段。</li>
+</ul>
+<h3 id="4-3-啟用語言">4.3 啟用語言</h3>
+<p><code>ACTIVE_LOCALES_CONFIG</code> 保持現狀（zh_CN/zh_TW），en_US 啟用前需確保全部英文譯名經官方核實。</p>
+<h2 id="5-自動翻譯替換方案-工程化">5. 自動翻譯替換方案（工程化）</h2>
+<h3 id="5-1-資料層-一次性指令碼">5.1 資料層（一次性指令碼）</h3>
+<p><code>tools/sync_world_map_from_wiki.py</code>：</p>
+<ol>
+<li>內建中→英對照表（上表，人工核實後固化）。</li>
+<li>優先從<strong>官方地圖 API</strong>（<code>zonai.skland.com</code>=簡中 + <code>zonai.skport.com</code>=<code>sk-language: en|ja|ko</code>，<code>/map/tree</code>、<code>/map/catalog</code>）拉取地點/型別<strong>四語</strong>官方名作交叉校驗；es 從 Atlos 倉庫 <code>talos/src/locale/data/region/es-ES.json</code> 拉取；再從 endfield.wiki.gg Category:NPCs 抓取並解析 NPC 英文名（注意排除方舟本體 NPC），輸出 JSON 供校驗：倉庫缺的、wiki 有的 → 列出待補。</li>
+<li>生成/更新 <code>assets/lang/world_map.json</code> 節點：<ul>
+<li>zh_CN = 中文名</li>
+<li>zh_TW = 繁中轉換（<code>zhconv</code> 或維護表）</li>
+<li>en_US / ja_JP / ko_KR = 官方 API 四語（缺失則留空不寫）；es_ES = Atlos 資料（缺失留空）</li>
+</ul>
+</li>
+<li>校驗規則（失敗即報錯）：<ul>
+<li>en_US 非空時必須是字母/空格，禁止拼音數字混寫（正則 `^[A-Za-z][A-Za-z .&#39;-]*# NPC 與送貨點多語言對照方案</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>目標：讓配置區域（角色配置區域、送貨點配置區域）在 6 種語言下顯示官方譯名，與遊戲內實際名稱一致，各語言節點相互對應。</p>
+</blockquote>
+<h2 id="1-現狀-2">1. 現狀</h2>
+<p>遊戲是《明日方舟：終末地》（Arknights: Endfield，鷹角網路）。配置資料在 <code>src/data/delivery_area.py</code>：</p>
+<table>
+<thead>
+<tr>
+<th>配置區域</th>
+<th>資料來源</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>送貨點（地點）</td>
+<td><code>delivery_locations</code> + <code>transfer_search_area</code></td>
+<td>武陵城、試驗園區</td>
+</tr>
+<tr>
+<td>角色（目標 NPC）</td>
+<td><code>delivery_targets_by_location</code></td>
+<td>常澐、彥寧、齊綸、於施、蘇白易、普里莫（武陵城）；趙昭、裴令容、阿禾（試驗園區）</td>
+</tr>
+<tr>
+<td>送貨點配置鍵</td>
+<td><code>_to_delivery_point_config_key</code> → <code>通向{地点}送货点</code></td>
+<td>通向武陵城送貨點、通向試驗園區送貨點</td>
+</tr>
+</tbody></table>
+<h3 id="1-1-多語言通道-2">1.1 多語言通道</h3>
+<ul>
+<li><strong>OCR/識別文本</strong>：<code>assets/lang/world_map.json</code>（85 鍵，6 語言節點），經 <code>get_world_map_text</code>/<code>get_world_map_matcher</code> 讀取（<code>src/data/world_map_utils.py</code>），<code>get_delivery_targets(area, lang_accessor)</code> 已支援傳入 <code>lang_accessor</code>。</li>
+<li><strong>UI 顯示</strong>：配置鍵名（中文）經 gettext <code>og.app.tr()</code> 翻譯，<code>i18n/*/LC_MESSAGES/ok.po</code>。</li>
+<li><strong>語言啟用</strong>：<code>src/data/lang/__init__.py</code> <code>ACTIVE_LOCALES_CONFIG</code> 目前僅啟用 zh_CN/zh_TW，en_US/ja_JP/ko_KR/es_ES 節點存在但未啟用。</li>
+</ul>
+<h3 id="1-2-現有問題-2">1.2 現有問題</h3>
+<ol>
+<li><strong>NPC 名無任何語言節點</strong>：world_map.json 中沒有常澐/彥寧等條目，OCR 與本地化會 fallback 到中文。</li>
+<li><strong>現有地點譯名與官方不符</strong>（機翻/拼音）：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>中文</th>
+<th>現有 en_US</th>
+<th>官方英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>武陵城</td>
+<td>Wulingcheng</td>
+<td>Wuling City</td>
+</tr>
+<tr>
+<td>試驗園區</td>
+<td>Experimental Park</td>
+<td>Test Area</td>
+</tr>
+<tr>
+<td>武陵</td>
+<td>武陵</td>
+<td>Wuling</td>
+</tr>
+<tr>
+<td>四號谷地</td>
+<td>valley four</td>
+<td>Valley IV</td>
+</tr>
+<tr>
+<td>清波寨</td>
+<td>Qingbo Village</td>
+<td>Qingbo Stockade</td>
+</tr>
+</tbody></table>
+<p>日/韓/西同理（実験公園 / 실험공원 / Parque Experimental 均為非官方譯法）。</p>
+<h2 id="2-官方譯名資料來源-2">2. 官方譯名資料來源</h2>
+<p><strong>官方站點</strong>：<code>endfield.gryphline.com</code> 語言切換支援 <strong>13 種</strong>（English / 繁體中文 / 日本語 / 한국어 / Español / Português / Français / Deutsch / Русский / Italiano / Indonesia / ไทย / Tiếng Việt），URL 字首 <code>/en-us</code>、<code>/zh-tw</code>、<code>/ja-jp</code>、<code>/ko-kr</code> 等；簡中站 <code>endfield.hypergryph.com</code>。官方多語言 X 賬號：<code>@AKEndfieldJP</code>、<code>@AKEndfieldKR</code>。</p>
+<p><strong>官方地圖 API（最強穩定源，2026-08 已實測可用）</strong>：</p>
+<ul>
+<li>雙域名，語言由域名決定（<code>lang</code>/<code>language</code>/<code>locale</code>/<code>i18n_lang</code> query、<code>lang</code>/<code>x-language</code>/<code>accept-language</code> header、<code>lang</code>/<code>sk-language</code>/<code>x-language</code> cookie 全部實測無效，<code>sk-language: ja-jp</code> 等長程式碼返回空串）：<ul>
+<li><strong>國際服 <code>zonai.skport.com</code></strong> → 官方英文（mark/info.lang=<code>en</code>）</li>
+<li><strong>國服 <code>zonai.skland.com</code></strong> → 官方簡中（mark/info.lang=<code>zh_Hans</code>）</li>
+</ul>
+</li>
+<li><strong>四語擴充套件（2026-08 實測突破）</strong>：<code>sk-language</code> header 接受<strong>短程式碼</strong> <code>ja</code> / <code>ko</code> / <code>en</code> / <code>zh</code>，返回官方日/韓/英/簡中資料（如 map02：<code>sk-language: ja</code>→武陵、<code>ko</code>→무릉、<code>zh</code>→空/回退 skland 域、<code>en</code>→Wuling）。實測覆蓋：<code>ja</code> <code>ko</code> <code>en</code> <code>zh</code> 四碼有效；<code>zh-tw</code> <code>de</code> <code>es</code> <code>fr</code> <code>id</code> <code>it</code> <code>pt</code> <code>ru</code> <code>th</code> <code>vi</code> 及所有長程式碼返回空串（服務端僅釋出這 4 語）。<strong>注意</strong>：<code>zh</code> 在 skport 域返回空名，簡中須走 skland 域。</li>
+<li>端點：<code>/web/v1/game/endfield/map/{tree|catalog|mark/list|mark/info}</code>，公開免鑑權（<code>web/v1/wiki/*</code> 需簽名 401，不在本方案範圍）。</li>
+<li><code>tree</code>：地圖/層級/地區名對照（Wuling City=武陵城=武陵城=무릉성、Test Area=試驗園區=実験區域=실험 구역、Qingbo Stockade=清波寨=清波砦=청파채、Valley IV=四號谷地=四號谷地=4번 협곡、Yinglung Pass=應龍關=応龍関=응룡 관문、Jingyu Valley=景玉谷=景玉谷=경옥 골짜기、Sword Vault Dale=藏劍谷=蔵剣谷=장검 골짜기、Marker Stone=首墩=首礎=수돈、North Wuling Exclusion Zone=北部禁區=北部封鎖區域=북쪽 금지 구역 等，含全部 subLevel 與 region 層名）；<code>catalog</code>：POI 型別名對照（Depot Node=倉儲節點=保管ボックス=저장고 노드、Recycling Station=資源回收站=資源回収所=재활용센터、Zipline=滑索=ジップライン=집라인、TP Point=協議傳送點=協約転送ポイント=프로토콜 전송 지점、Stock Redistribution Terminal=物資排程終端=商品取引端末=물자 관리 단말기、Energy Alluvium=能量淤積點=超域活性點=에너지 응집점 等 160 項）；<code>mark/list</code>+<code>mark/info</code>：點位座標及型別（mark/info 的 lang 欄位隨 sk-language 變：en/zh_Hans/ja/ko）。</li>
+<li><strong>西語源（es_ES，2026-08 實測）</strong>：官方地圖 API 不提供 es。<code>github.com/Terra-Online/Atlos</code>（社群互動地圖倉庫，TypeScript）的 <code>talos/src/locale/data/region/es-ES.json</code> 提取自遊戲本地化，覆蓋 VL/WL/DJ 全地圖與 site 級：Valle IV=四號谷地、La Base=樞紐區、Meseta de poder=供能高地、Ciudad de Wuling=武陵城、Valle de Jingyu=景玉谷、Empalizada Qingbo=清波寨、Área de pruebas=試驗園區、Piedra Marcadora=首墩、Valle Ocultaespadas=藏劍谷、Cantera Aburrey=阿伯莉採石場 等（共 145/168 site，缺 應龍關 lv007 與 北部禁區 lv008 的 site 級——Atlos 全語言 region 資料均未收錄這兩區域）。該倉庫同時含 <code>locale/data/game/{en-us,zh-cn,ja-JP,ko-KR,es-ES}.json</code>（markerType 全部 POI 分類多語言）與 <code>locale/data/ui/*</code>（13 語 UI 文案）。</li>
+<li>前端參考：<code>game.skport.com/map/endfield</code>（webpack <code>main.aaa4ad7b.js</code> → chunk <code>871.e75ec14f.js</code>，確認域名由 <code>L</code> 標誌切換；語言選擇 UI 支援 13 種但 API 資料僅 英/簡中/日/韓 四語）。</li>
+<li>其它可程式設計源：<code>endfield.wiki.gg/api.php</code>、<code>endfield.fandom.com/api.php</code>（MediaWiki API，可查 Category:NPCs）。</li>
+<li>社群逆向文件：<code>github.com/AixLnyt/skport-api-docs</code>（Skport/Gryphline API 端點彙總，含簽名演算法；遊戲資料 API 需 cred/salt 簽名，不在本方案範圍）。<code>daydreamer-json/ak-endfield-api-archive</code>（官方 CDN 清單存檔，<code>archive</code> 分支 <code>output/</code>，包體在外部下載庫，過大不採用）。</li>
+<li><strong>wiki.gg NPC 源實測（2026-08）</strong>：<code>api.php?action=query&amp;list=categorymembers&amp;cmtitle=Category:NPCs&amp;cmlimit=500</code> 返回 176 個 NPC 標題，10 個送貨 NPC 全部命中（Chang Yun、Yan Ning、Qi Lun、Yu Shi、Su Baiyi、Primo Linde、Zhao Zhao、Pei Lingrong、Ah He、Ruan Yi），en_US 列以此為準。物品名規律：<code>opensearch</code> 可查電池類（中容谷地電池=LC Valley Battery、低容=SC、高容=HC、武陵電池=Wuling Battery）。<strong>注意</strong>：該分類混入明日方舟本體 NPC（Abner、Ace、Andoain 等），篩選時須排除。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>語言</th>
+<th>主要源</th>
+<th>備選源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>en_US</td>
+<td><strong>官方地圖 API（zonai.skport.com + <code>sk-language: en</code>，免鑑權）</strong>、endfield.wiki.gg（NPC 最全）、endfield.fandom.com（按地區+職責）</td>
+<td>官網 /en-us、endfieldhub.org、Game8 EN</td>
+</tr>
+<tr>
+<td>ja_JP</td>
+<td><strong>官方地圖 API（zonai.skport.com + <code>sk-language: ja</code>）</strong></td>
+<td>官網 /ja-jp、appmedia.jp/arknights_endfield、game8.jp/arknights-endfield、gamewith.jp/akendfield、gameranbu.jp/endfield</td>
+</tr>
+<tr>
+<td>ko_KR</td>
+<td><strong>官方地圖 API（zonai.skport.com + <code>sk-language: ko</code>）</strong></td>
+<td>官網 /ko-kr、namu.wiki/명일방주: 엔드필드、arca.live akendfield 頻道、game.naver.com 專區</td>
+</tr>
+<tr>
+<td>es_ES</td>
+<td><strong>Atlos 倉庫 <code>locale/data/region/es-ES.json</code>（遊戲本地化提取，GitHub raw 免鑑權）</strong></td>
+<td>官網 Español 版、guslok.com（Ciudad de Wuling 攻略）、vortexgaming.io/es、evelongames.com</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-已核實對照表-中-英-日-韓-西-2">2.1 已核實對照表（中 → 英/日/韓/西）</h3>
+<blockquote>
+<p>「待核實」= 該語言尚無官方來源證實（日/韓地名與 POI 型別已全部官方核實；es 地名除應龍關/北部禁區 site 級外已核實；NPC 名日/韓/西仍待核實），落地時節點留空回退 zh_CN（見 §3）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>中文</th>
+<th>en_US（官方）</th>
+<th>ja_JP（官方 API）</th>
+<th>ko_KR（官方 API）</th>
+<th>es_ES（Atlos）</th>
+<th>來源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>武陵</td>
+<td>Wuling</td>
+<td>武陵</td>
+<td>무릉</td>
+<td>Wuling</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>武陵城</td>
+<td>Wuling City</td>
+<td>武陵城</td>
+<td>무릉성</td>
+<td>Ciudad de Wuling</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>試驗園區</td>
+<td>Test Area</td>
+<td>実験區域</td>
+<td>실험 구역</td>
+<td>Área de pruebas</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>首墩</td>
+<td>Marker Stone</td>
+<td>首礎</td>
+<td>수돈</td>
+<td>Piedra Marcadora</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>清波寨</td>
+<td>Qingbo Stockade</td>
+<td>清波砦</td>
+<td>청파채</td>
+<td>Empalizada Qingbo</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>應龍關</td>
+<td>Yinglung Pass</td>
+<td>応龍関</td>
+<td>응룡 관문</td>
+<td>（Atlos 缺）</td>
+<td>官方地圖 API</td>
+</tr>
+<tr>
+<td>北部禁區</td>
+<td>North Wuling Exclusion Zone</td>
+<td>北部封鎖區域</td>
+<td>북쪽 금지 구역</td>
+<td>（Atlos 缺）</td>
+<td>官方地圖 API</td>
+</tr>
+<tr>
+<td>四號谷地</td>
+<td>Valley IV</td>
+<td>四號谷地</td>
+<td>4번 협곡</td>
+<td>Valle IV</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>樞紐區</td>
+<td>The Hub</td>
+<td>中樞エリア</td>
+<td>거점 지역</td>
+<td>La Base</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>谷地通道</td>
+<td>Valley Pass</td>
+<td>谷地通路</td>
+<td>협곡길</td>
+<td>Senda del valle</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>阿伯莉採石場</td>
+<td>Aburrey Quarry</td>
+<td>アブリー採石場</td>
+<td>아부레이 채석장</td>
+<td>Cantera Aburrey</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>源石研究園</td>
+<td>Originium Science Park</td>
+<td>源石研究パーク</td>
+<td>오리지늄 연구 구역</td>
+<td>Parque científico de originio</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>礦脈源區</td>
+<td>Origin Lodespring</td>
+<td>鉱山エリア</td>
+<td>광맥 구역</td>
+<td>Veta de origen</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>供能高地</td>
+<td>Power Plateau</td>
+<td>エネルギー高地</td>
+<td>에너지 공급 고지</td>
+<td>Meseta de poder</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>景玉谷</td>
+<td>Jingyu Valley</td>
+<td>景玉谷</td>
+<td>경옥 골짜기</td>
+<td>Valle de Jingyu</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>藏劍谷</td>
+<td>Sword Vault Dale</td>
+<td>蔵剣谷</td>
+<td>장검 골짜기</td>
+<td>Valle Ocultaespadas</td>
+<td>官方地圖 API、Atlos region</td>
+</tr>
+<tr>
+<td>常澐</td>
+<td>Chang Yun</td>
+<td>待核實</td>
+<td>상운（攻略站）</td>
+<td>待核實</td>
+<td>wiki.gg、arca.live zip-line 帖</td>
+</tr>
+<tr>
+<td>彥寧</td>
+<td>Yan Ning</td>
+<td>待核實</td>
+<td>언녕（攻略站）</td>
+<td>待核實</td>
+<td>wiki.gg、arca.live zip-line 帖</td>
+</tr>
+<tr>
+<td>齊綸</td>
+<td>Qi Lun</td>
+<td>待核實</td>
+<td>제륜（攻略站）</td>
+<td>Chi-Lun</td>
+<td>wiki.gg、arca.live zip-line 帖、vortexgaming.es</td>
+</tr>
+<tr>
+<td>於施</td>
+<td>Yu Shi</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>蘇白易</td>
+<td>Su Baiyi</td>
+<td>待核實</td>
+<td>소백（攻略站）</td>
+<td>待核實</td>
+<td>wiki.gg、naver lounge 帖</td>
+</tr>
+<tr>
+<td>普里莫</td>
+<td>Primo Linde</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>趙昭</td>
+<td>Zhao Zhao</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>裴令容</td>
+<td>Pei Lingrong</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>阿禾</td>
+<td>Ah He</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg</td>
+</tr>
+<tr>
+<td>阮藝（幹員）</td>
+<td>Ruan Yi</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg（Ruan Yi/NPC）</td>
+</tr>
+<tr>
+<td>資源回收站</td>
+<td>Recycling Station</td>
+<td>資源回収所</td>
+<td>재활용센터</td>
+<td>待核實（Atlos game 缺？）</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>倉儲節點</td>
+<td>Depot Node</td>
+<td>保管ボックス</td>
+<td>저장고 노드</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>滑索</td>
+<td>Zipline</td>
+<td>ジップライン</td>
+<td>집라인</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>物資排程終端</td>
+<td>Stock Redistribution Terminal</td>
+<td>商品取引端末</td>
+<td>물자 관리 단말기</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>能量淤積點</td>
+<td>Energy Alluvium</td>
+<td>超域活性點</td>
+<td>에너지 응집점</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>中容谷地電池</td>
+<td>LC Valley Battery</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>待核實</td>
+<td>wiki.gg（LC=Low Capacity）；同類：低容=SC Valley Battery、高容=HC Valley Battery、武陵電池=Wuling Battery</td>
+</tr>
+<tr>
+<td>協議採錄樁</td>
+<td>Protocol Datalogger</td>
+<td>協約測定裝置</td>
+<td>프로토콜 데이터 수집기</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>協議傳送點</td>
+<td>TP Point</td>
+<td>協約転送ポイント</td>
+<td>프로토콜 전송 지점</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>襲擊預警終端</td>
+<td>EW Terminal</td>
+<td>襲撃警備端末</td>
+<td>습격 경보 단말기</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>危機合約</td>
+<td>Contingency Contract</td>
+<td>危機契約</td>
+<td>위기 협약</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>影拓豐碑</td>
+<td>Umbral Monument</td>
+<td>映像の記念碑</td>
+<td>그림자 이정표</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>待回收物品</td>
+<td>Salvageable</td>
+<td>未回収アイテム</td>
+<td>회수 대기 아이템</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+<tr>
+<td>熾燃！競技大會！</td>
+<td>HEAT RAGE! MEGA ARENA!</td>
+<td>燃えよ！アリーナ！</td>
+<td>타올라라! 경기 대회!</td>
+<td>待核實</td>
+<td>官方地圖 API（<code>sk-language</code> ja/ko）</td>
+</tr>
+</tbody></table>
+<p><strong>備註</strong>：</p>
+<ul>
+<li>官方地圖 API 四語資料同構（templateId/地圖 ID 完全一致），僅名稱語言不同（skport 域 + <code>sk-language</code> 短程式碼：en/ja/ko；skland 域=簡中），已實測指令碼化批次拉取（<code>/map/tree</code>、<code>/map/catalog</code>），產出 JSON 快照保存於 <code>C:\Users\26309\AppData\Local\Temp\opencode\skport\official_tree_{zh,en,ja,ko}.json</code>、<code>official_catalog_{zh,en,ja,ko}.json</code>、<code>official_five_lang.json</code>（含 es）。mark/list 含滑索/倉儲節點/資源回收站/物資排程終端/協議傳送點等 POI 座標（templateId 已確認一致），可用於 OCR 匹配詞校驗。</li>
+<li>日文地名多用漢字（武陵城/清波砦/景玉谷/首礎/蔵剣谷/応龍関），且官方日文與中文同名的情況不少（武陵、景玉谷、幽谷、南山 等）；韓文為純諺文轉寫（무릉/무릉성/실험 구역）。</li>
+<li>es 地名由 Atlos 倉庫（遊戲本地化提取）提供，覆蓋 145/168 site（應龍關 lv007 與北部禁區 lv008 的 site 級缺失，Atlos 全語言 region 資料均未收錄這兩區域——如需可後續用遊戲客戶端文本表補）；es NPC 名保留拼音轉寫（Chi-Lun），西語官方 NPC 譯名仍待核實。</li>
+<li>官方地圖 API 僅釋出 英/簡中/日/韓 四語（<code>sk-language</code> 短程式碼驗證），<strong>不含 es</strong>；<code>sk-language</code> 用長程式碼（ja-jp）返回空串而非報錯，排查語言問題時應優先用短程式碼。</li>
+</ul>
+<h2 id="3-各語言對上的規則-2">3. 各語言&quot;對上&quot;的規則</h2>
+<p>落地時每條翻譯必須滿足&quot;各語言節點相互對應&quot;：</p>
+<ol>
+<li><strong>zh_CN</strong>：保持現有中文（配置鍵名、OCR 主語言）。</li>
+<li><strong>zh_TW</strong>：官方繁中，用系統轉換（常澐→常澐、彥寧→彥寧、齊綸→齊綸、於施→於施、蘇白易→蘇白易、普里莫→普里莫、趙昭→趙昭、裴令容→裴令容、阿禾→阿禾；武陵城→武陵城、試驗園區→試驗園區、資源回收站→資源回收站、倉儲節點→倉儲節點）。</li>
+<li><strong>en_US</strong>：本方案核實填寫的官方英文（上表）。</li>
+<li><strong>ja_JP / ko_KR / es_ES</strong>：按 §2.1 對照表填入<strong>已多源核實的官方譯名</strong>；表中標「待核實」的節點留空（預設），LangAccessor 自動回退 zh_CN（<code>_load_module</code> 的 fallback 鏈：當前 locale → zh_CN/zh_TW → 首個可用）。留空優於機翻錯誤譯名。</li>
+<li><strong>停用手工翻譯校驗</strong>：任何語言節點的值必須是&quot;官方譯名或空&quot;，不允許拼音/機翻佔位（現有 Wulingcheng / Experimental Park 屬此類，需修正）。</li>
+</ol>
+<h2 id="4-落地設計-2">4. 落地設計</h2>
+<h3 id="4-1-world-map-json-擴充套件-2">4.1 world_map.json 擴充套件</h3>
+<p>為每個 NPC/地點新增鍵（鍵名沿用現有 hash 風格），如：</p>
+<pre><code class="language-json">&quot;k_changyun&quot;: {
+  &quot;zh_CN&quot;: {&quot;pattern&quot;: &quot;常沄&quot;},
+  &quot;zh_TW&quot;: {&quot;pattern&quot;: &quot;常沄&quot;},
+  &quot;en_US&quot;: {&quot;pattern&quot;: &quot;Chang Yun&quot;}
+}
+</code></pre>
+<p><code>pattern</code> 欄位用於 OCR 匹配（<code>get_world_map_matcher</code>），<code>string</code> 欄位用於顯示文本——按目標用途選擇。</p>
+<h3 id="4-2-配送鏈路適配-2">4.2 配送鏈路適配</h3>
+<ul>
+<li><code>delivery_area.py</code> 中 <code>delivery_locations</code> / <code>delivery_targets_by_location</code> 保持中文 canonical 名（鍵名不變，避免觸發 <code>config_key_migrations</code>）。</li>
+<li>所有對外顯示/OCR 處已通過 <code>get_delivery_locations(area, lang_accessor)</code> / <code>get_delivery_targets(area, lang_accessor)</code> 本地化（<code>delivery_area_service.py:40-69</code> 已支援）。</li>
+<li><strong>待辦</strong>：<code>DeliveryTask._configure_delivery_area</code> 目前呼叫 <code>get_delivery_targets(self.delivery_area)</code> 未傳 <code>lang_accessor</code>，需補傳，使 ends 列表本地化。</li>
+<li><code>通向{地点}送货点</code> 配置鍵：鍵名保持中文不變（儲存穩定性），顯示翻譯繼續走 gettext ok.po；po 中已存在的「通向武陵城送貨點」等 msgid 由 <code>scripts/sync_world_map_langs.py</code> 的 po 同步邏輯（§5.4）內嵌替換內舊譯名片段。</li>
+</ul>
+<h3 id="4-3-啟用語言-2">4.3 啟用語言</h3>
+<p><code>ACTIVE_LOCALES_CONFIG</code> 保持現狀（zh_CN/zh_TW），en_US 啟用前需確保全部英文譯名經官方核實。</p>
+<h2 id="5-自動翻譯替換方案-工程化-2">5. 自動翻譯替換方案（工程化）</h2>
+<h3 id="5-1-資料層-一次性指令碼-2">5.1 資料層（一次性指令碼）</h3>
+<p><code>tools/sync_world_map_from_wiki.py</code>：</p>
+<ol>
+<li>內建中→英對照表（上表，人工核實後固化）。</li>
+<li>優先從<strong>官方地圖 API</strong>（<code>zonai.skland.com</code>=簡中 + <code>zonai.skport.com</code>=<code>sk-language: en|ja|ko</code>，<code>/map/tree</code>、<code>/map/catalog</code>）拉取地點/型別<strong>四語</strong>官方名作交叉校驗；es 從 Atlos 倉庫 <code>talos/src/locale/data/region/es-ES.json</code> 拉取；再從 endfield.wiki.gg Category:NPCs 抓取並解析 NPC 英文名（注意排除方舟本體 NPC），輸出 JSON 供校驗：倉庫缺的、wiki 有的 → 列出待補。</li>
+<li>生成/更新 <code>assets/lang/world_map.json</code> 節點：<ul>
+<li>zh_CN = 中文名</li>
+<li>zh_TW = 繁中轉換（<code>zhconv</code> 或維護表）</li>
+<li>en_US / ja_JP / ko_KR = 官方 API 四語（缺失則留空不寫）；es_ES = Atlos 資料（缺失留空）</li>
+</ul>
+</li>
+<li>校驗規則（失敗即報錯）：<ul>
+<li>en_US 非空時必須是字母/空格，禁止拼音數字混寫（正則 ）</li>
+<li>不允許 <code>Wulingcheng</code>、<code>Experimental Park</code> 類已知錯誤譯名殘留</li>
+<li>每個中文名在對照表中必須有對映，或顯式標記&quot;未核實&quot;</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-2-檢查機制-ci-測試">5.2 檢查機制（CI/測試）</h3>
+<p><code>tests/test_world_map_i18n.py</code>：</p>
+<ul>
+<li>遍歷 <code>delivery_area.py</code> 全部地點/NPC 名，斷言 world_map.json 中存在對應節點。</li>
+<li>斷言 en_US 節點值滿足官方名規則（非空、無拼音混寫）。</li>
+<li>斷言 zh_TW 節點存在。</li>
+<li>斷言不包含黑名單錯誤譯名。</li>
+</ul>
+<h3 id="5-3-後續語言補充流程-ja-ko-es">5.3 後續語言補充流程（ja/ko/es）</h3>
+<p>按 §2.1 表，<strong>日/韓已全量官方核實</strong>（官方地圖 API <code>sk-language: ja|ko</code>，160 項 catalog + 全地圖/層級/site 名）；<strong>西語地名</strong>已由 Atlos 提取（145/168 site，缺 應龍關/北部禁區 site 級）；其餘 NPC 名（日/韓/西）待以下官方渠道齊備後逐條核實再填，遵循「官方譯名或留空」原則：</p>
+<ul>
+<li>日文：appmedia 武陵城ジップライン/NPC 相關頁面、game8.jp、官網 /ja-jp 公告</li>
+<li>韓文：namu.wiki 등장인물 文件（被反爬時可經搜尋摘要/存檔站讀取）、X @AKEndfieldKR</li>
+<li>西語：官網 Español 版新聞、西語社群攻略（guslok.com 等）</li>
+<li>es 應龍關/北部禁區 site 級：後續可從遊戲客戶端本地化文本表補（或查 Atlos 更新）</li>
+</ul>
+<h3 id="5-4-ok-po-譯名同步">5.4 ok.po 譯名同步</h3>
+<p><code>scripts/sync_world_map_langs.py</code> 在重新整理 world_map.json 與 <code>tools/official_five_lang.json</code> 快照後，還會把官方譯名同步進 <code>i18n/{en_US,ja_JP,ko_KR,es_ES}/LC_MESSAGES/ok.po</code>：</p>
+<ol>
+<li><strong>精確匹配</strong>：msgid（去尾 <code>\n</code>）與官方 zh 名一致 → 整條 msgstr 替換為官方譯名（ja 官方未翻譯的名可能直接是中文/片假名，屬官方資料）。</li>
+<li><strong>內嵌替換</strong>：msgid 含官方 zh 名（子串）且 msgstr 含該名舊譯名 → 文本替換為新譯名，如「通向試驗園區送貨點」的 <code>Test Zone</code> → <code>Test Area</code>、ja「武陵買入價」的 <code>ウーリン</code> → <code>武陵</code>。按 zh 名長度降序處理，避免短名子串衝突。</li>
+<li>變更後同目錄 <code>ok.mo</code> 同步用 polib 重編譯。</li>
+<li>冪等：官方譯名已是最新時不產生任何 diff。</li>
+</ol>
+<p>注意：官方 catalog 個別條目存在編號錯位（如 高階培養I ↔ II 的英文名顛倒），po 同步忠實採用官方資料；<code>tests/TestPoLocaleConsistency.py</code> 對官方各語言與英文相同的條目（如 es「武陵」= <code>Wuling</code>）有 <code>OFFICIAL_SAME_AS_ENGLISH</code> 豁免集。</p>
+<h2 id="6-分階段計劃">6. 分階段計劃</h2>
+<table>
+<thead>
+<tr>
+<th>階段</th>
+<th>內容</th>
+<th>產出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>固化多語言對照表 + 修正 world_map.json 現有錯誤譯名 + 補 NPC 節點（見 §8 清單 A/C）</td>
+<td>world_map.json 更新</td>
+</tr>
+<tr>
+<td>2</td>
+<td>DeliveryTask 補傳 lang_accessor，ends/地點 OCR 本地化生效；修 DeliveryTask.json / TakeDeliveryTask.json / WarehouseTransferTask.json 錯譯與重複鍵（清單 D）</td>
+<td>程式碼小改</td>
+</tr>
+<tr>
+<td>3</td>
+<td>同步指令碼 + 測試檔案</td>
+<td>tools/ + tests/</td>
+</tr>
+<tr>
+<td>4</td>
+<td>zh_TW 全量核對；en_US 啟用 <code>ACTIVE_LOCALES_CONFIG</code></td>
+<td>語言切換可用</td>
+</tr>
+<tr>
+<td>5</td>
+<td>統一兩通道譯名：po（gettext）與 assets/lang JSON 同名概念保持一致（清單 B）</td>
+<td>po 重編譯 + JSON 校準</td>
+</tr>
+<tr>
+<td>6</td>
+<td>雜項：login_mixin 硬編碼中文、to_model_area 中文模組名、daily_demo/daily_liaison 殘缺節點（清單 E）</td>
+<td>程式碼小改</td>
+</tr>
+</tbody></table>
+<h2 id="7-相關文件">7. 相關文件</h2>
+<ul>
+<li><code>docs/dev/i18n_OCR配置流程.md</code>：語言資源兩套機制說明</li>
+<li><code>docs/dev/API.md</code> §530-558：語言資源 API</li>
+<li><code>src/data/lang/__init__.py</code>：LangAccessor / fallback 實現</li>
+</ul>
+<h2 id="8-類似資料配置盤點-2026-08-全庫調查">8. 類似資料配置盤點（2026-08 全庫調查）</h2>
+<blockquote>
+<p>除 <code>delivery_area.py</code> + <code>world_map.json</code> 外，以下配置同樣包含中文名/中文文本，涉及多語言或 OCR 匹配。狀態分三級：<strong>已本地化</strong>（節點齊全但譯名待校準）、<strong>半本地化</strong>（部分通路未接 lang / 缺節點）、<strong>未本地化</strong>（硬編碼中文）。</p>
+</blockquote>
+<h3 id="a-同類的中文地點-npc-物品資料來源">A. 同類的&quot;中文地點/NPC/物品&quot;資料來源</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>檔案</th>
+<th>內容</th>
+<th>狀態</th>
+<th>問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td><code>assets/data/delivery_area.json</code>（載入器 <code>src/data/delivery_area.py</code>）</td>
+<td>地區/地點/NPC</td>
+<td>半本地化</td>
+<td>10 個 NPC 無語言節點；<code>DeliveryTask._configure_delivery_area:92-93</code> 未傳 lang_accessor</td>
+</tr>
+<tr>
+<td>A2</td>
+<td><code>assets/data/world_map.json</code>（載入器 <code>src/data/world_map.py</code>）</td>
+<td>地點/據點/貨物/關卡/倉庫對映</td>
+<td>已本地化</td>
+<td>主資料全名自動補 lang 節點（<code>sync_world_map_langs.py</code> sync_canon），官方有譯名則填；官方新增名列印 MANUAL 提示人工決定是否入主資料</td>
+</tr>
+<tr>
+<td>A3</td>
+<td><code>assets/data/characters.json</code>（載入器 <code>src/data/characters.py</code>）</td>
+<td>30 幹員名</td>
+<td>已本地化</td>
+<td>官方六語已同步（endfield.wiki.gg 自動同步）；canonical <code>en</code> 為內部 ID（FeatureList 繫結），不與官方名一致屬設計</td>
+</tr>
+<tr>
+<td>A4</td>
+<td><code>src/data/zh_en.py:19-130</code></td>
+<td>103 物品中→英 feature 名</td>
+<td>未本地化（設計如此）</td>
+<td>僅模板匹配（WarehouseTransferTask.py:61,176），無需 lang</td>
+</tr>
+<tr>
+<td>A5</td>
+<td><code>assets/items/map/item_names.json</code></td>
+<td>154 地圖實體中文名</td>
+<td>未本地化</td>
+<td>ItemNavigatorTask.py:22,65,365 純中文讀取</td>
+</tr>
+</tbody></table>
+<h3 id="b-兩通道譯名不一致-po-gettext-vs-json-ocr">B. 兩通道譯名不一致（po gettext vs JSON OCR）</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>po（gettext）</th>
+<th>assets/lang JSON</th>
+<th>官方參考</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>倉儲節點</td>
+<td>Storage Node</td>
+<td>Warehousing node（DeliveryTask.json <code>k_a72a252f</code>）</td>
+<td><strong>Depot Node</strong></td>
+</tr>
+<tr>
+<td>武陵城</td>
+<td>Wuling City</td>
+<td>Wulingcheng（world_map.json <code>k_93e2bdac</code>）</td>
+<td><strong>Wuling City</strong></td>
+</tr>
+<tr>
+<td>試驗園區</td>
+<td>Test Zone/Test Area</td>
+<td>Experimental Park（world_map.json <code>k_ba83829f</code>）</td>
+<td><strong>Test Area</strong></td>
+</tr>
+</tbody></table>
+<h3 id="c-world-map-json-內的可疑-錯誤譯名-2-1-表之外">C. world_map.json 內的可疑/錯誤譯名（§2.1 表之外）</h3>
+<table>
+<thead>
+<tr>
+<th>鍵</th>
+<th>中文</th>
+<th>現有 en_US</th>
+<th>官方（2026-08 官方地圖 API 四語 + wiki.gg + Atlos es）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>k_214efec8</code></td>
+<td>四號谷地</td>
+<td>valley four</td>
+<td><strong>Valley IV</strong>（map01），ja 四號谷地 / ko 4번 협곡 / es Valle IV</td>
+</tr>
+<tr>
+<td><code>k_f87e5ddb</code></td>
+<td>中容谷地電池</td>
+<td>Zhongrong Valley Battery</td>
+<td><strong>LC Valley Battery</strong>（wiki.gg，LC=Low Capacity）；zh_TW 多&quot;量&quot;字、ja <code>中栄谷砲台</code> 錯譯（同類：低容谷地電池=SC Valley Battery、高容=HC Valley Battery、武陵電池=Wuling Battery）</td>
+</tr>
+<tr>
+<td><code>k_ece5ec1b</code></td>
+<td>清波寨</td>
+<td>Qingbo Village</td>
+<td><strong>Qingbo Stockade</strong>（map02_lv003），ja 清波砦 / ko 청파채 / es Empalizada Qingbo；現有 ja <code>青波村</code> 錯譯</td>
+</tr>
+</tbody></table>
+<h3 id="d-任務-ocr-按鈕錯譯-assets-lang-json">D. 任務 OCR 按鈕錯譯（assets/lang/*.json）</h3>
+<table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>鍵</th>
+<th>中文</th>
+<th>現有譯名</th>
+<th>問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DeliveryTask.json</td>
+<td><code>k_c7b4d04e</code></td>
+<td>送達</td>
+<td>en <code>service</code> / ja <code>サービス</code> / ko <code>서비스</code></td>
+<td>全部譯成&quot;服務&quot;，應 delivered/納品 類</td>
+</tr>
+<tr>
+<td>DeliveryTask.json</td>
+<td><code>k_6536f6f1</code></td>
+<td>資源</td>
+<td>ko <code>의지</code>（意志）</td>
+<td>可疑</td>
+</tr>
+<tr>
+<td>DeliveryTask.json</td>
+<td><code>k_a72a252f</code> / <code>_1</code></td>
+<td>倉儲節點</td>
+<td>Warehousing node</td>
+<td>官方 Depot Node；且存在重複鍵</td>
+</tr>
+<tr>
+<td>DeliveryTask.json</td>
+<td><code>k_ae8fb114</code> vs <code>k_accept_delivery</code></td>
+<td>運送委託列表/接取運送委託</td>
+<td>譯名不統一</td>
+<td>統一術語</td>
+</tr>
+<tr>
+<td>WarehouseTransferTask.json</td>
+<td>（存放）</td>
+<td>存放</td>
+<td>ja <code>店</code> / ko <code>가게</code></td>
+<td>商店？錯譯</td>
+</tr>
+<tr>
+<td>daily_routine_mixin.json</td>
+<td><code>k_3ecdd4bb</code></td>
+<td>鍵領取</td>
+<td>—</td>
+<td>疑似&quot;一鍵領取&quot;漏字</td>
+</tr>
+<tr>
+<td>daily_routine_mixin.json</td>
+<td><code>k_7d394484</code>/<code>_1</code>、<code>k_39d12e73</code>/<code>_1</code></td>
+<td>重複鍵</td>
+<td>—</td>
+<td>清理</td>
+</tr>
+<tr>
+<td>daily_liaison_mixin.json</td>
+<td>—</td>
+<td>艦橋/信賴/存放</td>
+<td>—</td>
+<td><strong>缺 en_US</strong>，英文環境回退中文</td>
+</tr>
+</tbody></table>
+<h3 id="e-硬編碼中文-結構殘缺-未本地化">E. 硬編碼中文 / 結構殘缺（未本地化）</h3>
+<table>
+<thead>
+<tr>
+<th>檔案</th>
+<th>位置</th>
+<th>問題</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/tasks/mixin/login_mixin.py</code></td>
+<td>L64 <code>re.compile(&quot;最近&quot;)</code>、L72 <code>click_text(&quot;登录&quot;)</code></td>
+<td>硬編碼中文</td>
+</tr>
+<tr>
+<td><code>src/core/base_mixin/game_flow_mixin.py:604-608</code>、<code>daily_logistics_mixin.py:57,104</code>、<code>daily_buy_mixin.py:44</code>、<code>daily_demo_mixin.py:87</code></td>
+<td><code>to_model_area(&quot;物资调度&quot;/&quot;仓储节点&quot;/&quot;据点管理&quot;/&quot;武陵&quot;)</code></td>
+<td>中文模組名硬編碼（OCR 用 feature 識別，影響較小）</td>
+</tr>
+<tr>
+<td><code>assets/lang/daily_demo_mixin.json</code></td>
+<td>結構殘缺</td>
+<td><code>double_reward</code> 僅中繁；<code>k_27d2b829</code> 等僅有 en_US 無中文</td>
+</tr>
+<tr>
+<td><code>assets/lang/map_mixin.json</code>、<code>navigation_mixin.json</code></td>
+<td>死資源</td>
+<td>程式碼無引用（<code>k_8967d3c6</code> 在 daily_battle 複用）</td>
+</tr>
+</tbody></table>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/NPC与送货点多语言对照方案.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-現狀" style="margin-left:0px">1. 現狀</a><a href="#1-1-多語言通道" style="margin-left:10px">1.1 多語言通道</a><a href="#1-2-現有問題" style="margin-left:10px">1.2 現有問題</a><a href="#2-官方譯名資料來源" style="margin-left:0px">2. 官方譯名資料來源</a><a href="#2-1-已核實對照表-中-英-日-韓-西" style="margin-left:10px">2.1 已核實對照表（中 → 英/日/韓/西）</a><a href="#3-各語言對上的規則" style="margin-left:0px">3. 各語言&amp;quot;對上&amp;quot;的規則</a><a href="#4-落地設計" style="margin-left:0px">4. 落地設計</a><a href="#4-1-world-map-json-擴充套件" style="margin-left:10px">4.1 world_map.json 擴充套件</a><a href="#4-2-配送鏈路適配" style="margin-left:10px">4.2 配送鏈路適配</a><a href="#4-3-啟用語言" style="margin-left:10px">4.3 啟用語言</a><a href="#5-自動翻譯替換方案-工程化" style="margin-left:0px">5. 自動翻譯替換方案（工程化）</a><a href="#5-1-資料層-一次性指令碼" style="margin-left:10px">5.1 資料層（一次性指令碼）</a><a href="#1-現狀-2" style="margin-left:0px">1. 現狀</a><a href="#1-1-多語言通道-2" style="margin-left:10px">1.1 多語言通道</a><a href="#1-2-現有問題-2" style="margin-left:10px">1.2 現有問題</a><a href="#2-官方譯名資料來源-2" style="margin-left:0px">2. 官方譯名資料來源</a><a href="#2-1-已核實對照表-中-英-日-韓-西-2" style="margin-left:10px">2.1 已核實對照表（中 → 英/日/韓/西）</a><a href="#3-各語言對上的規則-2" style="margin-left:0px">3. 各語言&amp;quot;對上&amp;quot;的規則</a><a href="#4-落地設計-2" style="margin-left:0px">4. 落地設計</a><a href="#4-1-world-map-json-擴充套件-2" style="margin-left:10px">4.1 world_map.json 擴充套件</a><a href="#4-2-配送鏈路適配-2" style="margin-left:10px">4.2 配送鏈路適配</a><a href="#4-3-啟用語言-2" style="margin-left:10px">4.3 啟用語言</a><a href="#5-自動翻譯替換方案-工程化-2" style="margin-left:0px">5. 自動翻譯替換方案（工程化）</a><a href="#5-1-資料層-一次性指令碼-2" style="margin-left:10px">5.1 資料層（一次性指令碼）</a><a href="#5-2-檢查機制-ci-測試" style="margin-left:10px">5.2 檢查機制（CI/測試）</a><a href="#5-3-後續語言補充流程-ja-ko-es" style="margin-left:10px">5.3 後續語言補充流程（ja/ko/es）</a><a href="#5-4-ok-po-譯名同步" style="margin-left:10px">5.4 ok.po 譯名同步</a><a href="#6-分階段計劃" style="margin-left:0px">6. 分階段計劃</a><a href="#7-相關文件" style="margin-left:0px">7. 相關文件</a><a href="#8-類似資料配置盤點-2026-08-全庫調查" style="margin-left:0px">8. 類似資料配置盤點（2026-08 全庫調查）</a><a href="#a-同類的中文地點-npc-物品資料來源" style="margin-left:10px">A. 同類的&amp;quot;中文地點/NPC/物品&amp;quot;資料來源</a><a href="#b-兩通道譯名不一致-po-gettext-vs-json-ocr" style="margin-left:10px">B. 兩通道譯名不一致（po gettext vs JSON OCR）</a><a href="#c-world-map-json-內的可疑-錯誤譯名-2-1-表之外" style="margin-left:10px">C. world_map.json 內的可疑/錯誤譯名（§2.1 表之外）</a><a href="#d-任務-ocr-按鈕錯譯-assets-lang-json" style="margin-left:10px">D. 任務 OCR 按鈕錯譯（assets/lang/*.json）</a><a href="#e-硬編碼中文-結構殘缺-未本地化" style="margin-left:10px">E. 硬編碼中文 / 結構殘缺（未本地化）</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

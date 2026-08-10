@@ -1,0 +1,178 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>主数据维护 · ok-end-field</title><meta name="description" content="主数据维护 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/update/主数据维护工作流/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="主数据维护 · ok-end-field"><meta property="og:description" content="主数据维护 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/update/主数据维护工作流/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="主数据维护 · ok-end-field"><meta name="twitter:description" content="主数据维护 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"主数据维护 · ok-end-field","description":"主数据维护 — ok-end-field","url":"https://ok-script.com/ok-end-field/docs/update/主数据维护工作流/","inLanguage":"zh-CN","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">文档首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题</a><a href="../../features/overview/">功能概览</a><a href="../../日常任务/">日常任务</a><a href="../../体力本/">刷体力</a><a href="../../自动战斗/">自动战斗</a><a href="../../排轴/">排轴</a><a href="../../运送委托接取/">运送委托接取</a><a href="../../自动送货/">自动送货</a><a href="../../仓库物品转移/">仓库物品转移</a><a href="../../物品导航与实时检测/">物品导航与实时检测</a><a href="../../账号配置用户指南/">账号配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 与覆盖逻辑</a><a href="../../Windows 计划任务/">Windows 计划任务</a><a href="../../鼠标转向标定汇总/">鼠标转向标定</a><a href="./" class="active" aria-current="page">主数据维护</a><a href="../送货地区维护工作流/">送货地区维护</a><a href="../日常送礼维护工作流/">日常送礼维护</a><a href="../../dev/QUICKSTART/">从源码运行</a><a href="../../dev/DEVELOPMENT/">开发指南</a><a href="../../dev/API/">API 参考</a><a href="../../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../../dev/键盘操作体系/">键盘操作体系</a><a href="../../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../../dev/文字识别示例/">文字识别示例</a><a href="../../dev/装备词条识别轮子/">装备词条识别</a><a href="../../dev/切换账户流程分析/">账户切换流程</a><a href="../../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../../dev/任务执行情况汇总报告/">任务执行情况汇总</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="世界地图维护工作流">世界地图维护工作流</h1>
+<p>返回：<a href="../../">文档索引</a> / <a href="../../../">README</a></p>
+<blockquote>
+<p>数据已剥离为 JSON：<code>assets/data/world_map.json</code>（纯数据），由 <code>src/data/world_map.py</code>（薄加载器）读取，保持原导入路径兼容；涉及 FeatureList 枚举的 <code>higher_order_feature_dict</code> 仍在加载器中。<code>permanent_dict</code>（影拓丰碑敌人列表）在 JSON 中维护。</p>
+</blockquote>
+<h2 id="主要维护点">主要维护点</h2>
+<h3 id="1-地区列表-驱动任务遍历">1. 地区列表：驱动任务遍历</h3>
+<p><strong>影响的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_trade_mixin.py">daily_trade_mixin.py</a> 中的买卖货任务会按 <code>areas_list</code> 逐区执行</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 中的据点兑换任务会按 <code>areas_list</code> 遍历所有地区</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_buy_mixin.py">daily_buy_mixin.py</a> 中的买物资流程也依赖地区列表</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_logistics_mixin.py">daily_logistics_mixin.py</a> 的物流相关流程也读取地区列表</li>
+</ul>
+<p><strong>维护要点</strong>：</p>
+<ul>
+<li>新增地区时，必须先把地区名加入 <code>areas_list</code></li>
+<li>地区名会直接影响日常任务的遍历范围和配置项名称</li>
+<li>地区顺序会影响任务执行顺序</li>
+</ul>
+<hr>
+<h3 id="2-据点字典-决定地区内可处理的据点">2. 据点字典：决定地区内可处理的据点</h3>
+<p><strong>影响的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 通过 <code>get_area_by_outpost_name()</code> 反查据点所属地区，并由 <code>get_goods_by_outpost_name()</code> 返回该地区的 <code>goods_dict</code></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 的据点兑换任务会从 <code>outpost_dict</code> 逐个取出据点执行兑换</li>
+<li>当前直接业务调用方只有据点兑换流程；自动送货使用独立的 <code>delivery_area.py</code> 地点/NPC 数据，不读取 <code>outpost_dict</code></li>
+</ul>
+<p><strong>维护要点</strong>：</p>
+<ul>
+<li>新增或调整据点时，要同步更新 <code>outpost_dict</code>（注意：应统一使用&quot;据点&quot;术语，避免与其他模块混淆）</li>
+<li>修改据点名称后，要检查所有按名称反查地区的流程是否还能匹配</li>
+</ul>
+<hr>
+<h3 id="3-商品字典-驱动据点兑换识别与优先项">3. 商品字典：驱动据点兑换识别与优先项</h3>
+<p><strong>影响的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 的 <code>get_goods_by_outpost_name()</code> 会按据点所属地区返回可交易货物</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 的据点兑换任务按据点所属地区读取 <code>goods_dict</code></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_routine_mixin.py">daily_routine_mixin.py</a> 会汇总 <code>goods_dict</code>，生成「交易货品优先序列」的可选项</li>
+<li>买卖货任务只按 <code>areas_list</code> 遍历并从界面 OCR 采集交易信息，不读取 <code>goods_dict</code></li>
+</ul>
+<p><strong>维护要点</strong>：</p>
+<ul>
+<li>新增据点兑换可识别/可排序的货物时，更新 <code>goods_dict</code>；送货货物和买卖货扫描不由该字典驱动</li>
+<li>商品必须按地区分组，否则据点兑换无法拿到正确的可交易物品列表</li>
+<li>商品变动会影响据点兑换的 OCR 候选、规范化和「交易货品优先序列」配置选项，不会改变游戏内兑换 UI 自身的商品列表</li>
+</ul>
+<hr>
+<h3 id="4-兑换商品字典-当前主要是预留配置">4. 兑换商品字典：当前主要是预留配置</h3>
+<p><strong>影响的功能</strong>：</p>
+<ul>
+<li>目前代码里没有直接消费 <code>exchange_goods_dict</code> 的业务逻辑</li>
+<li>文档和配置层面保留了这个结构，便于后续扩展兑换 UI 或交易逻辑</li>
+</ul>
+<p><strong>维护要点</strong>：</p>
+<ul>
+<li>现在不要把它当作主流程数据源</li>
+<li>如果后续要接入真正的兑换功能，再补充调用方</li>
+</ul>
+<hr>
+<h3 id="5-关卡字典和消耗表-驱动战斗任务">5. 关卡字典和消耗表：驱动战斗任务</h3>
+<p><strong>影响的功能</strong>：</p>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_battle_mixin.py">daily_battle_mixin.py</a> 会用 <code>stages_dict</code> 生成关卡选择项</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 的 <code>get_stage_category()</code> 会反查关卡所属分类</li>
+<li><code>stages_cost</code> 会影响体力/消耗计算</li>
+<li><code>higher_order_feature_dict</code> 只服务高阶关卡的模板识别和特殊处理</li>
+</ul>
+<p><strong>维护要点</strong>：</p>
+<ul>
+<li>新关卡先放进 <code>stages_dict</code></li>
+<li>关卡消耗统一维护在 <code>stages_cost</code></li>
+<li>只有高阶关卡才需要维护 <code>higher_order_feature_dict</code></li>
+<li><code>stages_list</code> 是派生数据，不要手改</li>
+</ul>
+<hr>
+<h3 id="6-仓库映射-驱动物品转移">6. 仓库映射：驱动物品转移</h3>
+<p><strong>影响的功能</strong>：</p>
+<ul>
+<li><a href="../../仓库物品转移/">仓库物品转移.md</a> 对应的物品选择依赖 <code>item_to_warehouse_dict</code></li>
+<li>仓库转移任务会按这个字典把物品归类到矿物、产物等仓库类别</li>
+</ul>
+<p><strong>维护要点</strong>：</p>
+<ul>
+<li>新增物品类别时补充映射</li>
+<li>映射变更会直接影响仓库转移任务的可选项和分类结果</li>
+</ul>
+<hr>
+<h2 id="通用维护流程">通用维护流程</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[确认数据变更需求] --&gt; B[定位调用方]
+    B --&gt; C[修改 assets/data/world_map.json 或加载器]
+    C --&gt; D{是否涉及模板特征}
+    D --&gt;|是| E[更新 ok_templates 和 FeatureList]
+    D --&gt;|否| F[运行 main_debug.py 验证加载]
+    E --&gt; F
+    F --&gt; G[运行相关单元测试]
+    G --&gt; H[同步 assets/lang/world_map.json]
+    H --&gt; I[同步功能文档和维护文档]
+</code></pre>
+<ol>
+<li>先确认调用方使用了哪些数据</li>
+<li>修改对应配置（均在 <code>assets/data/world_map.json</code>）：<ul>
+<li>地区：<code>areas_list</code></li>
+<li>据点：<code>outpost_dict</code></li>
+<li>商品：<code>goods_dict</code></li>
+<li>关卡：<code>stages_dict</code></li>
+<li>消耗：<code>stages_cost</code></li>
+<li>仓库映射：<code>item_to_warehouse_dict</code></li>
+<li>影拓丰碑敌人：<code>permanent_dict</code></li>
+</ul>
+</li>
+<li>如有高阶关卡，再补 <code>higher_order_feature_dict</code>（在 <code>src/data/world_map.py</code> 加载器内，因含 FeatureList 枚举）</li>
+<li><code>scripts/sync_world_map_langs.py</code> 会自动为主数据新增的名称补齐 <code>assets/lang/world_map.json</code> 节点（官方有译名则填，无则至少 zh_CN）；官方新增名称会打印 MANUAL 提示人工决定是否加入主数据</li>
+<li>运行相关任务验证数据是否生效</li>
+</ol>
+<hr>
+<h2 id="关键注意事项">关键注意事项</h2>
+<ul>
+<li><strong>先看调用方，再改数据</strong>：<code>world_map.py</code> 里的字段不是孤立配置，改之前先确认哪些任务模块在用</li>
+<li><strong>商品字典影响范围有限</strong>：<code>goods_dict</code> 影响据点兑换识别、筛选和优先序列配置，不驱动买卖货扫描、自动送货或游戏内商品列表</li>
+<li><strong>关卡分两层维护</strong>：普通关卡只维护分类和消耗，高阶关卡才维护模板特征</li>
+<li><strong>兑换商品目前偏预留</strong>：<code>exchange_goods_dict</code> 暂时不是主流程数据源</li>
+<li><strong>派生数据不要手改</strong>：<code>stages_list</code> 由 <code>stages_dict</code> 自动生成</li>
+</ul>
+<hr>
+<h2 id="依赖关系">依赖关系</h2>
+<ul>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_trade_mixin.py">daily_trade_mixin.py</a> 只读取地区列表，不读取 <code>goods_dict</code></li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_outpost_mixin.py">daily_outpost_mixin.py</a> 读取地区列表、据点列表和商品配置</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_routine_mixin.py">daily_routine_mixin.py</a> 汇总商品配置以生成交易货品优先序列</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/misc/daily_logistics_mixin.py">daily_logistics_mixin.py</a> 读取地区列表</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/daily/daily_battle_mixin.py">daily_battle_mixin.py</a> 读取关卡分类、消耗和高阶特征</li>
+<li><a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map_utils.py">world_map_utils.py</a> 负责据点到地区、据点到商品、关卡到分类的反查</li>
+<li><a href="../../仓库物品转移/">仓库物品转移.md</a> 对应仓库映射字典的使用说明</li>
+</ul>
+<hr>
+<h2 id="通用验证步骤">通用验证步骤</h2>
+<ol>
+<li>运行 <code>python -m compileall src/data src/tasks/daily</code> 检查语法和导入前的基础结构。</li>
+<li>运行 <code>python -m unittest tests.TestCheckLang tests.TestPoLocaleConsistency tests.TestOutpostExchange</code>；涉及送货地区时追加 <code>tests.TestDeliveryAreaConfig</code>，涉及仓库映射时追加 <code>tests.TestWarehouseSwitchOCR</code>。</li>
+<li>运行 <code>python main_debug.py</code> 验证配置控件和数据加载。</li>
+<li>检查日志并遍历受影响的日常任务，确认当前语言 OCR、据点顺序和商品选项均正确。</li>
+</ol>
+<p>相关文档：<a href="../../日常任务/">日常任务</a> / <a href="../../体力本/">刷体力</a> / <a href="../../仓库物品转移/">仓库物品转移</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/update/主数据维护工作流.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#主要维护点" style="margin-left:0px">主要维护点</a><a href="#1-地区列表-驱动任务遍历" style="margin-left:10px">1. 地区列表：驱动任务遍历</a><a href="#2-据点字典-决定地区内可处理的据点" style="margin-left:10px">2. 据点字典：决定地区内可处理的据点</a><a href="#3-商品字典-驱动据点兑换识别与优先项" style="margin-left:10px">3. 商品字典：驱动据点兑换识别与优先项</a><a href="#4-兑换商品字典-当前主要是预留配置" style="margin-left:10px">4. 兑换商品字典：当前主要是预留配置</a><a href="#5-关卡字典和消耗表-驱动战斗任务" style="margin-left:10px">5. 关卡字典和消耗表：驱动战斗任务</a><a href="#6-仓库映射-驱动物品转移" style="margin-left:10px">6. 仓库映射：驱动物品转移</a><a href="#通用维护流程" style="margin-left:0px">通用维护流程</a><a href="#关键注意事项" style="margin-left:0px">关键注意事项</a><a href="#依赖关系" style="margin-left:0px">依赖关系</a><a href="#通用验证步骤" style="margin-left:0px">通用验证步骤</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

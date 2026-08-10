@@ -1,0 +1,510 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>API 參考 · ok-end-field</title><meta name="description" content="API 參考 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/API/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="API 參考 · ok-end-field"><meta property="og:description" content="API 參考 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/API/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="API 參考 · ok-end-field"><meta name="twitter:description" content="API 參考 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"API 參考 · ok-end-field","description":"API 參考 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/API/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="./" class="active" aria-current="page">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../装备词条识别轮子/">裝備詞條識別</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="ok-ef-api-參考">ok-ef API 參考</h1>
+<p>返回：<a href="../../">文件索引</a> / <a href="../../../">README</a></p>
+<p>本文只記錄 <strong>ok-end-field 自己定義並由任務複用的介面</strong>。<code>ocr</code>、<code>wait_ocr</code>、<code>wait_feature</code>、<code>wait_until</code>、<code>back</code>、<code>sleep</code>、<code>send_key</code> 等框架介面來自 <code>ok-script</code>，其完整引數和返回型別應以當前安裝版本為準，不在此複製。</p>
+<p>原始碼權威位置：</p>
+<ul>
+<li>基類組合：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/BaseEfTask.py">BaseEfTask.py</a></li>
+<li>核心能力：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/src/core/base_mixin">src/core/base_mixin/</a></li>
+<li>業務能力：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/src/tasks/mixin">src/tasks/mixin/</a></li>
+<li>配置：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/global_config_store.py">global_config_store.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/core/BattleConfig.py">BattleConfig.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/interaction/KeyConfig.py">KeyConfig.py</a></li>
+</ul>
+<h2 id="1-baseeftask-與-mro">1. BaseEfTask 與 MRO</h2>
+<pre><code class="language-python">from src.core.BaseEfTask import BaseEfTask
+</code></pre>
+<p><code>BaseEfTask</code> 的實際基類順序為：</p>
+<pre><code class="language-text">BaseEfTask
+├── WindowArrowDrawingMixin       src/core/base_mixin/window_arrow_drawing_mixin.py
+├── AccountOverrideMixin         src/core/base_mixin/account_override_mixin.py
+├── GameFlowMixin                src/core/base_mixin/game_flow_mixin.py
+├── RuntimeMixin                 src/core/base_mixin/runtime_mixin.py
+├── ok.BaseTask
+└── ProcessManager               src/core/base_mixin/process_manager.py
+</code></pre>
+<p>任務層 Mixin 通常最終繼承 <code>BaseEfTask</code>：</p>
+<pre><code class="language-text">BattleMixin ────────────────&gt; BaseEfTask
+MapMixin ───────────────────&gt; BaseEfTask
+NavigationMixin ────────────&gt; BaseEfTask
+├── LiaisonMixin
+└── ZipLineMixin
+LoginMixin ─────────────────&gt; BaseEfTask
+└── AccountMixin
+</code></pre>
+<p>所有參與多重繼承的 <code>__init__</code> 必須呼叫 <code>super().__init__(*args, **kwargs)</code>。任務配置應使用 <code>self.default_config.update(...)</code> 等增量方式，避免覆蓋前序 Mixin 已註冊的資料。</p>
+<p>初始化後常用屬性：</p>
+<table>
+<thead>
+<tr>
+<th>屬性</th>
+<th>含義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>self.box</code></td>
+<td><code>ScreenPosition(self)</code>，提供常用螢幕區域</td>
+</tr>
+<tr>
+<td><code>self.key_config</code></td>
+<td>全域性 <code>Game Hotkey Config</code> 的持久化 <code>Config</code></td>
+</tr>
+<tr>
+<td><code>self.key_manager</code></td>
+<td><code>KeyConfigManager(self.key_config)</code></td>
+</tr>
+<tr>
+<td><code>self.lang</code></td>
+<td>按執行時 locale 載入 <code>assets/lang/&lt;module&gt;.json</code> 的訪問器</td>
+</tr>
+<tr>
+<td><code>self.current_user</code> / <code>self.current_account_id</code></td>
+<td>當前賬號上下文</td>
+</tr>
+<tr>
+<td><code>self.once_sleep_time</code></td>
+<td>全域性 <code>Ensure Main Once Action Sleep.SingleActionWithDelay</code></td>
+</tr>
+</tbody></table>
+<h3 id="1-1-座標">1.1 座標</h3>
+<pre><code class="language-text">def box_of_screen(
+    self, x=0, y=0, to_x=1.0, to_y=1.0,
+    width=0.0, height=0.0, name=None,
+    hcenter=False, vcenter=False, confidence=1.0,
+)
+
+def box_of_screen_scaled(
+    self, original_screen_width, original_screen_height,
+    x_original, y_original, to_x=0, to_y=0,
+    width_original=0, height_original=0, name=None,
+    hcenter=False, vcenter=False, confidence=1.0,
+)
+</code></pre>
+<p>前者使用當前螢幕的比例座標；後者將參考解析度座標縮放到當前視窗。<code>BaseEfTask</code> 會將傳入的比例值統一保留三位小數後交給框架。</p>
+<pre><code class="language-python">left_panel = self.box_of_screen(0.0, 0.1, 0.35, 0.9)
+button = self.box_of_screen_scaled(1920, 1080, 1600, 900, 1800, 1020)
+</code></pre>
+<p><code>ScreenPosition</code> 當前提供：<code>top_left</code>、<code>top_right</code>、<code>bottom_left</code>、<code>bottom_right</code>、<code>bottom_right_quarter</code>、<code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code>、<code>center</code>，以及 <code>nav_b/nav_c/nav_esc/nav_panel</code>、<code>interact_pick_f</code>、<code>combat_skill_1..4</code>、<code>combat_ult_1..4</code>、<code>combat_default_link_skill</code>、<code>combat_skill_bar</code>、<code>combat_ult_bar</code>。</p>
+<h3 id="1-2-特徵匹配">1.2 特徵匹配</h3>
+<p>定義於 <code>src/core/base_mixin/runtime_mixin.py</code>。</p>
+<pre><code class="language-text">def find_feature(
+    self, feature_name=None, horizontal_variance=0, vertical_variance=0,
+    threshold=0, use_gray_scale=False,
+    x=-1, y=-1, to_x=-1, to_y=-1, width=-1, height=-1,
+    box=None, canny_lower=0, canny_higher=0,
+    frame_processor=None, template=None,
+    match_method=cv2.TM_CCOEFF_NORMED, screenshot=False,
+    mask_function=None, frame=None, limit=0, target_height=0,
+    feature=None,
+)
+
+def find_one(
+    self, feature_name=None, horizontal_variance=0, vertical_variance=0,
+    threshold=0, use_gray_scale=False, box=None,
+    canny_lower=0, canny_higher=0, frame_processor=None,
+    template=None, mask_function=None, frame=None,
+    match_method=cv2.TM_CCOEFF_NORMED, screenshot=False,
+    limit=1, target_height=0, feature=None,
+)
+</code></pre>
+<ul>
+<li><code>feature=</code> 是 <code>feature_name=</code> 的別名。</li>
+<li><code>find_feature</code> 接受單個特徵或 <code>list/tuple</code>；每個名稱都會先經過解析度適配。</li>
+<li>返回語義沿用框架：<code>find_feature</code> 返回結果列表，<code>find_one</code> 返回首個結果或空值。</li>
+<li>未顯式傳 <code>box</code> 時，框架可使用 <code>assets/coco_annotations.json</code> 的標註區域及 <code>src/config.py</code> 中的預設 variance/threshold。</li>
+</ul>
+<pre><code class="language-python">from src.data.FeatureList import FeatureList as fL
+
+results = self.find_feature([fL.monthly_card, fL.monthly_card2])
+confirm = self.find_one(fL.skip_dialog_confirm, threshold=0.8)
+if confirm:
+    self.click(confirm)
+</code></pre>
+<pre><code class="language-text">def get_feature_by_resolution(self, base_name: str)
+</code></pre>
+<p>根據 <code>self.width</code> 和 <code>FeatureList</code> 中實際存在的列舉值選擇名稱：</p>
+<table>
+<thead>
+<tr>
+<th>視窗寬度</th>
+<th>嘗試順序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&gt;= 3800</code></td>
+<td><code>_4k</code>、<code>_2k</code>、無後綴</td>
+</tr>
+<tr>
+<td><code>&gt;= 2500</code></td>
+<td><code>_2k</code>、<code>_4k</code>、無後綴</td>
+</tr>
+<tr>
+<td>其它</td>
+<td>無後綴、<code>_2k</code>、<code>_4k</code></td>
+</tr>
+</tbody></table>
+<p>全部不存在時丟擲 <code>AttributeError</code>。傳入值必須能與字串拼接，通常使用 <code>FeatureList</code>（其成員是字串列舉）或字串。</p>
+<pre><code class="language-text">def wait_click_feature(
+    self, feature, horizontal_variance=0, vertical_variance=0,
+    threshold=0, relative_x=0.5, relative_y=0.5,
+    time_out=0, pre_action=None, post_action=None, box=None,
+    raise_if_not_found=True, use_gray_scale=False,
+    canny_lower=0, canny_higher=0, click_after_delay=0,
+    settle_time=-1, after_sleep=0, target_height=0,
+    alt: bool = False,
+)
+</code></pre>
+<p>命中後點擊框內相對位置，成功返回 <code>True</code>，未命中且不拋異常時返回 <code>False</code>。<code>alt=True</code> 走 <code>click_with_alt</code>。</p>
+<h3 id="1-3-ocr-與登入截圖">1.3 OCR 與登入截圖</h3>
+<p>普通 <code>ocr</code>、<code>wait_ocr</code> 來自 <code>ok-script</code>。專案覆蓋了點選等待和登入截圖入口：</p>
+<pre><code class="language-text">def wait_click_ocr(
+    self, x=0, y=0, to_x=1, to_y=1, width=0, height=0,
+    box=None, name=None, match=None, threshold=0, frame=None,
+    target_height=0, time_out=0, raise_if_not_found=False,
+    recheck_time=0, after_sleep=0, post_action=None, log=False,
+    screenshot=False, settle_time=-1, lib=&quot;default&quot;, alt=False,
+)
+</code></pre>
+<p>它呼叫 <code>wait_ocr</code>，命中後點擊並返回 OCR 結果；否則記錄日誌並返回 <code>None</code>。注意：<code>recheck_time &gt; 0</code> 時會等待 <code>recheck_time</code> 秒後重新 OCR，以新座標再執行點選。</p>
+<pre><code class="language-text">def login_screenshot(self, need_active=True)
+
+def login_ocr(
+    self, x=0, y=0, to_x=1, to_y=1, match=None,
+    width=0, height=0, box=None, name=None, threshold=0,
+    target_height=0, use_grayscale=False, log=False,
+    frame_processor=None, lib=&quot;default&quot;, need_active=True,
+)
+
+def login_find_feature(
+    self, feature=None, horizontal_variance=0, vertical_variance=0,
+    threshold=0, use_gray_scale=False,
+    x=-1, y=-1, to_x=-1, to_y=-1, width=-1, height=-1,
+    box=None, canny_lower=0, canny_higher=0,
+    frame_processor=None, template=None,
+    match_method=cv2.TM_CCOEFF_NORMED, screenshot=False,
+    mask_function=None, frame=None, limit=0, target_height=0,
+    need_active=True,
+)
+</code></pre>
+<p>這些入口使用 Win32 螢幕捕獲繞過登入介面無法由常規 WGC 幀可靠捕獲的問題。<code>login_find_feature</code> 總會獲取新的登入截圖，傳入的 <code>frame</code> 不會成為最終識別幀。</p>
+<h3 id="1-4-點選-按鍵和移動">1.4 點選、按鍵和移動</h3>
+<pre><code class="language-text">def click(
+    self, x=-1, y=-1, move_back=False, name=None, interval=-1,
+    move=True, down_time=0.01, after_sleep=0,
+    key=&quot;left&quot;, hcenter=False, vcenter=False,
+)
+</code></pre>
+<p><code>click</code> 在呼叫框架點選前先做危險狀態檢查；檢測到危險圖示會終止遊戲並拋異常。可將 <code>Box</code> 作為第一個位置引數傳入：</p>
+<pre><code class="language-python">self.click(confirm_box, after_sleep=0.5)
+self.click(0.5, 0.5)
+</code></pre>
+<pre><code class="language-text">def click_with_alt(
+    self, x=-1, y=-1, move_back=False, name=None, interval=-1,
+    move=True, down_time=0.01, after_sleep=0, key=&quot;left&quot;,
+)
+
+def scroll(self, x: int, y: int, count: int) -&gt; None
+def scroll_relative(self, x: float, y: float, count: int) -&gt; None
+</code></pre>
+<p><code>scroll</code> 使用視窗內畫素位置；<code>scroll_relative</code> 使用 <code>0..1</code> 比例位置。正數向上、負數向下。需要控制遊戲視角滾輪的程式碼當前另有直接呼叫 <code>pyautogui.scroll</code> 的場景，不能假定 UI 滾動封裝適合所有視角操作。</p>
+<pre><code class="language-text">def press_key(self, key: str, down_time=0.02, after_sleep=0, interval=-1)
+def press_industry_key(self, key: str, down_time=0.02, after_sleep=0, interval=-1)
+def press_combat_key(self, key: str, down_time=0.02, after_sleep=0, interval=-1)
+def press_esc(self)
+def move_keys(self, keys, duration, need_back=False)
+</code></pre>
+<p>前三個方法分別以 <code>common</code>、<code>industry</code>、<code>combat</code> 型別呼叫 <code>KeyConfigManager.resolve_key</code>，引數傳預設按鍵值，例如 <code>self.press_key(&quot;m&quot;)</code>。<code>move_keys</code> 用於 <code>w/a/s/d</code> 等持續移動；當前實現不使用 <code>need_back</code> 引數。</p>
+<p><code>press_esc()</code> 僅用於過劇情（對話時）觸發 ESC，底層使用 <code>BaseEfTask</code> 統一初始化的鍵盤控制器。其他返回主介面、關閉頁面等流程不得使用該函式。</p>
+<pre><code class="language-text">def dodge_forward(self, pre_hold=0.004, dodge_down_time=0.003, after_sleep=0.005)
+def dodge_backward(self, pre_hold=0.004, dodge_down_time=0.003, after_sleep=0.005)
+
+def move_to_target_once(
+    self, ocr_obj, max_step=100, min_step=20,
+    slow_radius=200, deadzone=4,
+)
+</code></pre>
+<p>步長、減速半徑和死區會按當前解析度縮放。</p>
+<h3 id="1-5-場景與-ui">1.5 場景與 UI</h3>
+<pre><code class="language-text">def is_main(self, esc=False, need_active=True) -&gt; bool
+def ensure_main(self, esc=True, time_out=90, after_sleep=2, need_active=True)
+def in_world(self)
+def in_combat_world(self)
+</code></pre>
+<ul>
+<li><code>in_world</code> 通過 <code>esc</code> 特徵判斷處於大世界，並設定 <code>_logged_in=True</code>。</li>
+<li><code>in_combat_world</code> 通過 <code>top_left_tab</code> 特徵判斷戰鬥場景；它不是“非戰鬥大世界”判斷。</li>
+<li><code>is_main</code> 會依次嘗試大世界檢測、登入獎勵/月卡彈窗處理、已知確認彈窗和 OCR 規則；<code>esc=True</code> 時最後按返回。</li>
+<li><code>ensure_main</code> 反覆呼叫 <code>is_main</code>，預設超時為 90 秒，失敗拋異常。</li>
+</ul>
+<pre><code class="language-text">def ensure_map(self, addtional_feature=None, time_out=30)
+</code></pre>
+<p>反覆傳送配置化地圖鍵 <code>m</code>，通過 <code>in_map</code>、<code>transaction_icon</code>、<code>main_centre_icon</code> 或附加特徵確認地圖。引數名原始碼中保留拼寫 <code>addtional_feature</code>。</p>
+<pre><code class="language-text">def wait_ui_stable(
+    self, method=&quot;phash&quot;, threshold=5, stable_time=0.5,
+    max_wait=5, refresh_interval=1, box=None,
+)
+</code></pre>
+<p>支援 <code>phash</code>、<code>dhash</code>、<code>pixel</code>、<code>ssim</code>。<code>box</code> 可為 <code>Box</code> 或 <code>(x, y, width, height)</code>。對於 <code>ssim</code>，<code>threshold</code> 是相似度，呼叫方通常應傳如 <code>0.98</code> 的浮點值，而不是預設整數 <code>5</code>。</p>
+<pre><code class="language-text">def safe_back(self, match=None, feature=None, box=None,
+              time_out=30, once_time_out=2) -&gt; bool
+</code></pre>
+<p>至少提供 <code>match</code> 或 <code>feature</code>；目標未出現時持續返回，成功返回 <code>True</code>，總超時返回 <code>False</code>。</p>
+<h3 id="1-6-yolo">1.6 YOLO</h3>
+<pre><code class="language-text">def yolo_detect(
+    self, name: str | list[str], frame=None, box=None, conf=0.7,
+    detections=None, model_key=None,
+) -&gt; list[Box]
+
+def list_yolo_models(self) -&gt; list[str]
+def list_yolo_targets(self, model_key: str | None = None) -&gt; list[str]
+def set_yolo_model(self, model_key: str)
+def release_yolo_detector(self)
+</code></pre>
+<p>模型註冊以 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/yolo/models.py">src/yolo/models.py</a> 為準。未傳 <code>model_key</code> 時，根據第一個目標名稱路由模型；傳 <code>detections</code> 可跳過推理用於測試。ROI 檢測結果會映射回全屏座標，按置信度降序返回。空 <code>name</code> 拋 <code>ValueError</code>。開啟框架 <code>use_overlay</code> 後，原始結果畫黃色框、篩選結果畫紅色框。</p>
+<h2 id="2-配置-api">2. 配置 API</h2>
+<h3 id="2-1-任務配置">2.1 任務配置</h3>
+<p>任務通過框架屬性增量註冊配置：</p>
+<pre><code class="language-python">self.default_config.update({&quot;启用功能&quot;: True})
+self.config_description.update({&quot;启用功能&quot;: &quot;控制是否执行该步骤。&quot;})
+self.config_type[&quot;模式&quot;] = {
+    &quot;type&quot;: &quot;drop_down&quot;,
+    &quot;options&quot;: [&quot;快速&quot;, &quot;稳定&quot;],
+}
+self.default_config_group.update({&quot;常用&quot;: [&quot;启用功能&quot;, &quot;模式&quot;]})
+</code></pre>
+<p>執行時使用 <code>self.config.get(key, default)</code>。<code>BaseEfTask.load_config()</code> 會按完整 MRO 收集各類的 <code>config_key_migrations</code>，先遷移 <code>configs/&lt;TaskClass&gt;.json</code> 的舊鍵，再呼叫框架載入。</p>
+<pre><code class="language-text">def register_config_groups(self, groups: dict, dropdown_name=&quot;配置选择&quot;)
+</code></pre>
+<p>該方法建立帶 <code>sub_configs</code> 的下拉配置，併為分組內尚無預設值的鍵補 <code>None</code>。它會直接使用 <code>self.config_description.update(...)</code>，呼叫前應確保任務已按框架慣例初始化配置字典。</p>
+<h3 id="2-2-全域性配置">2.2 全域性配置</h3>
+<pre><code class="language-python">from src.core.global_config_store import (
+    KEY_CONFIG_NAME,
+    get_global_config,
+)
+
+hotkeys = get_global_config(KEY_CONFIG_NAME)
+map_key = hotkeys.get(&quot;Map Key&quot;, &quot;m&quot;)
+</code></pre>
+<p>當前全域性配置項：</p>
+<table>
+<thead>
+<tr>
+<th>常量/名稱</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Game Hotkey Config</code></td>
+<td>通用、工業、戰鬥鍵位</td>
+</tr>
+<tr>
+<td><code>Battle Config</code></td>
+<td><code>DEFAULT_BATTLE_CONFIG</code> 戰鬥引數</td>
+</tr>
+<tr>
+<td><code>Ensure Main Once Action Sleep</code></td>
+<td><code>SingleActionWithDelay</code></td>
+</tr>
+<tr>
+<td><code>Zip Line Config</code></td>
+<td>送貨/淤積點滑索路線與滾動設定</td>
+</tr>
+</tbody></table>
+<p><code>get_global_config(name)</code> 返回持久化 <code>ok.util.config.Config</code>。未知名稱只有在已載入配置中能找到對應鍵時才回退返回該配置，否則拋 <code>RuntimeError</code>。全域性配置頁由 <code>get_all_visible_configs()</code> 和 <code>GlobalConfigTab</code> 構建。</p>
+<h3 id="2-3-按鍵配置">2.3 按鍵配置</h3>
+<pre><code class="language-python">class KeyConfigManager:
+    def __init__(self, key_config: dict = None): ...
+    def update_config(self, key_config: dict): ...
+    def resolve_key(self, key: str, key_type: str = &quot;common&quot;) -&gt; str: ...
+</code></pre>
+<p>不存在 <code>resolve_common_key</code>、<code>resolve_industry_key</code> 或 <code>resolve_combat_key</code>。<code>resolve_key</code> 在指定預設表中按預設值反查配置名稱，再讀取使用者值；找不到時原樣返回。</p>
+<p>當前預設表比舊文件多出以下鍵：</p>
+<ul>
+<li>通用：<code>Handbook Key=f8</code>、<code>Recruitment Key=f9</code></li>
+<li>工業：<code>Area Build Key=y</code>、<code>Blueprint Key=f1</code>、<code>Product Icon Toggle Key=f4</code></li>
+</ul>
+<p>所有可改鍵操作應走 <code>press_key</code>/<code>press_industry_key</code>/<code>press_combat_key</code>。固定技能數字、方向鍵和系統修飾鍵等程式碼可按其明確語義使用底層傳送介面。</p>
+<h3 id="2-4-戰鬥配置與賬號覆蓋">2.4 戰鬥配置與賬號覆蓋</h3>
+<pre><code class="language-text">def get_battle_config(self, key: str, default=None)
+</code></pre>
+<p><code>BattleMixin</code> 的讀取順序：</p>
+<ol>
+<li><code>BattleConfigManager</code> 從全域性 <code>Battle Config</code> 取值。</li>
+<li>任務配置 <code>战斗配置</code> 為 <code>使用全局配置</code> 時直接返回全域性值。</li>
+<li>為 <code>使用独立配置</code> 時讀取當前任務配置，以全域性值兜底。</li>
+<li><code>AccountOverrideMixin</code> 繫結後的 <code>self.config.get</code> 可再按當前穩定賬號 ID 應用賬號任務覆蓋；賬號覆蓋優先順序最高。</li>
+</ol>
+<p>賬號上下文通過以下介面設定：</p>
+<pre><code class="language-text">def set_current_account(self, username, account_id)
+
+def iter_multi_account_context(
+    self, repeat_times=1, empty_accounts_message=None,
+    account_log_suffix=&quot;&quot;, allow_multi_account=True,
+)
+</code></pre>
+<p><code>iter_multi_account_context</code> 在多賬戶模式下解析賬號列表、繫結賬號覆蓋並呼叫 <code>login_flow(username)</code>；單賬號模式清空賬號上下文。賬號列表每行只需要賬號，舊 <code>账号, 密码</code> 格式僅取逗號前賬號，密碼被忽略。</p>
+<h2 id="3-業務-mixin">3. 業務 Mixin</h2>
+<h3 id="3-1-battlemixin">3.1 BattleMixin</h3>
+<pre><code class="language-python">from src.tasks.mixin.battle_mixin import BattleMixin
+</code></pre>
+<pre><code class="language-text">def in_combat(self, required_yellow=0)
+def in_team(self)
+def is_combat_ended(self)
+def wait_in_combat(self, time_out=3, click=False)
+def get_skill_bar_count(self)
+def ocr_lv(self)
+def use_ult(self, ult_sequence: str = None)
+def use_link_skill(self)
+def approach_enemy(self)
+def auto_battle(self, no_battle: bool = False)
+</code></pre>
+<p>關鍵語義：</p>
+<ul>
+<li><code>in_team</code> 從首個框開始匹配 <code>skill_1</code>，隨後再命中一個連續技能即確認隊伍狀態（至少 2 個特徵；<code>skill_1</code> 位於最後一個框時為單人隊伍，1 個即可）。</li>
+<li><code>in_combat</code> 要求技能條數量達到閾值、處於隊伍且沒有等級 UI。</li>
+<li><code>is_combat_ended</code> 要求內部退出條件連續命中兩次；該條件是“出現等級 UI 或不在隊伍”。</li>
+<li><code>use_ult(None)</code> 按 <code>1..4</code> 尋找可用終極技；傳值時只嘗試該角色。返回是否釋放成功。</li>
+<li><code>use_link_skill</code> 僅在識別到連攜技特徵後傳送配置化戰鬥鍵 <code>e</code>。</li>
+<li><code>auto_battle</code> 每輪委託 <code>AutoCombatLogic.run</code>，全域性保護超時 420 秒；<code>no_battle=True</code> 傳給戰鬥邏輯，使其等待而不主動戰鬥。成功/失敗返回布林值。</li>
+<li>戰鬥結束並非通過 YOLO 單一判斷；當前迴圈還結合戰鬥時間和 <code>battle_space_left</code>/<code>b</code> 特徵。</li>
+</ul>
+<h3 id="3-2-mapmixin">3.2 MapMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.map_mixin import MapMixin
+
+def task_to_transfer_point(self, need_location_list=None)
+def clear_icon_in_map(self, need_reserve_icon_name=None, ocr=False)
+def to_near_transfer_point(self, after_track, need_location_list=None)
+</code></pre>
+<p><code>task_to_transfer_point</code> 從任務介面定位地圖，地圖穩定後再呼叫 <code>to_near_transfer_point</code>。<code>to_near_transfer_point</code> 傳送至附近傳送點。</p>
+<h3 id="3-3-navigationmixin">3.3 NavigationMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.navigation_mixin import NavigationMixin
+
+def navigate_until_target(
+    self, target, nav=None,
+    target_is_ocr=True, nav_is_ocr=False,
+    time_out=60, pre_loop_callback=None,
+    found_special_callback=None,
+    target_is_yolo=False, nav_is_yolo=False,
+    box=None, target_vertical_variance=0.0,
+    need_v=False, max_run_time=-1,
+    allow_rotate_search=True,
+)
+</code></pre>
+<p>持續按 <code>W</code> 前進，目標和導航標識分別可用 OCR、YOLO 或 Feature。<code>nav=None</code> 表示純直線搜尋；<code>found_special_callback</code> 返回非 <code>None</code> 時該值直接作為函式結果。目標需持續穩定 2 秒（OCR）或 1 秒（其它方式）才返回 <code>True</code>。超時返回 <code>False</code>。<code>max_run_time</code> 只限制 <code>ctrl</code> 切換的奔跑累計時間，不限制按住 <code>W</code>：<code>-1</code> 不限制，<code>0</code> 全程步行，正數達到上限後切步行。<code>allow_rotate_search</code> 預設 <code>True</code>，導航連續丟失時旋轉視角整圈搜尋；送禮等不應轉動視角的場景傳 <code>False</code> 跳過旋轉直接按中鍵並後退搜尋。</p>
+<pre><code class="language-text">def start_tracking_and_align_target(
+    self, target_feature_in_map, target_feature_out_map,
+)
+</code></pre>
+<p>在地圖點選目標並啟動追蹤，關閉地圖，等待地圖外圖示並做水平對齊；返回布林值。</p>
+<pre><code class="language-text">def align_ocr_or_find_target_to_center(
+    self, ocr_match_or_feature_name_list,
+    only_x=False, only_y=False, box=None, threshold=0.8,
+    max_time=50, ocr=True, use_yolo=False, back_prev=False,
+    raise_if_fail=True, is_num=False, need_scroll=False,
+    max_step=120, min_step=20, slow_radius=350, deadzone=8,
+    once_time=0.05, tolerance=50,
+    ocr_frame_processor_list=None, allow_random_move=True,
+)
+</code></pre>
+<p>在 OCR、Feature 或 YOLO 模式下將目標對齊螢幕中心。<code>max_time</code> 是演算法嘗試尺度，內部最多迴圈 <code>max_time * 2</code>，不是秒數。失敗時預設拋異常；<code>raise_if_fail=False</code> 返回 <code>False</code>。<code>back_prev</code> 引數當前未被方法體使用。</p>
+<h3 id="3-4-liaisonmixin">3.4 LiaisonMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.liaison_mixin import LiaisonMixin
+
+def transfer_to_home_point(self, box=None, should_check_out_boat=False)
+def navigate_to_main_hall(self) -&gt; bool
+def navigate_to_operator_liaison_station(self)
+def perform_operator_liaison(self)
+def collect_gifts(self, time_out=30)
+def give_gifts(self, time_out=30, gift_entry_clicked=False)
+def collect_and_give_gifts(self)
+</code></pre>
+<ul>
+<li><code>transfer_to_home_point</code> 預設在地圖左半屏找傳送點；呼叫方傳 <code>box=self.box.right</code> 才是右側點。<code>should_check_out_boat=True</code> 的實際語義是：若點選不到帝江號入口，則認為已經在帝江號區域並直接返回主介面，不會執行“退出好友船”。</li>
+<li><code>navigate_to_main_hall</code> 最多向前移動兩次並 OCR 區域名；即使未識別到也記錄日誌後返回 <code>True</code>，是寬鬆檢查。</li>
+<li><code>navigate_to_operator_liaison_station</code> 使用地圖追蹤和 <code>navigate_until_target</code>；途中發現聊天圖示可返回 <code>LiaisonResult.FIND_CHAT_ICON</code>，因此返回值不只布林值。</li>
+<li><code>perform_operator_liaison</code> 選擇配置的優先物件，找不到時回退任一可聯絡物件，完成聯絡介面、目標對齊和聊天互動；它不包含收禮/送禮步驟。</li>
+<li><code>collect_and_give_gifts</code> 處理當前交流介面中的收禮或送禮入口；收禮成功後繼續嘗試送禮。</li>
+</ul>
+<h3 id="3-5-ziplinemixin">3.5 ZipLineMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.zip_line_mixin import ZipLineMixin
+
+def on_zip_line_start(
+    self, delivery_to, need_scroll=None, target=None, need_v=True,
+)
+
+def zip_line_list_go(
+    self, zip_line_list, need_scroll=None, target=None, need_v=False,
+)
+
+def ensure_click_on_zip_line(self, max_attempts=5)
+</code></pre>
+<p><code>on_zip_line_start</code> 先等待滑索 UI，隨後從 <code>self.config[delivery_to]</code> 讀取整數序列並呼叫 <code>zip_line_list_go</code>；它不是接收距離列表的入口。每段距離通過金色/白色 HSV 預處理 OCR 並居中，點選進入滑索後持續傳送固定鍵 <code>e</code>，直到滑索 UI 再次出現。單段等待上限 240 秒；初始滑索 UI 等待上限 60 秒，超時拋異常。</p>
+<p><code>target</code> 為 <code>(目标, &quot;ocr&quot; | &quot;yolo&quot; | 其它)</code>，用於最後一段後的目標對齊；其它型別按 Feature 處理。流程末尾確保回到主介面。</p>
+<h3 id="3-6-loginmixin">3.6 LoginMixin</h3>
+<pre><code class="language-text">from src.tasks.mixin.login_mixin import LoginMixin
+
+def login_flow(self, username: str, password: str | None = None)
+def click_text(
+    self, match: str, box=None,
+    need_wait_disappear=True, success_match=None,
+)
+</code></pre>
+<p><code>login_flow</code> 不是使用者名稱密碼輸入流程。它用於切換到登入介面的“最近賬號”：</p>
+<ol>
+<li>判斷當前是否已登入，必要時回到主介面並退出當前賬號。</li>
+<li>等待登入介面的 <code>logout</code> 特徵並確認登出。</li>
+<li>點選“最近”，再用 <code>username</code> 後四位 OCR 點選最近賬號。</li>
+<li>點選“登入”，通過重新出現 <code>logout</code> 特徵確認成功。</li>
+</ol>
+<p><code>password</code> 僅為舊呼叫相容引數，當前不儲存、不輸入、也不參與賬號判定。失敗路徑可能返回 <code>False</code> 或拋 <code>RuntimeError</code>；成功無顯式返回值。後四位匹配要求最近賬號列表中後四位唯一。</p>
+<h2 id="4-語言資源-api">4. 語言資源 API</h2>
+<pre><code class="language-python">from src.data.lang import (
+    ACTIVE_LOCALES_CONFIG,
+    SUPPORTED_LOCALES,
+    get_lang_accessor,
+    get_lang_module_value,
+)
+</code></pre>
+<p>每個模組對應單個 <code>assets/lang/&lt;module&gt;.json</code>：</p>
+<pre><code class="language-json">{
+  &quot;k_confirm&quot;: {
+    &quot;zh_CN&quot;: {&quot;string&quot;: &quot;确认&quot;},
+    &quot;zh_TW&quot;: {&quot;string&quot;: &quot;確認&quot;}
+  },
+  &quot;k_amount&quot;: {
+    &quot;zh_CN&quot;: {&quot;pattern&quot;: &quot;^\\d+$&quot;},
+    &quot;zh_TW&quot;: {&quot;pattern&quot;: &quot;^\\d+$&quot;}
+  }
+}
+</code></pre>
+<p>訪問 <code>self.lang.&lt;module&gt;.&lt;key&gt;</code> 時，<code>string</code> 返回字串、<code>pattern</code> 返回編譯後的正則、<code>terms</code> 返回列表。直接屬性解析的優先順序是 <code>string</code>、<code>pattern</code>、<code>terms</code>；<code>LangNode.as_matcher()</code>/<code>build_matcher()</code> 的優先順序是 <code>pattern</code>、<code>string</code>、<code>terms</code>。正常資源節點應只設置其中一種，避免依賴該差異。</p>
+<p>當前活動 OCR locale 只有 <code>zh_CN</code> 和 <code>zh_TW</code>；其它四種 locale 雖可存在於 JSON 和 gettext 目錄，但在 <code>ACTIVE_LOCALES_CONFIG</code> 中關閉，不會進入 <code>SUPPORTED_LOCALES</code>。完整維護流程見 <a href="../i18n_OCR配置流程/">i18n 與 OCR 配置流程</a>。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/API.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-baseeftask-與-mro" style="margin-left:0px">1. BaseEfTask 與 MRO</a><a href="#1-1-座標" style="margin-left:10px">1.1 座標</a><a href="#1-2-特徵匹配" style="margin-left:10px">1.2 特徵匹配</a><a href="#1-3-ocr-與登入截圖" style="margin-left:10px">1.3 OCR 與登入截圖</a><a href="#1-4-點選-按鍵和移動" style="margin-left:10px">1.4 點選、按鍵和移動</a><a href="#1-5-場景與-ui" style="margin-left:10px">1.5 場景與 UI</a><a href="#1-6-yolo" style="margin-left:10px">1.6 YOLO</a><a href="#2-配置-api" style="margin-left:0px">2. 配置 API</a><a href="#2-1-任務配置" style="margin-left:10px">2.1 任務配置</a><a href="#2-2-全域性配置" style="margin-left:10px">2.2 全域性配置</a><a href="#2-3-按鍵配置" style="margin-left:10px">2.3 按鍵配置</a><a href="#2-4-戰鬥配置與賬號覆蓋" style="margin-left:10px">2.4 戰鬥配置與賬號覆蓋</a><a href="#3-業務-mixin" style="margin-left:0px">3. 業務 Mixin</a><a href="#3-1-battlemixin" style="margin-left:10px">3.1 BattleMixin</a><a href="#3-2-mapmixin" style="margin-left:10px">3.2 MapMixin</a><a href="#3-3-navigationmixin" style="margin-left:10px">3.3 NavigationMixin</a><a href="#3-4-liaisonmixin" style="margin-left:10px">3.4 LiaisonMixin</a><a href="#3-5-ziplinemixin" style="margin-left:10px">3.5 ZipLineMixin</a><a href="#3-6-loginmixin" style="margin-left:10px">3.6 LoginMixin</a><a href="#4-語言資源-api" style="margin-left:0px">4. 語言資源 API</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

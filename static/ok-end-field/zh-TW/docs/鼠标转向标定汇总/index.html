@@ -1,0 +1,420 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>滑鼠轉向標定 · ok-end-field</title><meta name="description" content="滑鼠轉向標定 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/鼠标转向标定汇总/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="滑鼠轉向標定 · ok-end-field"><meta property="og:description" content="滑鼠轉向標定 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/鼠标转向标定汇总/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="滑鼠轉向標定 · ok-end-field"><meta name="twitter:description" content="滑鼠轉向標定 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"滑鼠轉向標定 · ok-end-field","description":"滑鼠轉向標定 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/鼠标转向标定汇总/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件首頁</a><a href="../getting-started/installation/">安裝</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常見問題</a><a href="../features/overview/">功能概覽</a><a href="../日常任务/">日常任務</a><a href="../体力本/">刷體力</a><a href="../自动战斗/">自動戰鬥</a><a href="../排轴/">排軸</a><a href="../运送委托接取/">運送委託接取</a><a href="../自动送货/">自動送貨</a><a href="../仓库物品转移/">倉庫物品轉移</a><a href="../物品导航与实时检测/">物品導航與即時檢測</a><a href="../账号配置用户指南/">賬號配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../Windows 计划任务/">Windows 計劃任務</a><a href="./" class="active" aria-current="page">滑鼠轉向標定</a><a href="../update/主数据维护工作流/">主資料維護</a><a href="../update/送货地区维护工作流/">送貨地區維護</a><a href="../update/日常送礼维护工作流/">日常送禮維護</a><a href="../dev/QUICKSTART/">從原始碼執行</a><a href="../dev/DEVELOPMENT/">開發指南</a><a href="../dev/API/">API 參考</a><a href="../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../dev/键盘操作体系/">鍵盤操作體系</a><a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../dev/文字识别示例/">文字識別示例</a><a href="../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../dev/切换账户流程分析/">賬戶切換流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="滑鼠轉向標定-mouserotationcalibration-調查彙總">滑鼠轉向標定（MouseRotationCalibration）調查彙總</h1>
+<blockquote>
+<p>日期：2026-08-08
+涉及任務：<code>src/tasks/test/MouseRotationCalibration.py</code>
+結論狀態：<strong>核心結論已定，待平地複測確認地形假設</strong></p>
+</blockquote>
+<h2 id="一-任務簡介">一、任務簡介</h2>
+<p><code>MouseRotationCalibration</code> 是 debug 可見的測試任務，用於標定「滑鼠橫向位移畫素 ↔ 角色視角轉動角度」的換算係數：</p>
+<p>$$k = \frac{\Delta yaw}{dx} = \frac{after - before}{dx}$$</p>
+<ul>
+<li>滑鼠右移 <code>dx&gt;0</code> → 視角左轉 <code>Δyaw&lt;0</code>，故 <strong>k 恆為負</strong>。</li>
+<li>係數為「°/px」，標定後可用於把目標轉向角度換算為滑鼠位移：<code>dx = round(target_yaw / k)</code>。</li>
+<li>不持久化，每次執行標定；也支援手動填係數跳過標定直接驗證。</li>
+</ul>
+<h3 id="配置鍵-13-個">配置鍵（13 個）</h3>
+<table>
+<thead>
+<tr>
+<th>配置鍵</th>
+<th>當前值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>标定位移dx</code></td>
+<td>400</td>
+<td>單位移標定時用</td>
+</tr>
+<tr>
+<td><code>标定位移列表(逗号分隔)</code></td>
+<td><code>400,600,1000</code></td>
+<td>多位移標定計劃</td>
+</tr>
+<tr>
+<td><code>重复次数</code></td>
+<td>4</td>
+<td>每位移取樣次數</td>
+</tr>
+<tr>
+<td><code>W长按时间(秒)</code></td>
+<td>0.2</td>
+<td>按 W 重新整理朝向的保持時長</td>
+</tr>
+<tr>
+<td><code>角度刷新等待(秒)</code></td>
+<td>1.0</td>
+<td>按 W 後等箭頭重新整理</td>
+</tr>
+<tr>
+<td><code>转向后等待(秒)</code></td>
+<td>0.3</td>
+<td>發滑鼠位移後等轉向穩定</td>
+</tr>
+<tr>
+<td><code>最低置信度</code></td>
+<td>0.6</td>
+<td>箭頭 OCR 置信度門檻</td>
+</tr>
+<tr>
+<td><code>验证目标角度(度)</code></td>
+<td>90.0</td>
+<td>單角度驗證用</td>
+</tr>
+<tr>
+<td><code>验证角度列表(逗号分隔)</code></td>
+<td><code>44,55,77,99</code></td>
+<td>多角度驗證計劃</td>
+</tr>
+<tr>
+<td><code>验证次数</code></td>
+<td>2</td>
+<td>每角度驗證次數</td>
+</tr>
+<tr>
+<td><code>验证误差容差(度)</code></td>
+<td>5.0</td>
+<td>PASS 容差</td>
+</tr>
+<tr>
+<td><code>左右方向成对验证</code></td>
+<td>true</td>
+<td>每個角度自動補反方向</td>
+</tr>
+<tr>
+<td><code>手动yaw_per_pixel(留空用标定)</code></td>
+<td><code>-0.083</code></td>
+<td>手動係數（正數自動取負修正）</td>
+</tr>
+</tbody></table>
+<h2 id="二-功能演進史">二、功能演進史</h2>
+<ol>
+<li><strong>只標定</strong>（13:15 起）→ 無 W 長按，讀數全 0，無效。</li>
+<li><strong>加 W 長按重新整理朝向</strong>（13:26）→ 標定資料首次有效。</li>
+<li><strong>加單角度驗證</strong>（16:43）→ +90° 驗證閉環。</li>
+<li><strong>加多角度驗證</strong>（16:49）→ 4 個角度列表。</li>
+<li><strong>加多位移標定</strong>（16:55）→ 200/400/600/1000 計劃。</li>
+<li><strong>加轉向後等待</strong>（17:01）→ 解耦轉向完成與 W 重新整理朝向，用於排除時序假設。</li>
+<li><strong>加左右成對驗證</strong>（17:09）→ 每角度自動補反方向，用於排查左右不對稱。</li>
+<li><strong>加手動係數自動取負</strong>（17:31 前）→ 防止符號填錯。</li>
+</ol>
+<h2 id="三-全部執行輪次資料">三、全部執行輪次資料</h2>
+<h3 id="3-1-除錯期-13-15-13-26-無有效資料">3.1 除錯期（13:15-13:26）——無有效資料</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>配置</th>
+<th>現象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>13:15</td>
+<td>dx=100, refresh=0.1</td>
+<td>角度幾乎不動（Δ≈0）→ W 未長按，朝向不重新整理</td>
+</tr>
+<tr>
+<td>13:16</td>
+<td>dx=400, refresh=1.0</td>
+<td>前 2 樣本 Δ=0，後 2 樣本 Δ=7~9° → 重新整理不穩</td>
+</tr>
+<tr>
+<td>13:17</td>
+<td>dx=400</td>
+<td>全部 Δ=0，完全沒反應</td>
+</tr>
+<tr>
+<td>13:26</td>
+<td><strong>w_hold=0.3</strong></td>
+<td>✅ 首次有效：+400→-39.5°、-400→+34.5°</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>關鍵結論：加 <code>W长按时间=0.3</code> 後測量才成立</strong>——瞬時按鍵不足以讓角色位移重新整理箭頭。</p>
+</blockquote>
+<h3 id="3-2-正式標定期-16-34-16-56">3.2 正式標定期（16:34-16:56）</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>配置</th>
+<th>mean_k</th>
+<th>k_pos</th>
+<th>k_neg</th>
+<th>驗證</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>16:34</td>
+<td>dx=400×4</td>
+<td>-0.08063</td>
+<td>-0.08625</td>
+<td>-0.07500</td>
+<td>—</td>
+</tr>
+<tr>
+<td>16:43</td>
+<td>dx=400×4</td>
+<td>-0.09937</td>
+<td>-0.12375*</td>
+<td>-0.07500</td>
+<td>+90° ✅ 誤差 0.5°</td>
+</tr>
+<tr>
+<td>16:49</td>
+<td>dx=400×4</td>
+<td>-0.08063</td>
+<td>-0.08625</td>
+<td>-0.07500</td>
+<td>+44/55/77/99 全 PASS</td>
+</tr>
+<tr>
+<td>16:55</td>
+<td>多位移 200..1000</td>
+<td>-0.08493</td>
+<td>-0.09527</td>
+<td>-0.07458</td>
+<td>+44/55/77/99 全 PASS</td>
+</tr>
+</tbody></table>
+<p>* 16:43 的 sample1 因 before=142（起點未復位）產生異常 k=-0.16125。</p>
+<h3 id="3-3-時序實驗期-17-01-17-05-排除時序">3.3 時序實驗期（17:01-17:05）——排除時序</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>配置</th>
+<th>mean_k</th>
+<th>k_pos</th>
+<th>k_neg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>17:01</td>
+<td>turn_settle=1.3</td>
+<td>-0.08522</td>
+<td>-0.09590</td>
+<td>-0.07454</td>
+</tr>
+<tr>
+<td>17:05</td>
+<td>去 +200，6 樣本</td>
+<td>-0.08224</td>
+<td>-0.08842</td>
+<td>-0.07606</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>結論：1.3s 與 0.3s 資料逐位一致 → 排除「轉向沒轉完就被 W 打斷」的時序假設。</strong>
+另：+200 兩次 k=-0.115/-0.1175（偏大 40%），刪除後 std 從 0.0143 降到 0.0071。</p>
+</blockquote>
+<h3 id="3-4-左右成對驗證期-17-09-17-23-發現地形真相">3.4 左右成對驗證期（17:09-17:23）——發現地形真相</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>起點yaw</th>
+<th>mean_k</th>
+<th>k_pos</th>
+<th>k_neg</th>
+<th>差距</th>
+<th>驗證亮點</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>17:09</td>
+<td>~112°</td>
+<td>-0.08369</td>
+<td>-0.09133</td>
+<td>-0.07606</td>
+<td>右大 20%</td>
+<td>-44° FAIL(-6°)</td>
+</tr>
+<tr>
+<td><strong>17:13</strong></td>
+<td><strong>~4°</strong></td>
+<td><strong>-0.08253</strong></td>
+<td><strong>-0.08217</strong></td>
+<td><strong>-0.08289</strong></td>
+<td><strong>幾乎對稱</strong></td>
+<td>+44 FAIL(-7°), -99 FAIL(-11°)</td>
+</tr>
+<tr>
+<td>17:22</td>
+<td>~257°</td>
+<td>-0.09031</td>
+<td>-0.08258</td>
+<td>-0.09803</td>
+<td><strong>左大 19%</strong></td>
+<td>大角度 3 項 WARN</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>決定性發現：不對稱方向隨起點約 180° 反轉</strong> → 排除遊戲左右靈敏度不對稱；真兇是<strong>測試點地形</strong>（按 W 前進時角色被坡度帶偏）。</p>
+</blockquote>
+<h3 id="3-5-手動係數期-17-27-17-32-符號事故-驗證成功">3.5 手動係數期（17:27-17:32）——符號事故 + 驗證成功</h3>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>手動係數</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>17:27</td>
+<td>+0.083（<strong>符號反了</strong>）</td>
+<td>8/8 全 FAIL，誤差 84~207°（方向全反）</td>
+</tr>
+<tr>
+<td>17:30</td>
+<td>+0.083（未改）</td>
+<td>繼續全 FAIL</td>
+</tr>
+<tr>
+<td><strong>17:31</strong></td>
+<td><strong>-0.083</strong></td>
+<td>方向恢復，誤差收斂到 ±7° 內</td>
+</tr>
+</tbody></table>
+<p>17:31 輪（手動 -0.083）逐角度明細：</p>
+<table>
+<thead>
+<tr>
+<th>角度</th>
+<th>實際均值</th>
+<th>誤差</th>
+<th>狀態</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+44°</td>
+<td>+43.0°</td>
+<td>-1.0°</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>-44°</td>
+<td>-50.5°</td>
+<td>-6.5°</td>
+<td>WARN</td>
+</tr>
+<tr>
+<td>+55°</td>
+<td>+55.5°</td>
+<td>+0.5°</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>-55°</td>
+<td>-60.0°</td>
+<td>-5.0°</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>+77°</td>
+<td>+80.5°</td>
+<td>+3.5°</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>-77°</td>
+<td>-83.5°</td>
+<td>-6.5°</td>
+<td>WARN</td>
+</tr>
+<tr>
+<td>+99°</td>
+<td>+93.5°</td>
+<td>-5.5°</td>
+<td>WARN</td>
+</tr>
+<tr>
+<td>-99°</td>
+<td>-103.0°</td>
+<td>-4.0°</td>
+<td>WARN</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>正方向基本正常（≤3.5°），負方向普遍偏 5~6.5°，與此輪起點位置的地形影響一致。</p>
+</blockquote>
+<h2 id="四-跨輪穩定結論">四、跨輪穩定結論</h2>
+<ol>
+<li><strong>左轉（dx&lt;0）表现稳定</strong>：各轮 -400→+30<del>32°、-600→+45.5</del>50.5°、-1000→+76.5<del>87°，大位移 k 稳定在 **-0.076</del>-0.084**。</li>
+<li><strong>右转（dx&gt;0）受起點/地形影響大</strong>：同一位移在不同起點差 8~12°。</li>
+<li><strong>推薦係數 ≈ -0.082 ~ -0.084 °/px</strong>（17:13 輪最對稱、std 最小 0.004）。<ul>
+<li>1000px ≈ 84°，600px ≈ 50°，400px ≈ 33°，90° ≈ 1080px。</li>
+</ul>
+</li>
+<li><strong>+200 是小位移異常區</strong>（k 偏大 40%），已從標定列表移除。</li>
+<li><strong>大角度（99°）誤差始終偏大</strong>（±4~14°）→ 正式使用建議分段轉向。</li>
+</ol>
+<h2 id="五-鏡頭偏心假設分析-使用者提出-畫面裡角色始終偏左">五、鏡頭偏心假設分析（使用者提出：畫面裡角色始終偏左）</h2>
+<p>使用者的觀察本身成立——很多 3D 遊戲鏡頭偏心（給前方更多視野），角色顯得偏左/偏下。但資料上<strong>排除</strong>固定鏡頭偏心：</p>
+<ol>
+<li><strong>固定偏心在 Δyaw 中相消</strong>：若鏡頭固定偏心造成箭頭讀數帶上固定偏差 δ（不隨朝向變），則 <code>(after+δ) - (before+δ) = after - before</code>，δ 直接消失，不影響 k。</li>
+<li><strong>決定性證據——不對稱隨起點反轉</strong>：固定偏心是空間固定、方向無關的量，若它讓右轉偏大，換任何起點都應右轉偏大。但 112°→257°（差約 145°）偏大方向整個反轉。沒有任何固定偏心能解釋。</li>
+<li><strong>唯一自洽解釋仍是地形</strong>：箭頭讀的是角色按 W 前進的面朝方向，坡度把角色帶偏；不同起點走過坡的方式不同 → 偏大方向隨之反轉。</li>
+<li><strong>程式碼層已排除傳送不對稱</strong>：<code>send_mouse_delta</code> 用 <code>user32.mouse_event(MOUSEEVENTF_MOVE, dx, 0, 0, 0)</code> 正負直接透傳，完全對稱。</li>
+</ol>
+<h3 id="一錘定音驗證方法">一錘定音驗證方法</h3>
+<p>找一塊<strong>完全平坦、開闊</strong>的地方（廣場/平地）重跑「標定 + 左右成對驗證」：</p>
+<ul>
+<li><code>k_pos ≈ k_neg</code>（差 &lt; 2%）、8 角度基本全 PASS → <strong>地形假設確認</strong>，鏡頭偏心排除；</li>
+<li>仍明顯不對稱 → 才輪到鏡頭/遊戲機制問題。</li>
+</ul>
+<p>肉眼輔助：按 W 前進時盯箭頭方向，若箭頭慢慢漂移（而非紋絲不動），即地形在帶偏角色——最直接的證據。</p>
+<h2 id="六-符號事故復盤">六、符號事故復盤</h2>
+<ul>
+<li>使用者曾在 <code>手动yaw_per_pixel</code> 填 <code>&quot;0.083&quot;</code>（應為負數）。</li>
+<li>症狀：+44° 目標用 dx=+530 右移反而轉到 -41°，誤差 84°~207°，方向全反。</li>
+<li>處理：1) 配置檔案修正為 <code>&quot;-0.083&quot;</code>；2) 程式碼在手動係數為正時<strong>自動取負修正</strong>並 notify 日誌，杜絕再犯。</li>
+</ul>
+<h2 id="七-後續建議">七、後續建議</h2>
+<ol>
+<li><strong>換平地重測</strong>確認地形假設（當前唯一待辦實驗）。</li>
+<li><strong>起點朝向對齊</strong>：正式轉向任務建議先對齊起點朝向再轉向，降低地形影響。</li>
+<li><strong>正式轉向用小角度分段</strong>：每步 ≤30°（≈360px），並按方向分系數（k_pos / k_neg）使用。</li>
+<li><strong>狀態判定小修</strong>：建議「兩次驗證都 FAIL 才判 FAIL，單次 FAIL 判 WARN」改為「兩次都 FAIL 判 FAIL」更嚴格，當前實現可能漏報。</li>
+</ol>
+<h2 id="附-相關檔案">附：相關檔案</h2>
+<ul>
+<li>任務原始碼：<code>src/tasks/test/MouseRotationCalibration.py</code></li>
+<li>執行配置：<code>configs/MouseRotationCalibration.json</code></li>
+<li>單元測試：<code>tests/TestMouseRotationCalibration.py</code>（12 個用例全過）</li>
+<li>滑鼠傳送層：<code>src/interaction/Mouse.py</code>（<code>send_mouse_delta</code>，正負對稱）</li>
+<li>核心 API：<code>src/core/base_mixin/runtime_mixin.py</code>（<code>get_arrow_angle</code> / <code>press_key</code> / <code>active_and_send_mouse_delta</code>）</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/鼠标转向标定汇总.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#一-任務簡介" style="margin-left:0px">一、任務簡介</a><a href="#配置鍵-13-個" style="margin-left:10px">配置鍵（13 個）</a><a href="#二-功能演進史" style="margin-left:0px">二、功能演進史</a><a href="#三-全部執行輪次資料" style="margin-left:0px">三、全部執行輪次資料</a><a href="#3-1-除錯期-13-15-13-26-無有效資料" style="margin-left:10px">3.1 除錯期（13:15-13:26）——無有效資料</a><a href="#3-2-正式標定期-16-34-16-56" style="margin-left:10px">3.2 正式標定期（16:34-16:56）</a><a href="#3-3-時序實驗期-17-01-17-05-排除時序" style="margin-left:10px">3.3 時序實驗期（17:01-17:05）——排除時序</a><a href="#3-4-左右成對驗證期-17-09-17-23-發現地形真相" style="margin-left:10px">3.4 左右成對驗證期（17:09-17:23）——發現地形真相</a><a href="#3-5-手動係數期-17-27-17-32-符號事故-驗證成功" style="margin-left:10px">3.5 手動係數期（17:27-17:32）——符號事故 + 驗證成功</a><a href="#四-跨輪穩定結論" style="margin-left:0px">四、跨輪穩定結論</a><a href="#五-鏡頭偏心假設分析-使用者提出-畫面裡角色始終偏左" style="margin-left:0px">五、鏡頭偏心假設分析（使用者提出：畫面裡角色始終偏左）</a><a href="#一錘定音驗證方法" style="margin-left:10px">一錘定音驗證方法</a><a href="#六-符號事故復盤" style="margin-left:0px">六、符號事故復盤</a><a href="#七-後續建議" style="margin-left:0px">七、後續建議</a><a href="#附-相關檔案" style="margin-left:0px">附：相關檔案</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

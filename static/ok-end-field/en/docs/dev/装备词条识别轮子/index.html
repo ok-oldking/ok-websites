@@ -1,0 +1,75 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>装备词条识别 · ok-end-field</title><meta name="description" content="装备词条识别 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/装备词条识别轮子/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="装备词条识别 · ok-end-field"><meta property="og:description" content="装备词条识别 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/装备词条识别轮子/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="装备词条识别 · ok-end-field"><meta name="twitter:description" content="装备词条识别 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"装备词条识别 · ok-end-field","description":"装备词条识别 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/dev/装备词条识别轮子/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="./" class="active" aria-current="page">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="装备词条识别轮子">装备词条识别轮子</h1>
+<p>返回：<a href="../../../../docs/">文档索引</a> / <a href="../../../">README</a></p>
+<p>历史“毕业基质识别”一次性任务已移除，不再提供自动遍历、上锁、解锁或弃置等 UI 自动化行为。</p>
+<p>本目录仅保留可复用的识别轮子，供后续任务或离线工具按需组合。</p>
+<hr>
+<h2 id="保留内容">保留内容</h2>
+<h3 id="ocr-面板解析">OCR 面板解析</h3>
+<p>位置：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/essence/essence_recognizer.py">src/essence/essence_recognizer.py</a></p>
+<p>能力：</p>
+<ul>
+<li><code>parse_essence_panel(texts)</code>：从 OCR Box 列表解析面板名称、来源、词条和等级。</li>
+<li><code>read_essence_info(task)</code>：通过任务上下文截图 + OCR 后调用 parser，作为后续任务的便捷入口。</li>
+<li><code>attach_essence_levels(info, level_boxes)</code>：将单独 OCR 到的等级 Box 按垂直顺序附加到已解析词条。</li>
+</ul>
+<h3 id="csv-规则匹配">CSV 规则匹配</h3>
+<p>位置：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/essence/weapon_data.py">src/essence/weapon_data.py</a></p>
+<p>能力：</p>
+<ul>
+<li><code>load_weapon_data(path)</code>：读取 <code>weapon_data*.csv</code>。</li>
+<li><code>discover_weapon_data_language_options(dir)</code>：发现多语言 CSV 选项。</li>
+<li><code>match_weapon_requirements(requirements, entry_names)</code>：按词条集合匹配规则。</li>
+</ul>
+<h3 id="模板资产">模板资产</h3>
+<p>位置：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/assets">assets</a> 与 <a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/ok_templates">ok_templates</a></p>
+<p>保留 <code>essence_*</code> 模板和 COCO 类别，用于后续重新组合 UI 检测流程；当前项目不再注册对应任务。</p>
+<hr>
+<h2 id="已移除内容">已移除内容</h2>
+<ul>
+<li><code>src/tasks/EssenceScanTask.py</code></li>
+<li><code>configs/EssenceScanTask.json</code></li>
+<li><code>docs/毕业基质识别.md</code></li>
+<li>依赖任务上下文的 <code>tests/TestEssenceGoldGrid.py</code></li>
+</ul>
+<hr>
+<h2 id="后续复用建议">后续复用建议</h2>
+<p>如果要重新实现相关能力，建议分层组合：</p>
+<ol>
+<li>任务层只负责进入页面、选择格子、滚动等 UI 流程。</li>
+<li>OCR 层调用 <code>read_essence_info(task)</code> 或 <code>parse_essence_panel(texts)</code>。</li>
+<li>规则层调用 <code>load_weapon_data()</code> 与 <code>match_weapon_requirements()</code>。</li>
+<li>危险操作（上锁、解锁、弃置）必须单独加确认配置和日志，不应写入解析轮子。</li>
+</ol>
+<p>这样可以让解析能力复用于测试、离线分析、调试任务或未来的新 UI 流程。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/装备词条识别轮子.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#保留内容" style="margin-left:0px">保留内容</a><a href="#ocr-面板解析" style="margin-left:10px">OCR 面板解析</a><a href="#csv-规则匹配" style="margin-left:10px">CSV 规则匹配</a><a href="#模板资产" style="margin-left:10px">模板资产</a><a href="#已移除内容" style="margin-left:0px">已移除内容</a><a href="#后续复用建议" style="margin-left:0px">后续复用建议</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

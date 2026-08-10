@@ -1,0 +1,157 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>从源码运行 · ok-end-field</title><meta name="description" content="从源码运行 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/QUICKSTART/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="从源码运行 · ok-end-field"><meta property="og:description" content="从源码运行 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/QUICKSTART/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="从源码运行 · ok-end-field"><meta name="twitter:description" content="从源码运行 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"从源码运行 · ok-end-field","description":"从源码运行 — ok-end-field","url":"https://ok-script.com/ok-end-field/en/docs/dev/QUICKSTART/","inLanguage":"en","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="./" class="active" aria-current="page">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../装备词条识别轮子/">装备词条识别</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务执行情况汇总报告/">任务执行情况汇总</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../account-overview/">Account Overview &amp; Multi-Account Overrides</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="ok-ef-开发者快速开始">ok-ef 开发者快速开始</h1>
+<p>返回：<a href="../../../../docs/">文档索引</a> / <a href="../../../">README</a></p>
+<h2 id="1-从源码运行">1. 从源码运行</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>当前要求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>操作系统</td>
+<td>Windows 10/11；交互、截图和登录流程依赖 Win32</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.12；CI 和 China 打包配置均固定为 3.12</td>
+</tr>
+<tr>
+<td>权限</td>
+<td>建议管理员权限运行终端/IDE，以与游戏权限一致</td>
+</tr>
+<tr>
+<td>游戏窗口</td>
+<td>16:9，最低 <code>1920x1080</code>（1080P）；见 <code>src/config.py</code></td>
+</tr>
+</tbody></table>
+<pre><code class="language-powershell">git clone --recurse-submodules https://github.com/AliceJump/ok-end-field.git
+Set-Location ok-end-field
+</code></pre>
+<p>经上述命令克隆后，确保安装了 <a href="https://docs.astral.sh/uv/">uv</a> 这一依赖管理程序，随后：</p>
+<pre><code class="language-powershell">uv sync
+uv run python main_debug.py
+</code></pre>
+<p>若 clone 时漏了子模块：</p>
+<pre><code class="language-powershell">git submodule update --init --recursive
+</code></pre>
+<p><code>main.py</code> 和 <code>main_debug.py</code> 都会先调用 <code>install_startup_patches()</code>，再构造 <code>ok.OK(config)</code>；Debug 入口只额外设置 <code>config[&quot;debug&quot;] = True</code>。</p>
+<h2 id="2-新增一次性任务">2. 新增一次性任务</h2>
+<p>最小任务放在 <code>src/tasks/onetime/MyTask.py</code>：</p>
+<pre><code class="language-python">from src.core.BaseEfTask import BaseEfTask
+
+
+class MyTask(BaseEfTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;我的任务&quot;
+        self.description = &quot;执行一个可重复验证的步骤&quot;
+        self.default_config.update({&quot;等待秒数&quot;: 1})
+        self.config_description.update({
+            &quot;等待秒数&quot;: &quot;操作完成后的等待时间。&quot;,
+        })
+
+    def run(self):
+        self.ensure_main()
+        self.log_info(&quot;任务开始&quot;)
+        self.sleep(self.config.get(&quot;等待秒数&quot;, 1))
+</code></pre>
+<p>在 <code>src/config.py</code> 的 <code>config[&quot;onetime_tasks&quot;]</code> 中注册模块路径和类名：</p>
+<pre><code class="language-python">[&quot;src.tasks.onetime.MyTask&quot;, &quot;MyTask&quot;],
+</code></pre>
+<p>不要直接赋值 <code>self.default_config = {...}</code>；多重继承任务需要保留 MRO 中其它 Mixin 已注册的配置。</p>
+<h2 id="3-新增触发式任务">3. 新增触发式任务</h2>
+<pre><code class="language-python">from ok import TriggerTask
+
+from src.core.BaseEfTask import BaseEfTask
+
+
+class MyTriggerTask(BaseEfTask, TriggerTask):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;我的触发任务&quot;
+        self.description = &quot;后台检查条件并执行动作&quot;
+
+    def run(self):
+        if self.find_one(&quot;some_feature&quot;):
+            self.log_info(&quot;检测到目标&quot;)
+</code></pre>
+<p>注册到 <code>config[&quot;trigger_tasks&quot;]</code>：</p>
+<pre><code class="language-python">[&quot;src.tasks.trigger.MyTriggerTask&quot;, &quot;MyTriggerTask&quot;],
+</code></pre>
+<p>现有组合可作为 MRO 参考：<code>AutoCombatTask(BattleMixin, TriggerTask)</code>、<code>ItemNavigatorTask(WsPositionMixin, BaseEfTask, TriggerTask)</code>。业务 Mixin 已继承 <code>BaseEfTask</code> 时不需要再次显式列出 <code>BaseEfTask</code>。</p>
+<h2 id="4-复用现有能力">4. 复用现有能力</h2>
+<p>核心能力现在位于 <code>src/core/base_mixin/</code>，业务能力位于 <code>src/tasks/mixin/</code>：</p>
+<pre><code class="language-python">from src.tasks.mixin.battle_mixin import BattleMixin
+from src.tasks.mixin.map_mixin import MapMixin
+
+
+class MyBattleTask(MapMixin, BattleMixin):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.name = &quot;地图战斗任务&quot;
+
+    def run(self):
+        self.ensure_main()
+        self.ensure_map()
+</code></pre>
+<p>常用规则：</p>
+<ul>
+<li>Feature 使用 <code>FeatureList</code> 或其中存在的字符串名称；<code>find_feature</code> 返回列表，<code>find_one</code> 返回首项。</li>
+<li>OCR 文本使用 <code>self.lang.&lt;module&gt;.&lt;key&gt;</code>，资源写入统一的 <code>assets/lang/&lt;module&gt;.json</code>。</li>
+<li>可改键操作用 <code>press_key</code>、<code>press_industry_key</code> 或 <code>press_combat_key</code>；参数传默认按键值。</li>
+<li><code>self.click(box)</code> 可点击识别框；当前项目封装不使用 <code>click(box=...)</code> 示例。</li>
+<li><code>login_flow(username)</code> 选择登录界面的最近账号，不输入密码。</li>
+</ul>
+<h2 id="5-验证">5. 验证</h2>
+<p>运行全部测试：</p>
+<pre><code class="language-powershell">uv run python -m unittest discover -s tests -p &quot;Test*.py&quot;
+</code></pre>
+<p>仓库的 <code>run_tests.ps1</code> 会逐个运行 <code>tests/*.py</code>，也可使用：</p>
+<pre><code class="language-powershell">.\run_tests.ps1
+</code></pre>
+<p>新增语言引用后至少运行：</p>
+<pre><code class="language-powershell">uv run python -m unittest tests.TestCheckLang
+uv run python -m unittest tests.TestPoLocaleConsistency
+</code></pre>
+<p>涉及窗口、OCR 或游戏状态的行为仍需用 <code>main_debug.py</code> 实机验证；测试集中既有纯离线测试，也有依赖样本图片和 <code>ok-script</code> 测试工具的测试，不能概括为全部不需要项目资源。</p>
+<h2 id="相关文档">相关文档</h2>
+<ul>
+<li><a href="../DEVELOPMENT/">开发指南</a>：架构、目录、任务注册、配置、测试和发布</li>
+<li><a href="../API/">API 参考</a>：项目自有基类和 Mixin 接口</li>
+<li><a href="../i18n_OCR配置流程/">i18n 与 OCR 配置流程</a>：统一语言 JSON 与 OCR 混淆补丁</li>
+<li><a href="../文字识别示例/">文字识别示例</a></li>
+<li><a href="../图像模板匹配示例/">图像模板匹配示例</a></li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/QUICKSTART.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 10, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-从源码运行" style="margin-left:0px">1. 从源码运行</a><a href="#2-新增一次性任务" style="margin-left:0px">2. 新增一次性任务</a><a href="#3-新增触发式任务" style="margin-left:0px">3. 新增触发式任务</a><a href="#4-复用现有能力" style="margin-left:0px">4. 复用现有能力</a><a href="#5-验证" style="margin-left:0px">5. 验证</a><a href="#相关文档" style="margin-left:0px">相关文档</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

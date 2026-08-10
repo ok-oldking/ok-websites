@@ -1,0 +1,91 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>自動戰鬥 · ok-end-field</title><meta name="description" content="自動戰鬥 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/自动战斗/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="自動戰鬥 · ok-end-field"><meta property="og:description" content="自動戰鬥 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/自动战斗/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="自動戰鬥 · ok-end-field"><meta name="twitter:description" content="自動戰鬥 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"自動戰鬥 · ok-end-field","description":"自動戰鬥 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/自动战斗/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件首頁</a><a href="../getting-started/installation/">安裝</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常見問題</a><a href="../features/overview/">功能概覽</a><a href="../日常任务/">日常任務</a><a href="../体力本/">刷體力</a><a href="./" class="active" aria-current="page">自動戰鬥</a><a href="../排轴/">排軸</a><a href="../运送委托接取/">運送委託接取</a><a href="../自动送货/">自動送貨</a><a href="../仓库物品转移/">倉庫物品轉移</a><a href="../物品导航与实时检测/">物品導航與即時檢測</a><a href="../账号配置用户指南/">賬號配置</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../Windows 计划任务/">Windows 計劃任務</a><a href="../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../update/主数据维护工作流/">主資料維護</a><a href="../update/送货地区维护工作流/">送貨地區維護</a><a href="../update/日常送礼维护工作流/">日常送禮維護</a><a href="../dev/QUICKSTART/">從原始碼執行</a><a href="../dev/DEVELOPMENT/">開發指南</a><a href="../dev/API/">API 參考</a><a href="../dev/i18n_OCR配置流程/">i18n 與 OCR</a><a href="../dev/键盘操作体系/">鍵盤操作體系</a><a href="../dev/滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../dev/地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../dev/图像模板匹配示例/">影像模板匹配示例</a><a href="../dev/文字识别示例/">文字識別示例</a><a href="../dev/装备词条识别轮子/">裝備詞條識別</a><a href="../dev/切换账户流程分析/">賬戶切換流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../dev/任务执行情况汇总报告/">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="自動戰鬥">自動戰鬥</h1>
+<p>返回：<a href="../">文件索引</a> / <a href="../../">README</a></p>
+<h2 id="概述">概述</h2>
+<p>自動檢測戰鬥狀態，在進入戰鬥後自動執行技能釋放邏輯，戰鬥結束後停止本輪並繼續等待下一場。它是註冊的觸發式任務，需在任務介面啟用；只在檢測到至少 1 格技力且隊伍 UI 存在時接管戰鬥。</p>
+<p>戰鬥邏輯與「刷體力」中的戰鬥邏輯相同，詳見 <a href="../体力本/">體力本.md</a>。</p>
+<h2 id="觸發流程">觸發流程</h2>
+<pre><code class="language-mermaid">flowchart TD
+    A[启用自动战斗触发任务] --&gt; B[轮询截图]
+    B --&gt; C{检测到战斗状态}
+    C --&gt;|否| B
+    C --&gt;|是| D[AutoCombatLogic 接管]
+    D --&gt; E[读取全局战斗配置]
+    E --&gt; F[执行普通/排轴/实时条件战斗]
+    F --&gt; G{战斗结束}
+    G --&gt;|否| F
+    G --&gt;|是| H[释放检测器和状态]
+    H --&gt; B
+</code></pre>
+<hr>
+<h2 id="使用要求">使用要求</h2>
+<blockquote>
+<p>確保解析度大於等於<strong>1920x1080（1080P）</strong>，低於 1080P 不保證正常執行</p>
+</blockquote>
+<h2 id="戰鬥配置-全域性共享">戰鬥配置（全域性共享）</h2>
+<blockquote>
+<p>所有戰鬥相關的配置項現在集中在 <strong>「全域性配置 → 戰鬥配置」</strong> 中統一管理，
+一次配置即可應用到「自動戰鬥」「刷體力」「日常任務」等所有涉及戰鬥的任務，無需多處重複設定。</p>
+</blockquote>
+<h3 id="技能釋放">技能釋放</h3>
+<p>「戰技」釋放角色順序是可排序列表，預設 <code>1,2,3</code>，可從 1 至 4 中選擇且不允許重複。普通模式在連攜技和終結技均未釋放時按該列表迴圈出技。</p>
+<hr>
+<h3 id="啟動技能點數">啟動技能點數</h3>
+<p>當「技力條」達到該數值時，開始執行技能序列。取值範圍 1–3。</p>
+<hr>
+<h3 id="完成通知">完成通知</h3>
+<p>戰鬥結束後是否傳送系統通知。</p>
+<hr>
+<h3 id="無數字操作間隔">無數字操作間隔</h3>
+<p>戰鬥中週期觸發鎖敵 + 向前閃避的最小間隔秒數，預設 6；執行時限制為 1 至 30 秒。</p>
+<hr>
+<h3 id="進入戰鬥後的初始等待時間">進入戰鬥後的初始等待時間</h3>
+<p>進入戰鬥後等待該時間（秒）後才開始釋放技能。</p>
+<hr>
+<h3 id="啟用排軸">啟用排軸</h3>
+<p>啟用後按照「排軸序列」中定義的順序使用技能。某個動作連續 5 秒未成功時，本場戰鬥永久回退普通邏輯。</p>
+<p>詳見 <a href="../排轴/">排軸.md</a>。</p>
+<hr>
+<h3 id="排軸序列">排軸序列</h3>
+<p>技能釋放的自定義順序字串，僅在「啟用排軸」開啟時生效。</p>
+<p>格式和用法詳見 <a href="../排轴/">排軸.md</a>。</p>
+<hr>
+<h3 id="啟用即時條件">啟用即時條件</h3>
+<p>啟用後忽略排軸。可在面板編輯觸發條件和序列。</p>
+<p>當即時條件序列為空或全部非法時，自動回退普通模式。</p>
+<hr>
+<h3 id="立即釋放終結技-立即釋放連攜技">立即釋放終結技 / 立即釋放連攜技</h3>
+<p>本幀無條件動作產出時，按開關嘗試立即釋放終結技或連攜技。優先順序：終結技 &gt; 連攜技。</p>
+<p>僅在即時條件啟用時生效。</p>
+<p>相關文件：<a href="../体力本/">體力本</a> / <a href="../排轴/">排軸</a> / <a href="../dev/API/">API 參考</a></p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/自动战斗.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#觸發流程" style="margin-left:0px">觸發流程</a><a href="#使用要求" style="margin-left:0px">使用要求</a><a href="#戰鬥配置-全域性共享" style="margin-left:0px">戰鬥配置（全域性共享）</a><a href="#技能釋放" style="margin-left:10px">技能釋放</a><a href="#啟動技能點數" style="margin-left:10px">啟動技能點數</a><a href="#完成通知" style="margin-left:10px">完成通知</a><a href="#無數字操作間隔" style="margin-left:10px">無數字操作間隔</a><a href="#進入戰鬥後的初始等待時間" style="margin-left:10px">進入戰鬥後的初始等待時間</a><a href="#啟用排軸" style="margin-left:10px">啟用排軸</a><a href="#排軸序列" style="margin-left:10px">排軸序列</a><a href="#啟用即時條件" style="margin-left:10px">啟用即時條件</a><a href="#立即釋放終結技-立即釋放連攜技" style="margin-left:10px">立即釋放終結技 / 立即釋放連攜技</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>

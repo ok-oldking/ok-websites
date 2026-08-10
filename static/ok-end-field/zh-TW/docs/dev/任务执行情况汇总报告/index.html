@@ -1,0 +1,182 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>任務執行情況彙總 · ok-end-field</title><meta name="description" content="任務執行情況彙總 — ok-end-field"><meta name="keywords" content="ok-end-field, ok-script, documentation, computer vision, Python, Windows"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/任务执行情况汇总报告/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="任務執行情況彙總 · ok-end-field"><meta property="og:description" content="任務執行情況彙總 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/任务执行情况汇总报告/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="任務執行情況彙總 · ok-end-field"><meta name="twitter:description" content="任務執行情況彙總 — ok-end-field">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"任務執行情況彙總 · ok-end-field","description":"任務執行情況彙總 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/任务执行情况汇总报告/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260810101001">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 與覆蓋邏輯</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../API/">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../装备词条识别轮子/">裝備詞條識別</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="./" class="active" aria-current="page">任務執行情況彙總</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="任務執行情況彙總報告">任務執行情況彙總報告</h1>
+<p><code>src/tasks/daily/finally_file.py</code> 提供任務完成時生成臨時彙總報告的能力，其他任務也可複用。</p>
+<hr>
+<h2 id="目錄結構">目錄結構</h2>
+<p>彙總檔案儲存在臨時目錄下，按軟體名和任務名分層：</p>
+<pre><code>{tempdir}/ok-ef/{任务名}/{任务名}_{时间戳}.txt
+</code></pre>
+<p>例如日常任務產生：</p>
+<pre><code>C:\Users\xxx\AppData\Local\Temp\ok-ef\日常任务\日常任务_20260709_143000.txt
+</code></pre>
+<p>目錄自動構建，無需手動配置。舊檔案超過 7 天自動清理。</p>
+<hr>
+<h2 id="核心函式">核心函式</h2>
+<pre><code class="language-python">from src.tasks.daily.finally_file import create_task_summary_report
+
+summary_path = create_task_summary_report(self, base_dir, summary_info)
+</code></pre>
+<h3 id="引數">引數</h3>
+<table>
+<thead>
+<tr>
+<th>引數</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>task</code></td>
+<td>object</td>
+<td>任務例項，需有 <code>.name</code> 屬性</td>
+</tr>
+<tr>
+<td><code>base_dir</code></td>
+<td>Path</td>
+<td>基礎目錄</td>
+</tr>
+<tr>
+<td><code>summary_info</code></td>
+<td>dict</td>
+<td>彙總資料（見下方）</td>
+</tr>
+<tr>
+<td><code>keep_days</code></td>
+<td>int</td>
+<td>歷史檔案保留天數，預設 7</td>
+</tr>
+</tbody></table>
+<h3 id="summary-info-支援欄位">summary_info 支援欄位</h3>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>型別</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>status</code></td>
+<td>str</td>
+<td>執行狀態文本</td>
+</tr>
+<tr>
+<td><code>actual_repeat_total</code></td>
+<td>int</td>
+<td>實際執行輪數</td>
+</tr>
+<tr>
+<td><code>per_round</code></td>
+<td>list[dict]</td>
+<td>每輪詳情（含 account_user/account_id/success/failed/skipped/all）</td>
+</tr>
+<tr>
+<td><code>all_fail_tasks</code></td>
+<td>list[(int, list[str])]</td>
+<td>舊格式：每輪失敗任務列表</td>
+</tr>
+<tr>
+<td><code>exception</code></td>
+<td>str</td>
+<td>異常資訊</td>
+</tr>
+<tr>
+<td><code>current_task</code></td>
+<td>str</td>
+<td>異常時正在執行的任務名</td>
+</tr>
+<tr>
+<td><code>failure_details</code></td>
+<td>dict</td>
+<td>按 account_id 分組的失敗訊息，<code>{ account_id: { task_name: msg } }</code></td>
+</tr>
+</tbody></table>
+<h3 id="輸出內容示例">輸出內容示例</h3>
+<pre><code>日常任务执行情况汇总 - 2026-07-09 14:30:00
+==================================================
+执行状态: 完成
+执行轮数: 2
+
+失败消息:
+
+=== 账号: alice ===
+失败任务:
+  - 任务D : 未找到目标
+
+--- 第 1 轮 (账号: alice) ---
+总任务数: 10 | 成功: 8 | 失败: 1 | 跳过: 1
+
+成功任务:
+  任务A, 任务B, 任务C
+
+失败任务:
+  任务D
+
+跳过任务:
+  任务E
+
+--- 第 2 轮 (账号: bob) ---
+总任务数: 10 | 成功: 10 | 失败: 0 | 跳过: 0
+</code></pre>
+<p>當 <code>per_round</code> 是非空列表時，報告輸出每輪詳情，不會再追加舊格式的“所有任務執行成功”提示。只有未提供 <code>per_round</code> 且 <code>all_fail_tasks</code> 為空時才輸出該提示。若同一秒內檔名衝突，函式會改用帶 <code>_压根_QWQ000</code>（隨後遞增）字尾的檔名，不會覆蓋已有報告。</p>
+<hr>
+<h2 id="其他工具函式">其他工具函式</h2>
+<table>
+<thead>
+<tr>
+<th>函式</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>get_software_name()</code></td>
+<td>從全域性配置讀取 <code>gui_title</code>（預設為 <code>&quot;ok-ef&quot;</code>），用於構建目錄</td>
+</tr>
+<tr>
+<td><code>format_failure_details_by_account(per_round, failure_details)</code></td>
+<td>格式化按賬號分組的失敗詳情</td>
+</tr>
+<tr>
+<td><code>decode(text)</code></td>
+<td>簡單 XOR 解碼，用於混淆配置中的敏感字串</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="開啟開關">開啟開關</h2>
+<p>在 DailyTask 中通過配置項 <strong><code>自动打开汇总文件</code></strong>（預設 <code>True</code>）控制是否在建立後用系統預設程式開啟。</p>
+<ul>
+<li>開啟：建立後呼叫 <code>os.startfile</code> 或 <code>webbrowser.open</code> 自動開啟</li>
+<li>關閉：僅建立檔案，不開啟</li>
+</ul>
+<p>開關僅控制開啟行為，不影響檔案建立。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/任务执行情况汇总报告.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#目錄結構" style="margin-left:0px">目錄結構</a><a href="#核心函式" style="margin-left:0px">核心函式</a><a href="#引數" style="margin-left:10px">引數</a><a href="#summary-info-支援欄位" style="margin-left:10px">summary_info 支援欄位</a><a href="#輸出內容示例" style="margin-left:10px">輸出內容示例</a><a href="#其他工具函式" style="margin-left:0px">其他工具函式</a><a href="#開啟開關" style="margin-left:0px">開啟開關</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20260810101001" defer></script></body></html>

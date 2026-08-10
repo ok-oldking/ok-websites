@@ -182,6 +182,32 @@
         { "code": "en", "label": "English", "source": "docs/en", "index": "index.md" }
       ]
     }
+    ,{
+      "id": "ok-end-field",
+      "name": "ok-end-field",
+      "repository": "https://github.com/AliceJump/ok-end-field.git",
+      "github": "AliceJump/ok-end-field",
+      "domain": "https://ok-script.com/ok-end-field",
+      "outputFolder": "ok-end-field",
+      "mkdocs": "mkdocs.yml",
+      "basePath": "",
+      "accent": "cyan",
+      "type": "application",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 348,
+        "forks": 15,
+        "release": "v0.0.74",
+        "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v0.0.74",
+        "releaseAssets": [
+          { "name": "ok-ef-win32-China-setup.exe", "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v0.0.74/ok-ef-win32-China-setup.exe" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": "docs/zh-CN", "index": "index.md" },
+        { "code": "en", "label": "English", "source": "docs/en", "index": "index.md" }
+      ]
+    }
   ],
   "relatedProjects": [
     { "name": "ok-ww", "description": { "zh-CN": "鸣潮后台自动战斗、自动刷声骸与一键日常", "en": "Background combat, Echo farming, and one-click daily automation for Wuthering Waves" }, "url": "https://ok-ww.ok-script.com/", "github": "ok-oldking/ok-wuthering-waves", "status": "active", "stars": 6971, "communityLinks": [
