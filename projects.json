@@ -208,7 +208,7 @@
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-end-field", "description": { "zh-CN": "基于 ok-script 开发的明日方舟：终末地自动化", "en": "Arknights: Endfield automation built with ok-script" }, "url": "https://github.com/ok-oldking/ok-end-field", "github": "ok-oldking/ok-end-field", "status": "community", "stars": 530, "communityLinks": [
+    { "name": "ok-end-field", "description": { "zh-CN": "基于 ok-script 开发的明日方舟：终末地自动化", "en": "Arknights: Endfield automation built with ok-script" }, "url": "https://github.com/AliceJump/ok-end-field", "github": "AliceJump/ok-end-field", "status": "community", "stars": 530, "communityLinks": [
       { "type": "qq", "label": "QQ 940581952", "value": "940581952" },
       { "type": "qq", "label": "QQ 1079581542", "value": "1079581542" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" }
