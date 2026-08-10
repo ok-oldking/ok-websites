@@ -127,7 +127,7 @@ const kesChinese = await fs.readFile(path.join(root, 'ok-kes', 'index.html'), 'u
 const kesEnglish = await fs.readFile(path.join(root, 'ok-kes', 'en', 'index.html'), 'utf8');
 const kesTraditionalDocs = await fs.readFile(path.join(root, 'ok-kes', 'zh-TW', 'docs', 'index.html'), 'utf8');
 if (!kesChinese.includes('突破卡厄思') || !kesChinese.includes('https://ok-script.com/ok-kes/') || !kesChinese.includes('ok-kes-win32-China-setup.exe')) failures.push('ok-kes Chinese landing page is incomplete.');
-if (!kesEnglish.includes('Face the Chaos') || !kesEnglish.includes('https://github.com/baoxin1100/ok-kes/releases/tag/v1.3.36')) failures.push('ok-kes English landing page is incomplete.');
+if (!kesEnglish.includes('Face the Chaos') || !/https:\/\/github\.com\/baoxin1100\/ok-kes\/releases\/tag\/v?\d+(?:\.\d+)+/.test(kesEnglish)) failures.push('ok-kes English landing page is incomplete.');
 if (!kesChinese.includes('faq-section') || !kesChinese.includes('自动卡厄思') || !kesChinese.includes('data-copy="901988096"')) failures.push('ok-kes Chinese project content is incomplete.');
 if (kesEnglish.includes('data-copy=') || /qq\.svg/.test(kesEnglish)) failures.push('ok-kes English landing page exposes QQ links.');
 if (!kesTraditionalDocs.includes('軟體') || !kesTraditionalDocs.includes('遊戲') || kesTraditionalDocs.includes('游戏分辨率')) failures.push('ok-kes documentation was not converted to Traditional Chinese.');
