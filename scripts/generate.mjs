@@ -299,6 +299,9 @@ async function githubMetadata(project, fallback) {
     return {
       stars: repo.stargazers_count, forks: repo.forks_count, description: repo.description,
       release: release?.tag_name || pypi?.info?.version || configured.release || '—', releaseUrl: release?.html_url || configured.releaseUrl || `https://github.com/${project.github}/releases`,
+      // GitHub tags are display/release labels and can differ from the version
+      // accepted by pip (for example, a leading "v").
+      pypiVersion: pypi?.info?.version || configured.release || null,
       releaseAssets: release ? release.assets.map(asset => ({ name: asset.name, browser_download_url: asset.browser_download_url, size: asset.size })) : (configured.releaseAssets || []),
       mirrors: release
         ? [...extractReleaseMirrors(release.body), ...(configured.mirrors || [])].filter((item, index, all) => all.findIndex(other => other.url === item.url) === index)
@@ -309,7 +312,7 @@ async function githubMetadata(project, fallback) {
     console.warn(`Metadata fallback for ${project.id}: ${error.message}`);
     return {
       stars: configured.stars || 0, forks: configured.forks || 0, description: configured.description || '',
-      release: configured.release || '—', releaseUrl: configured.releaseUrl || `https://github.com/${project.github}/releases`,
+      release: configured.release || '—', pypiVersion: configured.release || null, releaseUrl: configured.releaseUrl || `https://github.com/${project.github}/releases`,
       releaseAssets: configured.releaseAssets || [], mirrors: configured.mirrors || [], updated: fallback.updated
     };
   }
@@ -754,6 +757,7 @@ function landingPage(project, locale, meta, faq = null) {
   const chinaDefault = locale.code === 'zh-CN';
   const primaryUrl = isFramework ? docsUrl : downloads[chinaDefault ? 'china' : 'global'];
   const pypiUrl = `https://pypi.org/project/${encodeURIComponent(project.pypi || 'ok-script')}/`;
+  const pypiVersion = meta.pypiVersion || meta.release;
   const primaryLabel = isFramework ? t.getStarted : `${t.downloadGithub}${locale.code === 'zh-CN' ? ' · 大陆版' : ' · Global'}`;
   const projectFeatures = features[project.id] || features[project.type];
   const featureSet = projectFeatures[locale.code] || (locale.autoTranslated ? translateToTraditional(projectFeatures[locale.generatedFrom] || projectFeatures['zh-CN']) : projectFeatures.en);
@@ -781,7 +785,7 @@ function landingPage(project, locale, meta, faq = null) {
     <div class="dropdown-menu download-menu" data-dropdown-menu role="menu" hidden>${downloadOptions}</div>
   </div>`;
   const heroActions = isFramework
-    ? `<a class="button primary" href="${primaryUrl}">${primaryLabel} <span aria-hidden="true">→</span></a><a class="button pip-button" href="${pypiUrl}"><span class="pip-mark" aria-hidden="true">PyPI</span><code>pip install ok-script==${escapeHtml(meta.release)}</code></a>${sourceButton}`
+    ? `<a class="button primary" href="${primaryUrl}">${primaryLabel} <span aria-hidden="true">→</span></a><a class="button pip-button" href="${pypiUrl}"><span class="pip-mark" aria-hidden="true">PyPI</span><code>pip install ok-script==${escapeHtml(pypiVersion)}</code></a>${sourceButton}`
     : `${downloadControl}<a class="button" href="${docsUrl}">${t.readDocs}</a>${sourceButton}`;
   const mirrorLinks = !isFramework && locale.code === 'zh-CN' && meta.mirrors?.length
     ? `<div class="download-alternatives"><span>${t.githubUnavailable}</span>${meta.mirrors.map(link => `<a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join('')}</div>` : '';

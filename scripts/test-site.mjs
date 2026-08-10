@@ -56,7 +56,7 @@ const rootLanding = await fs.readFile(path.join(root, 'en', 'index.html'), 'utf8
 const rootChinese = await fs.readFile(path.join(root, 'index.html'), 'utf8');
 if (/One framework, many projects|Made for real automation work/.test(rootLanding)) failures.push('Removed section subtitles are still present.');
 if (/Latest release<\/small><b>source<\/b>/i.test(rootLanding)) failures.push('Framework release still shows source instead of a version.');
-if (!/href="https:\/\/pypi\.org\/project\/ok-script\/"/.test(rootLanding) || !/pip install ok-script==\d/.test(rootLanding)) failures.push('ok-script PyPI installation link is missing its latest version.');
+if (!/href="https:\/\/pypi\.org\/project\/ok-script\/"/.test(rootLanding) || !/pip install ok-script==[^<\s]+<\/code>/.test(rootLanding)) failures.push('ok-script PyPI installation link is missing its latest version.');
 if (rootLanding.includes('meta-release-button')) failures.push('Release download is still present in the stats row.');
 if (rootLanding.includes('data-copy=')) failures.push('Non-Chinese pages expose QQ groups.');
 if (!rootChinese.includes('data-copy="938132715"') || !rootChinese.includes('开发者群938132715')) failures.push('ok-script developer QQ group is not identified correctly.');
