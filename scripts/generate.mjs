@@ -34,7 +34,7 @@ const copy = {
     endLead: '基于图像识别的《明日方舟：终末地》自动化工具，支持后台运行，不读取游戏内存、不修改游戏文件。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
-    getStarted: '开始使用', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', viewSource: '查看源码', readDocs: '阅读文档',
+    getStarted: '开始使用', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
     githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区',
     faqKicker: '常见问题',
     stars: 'GitHub Stars', release: '最新版本', updated: '代码更新', online: '开源可用',
@@ -61,7 +61,7 @@ const copy = {
     endLead: 'Image-recognition automation for Arknights: Endfield with background operation, without reading game memory or modifying game files.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
-    getStarted: 'Get started', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', viewSource: 'View source', readDocs: 'Read docs',
+    getStarted: 'Get started', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
     githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community',
     faqKicker: 'FAQ',
     stars: 'GitHub stars', release: 'Latest release', updated: 'Code updated', online: 'Open source',
@@ -77,7 +77,7 @@ const copy = {
     frameworkEyebrow: '開源 · Python · 視覺自動化', frameworkTitle: '讓遊戲自動化，\n變得簡單。', frameworkLead: '現代化的純 Python 圖像辨識自動化框架。',
     appEyebrow: '鳴潮 · 背景自動化 · Windows', appTitle: '重複的日常，\n交給 ok-ww。', appLead: '基於電腦視覺的鳴潮自動化工具，支援背景執行、智慧角色辨識與 4K 解析度，不讀取記憶體、不修改遊戲檔案。',
     templateEyebrow: '專案範本 · Python · 視覺工具', templateTitle: '從可執行範本，\n開始自動化。', templateLead: '包含 GUI、任務範例、OCR、模板比對、測試與打包設定的完整 ok-script 應用範本。',
-    getStarted: '開始使用', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
+    getStarted: '開始使用', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
     capabilities: '核心能力', capabilitiesTitle: '為實際自動化場景而生', capabilitiesLead: '完整涵蓋辨識、執行與日常使用。', projectsKicker: '專案', projectsTitle: '一個框架，多個專案', projectsLead: '每個專案都有獨立入口與多語言文件。',
     explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '立即下載，簡化你的每日流程。', ctaLead: '閱讀使用說明並確認風險提示後開始使用。', ctaButton: '開啟快速開始',
     docsFor: '文件目錄', onPage: '本頁內容', editGithub: '在 GitHub 查看來源', lastGenerated: '頁面產生時間', footer: '以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。', allProjects: '全部專案'
@@ -609,7 +609,8 @@ function githubIcon(project, currentUrl) {
 }
 
 function releaseDownloads(meta) {
-  const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url || meta.releaseUrl;
+  const fallbackAsset = meta.releaseAssets?.find(asset => /setup\.exe$/i.test(asset.name))?.browser_download_url;
+  const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url || fallbackAsset || meta.releaseUrl;
   return { china: find(/China-setup\.exe$/i), global: find(/Global-setup\.exe$/i) };
 }
 
@@ -773,9 +774,9 @@ function landingPage(project, locale, meta, faq = null) {
   const downloadOptions = [
     { label: chinaLabel, url: downloads.china },
     { label: globalLabel, url: downloads.global }
-  ].map(option => `<a class="dropdown-option download-option" role="menuitem" href="${escapeHtml(option.url)}" data-download-link><span>${option.label}</span><strong>${escapeHtml(meta.release)}</strong></a>`).join('');
-  const downloadControl = `<div class="custom-dropdown download-split" data-dropdown data-download-control data-downloading-label="${escapeHtml(t.downloading)}">
-    <a class="button primary download-main" href="${escapeHtml(primaryUrl)}" data-download-link>${githubIcon(project, currentUrl)}<span data-download-label>${t.downloadGithub}</span><strong>${escapeHtml(meta.release)}</strong><small>${defaultDownloadLabel}</small><span aria-hidden="true">↓</span></a>
+  ].map(option => `<a class="dropdown-option download-option" role="menuitem" target="_blank" rel="noopener" href="${escapeHtml(option.url)}" data-download-link><span>${option.label}</span><strong>${escapeHtml(meta.release)}</strong></a>`).join('');
+  const downloadControl = `<div class="custom-dropdown download-split" data-dropdown data-download-control data-downloading-label="${escapeHtml(t.downloading)}" data-download-guide="${escapeHtml(t.downloadGuide || copy.en.downloadGuide)}">
+    <a class="button primary download-main" target="_blank" rel="noopener" href="${escapeHtml(primaryUrl)}" data-download-link>${githubIcon(project, currentUrl)}<span data-download-label>${t.downloadGithub}</span><strong>${escapeHtml(meta.release)}</strong><small>${defaultDownloadLabel}</small><span aria-hidden="true">↓</span></a>
     <button class="download-toggle" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Choose download version"><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
     <div class="dropdown-menu download-menu" data-dropdown-menu role="menu" hidden>${downloadOptions}</div>
   </div>`;

@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="日常任務 · ok-end-field"><meta property="og:description" content="日常任務 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/">
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="日常任務 · ok-end-field"><meta name="twitter:description" content="日常任務 — ok-end-field">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"日常任務 · ok-end-field","description":"日常任務 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/","inLanguage":"zh-TW","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"日常任務 · ok-end-field","description":"日常任務 — ok-end-field","url":"https://ok-script.com/ok-end-field/zh-TW/docs/日常任务/","inLanguage":"zh-TW","dateModified":"2026-08-10T18:20:49+08:00","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810102210">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -33,7 +33,7 @@
 <p>子任務開關用⭐標出，自上而下順序執行。除「⭐帝江號一鍵存放」和「⭐執行外部命令」預設關閉外，其餘當前任務計劃子任務預設開啟；『⭐地區建設』中的「買物資」選項預設不啟用。『⭐執行外部命令』可通過「外部命令執行時機」下拉框選擇在任務最開始或最後執行。</p>
 <p>如果出現反覆按ESC的情形，請調高『設定/主介面單次動作後延遲』（建議1.5以上）。</p>
 <h3 id="子任務和執行順序">子任務和執行順序</h3>
-<p>子任務和執行順序定義在 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/tasks/onetime/DailyTask.py">DailyTask.py</a> 的 <code>build_task_plan()</code>。簡短概括如下：</p>
+<p>子任務和執行順序定義在 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/tasks/onetime/DailyTask.py">DailyTask.py</a> 的 <code>build_task_plan()</code>。簡短概括如下：</p>
 <pre><code class="language-mermaid">flowchart TD
     A[启动日常任务] --&gt; B[送礼\n传送到特定地点]
     B --&gt; C[帝江号任务组]
@@ -157,7 +157,7 @@
 <p>檢查單：「地區建設/據點管理」可用，至少一個據點可交易。在『⭐地區建設』中啟用「買物資」確保排程券不溢位。</p>
 </blockquote>
 <p>在「地區建設/據點管理」中通過交易獲得排程券。</p>
-<p>程式會遍歷所有地區所有據點，儘可能獲得全部排程券。<strong>程式支援的交易貨品</strong> 詳見檔案 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map.py">world_map.py</a> 中的列表 <code>goods_dict</code> 。</p>
+<p>程式會遍歷所有地區所有據點，儘可能獲得全部排程券。<strong>程式支援的交易貨品</strong> 詳見檔案 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/world_map.py">world_map.py</a> 中的列表 <code>goods_dict</code> 。</p>
 <p>選項：『⭐據點兌換』『交易貨品優先序列』『據點兌換僅購買優先商品』</p>
 <p>開啟『據點兌換僅購買優先商品』後，僅當「交易貨品優先序列」不為空時，只兌換其中的商品；優先序列為空時按原邏輯兌換。</p>
 <h4 id="交易貨品優先序列">交易貨品優先序列</h4>
@@ -233,7 +233,7 @@
 </blockquote>
 <p>是否在「彈性需求物資」與好友交易賺取排程券。自動獲取貨物資訊，然後用價格上下限判定是否交易。（除非可購買數量即將溢位，這種情況下必定交易。）</p>
 <p>只買不賣模式下，只進行購買操作，不進行賣出操作。並不會獲取所有資訊以加速任務流程。</p>
-<p>當前 <strong>程式支援的交易物資</strong> 詳見檔案 <a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/data/world_map.py">world_map.py</a> 中的列表 <code>exchange_goods_dict</code> 。</p>
+<p>當前 <strong>程式支援的交易物資</strong> 詳見檔案 <a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/data/world_map.py">world_map.py</a> 中的列表 <code>exchange_goods_dict</code> 。</p>
 <p>選項：『⭐地區建設』的「買賣貨」『只買不賣』『武陵買入價』『武陵賣出價』『武陵』『四號谷地買入價』『四號谷地賣出價』『四號谷地』</p>
 <h3 id="買物資">買物資</h3>
 <blockquote>
@@ -299,6 +299,6 @@ python scripts/daily_extra.py
 <li>完成後退出</li>
 </ol>
 <p>相關文件：<a href="../体力本/">刷體力</a> / <a href="../账号配置用户指南/">賬號配置使用者指南</a> / <a href="../dev/API/">API 參考</a></p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/zh-CN/日常任务.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#子任務和執行順序" style="margin-left:10px">子任務和執行順序</a><a href="#執行流程" style="margin-left:10px">執行流程</a><a href="#子任務介紹" style="margin-left:0px">子任務介紹</a><a href="#送禮" style="margin-left:10px">送禮</a><a href="#帝江號一鍵存放" style="margin-left:10px">帝江號一鍵存放</a><a href="#收郵件" style="margin-left:10px">收郵件</a><a href="#據點兌換" style="margin-left:10px">據點兌換</a><a href="#轉交運送委託" style="margin-left:10px">轉交運送委託</a><a href="#簡易製作" style="margin-left:10px">簡易製作</a><a href="#造裝備" style="margin-left:10px">造裝備</a><a href="#收信用" style="margin-left:10px">收信用</a><a href="#帝江號收菜" style="margin-left:10px">帝江號收菜</a><a href="#買信用商店" style="margin-left:10px">買信用商店</a><a href="#買賣貨" style="margin-left:10px">買賣貨</a><a href="#買物資" style="margin-left:10px">買物資</a><a href="#刷體力" style="margin-left:10px">刷體力</a><a href="#活動獎勵" style="margin-left:10px">活動獎勵</a><a href="#日常獎勵" style="margin-left:10px">日常獎勵</a><a href="#傳送到帝江號右側傳送點" style="margin-left:10px">傳送到帝江號右側傳送點</a><a href="#執行外部命令" style="margin-left:10px">執行外部命令</a><a href="#其他選項" style="margin-left:10px">其他選項</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/docs/zh-CN/日常任务.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月10日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#子任務和執行順序" style="margin-left:10px">子任務和執行順序</a><a href="#執行流程" style="margin-left:10px">執行流程</a><a href="#子任務介紹" style="margin-left:0px">子任務介紹</a><a href="#送禮" style="margin-left:10px">送禮</a><a href="#帝江號一鍵存放" style="margin-left:10px">帝江號一鍵存放</a><a href="#收郵件" style="margin-left:10px">收郵件</a><a href="#據點兌換" style="margin-left:10px">據點兌換</a><a href="#轉交運送委託" style="margin-left:10px">轉交運送委託</a><a href="#簡易製作" style="margin-left:10px">簡易製作</a><a href="#造裝備" style="margin-left:10px">造裝備</a><a href="#收信用" style="margin-left:10px">收信用</a><a href="#帝江號收菜" style="margin-left:10px">帝江號收菜</a><a href="#買信用商店" style="margin-left:10px">買信用商店</a><a href="#買賣貨" style="margin-left:10px">買賣貨</a><a href="#買物資" style="margin-left:10px">買物資</a><a href="#刷體力" style="margin-left:10px">刷體力</a><a href="#活動獎勵" style="margin-left:10px">活動獎勵</a><a href="#日常獎勵" style="margin-left:10px">日常獎勵</a><a href="#傳送到帝江號右側傳送點" style="margin-left:10px">傳送到帝江號右側傳送點</a><a href="#執行外部命令" style="margin-left:10px">執行外部命令</a><a href="#其他選項" style="margin-left:10px">其他選項</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20260810102210" defer></script></body></html>

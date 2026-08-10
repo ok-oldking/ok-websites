@@ -52,6 +52,16 @@
     const toggle = control.querySelector('[data-dropdown-trigger]');
     const menu = control.querySelector('[data-dropdown-menu]');
     const label = control.querySelector('[data-download-label]');
+    const showDownloadGuide = () => {
+      document.querySelector('.download-guide')?.remove();
+      const guide = document.createElement('div');
+      guide.className = 'download-guide';
+      guide.setAttribute('role', 'status');
+      guide.innerHTML = `<span class="download-guide-arrow" aria-hidden="true">↗</span><span>${control.dataset.downloadGuide || 'Download started — check the top-right of your browser'}</span>`;
+      document.body.append(guide);
+      requestAnimationFrame(() => guide.classList.add('visible'));
+      setTimeout(() => { guide.classList.remove('visible'); setTimeout(() => guide.remove(), 260); }, 5200);
+    };
 
     links.forEach(link => link.addEventListener('click', event => {
       if (control.dataset.downloading === 'true') {
@@ -67,6 +77,7 @@
       if (toggle) toggle.disabled = true;
       if (menu) menu.hidden = true;
       if (label) label.textContent = control.dataset.downloadingLabel || 'Downloading…';
+      showDownloadGuide();
     }));
   });
 

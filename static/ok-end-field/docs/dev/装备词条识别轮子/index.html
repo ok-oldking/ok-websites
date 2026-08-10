@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/dev/装备词条识别轮子/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="装备词条识别 · ok-end-field"><meta property="og:description" content="装备词条识别 — ok-end-field"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/dev/装备词条识别轮子/">
   <meta name="twitter:card" content="summary"><meta name="twitter:title" content="装备词条识别 · ok-end-field"><meta name="twitter:description" content="装备词条识别 — ok-end-field">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"装备词条识别 · ok-end-field","description":"装备词条识别 — ok-end-field","url":"https://ok-script.com/ok-end-field/docs/dev/装备词条识别轮子/","inLanguage":"zh-CN","dateModified":"2026-08-10T01:59:59Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"装备词条识别 · ok-end-field","description":"装备词条识别 — ok-end-field","url":"https://ok-script.com/ok-end-field/docs/dev/装备词条识别轮子/","inLanguage":"zh-CN","dateModified":"2026-08-10T18:20:49+08:00","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810101001">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20260810102210">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -34,7 +34,7 @@
 <hr>
 <h2 id="保留内容">保留内容</h2>
 <h3 id="ocr-面板解析">OCR 面板解析</h3>
-<p>位置：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/essence/essence_recognizer.py">src/essence/essence_recognizer.py</a></p>
+<p>位置：<a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/essence/essence_recognizer.py">src/essence/essence_recognizer.py</a></p>
 <p>能力：</p>
 <ul>
 <li><code>parse_essence_panel(texts)</code>：从 OCR Box 列表解析面板名称、来源、词条和等级。</li>
@@ -42,7 +42,7 @@
 <li><code>attach_essence_levels(info, level_boxes)</code>：将单独 OCR 到的等级 Box 按垂直顺序附加到已解析词条。</li>
 </ul>
 <h3 id="csv-规则匹配">CSV 规则匹配</h3>
-<p>位置：<a href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/src/essence/weapon_data.py">src/essence/weapon_data.py</a></p>
+<p>位置：<a href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/src/essence/weapon_data.py">src/essence/weapon_data.py</a></p>
 <p>能力：</p>
 <ul>
 <li><code>load_weapon_data(path)</code>：读取 <code>weapon_data*.csv</code>。</li>
@@ -50,7 +50,7 @@
 <li><code>match_weapon_requirements(requirements, entry_names)</code>：按词条集合匹配规则。</li>
 </ul>
 <h3 id="模板资产">模板资产</h3>
-<p>位置：<a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/assets">assets</a> 与 <a href="https://github.com/AliceJump/ok-end-field/tree/32cc731467837364d23c202f07b8db83b684466f/ok_templates">ok_templates</a></p>
+<p>位置：<a href="https://github.com/AliceJump/ok-end-field/tree/141e802be407467dde27bebac6efce87901e0f3e/assets">assets</a> 与 <a href="https://github.com/AliceJump/ok-end-field/tree/141e802be407467dde27bebac6efce87901e0f3e/ok_templates">ok_templates</a></p>
 <p>保留 <code>essence_*</code> 模板和 COCO 类别，用于后续重新组合 UI 检测流程；当前项目不再注册对应任务。</p>
 <hr>
 <h2 id="已移除内容">已移除内容</h2>
@@ -70,6 +70,6 @@
 <li>危险操作（上锁、解锁、弃置）必须单独加确认配置和日志，不应写入解析轮子。</li>
 </ol>
 <p>这样可以让解析能力复用于测试、离线分析、调试任务或未来的新 UI 流程。</p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/32cc731467837364d23c202f07b8db83b684466f/docs/dev/装备词条识别轮子.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#保留内容" style="margin-left:0px">保留内容</a><a href="#ocr-面板解析" style="margin-left:10px">OCR 面板解析</a><a href="#csv-规则匹配" style="margin-left:10px">CSV 规则匹配</a><a href="#模板资产" style="margin-left:10px">模板资产</a><a href="#已移除内容" style="margin-left:0px">已移除内容</a><a href="#后续复用建议" style="margin-left:0px">后续复用建议</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/141e802be407467dde27bebac6efce87901e0f3e/docs/dev/装备词条识别轮子.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月10日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#保留内容" style="margin-left:0px">保留内容</a><a href="#ocr-面板解析" style="margin-left:10px">OCR 面板解析</a><a href="#csv-规则匹配" style="margin-left:10px">CSV 规则匹配</a><a href="#模板资产" style="margin-left:10px">模板资产</a><a href="#已移除内容" style="margin-left:0px">已移除内容</a><a href="#后续复用建议" style="margin-left:0px">后续复用建议</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20260810101001" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20260810102210" defer></script></body></html>

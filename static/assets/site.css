@@ -134,6 +134,10 @@ h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(54px, 7vw, 108px)
 .download-split[data-downloading="true"] .download-main { opacity: .72; cursor: progress; pointer-events: none; }
 .download-split[data-downloading="true"] .download-main > span:last-child { animation: download-pulse .8s ease-in-out infinite alternate; }
 .download-split[data-downloading="true"] .download-toggle { opacity: .62; cursor: not-allowed; }
+.download-guide { position: fixed; z-index: 50; top: 18px; right: 18px; display: flex; align-items: center; gap: 10px; max-width: min(360px, calc(100vw - 36px)); padding: 13px 16px; border: 1px solid var(--border-strong); border-radius: 14px; background: color-mix(in srgb, var(--surface) 92%, var(--accent) 8%); box-shadow: 0 14px 38px rgba(0,0,0,.18); color: var(--text); font-size: 14px; font-weight: 700; opacity: 0; transform: translateY(-12px) scale(.96); transition: opacity .24s ease, transform .24s ease; pointer-events: none; }
+.download-guide.visible { opacity: 1; transform: translateY(0) scale(1); }
+.download-guide-arrow { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 22px; line-height: 1; animation: download-guide-bounce 1s ease-in-out infinite alternate; }
+@keyframes download-guide-bounce { from { transform: translate(0, 2px); } to { transform: translate(4px, -3px); } }
 .download-option[aria-disabled="true"] { opacity: .6; pointer-events: none; }
 @keyframes download-pulse { to { transform: translateY(3px); } }
 .download-alternatives { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 16px; color: var(--muted); font-size: 12px; }
