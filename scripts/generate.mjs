@@ -22,6 +22,8 @@ const copy = {
     skip: '跳到正文', navDocs: '文档', navProjects: '项目', navGithub: 'GitHub', theme: '切换明暗模式', menu: '打开菜单',
     frameworkEyebrow: '开源 · Python · 视觉自动化', frameworkTitle: '让游戏自动化，\n变得简单。',
     frameworkLead: '一个现代、纯 Python 的计算机视觉自动化框架。用几百行代码构建支持 Windows、模拟器与 ADB 的工业级自动化工具。',
+    onmyojiEyebrow: '阴阳师 · 后台自动化 · Windows', onmyojiTitle: '阴阳师的日常，\n交给 ok-Onmyoji。',
+    onmyojiLead: '基于图像识别的阴阳师自动化工具，支持后台运行、多开、定时任务与常用战斗、日常流程。',
     appEyebrow: '鸣潮 · 后台自动化 · Windows', appTitle: '重复的日常，\n交给 ok-ww。',
     appLead: '基于计算机视觉的鸣潮自动化工具。支持后台运行、智能角色识别与 4K 分辨率，不读取内存、不修改游戏文件。',
     nteEyebrow: '异环 · 后台自动化 · Windows', nteTitle: '探索海特洛市，\n日常交给 ok-nte。',
@@ -49,6 +51,8 @@ const copy = {
     skip: 'Skip to content', navDocs: 'Docs', navProjects: 'Projects', navGithub: 'GitHub', theme: 'Toggle color theme', menu: 'Open menu',
     frameworkEyebrow: 'Open source · Python · Visual automation', frameworkTitle: 'Game automation,\nmade approachable.',
     frameworkLead: 'A modern, pure-Python computer-vision automation framework. Build production-grade tools for Windows, emulators, and ADB with only a few hundred lines of code.',
+    onmyojiEyebrow: 'Onmyoji · Background automation · Windows', onmyojiTitle: 'Leave Onmyoji routines\nto ok-Onmyoji.',
+    onmyojiLead: 'Image-recognition automation for Onmyoji with background mode, multi-instance support, scheduling, and common battle and daily workflows.',
     appEyebrow: 'Wuthering Waves · Background automation · Windows', appTitle: 'Leave the routine\nto ok-ww.',
     appLead: 'Computer-vision automation for Wuthering Waves with background mode, intelligent character detection, and 4K support—without reading memory or changing game files.',
     nteEyebrow: 'Neverness to Everness · Background automation · Windows', nteTitle: 'Explore Hethereau.\nLeave the routine to ok-nte.',
@@ -75,6 +79,7 @@ const copy = {
   'zh-TW': {
     skip: '跳到正文', navDocs: '文件', navProjects: '專案', navGithub: 'GitHub', theme: '切換明暗模式', menu: '開啟選單',
     frameworkEyebrow: '開源 · Python · 視覺自動化', frameworkTitle: '讓遊戲自動化，\n變得簡單。', frameworkLead: '現代化的純 Python 圖像辨識自動化框架。',
+    onmyojiEyebrow: '陰陽師 · 背景自動化 · Windows', onmyojiTitle: '陰陽師的日常，\n交給 ok-Onmyoji。', onmyojiLead: '基於圖像辨識的陰陽師自動化工具，支援背景執行、多開、排程與常用戰鬥、日常流程。',
     appEyebrow: '鳴潮 · 背景自動化 · Windows', appTitle: '重複的日常，\n交給 ok-ww。', appLead: '基於電腦視覺的鳴潮自動化工具，支援背景執行、智慧角色辨識與 4K 解析度，不讀取記憶體、不修改遊戲檔案。',
     templateEyebrow: '專案範本 · Python · 視覺工具', templateTitle: '從可執行範本，\n開始自動化。', templateLead: '包含 GUI、任務範例、OCR、模板比對、測試與打包設定的完整 ok-script 應用範本。',
     getStarted: '開始使用', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
@@ -268,21 +273,33 @@ function extractReleaseMirrors(body = '') {
 
 function extractCommunity(markdown = '') {
   const links = [];
+  const joinAnswer = text => {
+    const match = text.match(/入群答案\s*[:：]\s*(?:`([^`]+)`|[“"']?([^\s，,；;。\)\]]+)[”"']?)/i);
+    return (match?.[1] || match?.[2])?.trim();
+  };
   const add = item => {
     const identity = item.value || item.url || item.label;
-    if (!links.some(existing => existing.type === item.type && (existing.value || existing.url || existing.label) === identity)) links.push(item);
+    const existing = links.find(link => link.type === item.type && (link.value || link.url || link.label) === identity);
+    if (existing) existing.joinAnswer ||= item.joinAnswer;
+    else links.push(item);
   };
   for (const [, label, url] of markdown.matchAll(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g)) {
     const developer = /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(label);
     if (/discord(?:\.gg|\.com\/invite)/i.test(url)) add({ type: 'discord', label: 'Discord', url });
     else if (/pd\.qq\.com/i.test(url)) add({ type: 'qq-channel', label: /频道|頻道/i.test(label) ? label : 'QQ Channel', url });
-    else if (/qm\.qq\.com/i.test(url)) add({ type: 'qq', label: label || 'QQ', value: label.match(/\d{6,12}/)?.[0], url, groupKind: developer ? 'developer' : 'user' });
+    else if (/qm\.qq\.com/i.test(url)) add({ type: 'qq', label: label || 'QQ', value: label.match(/\d{6,12}/)?.[0], url, groupKind: developer ? 'developer' : 'user', joinAnswer: joinAnswer(`${label} ${url}`) });
   }
+  let recentQq;
   for (const line of markdown.split(/\r?\n/)) {
-    if (!/(?:QQ|用户群|用戶群|交流群|開發者群|开发者群)/i.test(line)) continue;
+    const answer = joinAnswer(line);
+    if (!/(?:QQ|用户群|用戶群|交流群|開發者群|开发者群)/i.test(line)) {
+      if (answer && recentQq) recentQq.joinAnswer ||= answer;
+      continue;
+    }
     const developer = /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(line);
     for (const match of line.matchAll(/(?<!\d)(\d{6,12})(?!\d)/g)) {
-      add({ type: 'qq', label: `${developer ? '开发者群' : 'QQ'} ${match[1]}`, value: match[1], groupKind: developer ? 'developer' : 'user' });
+      add({ type: 'qq', label: `${developer ? '开发者群' : 'QQ'} ${match[1]}`, value: match[1], groupKind: developer ? 'developer' : 'user', joinAnswer: answer });
+      recentQq = links.find(link => link.type === 'qq' && link.value === match[1]);
     }
   }
   return links;
@@ -632,7 +649,7 @@ function communityLinks(links = [], label = '', compact = false, localeCode = 'e
     if (link.type === 'qq') {
       const number = link.value || (link.label || '').match(/\d{6,12}/)?.[0];
       const developer = link.groupKind === 'developer' || /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(link.label || '');
-      if (number) return `<button class="${className}" type="button" data-copy="${number}" aria-label="复制 QQ 群 ${number}" title="点击复制群号">${icon}<span>${developer ? '开发者群' : '群'}${number}</span></button>`;
+      if (number) return `<button class="${className}" type="button" data-copy="${number}" aria-label="复制 QQ 群 ${number}" title="点击复制群号">${icon}<span>${developer ? '开发者群' : '群'}${number}${link.joinAnswer ? ` 入群答案:${escapeHtml(link.joinAnswer)}` : ''}</span></button>`;
     }
     const content = `${icon}<span>${escapeHtml(link.label)}</span>`;
     return link.url ? `<a class="${className}" href="${escapeHtml(link.url)}">${content}</a>` : `<span class="${className}">${content}</span>`;
@@ -747,7 +764,7 @@ function documentShell({ title, description, project, locale, body, destination 
 function landingPage(project, locale, meta, faq = null) {
   const t = localeCopy(locale.code); const isFramework = project.type === 'framework';
   const currentUrl = landingUrl(project, locale);
-  const marketingKey = project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
+  const marketingKey = project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
   const localizedMarketing = key => t[key] || (locale.autoTranslated ? simplifiedToTraditional(copy['zh-CN'][key]) : copy.en[key]);
   const eyebrow = localizedMarketing(`${marketingKey}Eyebrow`);
   const [titleA, titleB] = localizedMarketing(`${marketingKey}Title`).split('\n');
