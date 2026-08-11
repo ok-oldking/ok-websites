@@ -806,13 +806,17 @@ function landingPage(project, locale, meta, faq = null) {
     : `${downloadControl}<a class="button" href="${docsUrl}">${t.readDocs}</a>${sourceButton}`;
   const mirrorLinks = !isFramework && locale.code === 'zh-CN' && meta.mirrors?.length
     ? `<div class="download-alternatives"><span>${t.githubUnavailable}</span>${meta.mirrors.map(link => `<a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join('')}</div>` : '';
+  const singleLineHero = locale.code === 'zh-CN' || locale.code === 'zh-TW';
+  const heroTitle = singleLineHero
+    ? `<h1 class="hero-title-single"><span>${escapeHtml(titleA)}</span><span class="gradient-text">${escapeHtml(titleB)}</span></h1>`
+    : `<h1><span class="title-line">${escapeHtml(titleA)}</span><span class="title-line gradient-text">${escapeHtml(titleB)}</span></h1>`;
   const projectsSection = isFramework ? `<section class="section" id="projects"><div class="container landing-container"><div class="section-head compact"><div class="section-kicker">${t.projectsKicker}</div><p>${t.projectsLead}</p></div><div class="project-grid">${related}</div></div></section>` : '';
   const faqSection = faq ? `<section class="section faq-section"><div class="container landing-container"><div class="section-head compact"><h2>${t.faqKicker}</h2></div><div class="faq-content markdown-body">${faq.html}</div></div></section>` : '';
   const capabilitiesSection = `<section class="section section-muted"><div class="container landing-container"><div class="feature-grid">${featureSet.map(f => `<article class="feature-card"><div class="feature-icon">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></article>`).join('')}</div></div></section>`;
   const ctaSection = isFramework ? `<section class="section"><div class="container"><div class="cta"><div><h2>${t.ctaTitle}</h2><p>${t.ctaLead}</p></div><a class="button" href="${primaryUrl}">${t.ctaButton} →</a></div></div></section>` : '';
   const community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
   const body = `<main id="main">
-  <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div><h1><span class="title-line">${escapeHtml(titleA)}</span><span class="title-line gradient-text">${escapeHtml(titleB)}</span></h1><p class="hero-copy">${lead}</p>
+  <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div>${heroTitle}<p class="hero-copy">${lead}</p>
   <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
   ${capabilitiesSection}${projectsSection}${faqSection}${ctaSection}</main>`;
   const title = `${project.name} — ${titleA.replace(/[，,.。]/g,'')}`;
