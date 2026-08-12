@@ -36,14 +36,14 @@ const copy = {
     endLead: '基于图像识别的《明日方舟：终末地》自动化工具，支持后台运行，不读取游戏内存、不修改游戏文件。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
-    getStarted: '开始使用', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
+    getStarted: '开始开发', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
     githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区',
     faqKicker: '常见问题',
     stars: 'GitHub Stars', release: '最新版本', updated: '代码更新', online: '开源可用',
     capabilities: '核心能力', capabilitiesTitle: '为真实自动化场景而生', capabilitiesLead: '从图像感知到输入执行，从开发调试到持续发布，一套工具覆盖完整工作流。',
     projectsKicker: '项目', projectsTitle: '一个框架，多个项目', projectsLead: '每个项目拥有独立入口与自己的多语言文档，同时共享一致、清晰的使用体验。',
     explore: '访问项目 →', active: '活跃', community: '社区', archived: '归档',
-    ctaTitle: '从模板开始，构建你的自动化项目。', ctaLead: '阅读快速开始文档，连接 Windows 窗口或 ADB 设备，运行第一个计算机视觉任务。', ctaButton: '打开快速开始',
+    ctaTitle: '从模板开始，构建你的自动化项目。', ctaLead: '阅读快速开始文档，连接 Windows 窗口或 ADB 设备，运行第一个计算机视觉任务。', ctaButton: '开始开发',
     docsFor: '文档目录', onPage: '本页内容', editGithub: '在 GitHub 查看源文件', lastGenerated: '页面生成时间',
     footer: '以 AGPL-3.0 协议开源。文档由项目源码自动生成。', allProjects: '全部项目'
   },
@@ -65,14 +65,14 @@ const copy = {
     endLead: 'Image-recognition automation for Arknights: Endfield with background operation, without reading game memory or modifying game files.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
-    getStarted: 'Get started', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
+    getStarted: 'Start Developing', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
     githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community',
     faqKicker: 'FAQ',
     stars: 'GitHub stars', release: 'Latest release', updated: 'Code updated', online: 'Open source',
     capabilities: 'Capabilities', capabilitiesTitle: 'Made for real automation work', capabilitiesLead: 'From visual perception to input, development diagnostics to continuous releases—the complete workflow in one toolkit.',
     projectsKicker: 'Projects', projectsTitle: 'One framework, many projects', projectsLead: 'Each project gets its own home and multilingual documentation while sharing one consistent, focused experience.',
     explore: 'Explore project →', active: 'Active', community: 'Community', archived: 'Archived',
-    ctaTitle: 'Start with the template. Build your own automation.', ctaLead: 'Follow the quick start, connect a Windows window or ADB device, and run your first computer vision task.', ctaButton: 'Open quick start',
+    ctaTitle: 'Start with the template. Build your own automation.', ctaLead: 'Follow the quick start, connect a Windows window or ADB device, and run your first computer vision task.', ctaButton: 'Start Developing',
     docsFor: 'Documentation', onPage: 'On this page', editGithub: 'View source on GitHub', lastGenerated: 'Page generated',
     footer: 'Open source under AGPL-3.0. Documentation is generated from project sources.', allProjects: 'All projects'
   },
@@ -82,9 +82,9 @@ const copy = {
     onmyojiEyebrow: '陰陽師 · 背景自動化 · Windows', onmyojiTitle: '陰陽師的日常，\n交給 ok-Onmyoji。', onmyojiLead: '基於圖像辨識的陰陽師自動化工具，支援背景執行、多開、排程與常用戰鬥、日常流程。',
     appEyebrow: '鳴潮 · 背景自動化 · Windows', appTitle: '重複的日常，\n交給 ok-ww。', appLead: '基於電腦視覺的鳴潮自動化工具，支援背景執行、智慧角色辨識與 4K 解析度，不讀取記憶體、不修改遊戲檔案。',
     templateEyebrow: '專案範本 · Python · 視覺工具', templateTitle: '從可執行範本，\n開始自動化。', templateLead: '包含 GUI、任務範例、OCR、模板比對、測試與打包設定的完整 ok-script 應用範本。',
-    getStarted: '開始使用', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
+    getStarted: '開始開發', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
     capabilities: '核心能力', capabilitiesTitle: '為實際自動化場景而生', capabilitiesLead: '完整涵蓋辨識、執行與日常使用。', projectsKicker: '專案', projectsTitle: '一個框架，多個專案', projectsLead: '每個專案都有獨立入口與多語言文件。',
-    explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '立即下載，簡化你的每日流程。', ctaLead: '閱讀使用說明並確認風險提示後開始使用。', ctaButton: '開啟快速開始',
+    explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '立即下載，簡化你的每日流程。', ctaLead: '閱讀使用說明並確認風險提示後開始使用。', ctaButton: '開始開發',
     docsFor: '文件目錄', onPage: '本頁內容', editGithub: '在 GitHub 查看來源', lastGenerated: '頁面產生時間', footer: '以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。', allProjects: '全部專案'
   },
   ja: {
@@ -92,9 +92,9 @@ const copy = {
     frameworkEyebrow: 'オープンソース · Python · 画像認識', frameworkTitle: 'ゲーム自動化を、\nもっと身近に。', frameworkLead: '純 Python の画像認識自動化フレームワーク。',
     appEyebrow: '鳴潮 · バックグラウンド自動化 · Windows', appTitle: '毎日のルーティンは、\nok-ww に。', appLead: 'コンピュータービジョンを活用した鳴潮自動化ツール。バックグラウンド動作、キャラクター自動認識、4K 解像度に対応し、メモリ読み取りやゲームファイルの変更は行いません。',
     templateEyebrow: 'プロジェクトテンプレート · Python · ビジュアルツール', templateTitle: '動くテンプレートから、\n自動化を始めよう。', templateLead: 'GUI、タスク例、OCR、テンプレートマッチング、テスト、配布設定を含む ok-script アプリテンプレート。',
-    getStarted: 'はじめる', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
+    getStarted: '開発を始める', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
     capabilities: '主な機能', capabilitiesTitle: '実用的な自動化のために', capabilitiesLead: '認識から操作、日常の実行までを一つのツールで。', projectsKicker: 'プロジェクト', projectsTitle: '一つの基盤、多彩なプロジェクト', projectsLead: 'プロジェクトごとに独立した入口と多言語ドキュメントを提供します。',
-    explore: 'プロジェクトへ →', active: '開発中', community: 'コミュニティ', archived: 'アーカイブ', ctaTitle: '最新版をダウンロードして始めましょう。', ctaLead: '説明とリスクに関する注意事項を確認してからご利用ください。', ctaButton: 'クイックスタート',
+    explore: 'プロジェクトへ →', active: '開発中', community: 'コミュニティ', archived: 'アーカイブ', ctaTitle: '最新版をダウンロードして始めましょう。', ctaLead: '説明とリスクに関する注意事項を確認してからご利用ください。', ctaButton: '開発を始める',
     docsFor: 'ドキュメント', onPage: 'このページ', editGithub: 'GitHub でソースを見る', lastGenerated: 'ページ生成日時', footer: 'AGPL-3.0 でオープンソース。ドキュメントはプロジェクトソースから自動生成されます。', allProjects: '全プロジェクト'
   }
 };
