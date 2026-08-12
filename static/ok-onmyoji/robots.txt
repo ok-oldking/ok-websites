@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ok-script.com/ok-onmyoji/sitemap.xml

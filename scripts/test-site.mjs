@@ -39,8 +39,10 @@ for (const file of htmlFiles) {
   if (!/<html lang="[^"]+"/.test(html)) failures.push(`Missing language: ${path.relative(root, file)}`);
   if (!/<meta name="description"/.test(html)) failures.push(`Missing description: ${path.relative(root, file)}`);
   if (!/<meta name="robots" content="index,follow/.test(html) || !/<meta name="keywords"/.test(html)) failures.push(`Missing search metadata: ${path.relative(root, file)}`);
-  if (!/<meta property="og:site_name"/.test(html) || !/<meta name="twitter:card" content="summary"/.test(html)) failures.push(`Missing social metadata: ${path.relative(root, file)}`);
-  if (/<meta (?:property="og:image|name="twitter:image)/.test(html)) failures.push(`Share image metadata is still present: ${path.relative(root, file)}`);
+  if (!/<meta property="og:site_name"/.test(html) || !/<meta name="twitter:card" content="summary_large_image"/.test(html)) failures.push(`Missing social metadata: ${path.relative(root, file)}`);
+  const socialImage = html.match(/<meta property="og:image" content="https?:\/\/[^"/]+(\/assets\/social\/[^"?#]+\.png)"/)?.[1];
+  if (!socialImage || !/<meta name="twitter:image"/.test(html) || !/og:image:width" content="1200"/.test(html)) failures.push(`Missing share image metadata: ${path.relative(root, file)}`);
+  else await fs.access(path.join(root, socialImage.replace(/^\//, ''))).catch(() => failures.push(`Missing share image file: ${socialImage}`));
   const structuredData = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
   if (!structuredData) failures.push(`Missing structured data: ${path.relative(root, file)}`);
   else { try { JSON.parse(structuredData); } catch { failures.push(`Invalid structured data: ${path.relative(root, file)}`); } }
@@ -54,6 +56,14 @@ for (const file of htmlFiles) {
 
 const rootLanding = await fs.readFile(path.join(root, 'en', 'index.html'), 'utf8');
 const rootChinese = await fs.readFile(path.join(root, 'index.html'), 'utf8');
+const rootTraditional = await fs.readFile(path.join(root, 'zh-TW', 'index.html'), 'utf8');
+const rootKeywords = rootLanding.match(/name="keywords" content="([^"]*)"/)?.[1] || '';
+if (!/okscript/i.test(rootKeywords) || !/okww/i.test(rootKeywords) || !/Wuthering Waves/i.test(rootKeywords) || !/GitHub/i.test(rootKeywords)) failures.push('Root SEO keywords do not include compact aliases, projects, game names, and GitHub.');
+if (!/name="description" content="[^"]*ok-ww[^"]*ok-nte[^"]*ok-end-field/.test(rootLanding)) failures.push('Root search description does not list the project ecosystem.');
+if (!/"@type":"ItemList"/.test(rootLanding) || !/"alternateName":"okww"/.test(rootLanding)) failures.push('Root structured data does not expose the project catalog and compact aliases.');
+if (!/<h3><span>ok-ww<\/span><span class="project-game">— Wuthering Waves<\/span><\/h3>/.test(rootLanding)) failures.push('English project cards do not pair project and game names.');
+if (!/<h3><span>ok-ww<\/span><span class="project-game">— 鸣潮<\/span><\/h3>/.test(rootChinese)) failures.push('Simplified Chinese project cards do not localize game names.');
+if (!/<h3><span>ok-ww<\/span><span class="project-game">— 鳴潮<\/span><\/h3>/.test(rootTraditional)) failures.push('Traditional Chinese project cards do not localize game names.');
 if (/One framework, many projects|Made for real automation work/.test(rootLanding)) failures.push('Removed section subtitles are still present.');
 if (/Latest release<\/small><b>source<\/b>/i.test(rootLanding)) failures.push('Framework release still shows source instead of a version.');
 if (!/href="https:\/\/pypi\.org\/project\/ok-script\/"/.test(rootLanding) || !/pip install ok-script==[^<\s]+<\/code>/.test(rootLanding)) failures.push('ok-script PyPI installation link is missing its latest version.');
@@ -79,6 +89,8 @@ if (!/class="project-top-meta">\s*<a class="project-stars" href="https:\/\/githu
 if (!/class="community-stars" href="https:\/\/github\.com\/ok-oldking\/ok-script"/.test(rootLanding) || /class="community-stars" href="[^"]*\/stargazers"/.test(rootLanding)) failures.push('Hero GitHub Stars do not link to the repository.');
 if (/<a\b[^>]*href="https:\/\/(?:ok-script\.com|ok-ww\.ok-script\.com|app\.ok-script\.com)/i.test(rootLanding)) failures.push('Root landing page still contains domain-based internal navigation.');
 const wwLanding = await fs.readFile(path.join(root, 'ok-ww', 'index.html'), 'utf8');
+const wwKeywords = wwLanding.match(/name="keywords" content="([^"]*)"/)?.[1] || '';
+if (!/okww/i.test(wwKeywords) || !/鸣潮/.test(wwKeywords) || !/GitHub/i.test(wwKeywords)) failures.push('ok-ww SEO keywords do not include its compact alias, localized game name, and GitHub.');
 if (!wwLanding.includes('https://ok-ww.ok-script.com/')) failures.push('ok-ww canonical domain is missing.');
 if (!wwLanding.includes('大陆版') || wwLanding.includes('中国版')) failures.push('Mainland download label is incorrect.');
 if (!wwLanding.includes('faq-section') || wwLanding.indexOf('section-muted') > wwLanding.indexOf('faq-section')) failures.push('FAQ is missing or appears before capabilities.');
@@ -142,6 +154,10 @@ if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflo
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
 const js = await fs.readFile(path.join(root, 'assets', 'site.js'), 'utf8');
 const generatedHtml = await Promise.all(htmlFiles.map(file => fs.readFile(file, 'utf8')));
+const generatedTitles = generatedHtml.map(html => html.match(/<title>(.*?)<\/title>/)?.[1]).filter(Boolean);
+const generatedDescriptions = generatedHtml.map(html => html.match(/<meta name="description" content="([^"]*)"/)?.[1]).filter(Boolean);
+if (new Set(generatedTitles).size !== generatedTitles.length) failures.push('Generated pages contain duplicate SEO titles.');
+if (new Set(generatedDescriptions).size !== generatedDescriptions.length) failures.push('Generated pages contain duplicate SEO descriptions.');
 if (/fonts\.(?:googleapis|gstatic)\.com|@import\s+url\(/i.test(css) || generatedHtml.some(html => /fonts\.(?:googleapis|gstatic)\.com/i.test(html))) failures.push('Generated site still depends on remote font files.');
 if (!/--font-sans:\s*system-ui/.test(css) || !/--font-mono:\s*ui-monospace/.test(css)) failures.push('System font stacks are missing.');
 const projectIconFiles = (await fs.readdir(path.join(root, 'assets', 'project-icons'))).filter(file => file.endsWith('.png'));

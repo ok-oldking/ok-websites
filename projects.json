@@ -234,10 +234,10 @@
     }
   ],
   "relatedProjects": [
-    { "name": "ok-Onmyoji", "description": { "zh-CN": "阴阳师后台自动化战斗、日常与定时任务", "en": "Onmyoji background automation for battles, daily routines, and scheduling" }, "url": "https://ok-script.com/ok-onmyoji/", "github": "YunLiuZ/ok-Onmyoji", "status": "active", "stars": 8, "communityLinks": [
+    { "name": "ok-Onmyoji", "gameName": { "zh-CN": "阴阳师", "zh-TW": "陰陽師", "en": "Onmyoji" }, "description": { "zh-CN": "阴阳师后台自动化战斗、日常与定时任务", "en": "Onmyoji background automation for battles, daily routines, and scheduling" }, "url": "https://ok-script.com/ok-onmyoji/", "github": "YunLiuZ/ok-Onmyoji", "status": "active", "stars": 8, "communityLinks": [
       { "type": "qq", "label": "QQ 938132715", "value": "938132715", "joinAnswer": "老王同学OK" }
     ] },
-    { "name": "ok-ww", "description": { "zh-CN": "鸣潮后台自动战斗、自动刷声骸与一键日常", "en": "Background combat, Echo farming, and one-click daily automation for Wuthering Waves" }, "url": "https://ok-ww.ok-script.com/", "github": "ok-oldking/ok-wuthering-waves", "status": "active", "stars": 6971, "communityLinks": [
+    { "name": "ok-ww", "gameName": { "zh-CN": "鸣潮", "zh-TW": "鳴潮", "en": "Wuthering Waves" }, "description": { "zh-CN": "鸣潮后台自动战斗、自动刷声骸与一键日常", "en": "Background combat, Echo farming, and one-click daily automation for Wuthering Waves" }, "url": "https://ok-ww.ok-script.com/", "github": "ok-oldking/ok-wuthering-waves", "status": "active", "stars": 6971, "communityLinks": [
       { "type": "qq", "label": "QQ 1035795301", "value": "1035795301" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
@@ -246,31 +246,31 @@
       { "type": "qq", "label": "QQ 1097603920", "value": "1097603920" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-gf2", "description": { "zh-CN": "少女前线 2：追放 PC 版后台一键日常自动化", "en": "Background, one-click daily automation for Girls' Frontline 2: Exilium on PC" }, "url": "https://github.com/ok-oldking/ok-gf2", "github": "ok-oldking/ok-gf2", "status": "active", "stars": 257, "communityLinks": [
+    { "name": "ok-gf2", "gameName": { "zh-CN": "少女前线2：追放", "zh-TW": "少女前線2：追放", "en": "Girls' Frontline 2: Exilium" }, "description": { "zh-CN": "少女前线 2：追放 PC 版后台一键日常自动化", "en": "Background, one-click daily automation for Girls' Frontline 2: Exilium on PC" }, "url": "https://github.com/ok-oldking/ok-gf2", "github": "ok-oldking/ok-gf2", "status": "active", "stars": 257, "communityLinks": [
       { "type": "qq", "label": "QQ 1033950808", "value": "1033950808" }
     ] },
-    { "name": "ok-starrailassistant", "description": { "zh-CN": "支持 PC 后台运行的崩坏：星穹铁道自动化助手", "en": "A Honkai: Star Rail automation assistant for PC with background operation" }, "url": "https://github.com/Shasnow/ok-starrailassistant", "github": "Shasnow/ok-starrailassistant", "status": "community", "stars": 56 },
-    { "name": "ok-star-resonance", "description": { "zh-CN": "基于 ok-script 的星痕共鸣自动化工具", "en": "A Star Resonance automation tool built with ok-script" }, "url": "https://github.com/Sanheiii/ok-star-resonance", "github": "Sanheiii/ok-star-resonance", "status": "community", "stars": 114 },
-    { "name": "ok-kes", "description": { "zh-CN": "卡厄思梦境自动出击、自动卡厄思与半自动剧情工具", "en": "Automation for Chaos Zero Nightmare sorties, Chaos Mode, and story progression" }, "url": "https://github.com/baoxin1100/ok-kes", "github": "baoxin1100/ok-kes", "status": "community", "stars": 81, "communityLinks": [
+    { "name": "ok-starrailassistant", "gameName": { "zh-CN": "崩坏：星穹铁道", "zh-TW": "崩壞：星穹鐵道", "en": "Honkai: Star Rail" }, "description": { "zh-CN": "支持 PC 后台运行的崩坏：星穹铁道自动化助手", "en": "A Honkai: Star Rail automation assistant for PC with background operation" }, "url": "https://github.com/Shasnow/ok-starrailassistant", "github": "Shasnow/ok-starrailassistant", "status": "community", "stars": 56 },
+    { "name": "ok-star-resonance", "gameName": { "zh-CN": "星痕共鸣", "zh-TW": "星痕共鳴", "en": "Star Resonance" }, "description": { "zh-CN": "基于 ok-script 的星痕共鸣自动化工具", "en": "A Star Resonance automation tool built with ok-script" }, "url": "https://github.com/Sanheiii/ok-star-resonance", "github": "Sanheiii/ok-star-resonance", "status": "community", "stars": 114 },
+    { "name": "ok-kes", "gameName": { "zh-CN": "卡厄思梦境", "zh-TW": "卡厄思夢境", "en": "Chaos Zero Nightmare" }, "description": { "zh-CN": "卡厄思梦境自动出击、自动卡厄思与半自动剧情工具", "en": "Automation for Chaos Zero Nightmare sorties, Chaos Mode, and story progression" }, "url": "https://github.com/baoxin1100/ok-kes", "github": "baoxin1100/ok-kes", "status": "community", "stars": 81, "communityLinks": [
       { "type": "qq", "label": "QQ 901988096", "value": "901988096" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/eopggnxcu" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-duet-night-abyss", "description": { "zh-CN": "二重螺旋后台副本挂机自动化", "en": "Background dungeon farming automation for Duet Night Abyss" }, "url": "https://github.com/BnanZ0/ok-duet-night-abyss", "github": "BnanZ0/ok-duet-night-abyss", "status": "community", "stars": 656, "communityLinks": [
+    { "name": "ok-duet-night-abyss", "gameName": { "zh-CN": "二重螺旋", "zh-TW": "二重螺旋", "en": "Duet Night Abyss" }, "description": { "zh-CN": "二重螺旋后台副本挂机自动化", "en": "Background dungeon farming automation for Duet Night Abyss" }, "url": "https://github.com/BnanZ0/ok-duet-night-abyss", "github": "BnanZ0/ok-duet-night-abyss", "status": "community", "stars": 656, "communityLinks": [
       { "type": "qq", "label": "QQ 1063846003", "value": "1063846003" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-end-field", "description": { "zh-CN": "基于 ok-script 开发的明日方舟：终末地自动化", "en": "Arknights: Endfield automation built with ok-script" }, "url": "https://github.com/AliceJump/ok-end-field", "github": "AliceJump/ok-end-field", "status": "community", "stars": 530, "communityLinks": [
+    { "name": "ok-end-field", "gameName": { "zh-CN": "明日方舟：终末地", "zh-TW": "明日方舟：終末地", "en": "Arknights: Endfield" }, "description": { "zh-CN": "基于 ok-script 开发的明日方舟：终末地自动化", "en": "Arknights: Endfield automation built with ok-script" }, "url": "https://github.com/AliceJump/ok-end-field", "github": "AliceJump/ok-end-field", "status": "community", "stars": 530, "communityLinks": [
       { "type": "qq", "label": "QQ 940581952", "value": "940581952" },
       { "type": "qq", "label": "QQ 1079581542", "value": "1079581542" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" }
     ] },
-    { "name": "ok-nte", "description": { "zh-CN": "异环后台副本挂机自动化", "en": "Background dungeon farming automation for Neverness to Everness" }, "url": "https://github.com/BnanZ0/ok-nte", "github": "BnanZ0/ok-nte", "status": "community", "stars": 1097, "communityLinks": [
+    { "name": "ok-nte", "gameName": { "zh-CN": "异环", "zh-TW": "異環", "en": "Neverness to Everness" }, "description": { "zh-CN": "异环后台副本挂机自动化", "en": "Background dungeon farming automation for Neverness to Everness" }, "url": "https://github.com/BnanZ0/ok-nte", "github": "BnanZ0/ok-nte", "status": "community", "stars": 1097, "communityLinks": [
       { "type": "qq", "label": "QQ 1105569444", "url": "https://qm.qq.com/q/bIiSLoUTVS" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-genshin-impact", "description": { "zh-CN": "原神自动拾取、后台剧情与后台一条龙自动化", "en": "Genshin Impact automation for auto-loot, background story, and daily routines" }, "url": "https://github.com/ok-oldking/ok-genshin-impact", "github": "ok-oldking/ok-genshin-impact", "status": "archived", "stars": 250 }
+    { "name": "ok-genshin-impact", "gameName": { "zh-CN": "原神", "zh-TW": "原神", "en": "Genshin Impact" }, "description": { "zh-CN": "原神自动拾取、后台剧情与后台一条龙自动化", "en": "Genshin Impact automation for auto-loot, background story, and daily routines" }, "url": "https://github.com/ok-oldking/ok-genshin-impact", "github": "ok-oldking/ok-genshin-impact", "status": "archived", "stars": 250 }
   ]
 }

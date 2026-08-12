@@ -157,6 +157,21 @@ function addAutomaticTraditionalLocale(locales) {
   return [...locales, { ...simplified, code: 'zh-TW', label: '繁體中文', generatedFrom: simplified.code, autoTranslated: true }];
 }
 function escapeHtml(value = '') { return String(value).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function uniqueTerms(values) {
+  const seen = new Set();
+  return values.flat(Infinity).map(value => String(value || '').trim()).filter(value => {
+    const key = value.toLocaleLowerCase();
+    if (!value || seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+}
+function compactAlias(value = '') { return String(value).replace(/[^\p{L}\p{N}]+/gu, ''); }
+function localeSearchTerms(locale) {
+  if (locale.code === 'zh-CN') return ['游戏自动化', '电脑视觉', '计算机视觉', '开源软件', 'Windows 自动化'];
+  if (locale.code === 'zh-TW') return ['遊戲自動化', '電腦視覺', '圖像辨識', '開源軟體', 'Windows 自動化'];
+  if (locale.code === 'ja') return ['ゲーム自動化', 'コンピュータービジョン', '画像認識', 'オープンソース', 'Windows 自動化'];
+  return ['game automation', 'computer vision', 'open source', 'Python automation', 'Windows automation'];
+}
 function posix(value) { return value.split(path.sep).join('/'); }
 function cleanSlug(value) { return value.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, '').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '') || 'section'; }
 function formatDate(iso, locale) { try { return new Intl.DateTimeFormat(locale, { year:'numeric', month:'short', day:'numeric' }).format(new Date(iso)); } catch { return iso?.slice(0,10) || '—'; } }
@@ -697,6 +712,96 @@ async function faqFromMarkdown(project, locale) {
   return { title: heading[2].replace(/^[^\p{L}\p{N}]+/u, '').trim(), html: rendered.html };
 }
 
+function marketingContent(project, locale) {
+  const t = localeCopy(locale.code);
+  const isFramework = project.type === 'framework';
+  const key = project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
+  const localized = name => t[name] || (locale.autoTranslated ? simplifiedToTraditional(copy['zh-CN'][name]) : copy.en[name]);
+  const [titleA, titleB] = localized(`${key}Title`).split('\n');
+  return { key, eyebrow: localized(`${key}Eyebrow`), titleA, titleB, lead: localized(`${key}Lead`) };
+}
+
+function localizedRelatedDescription(item, locale) {
+  return item.description[locale.code]
+    || (locale.autoTranslated && item.description[locale.generatedFrom] ? simplifiedToTraditional(item.description[locale.generatedFrom]) : item.description.en)
+    || Object.values(item.description)[0]
+    || '';
+}
+
+function localizedGameName(item, locale) {
+  if (!item.gameName) return '';
+  return item.gameName[locale.code]
+    || (locale.autoTranslated && item.gameName[locale.generatedFrom] ? simplifiedToTraditional(item.gameName[locale.generatedFrom]) : item.gameName.en)
+    || Object.values(item.gameName)[0]
+    || '';
+}
+
+function rootSeoDescription(project, locale, lead) {
+  if (project.type !== 'framework') return lead;
+  if (locale.code === 'zh-CN') return 'ok-script 是纯 Python 计算机视觉自动化框架，并汇集 ok-ww、ok-nte、ok-end-field、ok-kes、ok-script-app 等开源项目。';
+  if (locale.code === 'zh-TW') return 'ok-script 是純 Python 圖像辨識自動化框架，並匯集 ok-ww、ok-nte、ok-end-field、ok-kes、ok-script-app 等開源專案。';
+  if (locale.code === 'ja') return 'ok-script は純 Python の画像認識自動化基盤です。ok-ww、ok-nte、ok-end-field、ok-kes、ok-script-app などのプロジェクトを掲載しています。';
+  return 'ok-script is a pure-Python computer-vision automation framework. Explore ok-ww, ok-nte, ok-end-field, ok-kes, ok-script-app, and more.';
+}
+
+function seoKeywords(project, locale, destination) {
+  const marketing = marketingContent(project, locale);
+  const repository = project.github.split('/').at(-1);
+  const terms = [
+    project.name, compactAlias(project.name), project.id, compactAlias(project.id),
+    'GitHub', project.github, project.github.split('/')[0], repository, compactAlias(repository),
+    marketing.eyebrow.split('·'), localeSearchTerms(locale), destination === 'docs' ? ['documentation', localeCopy(locale.code).navDocs] : []
+  ];
+  if (project.type === 'framework') {
+    for (const item of config.relatedProjects) {
+      terms.push(item.name, compactAlias(item.name), localizedGameName(item, locale), item.github, item.github.split('/').at(-1), compactAlias(item.github.split('/').at(-1)), localizedRelatedDescription(item, locale));
+    }
+  }
+  return uniqueTerms(terms).join(', ');
+}
+
+function plainTextSummary(markdown, fallback, project, locale) {
+  const cleaned = markdown
+    .replace(/^---[\s\S]*?---\s*/m, '')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/^\s{0,3}#{1,6}\s+.*$/gm, ' ')
+    .replace(/^\s*(?:[-*+]|\d+\.)\s+/gm, '')
+    .replace(/[`*_>|~]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const base = cleaned || fallback;
+  const docsLabel = locale.code === 'zh-CN' ? `${project.name} ${locale.label}文档`
+    : locale.code === 'zh-TW' ? `${project.name} ${locale.label}文件`
+      : locale.code === 'ja' ? `${project.name} ${locale.label}ドキュメント`
+        : `${project.name} ${locale.label} documentation`;
+  const suffix = ` — ${docsLabel}`;
+  const limit = locale.code.startsWith('zh') || locale.code === 'ja' ? 78 : 155;
+  return `${base.slice(0, Math.max(1, limit - suffix.length)).trim()}${suffix}`;
+}
+
+async function saveSocialImage(project, locale) {
+  const marketing = marketingContent(project, locale);
+  const fileName = `${project.id}-${locale.code.toLowerCase()}.png`;
+  const folder = path.join(staticDir, 'assets', 'social');
+  const output = path.join(folder, fileName);
+  await fs.mkdir(folder, { recursive: true });
+  const subtitle = marketing.eyebrow.replace(/\s*·\s*/g, '  •  ');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="0.55" stop-color="#172554"/><stop offset="1" stop-color="#0f766e"/></linearGradient><linearGradient id="line"><stop stop-color="#67e8f9"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+    <rect width="1200" height="630" fill="url(#bg)"/><circle cx="1080" cy="80" r="260" fill="#ffffff" opacity=".035"/><circle cx="1040" cy="590" r="340" fill="#22d3ee" opacity=".045"/>
+    <rect x="74" y="76" width="12" height="478" rx="6" fill="url(#line)"/>
+    <text x="126" y="250" fill="#f8fafc" font-family="Arial, 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif" font-size="78" font-weight="700">${escapeHtml(project.name)}</text>
+    <text x="128" y="332" fill="#a5f3fc" font-family="Arial, 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif" font-size="32">${escapeHtml(subtitle)}</text>
+    <text x="128" y="504" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="28">${escapeHtml(project.github)}  ·  GitHub</text>
+    <text x="1072" y="516" text-anchor="end" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="30" font-weight="700">OK</text>
+  </svg>`;
+  await sharp(Buffer.from(svg)).png({ quality: 90, compressionLevel: 9 }).toFile(output);
+  return `${new URL(projectOrigin(project)).origin}/assets/social/${fileName}`;
+}
+
 function header(project, locale, destination = 'landing', currentUrl = landingUrl(project, locale)) {
   const t = localeCopy(locale.code);
   const docs = relativeSiteUrl(project, currentUrl, project, `${docRoot(project, locale)}/`);
@@ -735,8 +840,9 @@ function documentShell({ title, description, project, locale, body, destination 
   const languageRouting = destination === 'landing' && currentUrl === landingUrl(project, project.locales.find(item => item.code === 'zh-CN') || project.locales[0]) && project.locales.length > 1
     ? `<script data-language-routing>(()=>{try{const routes=${JSON.stringify(languageRoutes).replace(/</g, '\\u003c')};const available=Object.keys(routes);const select=raw=>{const value=String(raw||'').toLowerCase();if(!value)return null;const exact=available.find(code=>code.toLowerCase()===value);if(exact)return exact;if(value.startsWith('zh-')&&/(?:hant|tw|hk|mo)/.test(value)){const traditional=available.find(code=>code.toLowerCase()==='zh-tw');if(traditional)return traditional;}if(value.startsWith('zh')){const simplified=available.find(code=>code.toLowerCase()==='zh-cn');if(simplified)return simplified;}const base=value.split('-')[0];return available.find(code=>code.toLowerCase().split('-')[0]===base)||null};const saved=localStorage.getItem('ok-language');const requested=saved?[saved]:Array.from(navigator.languages||[navigator.language]);const selected=requested.map(select).find(Boolean)||select('${escapeHtml(config.site.defaultLocale)}')||available[0];if(selected&&selected!=='${escapeHtml(locale.code)}')location.replace(routes[selected])}catch{}})();</script>`
     : '';
-  const keywords = [project.name, 'ok-script', destination === 'docs' ? 'documentation' : 'game automation', 'computer vision', 'Python', 'Windows'].join(', ');
-  const structuredData = JSON.stringify(destination === 'docs' ? {
+  const keywords = seoKeywords(project, locale, destination);
+  const socialImage = project.state.socialImages?.[locale.code] || project.state.socialImages?.en || Object.values(project.state.socialImages || {})[0];
+  const pageStructuredData = destination === 'docs' ? {
     '@context': 'https://schema.org', '@type': 'TechArticle', headline: title, description, url: canonical,
     inLanguage: locale.code, dateModified: project.state.updated, author: { '@type': 'Organization', name: project.name, url: `https://github.com/${project.github}` },
     isPartOf: { '@type': 'WebSite', name: config.site.name, url: config.site.url }
@@ -745,13 +851,23 @@ function documentShell({ title, description, project, locale, body, destination 
     inLanguage: locale.code, applicationCategory: 'UtilitiesApplication', operatingSystem: 'Windows',
     codeRepository: `https://github.com/${project.github}`, dateModified: project.state.updated,
     author: { '@type': 'Organization', name: project.github.split('/')[0], url: `https://github.com/${project.github.split('/')[0]}` }
-  }).replace(/</g, '\\u003c');
+  };
+  const structuredDataValue = destination === 'landing' && project.type === 'framework' ? {
+    '@context': 'https://schema.org', '@graph': [pageStructuredData, {
+      '@type': 'ItemList', name: localeCopy(locale.code).projectsKicker,
+      itemListElement: config.relatedProjects.map((item, index) => ({
+        '@type': 'ListItem', position: index + 1,
+        item: { '@type': 'SoftwareApplication', name: localizedGameName(item, locale) ? `${item.name} — ${localizedGameName(item, locale)}` : item.name, alternateName: compactAlias(item.name), description: localizedRelatedDescription(item, locale), url: item.url, codeRepository: `https://github.com/${item.github}` }
+      }))
+    }]
+  } : pageStructuredData;
+  const structuredData = JSON.stringify(structuredDataValue).replace(/</g, '\\u003c');
   return `<!doctype html><html lang="${locale.code}" data-theme="light"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
   <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}"><meta name="keywords" content="${escapeHtml(keywords)}"><meta name="author" content="${escapeHtml(project.github.split('/')[0])}">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="${escapeHtml(canonical)}">${alternateLinks}
-  <meta property="og:type" content="${pageType}"><meta property="og:site_name" content="${escapeHtml(config.site.name)}"><meta property="og:locale" content="${escapeHtml(locale.code.replace('-', '_'))}">${alternateLocales}<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${escapeHtml(canonical)}">
-  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta property="og:type" content="${pageType}"><meta property="og:site_name" content="${escapeHtml(config.site.name)}"><meta property="og:locale" content="${escapeHtml(locale.code.replace('-', '_'))}">${alternateLocales}<meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${escapeHtml(canonical)}">${socialImage ? `<meta property="og:image" content="${escapeHtml(socialImage)}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${escapeHtml(`${project.name} — ${marketingContent(project, locale).eyebrow}`)}">` : ''}
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}">${socialImage ? `<meta name="twitter:image" content="${escapeHtml(socialImage)}"><meta name="twitter:image:alt" content="${escapeHtml(`${project.name} — ${marketingContent(project, locale).eyebrow}`)}">` : ''}
   <script type="application/ld+json">${structuredData}</script>
   ${languageRouting}
   <link rel="icon" href="${asset('favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="${asset(`site.css?v=${assetVersion}`)}">
@@ -764,11 +880,7 @@ function documentShell({ title, description, project, locale, body, destination 
 function landingPage(project, locale, meta, faq = null) {
   const t = localeCopy(locale.code); const isFramework = project.type === 'framework';
   const currentUrl = landingUrl(project, locale);
-  const marketingKey = project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
-  const localizedMarketing = key => t[key] || (locale.autoTranslated ? simplifiedToTraditional(copy['zh-CN'][key]) : copy.en[key]);
-  const eyebrow = localizedMarketing(`${marketingKey}Eyebrow`);
-  const [titleA, titleB] = localizedMarketing(`${marketingKey}Title`).split('\n');
-  const lead = localizedMarketing(`${marketingKey}Lead`);
+  const { eyebrow, titleA, titleB, lead } = marketingContent(project, locale);
   const docsUrl = relativeSiteUrl(project, currentUrl, project, `${docRoot(project, locale)}/`);
   const downloads = releaseDownloads(meta);
   const chinaDefault = locale.code === 'zh-CN';
@@ -779,13 +891,14 @@ function landingPage(project, locale, meta, faq = null) {
   const projectFeatures = features[project.id] || features[project.type];
   const featureSet = projectFeatures[locale.code] || (locale.autoTranslated ? translateToTraditional(projectFeatures[locale.generatedFrom] || projectFeatures['zh-CN']) : projectFeatures.en);
   const related = config.relatedProjects.map(item => {
-    const desc = item.description[locale.code] || (locale.autoTranslated && item.description[locale.generatedFrom] ? simplifiedToTraditional(item.description[locale.generatedFrom]) : item.description.en);
+    const desc = localizedRelatedDescription(item, locale);
+    const gameName = localizedGameName(item, locale);
     const icon = item.iconUrl ? `<img src="${relativeAssetUrl(project, currentUrl, item.iconUrl)}" alt="">` : escapeHtml(item.name.slice(0,2).toUpperCase());
     const localProject = config.projects.find(candidate => candidate.github === item.github);
     const targetLocale = localProject && (localProject.locales.find(candidate => candidate.code === locale.code) || localProject.locales.find(candidate => candidate.code === 'en') || localProject.locales[0]);
     const itemUrl = localProject ? relativeSiteUrl(project, currentUrl, localProject, landingUrl(localProject, targetLocale)) : item.url;
     const lastGroup = item.status === 'archived' || item.stale;
-    return `<article class="project-card${lastGroup ? ' project-last' : ''}" data-description-source="${item.descriptionSource || 'fallback'}"><a class="project-card-link" href="${itemUrl}" aria-label="${escapeHtml(`${t.explore}: ${item.name}`)}"></a><div class="project-top"><span class="project-logo">${icon}</span><div class="project-top-meta"><a class="project-stars" href="https://github.com/${item.github}" aria-label="${escapeHtml(`${item.name}: ${Number(item.stars || 0).toLocaleString()} GitHub stars`)}">★ ${Number(item.stars || 0).toLocaleString()}</a><a class="github-link" href="https://github.com/${item.github}">${githubIcon(project, currentUrl)}GitHub</a></div></div><h3>${escapeHtml(item.name)}</h3><p class="project-description">${escapeHtml(desc)}</p><div class="project-meta"><span><small>${t.release}</small><strong>${escapeHtml(item.release || '—')}</strong></span><span><small>${t.updated}</small><time datetime="${escapeHtml(item.updatedAt || '')}">${formatDate(item.updatedAt, locale.code)}</time></span></div></article>`;
+    return `<article class="project-card${lastGroup ? ' project-last' : ''}" data-description-source="${item.descriptionSource || 'fallback'}"><a class="project-card-link" href="${itemUrl}" aria-label="${escapeHtml(`${t.explore}: ${item.name}${gameName ? ` — ${gameName}` : ''}`)}"></a><div class="project-top"><span class="project-logo">${icon}</span><div class="project-top-meta"><a class="project-stars" href="https://github.com/${item.github}" aria-label="${escapeHtml(`${item.name}: ${Number(item.stars || 0).toLocaleString()} GitHub stars`)}">★ ${Number(item.stars || 0).toLocaleString()}</a><a class="github-link" href="https://github.com/${item.github}">${githubIcon(project, currentUrl)}GitHub</a></div></div><h3><span>${escapeHtml(item.name)}</span>${gameName ? `<span class="project-game">— ${escapeHtml(gameName)}</span>` : ''}</h3><p class="project-description">${escapeHtml(desc)}</p><div class="project-meta"><span><small>${t.release}</small><strong>${escapeHtml(item.release || '—')}</strong></span><span><small>${t.updated}</small><time datetime="${escapeHtml(item.updatedAt || '')}">${formatDate(item.updatedAt, locale.code)}</time></span></div></article>`;
   }).join('');
   const sourceButton = `<a class="button" href="https://github.com/${project.github}">${githubIcon(project, currentUrl)}${t.viewSource}</a>`;
   const chinaLabel = locale.code === 'zh-CN' ? '大陆版' : 'China';
@@ -818,8 +931,10 @@ function landingPage(project, locale, meta, faq = null) {
   <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div>${heroTitle}<p class="hero-copy">${lead}</p>
   <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
   ${capabilitiesSection}${projectsSection}${faqSection}${ctaSection}</main>`;
-  const title = `${project.name} — ${titleA.replace(/[，,.。]/g,'')}`;
-  return documentShell({ title, description: lead, project, locale, body, canonical: `${projectOrigin(project)}${landingUrl(project, locale)}` });
+  const baseTitle = `${project.name} — ${titleA.replace(/[，,.。]/g,'')}`;
+  const repeatedAcrossLocales = project.locales.some(item => item.code !== locale.code && `${project.name} — ${marketingContent(project, item).titleA.replace(/[，,.。]/g,'')}` === baseTitle);
+  const title = repeatedAcrossLocales ? `${baseTitle} · ${locale.label}` : baseTitle;
+  return documentShell({ title, description: rootSeoDescription(project, locale, lead), project, locale, body, canonical: `${projectOrigin(project)}${landingUrl(project, locale)}` });
 }
 
 function navTitleFromMarkdown(content, fallback) {
@@ -835,7 +950,10 @@ async function docsPage(project, locale, page, pages) {
   const toc = rendered.headings.map(h => `<a href="#${h.id}" style="margin-left:${(h.depth-2)*10}px">${escapeHtml(h.text)}</a>`).join('');
   const repoRel = posix(path.relative(project.state.repoDir, sourceFile));
   const body = `<main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>${t.docsFor}</h2><nav class="docs-nav" aria-label="${t.docsFor}">${sidebar}</nav></aside><article class="docs-main"><div class="breadcrumb"><a href="${relativeSiteUrl(project, currentUrl, project, landingUrl(project, locale))}">${project.name}</a><span>/</span><span>${t.navDocs}</span></div><div class="markdown-body">${rendered.html}</div><div class="page-meta"><a class="github-link" href="https://github.com/${project.github}/blob/${project.state.commit}/${repoRel}">${githubIcon(project, currentUrl)}${t.editGithub} ↗</a> · ${t.lastGenerated}: ${formatDate(generatedAt, locale.code)}</div></article><aside class="docs-toc"><h2>${t.onPage}</h2><nav class="toc-list">${toc}</nav></aside></main>`;
-  return documentShell({ title: `${title} · ${project.name}`, description: `${title} — ${project.name}`, project, locale, body, destination: 'docs', canonical: `${projectOrigin(project)}${currentUrl}`, currentUrl });
+  const parent = page.trail?.at(-1);
+  const seoTitle = [title, parent && parent !== title && parent !== locale.label ? parent : null, project.name, locale.label].filter(Boolean).join(' · ');
+  const description = plainTextSummary(markdown, title, project, locale);
+  return documentShell({ title: seoTitle, description, project, locale, body, destination: 'docs', canonical: `${projectOrigin(project)}${currentUrl}`, currentUrl });
 }
 
 async function generateProject(project) {
@@ -846,6 +964,7 @@ async function generateProject(project) {
   project.state.communityLinks = extractCommunity(await collectProjectMarkdown(project));
   const meta = await githubMetadata(project, project.state);
   project.state.meta = meta;
+  project.state.socialImages = Object.fromEntries(await Promise.all(project.locales.map(async locale => [locale.code, await saveSocialImage(project, locale)])));
   for (const locale of project.locales) {
     const sourceLocale = locale.generatedFrom ? project.locales.find(item => item.code === locale.generatedFrom) : locale;
     const faq = await faqFromMarkdown(project, locale);

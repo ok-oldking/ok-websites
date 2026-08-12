@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-10T12:07:48.530Z",
+  "generatedAt": "2026-08-12T03:15:15.015Z",
   "projects": [
     {
       "id": "ok-script",
-      "commit": "1b01637ef8fc6e1438f9a7ebc4ce7403677552d2",
-      "updated": "2026-08-09T13:46:24+08:00",
+      "commit": "35c14e5dfeeb0624f2ae5aff6947fea533e491bf",
+      "updated": "2026-08-11T00:18:37+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -15,10 +15,11 @@
         "forks": 188,
         "description": "",
         "release": "1.0.184",
+        "pypiVersion": "1.0.184",
         "releaseUrl": "https://github.com/ok-oldking/ok-script/releases",
         "releaseAssets": [],
         "mirrors": [],
-        "updated": "2026-08-09T13:46:24+08:00"
+        "updated": "2026-08-11T00:18:37+08:00"
       }
     },
     {
@@ -36,6 +37,7 @@
         "forks": 588,
         "description": "",
         "release": "v3.5.27",
+        "pypiVersion": "v3.5.27",
         "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.5.27",
         "releaseAssets": [
           {
@@ -66,8 +68,8 @@
     },
     {
       "id": "ok-script-app",
-      "commit": "adce86505f64b2676a957cc4d7cb2837012a3b05",
-      "updated": "2026-08-10T08:34:53+08:00",
+      "commit": "75debfbc0c229dee4beb07f49a64516fca7ca2ae",
+      "updated": "2026-08-10T23:09:12+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -78,6 +80,7 @@
         "forks": 266,
         "description": "",
         "release": "v1.0.29",
+        "pypiVersion": "v1.0.29",
         "releaseUrl": "https://github.com/ok-oldking/ok-script-app/releases/tag/v1.0.29",
         "releaseAssets": [
           {
@@ -99,13 +102,13 @@
             "url": "https://pan.quark.cn/s/a1052cec4d13"
           }
         ],
-        "updated": "2026-08-10T08:34:53+08:00"
+        "updated": "2026-08-10T23:09:12+08:00"
       }
     },
     {
       "id": "ok-nte",
-      "commit": "4856c908f6e1137c8e47032bf9c418b051b93764",
-      "updated": "2026-08-09T21:25:05+08:00",
+      "commit": "32a104a410f244ff732ebe0f782a550f3c9f434b",
+      "updated": "2026-08-12T10:06:40+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -116,6 +119,7 @@
         "forks": 77,
         "description": "",
         "release": "v1.2.29",
+        "pypiVersion": "v1.2.29",
         "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.2.29",
         "releaseAssets": [
           {
@@ -141,13 +145,13 @@
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-08-09T21:25:05+08:00"
+        "updated": "2026-08-12T10:06:40+08:00"
       }
     },
     {
       "id": "ok-star-resonance",
-      "commit": "81d45011698ff08c454b25d7401d400db5df1cab",
-      "updated": "2026-08-10T18:27:42+08:00",
+      "commit": "dedb232cd3d38ce30f42373be67f6c2f9cf8a230",
+      "updated": "2026-08-12T01:36:59+08:00",
       "locales": [
         "zh-CN",
         "zh-TW"
@@ -157,6 +161,7 @@
         "forks": 19,
         "description": "",
         "release": "v1.4.5",
+        "pypiVersion": "v1.4.5",
         "releaseUrl": "https://github.com/Sanheiii/ok-star-resonance/releases/tag/v1.4.5",
         "releaseAssets": [
           {
@@ -174,13 +179,13 @@
             "url": "https://pan.quark.cn/s/53ef87577da9?pwd=nVL9"
           }
         ],
-        "updated": "2026-08-10T18:27:42+08:00"
+        "updated": "2026-08-12T01:36:59+08:00"
       }
     },
     {
       "id": "ok-kes",
-      "commit": "859059bede08d1fddd91c79a6ed56bd55f67305a",
-      "updated": "2026-08-10T17:10:10+08:00",
+      "commit": "91c0247a29446dd6f707ec55b6bf2fccfc299346",
+      "updated": "2026-08-12T00:39:42+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -191,6 +196,7 @@
         "forks": 20,
         "description": "",
         "release": "v1.3.36",
+        "pypiVersion": "v1.3.36",
         "releaseUrl": "https://github.com/baoxin1100/ok-kes/releases/tag/v1.3.36",
         "releaseAssets": [
           {
@@ -216,13 +222,13 @@
             "url": "https://drive.uc.cn/s/fee4cb3d65cd4?public=1"
           }
         ],
-        "updated": "2026-08-10T17:10:10+08:00"
+        "updated": "2026-08-12T00:39:42+08:00"
       }
     },
     {
       "id": "ok-end-field",
-      "commit": "3c231e67036abca1a6cdf4bab7d946917b49d8b4",
-      "updated": "2026-08-10T18:27:13+08:00",
+      "commit": "d04719c5e50aa815a6ba06c25e63f8df10168488",
+      "updated": "2026-08-12T02:07:52Z",
       "locales": [
         "zh-CN",
         "en",
@@ -233,6 +239,7 @@
         "forks": 15,
         "description": "",
         "release": "v0.0.74",
+        "pypiVersion": "v0.0.74",
         "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v0.0.74",
         "releaseAssets": [
           {
@@ -241,7 +248,32 @@
           }
         ],
         "mirrors": [],
-        "updated": "2026-08-10T18:27:13+08:00"
+        "updated": "2026-08-12T02:07:52Z"
+      }
+    },
+    {
+      "id": "ok-onmyoji",
+      "commit": "a1e0480ef987a7a1890f34c152e7a488d6a3771e",
+      "updated": "2026-08-11T18:56:21+08:00",
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "meta": {
+        "stars": 8,
+        "forks": 1,
+        "description": "",
+        "release": "—",
+        "pypiVersion": "—",
+        "releaseUrl": "https://github.com/YunLiuZ/ok-Onmyoji/releases",
+        "releaseAssets": [],
+        "mirrors": [
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=ok-Onmyoji"
+          }
+        ],
+        "updated": "2026-08-11T18:56:21+08:00"
       }
     }
   ]
