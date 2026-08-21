@@ -42,11 +42,16 @@ jobs:
         if: always() && steps.validate.outcome == 'failure'
         uses: actions/github-script@v9
         env:
+          HAS_TARGET_REPO_ISSUES_TOKEN: ${{ secrets.TARGET_REPO_ISSUES_TOKEN != '' }}
           TEST_OUTPUT_FILE: test-output.log
         with:
-          github-token: ${{ secrets.TARGET_REPO_ISSUES_TOKEN }}
+          github-token: ${{ secrets.TARGET_REPO_ISSUES_TOKEN || github.token }}
           script: |
             const fs = require('fs');
+            if (process.env.HAS_TARGET_REPO_ISSUES_TOKEN !== 'true') {
+              core.setFailed('Add the TARGET_REPO_ISSUES_TOKEN repository secret with public_repo access so this workflow can manage issues in source repositories.');
+              return;
+            }
             const marker = '<!-- ok-websites:generated-site-validation -->';
             const title = '[ok-websites] Generated documentation validation failed';
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
@@ -114,10 +119,16 @@ jobs:
       - name: Close validation failure issue after recovery
         if: always() && steps.validate.outcome == 'success'
         uses: actions/github-script@v9
+        env:
+          HAS_TARGET_REPO_ISSUES_TOKEN: ${{ secrets.TARGET_REPO_ISSUES_TOKEN != '' }}
         with:
-          github-token: ${{ secrets.TARGET_REPO_ISSUES_TOKEN }}
+          github-token: ${{ secrets.TARGET_REPO_ISSUES_TOKEN || github.token }}
           script: |
             const fs = require('fs');
+            if (process.env.HAS_TARGET_REPO_ISSUES_TOKEN !== 'true') {
+              core.setFailed('Add the TARGET_REPO_ISSUES_TOKEN repository secret with public_repo access so this workflow can close issues in source repositories.');
+              return;
+            }
             const marker = '<!-- ok-websites:generated-site-validation -->';
             const projects = JSON.parse(fs.readFileSync('projects.json', 'utf8')).projects;
 
