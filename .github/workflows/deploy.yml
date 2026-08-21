@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read
-  issues: write
   pages: write
   id-token: write
 
@@ -45,10 +44,11 @@ jobs:
         env:
           TEST_OUTPUT_FILE: test-output.log
         with:
+          github-token: ${{ secrets.TARGET_REPO_ISSUES_TOKEN }}
           script: |
             const fs = require('fs');
             const marker = '<!-- ok-websites:generated-site-validation -->';
-            const title = '[build] Generated site validation failed';
+            const title = '[ok-websites] Generated documentation validation failed';
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const commitUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/commit/${context.sha}`;
             const rawLog = fs.existsSync(process.env.TEST_OUTPUT_FILE)
@@ -56,70 +56,92 @@ jobs:
               : 'The validation step did not produce a log file.';
             const truncated = rawLog.length > 50000;
             const log = truncated ? rawLog.slice(-50000) : rawLog;
-            const body = `${marker}
-            The generated site failed validation.
-
-            - Workflow run: ${runUrl}
-            - Commit: ${commitUrl}
-
-            \`\`\`text
-            ${truncated ? '[Earlier output truncated]\n' : ''}${log}
-            \`\`\`
-
-            This issue is maintained automatically. A successful build will close it.`;
-
-            const issues = await github.paginate(github.rest.issues.listForRepo, {
-              ...context.repo,
-              state: 'all',
-              per_page: 100,
+            const projects = JSON.parse(fs.readFileSync('projects.json', 'utf8')).projects;
+            const escapeRegex = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const targets = projects.filter(project => {
+              const identifiers = [project.id, project.outputFolder].filter(Boolean);
+              return identifiers.some(identifier =>
+                new RegExp(`(^|[\\s/:])${escapeRegex(identifier)}([\\s/:.]|$)`, 'i').test(rawLog)
+              );
             });
-            const existing = issues.find(issue =>
-              !issue.pull_request &&
-              (issue.body?.includes(marker) || issue.title === title)
-            );
 
-            if (existing) {
-              await github.rest.issues.update({
-                ...context.repo,
-                issue_number: existing.number,
-                title,
-                body,
-                state: 'open',
+            if (!targets.length) {
+              core.setFailed('Could not determine a target project repository from the validation log.');
+              return;
+            }
+
+            for (const project of targets) {
+              const [owner, repo] = project.github.split('/');
+              const target = { owner, repo };
+              const body = `${marker}
+              Documentation generated from ${context.serverUrl}/${owner}/${repo} failed validation in ok-websites.
+
+              - Workflow run: ${runUrl}
+              - Build commit: ${commitUrl}
+
+              \`\`\`text
+              ${truncated ? '[Earlier output truncated]\n' : ''}${log}
+              \`\`\`
+
+              This issue is maintained automatically. A successful build will close it.`;
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                ...target,
+                state: 'all',
+                per_page: 100,
               });
-              core.info(`Updated issue #${existing.number}.`);
-            } else {
-              const created = await github.rest.issues.create({
-                ...context.repo,
-                title,
-                body,
-              });
-              core.info(`Created issue #${created.data.number}.`);
+              const existing = issues.find(issue =>
+                !issue.pull_request && issue.body?.includes(marker)
+              );
+
+              if (existing) {
+                await github.rest.issues.update({
+                  ...target,
+                  issue_number: existing.number,
+                  title,
+                  body,
+                  state: 'open',
+                });
+                core.info(`Updated ${project.github}#${existing.number}.`);
+              } else {
+                const created = await github.rest.issues.create({
+                  ...target,
+                  title,
+                  body,
+                });
+                core.info(`Created ${project.github}#${created.data.number}.`);
+              }
             }
       - name: Close validation failure issue after recovery
         if: always() && steps.validate.outcome == 'success'
         uses: actions/github-script@v9
         with:
+          github-token: ${{ secrets.TARGET_REPO_ISSUES_TOKEN }}
           script: |
+            const fs = require('fs');
             const marker = '<!-- ok-websites:generated-site-validation -->';
-            const title = '[build] Generated site validation failed';
-            const issues = await github.paginate(github.rest.issues.listForRepo, {
-              ...context.repo,
-              state: 'open',
-              per_page: 100,
-            });
-            const matching = issues.filter(issue =>
-              !issue.pull_request &&
-              (issue.body?.includes(marker) || issue.title === title)
-            );
+            const projects = JSON.parse(fs.readFileSync('projects.json', 'utf8')).projects;
 
-            for (const issue of matching) {
-              await github.rest.issues.update({
-                ...context.repo,
-                issue_number: issue.number,
-                state: 'closed',
-                state_reason: 'completed',
+            for (const project of projects) {
+              const [owner, repo] = project.github.split('/');
+              const target = { owner, repo };
+              const issues = await github.paginate(github.rest.issues.listForRepo, {
+                ...target,
+                state: 'open',
+                per_page: 100,
               });
-              core.info(`Closed issue #${issue.number}.`);
+              const matching = issues.filter(issue =>
+                !issue.pull_request && issue.body?.includes(marker)
+              );
+
+              for (const issue of matching) {
+                await github.rest.issues.update({
+                  ...target,
+                  issue_number: issue.number,
+                  state: 'closed',
+                  state_reason: 'completed',
+                });
+                core.info(`Closed ${project.github}#${issue.number}.`);
+              }
             }
       - name: Fail build after reporting validation error
         if: steps.validate.outcome == 'failure'
