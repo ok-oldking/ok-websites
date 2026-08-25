@@ -49,7 +49,7 @@ jobs:
           script: |
             const fs = require('fs');
             if (process.env.HAS_TARGET_REPO_ISSUES_TOKEN !== 'true') {
-              core.setFailed('Add the TARGET_REPO_ISSUES_TOKEN repository secret with public_repo access so this workflow can manage issues in source repositories.');
+              core.warning('TARGET_REPO_ISSUES_TOKEN is not configured; skipping the source-repository failure issue.');
               return;
             }
             const marker = '<!-- ok-websites:generated-site-validation -->';
@@ -126,7 +126,7 @@ jobs:
           script: |
             const fs = require('fs');
             if (process.env.HAS_TARGET_REPO_ISSUES_TOKEN !== 'true') {
-              core.setFailed('Add the TARGET_REPO_ISSUES_TOKEN repository secret with public_repo access so this workflow can close issues in source repositories.');
+              core.warning('TARGET_REPO_ISSUES_TOKEN is not configured; skipping source-repository issue closure.');
               return;
             }
             const marker = '<!-- ok-websites:generated-site-validation -->';
