@@ -151,6 +151,7 @@ if (!rootChinese.includes('href="./ok-end-field/"')) failures.push('Project ecos
 await fs.access(path.join(root, 'ok-end-field', 'docs', 'index.html')).catch(() => failures.push('ok-end-field Chinese MkDocs routes are missing.'));
 const workflow = await fs.readFile(path.join(root, '..', '.github', 'workflows', 'deploy.yml'), 'utf8');
 if (/npm run deploy|DEPLOY_(?:HOST|USER|PASSWORD|PRIVATE_KEY|PATH)/.test(workflow) || !/actions\/configure-pages@v6/.test(workflow) || !/actions\/deploy-pages@v5/.test(workflow)) failures.push('GitHub Actions is not Pages-only or uses an outdated Pages configuration action.');
+if (!/id:\s*deployment[\s\S]*?continue-on-error:\s*true[\s\S]*?id:\s*deployment_retry[\s\S]*?if:\s*steps\.deployment\.outcome == 'failure'/.test(workflow)) failures.push('GitHub Pages deployment does not retry after a transient failure.');
 if (!/TARGET_REPO_ISSUES_TOKEN/.test(workflow) || !/projects\.json/.test(workflow) || !/actions\/github-script@v9/.test(workflow) || !/ok-websites:generated-site-validation/.test(workflow) || !/state:\s*'closed'/.test(workflow)) failures.push('GitHub Actions does not maintain validation failure issues in source repositories.');
 if (!/TARGET_REPO_ISSUES_TOKEN is not configured; skipping/.test(workflow) || /core\.setFailed\('Add the TARGET_REPO_ISSUES_TOKEN/.test(workflow)) failures.push('A missing cross-repository issue token incorrectly fails otherwise successful builds.');
 const css = await fs.readFile(path.join(root, 'assets', 'site.css'), 'utf8');
