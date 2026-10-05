@@ -103,7 +103,8 @@ if (!wwLanding.includes('class="dropdown-menu download-menu"') || !/China-setup\
 if (!/data-download-control data-downloading-label="正在下载…"/.test(wwLanding) || !/data-download-link/.test(wwLanding)) failures.push('Download controls are missing their localized downloading state.');
 if (!wwLanding.includes('class="community-icon"')) failures.push('Community links are missing icons.');
 if (!wwLanding.includes('src="../assets/qq.svg"') || !wwLanding.includes('src="../assets/discord.svg"')) failures.push('maa.plus QQ/Discord icons are missing.');
-if (!wwLanding.includes('data-copy="1035795301"') || !wwLanding.includes('群1035795301')) failures.push('User QQ group is not formatted as a copy button.');
+const wwQqButtons = [...wwLanding.matchAll(/<button\b[^>]*class="community-chip qq"[^>]*data-copy="(\d{6,12})"[^>]*>([\s\S]*?)<\/button>/g)];
+if (!wwQqButtons.length || wwQqButtons.some(([, number, content]) => content.match(/<span>群(\d{6,12})(?:\s|<\/span>)/)?.[1] !== number)) failures.push('User QQ group is not formatted as a copy button.');
 if (/926858895|开发者群/.test(wwLanding)) failures.push('Developer QQ group is still visible.');
 if (/<a\b[^>]*href="https:\/\/(?:ok-script\.com|ok-ww\.ok-script\.com|app\.ok-script\.com)/i.test(wwLanding)) failures.push('Project landing page still contains domain-based internal navigation.');
 if (!wwLanding.includes('href="../"') || !wwLanding.includes('href="../app/"')) failures.push('Project switcher does not use relative sibling paths.');

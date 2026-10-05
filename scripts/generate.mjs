@@ -7,6 +7,7 @@ import { marked } from 'marked';
 import YAML from 'yaml';
 import OpenCC from 'opencc-js';
 import sharp from 'sharp';
+import { unpublishedMarkdownUrl } from './markdown-links.mjs';
 
 const exec = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -570,6 +571,9 @@ async function markdownToHtml(markdown, context) {
     const hash = href.includes('#') ? `#${href.split('#').slice(1).join('#')}` : '';
     if (/\.md$/i.test(clean) || /README\.md$/i.test(clean)) {
       const target = path.resolve(path.dirname(context.sourceFile), clean);
+      // Only MkDocs nav pages have local routes; other Markdown stays on GitHub.
+      const sourceUrl = unpublishedMarkdownUrl(context.project, target, hash);
+      if (sourceUrl) return `href="${sourceUrl}"`;
       const matchingLocale = context.project.locales.find(loc => path.resolve(target) === path.resolve(context.project.state.repoDir, loc.source, loc.index));
       if (matchingLocale) {
         const linkedLocale = context.locale.generatedFrom === matchingLocale.code ? context.locale : matchingLocale;
