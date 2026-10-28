@@ -129,7 +129,8 @@ if (!rootChinese.includes('href=".\/ok-nte\/"')) failures.push('Project ecosyste
 await fs.access(path.join(root, 'ok-nte', 'docs', 'guides', 'troubleshooting', 'index.html')).catch(() => failures.push('ok-nte Chinese MkDocs routes are missing.'));
 await fs.access(path.join(root, 'ok-nte', 'en', 'docs', 'getting-started', 'installation', 'index.html')).catch(() => failures.push('ok-nte English MkDocs routes are missing.'));
 const nteCombatPlanner = await fs.readFile(path.join(root, 'ok-nte', 'docs', 'development', 'combat-planner', 'index.html'), 'utf8');
-if (!/href="https:\/\/github\.com\/BnanZ0\/ok-nte\/tree\/[a-f0-9]+\/src\/char"/.test(nteCombatPlanner) || nteCombatPlanner.includes('href="../../src/char"')) failures.push('ok-nte repository-source links are not rewritten to GitHub.');
+// Upstream may link directly to main instead of providing a relative source link.
+if (!/href="https:\/\/github\.com\/BnanZ0\/ok-nte\/tree\/(?:main|[a-f0-9]+)\/src\/char"/.test(nteCombatPlanner) || /href="(?:\.\.\/)+src\/char(?:[#?][^"]*)?"/.test(nteCombatPlanner)) failures.push('ok-nte repository-source links must point to GitHub without unresolved relative paths.');
 const starResonance = await fs.readFile(path.join(root, 'ok-star-resonance', 'index.html'), 'utf8');
 if (!starResonance.includes('星痕旅程') || !starResonance.includes('https://ok-script.com/ok-star-resonance/') || !starResonance.includes('ok-star-resonance-win32-China-setup.exe')) failures.push('ok-star-resonance landing page is incomplete.');
 if (!starResonance.includes('faq-section') || !starResonance.includes('生活玩法自动化') || !starResonance.includes('夸克网盘')) failures.push('ok-star-resonance project content is incomplete.');
