@@ -1,0 +1,284 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>模板貢獻指南 · 开发与维护 · ok-end-field · 繁體中文</title><meta name="description" content="面向 AliceJump/ok-end-field 無許可權貢獻者，專用於修改遊戲截圖模板。 倉庫 角色 --- — ok-end-field 繁體中文文件"><meta name="keywords" content="ok-end-field, okendfield, GitHub, AliceJump/ok-end-field, AliceJump, 終末地, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/guide-submodule-contrib/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="模板貢獻指南 · 开发与维护 · ok-end-field · 繁體中文"><meta property="og:description" content="面向 AliceJump/ok-end-field 無許可權貢獻者，專用於修改遊戲截圖模板。 倉庫 角色 --- — ok-end-field 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/guide-submodule-contrib/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="模板貢獻指南 · 开发与维护 · ok-end-field · 繁體中文"><meta name="twitter:description" content="面向 AliceJump/ok-end-field 無許可權貢獻者，專用於修改遊戲截圖模板。 倉庫 角色 --- — ok-end-field 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta name="twitter:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"模板貢獻指南 · 开发与维护 · ok-end-field · 繁體中文","description":"面向 AliceJump/ok-end-field 無許可權貢獻者，專用於修改遊戲截圖模板。 倉庫 角色 --- — ok-end-field 繁體中文文件","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/guide-submodule-contrib/","inLanguage":"zh-TW","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../配置导出与导入/">配置匯出與匯入</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="./" class="active" aria-current="page">模板貢獻指南</a><a href="../API/">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../OCR使用分类/">OCR 使用分類</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务汇总报告机制/">任務彙總報告機制</a><a href="../自动拾取任务/">自動拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="修改模板快速開始">修改模板快速開始</h1>
+<blockquote>
+<p>面向 <code>AliceJump/ok-end-field</code> 無許可權貢獻者，專用於修改遊戲截圖模板。</p>
+<table>
+<thead>
+<tr>
+<th>倉庫</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>AliceJump/ok-end-field</code></td>
+<td>上游主倉庫</td>
+</tr>
+<tr>
+<td><code>AliceJump/ok-end-field-x-anylabeling-asset</code></td>
+<td>模板原始檔 (<code>ok_templates/</code>，submodule，預設分支 <code>main</code>)</td>
+</tr>
+<tr>
+<td><code>你的账号/...</code></td>
+<td>你的兩份 fork</td>
+</tr>
+</tbody></table>
+</blockquote>
+<hr>
+<h2 id="先搞懂架構">先搞懂架構</h2>
+<pre><code>ok_templates/  (子仓库: 原始 PNG + 对应 AnyLabeling JSON + coco_annotations.json)
+     │ TemplateTab → Save → &quot;assets (standalone app)&quot;
+     ▼
+assets/images/ + assets/coco_annotations.json  (主仓库生成物)
+src/data/FeatureList.py                         (主仓库生成的标签枚举)
+     │
+     ▼
+self.find_feature(feature=fL.xxx)
+     → RuntimeMixin.find_feature
+     → get_feature_by_resolution (基础名 / _2k / _4k)
+     → ok-script BaseTask.find_feature / FeatureSet
+     → OpenCV 模板匹配
+</code></pre>
+<blockquote>
+<p><strong>關鍵</strong>：<code>ok_templates/</code> 中與截圖同名的原始 PNG、標註 JSON 以及彙總的 <code>coco_annotations.json</code> 才是模板原始碼；主倉庫的 <code>assets/images/</code>、<code>assets/coco_annotations.json</code> 和 <code>src/data/FeatureList.py</code> 是 Save 生成物。模板改動必須同時提交子倉庫原始碼和主倉庫生成物。</p>
+</blockquote>
+<hr>
+<h2 id="完整工作流">完整工作流</h2>
+<h3 id="①-fork-兩個倉庫">① Fork 兩個倉庫</h3>
+<table>
+<thead>
+<tr>
+<th>倉庫</th>
+<th>操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>AliceJump/ok-end-field</code></td>
+<td>GitHub → Fork</td>
+</tr>
+<tr>
+<td><code>AliceJump/ok-end-field-x-anylabeling-asset</code></td>
+<td>GitHub → Fork</td>
+</tr>
+</tbody></table>
+<h3 id="②-clone-含-submodule">② Clone（含 submodule）</h3>
+<pre><code class="language-bash">git clone --recursive https://github.com/你的账号/ok-end-field.git
+cd ok-end-field
+git remote add upstream https://github.com/AliceJump/ok-end-field.git
+git fetch upstream
+git switch -c update-templates upstream/master
+</code></pre>
+<blockquote>
+<p>如果已 clone 但沒初始化：<code>git submodule update --init ok_templates</code></p>
+</blockquote>
+<p>主倉庫的 <code>origin</code> 應指向你的 fork，<code>upstream</code> 應指向 <code>AliceJump/ok-end-field</code>。主倉庫當前預設分支是 <code>master</code>；提交前應確認功能分支基於最新的 <code>upstream/master</code>。</p>
+<h3 id="③-配置子倉庫-remote-從-main-簽出分支">③ 配置子倉庫 remote → 從 <code>main</code> 簽出分支</h3>
+<pre><code class="language-bash">cd ok_templates
+git remote rename origin upstream
+git remote add origin https://github.com/你的账号/ok-end-field-x-anylabeling-asset.git
+git fetch --all --prune
+git switch --create main --track upstream/main
+git switch -c update-x-template
+git remote -v
+cd ..
+</code></pre>
+<p>初始化 submodule 後通常處於 detached HEAD，且 <code>.gitmodules</code> 配置的 <code>origin</code> 指向上游。上面的命令將該 remote 保留為 <code>upstream</code>，再把你的 fork 設為可推送的 <code>origin</code>。如果本地已經存在 <code>main</code>，使用 <code>git switch main</code> 和 <code>git pull --ff-only upstream main</code>，不要再次執行 <code>--create</code>。</p>
+<h3 id="④-修改模板-templatetab-gui">④ 修改模板（TemplateTab GUI）</h3>
+<pre><code class="language-bash">python main.py
+</code></pre>
+<h4 id="step-1-截圖">Step 1 — 截圖</h4>
+<p><strong>① 點選 Screenshot</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/0.png" alt="Screenshot button" width="700">
+
+<p>截圖自動儲存到 <code>ok_templates/</code>，推薦 3840×2160 全屏截圖。</p>
+<p><strong>② 截圖完成後出現在列表中</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/1.png" alt="Screenshot listed" width="700">
+
+<hr>
+<h4 id="step-2-標註">Step 2 — 標註</h4>
+<p>選中圖片 → 點選 Markup</p>
+<p><strong>③ Markup 介面</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/2.png" alt="Markup button" width="700">
+
+<p><strong>④ 點選繪製 → 框選目標元素（左上→右下）</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/3.png" alt="Draw bounding box" width="700">
+
+<p><strong>⑤ 輸入模板名 → 確認</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/4.png" alt="Enter label name" width="700">
+
+<blockquote>
+<p>標籤名必須與 <code>src/data/FeatureList.py</code> 中的值及程式碼呼叫一致。當前約定是小寫英文 <code>snake_case</code>，按語義使用字首/字尾，例如角色聯絡頭像用 <code>contact_&lt;name&gt;</code>，戰鬥頭像用 <code>battle_icon_&lt;name&gt;</code>，圖示用 <code>&lt;name&gt;_icon</code>，同類變體用 <code>_2</code>、<code>_3</code>。解析度專用模板只追加 <code>_2k</code> 或 <code>_4k</code>；程式碼通常傳不帶解析度字尾的基礎名，例如 <code>self.find_feature(feature=fL.esc)</code>，由 <code>get_feature_by_resolution()</code> 按視窗寬度選擇 <code>esc</code>、<code>esc_2k</code> 或 <code>esc_4k</code>。不要沿用倉庫中不存在的 <code>char_</code>、<code>box_</code> 等舊字首約定。</p>
+</blockquote>
+<p><strong>⑥ 標註完成</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/5.png" alt="Annotation done" width="700">
+
+<hr>
+<h4 id="step-3-壓縮匯出">Step 3 — 壓縮匯出</h4>
+<p>點選 Save → 選擇 &quot;assets (standalone app)&quot; → OK</p>
+<p><strong>⑦ 選擇匯出目標</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/6.png" alt="Save dialog" width="500">
+
+<p><strong>⑧ 匯出完成</strong></p>
+<img src="../../../../../assets/sources/ok-end-field/docs/dev/templates/7.png" alt="Export done" width="400">
+
+<hr>
+<h4 id="step-4-驗證">Step 4 — 驗證</h4>
+<pre><code class="language-bash">cd ok_templates
+git status --short --branch
+git diff --stat
+git diff -- coco_annotations.json
+
+cd ..
+git submodule status
+git status --short
+git diff --submodule=log -- ok_templates
+git diff --stat -- assets/coco_annotations.json assets/images src/data/FeatureList.py
+git diff -- assets/coco_annotations.json src/data/FeatureList.py
+</code></pre>
+<p>還應在 Debug 模式實際呼叫對應基礎標籤，確認 1080p/2K/4K 的字尾選擇和搜尋區域都能命中。提交暫存後，再執行以下命令確認 PR 包含完整內容：</p>
+<pre><code class="language-bash">git diff --cached --submodule=log -- ok_templates
+git diff --cached --stat -- assets/coco_annotations.json assets/images src/data/FeatureList.py
+git status --short
+</code></pre>
+<h3 id="⑤-推送子倉庫">⑤ 推送子倉庫</h3>
+<pre><code class="language-bash">cd ok_templates
+git add .
+git diff --cached --stat
+git diff --cached -- coco_annotations.json
+git commit -m &quot;feat: add X template&quot;
+git push -u origin update-x-template
+</code></pre>
+<h3 id="⑥-建立子倉庫-pr">⑥ 建立子倉庫 PR</h3>
+<pre><code>你的账号/ok-end-field-x-anylabeling-asset:update-x-template → PR → AliceJump/ok-end-field-x-anylabeling-asset:main
+</code></pre>
+<p><strong>⚠️ 必須先等此 PR 合併再繼續。</strong></p>
+<h3 id="⑦-子倉庫合併後-更新主倉庫-pr">⑦ 子倉庫合併後 → 更新主倉庫 PR</h3>
+<pre><code class="language-bash">cd ok_templates
+git fetch upstream
+git switch main
+git pull --ff-only upstream main
+cd ..
+python main.py   # TemplateTab → Save → &quot;assets (standalone app)&quot;
+git add ok_templates assets/coco_annotations.json assets/images src/data/FeatureList.py
+git diff --cached --submodule=log -- ok_templates
+git diff --cached --stat -- assets/coco_annotations.json assets/images src/data/FeatureList.py
+git commit -m &quot;feat: update templates and submodule&quot;
+git push -u origin update-templates
+git status --short --branch
+git submodule status
+git diff --check upstream/master...HEAD
+git diff --stat upstream/master...HEAD
+git diff --submodule=log upstream/master...HEAD -- ok_templates
+</code></pre>
+<p>建立 PR：</p>
+<pre><code>你的账号/ok-end-field → PR → AliceJump/ok-end-field
+</code></pre>
+<hr>
+<h2 id="常見錯誤">常見錯誤</h2>
+<table>
+<thead>
+<tr>
+<th>錯誤</th>
+<th>原因</th>
+<th>解決</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Permission denied</code> push 失敗</td>
+<td>remote 仍指向上游</td>
+<td><code>git remote set-url origin</code> 改到你的 fork</td>
+</tr>
+<tr>
+<td><code>git submodule status</code> 出現 <code>+</code></td>
+<td>子倉庫當前 checkout 的 commit 與主倉庫索引記錄的 gitlink 不同；不表示該 commit 一定“不在上游”</td>
+<td>用 <code>git diff --submodule=log -- ok_templates</code> 確認差異；應更新時在主倉庫暫存 <code>ok_templates</code>，不應更新時切回索引記錄的 commit</td>
+</tr>
+<tr>
+<td><code>git submodule status</code> 出現 <code>-</code> / <code>U</code></td>
+<td><code>-</code> 表示未初始化；<code>U</code> 表示 gitlink 有合併衝突</td>
+<td>初始化 submodule；衝突則先在子倉庫選定正確 commit，再在主倉庫暫存 gitlink</td>
+</tr>
+<tr>
+<td>submodule <code>dirty</code></td>
+<td>未提交修改</td>
+<td><code>cd ok_templates &amp;&amp; git status</code></td>
+</tr>
+<tr>
+<td>找不到模板 <code>not found in featureDict</code></td>
+<td>沒 compress / 名稱不對應</td>
+<td>確認 category name 與程式碼呼叫一致</td>
+</tr>
+<tr>
+<td><code>cv2.error</code></td>
+<td>模板比搜尋區域大</td>
+<td>檢查 bbox 範圍</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="速查">速查</h2>
+<pre><code class="language-bash"># 初始化
+git clone --recursive https://github.com/你的账号/ok-end-field.git
+cd ok-end-field
+
+# 改 remote
+cd ok_templates
+git remote rename origin upstream
+git remote add origin https://github.com/你的账号/ok-end-field-x-anylabeling-asset.git
+git fetch --all --prune
+git switch --create main --track upstream/main
+git switch -c update-x-template
+cd ..
+
+# 修改模板 → 压缩导出
+python main.py
+# Screenshot → Markup(框选+命名) → Save(assets)
+
+# 推子仓库
+cd ok_templates
+git add . &amp;&amp; git diff --cached --stat &amp;&amp; git commit -m &quot;feat: add X template&quot; &amp;&amp; git push -u origin update-x-template
+# → 创建 SubRepo PR，等合并
+
+# 子仓库合并后
+cd ok_templates
+git fetch upstream &amp;&amp; git switch main &amp;&amp; git pull --ff-only upstream main
+cd ..
+python main.py  # TemplateTab → Save
+git add ok_templates assets/coco_annotations.json assets/images src/data/FeatureList.py
+git diff --cached --submodule=log -- ok_templates
+git diff --cached --stat -- assets/coco_annotations.json assets/images src/data/FeatureList.py
+git commit -m &quot;feat: update templates&quot; &amp;&amp; git push -u origin update-templates
+# → 创建 MainRepo PR
+</code></pre>
+<blockquote>
+<p><strong>一句話</strong>：改子倉庫 → compress → 子倉庫 PR → 子倉庫合併 → 重新 compress → 主倉庫 PR。</p>
+</blockquote>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/dev/guide-submodule-contrib.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#先搞懂架構" style="margin-left:0px">先搞懂架構</a><a href="#完整工作流" style="margin-left:0px">完整工作流</a><a href="#①-fork-兩個倉庫" style="margin-left:10px">① Fork 兩個倉庫</a><a href="#②-clone-含-submodule" style="margin-left:10px">② Clone（含 submodule）</a><a href="#③-配置子倉庫-remote-從-main-簽出分支" style="margin-left:10px">③ 配置子倉庫 remote → 從 main 簽出分支</a><a href="#④-修改模板-templatetab-gui" style="margin-left:10px">④ 修改模板（TemplateTab GUI）</a><a href="#⑤-推送子倉庫" style="margin-left:10px">⑤ 推送子倉庫</a><a href="#⑥-建立子倉庫-pr" style="margin-left:10px">⑥ 建立子倉庫 PR</a><a href="#⑦-子倉庫合併後-更新主倉庫-pr" style="margin-left:10px">⑦ 子倉庫合併後 → 更新主倉庫 PR</a><a href="#常見錯誤" style="margin-left:0px">常見錯誤</a><a href="#速查" style="margin-left:0px">速查</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>

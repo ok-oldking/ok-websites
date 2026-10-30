@@ -1,0 +1,78 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Config Export and Import · Features · ok-end-field · English</title><meta name="description" content="Back: Documentation home / README Use this feature to back up, restore, or migrate the application configuration betwe — ok-end-field English documentation"><meta name="keywords" content="ok-end-field, okendfield, GitHub, AliceJump/ok-end-field, AliceJump, Arknights: Endfield, Background automation, Windows, game automation, computer vision, open source, Python automation, Windows automation, documentation, Docs"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/config-export-import/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Config Export and Import · Features · ok-end-field · English"><meta property="og:description" content="Back: Documentation home / README Use this feature to back up, restore, or migrate the application configuration betwe — ok-end-field English documentation"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/config-export-import/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Config Export and Import · Features · ok-end-field · English"><meta name="twitter:description" content="Back: Documentation home / README Use this feature to back up, restore, or migrate the application configuration betwe — ok-end-field English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta name="twitter:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Config Export and Import · Features · ok-end-field · English","description":"Back: Documentation home / README Use this feature to back up, restore, or migrate the application configuration betwe — ok-end-field English documentation","url":"https://ok-script.com/ok-end-field/en/docs/config-export-import/","inLanguage":"en","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">Docs</a>
+      <a href="../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/guide-submodule-contrib/">模板贡献指南</a><a href="../dev/API/">API 参考</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/OCR使用分类/">OCR 使用分类</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务汇总报告机制/">任务汇总报告机制</a><a href="../dev/自动拾取任务/">自动拾取</a><a href="../getting-started/installation/">Installation</a><a href="../getting-started/configuration/">Before you start</a><a href="../guides/quick-start/">Quick start</a><a href="../features/overview/">Overview</a><a href="../daily-tasks/">Daily Tasks</a><a href="../stamina-farming/">Stamina Farming</a><a href="../auto-combat/">Auto Combat</a><a href="../action-sequence/">Action Sequences</a><a href="../delivery-pickup/">Delivery Commission Pickup</a><a href="../auto-delivery/">Auto Delivery</a><a href="../warehouse-transfer/">Warehouse Transfer</a><a href="../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../account-configuration/">Account Configuration</a><a href="./" class="active" aria-current="page">Config Export and Import</a><a href="../windows-task-scheduler/">Windows Task Scheduler</a><a href="../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="config-export-and-import">Config Export and Import</h1>
+<p>Back: <a href="../">Documentation home</a> / <a href="https://github.com/AliceJump/ok-end-field/blob/master/README.md">README</a></p>
+<p>Use this feature to back up, restore, or migrate the application configuration between devices. Configuration lives in the <code>configs</code> folder inside the application directory and covers task switches and parameters, account configuration with account-specific task overrides, shared battle configurations, and window/device selections.</p>
+<h2 id="1-where-to-find-it">1. Where to find it</h2>
+<p>Open the Capture page of the application. The button row of the Debug card contains two buttons:</p>
+<ul>
+<li>Export Config</li>
+<li>Import Config</li>
+</ul>
+<h2 id="2-export-config">2. Export Config</h2>
+<ol>
+<li>Click <strong>Export Config</strong>.</li>
+<li>The application packs the <code>configs</code> folder into a zip file saved to the system Downloads folder, named like <code>ok-ef-config-20260907_010515.zip</code>.</li>
+<li>When finished, a &quot;Config Exported&quot; notification appears and the file manager opens with the zip selected.</li>
+</ol>
+<p>The exported zip does not include logs or screenshots. The <code>configs/backup</code> and <code>configs/global_config_migration_backup</code> folders are excluded as well.</p>
+<h2 id="3-import-config">3. Import Config</h2>
+<p>Two equivalent entry points are supported:</p>
+<ul>
+<li>Click <strong>Import Config</strong> and pick a zip file in the file dialog (it starts in the Downloads folder).</li>
+<li>Drag a zip file anywhere onto the application main window. When several zips are dropped at once, only the first one is imported.</li>
+</ul>
+<p>The zip must contain at least one <code>.json</code> config file. Three layouts are recognized:</p>
+<ol>
+<li>A zip produced by <strong>Export Config</strong> (entries under a <code>configs/</code> folder).</li>
+<li>Config files placed at the zip root.</li>
+<li>Config files wrapped in a single folder inside the zip (the wrapper folder is stripped on import; entries land directly in <code>configs</code>).</li>
+</ol>
+<p>Import flow:</p>
+<ol>
+<li>After you confirm the dialog, running tasks are paused.</li>
+<li>The current configuration is backed up to <code>configs/backup/import_backup_&lt;timestamp&gt;/</code>, then the <code>configs</code> folder is overwritten with the imported content (the two backup folders above are preserved).</li>
+<li>When finished, an &quot;Import Completed&quot; notification appears and a dialog asks whether to restart now.</li>
+</ol>
+<h2 id="4-taking-effect-and-rolling-back">4. Taking effect and rolling back</h2>
+<ul>
+<li>Import only changes the config files on disk. The running application keeps using the in-memory configuration until you click <strong>Restart Now</strong> or restart the app manually.</li>
+<li>To roll back manually, close the application first. Remove everything in <code>configs</code> except the <code>backup</code> and <code>global_config_migration_backup</code> folders, then copy the files from <code>configs/backup/import_backup_&lt;timestamp&gt;/</code> back into <code>configs</code>. Alternatively, import the zip you exported before.</li>
+<li>Export and import between identical or close application versions. Large version gaps may reset individual config items to their defaults.</li>
+</ul>
+<h2 id="5-faq">5. FAQ</h2>
+<ol>
+<li>The import button reports &quot;No config files found in the zip archive&quot;: the zip contains no <code>.json</code> file, or the selected file is not a config package.</li>
+<li>Dragging a zip does nothing: make sure the dragged file is a <code>.zip</code>; input widgets with their own drop handling (such as code editors) do not trigger the import.</li>
+<li>The export button reports &quot;Export Failed&quot;: check that the <code>configs</code> folder is not locked by another program (for example an open config file) and retry.</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/en/config-export-import.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Oct 31, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-where-to-find-it" style="margin-left:0px">1. Where to find it</a><a href="#2-export-config" style="margin-left:0px">2. Export Config</a><a href="#3-import-config" style="margin-left:0px">3. Import Config</a><a href="#4-taking-effect-and-rolling-back" style="margin-left:0px">4. Taking effect and rolling back</a><a href="#5-faq" style="margin-left:0px">5. FAQ</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>

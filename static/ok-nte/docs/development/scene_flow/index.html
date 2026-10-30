@@ -1,0 +1,172 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>SceneFlow 作者指南 · 开发 · ok-nte · 简体中文</title><meta name="description" content="SceneFlow 是代码内的轻量 Pipeline。它只处理“当前允许识别什么画面, 成功后允许到哪里去, 何时重试或恢复 — ok-nte 简体中文文档"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, 异环, 后台自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="BnanZ0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-nte/docs/development/scene_flow/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="SceneFlow 作者指南 · 开发 · ok-nte · 简体中文"><meta property="og:description" content="SceneFlow 是代码内的轻量 Pipeline。它只处理“当前允许识别什么画面, 成功后允许到哪里去, 何时重试或恢复 — ok-nte 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-nte/docs/development/scene_flow/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — 异环 · 后台自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SceneFlow 作者指南 · 开发 · ok-nte · 简体中文"><meta name="twitter:description" content="SceneFlow 是代码内的轻量 Pipeline。它只处理“当前允许识别什么画面, 成功后允许到哪里去, 何时重试或恢复 — ok-nte 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-zh-cn.png"><meta name="twitter:image:alt" content="ok-nte — 异环 · 后台自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"SceneFlow 作者指南 · 开发 · ok-nte · 简体中文","description":"SceneFlow 是代码内的轻量 Pipeline。它只处理“当前允许识别什么画面, 成功后允许到哪里去, 何时重试或恢复 — ok-nte 简体中文文档","url":"https://ok-script.com/ok-nte/docs/development/scene_flow/","inLanguage":"zh-CN","dateModified":"2026-10-05T05:43:25+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概览</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题与反馈</a><a href="../contributing/">贡献与验证</a><a href="../running-from-source/">从源码运行</a><a href="./" class="active" aria-current="page">SceneFlow 作者指南</a><a href="../combat-planner/">Combat Planner 开发指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="sceneflow-作者指南">SceneFlow 作者指南</h1>
+<p><code>SceneFlow</code> 是代码内的轻量 Pipeline。它只处理“当前允许识别什么画面, 成功后允许到哪里去, 何时重试或恢复”。OCR、点击、按键、路线和长时间业务循环仍写在任务 action 中。</p>
+<h2 id="一轮流程如何运行">一轮流程如何运行</h2>
+<pre><code class="language-python">flow.step(
+    FishingStep.CAST,
+    self.is_ready_to_cast,
+    self._cast,
+    next=(FishingStep.CAST, FishingStep.WAIT_BITE, FishingStep.RESULT),
+    policy=StepPolicy(max_attempts=4, interval=2),
+    on_failure=self._route_cast_failure,
+)
+</code></pre>
+<p>其含义是:</p>
+<ol>
+<li>只有 <code>CAST</code> 在当前候选集内, 且 <code>is_ready_to_cast()</code> 为真时, 才执行 <code>_cast()</code>。</li>
+<li><code>_cast()</code> 没有抛异常就视为完成。它的返回值会被忽略。</li>
+<li>完成后只允许识别 <code>CAST</code>、<code>WAIT_BITE</code>、<code>RESULT</code>。<code>next</code> 不是立即调用下一 action, 而是下一轮的可识别范围。</li>
+<li><code>CAST</code> 写在 <code>next</code> 中, 所以准备页仍然可见时可以再次抛竿。没有写入自身的 action 不会被框架重放。</li>
+<li>四次后仍停在 CAST, 则调用 <code>_route_cast_failure()</code> 决定去补货还是结束当前轮。</li>
+</ol>
+<pre><code class="language-mermaid">flowchart LR
+    A[&quot;候选: CAST&quot;] --&gt; B{&quot;准备页?&quot;}
+    B --&gt;|是| C[&quot;执行 _cast()&quot;]
+    C --&gt; D[&quot;候选: CAST / WAIT_BITE / RESULT&quot;]
+    D --&gt; E{&quot;匹配其中一个画面&quot;}
+    E --&gt;|CAST| C
+    E --&gt;|WAIT_BITE| F[&quot;执行 _wait_bite()&quot;]
+    E --&gt;|RESULT| G[&quot;执行 _collect_result()&quot;]
+</code></pre>
+<h2 id="api">API</h2>
+<pre><code class="language-python">flow.step(key, detector, action, *, next, policy=None, transition=None, on_failure=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>key</code></td>
+<td>步骤 Enum。</td>
+</tr>
+<tr>
+<td><code>detector</code></td>
+<td>无副作用的画面判断函数。</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>业务动作。返回值不参与流程; 成功不抛异常, 失败抛 <code>WaitFailedException</code>。</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>action 成功后允许识别的后继步骤, 必须非空。只有把自身写入其中才允许再次执行 action。</td>
+</tr>
+<tr>
+<td><code>policy</code></td>
+<td>当前 action 的重复次数和最小间隔。</td>
+</tr>
+<tr>
+<td><code>transition</code></td>
+<td>已知页面切换期间重复执行的轻量输入, 例如 Escape。</td>
+</tr>
+<tr>
+<td><code>on_failure</code></td>
+<td>当前步骤已无法继续时的局部路由。</td>
+</tr>
+</tbody></table>
+<h3 id="steppolicy"><code>StepPolicy</code></h3>
+<pre><code class="language-python">StepPolicy(max_attempts=None, interval=0.0)
+</code></pre>
+<ul>
+<li><code>max_attempts</code>: 同一个 action 最多执行几次。<code>None</code> 表示不限制。</li>
+<li><code>interval</code>: 同一个 action 再次执行前的最小间隔。它不替代点击或按键自身的节流。</li>
+</ul>
+<p><code>StepPolicy</code> 不管理 action 的执行时长。长动作自己拥有领域 timeout, 例如钓鱼控条的 <code>CONTROL_TIMEOUT</code>。Pipeline 在 action 完成后才继续识别后继步骤; 节点策略主要提供重复次数、最小重试间隔与错误路由, 而非统一接管业务 action timeout。</p>
+<p>如果 action 抛出 <code>WaitFailedException</code>:</p>
+<ul>
+<li>后继画面已经出现时, 直接进入后继步骤;</li>
+<li>原画面仍在且未达到 <code>max_attempts</code> 时, 等待 <code>interval</code> 后重试;</li>
+<li>否则进入 <code>on_failure</code>。</li>
+</ul>
+<h3 id="on-failure"><code>on_failure</code></h3>
+<pre><code class="language-python">def _route_cast_failure(self, failure: StepFailure) -&gt; FishingStep | None:
+    if self.config[self.CONF_AUTO_BUY_BAIT]:
+        return FishingStep.OPEN_SELL
+    self.add_failed(&quot;未检测到进入抛竿状态&quot;)
+    return FishingStep.CAST
+</code></pre>
+<p><code>on_failure</code> 只在框架确认当前步骤不能继续时调用, 例如达到 <code>max_attempts</code> 或 action 抛出不可重试的 <code>WaitFailedException</code>。</p>
+<ul>
+<li>返回已注册的步骤: 立即切换为只识别该步骤;</li>
+<li>返回 <code>None</code>: 进入全局 <code>recovery()</code>;</li>
+<li>没有 <code>on_failure</code>: 同样进入 <code>recovery()</code>。</li>
+</ul>
+<h2 id="已知切换与未知恢复">已知切换与未知恢复</h2>
+<p>两者都用 <code>interval</code> 节流重复输入, 但触发条件不同。</p>
+<pre><code class="language-python">return_to_ready = flow.transition(
+    lambda: self.send_key(&quot;esc&quot;),
+    interval=2,
+    timeout=60,
+)
+
+flow.step(
+    FishingStep.RESULT,
+    self.has_success_overlay,
+    self._collect_result,
+    next=(FishingStep.CAST,),
+    transition=return_to_ready,
+)
+</code></pre>
+<ul>
+<li><code>transition()</code> 在 source action 成功完成后立刻执行一次, 并在等待 <code>next</code> 页面时按 <code>interval</code> 重试。它的 <code>timeout</code> 从 action 返回后开始计算。</li>
+<li><code>recovery()</code> 只处理候选步骤都不可见, 或失败路由返回 <code>None</code> 的未知画面。它默认先等待 5 秒 <code>grace</code>, 之后才按 <code>interval</code> 执行恢复动作。</li>
+</ul>
+<pre><code class="language-python">flow.recovery(
+    self._recover_fishing_scene,
+    grace=5,
+    interval=2,
+    max_attempts=180,
+    timeout=360,
+)
+</code></pre>
+<p>钓鱼的 <code>_recover_fishing_scene()</code> 可在发送 Escape 前释放控条按键; 普通 transition 则直接写 <code>lambda: self.send_key(&quot;esc&quot;)</code> 即可。</p>
+<h2 id="guard-与中断">Guard 与中断</h2>
+<ul>
+<li><code>guard()</code> 优先于普通 step, 但不修改当前候选集。钓鱼的 TEAM guard 重新进入钓鱼点后, 会继续等待原来的补货或钓鱼步骤。</li>
+<li><code>interrupt()</code> 优先于 guard。月卡中断在 <code>BaseNTETask</code> 中统一注册。</li>
+<li>普通 <code>wait_until()</code> 已自动检查中断。自定义高频循环调用 <code>self.scene_flow.safe_point()</code>; 发现中断会抛 <code>SceneReplan</code> 并重新分类。</li>
+<li>被 <code>SceneReplan</code> 中断的 action 不计入 <code>max_attempts</code>。</li>
+</ul>
+<h2 id="最小检查表">最小检查表</h2>
+<ol>
+<li>detector 是否只读画面, 没有输入副作用?</li>
+<li>action 是否只完成一次业务提交? 失败是否抛 <code>WaitFailedException</code>?</li>
+<li>成功后真实可能出现的每个画面是否都在 <code>next</code>?</li>
+<li>是否真的要再次输入? 需要才把当前 key 放入 <code>next</code>。</li>
+<li>长动作是否在 action 内部设置自己的业务 timeout?</li>
+<li>已知退出页面是否使用 transition, 未知画面是否交给 recovery?</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/6b10cbd5313cab784666fabcb2be54128e2079f1/docs/zh-CN/development/scene_flow.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#一轮流程如何运行" style="margin-left:0px">一轮流程如何运行</a><a href="#api" style="margin-left:0px">API</a><a href="#steppolicy" style="margin-left:10px">StepPolicy</a><a href="#on-failure" style="margin-left:10px">on_failure</a><a href="#已知切换与未知恢复" style="margin-left:0px">已知切换与未知恢复</a><a href="#guard-与中断" style="margin-left:0px">Guard 与中断</a><a href="#最小检查表" style="margin-left:0px">最小检查表</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>

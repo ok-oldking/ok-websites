@@ -1,0 +1,102 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>匯入外掛 · 简体中文 · ok-script · 繁體中文</title><meta name="description" content="在宿主配置中啟用外掛管理頁： plugin 預設為 False ，控制是否顯示“外掛”管理頁。已有 ok import — ok-script 繁體中文文件"><meta name="keywords" content="ok-script, okscript, GitHub, ok-oldking/ok-script, ok-oldking, 開源, Python, 視覺自動化, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件, ok-ww, okww, 鳴潮, ok-oldking/ok-wuthering-waves, ok-wuthering-waves, okwutheringwaves, 鳴潮 後臺自動戰鬥 自動刷聲骸 一鍵日常  Automation for Wuthering Waves, ok-nte, oknte, 異環, BnanZ0/ok-nte, 異環 後臺副本掛機 Automation for Neverness to Everness, ok-duet-night-abyss, okduetnightabyss, 二重螺旋, BnanZ0/ok-duet-night-abyss, 二重螺旋 後臺副本掛機 Automation for Duet Night Abyss, ok-end-field, okendfield, 明日方舟：終末地, AliceJump/ok-end-field, 終末地 End Field Automation 基於ok-script開發的自動化, ok-gf2, okgf2, 少女前線2：追放, ok-oldking/ok-gf2, 少女前線2 追放 PC版 後臺一鍵收菜 自動化指令碼 Girls' Frontline 2: Exilium Automation Tool, ok-script-app, okscriptapp, ok-oldking/ok-script-app, Python版按鍵精靈基於ok-script開發, ok-kes, okkes, 卡厄思夢境, baoxin1100/ok-kes, ok框架卡厄思夢境自動化工具，包含自動出擊模式和自動卡厄思模式功能, ok-star-resonance, okstarresonance, 星痕共鳴, Sanheiii/ok-star-resonance, 基於ok-script的星痕共鳴自動工具, OK-AzurPromilia, OKAzurPromilia, 藍色星原：旅謠, longer-sausage/OK-AzurPromilia, 藍色星原：旅謠自動化指令碼, ok-Onmyoji, okOnmyoji, 陰陽師, YunLiuZ/ok-Onmyoji, 陰陽師(Onmyoji)自動化戰鬥基於ok-script開發, ok-genshin-impact, okgenshinimpact, 原神, ok-oldking/ok-genshin-impact, 原神 OKGI 自動拾取  | 後臺自動劇情  | 後臺一條龍 | UI Automation Genshin Impact, ok-starrailassistant, okstarrailassistant, 崩壞：星穹鐵道, Shasnow/ok-starrailassistant, 崩壞星穹鐵道自動化助手 | PC端 | 支援後臺執行"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/zh-TW/docs/plugins/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="匯入外掛 · 简体中文 · ok-script · 繁體中文"><meta property="og:description" content="在宿主配置中啟用外掛管理頁： plugin 預設為 False ，控制是否顯示“外掛”管理頁。已有 ok import — ok-script 繁體中文文件"><meta property="og:url" content="https://ok-script.com/zh-TW/docs/plugins/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-script-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script — 開源 · Python · 視覺自動化">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="匯入外掛 · 简体中文 · ok-script · 繁體中文"><meta name="twitter:description" content="在宿主配置中啟用外掛管理頁： plugin 預設為 False ，控制是否顯示“外掛”管理頁。已有 ok import — ok-script 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-script-zh-tw.png"><meta name="twitter:image:alt" content="ok-script — 開源 · Python · 視覺自動化">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"匯入外掛 · 简体中文 · ok-script · 繁體中文","description":"在宿主配置中啟用外掛管理頁： plugin 預設為 False ，控制是否顯示“外掛”管理頁。已有 ok import — ok-script 繁體中文文件","url":"https://ok-script.com/zh-TW/docs/plugins/","inLanguage":"zh-TW","dateModified":"2026-10-31T00:16:44+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../#projects">專案</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">文件中心</a><a href="../quick_start/">MCP 快速開始</a><a href="../agent-prompts/">程式設計代理提示詞</a><a href="../agent-setup/">代理安裝指南（英文）</a><a href="../mcp/">MCP 連線與執行</a><a href="../intro_to_automation/">自動化原理</a><a href="../interface/">介面與開發工具</a><a href="../after_quick_start/">進階指南</a><a href="./" class="active" aria-current="page">匯入外掛</a><a href="../building-site/">構建文件網站</a><a href="../agent-setup/">Agent environment setup</a><a href="../mcp/">MCP connection and execution</a><a href="../feature-crops/">Template export format</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="匯入外掛-qt">匯入外掛（Qt）</h1>
+<p>在宿主配置中啟用外掛管理頁：</p>
+<pre><code class="language-python">config = {&quot;plugin&quot;: True}
+</code></pre>
+<p><code>plugin</code> 預設為 <code>False</code>，控制是否顯示“外掛”管理頁。已有 <code>ok_import/</code>
+外掛仍按原有方式載入。管理頁和自定義 Qt 頁面僅用於桌面模式，無介面執行時
+不會例項化 Qt 頁面。</p>
+<h2 id="安裝和刪除">安裝和刪除</h2>
+<p>兩個新增按鈕均先顯示與指令碼匯入相同的釋出者風險提示，需要勾選確認並等待
+15 秒倒計時後才能繼續安裝。</p>
+<ul>
+<li><strong>從 ZIP 新增</strong>：選擇本地 <code>.zip</code> 或 <code>.okscript</code> 檔案。</li>
+<li><strong>從 GitHub 新增</strong>：輸入 <code>https://github.com/owner/repository</code> 或
+<code>owner/repository</code>。在最近 20 個釋出版本中查詢帶 <code>.zip</code> / <code>.okscript</code>
+附件的最新穩定版；沒有合適的穩定版時使用預釋出版。多個附件可手動選擇。
+不會自動使用 GitHub 生成的原始碼壓縮包。</li>
+<li><strong>刪除外掛</strong>：暫存刪除操作，下次啟動時移除 <code>ok_import/</code> 中的安裝目錄。
+外掛應將持久化使用者資料放在宿主配置或資料目錄中，不要放在安裝目錄裡。</li>
+</ul>
+<p>例如 <code>https://github.com/hxwd94666/WW-Echo-Workshop</code> 的發行 ZIP 內含
+<code>echo-workshop/manifest.json</code>。支援這種單層目錄包裝，也支援將 manifest 直接放在
+壓縮包根目錄。安裝相同 ID 的包會暫存更新並提示重啟，本次執行的檔案、頁面和任務
+保持原樣。首次安裝的新外掛可立即載入。
+下載和解壓在後臺執行；任務和 Qt 頁面在 GUI 執行緒初始化。發行包應包含所需
+Python 包、資源及原生二進位制，安裝過程不執行構建指令碼或 pip。</p>
+<h2 id="應用暫存操作">應用暫存操作</h2>
+<p>關閉並重新開啟應用後，暫存的更新或刪除才會生效。操作儲存在不參與外掛掃描的
+<code>ok_import/.plugin-staging/</code> 下。“取消待處理操作”可撤銷尚未應用的變更，保留當前
+外掛；有待處理操作的外掛暫停檢查更新。</p>
+<p>下次啟動時，框架先檢查應用互斥鎖，在載入外掛任務和模板資源之前應用目錄變更。
+更新的舊版本會保留到新任務以及桌面頁面初始化成功。如果初始化失敗，或應用在確認
+成功前退出，再次啟動將恢復舊目錄。管理頁會顯示失敗原因，可先取消失敗操作再重試。</p>
+<p>刪除時先將外掛目錄移出掃描路徑，再清理檔案。備份或廢棄檔案清理失敗會在以後啟動
+時重試，不會讓已刪除外掛重新載入。外掛目錄之外的使用者資料不會刪除；外掛仍應在
+應用正常退出時停止後臺工作並斷開訂閱。</p>
+<h2 id="github-更新">GitHub 更新</h2>
+<p>通過 GitHub 新增的外掛會儲存倉庫、發行標籤和所選附件，重啟後仍可使用
+“檢查更新”按鈕。外掛載入後 10 秒會自動在後臺檢查一次，安裝或重新載入後同樣適用。
+正在執行安裝時，自動檢查會延後至操作結束。</p>
+<p>僅提供嚴格高於已安裝版本的更新；優先使用 manifest 中的版本，預設時使用儲存的
+發行標籤，支援數字版本及 <code>v</code> 字首。相同或更舊版本不會提示更新，無法比較的版本
+會顯示檢查錯誤。發現更新後可點選“更新至 …”，確認匯入提示後下載並暫存，重啟後生效。
+自動檢查不會自動安裝更新，更新包必須匹配外掛 ID 且包含更高版本。</p>
+<p>本地安裝的外掛不顯示 GitHub 檢查按鈕。此前未儲存來源的外掛需要通過 GitHub
+重新新增一次，才能啟用更新檢查。</p>
+<h2 id="任務與自定義頁">任務與自定義頁</h2>
+<p>在 <code>manifest.json</code> 中宣告任務、自定義 Qt 頁，或同時宣告兩者：</p>
+<pre><code class="language-json">{
+  &quot;file_name&quot;: &quot;my-plugin&quot;,
+  &quot;script_name&quot;: &quot;我的插件&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;tasks&quot;: [[&quot;plugin_tasks&quot;, &quot;MyTask&quot;]],
+  &quot;custom_tabs&quot;: [[&quot;plugin_page&quot;, &quot;MyTab&quot;]]
+}
+</code></pre>
+<p>入口格式為 <code>[模块名, 类名]</code>，支援 <code>ui.main</code> 等巢狀模組，模組相對於外掛目錄。
+任務繼承 <code>BaseTask</code> 或 <code>TriggerTask</code>，均顯示在外掛標準任務頁；自定義頁獲得獨立導航。
+不宣告 <code>tasks</code> 時沿用掃描根目錄 <code>.py</code> 檔案的方式；純頁面外掛應宣告 <code>&quot;tasks&quot;: []</code>。
+<code>custom_tabs</code> 預設為空列表，自定義頁模組由 Qt 適配層載入。</p>
+<p>自定義頁繼承 <code>ok.ui.qt.widget.CustomTab.CustomTab</code>，提供 <code>name</code>、<code>icon</code> 和頁面內容。
+宿主在構造後設置 <code>executor</code>，負責導航和銷燬。頁面可提供 <code>dispose()</code> 或
+<code>stop_worker()</code> 釋放訂閱及後臺工作。完整程式碼示例見<a href="../../../en/docs/plugins/">英文說明</a>。</p>
+<p>匯入任務解除安裝時呼叫 <code>on_destroy()</code>；修改任務程式碼後重新載入整個外掛，避免頁面保留
+舊任務例項。單個自定義頁載入失敗不會阻止其他頁面，錯誤會顯示在管理頁。</p>
+<h2 id="相容任務自帶頁面">相容任務自帶頁面</h2>
+<p>Workshop 等現有外掛可在任務中提供 <code>create_import_page(parent)</code>，返回一個內嵌
+<code>QWidget</code>。沒有顯式 <code>custom_tabs</code> 時，宿主用這些頁面替代普通任務卡片頁，任務仍
+保持註冊並可執行。頁面建立失敗時保留普通任務介面。</p>
+<p>不需要 <code>on_main_window()</code> 回撥、修改宿主內部元件或配置應用級 <code>custom_tabs</code>。
+應在工廠方法內匯入 Qt 頁面，保持任務定義可被無介面執行時匯入。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/22664c537f120a278fef82ecf26d1271ad4c3e8c/docs/plugins.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#安裝和刪除" style="margin-left:0px">安裝和刪除</a><a href="#應用暫存操作" style="margin-left:0px">應用暫存操作</a><a href="#github-更新" style="margin-left:0px">GitHub 更新</a><a href="#任務與自定義頁" style="margin-left:0px">任務與自定義頁</a><a href="#相容任務自帶頁面" style="margin-left:0px">相容任務自帶頁面</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部專案</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20261030184412" defer></script></body></html>

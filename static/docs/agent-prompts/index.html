@@ -1,0 +1,62 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>编程代理提示词 · ok-script · 简体中文</title><meta name="description" content="English · 文档中心 · 连接 MCP 在本地编程代理中打开自动化应用目录，提供项目路径、目标应用和期望结果。 — ok-script 简体中文文档"><meta name="keywords" content="ok-script, okscript, GitHub, ok-oldking/ok-script, ok-oldking, 开源, Python, 视觉自动化, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档, ok-ww, okww, 鸣潮, ok-oldking/ok-wuthering-waves, ok-wuthering-waves, okwutheringwaves, 鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves, ok-nte, oknte, 异环, BnanZ0/ok-nte, 异环 后台副本挂机 Automation for Neverness to Everness, ok-duet-night-abyss, okduetnightabyss, 二重螺旋, BnanZ0/ok-duet-night-abyss, 二重螺旋 后台副本挂机 Automation for Duet Night Abyss, ok-end-field, okendfield, 明日方舟：终末地, AliceJump/ok-end-field, 终末地 End Field Automation 基于ok-script开发的自动化, ok-gf2, okgf2, 少女前线2：追放, ok-oldking/ok-gf2, 少女前线2 追放 PC版 后台一键收菜 自动化脚本 Girls' Frontline 2: Exilium Automation Tool, ok-script-app, okscriptapp, ok-oldking/ok-script-app, Python版按键精灵基于ok-script开发, ok-kes, okkes, 卡厄思梦境, baoxin1100/ok-kes, ok框架卡厄思梦境自动化工具，包含自动出击模式和自动卡厄思模式功能, ok-star-resonance, okstarresonance, 星痕共鸣, Sanheiii/ok-star-resonance, 基于ok-script的星痕共鸣自动工具, OK-AzurPromilia, OKAzurPromilia, 蓝色星原：旅谣, longer-sausage/OK-AzurPromilia, 蓝色星原：旅谣自动化脚本, ok-Onmyoji, okOnmyoji, 阴阳师, YunLiuZ/ok-Onmyoji, 阴阳师(Onmyoji)自动化战斗基于ok-script开发, ok-genshin-impact, okgenshinimpact, 原神, ok-oldking/ok-genshin-impact, 原神 OKGI 自动拾取  | 后台自动剧情  | 后台一条龙 | UI Automation Genshin Impact, ok-starrailassistant, okstarrailassistant, 崩坏：星穹铁道, Shasnow/ok-starrailassistant, 崩坏星穹铁道自动化助手 | PC端 | 支持后台运行"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/docs/agent-prompts/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="编程代理提示词 · ok-script · 简体中文"><meta property="og:description" content="English · 文档中心 · 连接 MCP 在本地编程代理中打开自动化应用目录，提供项目路径、目标应用和期望结果。 — ok-script 简体中文文档"><meta property="og:url" content="https://ok-script.com/docs/agent-prompts/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="编程代理提示词 · ok-script · 简体中文"><meta name="twitter:description" content="English · 文档中心 · 连接 MCP 在本地编程代理中打开自动化应用目录，提供项目路径、目标应用和期望结果。 — ok-script 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta name="twitter:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"编程代理提示词 · ok-script · 简体中文","description":"English · 文档中心 · 连接 MCP 在本地编程代理中打开自动化应用目录，提供项目路径、目标应用和期望结果。 — ok-script 简体中文文档","url":"https://ok-script.com/docs/agent-prompts/","inLanguage":"zh-CN","dateModified":"2026-10-31T00:16:44+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../ok-nte/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../ok-kes/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ap/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="../quick_start/">MCP 快速开始</a><a href="./" class="active" aria-current="page">编程代理提示词</a><a href="../agent-setup/">代理安装指南（英文）</a><a href="../mcp/">MCP 连接与执行</a><a href="../intro_to_automation/">自动化原理</a><a href="../interface/">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="../plugins/">导入插件</a><a href="../building-site/">构建文档网站</a><a href="../agent-setup/">Agent environment setup</a><a href="../mcp/">MCP connection and execution</a><a href="../feature-crops/">Template export format</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="如何让编程代理开发可复用自动化">如何让编程代理开发可复用自动化</h1>
+<p><a href="../../en/docs/agent-prompts/">English</a> · <a href="../">文档中心</a> · <a href="../quick_start/">连接 MCP</a></p>
+<p>在本地编程代理中打开自动化应用目录，提供项目路径、目标应用和期望结果。代理需要访问本地文件、启动进程，并连接该项目的 ok-script MCP 服务。将下面的路径和任务内容替换成你的实际需求。</p>
+<h2 id="连接项目">连接项目</h2>
+<blockquote>
+<p>在 E:\automation\my-app 中工作，使用项目自己的虚拟环境和现有依赖。启动项目的 ok-script MCP 开发入口；如果没有，先帮我配置。在 logs/mcp/connections 中读取有效连接记录，核实项目和进程，用其中的 URL 和 bearer token 连接，不要输出凭据。调用 list_skills，再通过 get_skill 读取相关技能。确认 screenshot 获取的是正确目标。不要使用 Computer Use 技能、插件或工具。</p>
+</blockquote>
+<p>如果代理没有原生 MCP 连接能力，让它用已安装的官方 MCP Python SDK 编写本地客户端，仍然通过 MCP 服务提交任务文件。端口、认证和进程生命周期见 <a href="../mcp/">MCP 说明（英文）</a>。</p>
+<h2 id="查询任务所需的-api">查询任务所需的 API</h2>
+<blockquote>
+<p>通过 ok-script MCP 调用 list_skills，读取 get_skill(&quot;develop&quot;)，以及相关模板或测试技能。我需要找到设置按钮、点击它，并验证新界面。定位这个项目的 Python 解释器实际使用的 ok-script 包，检查截图、匹配、等待和输入方法的源码、文档字符串和 Python 签名，包括继承的方法。列出所需方法的导入路径、准确签名、返回行为和本地源码位置，再给出适用于当前安装版本的最小示例。不要猜测 API 名称，也不要为了套用示例而更换版本。</p>
+</blockquote>
+<p>MCP 提供工作流技能和执行工具，<strong>没有 <code>get_api</code> 工具或完整的 Python API 目录</strong>。代理通过本地文件访问检查已安装包，获取与项目版本一致的 API。若导入模块需要尚未安装的可选依赖，可先读源码，再判断是否需要安装。无需检出框架源码仓库。</p>
+<h2 id="开发并验证新任务">开发并验证新任务</h2>
+<blockquote>
+<p>在 E:\automation\my-app 中，为我的 Windows 应用开发可复用 Python 任务 EnableOptionTask。从主界面进入设置，启用“显示详情”，保存，再次打开设置，确认“显示详情”仍为开启状态。重复运行应保持开启，不能把选项再次关闭。</p>
+<p>先读取相关 MCP 技能并核实已安装 API，再实现任务。代码保存在项目正式任务模块中。用 ok-script 截图和交互，优先验证 PostMessage 后台输入。优先使用几何、颜色或模板匹配，确有需要再加 OCR。不要使用 Computer Use 工具，也不要给运行中的脚本添加大模型调用。</p>
+<p>通过 MCP 测试，提供 reset_to_start、verify_start_state 和可观察的成功断言。每次尝试前恢复并验证起始状态，保存失败日志和截图，设置有上限的等待，并验证重复运行。将完成的任务注册到项目配置，使普通 GUI/CLI 运行也能恢复状态。最后给出保存的文件路径、验证结果、尚未验证的限制，以及不依赖代理的准确运行命令。无法验证 GUI 开始按钮时如实说明。</p>
+</blockquote>
+<p>其他任务也请说明四件事：<strong>目标、起始状态、操作、成功条件</strong>。还可以补充支持的分辨率、后台运行要求和禁止执行的操作。最终交付物应是可复用 Python 代码、素材、配置和运行说明。</p>
+<h2 id="修改已有任务">修改已有任务</h2>
+<blockquote>
+<p>应用更新设置布局后，已保存的 EnableOptionTask 失败了。调用 list_tasks 找到原始源码，检查失败证据并原地修改。用返回的 task_id 调用 reload_tasks，等待重载成功后恢复目标状态，通过调用已注册任务的轻量 MCP 测试文件验证。不要在临时文件里复制整套任务逻辑。复用恢复方法，验证重复运行；识别逻辑变化时补充截图回归测试。保持日常运行不调用大模型。</p>
+</blockquote>
+<h2 id="重复运行成果">重复运行成果</h2>
+<p>让代理给出真实的已注册任务名和配置入口。例如，在应用项目目录运行：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m ok run_task EnableOptionTask --config src.config:config
+</code></pre>
+<p>这里的 CLI 命令选择<strong>已注册任务</strong>；MCP 的 <code>run_task(file_path)</code> 执行任务文件，两者入口不同。也可以关闭 MCP 后从应用 GUI 启动保存的任务。切换到普通运行前先结束开发运行时，详见<a href="../quick_start/">快速开始</a>。</p>
+<p>开发对话会消耗模型 Token；复用本地 Python 自动化无需代理或大模型推理。后续界面变化可能需要新一轮开发；如果你主动要求脚本调用大模型，则该部分仍有推理成本。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/22664c537f120a278fef82ecf26d1271ad4c3e8c/docs/agent-prompts.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#连接项目" style="margin-left:0px">连接项目</a><a href="#查询任务所需的-api" style="margin-left:0px">查询任务所需的 API</a><a href="#开发并验证新任务" style="margin-left:0px">开发并验证新任务</a><a href="#修改已有任务" style="margin-left:0px">修改已有任务</a><a href="#重复运行成果" style="margin-left:0px">重复运行成果</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
+  <script src="../../assets/site.js?v=20261030184412" defer></script></body></html>

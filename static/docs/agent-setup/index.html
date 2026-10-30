@@ -1,0 +1,128 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Agent environment setup · English · ok-script · 简体中文</title><meta name="description" content="Use this entry point when asked to install the ok-script Py — ok-script 简体中文文档"><meta name="keywords" content="ok-script, okscript, GitHub, ok-oldking/ok-script, ok-oldking, 开源, Python, 视觉自动化, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档, ok-ww, okww, 鸣潮, ok-oldking/ok-wuthering-waves, ok-wuthering-waves, okwutheringwaves, 鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves, ok-nte, oknte, 异环, BnanZ0/ok-nte, 异环 后台副本挂机 Automation for Neverness to Everness, ok-duet-night-abyss, okduetnightabyss, 二重螺旋, BnanZ0/ok-duet-night-abyss, 二重螺旋 后台副本挂机 Automation for Duet Night Abyss, ok-end-field, okendfield, 明日方舟：终末地, AliceJump/ok-end-field, 终末地 End Field Automation 基于ok-script开发的自动化, ok-gf2, okgf2, 少女前线2：追放, ok-oldking/ok-gf2, 少女前线2 追放 PC版 后台一键收菜 自动化脚本 Girls' Frontline 2: Exilium Automation Tool, ok-script-app, okscriptapp, ok-oldking/ok-script-app, Python版按键精灵基于ok-script开发, ok-kes, okkes, 卡厄思梦境, baoxin1100/ok-kes, ok框架卡厄思梦境自动化工具，包含自动出击模式和自动卡厄思模式功能, ok-star-resonance, okstarresonance, 星痕共鸣, Sanheiii/ok-star-resonance, 基于ok-script的星痕共鸣自动工具, OK-AzurPromilia, OKAzurPromilia, 蓝色星原：旅谣, longer-sausage/OK-AzurPromilia, 蓝色星原：旅谣自动化脚本, ok-Onmyoji, okOnmyoji, 阴阳师, YunLiuZ/ok-Onmyoji, 阴阳师(Onmyoji)自动化战斗基于ok-script开发, ok-genshin-impact, okgenshinimpact, 原神, ok-oldking/ok-genshin-impact, 原神 OKGI 自动拾取  | 后台自动剧情  | 后台一条龙 | UI Automation Genshin Impact, ok-starrailassistant, okstarrailassistant, 崩坏：星穹铁道, Shasnow/ok-starrailassistant, 崩坏星穹铁道自动化助手 | PC端 | 支持后台运行"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/docs/agent-setup/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Agent environment setup · English · ok-script · 简体中文"><meta property="og:description" content="Use this entry point when asked to install the ok-script Py — ok-script 简体中文文档"><meta property="og:url" content="https://ok-script.com/docs/agent-setup/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Agent environment setup · English · ok-script · 简体中文"><meta name="twitter:description" content="Use this entry point when asked to install the ok-script Py — ok-script 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta name="twitter:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Agent environment setup · English · ok-script · 简体中文","description":"Use this entry point when asked to install the ok-script Py — ok-script 简体中文文档","url":"https://ok-script.com/docs/agent-setup/","inLanguage":"zh-CN","dateModified":"2026-10-31T00:16:44+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../ok-nte/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../ok-kes/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ap/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="../quick_start/">MCP 快速开始</a><a href="../agent-prompts/">编程代理提示词</a><a href="./" class="active" aria-current="page">代理安装指南（英文）</a><a href="../mcp/">MCP 连接与执行</a><a href="../intro_to_automation/">自动化原理</a><a href="../interface/">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="../plugins/">导入插件</a><a href="../building-site/">构建文档网站</a><a href="./" class="active" aria-current="page">Agent environment setup</a><a href="../mcp/">MCP connection and execution</a><a href="../feature-crops/">Template export format</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="set-up-ok-script-with-a-coding-agent">Set up ok-script with a coding agent</h1>
+<p>Use this entry point when asked to install the <code>ok-script</code> Python package, prepare
+its environment, or set up an automation project that uses it. Work in the
+consuming application&#39;s folder. The library source does not need to be cloned.</p>
+<h2 id="give-the-agent-an-entry-point">Give the agent an entry point</h2>
+<p>For a one-time setup, tell your coding agent:</p>
+<blockquote>
+<p>Install ok-script and set up this project&#39;s environment. First read <a href="https://raw.githubusercontent.com/ok-oldking/ok-script/master/docs/agent-setup.md">https://raw.githubusercontent.com/ok-oldking/ok-script/master/docs/agent-setup.md</a> and follow the relevant setup skills linked there. Preserve this project&#39;s existing dependency constraints.</p>
+</blockquote>
+<p>For future requests such as &quot;install ok-script and set up its environment&quot;, add
+the following to the consuming project&#39;s <code>AGENTS.md</code>, or the instruction file
+your coding agent reads:</p>
+<pre><code class="language-markdown">## ok-script setup
+
+When asked to install, configure, or repair ok-script or its Python environment,
+read https://raw.githubusercontent.com/ok-oldking/ok-script/master/docs/agent-setup.md
+and follow the relevant setup skills before changing the environment.
+Use this project&#39;s virtual environment and preserve its dependency constraints.
+After installation, generate .agents/skills/ok-script-develop/SKILL.md in the
+current workspace using the setup-env template, preserving any existing custom skill.
+After installation, offer to create an automation project and ask for missing
+game/app details. Give each project its own subfolder, config, and start scripts.
+</code></pre>
+<p>Installing a Python package does not register its instructions with a coding
+agent. The prompt or project instruction supplies the discovery link; after
+installation, the package also provides local copies of the skills. The coding
+agent then generates a discoverable development skill in the consuming workspace;
+<code>pip install</code> alone does not write project instructions. No MCP server is needed
+to read the setup instructions or generate this local skill.</p>
+<h2 id="instructions-for-the-coding-agent">Instructions for the coding agent</h2>
+<ol>
+<li>Inspect the consuming project&#39;s instructions, Python requirements, lockfile,
+existing environment, and requested outcome. This is application setup, not
+development of the ok-script library. For a new environment, ok-script
+currently requires Windows and Python 3.11 or later; check the selected
+release&#39;s package metadata for its requirements.</li>
+<li>Read the
+<a href="https://github.com/ok-oldking/ok-script/blob/master/.agents/skills/setup-env/SKILL.md">setup-env skill</a>
+before installing or repairing dependencies. It covers environment creation,
+optional dependency profiles, the separate OpenCV choice, and verification.
+If reading remotely, resolve that skill&#39;s relative links against its location
+in this repository. Preserve existing pins and use instructions from the
+matching release or local package when available.</li>
+<li>Install in the application&#39;s environment and record the chosen dependencies
+in its existing dependency manifest or lockfile. Follow its package manager&#39;s
+workflow. Select only the profiles the requested application needs; a desktop
+GUI commonly uses <code>default,qt</code>, with exactly one compatible OpenCV variant
+installed separately. Verify the environment before offering project creation.</li>
+<li>After installation, generate
+<code>&lt;cwd&gt;/.agents/skills/ok-script-develop/SKILL.md</code> using the generic template
+linked from <code>setup-env</code>. This step also applies to installation-only requests;
+preserve and merge an existing customized skill rather than overwriting it.
+Verify it can locate the selected library&#39;s consumer development instructions.
+The skill applies to any consuming game or app and discovers the library&#39;s
+instructions in place instead of duplicating them.</li>
+<li>After a successful initial installation, ask: &quot;Would you like to create an
+automation project now? Which game or app should it automate, and is it a
+Windows app or an Android device/emulator?&quot; If the user already requested a
+project, ask only for missing details. Skip this offer when repairing an
+existing project or when the user has explicitly declined project creation.</li>
+<li>When project creation is requested, read the
+<a href="https://github.com/ok-oldking/ok-script/blob/master/.agents/skills/setup-project/SKILL.md">setup-project skill</a>.
+Identify the actual executable/window or device/app from the user&#39;s answers
+and local inspection. Ask for any required details that remain ambiguous;
+wait for those answers before writing target-dependent config. Create each
+project in its own named workspace subfolder, containing its own <code>config.py</code>,
+<code>start_gui.py</code>, and <code>start_mcp.py</code>. Keep its tasks, assets, settings, and logs
+in that folder too. Ensure its root also has the local <code>ok-script-develop</code>
+skill, even if it shares the workspace environment. Omit <code>gui_icon</code> to use the
+default <code>OK</code> PNG bundled with
+the Python package; set it only when supplying a custom application icon.
+Reuse an existing project in place. Projects may share
+the prepared environment when compatible. Use the installed version&#39;s APIs
+and verify that launchers work when invoked from outside their subfolder.</li>
+<li>Run the checks in the relevant skills. Report the environment path, installed
+ok-script version, dependency profiles, OpenCV choice, and verification
+results, plus the generated or reused development skill path. For application
+setup, also report the project folder, config,
+launcher paths, and which target capture/input checks succeeded.</li>
+</ol>
+<h2 id="read-skills-from-an-installed-package">Read skills from an installed package</h2>
+<p>Use the selected environment&#39;s interpreter to obtain skill metadata and absolute
+source paths without starting the GUI or MCP server. This example runs from the
+workspace containing <code>.venv</code>; a project subfolder can use that same interpreter
+by its resolved absolute path:</p>
+<pre><code class="language-powershell">$projectPy = (Resolve-Path .\.venv\Scripts\python.exe).Path
+&amp; $projectPy -c &quot;from ok.core.skills import list_skills; import json; print(json.dumps(list_skills(), indent=2))&quot;
+</code></pre>
+<p>Read the returned <code>setup-env</code> or <code>setup-project</code> path and resolve relative links
+from that file. These local copies match the installed package. If an older
+release does not include skills, use this repository&#39;s instructions and inspect
+the installed APIs rather than upgrading just to obtain instructions.</p>
+<p>Once a requested MCP runtime is running, <code>list_skills()</code> and
+<code>get_skill(&quot;setup-project&quot;)</code> expose the same instructions. See the
+<a href="../mcp/">MCP guide</a> for connection details and the
+<a href="../../en/docs/agent-prompts/">development prompts</a> for subsequent task implementation.</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/22664c537f120a278fef82ecf26d1271ad4c3e8c/docs/agent-setup.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#give-the-agent-an-entry-point" style="margin-left:0px">Give the agent an entry point</a><a href="#instructions-for-the-coding-agent" style="margin-left:0px">Instructions for the coding agent</a><a href="#read-skills-from-an-installed-package" style="margin-left:0px">Read skills from an installed package</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
+  <script src="../../assets/site.js?v=20261030184412" defer></script></body></html>

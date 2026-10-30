@@ -1,18 +1,18 @@
 <!doctype html><html lang="en" data-theme="light"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>Combat Planner guide · Development · ok-nte · English</title><meta name="description" content="提示 ：角色的具体代码实现可在 src/char 目录中找到。 Planner 是队伍大脑。角色只声明一个 CombatPlan ： actions ：planner 可见的动作目录，用于切人评分、route/request/reservation — ok-nte English documentation"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, Neverness to Everness, Background automation, Windows, game automation, computer vision, open source, Python automation, Windows automation, documentation, Docs"><meta name="author" content="BnanZ0">
+  <title>Combat Planner guide · Development · ok-nte · English</title><meta name="description" content="Tip : Concrete character implementations can be found in src/char , or viewed in the GitHub and CNB code directories. The pl — ok-nte English documentation"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, Neverness to Everness, Background automation, Windows, game automation, computer vision, open source, Python automation, Windows automation, documentation, Docs"><meta name="author" content="BnanZ0">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-nte/en/docs/development/combat-planner/">
-  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Combat Planner guide · Development · ok-nte · English"><meta property="og:description" content="提示 ：角色的具体代码实现可在 src/char 目录中找到。 Planner 是队伍大脑。角色只声明一个 CombatPlan ： actions ：planner 可见的动作目录，用于切人评分、route/request/reservation — ok-nte English documentation"><meta property="og:url" content="https://ok-script.com/ok-nte/en/docs/development/combat-planner/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — Neverness to Everness · Background automation · Windows">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Combat Planner guide · Development · ok-nte · English"><meta name="twitter:description" content="提示 ：角色的具体代码实现可在 src/char 目录中找到。 Planner 是队伍大脑。角色只声明一个 CombatPlan ： actions ：planner 可见的动作目录，用于切人评分、route/request/reservation — ok-nte English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-en.png"><meta name="twitter:image:alt" content="ok-nte — Neverness to Everness · Background automation · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Combat Planner guide · Development · ok-nte · English","description":"提示 ：角色的具体代码实现可在 src/char 目录中找到。 Planner 是队伍大脑。角色只声明一个 CombatPlan ： actions ：planner 可见的动作目录，用于切人评分、route/request/reservation — ok-nte English documentation","url":"https://ok-script.com/ok-nte/en/docs/development/combat-planner/","inLanguage":"en","dateModified":"2026-08-12T10:06:40+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Combat Planner guide · Development · ok-nte · English"><meta property="og:description" content="Tip : Concrete character implementations can be found in src/char , or viewed in the GitHub and CNB code directories. The pl — ok-nte English documentation"><meta property="og:url" content="https://ok-script.com/ok-nte/en/docs/development/combat-planner/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — Neverness to Everness · Background automation · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Combat Planner guide · Development · ok-nte · English"><meta name="twitter:description" content="Tip : Concrete character implementations can be found in src/char , or viewed in the GitHub and CNB code directories. The pl — ok-nte English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-en.png"><meta name="twitter:image:alt" content="ok-nte — Neverness to Everness · Background automation · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Combat Planner guide · Development · ok-nte · English","description":"Tip : Concrete character implementations can be found in src/char , or viewed in the GitHub and CNB code directories. The pl — ok-nte English documentation","url":"https://ok-script.com/ok-nte/en/docs/development/combat-planner/","inLanguage":"en","dateModified":"2026-10-05T05:43:25+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260812031515">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
     <div class="custom-dropdown project-switcher" data-dropdown>
     <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
-    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a></div>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
   </div>
     <div class="nav-links" data-nav-links>
       <a href="../../" aria-current="page">Docs</a>
@@ -27,23 +27,41 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Home</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../features/overview/">Overview</a><a href="../../guides/quick-start/">Quick start</a><a href="../../guides/troubleshooting/">FAQ and feedback</a><a href="../contributing/">Contributing</a><a href="../running-from-source/">Running from source</a><a href="../flow/">Flow author guide</a><a href="./" class="active" aria-current="page">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="combat-planner-开发指南">Combat Planner 开发指南</h1>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Home</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../features/overview/">Overview</a><a href="../../guides/quick-start/">Quick start</a><a href="../../guides/troubleshooting/">FAQ and feedback</a><a href="../contributing/">Contributing and verification</a><a href="../running-from-source/">Running from source</a><a href="../scene_flow/">SceneFlow author guide</a><a href="./" class="active" aria-current="page">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="combat-planner-development-guide">Combat Planner Development Guide</h1>
 <blockquote>
-<p><strong>提示</strong>：角色的具体代码实现可在 <a href="https://github.com/BnanZ0/ok-nte/tree/32a104a410f244ff732ebe0f782a550f3c9f434b/src/char"><code>src/char</code></a> 目录中找到。</p>
+<p><strong>Tip</strong>: Concrete character implementations can be found in <a href="https://github.com/BnanZ0/ok-nte/tree/6b10cbd5313cab784666fabcb2be54128e2079f1/src/char"><code>src/char</code></a>, or viewed in the
+<a href="https://github.com/BnanZ0/ok-nte/tree/main/src/char">GitHub</a> and
+<a href="https://cnb.cool/BnanZ0/ok-nte-update/-/tree/main/src/char">CNB</a> code directories.</p>
 </blockquote>
-<p>Planner 是队伍大脑。角色只声明一个 <code>CombatPlan</code>：</p>
+<p>The planner is the team&#39;s brain. A character declares one <code>CombatPlan</code>:</p>
 <ul>
-<li><code>actions</code>：planner 可见的动作目录，用于切人评分、route/request/reservation 匹配。</li>
-<li><code>claims</code>：<code>FieldClaim</code> 入场诉求，用于表达“我现在应该被切进来”。</li>
-<li><code>entry</code>：普通入场后的 Python generator 动作流。未提供时默认按 <code>actions</code> 顺序执行。</li>
+<li><code>actions</code>: the action catalog visible to the planner, used for switch scoring and route/request/reservation matching.</li>
+<li><code>claims</code>: <code>FieldClaim</code> entry requests that express &quot;I should be switched in now&quot;.</li>
+<li><code>entry</code>: the Python generator action flow for an ordinary entry. When omitted, actions run in declaration order.</li>
 </ul>
-<p>公开导入入口固定使用：</p>
-<pre><code class="language-python">from src.combat.planner import ActionSlot, CombatContext, FieldClaim, Planner, RoleProfile
+<p>Import public types from <code>src.combat.planner</code>. This is a sample of commonly used types; add or
+remove names as needed:</p>
+<pre><code class="language-python">from src.combat.planner import (
+    ActionIntent,
+    ActionReservation,
+    ActionResult,
+    ActionSlot,
+    ActionTag,
+    CombatContext,
+    ExpectedEntry,
+    FieldClaim,
+    FollowupStep,
+    Planner,
+    RequestHandle,
+    RoleProfile,
+    SwitchInGuard,
+)
 </code></pre>
-<p><code>src.combat.planner</code> 只导出正式开发 API。角色代码不要直接导入
-<code>planner/core.py</code>、<code>planner/requests.py</code>、<code>planner/state.py</code> 等内部模块。</p>
-<h2 id="快速入口">快速入口</h2>
-<p>普通角色通常只需要覆盖 <code>describe_role()</code> 和 <code>combat_plan(context)</code>：</p>
+<p><code>src.combat.planner</code> exports only the official development API. Character code must not import internal modules such as <code>planner/core.py</code>, <code>planner/requests.py</code>, or <code>planner/state.py</code> directly.
+This guide focuses on the character-author API. <code>BaseCombatTask</code> manages the switch execution
+lifecycle; character code does not need to call <code>CombatPlanner</code> executor methods directly.</p>
+<h2 id="quick-entry">Quick Entry</h2>
+<p>An ordinary character usually only needs to override <code>describe_role()</code> and <code>combat_plan(context)</code>:</p>
 <pre><code class="language-python">def describe_role(self):
     return RoleProfile(
         role=Planner.Role.SUB_DPS,
@@ -57,8 +75,7 @@ def combat_plan(self, context: CombatContext):
         self.click_skill_action(),
     )
 </code></pre>
-<p>复杂动作顺序用同一个 plan 里的 action 变量写 entry flow。一个 action 在一次 entry 中只能
-执行一次；有限次的额外执行使用 <code>repeat_for_entry()</code>：</p>
+<p>For complex action ordering, define entry flow with action variables in the same plan. An action can run only once in one entry; use <code>repeat_for_entry()</code> for a limited extra execution:</p>
 <pre><code class="language-python">def combat_plan(self, context: CombatContext):
     skill = self.click_skill_action(reason=&quot;skill available&quot;)
     ultimate = self.click_ultimate_action(reason=&quot;ultimate available&quot;)
@@ -74,9 +91,7 @@ def combat_plan(self, context: CombatContext):
 
     return self.plan(skill, ultimate, entry=entry)
 </code></pre>
-<p><code>yield action</code> 会把 action 交给 planner 执行。planner 完成 reservation/can_execute
-检查、执行、记录 result、推进 request 后，把 <code>ActionResult</code> 送回 generator。
-<code>bool(ActionResult)</code> 等于 <code>result.success</code>，所以可以直接写：</p>
+<p><code>yield action</code> executes the action and sends an <code>ActionResult</code> back to the generator. Its truth value is True only when the action succeeded, so you can write:</p>
 <pre><code class="language-python">a = yield action_a
 b = yield action_b
 
@@ -87,7 +102,7 @@ if a and not b:
     yield fallback_action
 </code></pre>
 <h2 id="combatplan">CombatPlan</h2>
-<p>角色通过 <code>self.plan(*actions, claims=None, entry=None)</code> 创建 <code>CombatPlan</code>：</p>
+<p>Create a <code>CombatPlan</code> with <code>self.plan(*actions, claims=None, entry=None)</code>:</p>
 <pre><code class="language-python">def combat_plan(self, context):
     setup = self.planner_action(...)
     claims = []
@@ -96,137 +111,205 @@ if a and not b:
 
     return self.plan(setup, claims=claims)
 </code></pre>
-<p>规则：</p>
+<p>Rules:</p>
 <ul>
-<li>创建 plan 时只声明动作和入场诉求，不要发送输入。</li>
-<li>不要在创建 plan 时调用 <code>context.request_route()</code>、<code>reserve_actions()</code> 或
-<code>request_tags()</code>；这些一次性请求应在 action execute 中发布，或在 entry flow
-收到成功 result 后发布。</li>
-<li><code>actions</code> 是评分和协作匹配目录；<code>entry</code> 是普通入场执行流程。</li>
-<li><code>claims</code> 可以传多个独立入场理由；它们不会叠加分数，planner 只取当前匹配角色的最高优先级 claim。</li>
-<li>strict route、expected entry、active request 的硬调度优先于普通 entry flow。</li>
-<li>普通 entry flow 最多执行 <code>MAX_ACTIONS_PER_ENTRY</code> 个动作。</li>
-<li>同一个 action 在同一次入场中只会真实执行一次。</li>
+<li>Only declare actions and entry requests when creating a plan; do not send input.</li>
+<li>Do not publish one-time coordination requests while creating a plan. Publish <code>request_route()</code>, <code>request_switch()</code>, <code>request_role()</code>, <code>request_tags()</code>, and temporary <code>reserve_actions()</code> during action execution or after a successful result in the entry flow. Put team-wide long-lived policies in <code>combat_policies()</code>.</li>
+<li>Requests published by an entry flow are collected when it next yields or finishes. A request published after receiving a result still takes effect if the flow returns immediately.</li>
+<li><code>actions</code> is the catalog used for scoring and coordination matching; <code>entry</code> is the ordinary entry execution flow.</li>
+<li>Multiple independent <code>claims</code> may be passed. They do not stack scores; the planner uses only the highest-priority matching claim for the current character.</li>
+<li>Strict routes, expected entries, and active requests take scheduling priority over ordinary entry flow.</li>
+<li>An ordinary entry flow is subject to the planner&#39;s per-entry action limit.</li>
+<li>The same action is executed at most once during one entry.</li>
 </ul>
 <h2 id="actionintent">ActionIntent</h2>
-<p><code>ActionIntent</code> 表达“角色进场后可以尝试做什么”。不要把一次普攻、等待、连点等
-内部细节拆成很多 action；这些应写在一个 action 的 <code>execute</code> 内。</p>
-<p>字段：</p>
+<p><code>ActionIntent</code> expresses &quot;what the character may try after entering the field&quot;. Do not split normal attacks, waits, or repeated presses into many actions; keep those details inside one action&#39;s <code>execute</code> function.</p>
+<p>Fields:</p>
 <ul>
-<li><code>tags: set[ActionTag]</code>：动作意义和评分依据。</li>
-<li><code>execute: Callable[[CombatContext], ActionResult | bool | None]</code>：真正执行动作。</li>
-<li><code>name: str = &quot;&quot;</code>：高级精确匹配和日志名。</li>
-<li><code>slot: ActionSlot | None = None</code>：动作槽位。协作路线和 reservation 优先用 slot 匹配。</li>
-<li><code>reason: str = &quot;&quot;</code>：planner 日志和切人理由。</li>
-<li><code>can_execute: Callable[[CombatContext], bool] | None</code>：planner 层硬限制。</li>
-<li><code>priority_ready: Callable[[CombatContext], bool] | None</code>：只用于切人评分。</li>
+<li><code>tags: set[ActionTag]</code>: action meaning and scoring basis.</li>
+<li><code>execute: Callable[[CombatContext], ActionResult | bool | None]</code>: the actual action.</li>
+<li><code>name: str = &quot;&quot;</code>: advanced exact matching and log name.</li>
+<li><code>slot: ActionSlot | None = None</code>: action slot. Coordination routes and reservations should preferably match by slot.</li>
+<li><code>reason: str = &quot;&quot;</code>: planner log and switch reason.</li>
+<li><code>can_execute: Callable[[CombatContext], bool] | None</code>: a hard restriction at planner level.</li>
+<li><code>priority_ready: Callable[[CombatContext], bool] | None</code>: used only for switch scoring.</li>
 </ul>
-<p><code>action.repeat_for_entry()</code> 返回一个可在同一次 entry 中再次 <code>yield</code> 的动作副本。
-它保留原 action 的执行、slot、标签和 <code>can_execute</code> 限制，并为每次调用自动生成独立
-的 entry 去重结果。因此它适合 <code>Q -&gt; E -&gt; 再尝试一次 E</code> 这类有限 entry flow；副本通常
-只在 entry flow 中 yield，不应加入 <code>CombatPlan.actions</code>。</p>
-<p>每次 <code>yield</code> 都会计入单次 entry 的动作上限。不要在需要持续运行的长时间循环中 yield
-它；此类循环应在调用已有动作 helper 前，先通过
-<code>context.is_action_allowed(self, action)</code> 检查完整 action 权限。这样循环保持由角色代码
-控制，同时仍遵守 planner 的 <code>can_execute</code> 和 reservation 规则。</p>
-<p>如果 action 设置了 <code>slot</code>，planner 会自动通过 <code>context.can_execute_action(...)</code>
-检查 reservation。开发者传入的 <code>can_execute</code> 只需要表达额外机制限制。需要在 entry
-flow 外预查询完整 action 时，使用 <code>context.is_action_allowed(self, action)</code>；它同时检查
-<code>can_execute</code> 和 slot reservation。普通或有限 entry 动作仍直接 <code>yield action</code>。</p>
-<p><code>execute</code> 返回规则：</p>
+<p><code>action.repeat_for_entry()</code> lets the action be yielded again in the same entry while preserving its execution, slot, tags, and <code>can_execute</code> restrictions. It is suitable for a limited flow such as <code>Q -&gt; E -&gt; try E once more</code>; the returned copy should normally be yielded only in the entry flow and should not be added to <code>CombatPlan.actions</code>.</p>
+<p>Every <code>yield</code> counts toward the action limit for one entry. Do not yield it inside a long-running loop; such loops should call <code>context.is_action_allowed(self, action)</code> before invoking an existing action helper. This keeps the loop under character-code control while still honoring planner <code>can_execute</code> and reservation rules.</p>
+<p>When an action has a <code>slot</code>, the planner automatically checks reservations through <code>context.is_slot_available(...)</code>. A developer-provided <code>can_execute</code> only needs to express additional mechanic restrictions. To pre-check a complete action outside an entry flow, use <code>context.is_action_allowed(self, action)</code>; it checks both <code>can_execute</code> and slot reservations. Ordinary or limited entry actions should still be yielded directly.</p>
+<p><code>execute</code> return rules:</p>
 <ul>
-<li>返回 <code>True</code>：成功。</li>
-<li>返回 <code>False</code> / <code>None</code> / 没写 <code>return</code>：失败。</li>
-<li>返回 <code>ActionResult</code>：使用 <code>ActionResult.success</code>。</li>
-<li>返回 <code>1</code>、<code>&quot;ok&quot;</code> 这类 truthy 值不会被当成成功。</li>
+<li>Return <code>True</code>: success.</li>
+<li>Return <code>False</code> / <code>None</code> / no <code>return</code>: failure.</li>
+<li>Return <code>ActionResult</code>: use <code>ActionResult.success</code>.</li>
+<li>Truthy values such as <code>1</code> or <code>&quot;ok&quot;</code> are not treated as success.</li>
 </ul>
-<p>普通角色不需要手写 <code>ActionResult</code>。只有需要自定义 result name/tags/slot/reason
-时才手写。</p>
+<p>Ordinary characters do not need to construct <code>ActionResult</code> manually. Create one only when a custom result name, tags, slot, or reason is required:</p>
+<pre><code class="language-python">def execute(context):
+    return ActionResult(
+        success=True,
+        name=&quot;custom support action&quot;,
+        tags={ActionTag.SUPPORT},
+        slot=ActionSlot.CUSTOM,
+        reason=&quot;healing completed&quot;,
+    )
+</code></pre>
+<p><code>ActionResult.tags</code> and <code>slot</code> also participate in coordination matching; ordinary actions should
+let a helper create the result automatically.</p>
 <h2 id="actiontag">ActionTag</h2>
-<p><code>ActionTag</code> 表达动作意义和评分，不能表达某个角色专属机制。</p>
-<p>常用标签：</p>
+<p><code>ActionTag</code> expresses action meaning and scoring. It must not express a mechanism belonging to one specific character.</p>
+<p>Common tags:</p>
 <ul>
-<li><code>ULTIMATE_ACTION</code>：Q。</li>
-<li><code>SKILL_ACTION</code>：E。</li>
-<li><code>ARC_ACTION</code>：弧盘动作，评分为 0。</li>
-<li><code>SUPPORT</code>：辅助/治疗/增益类动作。</li>
-<li><code>COORDINATION</code>：发布协作路线或窗口的动作。</li>
-<li><code>COORDINATION_FINISHER</code>：协作完成后的收尾动作。</li>
-<li><code>FIELD_TIME</code>：planner 内建站场动作，角色不应自己声明。</li>
-<li><code>LEGACY_COMBO</code>：旧出招表动作。</li>
-<li><code>DEFAULT_ACTION</code>：低价值兜底入口。</li>
+<li><code>ULTIMATE_ACTION</code>: Q.</li>
+<li><code>SKILL_ACTION</code>: E.</li>
+<li><code>ARC_ACTION</code>: Arc action, scored as 0.</li>
+<li><code>DAMAGE</code>: Generic damage action.</li>
+<li><code>SUPPORT</code>: Support, healing, or buff action.</li>
+<li><code>TEAM_BUFF</code>: A key team-wide buff. Use only when the buff should be cast before the main DPS ultimate.</li>
+<li><code>HIGH_PRIORITY</code>: Significantly increases an action&#39;s switch score. Use for a small number of actions that are especially valuable to attempt; it does not change action order after a character enters.</li>
+<li><code>FIELD_TIME</code>: A planner-built field-time action; characters should not declare it themselves.</li>
+<li><code>LEGACY_COMBO</code>: Legacy combo action.</li>
+<li><code>DEFAULT_ACTION</code>: Low-value fallback entry.</li>
 </ul>
-<p>切人评分不会累加同一角色所有 action；planner 只挑该角色当前最高分的 ready
-action 代表该角色参赛。tag 不控制普通入场流程；普通入场由 <code>CombatPlan.entry</code>
-控制。</p>
+<p>Switch scoring does not add all actions for the same character together; the planner uses the highest-scoring ready action as that character&#39;s representative. Tags do not control ordinary entry flow; <code>CombatPlan.entry</code> does.</p>
 <h2 id="actionslot">ActionSlot</h2>
-<p><code>ActionSlot</code> 是协作匹配用的动作槽位，比 action name 更推荐。</p>
-<p>常用槽位：</p>
+<p><code>ActionSlot</code> is the action slot used for coordination matching and is preferred over action names.</p>
+<p>Common slots:</p>
 <ul>
-<li><code>SKILL</code>：E。</li>
-<li><code>ULTIMATE</code>：Q。</li>
-<li><code>ARC</code>：弧盘。</li>
-<li><code>ENTRY_REACTION</code>：入场/环合反应，不是按键 action。</li>
-<li><code>FIELD_TIME</code>：planner 内建站场。</li>
-<li><code>LEGACY_COMBO</code>：旧出招表。</li>
-<li><code>CUSTOM</code>：特殊动作。</li>
+<li><code>SKILL</code>: E.</li>
+<li><code>ULTIMATE</code>: Q.</li>
+<li><code>ARC</code>: Arc.</li>
+<li><code>ENTRY_REACTION</code>: Entry or ring reaction, not a key action.</li>
+<li><code>FIELD_TIME</code>: Planner-built field time.</li>
+<li><code>LEGACY_COMBO</code>: Legacy combo.</li>
+<li><code>CUSTOM</code>: Special action.</li>
 </ul>
-<p>协作和保留尽量写：</p>
+<p>Prefer writing coordination and reservations as:</p>
 <pre><code class="language-python">FollowupStep.for_action(zero, ActionSlot.SKILL)
 ActionReservation.for_action(nanally, ActionSlot.SKILL)
-context.can_execute_action(self, slot=ActionSlot.SKILL)
+ActionReservation.for_slots(nanally, {ActionSlot.SKILL, ActionSlot.ULTIMATE})
+context.is_slot_available(self, ActionSlot.SKILL)
 </code></pre>
-<h2 id="basechar-helper">BaseChar Helper</h2>
-<h3 id="开战会话与首次登场">开战会话与首次登场</h3>
-<p><code>BaseCombatTask.begin_combat_session()</code> 是战斗正式开始时的统一入口。它会创建公开的
-<code>task.combat_session</code>, 调用首切决策并记录实际首发角色; <code>CombatPlanner</code> 只负责决定首切
-目标, 不执行输入或管理会话。<code>CombatSession.combat_start</code> 是本场战斗进入时刻;
-<code>use_ultimate</code> 与 <code>switch_enabled</code> 是本场固定的战斗策略。</p>
-<p><code>BaseChar.perform()</code> 开始时会记录本场第一个实际执行战斗逻辑的角色。角色逻辑可用：</p>
+<h2 id="roleprofile">RoleProfile</h2>
+<p><code>describe_role()</code> returns a <code>RoleProfile</code> describing the character&#39;s team role and ordinary
+field-time preference. <code>role</code> and <code>field_preference</code> are separate: <code>request_role()</code> matches the
+former, while the latter affects ordinary switch scoring. Neither is a hard scheduling command.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Values / purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>role</code></td>
+<td><code>Planner.Role.MAIN_DPS</code>, <code>SUB_DPS</code>, or <code>SUPPORT</code>; describes the team role. Defaults to <code>SUB_DPS</code>.</td>
+</tr>
+<tr>
+<td><code>field_preference</code></td>
+<td><code>Planner.FieldPreference.MAIN_DPS</code>, <code>SUB_DPS</code>, <code>SUPPORT</code>, or <code>SETUP_ONLY</code>; expresses ordinary field-time preference. Defaults to <code>SUB_DPS</code>.</td>
+</tr>
+<tr>
+<td><code>max_field_time</code></td>
+<td>When greater than 0, allows the planner&#39;s built-in field-time fallback for up to this duration; set to 0 to disable it. Defaults to 1.5 seconds.</td>
+</tr>
+<tr>
+<td><code>combat_start_priority</code></td>
+<td>Used only for the opening switch. Values greater than 0 make a character eligible, and higher values rank first. It does not affect ordinary combat switch scoring. Defaults to 0.</td>
+</tr>
+</tbody></table>
+<p><code>MAIN_DPS</code> favors staying on field, <code>SUB_DPS</code> favors shorter field time, and <code>SUPPORT</code> and
+<code>SETUP_ONLY</code> suit characters that rotate out after support or setup actions. Coordination requests
+and field claims still affect the final choice.</p>
+<h2 id="basechar-helpers">BaseChar Helpers</h2>
+<h3 id="switch-in-guard"><code>switch_in_guard</code></h3>
+<p>The target character can override <code>switch_in_guard()</code> to delay an ordinary switch until its own
+entry condition is ready:</p>
+<pre><code class="language-python">def switch_in_guard(self, context, from_char, has_intro):
+    return SwitchInGuard.delay_until_ready(
+        condition=self.entry_state_ready,
+        timeout=1.5,
+        reason=&quot;waiting for entry state&quot;,
+    )
+</code></pre>
+<p>The switch proceeds when <code>condition</code> returns True. It also proceeds after the timeout, so this is a
+bounded delay rather than a veto. <code>poll_interval</code> controls how often the condition is checked, and
+<code>while_waiting</code> can provide a callback during the wait. The default guard allows an immediate
+switch. Strict routes and strict field claims skip this wait and the ordinary switch cooldown; do
+not rely on the guard to protect an entry that must use strict scheduling.</p>
+<h3 id="combat-session-and-first-engagement">Combat Session and First Engagement</h3>
+<p><code>BaseCombatTask.begin_combat_session()</code> is the unified entry point when combat officially starts. It creates the public <code>task.combat_session</code>, makes the initial switch decision, and records the actual starting character. <code>CombatPlanner</code> only decides the initial switch target; it does not send input or manage the session. <code>CombatSession.combat_start</code> is the time combat began; <code>use_ultimate</code> and <code>switch_enabled</code> are fixed strategies for the current combat.</p>
+<p>At the start of <code>BaseChar.perform()</code>, the first character to execute actual combat logic in the current battle is recorded. Character logic can use:</p>
 <pre><code class="language-python">if self.is_first_engage():
-    # 本场首次实际登场的角色
+    # First character to actually engage in this battle
     ...
 
 if self.consume_first_engage():
-    # 全场仅成功一次
+    # Returns True only once for the whole battle
     ...
 </code></pre>
-<p><code>is_first_engage()</code> 在本场战斗内稳定; <code>consume_first_engage()</code> 全场仅返回一次 <code>True</code>。
-两者都不依赖首切耗时或时间窗口。<code>task.combat_session</code> 在首次读取时会创建默认会话;
-任务若需要禁止首切和后续切人, 应在调用 <code>begin_combat_session()</code> 前设置
-<code>task.combat_session.switch_enabled = False</code>, 不要在运行期替换切人方法。</p>
-<h3 id="click-ultimate-action">click_ultimate_action</h3>
+<p><code>is_first_engage()</code> remains stable during the battle; <code>consume_first_engage()</code> returns <code>True</code> only once. Neither depends on initial-switch duration or a time window. <code>task.combat_session</code> creates a default session on first access. If a task must disable the initial switch and all later switches, set <code>task.combat_session.switch_enabled = False</code> before calling <code>begin_combat_session()</code>; do not replace the switching method at runtime.</p>
+<h3 id="click-ultimate-action"><code>click_ultimate_action</code></h3>
 <pre><code class="language-python">self.click_ultimate_action(
     name=None,
     tags=None,
+    add_tags=None,
     reason=&quot;ultimate action available&quot;,
     can_execute=None,
+    send_click=True,
+    wait_if_no_cd=0,
 )
 </code></pre>
 <ul>
-<li>自动设置 <code>slot=ActionSlot.ULTIMATE</code>。</li>
-<li>默认 <code>tags={ActionTag.ULTIMATE_ACTION}</code>。</li>
-<li>默认 <code>name=f&quot;{角色名}_ultimate&quot;</code>。</li>
-<li><code>priority_ready</code> 自动使用 <code>self.ultimate_available()</code>。</li>
-<li><code>execute</code> 调用 <code>self.click_ultimate()</code>。</li>
+<li>Automatically sets <code>slot=ActionSlot.ULTIMATE</code>.</li>
+<li>Defaults to <code>tags={ActionTag.ULTIMATE_ACTION}</code>.</li>
+<li><code>tags</code> completely specifies the base tags; <code>add_tags</code> can receive one tag or a tag set and appends to them, or appends to the default tags when <code>tags</code> is omitted.</li>
+<li>Defaults to <code>name=f&quot;{character_name}_ultimate&quot;</code>.</li>
+<li><code>can_execute</code> includes <code>self.ultimate_available()</code> by default; an extra condition is combined with it.</li>
+<li><code>priority_ready</code> automatically uses <code>self.ultimate_available()</code>.</li>
+<li>When <code>send_click</code> is True, ordinary clicks are sent during the ultimate animation. <code>wait_if_no_cd</code> is the maximum time to wait for cooldown readiness.</li>
+<li><code>execute</code> calls <code>self.click_ultimate()</code>.</li>
 </ul>
-<h3 id="click-skill-action">click_skill_action</h3>
+<h3 id="click-skill-action"><code>click_skill_action</code></h3>
 <pre><code class="language-python">self.click_skill_action(
     name=None,
     tags=None,
+    add_tags=None,
     reason=&quot;skill action available&quot;,
     down_time=0.01,
     can_execute=None,
+    post_sleep=0,
+    has_animation=False,
+    send_click=True,
+    time_out=0,
 )
 </code></pre>
 <ul>
-<li>自动设置 <code>slot=ActionSlot.SKILL</code>。</li>
-<li>默认 <code>tags={ActionTag.SKILL_ACTION}</code>。</li>
-<li>默认 <code>name=f&quot;{角色名}_skill&quot;</code>。</li>
-<li><code>priority_ready</code> 自动使用 <code>self.skill_available()</code>。</li>
-<li><code>execute</code> 调用 <code>self.click_skill(down_time=down_time)</code>。</li>
+<li>Automatically sets <code>slot=ActionSlot.SKILL</code>.</li>
+<li>Defaults to <code>tags={ActionTag.SKILL_ACTION}</code>.</li>
+<li><code>tags</code> completely specifies the base tags; <code>add_tags</code> can receive one tag or a tag set and appends to them, or appends to the default tags when <code>tags</code> is omitted.</li>
+<li>Defaults to <code>name=f&quot;{character_name}_skill&quot;</code>.</li>
+<li><code>can_execute</code> includes <code>self.skill_available()</code> by default; an extra condition is combined with it.</li>
+<li><code>priority_ready</code> automatically uses <code>self.skill_available()</code>.</li>
+<li><code>down_time</code> controls key-press duration; <code>post_sleep</code> adds a wait after a successful skill; <code>has_animation</code> marks a skill with an animation.</li>
+<li><code>send_click</code> controls ordinary clicks during the skill. <code>time_out</code> limits the wait for skill activation; 0 uses the built-in default.</li>
+<li><code>execute</code> calls <code>self.click_skill()</code>.</li>
 </ul>
-<h3 id="planner-action">planner_action</h3>
+<h3 id="click-arc-action"><code>click_arc_action</code></h3>
+<pre><code class="language-python">self.click_arc_action(
+    name=None,
+    tags=None,
+    add_tags=None,
+    reason=&quot;arc action available&quot;,
+    can_execute=None,
+    priority_ready=None,
+)
+</code></pre>
+<p>This helper sets <code>slot=ActionSlot.ARC</code> and defaults to <code>ActionTag.ARC_ACTION</code>. Its default
+<code>priority_ready</code> is False, so an arc action does not by itself attract a switch; it can still run
+through the ordinary entry flow after the character is on field. Pass <code>priority_ready</code> when it
+should contribute to switch scoring.</p>
+<h3 id="planner-action"><code>planner_action</code></h3>
 <pre><code class="language-python">self.planner_action(
     tags={ActionTag.SKILL_ACTION},
     execute=self.some_action,
@@ -237,10 +320,13 @@ if self.consume_first_engage():
     priority_ready=None,
 )
 </code></pre>
-<p>用于创建自定义 action。长动作应在 <code>execute</code> 内完成。</p>
+<p>Use this to create a custom action. Long actions should be completed inside <code>execute</code>.</p>
 <h2 id="fieldclaim">FieldClaim</h2>
-<p><code>FieldClaim</code> 表达“我应该被切进来”，不是动作。它只抬高目标角色的普通入场评分；
-角色切入后仍由 planner 从 <code>actions</code>、strict route/request 或 <code>entry</code> 中选择动作。</p>
+<p><code>FieldClaim</code> expresses &quot;I should be switched in&quot;; it is not an action. <code>low</code>, <code>normal</code>, <code>high</code>, and <code>critical</code> raise the ordinary entry score. <code>strict</code> selects that character at the next switch decision. After the character enters, the planner still chooses an action from <code>actions</code>, a strict route/request, or <code>entry</code>.</p>
+<p>An ordinary claim can use <code>ExpectedEntry(slot=...)</code> to prioritize a slot after returning to the field.
+For advanced exact matching, set <code>action_name</code> or create the expectation with
+<code>ExpectedEntry.from_action(action)</code>. A strict claim requests the switch only and does not accept an
+<code>expected_entry</code>.</p>
 <pre><code class="language-python">def combat_plan(self, context):
     claims = []
     if self.has_burst_window():
@@ -252,16 +338,29 @@ if self.consume_first_engage():
         )
     return self.plan(self.click_ultimate_action(), claims=claims)
 </code></pre>
-<p>使用建议：</p>
+<p>Declare a strict claim in <code>combat_plan()</code> when the character must return within a time window:</p>
+<pre><code class="language-python">def combat_plan(self, context):
+    ultimate = self.click_ultimate_action()
+    claims = []
+    if self.should_return_now():
+        claims.append(
+            FieldClaim.strict(
+                reason=&quot;ultimate window ending&quot;,
+            )
+        )
+    return self.plan(ultimate, claims=claims)
+</code></pre>
+<p>The planner reads candidate claims again at each switch decision. A locked strict route takes precedence; a strict claim then takes precedence over entry reactions, active requests, and ordinary scoring. If several characters declare strict claims, the planner selects among them by ordinary score and last action time. A strict claim takes effect after the current character finishes its action; it does not interrupt an action. It requests only the switch and does not set an <code>expected_entry</code>; after arrival, the character follows its ordinary <code>entry</code> flow.</p>
+<p>Usage guidance:</p>
 <ul>
-<li>只是 Q/E 可用，不需要 FieldClaim；action 本身会参与评分。</li>
-<li>需要“之后抢回场”时用 FieldClaim。</li>
-<li>抢回场后需要优先做某动作时，加 <code>expected_entry</code>。</li>
-<li>多个 FieldClaim 适合表达多个独立机制入口；planner 不累加 claim 分，只选择最高等级的匹配 claim。</li>
+<li>If only Q/E is available, no <code>FieldClaim</code> is needed; the action itself participates in scoring.</li>
+<li>Use an ordinary <code>FieldClaim</code> to take the field back later; use <code>FieldClaim.strict()</code> when it must return at the next switch decision.</li>
+<li><code>FieldClaim.critical()</code> remains an ordinary scoring level and does not force a switch.</li>
+<li>Add <code>expected_entry</code> to an ordinary claim when a specific action should be prioritized after taking the field back.</li>
+<li>Multiple <code>FieldClaim</code> objects can express independent mechanic entry points; the planner does not add claim scores and selects the highest matching level.</li>
 </ul>
-<h2 id="combat-policies">combat_policies</h2>
-<p><code>combat_policies(context)</code> 用于随队伍生命周期长期生效的策略。planner reset 当前队伍
-时会调用。适合发布常驻 reservation，不适合发布“本次 Q/E 成功后才出现”的临时窗口。</p>
+<h2 id="combat-policies"><code>combat_policies</code></h2>
+<p><code>combat_policies(context)</code> defines policies that remain active across the team lifecycle. The planner calls it when resetting the current team. It is suitable for permanent reservations, not a temporary window that appears only after this Q/E succeeds.</p>
 <pre><code class="language-python">def combat_policies(self, context: CombatContext):
     context.reserve_actions(
         [ActionReservation.for_action(zero, ActionSlot.SKILL)],
@@ -269,8 +368,8 @@ if self.consume_first_engage():
         until=Planner.NEVER_EXPIRES,
     )
 </code></pre>
-<h2 id="协作请求">协作请求</h2>
-<p>协作请求必须在 action 执行成功后发布，或者在 <code>combat_policies()</code> 里发布长期策略。</p>
+<h2 id="coordination-requests">Coordination Requests</h2>
+<p>Publish coordination requests after an action executes successfully, or from <code>combat_policies()</code> for long-lived policies.</p>
 <pre><code class="language-python">def combat_plan(self, context):
     setup = self.click_skill_action()
 
@@ -284,30 +383,81 @@ if self.consume_first_engage():
 
     return self.plan(setup, entry=entry)
 </code></pre>
-<p>常用 API：</p>
+<p>Common APIs:</p>
 <ul>
-<li><code>context.request_route(...)</code>：固定顺序协作路线。</li>
-<li><code>context.request_switch(...)</code>：请求下一次普通调度切给某角色。</li>
-<li><code>context.request_role(...)</code>：请求下一次普通调度切给某个队伍定位的角色；多个
-匹配角色时按普通切人评分选择。它不指定动作，也不打断当前 entry flow。</li>
-<li><code>context.reserve_actions(...)</code>：保留队友动作。</li>
-<li><code>context.request_tags(...)</code>：请求一定数量的 tag 动作。</li>
+<li><code>context.request_route(...)</code>: A fixed-order coordination route.</li>
 </ul>
-<p><code>request_role(Planner.Role.SUPPORT)</code> 请求的是角色的静态队伍定位；
-<code>request_tags({Planner.ActionTag.SUPPORT})</code> 请求的是任意支援类动作。前者适合
-“让任一辅助角色进场”，后者适合“让任一队友完成一次治疗/增益动作”。</p>
+<p><code>FollowupStep.for_switch(target, wait_for_turn=True)</code> switches in and waits for the target&#39;s normal turn by default:</p>
+<pre><code class="language-python">context.request_route([
+    FollowupStep.for_switch(a),
+    FollowupStep.for_action(b, ActionSlot.ULTIMATE),
+])
+</code></pre>
+<p><code>FollowupStep.for_action(target, slot, ...)</code> creates an action step for a character. With
+<code>optional=True</code>, the planner skips the step if no matching allowed, ready action is available when
+the target arrives; the default required step keeps waiting. Use <code>required_tags</code> or <code>action_names</code>
+to add match conditions. Prefer a slot for ordinary coordination; action names are an advanced
+exact-match option. A tag condition matches when the action has at least one requested tag.</p>
+<p>To require an entry or ring reaction when the target switches in, use:</p>
+<pre><code class="language-python">FollowupStep.for_entry_reaction(target, reason=&quot;trigger entry reaction&quot;)
+</code></pre>
+<p>A finishes its normal entry flow before the route advances to B&#39;s ultimate.
+If A is already on field, it still runs its turn. No first action or entry reaction is
+required, and action permissions and reservations still apply. A turn uses the normal
+flow termination conditions and action limit, including field-time fallback when no
+action succeeds. Completion does not require a particular skill to succeed. Exceptions
+do not complete the step; an expired or replaced route is not advanced afterward.</p>
+<p>For arrival-only behavior, use <code>FollowupStep.for_switch(a, wait_for_turn=False)</code>.
+The step completes on successful arrival or when the target is already on field.
+A single-step route then releases normal flow; a multi-step route advances immediately,
+<strong>without waiting for A&#39;s turn or guaranteeing that A performs any action</strong>.</p>
+<p>Both modes inherit strict-route priority and lifetime. A new route replaces the existing
+route, so this is not merely a higher-priority <code>request_switch()</code>. Use the latter for
+ordinary independent switch requests.</p>
+<ul>
+<li><code>context.request_switch(...)</code>: Request that the next ordinary dispatch switches to a character.</li>
+<li><code>context.request_role(...)</code>: Request that the next ordinary dispatch switches to a character with a team role. When several characters match, ordinary switch scoring chooses one. It does not specify an action or interrupt the current entry flow.</li>
+<li><code>context.reserve_actions(...)</code>: Reserve teammate actions.</li>
+<li><code>context.request_tags(...)</code>: Request one successful matching action from each of a number of teammates. Any one requested tag matches, and each character counts at most once. Use <code>count</code> to choose the number of teammates; by default, the requester cannot satisfy its own request.
+Set <code>avoid_source=False</code> to let the requester satisfy its own request.</li>
+</ul>
+<p><code>request_role(Planner.Role.SUPPORT)</code> asks for any support-role character; <code>request_tags({Planner.ActionTag.SUPPORT})</code> asks for any support-type action. The former suits &quot;bring in any support character&quot;, while the latter suits &quot;let any teammate perform one healing/buff action&quot;.
+<code>request_route()</code> and <code>request_tags()</code> can set <code>return_to_source=True</code> to raise the requester&#39;s
+switch priority after completion.</p>
 <pre><code class="language-python">context.request_role(Planner.Role.SUPPORT, reason=&quot;need a support role&quot;)
 </code></pre>
-<h2 id="行为摘要">行为摘要</h2>
+<p>These requests usually return a <code>RequestHandle</code>. Use it to check completion or expiration, or to
+tie one request&#39;s lifetime to another. For example, release a reservation after a route completes:</p>
+<pre><code class="language-python">route = context.request_route(steps, until=self.window_expired)
+if route is not None:
+    route.on_fulfilled(self.on_route_complete)
+    route.on_expired(self.on_route_expired)
+    context.reserve_actions(reservations, until=route.when.fulfilled)
+</code></pre>
+<p><code>handle.when.fulfilled</code>, <code>expired</code>, <code>closed</code>, and <code>any</code> are conditions that can be passed to another
+request&#39;s <code>until=</code>; <code>is_pending</code>, <code>is_fulfilled</code>, <code>is_expired</code>, and <code>is_closed</code> query the current state.
+<code>handle.status</code> is <code>Planner.RequestStatus.PENDING</code>, <code>FULFILLED</code>, or <code>EXPIRED</code>; <code>closed</code> is a separate
+state. Use <code>on_finish()</code> for the first completion or expiration signal, or <code>on_fulfilled()</code> and
+<code>on_expired()</code> to handle the outcomes separately. The <code>until</code> argument defaults to None for
+<code>request_route()</code>, <code>request_switch()</code>, <code>request_role()</code>, and <code>request_tags()</code>, meaning they do not
+expire from a window condition. <code>reserve_actions()</code> requires
+<code>until</code>: pass a callable or <code>Planner.NEVER_EXPIRES</code> to keep it active until the planner resets.
+Completing a route&#39;s steps and expiration of its window are separate signals.
+An <code>until=Planner.NEVER_EXPIRES</code> reservation does not end automatically and cannot use <code>on_finish</code>.</p>
+<p><code>CombatContext</code> also provides <code>has_active_request()</code>, <code>has_strict_route()</code>, and
+<code>strict_route_wants_action(char, slot=..., action_name=..., tags=...)</code> for advanced character logic
+that branches on current coordination. Pure reservations and pure switch requests do not count as
+active action requests.</p>
+<h2 id="behavior-summary">Behavior Summary</h2>
 <ul>
-<li>切人评分与普通 entry 执行分离。</li>
-<li>评分使用 <code>actions</code> 中最高分 ready action，再叠加 <code>FieldClaim</code>、request 和站场偏好分。</li>
-<li>当前角色普通入场执行由 <code>entry</code> 控制；未写 entry 时按 <code>actions</code> 顺序执行。</li>
-<li><code>priority_ready=False</code> 只降低切人吸引力，不是硬阻止。</li>
-<li><code>can_execute=False</code> 是硬阻止；被阻止的 entry action 会得到失败 result，不会真实执行。</li>
-<li>strict route、expected entry、active request 优先于普通 entry flow。</li>
-<li><code>ActionResult.tags</code> 不控制 entry flow。</li>
+<li>Switch scoring and ordinary entry execution are separate.</li>
+<li>Scoring uses the highest-scoring ready action in <code>actions</code>, then adds <code>FieldClaim</code>, request, and field-preference scores.</li>
+<li>The current character&#39;s ordinary entry execution is controlled by <code>entry</code>; without an entry, actions run in declaration order.</li>
+<li><code>priority_ready=False</code> only reduces switch attractiveness; it does not hard-block execution.</li>
+<li><code>can_execute=False</code> is a hard block; a blocked entry action receives a failure result and is not actually executed.</li>
+<li>Strict routes, expected entries, and active requests take priority over ordinary entry flow.</li>
+<li><code>ActionResult.tags</code> does not control entry flow.</li>
 </ul>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/32a104a410f244ff732ebe0f782a550f3c9f434b/docs/development/combat-planner.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Aug 12, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#快速入口" style="margin-left:0px">快速入口</a><a href="#combatplan" style="margin-left:0px">CombatPlan</a><a href="#actionintent" style="margin-left:0px">ActionIntent</a><a href="#actiontag" style="margin-left:0px">ActionTag</a><a href="#actionslot" style="margin-left:0px">ActionSlot</a><a href="#basechar-helper" style="margin-left:0px">BaseChar Helper</a><a href="#开战会话与首次登场" style="margin-left:10px">开战会话与首次登场</a><a href="#click-ultimate-action" style="margin-left:10px">click_ultimate_action</a><a href="#click-skill-action" style="margin-left:10px">click_skill_action</a><a href="#planner-action" style="margin-left:10px">planner_action</a><a href="#fieldclaim" style="margin-left:0px">FieldClaim</a><a href="#combat-policies" style="margin-left:0px">combat_policies</a><a href="#协作请求" style="margin-left:0px">协作请求</a><a href="#行为摘要" style="margin-left:0px">行为摘要</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/6b10cbd5313cab784666fabcb2be54128e2079f1/docs/en/development/combat-planner.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Oct 31, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#quick-entry" style="margin-left:0px">Quick Entry</a><a href="#combatplan" style="margin-left:0px">CombatPlan</a><a href="#actionintent" style="margin-left:0px">ActionIntent</a><a href="#actiontag" style="margin-left:0px">ActionTag</a><a href="#actionslot" style="margin-left:0px">ActionSlot</a><a href="#roleprofile" style="margin-left:0px">RoleProfile</a><a href="#basechar-helpers" style="margin-left:0px">BaseChar Helpers</a><a href="#switch-in-guard" style="margin-left:10px">switch_in_guard</a><a href="#combat-session-and-first-engagement" style="margin-left:10px">Combat Session and First Engagement</a><a href="#click-ultimate-action" style="margin-left:10px">click_ultimate_action</a><a href="#click-skill-action" style="margin-left:10px">click_skill_action</a><a href="#click-arc-action" style="margin-left:10px">click_arc_action</a><a href="#planner-action" style="margin-left:10px">planner_action</a><a href="#fieldclaim" style="margin-left:0px">FieldClaim</a><a href="#combat-policies" style="margin-left:0px">combat_policies</a><a href="#coordination-requests" style="margin-left:0px">Coordination Requests</a><a href="#behavior-summary" style="margin-left:0px">Behavior Summary</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
-  <script src="../../../../../assets/site.js?v=20260812031515" defer></script></body></html>
+  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>

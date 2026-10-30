@@ -35,6 +35,8 @@ const copy = {
     kesLead: '面向《卡厄思梦境》的计算机视觉自动化工具，支持自动卡厄思、自动出击、半自动剧情和后台运行，不读取游戏内存、不修改游戏文件。',
     endEyebrow: '终末地 · 后台自动化 · Windows', endTitle: '终末地日常，\n交给 ok-end-field。',
     endLead: '基于图像识别的《明日方舟：终末地》自动化工具，支持后台运行，不读取游戏内存、不修改游戏文件。',
+    apEyebrow: '蓝色星原：旅谣 · 视觉自动化 · Windows', apTitle: '星原旅途，\n日常交给 ok-ap。',
+    apLead: '基于 ok-script 的《蓝色星原：旅谣》图像识别自动化工具，支持一键日常、家园任务、小游戏与交互辅助。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
     getStarted: '开始开发', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
@@ -64,6 +66,8 @@ const copy = {
     kesLead: 'Computer-vision automation for Chaos Zero Nightmare with Auto Chaos, Auto Sortie, semi-automatic story progression, and background operation—without reading memory or modifying game files.',
     endEyebrow: 'Arknights: Endfield · Background automation · Windows', endTitle: 'Leave Endfield routines\nto ok-end-field.',
     endLead: 'Image-recognition automation for Arknights: Endfield with background operation, without reading game memory or modifying game files.',
+    apEyebrow: 'Azur Promilia · Visual automation · Windows', apTitle: 'Enjoy Azur Promilia.\nLeave the routine to ok-ap.',
+    apLead: 'Image-recognition automation for Azur Promilia built with ok-script, covering daily routines, home tasks, minigames, and interaction assistance.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
     getStarted: 'Start Developing', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
@@ -126,6 +130,10 @@ const features = {
   'ok-end-field': {
     'zh-CN': [['✓','日常任务','自动完成送礼、据点兑换、委托奖励与日常领取。'],['◫','后台运行','游戏窗口置于后台时继续执行自动化任务。'],['◎','图像识别','通过 OCR 与模板识别定位界面和交互目标。'],['↗','自动战斗','进入战斗后自动执行技能循环并识别战斗状态。']],
     en: [['✓','Daily routines','Automate gifts, outpost exchanges, commissions, and daily rewards.'],['◫','Background operation','Keep automation running while the game window stays in the background.'],['◎','Image recognition','Use OCR and template matching to locate interfaces and targets.'],['↗','Auto combat','Run skill cycles and recognize combat state automatically.']]
+  },
+  'ok-ap': {
+    'zh-CN': [['✓','一键日常','编排家园、委托与奖励领取任务，追踪日常执行状态。'],['⌂','家园任务','自动处理烹饪制作、牧场作物收获等家园流程。'],['♪','小游戏自动化','支持祖赞卡之梯自动放置与花瓣音游时序预测。'],['◎','交互辅助','支持自动跳过剧情、星结契约命中与宝箱开锁。']],
+    en: [['✓','One-click dailies','Coordinate home tasks, commissions, and reward collection with task tracking.'],['⌂','Home tasks','Automate cooking, harvesting, and other home routines.'],['♪','Minigame automation','Automate Jenga placement and rhythm-game input timing.'],['◎','Interaction assistance','Skip dialogue and assist with Star Link targets and treasure unlocking.']]
   },
   template: {
     'zh-CN': [['GUI','可运行界面','内置任务、配置控件与调试工具示例。'],['OCR','视觉能力','演示 OCR、相对区域识别和模板匹配。'],['{ }','任务模板','一次性任务、触发任务与自动化测试开箱即用。'],['↗','发布流程','包含打包配置与 GitHub Actions 发布工作流。']],
@@ -650,7 +658,7 @@ function githubIcon(project, currentUrl) {
 function releaseDownloads(meta) {
   const fallbackAsset = meta.releaseAssets?.find(asset => /\.exe$/i.test(asset.name))?.browser_download_url;
   const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url || fallbackAsset || meta.releaseUrl;
-  return { china: find(/China-setup\.exe$/i), global: find(/Global-setup\.exe$/i) };
+  return { china: find(/China-setup(?:-v?[\d.]+)?\.exe$/i), global: find(/Global-setup(?:-v?[\d.]+)?\.exe$/i) };
 }
 
 function communityLinks(links = [], label = '', compact = false, localeCode = 'en', project, currentUrl, ownerId = project?.id) {
@@ -719,7 +727,7 @@ async function faqFromMarkdown(project, locale) {
 function marketingContent(project, locale) {
   const t = localeCopy(locale.code);
   const isFramework = project.type === 'framework';
-  const key = project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
+  const key = project.id === 'ok-ap' ? 'ap' : project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
   const localized = name => t[name] || (locale.autoTranslated ? simplifiedToTraditional(copy['zh-CN'][name]) : copy.en[name]);
   const [titleA, titleB] = localized(`${key}Title`).split('\n');
   return { key, eyebrow: localized(`${key}Eyebrow`), titleA, titleB, lead: localized(`${key}Lead`) };

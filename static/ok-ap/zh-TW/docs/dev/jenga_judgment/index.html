@@ -1,0 +1,422 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>祖贊卡之梯判定分析 · 开发 · OK-AzurPromilia · 繁體中文</title><meta name="description" content="核對日期：2026-09-26。這是本機客戶端的靜態分析，不能代替三星實機驗收。 D:\AzurPromi — OK-AzurPromilia 繁體中文文件"><meta name="keywords" content="OK-AzurPromilia, OKAzurPromilia, ok-ap, okap, GitHub, longer-sausage/OK-AzurPromilia, longer-sausage, 藍色星原：旅謠, 視覺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="longer-sausage">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-ap/zh-TW/docs/dev/jenga_judgment/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:title" content="祖贊卡之梯判定分析 · 开发 · OK-AzurPromilia · 繁體中文"><meta property="og:description" content="核對日期：2026-09-26。這是本機客戶端的靜態分析，不能代替三星實機驗收。 D:\AzurPromi — OK-AzurPromilia 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-ap/zh-TW/docs/dev/jenga_judgment/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-ap-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="OK-AzurPromilia — 藍色星原：旅謠 · 視覺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="祖贊卡之梯判定分析 · 开发 · OK-AzurPromilia · 繁體中文"><meta name="twitter:description" content="核對日期：2026-09-26。這是本機客戶端的靜態分析，不能代替三星實機驗收。 D:\AzurPromi — OK-AzurPromilia 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-ap-zh-tw.png"><meta name="twitter:image:alt" content="OK-AzurPromilia — 藍色星原：旅謠 · 視覺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"祖贊卡之梯判定分析 · 开发 · OK-AzurPromilia · 繁體中文","description":"核對日期：2026-09-26。這是本機客戶端的靜態分析，不能代替三星實機驗收。 D:\\AzurPromi — OK-AzurPromilia 繁體中文文件","url":"https://ok-script.com/ok-ap/zh-TW/docs/dev/jenga_judgment/","inLanguage":"zh-TW","dateModified":"2026-09-30T12:05:07+08:00","author":{"@type":"Organization","name":"OK-AzurPromilia","url":"https://github.com/longer-sausage/OK-AzurPromilia"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-ap.png" alt=""></span><span>OK-AzurPromilia</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ap.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">專案首頁</a><a href="../quickstart/">快速上手</a><a href="../development/">開發指南</a><a href="../action_lifecycle/">Action 生命週期</a><a href="./" class="active" aria-current="page">祖贊卡之梯判定分析</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">OK-AzurPromilia</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="祖贊卡之梯-本機判定程式碼核對">祖贊卡之梯：本機判定程式碼核對</h1>
+<p>核對日期：2026-09-26。這是本機客戶端的靜態分析，不能代替三星實機驗收。</p>
+<h2 id="證據來源">證據來源</h2>
+<ul>
+<li><code>D:\AzurPromilia\AzurPromilia_Game\GameAssembly.dll</code>，SHA256
+<code>729A510F6D507B5790F8BB67835B43CC2AA5CE12919201E9C26D9A68F5575992</code>。</li>
+<li>資料包 <code>metadata/global-metadata.dec</code>，SHA256
+<code>A23E8699BDF119DACEBC0BD16BAF884E4904047A0A927CE584D77C7714D5EFCC</code>。</li>
+<li>Il2CppDumper 6.7.46 生成類和欄位佈局，再用 Capstone 反彙編函式體。
+臨時證據位於 <code>tmp/jenga_reverse/</code>；地址以下均為 DLL 首選基址下的 VA，非執行時地址。</li>
+<li>藍圖 <code>data/_jenga_blueprint_1254.bin</code> 的 <code>localBlackboard</code>。
+資料包中的自動掛機技術報告有幾處與當前機器碼衝突，不能直接作為公式依據。</li>
+</ul>
+<h2 id="實際接觸判定">實際接觸判定</h2>
+<p><code>PlayableItemControllerComponet.CalculateSurfaceOverlap</code>（<code>0x183ED3820</code>）：</p>
+<ol>
+<li>從碰撞接觸點取得法線。<code>abs(normal.y) &lt; 0.5</code> 時返回 0，側面碰撞不算搭建。</li>
+<li>兩個 <code>BoxCollider</code> 分別選取朝向法線及反法線的面（<code>BestFace</code>）。</li>
+<li>將面的四角投影到接觸平面（<code>ProjectFace</code>），取凸包（<code>ConvexHull</code>）。</li>
+<li>用 Sutherland–Hodgman 演算法求兩個凸多邊形的交集（<code>SHClip</code>）。</li>
+<li>返回 <code>clamp01(交集面积 / min(面 A 面积, 面 B 面积))</code>。
+分母不大於 <code>1e-4</code> 時返回 0。</li>
+</ol>
+<p>這是<strong>碰撞盒接觸面的面積比例</strong>，不是截圖輪廓寬度、螢幕包圍框 IoU 或兩個中心的距離。
+耳朵、裝飾、透視與塔身傾斜都會使視覺上重疊的比例不同於實際接觸比例。</p>
+<p><code>HandleHouseCollision</code>（<code>0x183ED49D0</code>）在碰撞事件中計算比例；若指定了有效目標，
+碰到的碰撞盒所屬物件必須等於 <code>m_ValidTargetGo</code>，否則把比例和結果清零。
+成功後剛體設為 kinematic，失敗則彈開並啟動銷燬計時。因此事後看起來短暫落在塔上並不能證明成功。</p>
+<h2 id="分檔及邊界">分檔及邊界</h2>
+<p>藍圖規則：<code>90:2:1,80:2:1,60:1:1,50:1:1,0:0:0</code>。
+<code>ParseScoreRules</code>（<code>0x183EE03E0</code>）將閾值除以 100；
+<code>EvaluateByScoreRule</code>（<code>0x183EDB3E0</code>）按降序匹配 <code>ratio &gt;= threshold</code>。</p>
+<table>
+<thead>
+<tr>
+<th>接觸比例</th>
+<th>藍圖最終結果</th>
+<th>本次得分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>≥ 0.8</td>
+<td>Perfect = 2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>≥ 0.5 且 &lt; 0.8</td>
+<td>Good = 1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&lt; 0.5</td>
+<td>Miss = 0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>边界注意：控制器自己的 <code>EvaluatePlacement</code>（<code>0x183ED4360</code>）先使用
+<code>ratio &lt;= m_MissThreshold</code> 判 Miss，再以 <code>ratio &gt;= 0.8</code> 判 Perfect。
+但存在有效藍圖規則時，回撥 <code>&lt;TriggerOnceControllerComponet&gt;b__0</code>（<code>0x183EED870</code>）
+會按上表重新計算並返回最終結果。因此不能把控制器的 <code>&lt;= 0.5</code> 當作藍圖最終邊界。</p>
+<p>回撥僅在最終結果為 Perfect 時設定 <code>m_PerfectFlags</code> 的對應位。
+資料包提取的三星說明為“所有的圖騰都被放置，並都是完美判定”；計數到達 20/20 或
+出現 COMPLETE 不足以證明三星，必須檢查最終三顆星。</p>
+<p>進一步檢查 <code>HandlePlayableOver</code>（<code>0x183EDC100</code>）：普通模式先讀取結果字典中
+Perfect（列舉 2）的數量，與最大雕像數比較；達到最大數才進入最高檔分支。
+否則再比較 Perfect + Good（列舉 1）的數量是否達到最大數。
+<code>TotalSculptureCount</code>（<code>0x183EE6470</code>）則對所有結果增加下落計數，印證了
+“HUD 達到 20/20”與“20 次 Perfect”是不同條件。</p>
+<p>無限模式還有 <code>m_IsUnlimitedMode</code> 門控的強制失敗分支：超過普通上限、接近硬上限時
+按進度增加主動彈飛機率（<code>ForceMissAfterSuccess</code>），達到硬上限必觸發。
+不能把這個機制與普通 20 層挑戰的視覺誤判混為一談。</p>
+<h2 id="實際運動">實際運動</h2>
+<p><code>CalculateFigure8Offset</code>（<code>0x183ED3770</code>）、<code>CalculateCurrentVelocity</code>（<code>0x183ED3690</code>）：</p>
+<pre><code class="language-text">phase += moveSpeed * fixedDeltaTime
+localOffset = (horizontalRadius * sin(phase), verticalRadius * sin(2*phase), 0)
+worldPosition = initialPosition + initialRotation * localOffset
+worldVelocity = initialRotation * (
+    horizontalRadius * moveSpeed * cos(phase),
+    2 * verticalRadius * moveSpeed * cos(2*phase), 0)
+</code></pre>
+<p>軌跡是八字，縱向頻率為橫向兩倍，不是資料中示例的橢圓。
+藍圖值為 <code>moveSpeed=1.6</code>、橫向半徑 <code>1.25</code>、縱向半徑 <code>0.4</code>。</p>
+<p><code>StopMovement</code>（<code>0x183ED6610</code>）保留當前速度的 x/z 分量，將 y 清零，
+再投影去掉場景深度方向。<strong>釋放後橫向速度不會歸零。</strong></p>
+<p><code>SetControllerParams</code>（<code>0x183ED62C0</code>）把名為 <code>fallSpeed</code> 的引數寫入
+<code>m_GravityScale</code>，藍圖值 5 實際表示重力倍率。
+<code>UpdateFallMove</code>（<code>0x183ED69A0</code>）每個固定步增加 <code>vy += -9.81 * gravityScale * dt</code>，
+並以 <code>m_MaxFallSpeed</code> 限速；建構函式預設值為 <code>-10</code>。
+忽略離散步與接觸修正時，g = 49.05，約 0.2039 秒達到速度上限，之後勻速。
+下落時間隨釋放高度變化，不能固定為 0.5 秒。</p>
+<p>物理更新還有最多 4 個子步（最大步距 0.15）、掃掠檢測、防穿透、0.01 的接觸餘量及
+0.03 的近接觸閾值（<code>PreventPenetration</code>，<code>0x183ED5230</code>）。應通過實機幀序列校準
+離散步及輸入延遲，不能只用連續公式就宣稱穩定 Perfect。</p>
+<h2 id="驗證狀態">驗證狀態</h2>
+<ul>
+<li>已證實舊實現存在固定下落時間、固定漂移時間和把影像寬度當容差的問題。</li>
+<li>物理預測實機候選已合入 <code>JengaPlayer</code>，除錯記錄位於 <code>tmp/jenga_live/</code>，尚未通過三星驗收。</li>
+<li>當前任務之前的兩星實機結果不滿足“穩定三星”。不得將本靜態分析當作驗收完成。</li>
+</ul>
+<h2 id="2026-09-26-實機逐塊調查">2026-09-26 實機逐塊調查</h2>
+<p>所有輸入均由 Python 發出。發現普通許可權 Python 向已提權的遊戲傳送 F 時，
+函式返回成功但畫面不釋放；因此無圖騰脫離和判定證據的按鍵不計入有效實驗。
+隨後使用管理員 Python 驗證，保留釋放時刻、逐幀時刻、每塊下落截圖和判定文字。</p>
+<table>
+<thead>
+<tr>
+<th>實機記錄目錄（<code>tmp/jenga_live/</code>）</th>
+<th>有效釋放結果</th>
+<th>核對情況</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>160204</code></td>
+<td>Perfect</td>
+<td>第一次實際釋放，著陸後文字明確可見</td>
+</tr>
+<tr>
+<td><code>160312</code></td>
+<td>Perfect、Perfect、Good、Perfect</td>
+<td>第三次為換造型後的偏心著陸，不是三星</td>
+</tr>
+<tr>
+<td><code>160511</code></td>
+<td>4 次 Perfect</td>
+<td>已進入塔身搖擺階段</td>
+</tr>
+<tr>
+<td><code>160722</code></td>
+<td>3 次 Perfect</td>
+<td>到 12/20 後因識別間斷反覆清空歷史，未繼續釋放</td>
+</tr>
+<tr>
+<td><code>175609</code></td>
+<td>3 次 Miss</td>
+<td>重開後的底座被背景高處紋理冒充，已停止該輪並修正</td>
+</tr>
+<tr>
+<td><code>180056</code></td>
+<td>11 次連續 Perfect，隨後 Miss</td>
+<td>真實塔頂識別正確；第 12 次碰撞時明顯偏左，首次非 Perfect 即停止</td>
+</tr>
+<tr>
+<td><code>181939</code></td>
+<td>Miss</td>
+<td>保留高層現場對照；去掉輸入提前量的候選未通過，不能作為修復</td>
+</tr>
+<tr>
+<td><code>182129</code></td>
+<td>3 次連續 Perfect</td>
+<td>限制接觸時相對速度後，高層換造型均通過；360 秒實驗時限結束，未算作完整三星</td>
+</tr>
+</tbody></table>
+<p>以上文字判定先經逐幀人工核對，後用獨立的判定文字模板複核；每個目錄的
+<code>judgment_audit.json</code> 列出投票和對應原圖。計數在 Miss 後也會增加，因此它統計的不是
+“成功放置數”，不得用計數增加代替實際結果檢測。</p>
+<h3 id="已定位的連續-miss">已定位的連續 Miss</h3>
+<p><code>175609/start.png</code> 中，真實底座在 <code>(970, 796)</code> 附近，模板置信度 0.758；
+背景紋理候選在 <code>(1030, 736)</code>，置信度僅 0.411。舊篩選允許與最佳候選橫向距離
+不超過 60 畫素的所有候選進入“選最高目標”步驟，弱背景因此勝出，隨後被快取為
+新的跟蹤模板並取得近 1.0 的自匹配分數。後續三次均向假目標投放，錄影出現 Miss。</p>
+<p>修復：進入最高目標篩選的候選還必須滿足絕對置信度和相對最佳候選置信度要求，
+沒有合格候選時不出手。新增真實截圖 <code>tests/fixtures/jenga/false_top.png</code>，驗證初次
+定位和快取跟蹤均落在實際底座，而不是背景。該修復已通過影像迴歸測試。</p>
+<p>新增 <code>JengaDetector.placement_result()</code>，從獨立的判定文字讀取結果；三類文字模板
+在 <code>assets/jenga/results/</code>。2026-09-27 按更新後的驗收要求，實機偵錯程式允許 Good 繼續，
+在 Miss 或未讀到結果時停止該輪，並仍保留每塊的原始結果。
+此時仍在繼續物理預測除錯，尚未完成連續三星驗收。</p>
+<h3 id="高層接觸時刻與相對運動">高層接觸時刻與相對運動</h3>
+<p><code>180056/flight_12_03.jpg</code> 在按鍵後約 0.256 秒出現首次碰撞閃光，
+落塊仍在塔頂左側。塔頂模板起點為 y=718，圖騰上方耳角約在 y=684；
+影像模板邊框不能直接視作物理碰撞面的邊界。接觸前落塊向右、塔頂向左，
+時間誤差會被相對運動放大。需要同時核對模板裁剪偏差、輸入生效延遲和物理接觸，
+目前不能將這個 Miss 歸結為單一的固定時間偏差。</p>
+<p>後續 <code>181939</code> 對照移除了 45ms 輸入提前量並調整了模板頂邊，仍出現 Miss，
+已停止該候選。這說明只對一個失敗樣本平移出手時刻並不能保證其他方向成功。
+除錯仍使用螢幕觀測和 Python 按鍵；沒有修改遊戲判定或把 Miss 隱藏為成功。</p>
+<h2 id="2026-09-27-精確提取熱更新碰撞盒">2026-09-27：精確提取熱更新碰撞盒</h2>
+<p>當前清單 <code>30_default_package_2302423.bytes</code> 含 270218 個 bundle、7191 個 pack。
+<code>PackageBundleCompact</code> 的 PackResID 和 FileOffset 給出單個 bundle 的精確位置；
+一個 <code>.r</code> 檔案包含多個 bundle，僅讀取第一個會漏掉圖騰 prefab。
+<code>Base64StringPool</code> 名稱具有誤導性：實際是兩個 ulong 分別按 38 進位制還原，
+字元表為 <code>空格0123456789abcdefghijklmnopqrstuvwxyz.</code>，不是標準 Base64。</p>
+<p>世界圖騰 prefab 位於熱更新 <code>BundleFiles/kqfjveen0tb1htqy9bb4w.r</code>，
+bundle 索引 141424–141431。只讀提取指令碼及完整型別樹位於
+<code>tmp/jenga_reverse/manifest_index.py</code>、<code>extract_totems.py</code>、<code>prefabs/</code>。</p>
+<table>
+<thead>
+<tr>
+<th>prefab</th>
+<th>碰撞盒尺寸 x/y/z</th>
+<th>中心 x/y/z</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>monkey</td>
+<td>0.40 / 0.75 / 0.43</td>
+<td>0 / 0.38 / -0.01</td>
+<td>可見網格寬度約 0.5303</td>
+</tr>
+<tr>
+<td>owl</td>
+<td>0.40 / 0.67 / 0.42</td>
+<td>0 / 0.28 / -0.03</td>
+<td>可見網格寬約 0.5175，網格父節點 y=-0.064</td>
+</tr>
+<tr>
+<td>rabbit</td>
+<td>0.36 / 0.89 / 0.40</td>
+<td>0 / 0.45 / -0.01</td>
+<td>網格高約 0.8942，識別模板可能沒有包含耳朵</td>
+</tr>
+<tr>
+<td>deer / sparrow / wolf</td>
+<td>子節點含 0.52 / 0.75 / 0.43 及 0.40 / 0.70 / 0.40 兩種盒</td>
+<td>依子節點</td>
+<td>必須結合執行時所選 collider，不能只取檔案裡第一個</td>
+</tr>
+</tbody></table>
+<p>owl 網格區域性最高點約 0.75849，加父節點 -0.064 後為 0.69449，
+BoxCollider 頂面為 0.615，兩者相差約 0.07949 個世界單位。
+因此即使視覺模板完整包含網格，頂邊仍不是承接面；約 228 畫素/單位時差約 18 畫素。
+mesh 最低點加父節點為 -0.064，而碰撞盒底面為 -0.055，相差約 2 畫素。
+以上為靜態幾何，尚需與實機所用造型、朝向及模板裁剪一一對應。</p>
+<p>補充實驗：<code>225607</code> 為 4 Perfect 後 Good；<code>230544</code> 為 2 Perfect 後等待超時；
+<code>230948</code> 首塊 Good。它們都沒有完成整輪三星，不能作為穩定性證明。</p>
+<h2 id="2026-09-27-高層跟蹤與正式任務整合">2026-09-27：高層跟蹤與正式任務整合</h2>
+<ul>
+<li><code>020855</code>、<code>021420</code>、<code>021737</code>、<code>022244</code> 為同一輪分段驗證，累計到 17/20，
+16 Perfect、1 Good、0 Miss；最終因識別間斷未完成，不能計作通關。</li>
+<li><code>124227</code> 新一輪到 15/20，14 Perfect、1 Good、0 Miss。第 5 次 Good 的真實幀
+顯示偏心著陸；逐塊圖集、原始時間戳、判定審計儲存在同目錄。保留遊戲現場續測。</li>
+<li>高層日誌出現塔頂 y≈690 與下一層 y≈850 交替，反覆清空運動歷史。實機三幀
+<code>high15_sequence/00..02.png</code> 可復現：舊版第 2 幀接受下層，第 3 幀繼續跟蹤下層；
+修復後第 2 幀等待，第 3 幀恢復真正塔頂。對應迴歸為 <code>layer15_0..2.png</code>。
+未投放期間拒絕下降超過 60 畫素的塔頂候選；釋放後清除舊塔頂快取重新識別。</li>
+<li>夜間鳥頸飽和度降低和高層貓頭鷹受光變化已有真實截圖迴歸；畫面停止重新整理時等待，
+恢復後重新擬合。模板裁剪變高但底邊不變，不再誤當成鏡頭跳變。</li>
+<li>正式任務已替換固定時距近似，加入每次投放後的獨立文字判定。僅確認 Perfect / Good
+後繼續，Miss 或未知結果鎖住本次介面；不會因觸發器重新輪詢而繼續盲投。</li>
+</ul>
+<p><code>TriggerSculptureShake</code>（<code>0x183EE7DA0</code>）將每幀 deltaTime 限制為 0.03，
+累加時間並以 4 秒週期正弦驅動塔身 Z 旋轉，最大角度還會平滑逼近目標值。
+鳥的軌跡在 FixedUpdate 推進，兩者在低幀率時不能簡單視作同一個時鐘。
+因此實現分別擬合塔身實際時間與鳥的幾何相位；交叉檢查還須先確認兩個模型均擬合合格。</p>
+<p>後續 <code>130118</code> 接續同一輪到 18/20：Good、Good、Perfect，累計 15 Perfect、
+3 Good、0 Miss，尚未完成。三次均有獨立文字審計與落點圖集，不能把 Good 寫成 Perfect。</p>
+<p>18 層的後續真實軌跡還驗證了兩個等待原因：遮擋轉折點時，觀察到的 min/max 會
+低估軌跡半徑；改為原生週期擬合初值，再做幾何最佳化，並從初次迭代固定八字交點分支。
+四份已驗證的 Perfect 軌跡中，出手時刻變化小於 0.5ms。
+<code>173752</code> 的後續位置檢驗中，擬合誤差 ≤5px 的實際時間模型預測未來 0.3–0.5 秒，
+15 個樣本最大誤差 9.37px；強行共用鳥時鐘的模型最大誤差 37.38px，且自身擬合不合格。
+因此僅在幾何時鐘模型自身誤差也 ≤5px 時使用 8px 的交叉檢查，不能用失效模型否決
+有效預測。原有接觸相對速度限制繼續保留，仍須完整實機驗證。</p>
+<p><code>174440</code> 的下一次真實投放為 Perfect，推進到 19/20，累計 16 Perfect、3 Good、
+0 Miss。最後懸掛物為兔子；<code>174843</code> 無投放，主要在等待可靠塔頂。
+<code>final_rabbit_night.png</code> 儲存當時真實畫面，已有模板對塔頂的最佳得分為 0.493，
+未達 0.50 門檻。加入同幀的內部紋理模板後為 0.926，不降低背景排除門檻。</p>
+<p>最後一層稀疏軌跡的後續位置驗證儲存在 <code>175333/tower_rate_audit.json</code>：
+至少 12 個有效點且覆蓋 4.2 秒時仍有可用預測。最低樣本數改為 12，保留跨度、
+尺度、殘差、時效和相對速度限制，並增加約 3 FPS 的獨立軌跡測試。
+嘗試擬合塔身頻率並未改善未來位置誤差，因此未引入該複雜度。</p>
+<h2 id="2026-09-27-輸入排程遲到保護">2026-09-27：輸入排程遲到保護</h2>
+<p>投放前的等待可能因不同機器負載和系統排程而超時。現在在等待結束、取得
+輸入鎖後再次檢查預測截止時間；超過計劃時刻 15ms 時跳過這次按鍵，繼續觀測。
+迴歸測試模擬遲到排程，確認不會發送按下或抬起事件。此項是遲到輸入修復，
+不能代替各種背景及執行環境下的整輪無 Miss 實機驗收。</p>
+<h2 id="2026-09-27-兩分鐘單輪要求與投放誤差候選">2026-09-27：兩分鐘單輪要求與投放誤差候選</h2>
+<p>使用者已明確兩分鐘指每輪 0/20 到結束的用時。新實機記錄 <code>224339</code> 在 110 秒內
+完成 5 次 Perfect、0 Good、0 Miss，隨後因舊相對速度門檻反覆否決預測而等待。
+逐塊獨立判定審計在同目錄 <code>judgment_audit.json</code>；這仍不是完整通關。</p>
+<p>候選實現將每塊最短觀測跨度從 4.2 秒改為 2 秒，保留至少 12 個觀測及各殘差、
+尺度、時效檢查。後續真實幀核對 <code>warmup_audit.json</code> 中該輪 9 個可核對預測，
+懸掛物橫向未來位置最大誤差約 16.1px；仍不足以證明整輪接觸安全。
+相對速度的經驗閾值改為投放時間和下落時間擾動下的落點誤差檢查，並計入
+擬合殘差及懸掛物相對鳥的位置誤差。使用解包中最窄 0.36 單位碰撞面作為參考，
+保留幾何餘量；它不是任意傾斜及任意執行速度下的面積重疊證明。</p>
+<p>正式執行迴圈設為 120 秒，耗盡時鎖住當前場景，避免觸發輪詢自動續開另一段
+120 秒。新增獨立積分落點與超時鎖住迴歸。準備重開時 computer-use 曾報告 Esc
+停止訊號，當時已停止輸入；使用者隨後明確授權繼續控制並完成整輪驗收。</p>
+<h2 id="2026-09-28-高層觀測與執行時序">2026-09-28：高層觀測與執行時序</h2>
+<p>安裝目錄 <code>globalgamemanagers</code> 的 TimeManager 記錄 <code>Fixed Timestep=0.0333333015</code>，
+即約 1/30 秒；不能將固定步當作 20ms。輸入時序檢查至少留半步，並按實際觀測的
+相位抖動擴大範圍。落點預算同時檢查下落時距、擬合誤差及懸掛錨點變化。</p>
+<p>原生 Good 的分母是較小接觸面的面積。按提取的碰撞盒寬/深/中心 Z 計算橫向餘量：
+monkey 為 0.40/0.43/-0.01，owl 為 0.40/0.42/-0.041，rabbit 為
+0.36/0.40/-0.01。未知造型使用最窄尺寸及較大的深度錯位。名義平面預算經獨立
+多邊形交集迴歸核對；它仍不構成任意傾斜、任意客戶端版本的安全證明。</p>
+<p>實機記錄 <code>231754</code> 的第 9 次 Miss 來自模糊欄杆進入塔頂快取。增加同幀紋理強度與
+密度檢查，並加入真實背景切換回歸；低相關度不足以單獨證明前景定位正確。
+已確認的懸掛造型保持到釋放，未知裁圖定期重查強參考匹配。搜尋範圍擴充套件至
+100..1820，覆蓋累計偏移後的高層塔頂。提示條把鳥頸部切成兩段時，其下緣仍是
+可用錨點，加入遮擋後的真實迴歸。</p>
+<p>後續圖騰保留已測橫向中心與半徑，重新測量垂直中心。短觀測至少 0.6 秒/6 點，
+需要保留尺度、殘差、時效、時鐘交叉檢查，並對塔頂的短弧外推放大加入誤差預算。
+完整觀測仍至少 2 秒/12 點。曾嘗試凍結裁圖和逐幀輪廓重定位，實機等待反而增加，
+已撤銷這兩項實驗。文字動畫另加入受光 Perfect 參考，不以計數增長替代判定。</p>
+<p>截至 <code>003915</code> 的候選仍未通過兩分鐘完整零 Miss 驗收：<code>000641</code> 為 10 Perfect / 4 Good，
+<code>002128</code> 為 16 Perfect / 2 Good，<code>003329</code> 為 18 Perfect，<code>003915</code> 為
+14 Perfect / 4 Good；均在 120 秒時停止，最高 18/20。<code>001250</code> 的第 11 次
+原被記為 unknown，逐幀確認是 Perfect，已加入字形差異迴歸。不能將部分輪次零
+Miss 或累計接續結果寫成單輪完成。</p>
+<p>實機 <code>005004</code> 的前 10 次投放約每 4 秒一次，後半輪的等待來自混入區域性裁圖：
+懸掛圖騰相對鳥的底邊在約 110px 與 180px 間跳變，導致高度誤差達到 70px。
+<code>010028</code> 經暗腿補全後為 11 Perfect / 5 Good / 0 Miss，仍只到 16/20。
+快取的貓頭鷹軀幹也會錯當完整輪廓；新增真實快取迴歸，過矮或遠離鳥的非兔子
+裁圖僅在位置一致且完整輪廓高至少 25px 時更新。此項沒有降低落點或背景門檻。</p>
+<h2 id="2026-09-28-整輪時限與觀測預算複核">2026-09-28：整輪時限與觀測預算複核</h2>
+<p>塔頂快取改為上部紋理，並保留完整圖騰高度；受光、提示條遮擋造成的短鳥頸
+增加小面積候選回退。實際 <code>013240</code> 仍出現一次 Miss，發生在落點預算 44.60px、
+Good 餘量 45.00px 的邊緣。飛行幀已留存，不能把靜態公式或零 Miss 的部分輪次
+當作穩定通關。嘗試用下一層均值校準下落時間得到約 -19..+39ms 的不一致樣本，
+<code>014158</code> 僅完成 11 Perfect，已撤回該校準。</p>
+<p>投放時刻改為比較時間擾動下的最大落點偏差，仍使用同一 Good 接觸餘量。
+<code>015354</code> 在 119.62 秒發出第 20 次投放，前 19 次為 17 Perfect / 2 Good；
+兩分鐘截止時停止採集，最後判定和結算缺失，因此不計為完成。1920×1080、
+BitBlt 的 <code>040532</code> 完成 18 次成功投放，<code>041206</code> 完成 17 次，仍未滿足整輪要求。
+驗收工具將錄影編碼移入後臺，並對投放與結果分別記時，允許截止後只採集結算。</p>
+<p><code>010028</code>、<code>015354</code>、<code>040532</code>、<code>041206</code> 的後續真實位置複核包含 121 個
+跨度至少 1.2 秒、未滿 2 秒的短觀測預測，預測未來 0.3..0.5 秒。扣除已計入的
+固定步時間抖動後，實際鳥與塔頂偏差之和均被殘差/外推預算覆蓋。
+當時的候選把 22px 固定預留僅用於不足 1.2 秒的短弧；該突變後來在 <code>062854</code>
+第 19 次真實 Miss 中暴露問題，已撤回。當前在 1.2..2 秒間連續縮減預留，
+仍計入實際殘差、塔頂外推放大、時間擾動及懸掛錨點誤差。</p>
+<h2 id="2026-09-28-完整接觸預算與逆光裁圖">2026-09-28：完整接觸預算與逆光裁圖</h2>
+<p>較早候選 <code>062349</code> 在 1920×1080 / WGC 下取得 17 Perfect / 3 Good / 0 Miss，
+20 次判定耗時 82.34 秒、結算可見於 90.18 秒。但後續 <code>062854</code> 第 19 次、
+<code>123810</code> 第 10 次仍發生 Miss，不能把前一輪當作穩定性證明。
+這兩個失敗和 <code>061143</code> 的錨點異常均儲存為軌跡迴歸。錨點異常、短弧邊緣失敗幀
+仍拒絕投放；接觸時距失敗幀允許經核對的提前排程，至少避開原失敗時刻 30ms，
+用當時觀測偏差及區域性相對速度確認不會重複原按鍵。</p>
+<p>下落時間偏差必須同時作用於釋放後繼承的水平速度和繼續搖擺的接收面。
+當前逐一計算 27 種組合：釋放時序、飛行時長、接收面的物理時鐘各取三個值。
+每個組合仍受原生 Good 面積邊界、擬合/短弧外推、當前錨點及高度誤差預算限制。
+保留已有 45ms 的有效運動補償中心；它包含畫面插值時序，不能簡單解釋成按鍵
+處理延遲的上界。其變動範圍至少半個 1/30 秒步長，並隨相位抖動或較長配置擴大。
+飛行區間從首次幾何接觸覆蓋到當前物理步結束：使用幾何時長加 1/60 秒的中心，
+兩側各 1/60 秒，完整覆蓋 1/30 秒的正向區間。若在該中心外再加一個完整對稱步，
+會重複計入同一物理區間並造成長等待。另按衝擊速度折算 0.08 世界單位的可見
+邊緣餘量；貓頭鷹網格上緣與碰撞盒的差值約 0.0795。造型已知也不縮小邊緣餘量。</p>
+<p><code>134427</code> 取得 11 Perfect / 3 Good / 0 Miss，仍在 14/20 超時。錄影證明逆光時
+144..154px 的區域性貓頭鷹模板漏掉腳部，方向光下的參考相關度也經常不足 0.56，
+導致已定位的圖騰長時間保持未知身份。小於 160px 的快取現在嘗試補全至少 12px
+的同位置輪廓；強身份仍需單幀 0.72，較強證據需三個不同畫面，較弱證據需五個
+不同畫面且跨過至少 50px 的橫向弧段。兩者都需比所有其它造型高至少 0.15，
+凍結畫素不增加票數。身份用於選取碰撞面面積，不替代完整接觸時序檢查。</p>
+<p>當前候選的整輪驗證仍在進行；部分輪次的零 Miss 不計為兩分鐘整輪完成。</p>
+<h2 id="2026-09-28-懸掛上端漂移與相位交接">2026-09-28：懸掛上端漂移與相位交接</h2>
+<p><code>150343</code> 為 12 Perfect / 3 Good，停在 15/20；<code>152758</code> 為
+12 Perfect / 1 Good，停在 13/20；<code>153453</code> 為 8 Perfect / 1 Good，
+停在 9/20；<code>154752</code> 修復上端後為 12 Perfect / 1 Good，仍停在 13/20。
+四輪均零 Miss 但超時，仍不構成整輪通過。原始錄影、時間戳和
+逐次判定已移至 <code>D:/AzurPromilia/CodexJengaEvidence/</code> 的同名目錄。</p>
+<p><code>153453</code> 第六次原圖中鳥頸下端約 y=293，而快取上端為 y=364，
+高相關度匹配實際位於軀幹。已知網格高度不能補到這個區域性錨點上：
+現在先檢查上端與鳥的空間關係，快取失配回退到完整參考，再嘗試輪廓。
+新增暗光定位參考不提供造型身份，保留原有跨幀身份確認及未知接觸面餘量。
+完整高度與上部跟蹤紋理分別儲存，凍結畫面不能建立完整高度；
+已確認且上端、尺寸合法的造型可按本輪測得比例恢復原生網格高度。</p>
+<p>安裝目錄機器碼 <code>BeginMovement</code>（<code>0x183ED2EC0</code>）在 <code>0x183ED325B</code>
+把 <code>m_PathProgress</code> 清零。成功放置後在新鳥早期半程觀測其方向，
+塔身擺動明顯時優選該方向的中部交接段，減少後續對向接觸。
+該選擇保留完整 27 組合接觸預算，並按實際軌道尺度計算方向門檻，
+沒有可靠早期證據時不推測初始方向。映象方向和原生積分仍有獨立迴歸。</p>
+<p><code>154752</code> 的第 11 次在約 49 秒已有接觸預算合格的候選，卻被交接方向硬門檻
+拒絕，實際等至約 86 秒。該候選完整預算約 26.5px，小於 Good 邊界約 41.5px；
+方向質量約 0.38 未達到原硬門檻 0.55。方向現只作為安全候選間的優選，
+沒有優選候選時保留其他完整預算合格的落點。真實軌跡迴歸
+<code>handoff_rejected_good.json</code> 要求新塊在四秒內可排程，仍檢查完整 Good 預算。</p>
+<p>隨後 <code>155914</code> 取得 18 Perfect / 0 Miss，但第 18 次直到約 119 秒才投放，仍超時。
+高層識別間斷為 2.2..2.7 秒，多次觸發舊 2.2 秒歷史清空，重新增加短弧保護。
+當前保留一個原生軌道週期內的歷史；超過 2π / 1.6 秒才按原有方式重新擬合。
+凍結、鏡頭跳變、當前幀高度簇、殘差和雙時鐘檢查仍獨立生效。
+真實軌跡回放在約 99 秒出現完整預算合格的候選；該改善有
+<code>occluded_clock_reset.json</code> 迴歸，回放不作為整輪成功證據。</p>
+<p>當前整輪驗收繼續進行，以上修復不能替代 20 次獨立判定和實際結算時間。</p>
+<h2 id="2026-09-28-一步交接預判">2026-09-28：一步交接預判</h2>
+<p><code>161746</code> 為 11 Perfect / 3 Good / 0 Miss，仍在 14/20 超時。
+按真實按鍵分段擬合後，新鳥運動原點在按鍵後約 0.3 秒，接近上一塊落地；
+塔身四秒時鐘持續推進。單塊最早的安全根可能令下一塊只剩高速對向接觸，
+接觸保護因而長時間拒絕後續按鍵，單看當前方向的硬門檻也不能解決。</p>
+<p>當前在完整觀測、已知早期方向和明顯擺動時預估下一塊的機會。
+下一塊按未知接觸面和多個高度假設計算，換塊偏移取一個原生固定步，
+新層擺幅的增量按當前測得尺度估計；這些是用於排程的估計，不作為投放證據。
+一圈內若存在當前預算合格、且預計可明顯縮短兩塊總等待的交接，最多延期一次。
+抵達計劃時刻重新使用真實新幀計算原有 27 組合及全部保護，計劃過期丟棄。
+相近的排程成本仍優先選取朝軌道中心修正的落點，避免累計偏移。</p>
+<p>獨立原生積分覆蓋映象方向和投放／接觸固定步誤差，替代交接的最小重疊仍超過
+50%。暫停、凍結與投放會清除排程，過期排程不會反覆把下一圈設為目標。
+當前整輪實測繼續進行，模型預判本身不構成驗收通過。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia/blob/0e6df6a9f10c1cba9b76852a0f543d2e38c2da26/docs/dev/jenga_judgment.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#證據來源" style="margin-left:0px">證據來源</a><a href="#實際接觸判定" style="margin-left:0px">實際接觸判定</a><a href="#分檔及邊界" style="margin-left:0px">分檔及邊界</a><a href="#實際運動" style="margin-left:0px">實際運動</a><a href="#驗證狀態" style="margin-left:0px">驗證狀態</a><a href="#2026-09-26-實機逐塊調查" style="margin-left:0px">2026-09-26 實機逐塊調查</a><a href="#已定位的連續-miss" style="margin-left:10px">已定位的連續 Miss</a><a href="#高層接觸時刻與相對運動" style="margin-left:10px">高層接觸時刻與相對運動</a><a href="#2026-09-27-精確提取熱更新碰撞盒" style="margin-left:0px">2026-09-27：精確提取熱更新碰撞盒</a><a href="#2026-09-27-高層跟蹤與正式任務整合" style="margin-left:0px">2026-09-27：高層跟蹤與正式任務整合</a><a href="#2026-09-27-輸入排程遲到保護" style="margin-left:0px">2026-09-27：輸入排程遲到保護</a><a href="#2026-09-27-兩分鐘單輪要求與投放誤差候選" style="margin-left:0px">2026-09-27：兩分鐘單輪要求與投放誤差候選</a><a href="#2026-09-28-高層觀測與執行時序" style="margin-left:0px">2026-09-28：高層觀測與執行時序</a><a href="#2026-09-28-整輪時限與觀測預算複核" style="margin-left:0px">2026-09-28：整輪時限與觀測預算複核</a><a href="#2026-09-28-完整接觸預算與逆光裁圖" style="margin-left:0px">2026-09-28：完整接觸預算與逆光裁圖</a><a href="#2026-09-28-懸掛上端漂移與相位交接" style="margin-left:0px">2026-09-28：懸掛上端漂移與相位交接</a><a href="#2026-09-28-一步交接預判" style="margin-left:0px">2026-09-28：一步交接預判</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>

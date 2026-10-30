@@ -1,18 +1,18 @@
 <!doctype html><html lang="zh-CN" data-theme="light"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>游戏自动化入门 · ok-script · 简体中文</title><meta name="description" content="English · 文档中心 · 快速开始 · API 参考 本文档旨在为初学者提供一个关于如何使用计算机视觉技术实现 — ok-script 简体中文文档"><meta name="keywords" content="ok-script, okscript, GitHub, ok-oldking/ok-script, ok-oldking, 开源, Python, 视觉自动化, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档, ok-ww, okww, 鸣潮, ok-oldking/ok-wuthering-waves, ok-wuthering-waves, okwutheringwaves, 鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves, ok-nte, oknte, 异环, BnanZ0/ok-nte, 异环 后台副本挂机 Automation for Neverness to Everness, ok-duet-night-abyss, okduetnightabyss, 二重螺旋, BnanZ0/ok-duet-night-abyss, 二重螺旋 后台副本挂机 Automation for Duet Night Abyss, ok-end-field, okendfield, 明日方舟：终末地, AliceJump/ok-end-field, 终末地 End Field Automation 基于ok-script开发的自动化, ok-gf2, okgf2, 少女前线2：追放, ok-oldking/ok-gf2, 少女前线2 追放 PC版 后台一键收菜 自动化脚本 Girls' Frontline 2: Exilium Automation Tool, ok-script-app, okscriptapp, ok-oldking/ok-script-app, Python版按键精灵基于ok-script开发, ok-star-resonance, okstarresonance, 星痕共鸣, Sanheiii/ok-star-resonance, 基于ok-script的星痕共鸣自动工具, ok-kes, okkes, 卡厄思梦境, baoxin1100/ok-kes, ok框架卡厄思梦境自动化工具，包含自动出击模式和自动卡厄思模式功能, ok-starrailassistant, okstarrailassistant, 崩坏：星穹铁道, Shasnow/ok-starrailassistant, 崩坏星穹铁道自动化助手 | PC端 | 支持后台运行, ok-Onmyoji, okOnmyoji, 阴阳师, YunLiuZ/ok-Onmyoji, 阴阳师(Onmyoji)自动化战斗基于ok-script开发, ok-genshin-impact, okgenshinimpact, 原神, ok-oldking/ok-genshin-impact, 原神 OKGI 自动拾取  | 后台自动剧情  | 后台一条龙 | UI Automation Genshin Impact"><meta name="author" content="ok-oldking">
+  <title>自动化原理 · ok-script · 简体中文</title><meta name="description" content="English · 文档中心 · MCP 快速开始 编程代理帮助开发和验证程序；保存后的 Python 程序负责实际自 — ok-script 简体中文文档"><meta name="keywords" content="ok-script, okscript, GitHub, ok-oldking/ok-script, ok-oldking, 开源, Python, 视觉自动化, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档, ok-ww, okww, 鸣潮, ok-oldking/ok-wuthering-waves, ok-wuthering-waves, okwutheringwaves, 鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves, ok-nte, oknte, 异环, BnanZ0/ok-nte, 异环 后台副本挂机 Automation for Neverness to Everness, ok-duet-night-abyss, okduetnightabyss, 二重螺旋, BnanZ0/ok-duet-night-abyss, 二重螺旋 后台副本挂机 Automation for Duet Night Abyss, ok-end-field, okendfield, 明日方舟：终末地, AliceJump/ok-end-field, 终末地 End Field Automation 基于ok-script开发的自动化, ok-gf2, okgf2, 少女前线2：追放, ok-oldking/ok-gf2, 少女前线2 追放 PC版 后台一键收菜 自动化脚本 Girls' Frontline 2: Exilium Automation Tool, ok-script-app, okscriptapp, ok-oldking/ok-script-app, Python版按键精灵基于ok-script开发, ok-kes, okkes, 卡厄思梦境, baoxin1100/ok-kes, ok框架卡厄思梦境自动化工具，包含自动出击模式和自动卡厄思模式功能, ok-star-resonance, okstarresonance, 星痕共鸣, Sanheiii/ok-star-resonance, 基于ok-script的星痕共鸣自动工具, OK-AzurPromilia, OKAzurPromilia, 蓝色星原：旅谣, longer-sausage/OK-AzurPromilia, 蓝色星原：旅谣自动化脚本, ok-Onmyoji, okOnmyoji, 阴阳师, YunLiuZ/ok-Onmyoji, 阴阳师(Onmyoji)自动化战斗基于ok-script开发, ok-genshin-impact, okgenshinimpact, 原神, ok-oldking/ok-genshin-impact, 原神 OKGI 自动拾取  | 后台自动剧情  | 后台一条龙 | UI Automation Genshin Impact, ok-starrailassistant, okstarrailassistant, 崩坏：星穹铁道, Shasnow/ok-starrailassistant, 崩坏星穹铁道自动化助手 | PC端 | 支持后台运行"><meta name="author" content="ok-oldking">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/docs/intro_to_automation/">
-  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="游戏自动化入门 · ok-script · 简体中文"><meta property="og:description" content="English · 文档中心 · 快速开始 · API 参考 本文档旨在为初学者提供一个关于如何使用计算机视觉技术实现 — ok-script 简体中文文档"><meta property="og:url" content="https://ok-script.com/docs/intro_to_automation/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="游戏自动化入门 · ok-script · 简体中文"><meta name="twitter:description" content="English · 文档中心 · 快速开始 · API 参考 本文档旨在为初学者提供一个关于如何使用计算机视觉技术实现 — ok-script 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta name="twitter:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"游戏自动化入门 · ok-script · 简体中文","description":"English · 文档中心 · 快速开始 · API 参考 本文档旨在为初学者提供一个关于如何使用计算机视觉技术实现 — ok-script 简体中文文档","url":"https://ok-script.com/docs/intro_to_automation/","inLanguage":"zh-CN","dateModified":"2026-08-11T00:18:37+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="自动化原理 · ok-script · 简体中文"><meta property="og:description" content="English · 文档中心 · MCP 快速开始 编程代理帮助开发和验证程序；保存后的 Python 程序负责实际自 — ok-script 简体中文文档"><meta property="og:url" content="https://ok-script.com/docs/intro_to_automation/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="自动化原理 · ok-script · 简体中文"><meta name="twitter:description" content="English · 文档中心 · MCP 快速开始 编程代理帮助开发和验证程序；保存后的 Python 程序负责实际自 — ok-script 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-script-zh-cn.png"><meta name="twitter:image:alt" content="ok-script — 开源 · Python · 视觉自动化">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"自动化原理 · ok-script · 简体中文","description":"English · 文档中心 · MCP 快速开始 编程代理帮助开发和验证程序；保存后的 Python 程序负责实际自 — ok-script 简体中文文档","url":"https://ok-script.com/docs/intro_to_automation/","inLanguage":"zh-CN","dateModified":"2026-10-31T00:16:44+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20260812031515">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20261030184412">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
     <div class="custom-dropdown project-switcher" data-dropdown>
     <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
-    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../ok-nte/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../ok-kes/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a></div>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../ok-nte/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../ok-kes/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ap/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
   </div>
     <div class="nav-links" data-nav-links>
       <a href="../" aria-current="page">文档</a>
@@ -27,206 +27,52 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="./" class="active" aria-current="page">游戏自动化入门</a><a href="../quick_start/">快速开始</a><a href="../interface/">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="../api_doc/">API 参考</a><a href="../building-site/">构建文档网站</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="基于计算机视觉的游戏自动化入门">基于计算机视觉的游戏自动化入门</h1>
-<p><a href="../../en/docs/intro_to_automation/">English</a> · <a href="../">文档中心</a> · <a href="../quick_start/">快速开始</a> · <a href="../api_doc/">API 参考</a></p>
-<p>本文档旨在为初学者提供一个关于如何使用计算机视觉技术实现游戏自动化的快速入门指南。我们将从基本原理讲起，逐步介绍所需的编程语言和开发工具。</p>
-<h2 id="目录">目录</h2>
-<ul>
-<li><a href="#%E4%B8%80%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%A6%82%E4%BD%95%E7%8E%A9%E6%B8%B8%E6%88%8F">一、基本原理：计算机如何“玩”游戏</a><ul>
-<li><a href="#%E6%A0%B8%E5%BF%83%E5%BE%AA%E7%8E%AF%E4%B8%89%E6%AD%A5%E8%B5%B0">核心循环：三步走</a></li>
-<li><a href="#%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E4%BB%8E%E5%83%8F%E7%B4%A0%E5%88%B0%E5%86%B3%E7%AD%96">图像分析：从像素到决策</a><ul>
-<li><a href="#1-%E4%BC%A0%E7%BB%9F%E5%9B%BE%E8%89%B2%E7%AE%97%E6%B3%95-opencv-%E5%BA%93">传统图色算法 (OpenCV 库)</a></li>
-<li><a href="#2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%8E%A8%E7%90%86-inference">神经网络推理 (Inference)</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9">二、编程语言选择</a><ul>
-<li><a href="#%E5%B8%B8%E7%94%A8%E5%BA%93%E6%A6%82%E8%A7%88">常用库概览</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7">三、开发工具</a></li>
-</ul>
-<h2 id="一-基本原理-计算机如何-玩-游戏-一基本原理计算机如何玩游戏">一、基本原理：计算机如何“玩”游戏 { #一基本原理计算机如何玩游戏 }</h2>
-<p>基于计算机视觉的游戏自动化，本质上是模拟人类玩家通过“眼睛”观察游戏画面，然后通过“大脑”分析决策，最后通过“手”执行操作的过程。这个过程可以被简化为一个核心循环。</p>
-<h3 id="核心循环-三步走-核心循环三步走">核心循环：三步走 { #核心循环三步走 }</h3>
-<p><strong>游戏截图 → 图像分析 → 输出操作</strong></p>
-<p><img src="../../assets/sources/ok-script/docs/intro_to_automation/img.png" alt="核心循环示意图">
-<em>图：识别确定按钮, 并点击</em></p>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档中心</a><a href="../quick_start/">MCP 快速开始</a><a href="../agent-prompts/">编程代理提示词</a><a href="../agent-setup/">代理安装指南（英文）</a><a href="../mcp/">MCP 连接与执行</a><a href="./" class="active" aria-current="page">自动化原理</a><a href="../interface/">界面与开发工具</a><a href="../after_quick_start/">进阶指南</a><a href="../plugins/">导入插件</a><a href="../building-site/">构建文档网站</a><a href="../agent-setup/">Agent environment setup</a><a href="../mcp/">MCP connection and execution</a><a href="../feature-crops/">Template export format</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="可复用自动化如何工作">可复用自动化如何工作</h1>
+<p><a href="../../en/docs/intro_to_automation/">English</a> · <a href="../">文档中心</a> · <a href="../quick_start/">MCP 快速开始</a></p>
+<p>编程代理帮助开发和验证程序；保存后的 Python 程序负责实际自动化。开发阶段使用模型，日常执行运行脚本，因此重复的本地运行无需消耗模型 Token。</p>
+<h2 id="开发阶段">开发阶段</h2>
+<p>你描述目标应用、起始状态、步骤和可见的成功条件。编程代理通过 MCP 读取工作流技能、观察目标、提交 Python 任务文件并检查结果；通过本地文件访问检查已安装 API、保存代码、分析日志和截图。</p>
+<p>代理不断验证和修改，直到脚本在测试条件下正确运行。任务逻辑、配置和识别素材保存在应用项目中。全程使用 ok-script 截图和交互，不使用 Computer Use 工具。</p>
+<h2 id="日常执行阶段">日常执行阶段</h2>
+<p>保存的 Python 任务执行以下循环：</p>
 <ol>
-<li><p><strong>输入 (Input) - 游戏截图</strong>：程序首先需要获取游戏的实时画面。</p>
-<ul>
-<li><strong>数据量</strong>: 以一张 <code>1920x1080</code> 分辨率的屏幕为例，每个像素包含蓝(B)、绿(G)、红(R)三个颜色通道，每个通道的值域为
-0-255（即1个字节）。</li>
-<li>计算：<code>1920 * 1080 * 3 bytes ≈ 6.22 MB</code>。这意味着每一帧图像都是一个相当大的数据块，因此高效的分析算法至关重要。</li>
-</ul>
-</li>
-<li><p><strong>处理 (Processing) - 图像分析</strong>：这是整个流程的核心和大脑。程序需要从充满像素点的截图中提取出有意义的信息，以做出决策。主要有两种技术路径。</p>
-</li>
-<li><p><strong>输出 (Output) - 模拟操作</strong>：根据图像分析的结果，程序会模拟人类玩家的键盘和鼠标操作。这不仅包括立即执行的动作，还包括策略性的等待。</p>
-<ul>
-<li><strong>立即操作</strong>: 移动鼠标、点击按钮、按下键盘等，从而与游戏进行交互。</li>
-<li><strong>等待操作</strong>: 持续监控游戏画面，直到满足特定条件再执行下一步。例如，程序可以循环截图分析，直到画面中出现“战斗结束”的文字，才进行点击“确定”按钮的操作。</li>
-</ul>
-</li>
+<li><strong>观察：</strong> 截取目标窗口或设备画面。</li>
+<li><strong>识别：</strong> 用几何、颜色、模板匹配或 OCR 判断当前状态。</li>
+<li><strong>操作：</strong> 通过配置的 ok-script 输入后端发送操作。</li>
+<li><strong>验证：</strong> 检查结果，达到成功条件后结束。</li>
 </ol>
-<h3 id="图像分析-从像素到决策-图像分析从像素到决策">图像分析：从像素到决策 { #图像分析从像素到决策 }</h3>
-<p>我们将图像分析的方法分为两大类：传统的图色算法和现代的神经网络推理。</p>
+<p>循环由代码控制。本地 OCR 或图像识别模型无需对话式大模型；只有主动为脚本添加大模型调用时，才会产生对应的推理成本。</p>
+<h2 id="为任务选择识别方式">为任务选择识别方式</h2>
 <table>
 <thead>
 <tr>
-<th align="left">方法 (Method)</th>
-<th align="left">耗时 (Latency)</th>
-<th align="left">易用性 (Ease of Use)</th>
-<th align="left">主要计算单元 (CPU/GPU)</th>
+<th>方法</th>
+<th>适用场景</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><strong>找色/特征分析</strong></td>
-<td align="left">极低 (ms级)</td>
-<td align="left">高(原理简单) / 中(定制复杂算法)</td>
-<td align="left">CPU</td>
+<td>几何和颜色</td>
+<td>规则控件、高亮状态、进度条</td>
 </tr>
 <tr>
-<td align="left"><strong>找图 (模板匹配)</strong></td>
-<td align="left">1-50ms</td>
-<td align="left">中 (需要维护模板图片库)</td>
-<td align="left">CPU</td>
+<td>模板匹配</td>
+<td>稳定的按钮和图标</td>
 </tr>
 <tr>
-<td align="left"><strong>OCR (文字识别)</strong></td>
-<td align="left">10-200ms</td>
-<td align="left">易(有现成模型) / 难(支持多语言)</td>
-<td align="left">CPU / GPU</td>
+<td>OCR</td>
+<td>需要根据文字内容进行判断</td>
 </tr>
 <tr>
-<td align="left"><strong>目标检测 (YOLO等)</strong></td>
-<td align="left">中~高 (20-500ms+)</td>
-<td align="left">难 (需要自己训练模型)</td>
-<td align="left">CPU / GPU</td>
-</tr>
-<tr>
-<td align="left"><strong>多模态大模型</strong></td>
-<td align="left">高 (500ms+)</td>
-<td align="left">难 (付费, 接入远程API)</td>
-<td align="left">GPU / (远程API)</td>
+<td>目标检测</td>
+<td>外观变化较大，固定模板不足以识别的对象</td>
 </tr>
 </tbody></table>
-<h4 id="1-传统图色算法-opencv-库-1-传统图色算法-opencv-库">1. 传统图色算法 (<a href="https://opencv.org/">OpenCV 库</a>) { #1-传统图色算法-opencv-库 }</h4>
-<p>这类算法速度快、实现简单，适用于处理界面固定、特征明显的场景。最常用的库是 <strong>OpenCV</strong>。</p>
-<ul>
-<li><p><strong>找图 (Template Matching)</strong></p>
-<ul>
-<li><strong>原理</strong>: 在整个游戏截图中，寻找一个预先准备好的小图片（模板），比如一个按钮、一个图标。</li>
-<li><strong>应用</strong>: 点击确定的UI按钮、识别特定怪物或道具图标。
-<img src="../../assets/sources/ok-script/docs/intro_to_automation/img_1.png" alt="模板匹配示意图">
-<em>图：在屏幕截图中寻找“设置”按钮的模板</em></li>
-</ul>
-</li>
-<li><p><strong>找色 (Color Finding)</strong></p>
-<ul>
-<li><strong>原理</strong>: 在指定区域内寻找特定颜色或颜色范围的像素点。</li>
-<li><strong>应用</strong>: 判断角色的血条/蓝条状态、识别高亮的按钮或文字、寻找特定颜色的目标。
-<img src="../../assets/sources/ok-script/docs/intro_to_automation/img_2.png" alt="找色示意图">
-<em>图：通过识别红色来定位敌人的血条</em></li>
-</ul>
-</li>
-<li><p><strong>特征分析 (Feature Analysis)</strong></p>
-<ul>
-<li><strong>原理</strong>: 通过轮廓检测、边缘检测等算法，分析图像中特定对象的几何特征。</li>
-<li><strong>应用</strong>: 计算读条或技能的进度、判断某个区域是否出现特定形状的物体。
-<img src="../../assets/sources/ok-script/docs/intro_to_automation/img_3.png" alt="特征分析示意图">
-<em>图：通过计算像素比例来判断进度条的完成度</em></li>
-</ul>
-</li>
-</ul>
-<h4 id="2-神经网络推理-inference-2-神经网络推理-inference">2. 神经网络推理 (Inference) { #2-神经网络推理-inference }</h4>
-<p>当游戏界面复杂、元素多变或需要识别更抽象的概念时，神经网络模型就派上了用场。这通常需要使用预先训练好的模型进行“推理”。</p>
-<ul>
-<li><p><strong>OCR (光学字符识别)</strong></p>
-<ul>
-<li><strong>原理</strong>: 从图像中识别并提取文字信息。</li>
-<li><strong>应用</strong>: 读取角色的血量数值、识别NPC对话内容、获取任务目标文本。
-<img src="../../assets/sources/ok-script/docs/intro_to_automation/img_4.png" alt="OCR示意图">
-<em>图：识别游戏中的伤害数字或角色名称</em></li>
-</ul>
-</li>
-<li><p><strong>目标检测 (Object Detection)</strong></p>
-<ul>
-<li><strong>原理</strong>: 在图像中找出所有感兴趣的对象，并用方框标记出它们的位置。相比模板匹配，它对物体的缩放、旋转和部分遮挡有更好的鲁棒性。</li>
-<li><strong>应用</strong>: 实时定位屏幕上所有的敌人、队友或可拾取的物品。
-<img src="../../assets/sources/ok-script/docs/intro_to_automation/img_5.png" alt="目标检测示意图">
-<em>图：使用<a href="https://ultralytics.com/yolo">YOLO</a>等模型框选出游戏中的所有角色</em></li>
-</ul>
-</li>
-<li><p><strong>更多深度学习应用</strong></p>
-<ul>
-<li><strong>图像分割</strong>: 比目标检测更精确，可以识别出物体不规则的轮廓。适用于判断精确的可通行区域或攻击范围。</li>
-<li><strong>图像分类</strong>: 判断当前游戏处于何种“状态”，例如是在主菜单、在战斗中还是在地图界面。
-<img src="../../assets/sources/ok-script/docs/intro_to_automation/img_6.png" alt="深度学习应用示例">
-<em>图：使用图像分割精确识别可攻击的敌人轮廓</em></li>
-</ul>
-</li>
-<li><p><strong>前沿：多模态大模型</strong></p>
-<ul>
-<li><strong>原理</strong>: 这是目前最前沿的方向，结合了视觉和语言理解能力。模型可以直接“看懂”屏幕，并根据自然语言指令（例如“去找到那个红色的宝箱”）来执行复杂任务。</li>
-<li><strong>应用</strong>: 实现更具通用性和智能化的游戏自动化代理（Agent）。</li>
-</ul>
-</li>
-</ul>
-<h2 id="二-编程语言选择-二编程语言选择">二、编程语言选择 { #二编程语言选择 }</h2>
-<p>对于初学者，我们强烈推荐使用 <strong>Python</strong> (<a href="https://www.python.org/">官网下载</a>)。</p>
-<ul>
-<li><strong>为什么是Python？</strong><ol>
-<li><strong>生态系统强大</strong>: 拥有海量的第三方库，几乎所有你需要的功能都有现成的工具。</li>
-<li><strong>语法简洁，上手快</strong>: Python的语法接近自然语言，让你可以更专注于实现逻辑，而不是纠结于复杂的语法细节。非常适合快速原型开发和验证想法。</li>
-<li><strong>社区活跃</strong>: 遇到任何问题，你都可以轻松地在网上找到大量的教程、文档和解决方案。</li>
-</ol>
-</li>
-</ul>
-<h3 id="常用库概览-常用库概览">常用库概览 { #常用库概览 }</h3>
-<ul>
-<li><strong><a href="https://opencv.org/">OpenCV</a></strong>: 计算机视觉的基础库，用于图像处理、模板匹配、特征分析等所有视觉相关的底层操作。</li>
-<li><strong><a href="https://github.com/mhammond/pywin32">pywin32</a></strong>: Windows平台专用库，提供底层的API调用能力，常用于更稳定、更高效的窗口截图和模拟键鼠操作。</li>
-<li><strong><a href="https://github.com/PaddlePaddle/PaddleOCR">PaddleOCR</a></strong>: 百度开源的OCR工具库，提供多语言、高精度的文字识别能力，开箱即用。</li>
-<li><strong><a href="https://onnxruntime.ai/">Onnxruntime</a></strong>: 微软开源的推理引擎，用于高效运行深度学习模型（如YOLO），可以充分利用CPU或GPU进行加速。</li>
-<li><strong><a href="https://ultralytics.com/">YOLO (Ultralytics)</a></strong>: 目前最流行的目标检测模型实现，提供了易于使用的Python接口，可以快速实现游戏内目标的检测。</li>
-<li><strong><a href="https://pytorch.org/">PyTorch</a></strong> &amp; <strong><a href="https://www.tensorflow.org/">TensorFlow</a></strong>:
-两大主流的深度学习框架。主要用于训练自定义的神经网络模型，适用于有更高定制化需求的进阶用户。</li>
-</ul>
-<h2 id="三-开发工具-三开发工具">三、开发工具 { #三开发工具 }</h2>
-<p>好的工具能让开发事半功倍。</p>
-<ol>
-<li><p><strong>代码编辑器 (IDE)</strong></p>
-<ul>
-<li><strong><a href="https://www.jetbrains.com/pycharm/download/">PyCharm</a> (强烈推荐)</strong>: JetBrains出品的专业Python
-IDE，功能强大，拥有出色的代码补全、调试和项目管理功能。推荐初学者以及熟悉JetBrains系列IDE的用户使用。</li>
-<li><strong><a href="https://code.visualstudio.com/download">VS Code</a></strong>:
-微软开发的轻量级代码编辑器，通过安装插件（如Python、Pylance）可以获得媲美IDE的强大功能，启动速度快，自定义性强。推荐熟悉VS
-Code生态的用户使用。</li>
-</ul>
-</li>
-<li><p><strong><a href="https://github.com/">GitHub</a></strong></p>
-<ul>
-<li><strong>代码托管与学习</strong>: 使用 GitHub 来托管你的代码。这不仅是代码的备份，更是项目管理和与他人协作的基础。同时，GitHub 上有各种游戏自动化项目可以参考，是学习和寻找灵感的绝佳平台。</li>
-<li><a href="https://desktop.github.com/">GitHub Desktop</a>: 对于不熟悉命令行的初学者，强烈推荐使用官方的
-<em><a href="https://desktop.github.com/">GitHub Desktop</a></em> 客户端。它将复杂的 Git
-操作（如提交、推送、拉取、创建分支等）简化为直观的点击操作，极大地降低了版本控制的上手门槛。</li>
-<li><strong>自动化流程 (GitHub Actions)</strong>: GitHub Actions 提供了强大的自动化能力，可以免费用于项目的自动化测试、打包和发布，是现代开发流程中不可或缺的一环。</li>
-</ul>
-</li>
-<li><p><strong>AI 编程助手</strong></p>
-<ul>
-<li><strong>作用</strong>: 在你遇到困难时，AI可以帮你解释概念、调试代码、生成代码片段，极大提高开发效率。</li>
-<li><strong>推荐</strong>:<ul>
-<li><strong>Gemini Pro 2.5或以上</strong>：Google的强大模型。可以通过免费的开发者API Key在你的IDE中集成,
-如<a href="https://www.cherry-ai.com/">Cherry Studio</a>。</li>
-<li><strong>免费使用渠道</strong>: <a href="https://aistudio.google.com/">Google AI Studio</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/35c14e5dfeeb0624f2ae5aff6947fea533e491bf/docs/intro_to_automation/README.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年8月12日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#目录" style="margin-left:0px">目录</a><a href="#一-基本原理-计算机如何-玩-游戏-一基本原理计算机如何玩游戏" style="margin-left:0px">一、基本原理：计算机如何“玩”游戏 { #一基本原理计算机如何玩游戏 }</a><a href="#核心循环-三步走-核心循环三步走" style="margin-left:10px">核心循环：三步走 { #核心循环三步走 }</a><a href="#图像分析-从像素到决策-图像分析从像素到决策" style="margin-left:10px">图像分析：从像素到决策 { #图像分析从像素到决策 }</a><a href="#二-编程语言选择-二编程语言选择" style="margin-left:0px">二、编程语言选择 { #二编程语言选择 }</a><a href="#常用库概览-常用库概览" style="margin-left:10px">常用库概览 { #常用库概览 }</a><a href="#三-开发工具-三开发工具" style="margin-left:0px">三、开发工具 { #三开发工具 }</a></nav></aside></main>
+<p>让代理从最简单可靠的方法开始，并通过真实截图验证。分辨率、缩放、动画和界面更新都可能影响模板与几何识别。一次成功只代表测试过的条件，不保证后续所有版本都能运行。</p>
+<h2 id="让重复运行可靠">让重复运行可靠</h2>
+<p>可复用任务应恢复并验证起始状态，使用有上限的等待，记录失败并断言实际结果。重复运行应保持期望结果，例如“启用选项”任务不能在第二次运行时把选项关闭。</p>
+<p>后台输入同样需要实测。让代理在 Windows 上优先使用 PostMessage，并验证窗口未聚焦或被遮挡时的实际效果。截图成功不代表输入有效，被遮挡可用也不代表最小化可用。</p>
+<h2 id="第一个任务">第一个任务</h2>
+<p>选择打开设置并启用一个选项这样的小流程。完成 <a href="../quick_start/">MCP 快速开始</a>，再复制<a href="../agent-prompts/">任务开发提示词</a>。保存生成的脚本，脱离代理运行。界面变化后重新连接代理，修复已有任务。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/22664c537f120a278fef82ecf26d1271ad4c3e8c/docs/intro_to_automation/README.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#开发阶段" style="margin-left:0px">开发阶段</a><a href="#日常执行阶段" style="margin-left:0px">日常执行阶段</a><a href="#为任务选择识别方式" style="margin-left:0px">为任务选择识别方式</a><a href="#让重复运行可靠" style="margin-left:0px">让重复运行可靠</a><a href="#第一个任务" style="margin-left:0px">第一个任务</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
-  <script src="../../assets/site.js?v=20260812031515" defer></script></body></html>
+  <script src="../../assets/site.js?v=20261030184412" defer></script></body></html>

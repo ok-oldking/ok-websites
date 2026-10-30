@@ -1,0 +1,78 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>配置导出与导入 · 功能指南 · ok-end-field · 简体中文</title><meta name="description" content="返回：文档索引 / README 用于备份、恢复或在多台设备之间迁移应用配置。配置保存在应用目录的 config — ok-end-field 简体中文文档"><meta name="keywords" content="ok-end-field, okendfield, GitHub, AliceJump/ok-end-field, AliceJump, 终末地, 后台自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/配置导出与导入/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="配置导出与导入 · 功能指南 · ok-end-field · 简体中文"><meta property="og:description" content="返回：文档索引 / README 用于备份、恢复或在多台设备之间迁移应用配置。配置保存在应用目录的 config — ok-end-field 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/配置导出与导入/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 终末地 · 后台自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="配置导出与导入 · 功能指南 · ok-end-field · 简体中文"><meta name="twitter:description" content="返回：文档索引 / README 用于备份、恢复或在多台设备之间迁移应用配置。配置保存在应用目录的 config — ok-end-field 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-cn.png"><meta name="twitter:image:alt" content="ok-end-field — 终末地 · 后台自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"配置导出与导入 · 功能指南 · ok-end-field · 简体中文","description":"返回：文档索引 / README 用于备份、恢复或在多台设备之间迁移应用配置。配置保存在应用目录的 config — ok-end-field 简体中文文档","url":"https://ok-script.com/ok-end-field/docs/配置导出与导入/","inLanguage":"zh-CN","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">文档首页</a><a href="../getting-started/installation/">安装</a><a href="../getting-started/configuration/">使用前配置</a><a href="../guides/quick-start/">快速上手</a><a href="../guides/troubleshooting/">常见问题</a><a href="../features/overview/">功能概览</a><a href="../日常任务/">日常任务</a><a href="../体力本/">刷体力</a><a href="../自动战斗/">自动战斗</a><a href="../排轴/">排轴</a><a href="../运送委托接取/">运送委托接取</a><a href="../自动送货/">自动送货</a><a href="../仓库物品转移/">仓库物品转移</a><a href="../物品导航与实时检测/">物品导航与实时检测</a><a href="../账号配置用户指南/">账号配置</a><a href="./" class="active" aria-current="page">配置导出与导入</a><a href="../Windows 计划任务/">Windows 计划任务</a><a href="../鼠标转向标定汇总/">鼠标转向标定</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/guide-submodule-contrib/">模板贡献指南</a><a href="../dev/API/">API 参考</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/OCR使用分类/">OCR 使用分类</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务汇总报告机制/">任务汇总报告机制</a><a href="../dev/自动拾取任务/">自动拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="配置导出与导入">配置导出与导入</h1>
+<p>返回：<a href="../">文档索引</a> / <a href="https://github.com/AliceJump/ok-end-field/blob/master/README.md">README</a></p>
+<p>用于备份、恢复或在多台设备之间迁移应用配置。配置保存在应用目录的 <code>configs</code> 文件夹中，包括任务开关与参数、账号配置与账号任务覆盖、共享战斗配置、窗口与设备选择等。</p>
+<h2 id="1-入口位置">1. 入口位置</h2>
+<p>打开应用的 Capture 页，在 Debug 卡片的按钮行中可以找到两个按钮：</p>
+<ul>
+<li>导出配置</li>
+<li>导入配置</li>
+</ul>
+<h2 id="2-导出配置">2. 导出配置</h2>
+<ol>
+<li>点击“导出配置”。</li>
+<li>应用会把 <code>configs</code> 目录打包为一个 zip 文件，保存到系统的下载文件夹，文件名形如 <code>ok-ef-config-20260907_010515.zip</code>。</li>
+<li>导出完成后会提示“配置已导出”，并自动在资源管理器中定位该文件。</li>
+</ol>
+<p>导出的 zip 不包含日志与截图；<code>configs/backup</code>、<code>configs/global_config_migration_backup</code> 两个备份目录也不会被打包。</p>
+<h2 id="3-导入配置">3. 导入配置</h2>
+<p>支持两种方式，效果相同：</p>
+<ul>
+<li>点击“导入配置”按钮，在文件对话框中选择 zip 文件（默认从下载文件夹开始浏览）。</li>
+<li>直接把 zip 文件拖入应用主窗口的任意位置；一次拖入多个 zip 时只会导入第一个。</li>
+</ul>
+<p>对 zip 内容的要求：压缩包中至少要有一个 <code>.json</code> 配置文件。以下三种打包形态都可以识别：</p>
+<ol>
+<li>由“导出配置”生成的 zip（条目在 <code>configs/</code> 目录下）。</li>
+<li>配置文件直接放在压缩包根部。</li>
+<li>配置文件放在压缩包中的单个目录里（导入时该目录会被剥离，条目直接落到 <code>configs</code>）。</li>
+</ol>
+<p>导入流程：</p>
+<ol>
+<li>确认对话框中点击确认后，应用会暂停运行中的任务。</li>
+<li>现有配置先备份到 <code>configs/backup/import_backup_&lt;时间戳&gt;/</code>，然后 <code>configs</code> 目录被导入内容覆盖（上述两个备份目录会保留）。</li>
+<li>导入完成后会提示“导入完成”，并询问是否立即重启。</li>
+</ol>
+<h2 id="4-生效与回滚">4. 生效与回滚</h2>
+<ul>
+<li>导入只修改磁盘上的配置文件，正在运行的程序仍使用内存中的旧配置；点击“立即重启”或之后手动重启应用后才会生效。</li>
+<li>需要手动回滚时，先关闭应用，删除 <code>configs</code> 中除 <code>backup</code> 和 <code>global_config_migration_backup</code> 两个目录以外的所有内容，再把 <code>configs/backup/import_backup_&lt;时间戳&gt;/</code> 中的备份文件复制回 <code>configs</code>。也可以改为重新导入此前导出的 zip。</li>
+<li>建议在相同或相近版本的应用之间导出导入；版本差异较大时，个别配置项可能被重置为默认值。</li>
+</ul>
+<h2 id="5-常见问题">5. 常见问题</h2>
+<ol>
+<li>导入按钮提示“压缩包中未找到配置文件”：zip 里没有 <code>.json</code> 文件，或选中的不是配置压缩包。</li>
+<li>拖入 zip 后没有反应：确认拖入的是 <code>.zip</code> 文件；个别自带拖放处理的输入框（如代码编辑区）不会触发导入。</li>
+<li>导出按钮提示“导出失败”：检查 <code>configs</code> 目录是否被其他程序占用（例如已打开的配置文件），重试即可。</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/zh-CN/配置导出与导入.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-入口位置" style="margin-left:0px">1. 入口位置</a><a href="#2-导出配置" style="margin-left:0px">2. 导出配置</a><a href="#3-导入配置" style="margin-left:0px">3. 导入配置</a><a href="#4-生效与回滚" style="margin-left:0px">4. 生效与回滚</a><a href="#5-常见问题" style="margin-left:0px">5. 常见问题</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../">全部项目</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20261030184412" defer></script></body></html>

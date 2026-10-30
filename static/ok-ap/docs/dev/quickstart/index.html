@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>快速上手 · 开发 · OK-AzurPromilia · 简体中文</title><meta name="description" content="本项目仅支持 Python 3.12 ，请以管理员权限启动终端。依赖管理使用 uv。 💡 提示 ：如果只 — OK-AzurPromilia 简体中文文档"><meta name="keywords" content="OK-AzurPromilia, OKAzurPromilia, ok-ap, okap, GitHub, longer-sausage/OK-AzurPromilia, longer-sausage, 蓝色星原：旅谣, 视觉自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="longer-sausage">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-ap/docs/dev/quickstart/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="快速上手 · 开发 · OK-AzurPromilia · 简体中文"><meta property="og:description" content="本项目仅支持 Python 3.12 ，请以管理员权限启动终端。依赖管理使用 uv。 💡 提示 ：如果只 — OK-AzurPromilia 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-ap/docs/dev/quickstart/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-ap-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="OK-AzurPromilia — 蓝色星原：旅谣 · 视觉自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="快速上手 · 开发 · OK-AzurPromilia · 简体中文"><meta name="twitter:description" content="本项目仅支持 Python 3.12 ，请以管理员权限启动终端。依赖管理使用 uv。 💡 提示 ：如果只 — OK-AzurPromilia 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-ap-zh-cn.png"><meta name="twitter:image:alt" content="OK-AzurPromilia — 蓝色星原：旅谣 · 视觉自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"快速上手 · 开发 · OK-AzurPromilia · 简体中文","description":"本项目仅支持 Python 3.12 ，请以管理员权限启动终端。依赖管理使用 uv。 💡 提示 ：如果只 — OK-AzurPromilia 简体中文文档","url":"https://ok-script.com/ok-ap/docs/dev/quickstart/","inLanguage":"zh-CN","dateModified":"2026-09-30T12:05:07+08:00","author":{"@type":"Organization","name":"OK-AzurPromilia","url":"https://github.com/longer-sausage/OK-AzurPromilia"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-ap.png" alt=""></span><span>OK-AzurPromilia</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ap.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">项目首页</a><a href="./" class="active" aria-current="page">快速上手</a><a href="../development/">开发指南</a><a href="../action_lifecycle/">Action 生命周期</a><a href="../jenga_judgment/">祖赞卡之梯判定分析</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">OK-AzurPromilia</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="快速上手-quickstart">快速上手（QUICKSTART）</h1>
+<p>本项目仅支持 <strong>Python 3.12</strong>，请以管理员权限启动终端。依赖管理使用 <a href="https://docs.astral.sh/uv/">uv</a>。</p>
+<blockquote>
+<p>💡 <strong>提示</strong>：如果只需使用程序挂机或辅助，建议直接前往 <a href="https://github.com/longer-sausage/OK-AzurPromilia/releases">GitHub Releases</a> 下载打包好的安装包运行，无需配置 Python 开发环境。</p>
+</blockquote>
+<h2 id="1-安装依赖">1. 安装依赖</h2>
+<pre><code class="language-bash">uv sync
+</code></pre>
+<h2 id="2-从源码运行">2. 从源码运行</h2>
+<pre><code class="language-bash"># Release 版
+uv run python main.py
+
+# Debug 版（开启调试模式，输出更多识别信息）
+uv run python main_debug.py
+</code></pre>
+<h2 id="3-新增一个一次性任务">3. 新增一个一次性任务</h2>
+<ol>
+<li>在 <code>src/tasks/onetime/</code> 下新建文件，继承 <code>BaseGameTask</code>（最简范例见 <code>src/tasks/test/test_screenshot_task.py</code>，完整业务任务见 <code>src/tasks/onetime/claim_daily_task.py</code> 等）。</li>
+<li>在 <code>__init__</code> 中设置 <code>name</code>、<code>description</code>、<code>icon</code> 与 <code>default_config</code>。</li>
+<li>实现 <code>run(self)</code>，使用 <code>self.wait_ocr</code> / <code>self.wait_click_feature</code> / <code>self.click_relative</code> 等 API。
+若是「看到某东西 → 点它 → 验证结果」这类流程，用 <code>self.wait_action_result</code>（识别源适配器见
+<code>src/core/detector/</code>）；只等一个结果用 <code>self.wait_expectation</code>。详见 <code>development.md</code> 的
+「Action 生命周期」一节。</li>
+<li>在 <code>src/config.py</code> 的 <code>onetime_tasks</code> 中注册：<code>[&quot;src.tasks.onetime.my_task&quot;, &quot;MyTask&quot;]</code>。</li>
+</ol>
+<h2 id="4-新增一个触发式任务">4. 新增一个触发式任务</h2>
+<ol>
+<li>在 <code>src/tasks/trigger/</code> 下新建文件，继承 <code>BaseGameTask, TriggerTask</code>（见 <code>src/tasks/trigger/skip_dialog_task.py</code>）。</li>
+<li>设置 <code>trigger_interval</code> 与 <code>default_config</code>。</li>
+<li>在 <code>src/config.py</code> 的 <code>trigger_tasks</code> 中注册。</li>
+</ol>
+<h2 id="5-模板匹配">5. 模板匹配</h2>
+<p>标记模板资源后（ok-script 的标注工具），在 debug 模式运行一次会生成
+<code>src/data/feature_list.py</code> 枚举。之后可用 <code>self.wait_feature(FeatureList.xxx)</code>。</p>
+<h2 id="6-测试">6. 测试</h2>
+<pre><code class="language-bash">./run_tests.ps1
+# 或
+uv run python -m unittest discover -s tests
+</code></pre>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia/blob/0e6df6a9f10c1cba9b76852a0f543d2e38c2da26/docs/dev/quickstart.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-安装依赖" style="margin-left:0px">1. 安装依赖</a><a href="#2-从源码运行" style="margin-left:0px">2. 从源码运行</a><a href="#3-新增一个一次性任务" style="margin-left:0px">3. 新增一个一次性任务</a><a href="#4-新增一个触发式任务" style="margin-left:0px">4. 新增一个触发式任务</a><a href="#5-模板匹配" style="margin-left:0px">5. 模板匹配</a><a href="#6-测试" style="margin-left:0px">6. 测试</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>

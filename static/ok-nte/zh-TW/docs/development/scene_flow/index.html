@@ -1,0 +1,172 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>SceneFlow 作者指南 · 开发 · ok-nte · 繁體中文</title><meta name="description" content="SceneFlow 是程式碼內的輕量 Pipeline。它只處理“當前允許識別什麼畫面, 成功後允許到哪裡去, 何時重試或恢 — ok-nte 繁體中文文件"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, 異環, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="BnanZ0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-nte/zh-TW/docs/development/scene_flow/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="SceneFlow 作者指南 · 开发 · ok-nte · 繁體中文"><meta property="og:description" content="SceneFlow 是程式碼內的輕量 Pipeline。它只處理“當前允許識別什麼畫面, 成功後允許到哪裡去, 何時重試或恢 — ok-nte 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-nte/zh-TW/docs/development/scene_flow/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — 異環 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="SceneFlow 作者指南 · 开发 · ok-nte · 繁體中文"><meta name="twitter:description" content="SceneFlow 是程式碼內的輕量 Pipeline。它只處理“當前允許識別什麼畫面, 成功後允許到哪裡去, 何時重試或恢 — ok-nte 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-zh-tw.png"><meta name="twitter:image:alt" content="ok-nte — 異環 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"SceneFlow 作者指南 · 开发 · ok-nte · 繁體中文","description":"SceneFlow 是程式碼內的輕量 Pipeline。它只處理“當前允許識別什麼畫面, 成功後允許到哪裡去, 何時重試或恢 — ok-nte 繁體中文文件","url":"https://ok-script.com/ok-nte/zh-TW/docs/development/scene_flow/","inLanguage":"zh-TW","dateModified":"2026-10-05T05:43:25+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概覽</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題與反饋</a><a href="../contributing/">貢獻與驗證</a><a href="../running-from-source/">從原始碼執行</a><a href="./" class="active" aria-current="page">SceneFlow 作者指南</a><a href="../combat-planner/">Combat Planner 開發指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="sceneflow-作者指南">SceneFlow 作者指南</h1>
+<p><code>SceneFlow</code> 是程式碼內的輕量 Pipeline。它只處理“當前允許識別什麼畫面, 成功後允許到哪裡去, 何時重試或恢復”。OCR、點選、按鍵、路線和長時間業務迴圈仍寫在任務 action 中。</p>
+<h2 id="一輪流程如何執行">一輪流程如何執行</h2>
+<pre><code class="language-python">flow.step(
+    FishingStep.CAST,
+    self.is_ready_to_cast,
+    self._cast,
+    next=(FishingStep.CAST, FishingStep.WAIT_BITE, FishingStep.RESULT),
+    policy=StepPolicy(max_attempts=4, interval=2),
+    on_failure=self._route_cast_failure,
+)
+</code></pre>
+<p>其含義是:</p>
+<ol>
+<li>只有 <code>CAST</code> 在當前候選集內, 且 <code>is_ready_to_cast()</code> 為真時, 才執行 <code>_cast()</code>。</li>
+<li><code>_cast()</code> 沒有拋異常就視為完成。它的返回值會被忽略。</li>
+<li>完成後只允許識別 <code>CAST</code>、<code>WAIT_BITE</code>、<code>RESULT</code>。<code>next</code> 不是立即呼叫下一 action, 而是下一輪的可識別範圍。</li>
+<li><code>CAST</code> 寫在 <code>next</code> 中, 所以準備頁仍然可見時可以再次拋竿。沒有寫入自身的 action 不會被框架重放。</li>
+<li>四次後仍停在 CAST, 則呼叫 <code>_route_cast_failure()</code> 決定去補貨還是結束當前輪。</li>
+</ol>
+<pre><code class="language-mermaid">flowchart LR
+    A[&quot;候选: CAST&quot;] --&gt; B{&quot;准备页?&quot;}
+    B --&gt;|是| C[&quot;执行 _cast()&quot;]
+    C --&gt; D[&quot;候选: CAST / WAIT_BITE / RESULT&quot;]
+    D --&gt; E{&quot;匹配其中一个画面&quot;}
+    E --&gt;|CAST| C
+    E --&gt;|WAIT_BITE| F[&quot;执行 _wait_bite()&quot;]
+    E --&gt;|RESULT| G[&quot;执行 _collect_result()&quot;]
+</code></pre>
+<h2 id="api">API</h2>
+<pre><code class="language-python">flow.step(key, detector, action, *, next, policy=None, transition=None, on_failure=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>引數</th>
+<th>含義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>key</code></td>
+<td>步驟 Enum。</td>
+</tr>
+<tr>
+<td><code>detector</code></td>
+<td>無副作用的畫面判斷函式。</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>業務動作。返回值不參與流程; 成功不拋異常, 失敗拋 <code>WaitFailedException</code>。</td>
+</tr>
+<tr>
+<td><code>next</code></td>
+<td>action 成功後允許識別的後繼步驟, 必須非空。只有把自身寫入其中才允許再次執行 action。</td>
+</tr>
+<tr>
+<td><code>policy</code></td>
+<td>當前 action 的重複次數和最小間隔。</td>
+</tr>
+<tr>
+<td><code>transition</code></td>
+<td>已知頁面切換期間重複執行的輕量輸入, 例如 Escape。</td>
+</tr>
+<tr>
+<td><code>on_failure</code></td>
+<td>當前步驟已無法繼續時的區域性路由。</td>
+</tr>
+</tbody></table>
+<h3 id="steppolicy"><code>StepPolicy</code></h3>
+<pre><code class="language-python">StepPolicy(max_attempts=None, interval=0.0)
+</code></pre>
+<ul>
+<li><code>max_attempts</code>: 同一個 action 最多執行幾次。<code>None</code> 表示不限制。</li>
+<li><code>interval</code>: 同一個 action 再次執行前的最小間隔。它不替代點選或按鍵自身的節流。</li>
+</ul>
+<p><code>StepPolicy</code> 不管理 action 的執行時長。長動作自己擁有領域 timeout, 例如釣魚控條的 <code>CONTROL_TIMEOUT</code>。Pipeline 在 action 完成後才繼續識別後繼步驟; 節點策略主要提供重複次數、最小重試間隔與錯誤路由, 而非統一接管業務 action timeout。</p>
+<p>如果 action 丟擲 <code>WaitFailedException</code>:</p>
+<ul>
+<li>後繼畫面已經出現時, 直接進入後繼步驟;</li>
+<li>原畫面仍在且未達到 <code>max_attempts</code> 時, 等待 <code>interval</code> 後重試;</li>
+<li>否則進入 <code>on_failure</code>。</li>
+</ul>
+<h3 id="on-failure"><code>on_failure</code></h3>
+<pre><code class="language-python">def _route_cast_failure(self, failure: StepFailure) -&gt; FishingStep | None:
+    if self.config[self.CONF_AUTO_BUY_BAIT]:
+        return FishingStep.OPEN_SELL
+    self.add_failed(&quot;未检测到进入抛竿状态&quot;)
+    return FishingStep.CAST
+</code></pre>
+<p><code>on_failure</code> 只在框架確認當前步驟不能繼續時呼叫, 例如達到 <code>max_attempts</code> 或 action 丟擲不可重試的 <code>WaitFailedException</code>。</p>
+<ul>
+<li>返回已註冊的步驟: 立即切換為只識別該步驟;</li>
+<li>返回 <code>None</code>: 進入全域性 <code>recovery()</code>;</li>
+<li>沒有 <code>on_failure</code>: 同樣進入 <code>recovery()</code>。</li>
+</ul>
+<h2 id="已知切換與未知恢復">已知切換與未知恢復</h2>
+<p>兩者都用 <code>interval</code> 節流重複輸入, 但觸發條件不同。</p>
+<pre><code class="language-python">return_to_ready = flow.transition(
+    lambda: self.send_key(&quot;esc&quot;),
+    interval=2,
+    timeout=60,
+)
+
+flow.step(
+    FishingStep.RESULT,
+    self.has_success_overlay,
+    self._collect_result,
+    next=(FishingStep.CAST,),
+    transition=return_to_ready,
+)
+</code></pre>
+<ul>
+<li><code>transition()</code> 在 source action 成功完成後立刻執行一次, 並在等待 <code>next</code> 頁面時按 <code>interval</code> 重試。它的 <code>timeout</code> 從 action 返回後開始計算。</li>
+<li><code>recovery()</code> 只處理候選步驟都不可見, 或失敗路由返回 <code>None</code> 的未知畫面。它預設先等待 5 秒 <code>grace</code>, 之後才按 <code>interval</code> 執行恢復動作。</li>
+</ul>
+<pre><code class="language-python">flow.recovery(
+    self._recover_fishing_scene,
+    grace=5,
+    interval=2,
+    max_attempts=180,
+    timeout=360,
+)
+</code></pre>
+<p>釣魚的 <code>_recover_fishing_scene()</code> 可在傳送 Escape 前釋放控條按鍵; 普通 transition 則直接寫 <code>lambda: self.send_key(&quot;esc&quot;)</code> 即可。</p>
+<h2 id="guard-與中斷">Guard 與中斷</h2>
+<ul>
+<li><code>guard()</code> 優先於普通 step, 但不修改當前候選集。釣魚的 TEAM guard 重新進入釣魚點後, 會繼續等待原來的補貨或釣魚步驟。</li>
+<li><code>interrupt()</code> 優先於 guard。月卡中斷在 <code>BaseNTETask</code> 中統一註冊。</li>
+<li>普通 <code>wait_until()</code> 已自動檢查中斷。自定義高頻迴圈呼叫 <code>self.scene_flow.safe_point()</code>; 發現中斷會拋 <code>SceneReplan</code> 並重新分類。</li>
+<li>被 <code>SceneReplan</code> 中斷的 action 不計入 <code>max_attempts</code>。</li>
+</ul>
+<h2 id="最小檢查表">最小檢查表</h2>
+<ol>
+<li>detector 是否只讀畫面, 沒有輸入副作用?</li>
+<li>action 是否只完成一次業務提交? 失敗是否拋 <code>WaitFailedException</code>?</li>
+<li>成功後真實可能出現的每個畫面是否都在 <code>next</code>?</li>
+<li>是否真的要再次輸入? 需要才把當前 key 放入 <code>next</code>。</li>
+<li>長動作是否在 action 內部設定自己的業務 timeout?</li>
+<li>已知退出頁面是否使用 transition, 未知畫面是否交給 recovery?</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/6b10cbd5313cab784666fabcb2be54128e2079f1/docs/zh-CN/development/scene_flow.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#一輪流程如何執行" style="margin-left:0px">一輪流程如何執行</a><a href="#api" style="margin-left:0px">API</a><a href="#steppolicy" style="margin-left:10px">StepPolicy</a><a href="#on-failure" style="margin-left:10px">on_failure</a><a href="#已知切換與未知恢復" style="margin-left:0px">已知切換與未知恢復</a><a href="#guard-與中斷" style="margin-left:0px">Guard 與中斷</a><a href="#最小檢查表" style="margin-left:0px">最小檢查表</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>

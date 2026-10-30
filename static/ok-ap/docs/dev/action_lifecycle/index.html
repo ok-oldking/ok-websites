@@ -1,0 +1,779 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Action 生命周期 · 开发 · OK-AzurPromilia · 简体中文</title><meta name="description" content="本文是 wait action result / wait expectation 与识别层 src/co — OK-AzurPromilia 简体中文文档"><meta name="keywords" content="OK-AzurPromilia, OKAzurPromilia, ok-ap, okap, GitHub, longer-sausage/OK-AzurPromilia, longer-sausage, 蓝色星原：旅谣, 视觉自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="longer-sausage">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-ap/docs/dev/action_lifecycle/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Action 生命周期 · 开发 · OK-AzurPromilia · 简体中文"><meta property="og:description" content="本文是 wait action result / wait expectation 与识别层 src/co — OK-AzurPromilia 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-ap/docs/dev/action_lifecycle/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-ap-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="OK-AzurPromilia — 蓝色星原：旅谣 · 视觉自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Action 生命周期 · 开发 · OK-AzurPromilia · 简体中文"><meta name="twitter:description" content="本文是 wait action result / wait expectation 与识别层 src/co — OK-AzurPromilia 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-ap-zh-cn.png"><meta name="twitter:image:alt" content="OK-AzurPromilia — 蓝色星原：旅谣 · 视觉自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Action 生命周期 · 开发 · OK-AzurPromilia · 简体中文","description":"本文是 wait action result / wait expectation 与识别层 src/co — OK-AzurPromilia 简体中文文档","url":"https://ok-script.com/ok-ap/docs/dev/action_lifecycle/","inLanguage":"zh-CN","dateModified":"2026-09-30T12:05:07+08:00","author":{"@type":"Organization","name":"OK-AzurPromilia","url":"https://github.com/longer-sausage/OK-AzurPromilia"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-ap.png" alt=""></span><span>OK-AzurPromilia</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ap.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文档</a>
+      <a href="../../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">项目首页</a><a href="../quickstart/">快速上手</a><a href="../development/">开发指南</a><a href="./" class="active" aria-current="page">Action 生命周期</a><a href="../jenga_judgment/">祖赞卡之梯判定分析</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">OK-AzurPromilia</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="action-生命周期-完整参考">Action 生命周期（完整参考）</h1>
+<blockquote>
+<p>本文是 <code>wait_action_result</code> / <code>wait_expectation</code> 与识别层 <code>src/core/detector/</code> 的<strong>完整使用参考</strong>。
+<code>development.md</code> 中的「Action 生命周期」一节是本文摘要，细节以本文为准。</p>
+</blockquote>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#1-%E5%AE%83%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98">1. 它解决什么问题</a></li>
+<li><a href="#2-%E5%88%86%E5%B1%82%E6%A8%A1%E5%9E%8B">2. 分层模型</a></li>
+<li><a href="#3-%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">3. 快速上手</a></li>
+<li><a href="#4-%E8%AF%86%E5%88%AB%E5%B1%82%E7%BB%9F%E4%B8%80%E5%88%A4%E6%8D%AE">4. 识别层：统一判据</a><ul>
+<li><a href="#41-hit%E7%BB%9F%E4%B8%80%E5%91%BD%E4%B8%AD%E8%A1%A8%E7%A4%BA">4.1 <code>Hit</code>：统一命中表示</a></li>
+<li><a href="#42-%E4%BA%94%E4%B8%AA%E9%80%82%E9%85%8D%E5%99%A8%E5%90%AB%E5%85%A8%E9%83%A8%E5%8F%82%E6%95%B0">4.2 五个适配器（含全部参数）</a></li>
+<li><a href="#43-%E4%B8%89%E4%B8%AA%E7%BB%84%E5%90%88%E5%99%A8">4.3 三个组合器</a></li>
+<li><a href="#44-%E5%88%A4%E6%8D%AE%E7%9A%84-attach-%E4%B8%8E%E5%AE%BF%E4%B8%BB%E7%BB%91%E5%AE%9A">4.4 判据的 <code>attach</code> 与宿主绑定</a></li>
+</ul>
+</li>
+<li><a href="#5-%E7%BC%96%E6%8E%92%E5%B1%82wait_action_result">5. 编排层：<code>wait_action_result</code></a><ul>
+<li><a href="#51-%E4%B8%89%E9%98%B6%E6%AE%B5%E6%B5%81%E7%A8%8B">5.1 三阶段流程</a></li>
+<li><a href="#52-%E5%AE%8C%E6%95%B4%E5%8F%82%E6%95%B0%E8%A1%A8">5.2 完整参数表</a></li>
+<li><a href="#53-%E5%8A%A8%E4%BD%9C%E5%9B%9E%E8%B0%83%E7%AD%BE%E5%90%8D">5.3 动作回调签名</a></li>
+</ul>
+</li>
+<li><a href="#6-wait_expectation">6. <code>wait_expectation</code></a></li>
+<li><a href="#7-%E5%85%B8%E5%9E%8B%E7%94%A8%E6%B3%95%E9%85%8D%E6%96%B9">7. 典型用法配方</a><ul>
+<li><a href="#71-%E7%AD%89%E5%88%B0%E5%B0%B1%E7%82%B9%E6%9C%80%E7%AE%80">7.1 等到就点（最简）</a></li>
+<li><a href="#72-%E7%82%B9%E5%AE%8C%E7%AD%89%E7%BB%93%E6%9E%9C%E5%87%BA%E7%8E%B0a--c">7.2 点完等结果出现（A ≠ C）</a></li>
+<li><a href="#73-%E7%82%B9%E5%AE%8C%E7%AD%89%E5%85%83%E7%B4%A0%E6%B6%88%E5%A4%B1">7.3 点完等元素消失</a></li>
+<li><a href="#74-%E7%94%A8-ocr-%E6%96%87%E6%9C%AC">7.4 用 OCR 文本</a></li>
+<li><a href="#75-b-%E6%88%90%E7%AB%8B%E6%9C%9F%E9%97%B4%E9%87%8D%E5%A4%8D%E6%93%8D%E4%BD%9C">7.5 B 成立期间重复操作</a></li>
+<li><a href="#76-%E5%A4%9A%E5%8C%BA%E5%9F%9F--%E5%A4%9A%E8%AF%86%E5%88%AB%E6%BA%90%E5%9B%9E%E9%80%80">7.6 多区域 / 多识别源回退</a></li>
+<li><a href="#77-%E6%9D%A1%E4%BB%B6%E4%B8%8E%E9%A2%84%E6%9C%9F%E7%94%A8%E4%B8%8D%E5%90%8C%E8%AF%86%E5%88%AB%E6%BA%90">7.7 条件与预期用不同识别源</a></li>
+</ul>
+</li>
+<li><a href="#8-%E5%A5%91%E7%BA%A6%E4%B8%8E%E9%99%B7%E9%98%B1">8. 契约与陷阱</a><ul>
+<li><a href="#expectnone-%E8%A1%A8%E7%A4%BA%E5%8A%A8%E4%BD%9C%E6%88%90%E5%8A%9F%E5%8D%B3%E8%BF%94%E5%9B%9E"><code>expect=None</code> 表示「动作成功即返回」</a></li>
+<li><a href="#settle_time-%E7%9A%84%E8%AF%AD%E4%B9%89%E6%98%AF%E6%AF%8F%E6%AC%A1%E5%88%A4%E5%AE%9A%E9%83%BD%E8%A6%81%E8%BF%9E%E7%BB%AD%E6%88%90%E7%AB%8B"><code>settle_time</code> 的语义是「每次判定都要连续成立」</a></li>
+<li><a href="#%E8%AE%A1%E6%97%B6%E7%94%A8-active_time">计时用 <code>active_time()</code></a></li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E5%91%BD%E4%B8%AD%E4%B8%8E%E5%8A%A8%E4%BD%9C%E4%B9%8B%E9%97%B4%E4%BC%9A%E9%87%8D%E5%8F%96%E4%B8%80%E5%B8%A7">条件命中与动作之间会重取一帧</a></li>
+<li><a href="#drawtrue-%E7%9A%84%E8%B0%83%E8%AF%95%E6%A1%86"><code>draw=True</code> 的调试框</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E-false-%E7%9A%84%E5%90%AB%E4%B9%89">返回 <code>False</code> 的含义</a></li>
+<li><a href="#%E5%88%A4%E6%8D%AE%E5%BF%85%E9%A1%BB%E6%8E%A5%E5%8F%97%E5%A4%96%E9%83%A8-frame">判据必须接受外部 <code>frame</code></a></li>
+</ul>
+</li>
+<li><a href="#9-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8D%E8%AF%A5%E7%94%A8%E5%AE%83">9. 什么时候不该用它</a></li>
+<li><a href="#10-%E7%9C%9F%E5%AE%9E%E8%90%BD%E5%9C%B0%E6%A0%B7%E4%BE%8B">10. 真实落地样例</a><ul>
+<li><a href="#treasureunlocktask_click_bandsrctaskstriggertreasure_unlock_taskpy"><code>TreasureUnlockTask._click_band</code>（<code>src/tasks/trigger/treasure_unlock_task.py</code>）</a></li>
+</ul>
+</li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3">相关文档</a></li>
+</ul>
+<hr>
+<h2 id="1-它解决什么问题">1. 它解决什么问题</h2>
+<p>游戏里大量操作是同一个形状：<strong>看到某个东西 → 动它 → 确认预期结果出现了</strong>。
+具体拆开是五个环节：</p>
+<table>
+<thead>
+<tr>
+<th>代号</th>
+<th>环节</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A</strong></td>
+<td>前置条件</td>
+<td>识别函数判断当前状态是否满足；未满足则不动作，或按重试机制处理</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>主动作</td>
+<td>一次点击 / 按键 / 切页 / 移动</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>结果验证</td>
+<td>动作后识别预期结果是否出现；命中即成功，未命中则等待/重试/重执行</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>持续条件</td>
+<td>可选。B 持续命中时重复附加动作；未命中立即停止</td>
+</tr>
+<tr>
+<td><strong>Extra</strong></td>
+<td>附加动作</td>
+<td>可选。持续阶段重复执行的动作，每次之后继续查 C</td>
+</tr>
+</tbody></table>
+<p>这套逻辑由两个 API 覆盖：<code>wait_action_result</code>（完整生命周期）与 <code>wait_expectation</code>（只等结果）。</p>
+<hr>
+<h2 id="2-分层模型">2. 分层模型</h2>
+<p>识别源与生命周期是<strong>两个正交维度</strong>，因此分成两层——否则参数会爆炸，且 A/C 无法使用不同识别源。</p>
+<pre><code class="language-text">┌─────────────────────────────────────────────────────────┐
+│  编排层  runtime_mixin.py                                │
+│  wait_action_result / wait_expectation                   │
+│  职责：「什么时候做、做几次、算不算成功」                    │
+└────────────────────────┬────────────────────────────────┘
+                         │ 只依赖 Detector.detect(frame)
+┌────────────────────────┴────────────────────────────────┐
+│  识别层  src/core/detector/                              │
+│  Hit + Detector 协议 + 5 个适配器 + 3 个组合器              │
+│  职责：「这一帧有没有」                                    │
+└────────────────────────┬────────────────────────────────┘
+                         │ 包装
+┌────────────────────────┴────────────────────────────────┐
+│  既有原语  find_feature / find_one / yolo_detect /       │
+│            ocr / find_button                             │
+└─────────────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>统一判据协议</strong>只有一条：</p>
+<pre><code class="language-python">Detector.detect(frame) -&gt; Hit | None
+</code></pre>
+<p>必须<strong>接受外部传入的 frame</strong>，不能自己调 <code>next_frame()</code>——否则一次判定内会多次截图，时序错乱。</p>
+<hr>
+<h2 id="3-快速上手">3. 快速上手</h2>
+<pre><code class="language-python">from src.core.detector import TemplateDetector
+from src.data.feature_list import FeatureList
+
+# A ≠ C：看到宝箱图标 → 点击 → 等解锁界面出现
+ok = self.wait_action_result(
+    condition=TemplateDetector(FeatureList.treasure_icon),   # A
+    action=lambda hit: self.click(hit.box),                  # Action
+    expect=TemplateDetector(FeatureList.unlock_ui),          # C
+    time_out=5,
+    expect_time_out=1.5,
+    max_attempts=2,
+)
+if not ok:
+    self.log_info(&quot;解锁界面没出现&quot;)
+</code></pre>
+<p>三个要点：</p>
+<ul>
+<li><code>hit</code> 是 <code>Hit</code>，<code>hit.box</code> 可直接喂 <code>self.click()</code>；</li>
+<li>判据<strong>不需要手动 <code>attach</code></strong>，编排入口会代劳；</li>
+<li>返回 <code>bool</code>，<code>True</code> = 生命周期成功。</li>
+</ul>
+<hr>
+<h2 id="4-识别层-统一判据">4. 识别层：统一判据</h2>
+<h3 id="4-1-hit-统一命中表示">4.1 <code>Hit</code>：统一命中表示</h3>
+<p>四类识别源原始返回值各不相同（<code>Box | None</code> / <code>list[Box]</code> / …），统一归一成 <code>Hit</code>：</p>
+<pre><code class="language-python">@dataclass
+class Hit:
+    box: Box              # 可直接 click() 的目标框（唯一必需字段）
+    confidence: float = 1.0
+    source: str = &quot;&quot;      # 识别源标识，见 SOURCE_* 常量
+    text: str = &quot;&quot;        # OCR 命中文本；非 OCR 源为空串
+    raw: object = None    # 原始结果对象，见下
+    metrics: dict = field(default_factory=dict)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>box</code></td>
+<td>唯一必需。帧坐标，可直接 <code>click()</code> / <code>draw_boxes()</code></td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td>0~1；未知时 1.0</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>SOURCE_TEMPLATE</code> / <code>SOURCE_YOLO</code> / <code>SOURCE_OCR</code> / <code>SOURCE_BUTTON</code> / <code>SOURCE_PREDICATE</code>；取反判据为原判据名</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>OCR 命中的文字，可直接用于日志或分支判断</td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td>原始结果：OCR 是 <code>list[Box]</code>，模板/按钮是 <code>Box</code>。<strong>需要识别器特有字段时从这里取</strong>，避免归一化时丢信息</td>
+</tr>
+<tr>
+<td><code>metrics</code></td>
+<td>预留的指标字典</td>
+</tr>
+</tbody></table>
+<p><code>Hit.__bool__</code> 恒为 <code>True</code> —— 未命中时 <code>detect()</code> 返回的是 <code>None</code>，不是空 Hit。所以 <code>if hit:</code> 是可靠的。</p>
+<pre><code class="language-python">hit = TemplateDetector(FeatureList.main_ui).detect(frame)
+if hit:                       # None 才是未命中
+    self.click(hit.box)
+</code></pre>
+<h3 id="4-2-五个适配器-含全部参数">4.2 五个适配器（含全部参数）</h3>
+<h4 id="templatedetector-模板匹配"><code>TemplateDetector</code> —— 模板匹配</h4>
+<p>包装 <code>find_feature</code> / <code>find_one</code>。</p>
+<pre><code class="language-python">TemplateDetector(
+    feature,                    # 必填。FeatureList 成员或字符串
+    box=None,                   # 搜索区域。None 时沿用 coco 标注位置 ±variance
+    horizontal_variance=0.0,
+    vertical_variance=0.0,
+    threshold=0,                # 匹配阈值；0 = 框架默认
+    target_height=0,            # 目标缩放高度；0 = 不缩放
+    mask_function=None,         # 掩膜函数，如 make_hsv_isolator(...)
+    use_gray_scale=False,
+    canny_lower=0,
+    canny_higher=0,
+    name=None,                  # 判据名；缺省用特征名
+    use_find_one=False,         # True 走 find_one，False 走 find_feature
+)
+</code></pre>
+<p>⚠️ <strong><code>box</code> 的默认行为是陷阱</strong>：<code>find_feature</code> 不传 box 时只搜 coco 标注位置 ± variance
+（<code>DEFAULT_VARIANCE = 0.05</code>）。<strong>会移动的图标必须显式传 <code>box</code></strong>，否则永远搜不到。</p>
+<p>⚠️ <strong><code>horizontal_variance</code> / <code>vertical_variance</code> 只在使用 <code>find_feature</code> 时生效</strong>：
+传 0 会在调用处被替换为 <code>DEFAULT_VARIANCE</code>（<code>0.05</code>），即「用默认方差」而不是「零方差」；
+走 <code>use_find_one=True</code> 时两个参数原样透传（0 就是 0）。</p>
+<p><code>use_find_one</code> 的选择：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>find_feature</code>（默认）</th>
+<th><code>find_one</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>特征列表</td>
+<td>❌ 不支持</td>
+<td>✅ 任一命中即可</td>
+</tr>
+<tr>
+<td>帧缓存</td>
+<td>✅ 支持 <code>Frame</code> 对象</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<h4 id="yolodetector-yolo-检测"><code>YoloDetector</code> —— YOLO 检测</h4>
+<p>包装 <code>yolo_detect</code>。</p>
+<pre><code class="language-python">YoloDetector(
+    name,                       # 必填。目标名或名称列表
+    box=None,                   # 裁剪区域；同时作为 pick=&quot;center&quot; 的中心基准
+    conf=0.7,                   # 置信度阈值
+    model_key=None,             # 指定模型键；None 时由框架按首个 name 解析
+    pick=PICK_MAX_CONF,         # 多候选选择策略
+    task_name=None,             # 判据名；缺省由 name 推导（多个用 _ 连接）
+)
+</code></pre>
+<p><code>pick</code> 策略（<code>PICK_*</code> 常量）：</p>
+<table>
+<thead>
+<tr>
+<th>常量</th>
+<th>值</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>PICK_MAX_CONF</code></td>
+<td><code>max_conf</code></td>
+<td><strong>默认</strong>。置信度最高</td>
+</tr>
+<tr>
+<td><code>PICK_FIRST</code></td>
+<td><code>first</code></td>
+<td>框架返回顺序的第一个（<code>yolo_detect</code> 按 conf 降序，故接近 max_conf）</td>
+</tr>
+<tr>
+<td><code>PICK_CENTER</code></td>
+<td><code>center</code></td>
+<td>离搜索区域中心最近；无 box 时退化到画面中心</td>
+</tr>
+<tr>
+<td><code>PICK_LEFTMOST</code></td>
+<td><code>leftmost</code></td>
+<td>最左（<code>min(b.x)</code>）</td>
+</tr>
+<tr>
+<td><code>PICK_TOPMOST</code></td>
+<td><code>topmost</code></td>
+<td>最上（<code>min(b.y)</code>）</td>
+</tr>
+</tbody></table>
+<p>非法 <code>pick</code> 在<strong>构造时</strong>即抛 <code>ValueError</code>，不会静默取错候选。</p>
+<h4 id="ocrdetector-ocr-文本匹配"><code>OcrDetector</code> —— OCR 文本匹配</h4>
+<p>包装 <code>ocr</code>。</p>
+<pre><code class="language-python">OcrDetector(
+    match,                      # 必填。文本 / 列表 / 正则 / 正则列表
+    box=None,                   # 识别区域；与 x/y/to_x/to_y 二选一
+    x=0, y=0, to_x=1, to_y=1,   # 相对区域坐标
+    threshold=0,                # OCR 置信度；0 = 框架默认
+    lib=&quot;default&quot;,              # OCR 引擎名
+    target_height=0,            # 识别前缩放高度
+    pick=PICK_FIRST,            # 多候选选择策略
+    name=None,                  # 判据名；缺省用 match 的可读形式
+)
+</code></pre>
+<p>⚠️ <strong>OCR 的 <code>pick</code> 默认是 <code>PICK_FIRST</code>，与 YOLO 的 <code>PICK_MAX_CONF</code> 不同</strong>。
+原因是 <code>ocr()</code> 返回的是<strong>按 y 排序</strong>的列表（<code>ok/task/task.py:818</code>），
+所以 <code>first</code> 实际含义是「最上面那个」。这个差异是刻意的。</p>
+<p><code>pick</code> 支持的策略与 YOLO 相同（<code>first</code> / <code>max_conf</code> / <code>center</code> / <code>leftmost</code> / <code>topmost</code>）。</p>
+<p><code>box</code> 与相对坐标等价，后者更短：</p>
+<pre><code class="language-python">OcrDetector(&quot;确认&quot;, box=self.box_of_screen(0.55, 0.58, 0.68, 0.66))
+OcrDetector(&quot;确认&quot;, x=0.55, y=0.58, to_x=0.68, to_y=0.66)     # 等价
+</code></pre>
+<p>命中时 <code>Hit.text</code> 带出识别到的文字：</p>
+<pre><code class="language-python">hit = OcrDetector(&quot;确认&quot;, box=area).detect(frame)
+self.log_info(f&quot;识别到「{hit.text}」&quot;)     # hit.raw 是整个 list[Box]
+</code></pre>
+<p>⚠️ <strong><code>ocr()</code> 内部自带调试框</strong>（<code>emit_draw_box(&quot;ocr&quot;+name, ...)</code>），
+所以用 <code>wait_action_result(draw=True)</code> 时<strong>不要对 OCR 判据重复绘制</strong>。</p>
+<h4 id="buttondetectoradapter-固定-box-按钮检测"><code>ButtonDetectorAdapter</code> —— 固定 Box 按钮检测</h4>
+<p>包装 <code>find_button</code>（中央文本带，无 OCR）。</p>
+<pre><code class="language-python">ButtonDetectorAdapter(
+    box,                        # 必填。按钮区域，必须贴合按钮
+    thresholds=None,            # ButtonThresholds 完整阈值
+    text_hsv=None,              # 文字颜色区间
+    backdrop_hsv=None,          # 底色区间；传入即默认开启底色校验
+    require_backdrop=None,      # 显式指定是否校验底色
+    name=&quot;button&quot;,
+)
+</code></pre>
+<p>⚠️ <strong><code>box</code> 必须贴合按钮</strong>——Box 远大于按钮时文本带相对过薄，会被形状判定拒绝。</p>
+<p>用法见 <code>development.md</code> 的「固定 Box 按钮检测」一节（含 <code>ButtonThresholds</code> 预设）。</p>
+<h4 id="predicatedetector-任意判据兜底"><code>PredicateDetector</code> —— 任意判据兜底</h4>
+<p>把一段自有逻辑包成判据。</p>
+<pre><code class="language-python">PredicateDetector(
+    predicate,                  # 必填。frame -&gt; Box | Hit | bool | None
+    box=None,                   # predicate 只返回布尔时，用它提供点击目标
+    name=&quot;predicate&quot;,
+    source=SOURCE_PREDICATE,
+)
+</code></pre>
+<p>调用方的返回值决定行为：</p>
+<table>
+<thead>
+<tr>
+<th>predicate 返回</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Hit</code></td>
+<td>原样返回</td>
+</tr>
+<tr>
+<td><code>Box</code></td>
+<td>包成 Hit</td>
+</tr>
+<tr>
+<td><code>True</code>（且给了 <code>box</code>）</td>
+<td>用 <code>box</code> 造 Hit</td>
+</tr>
+<tr>
+<td><code>True</code>（未给 <code>box</code>）</td>
+<td><strong>返回 None</strong> —— 没有可点的坐标</td>
+</tr>
+<tr>
+<td><code>False</code> / <code>None</code></td>
+<td>返回 None</td>
+</tr>
+</tbody></table>
+<p>这也是写「条带还在不在」这类<strong>自定义判定</strong>的入口：</p>
+<pre><code class="language-python">PredicateDetector(
+    lambda frame: not self._band_present(frame, band),
+    box=band,
+    name=f&quot;band_gone_y{band.y}&quot;,
+)
+</code></pre>
+<h3 id="4-3-三个组合器">4.3 三个组合器</h3>
+<table>
+<thead>
+<tr>
+<th>组合器</th>
+<th>签名</th>
+<th>语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>MultiBoxDetector</code></td>
+<td><code>(detectors, name=None)</code></td>
+<td>按序取<strong>首个命中</strong>。<code>detectors</code> 为空抛 <code>ValueError</code></td>
+</tr>
+<tr>
+<td><code>FirstHitDetector</code></td>
+<td>同上</td>
+<td><code>MultiBoxDetector</code> 的语义别名（多个不同目标的优先级选择时更可读）</td>
+</tr>
+<tr>
+<td><code>InvertedDetector</code></td>
+<td><code>(detector, box=None, name=None)</code></td>
+<td>取反：原判据<strong>未</strong>命中即为命中</td>
+</tr>
+<tr>
+<td><code>BlindPointDetector</code></td>
+<td><code>(x, y, name=&quot;blind_point&quot;)</code></td>
+<td>恒命中，返回指定坐标</td>
+</tr>
+</tbody></table>
+<p><strong><code>MultiBoxDetector</code> 可混用不同识别源</strong>，按列表顺序回退，第一个命中即返回：</p>
+<pre><code class="language-python">MultiBoxDetector([
+    TemplateDetector(FeatureList.treasure_icon),                # 先试模板
+    YoloDetector(&quot;chest&quot;, box=roi, conf=0.7),                    # 再试 YOLO
+    OcrDetector(&quot;开启&quot;, box=text_area),                          # 最后试 OCR
+    BlindPointDetector(900, 540),                                # 都搜不到时盲点一次
+], name=&quot;entry&quot;)
+</code></pre>
+<p>⚠️ <strong><code>InvertedDetector</code> 必须显式给 <code>box</code></strong>——点击目标无法从取反判据推出。
+未给 <code>box</code> 时<strong>永不命中</strong>（返回 <code>None</code>）。</p>
+<p>⚠️ 取反命中时 <code>Hit.source</code> 是<strong>原判据名</strong>（如 <code>not_band_gone</code>），
+因为 <code>source</code> 只在 <code>Hit</code> 上、detector 本身不持有它。</p>
+<p><code>FirstHitDetector</code> 与 <code>MultiBoxDetector</code> 行为完全相同，选哪个只看可读性：</p>
+<ul>
+<li>判据是「同一目标的多个区域」→ <code>MultiBoxDetector</code></li>
+<li>判据是「多个不同目标的优先级选择」→ <code>FirstHitDetector</code></li>
+</ul>
+<h3 id="4-4-判据的-attach-与宿主绑定">4.4 判据的 <code>attach</code> 与宿主绑定</h3>
+<p>适配器需要宿主任务才能工作（<code>detect</code> 内部要调 <code>self._task.find_feature(...)</code>）。
+<strong>编排入口会自动绑定</strong>，你不需要手动 <code>attach</code>：</p>
+<pre><code class="language-python"># 直接构造后传进去即可
+self.wait_action_result(
+    condition=TemplateDetector(FeatureList.main_ui),
+    action=lambda hit: self.click(hit.box),
+)
+</code></pre>
+<p>自动绑定由 <code>RuntimeMixin._resolve_detector</code> 完成，它：</p>
+<ol>
+<li>若判据有 <code>attach</code> 且尚未绑定，调用 <code>attach(self)</code>；</li>
+<li>若是组合器（有 <code>detectors</code> 属性），<strong>递归</strong>处理内部判据；</li>
+<li>若对象没有 <code>detect(frame)</code> 方法，抛 <code>TypeError</code>。</li>
+</ol>
+<p>所以自定义判据只要满足 <code>detect(frame) -&gt; Hit | None</code> 就能直接用，
+甚至不必继承任何基类——这是协议（Protocol）而非基类继承。</p>
+<hr>
+<h2 id="5-编排层-wait-action-result">5. 编排层：<code>wait_action_result</code></h2>
+<h3 id="5-1-三阶段流程">5.1 三阶段流程</h3>
+<pre><code class="language-text">┌─ 阶段一：等条件 ────────────────────────────────┐
+│  condition 为 None ?                             │
+│    是 → 跳过等待，直接执行动作                     │
+│  condition 在 time_out 内命中？                   │
+│    否 → raise_if_not_found ? 抛异常 : 返回 None   │
+│    是 → 继续（settle_time &gt; 0 时要求持续成立）     │
+└────────────────────┬────────────────────────────┘
+                     ↓
+┌─ 阶段二：动作 + 验证（最多 max_attempts 轮）──────┐
+│  重取一帧确定目标（防位移）                        │
+│  action_delay → action(hit) → after_sleep        │
+│  expect is None ?  → 返回 True                   │
+│  wait_expectation(expect) 命中 ? → 返回 expect Hit│
+│  未命中 → 下一轮                                  │
+└────────────────────┬────────────────────────────┘
+                     ↓
+┌─ 阶段三：持续阶段（需 while_condition 且 repeat_action）┐
+│  B 未命中 → 立即 break                            │
+│  repeat_interval → repeat_action(hit_b)          │
+│  查 expect → 命中则返回 expect Hit                │
+│  受 time_out / max_repeat 约束                    │
+└────────────────────┬────────────────────────────┘
+                     ↓
+                  返回 None
+</code></pre>
+<h3 id="5-2-完整参数表">5.2 完整参数表</h3>
+<pre><code class="language-python">wait_action_result(
+    action,                     # 必填。action(hit: Hit) -&gt; bool | None 或 action() -&gt; bool | None
+    condition=None,             # 前置条件判据 A，默认 None（不等条件直接执行）
+    expect=None,                # 预期结果判据 C。None = 动作成功即返回
+    time_out=5.0,               # 等 condition 的总超时；也约束持续阶段
+    settle_time=0.0,            # condition 需持续成立的秒数
+    max_attempts=1,             # 动作最多执行次数（含首次）；&lt; 1 会被抬到 1
+    action_delay=0.0,           # 每次动作前的延时
+    after_sleep=0.0,            # 每次动作后的延时
+    expect_time_out=1.0,        # 每次验证 expect 的等待时间
+    expect_settle_time=0.0,     # expect 需持续成立的秒数
+    while_condition=None,       # 持续条件判据 B
+    repeat_action=None,         # 持续阶段重复执行的动作
+    repeat_interval=0.0,        # 持续阶段每轮动作的前置延时
+    max_repeat=0,               # 持续阶段动作次数上限；0 = 只受 time_out 约束
+    draw=False,                 # 是否画调试框
+    raise_if_not_found=False,   # 条件未命中时是否抛 WaitFailedException
+) -&gt; Hit | bool | None
+</code></pre>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>命中 <code>expect</code> 时返回其 <code>Hit</code> 对象（包含 <code>box</code>、<code>confidence</code>、<code>text</code>、<code>raw</code> 等，且 <code>bool(hit) == True</code>）；</li>
+<li><code>expect=None</code> 且动作成功执行时返回 <code>True</code>；</li>
+<li>条件未命中、超时或验证失败时返回 <code>None</code>。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>condition</code></td>
+<td><code>None</code></td>
+<td>前置条件判据 A；默认 <code>None</code> 表示不等条件直接执行动作</td>
+</tr>
+<tr>
+<td><code>time_out</code></td>
+<td><code>5.0</code></td>
+<td><strong>两处生效</strong>：阶段一等 A 的超时、阶段三的总时限</td>
+</tr>
+<tr>
+<td><code>settle_time</code></td>
+<td><code>0.0</code></td>
+<td><code>0</code> = 命中一次即可。<strong>非 0 时是「每次判定都要求连续成立够时长」</strong></td>
+</tr>
+<tr>
+<td><code>max_attempts</code></td>
+<td><code>1</code></td>
+<td><code>1</code> = 不重试。<code>expect</code> 未通过时才进入下一轮</td>
+</tr>
+<tr>
+<td><code>expect_time_out</code></td>
+<td><code>1.0</code></td>
+<td>每次验证 C 的窗口，不宜太大（否则整体变慢）</td>
+</tr>
+<tr>
+<td><code>max_repeat</code></td>
+<td><code>0</code></td>
+<td><code>0</code> = 不限次数，只受 <code>time_out</code> 约束</td>
+</tr>
+<tr>
+<td><code>draw</code></td>
+<td><code>False</code></td>
+<td>绿框 = 动作目标（A），蓝框 = 持续目标（B）</td>
+</tr>
+</tbody></table>
+<h3 id="5-3-动作回调签名">5.3 动作回调签名</h3>
+<p><code>action</code> 与 <code>repeat_action</code> 兼容 0 参数与 1 参数签名（接收当前命中对象，若 <code>condition=None</code> 则 <code>hit</code> 为 <code>None</code>）：</p>
+<pre><code class="language-python">action(hit: Hit | None) -&gt; bool | None  # 或 action() -&gt; bool | None
+repeat_action(hit: Hit) -&gt; None         # 或 repeat_action() -&gt; None
+</code></pre>
+<p>因为返回值不用，多语句回调写成 lambda 时用元组技巧：</p>
+<pre><code class="language-python">action=lambda hit: (self.log_info(f&quot;点击「{hit.text}」&quot;), self.click(hit.box)),
+</code></pre>
+<p>复杂逻辑建议定义独立方法，可读性更好：</p>
+<pre><code class="language-python">def _do_unlock(self, hit):
+    self.log_info(f&quot;点击条带 y={hit.box.y}&quot;)
+    self.click(hit.box)
+
+self.wait_action_result(condition=..., action=self._do_unlock, ...)
+</code></pre>
+<hr>
+<h2 id="6-wait-expectation">6. <code>wait_expectation</code></h2>
+<p>只用 C 时（只等一个结果）用它——<strong>不要</strong>用 <code>wait_action_result</code> 包一层空动作。</p>
+<pre><code class="language-python">wait_expectation(
+    expectation,                # 必填。判据
+    time_out=1.0,               # 最长等待时间
+    settle_time=0.0,            # 需持续成立的秒数
+    raise_if_not_found=False,   # 未命中时是否抛 WaitFailedException
+) -&gt; Hit | None
+</code></pre>
+<p>它是所有「动作之后等结果」的<strong>唯一收口点</strong>——<code>wait_action_result</code> 的阶段二/三内部都调它，
+以保证 settle 语义一致。</p>
+<pre><code class="language-python"># 等主界面出现
+hit = self.wait_expectation(TemplateDetector(FeatureList.main_ui), time_out=2.0)
+if hit:
+    self.log_info(&quot;已进入主界面&quot;)
+
+# 等条带稳定消失（要求连续 0.35 秒都不见）
+gone = self.wait_expectation(
+    PredicateDetector(lambda f: not self._band_present(f, band), box=band),
+    time_out=3.0,
+    settle_time=0.35,
+)
+</code></pre>
+<hr>
+<h2 id="7-典型用法配方">7. 典型用法配方</h2>
+<h3 id="7-1-等到就点-最简">7.1 等到就点（最简）</h3>
+<pre><code class="language-python">self.wait_action_result(
+    condition=TemplateDetector(FeatureList.skip_dialog),
+    action=lambda hit: self.click(hit.box),
+    expect=None,                 # 点完即成功
+    time_out=3,
+)
+</code></pre>
+<h3 id="7-2-点完等结果出现-a-c">7.2 点完等结果出现（A ≠ C）</h3>
+<pre><code class="language-python">self.wait_action_result(
+    condition=TemplateDetector(FeatureList.treasure_icon),
+    action=lambda hit: self.click(hit.box),
+    expect=TemplateDetector(FeatureList.unlock_ui),
+    time_out=5,
+    expect_time_out=1.5,
+    max_attempts=2,              # 第一次没开成再点一次
+)
+</code></pre>
+<h3 id="7-3-点完等元素消失">7.3 点完等元素消失</h3>
+<pre><code class="language-python">box = self.box_of_screen(...)
+self.wait_action_result(
+    condition=TemplateDetector(FeatureList.confirm_button, box=box),
+    action=lambda hit: self.click(hit.box),
+    expect=InvertedDetector(
+        TemplateDetector(FeatureList.confirm_button, box=box),
+        box=box,                 # 取反必须给 box
+    ),
+    time_out=5,
+    expect_settle_time=0.3,      # 消失要稳定一点
+)
+</code></pre>
+<h3 id="7-4-用-ocr-文本">7.4 用 OCR 文本</h3>
+<pre><code class="language-python">self.wait_action_result(
+    condition=OcrDetector(&quot;确认&quot;, box=self.box_of_screen(0.55, 0.58, 0.68, 0.66)),
+    action=lambda hit: (self.log_info(f&quot;点击「{hit.text}」&quot;), self.click(hit.box)),
+    expect=None,
+    time_out=3,
+)
+</code></pre>
+<h3 id="7-5-b-成立期间重复操作">7.5 B 成立期间重复操作</h3>
+<pre><code class="language-python">progress = TemplateDetector(FeatureList.progress_bar, box=bar_box)
+
+self.wait_action_result(
+    condition=progress,                                      # A：进度条出现
+    action=lambda hit: self.click(hit.box, down_time=0.5),   # 开始长按
+    expect=InvertedDetector(progress, box=bar_box),          # C：进度条消失 = 完成
+    while_condition=progress,                                # B：进度条还在
+    repeat_action=lambda hit: self.send_key(&quot;space&quot;),        # 附加动作
+    repeat_interval=0.3,
+    max_repeat=20,
+    time_out=60,
+)
+</code></pre>
+<h3 id="7-6-多区域-多识别源回退">7.6 多区域 / 多识别源回退</h3>
+<pre><code class="language-python">MultiBoxDetector([
+    TemplateDetector(FeatureList.entry_a),
+    TemplateDetector(FeatureList.entry_b, box=region_b),
+    OcrDetector(&quot;进入&quot;, box=text_area),
+])
+</code></pre>
+<h3 id="7-7-条件与预期用不同识别源">7.7 条件与预期用不同识别源</h3>
+<pre><code class="language-python">self.wait_action_result(
+    condition=OcrDetector(&quot;可领取&quot;, box=button_area),      # A：OCR 判断按钮文字
+    action=lambda hit: self.click(hit.box),
+    expect=TemplateDetector(FeatureList.reward_icon),      # C：模板判断奖励图标
+    time_out=5,
+)
+</code></pre>
+<hr>
+<h2 id="8-契约与陷阱">8. 契约与陷阱</h2>
+<h3 id="expect-none-表示-动作成功即返回"><code>expect=None</code> 表示「动作成功即返回」</h3>
+<p>这是<strong>显式声明</strong>「该动作没有可验证的结果」，不是「不验证」也不是「一定失败」。
+阶段二执行完 <code>action</code> 立即返回 <code>True</code>。</p>
+<p>⚠️ 如果你其实有结果可验，别偷懒省掉——那正是这个 API 存在的意义。</p>
+<h3 id="settle-time-的语义是-每次判定都要连续成立"><code>settle_time</code> 的语义是「每次判定都要连续成立」</h3>
+<p>不是「总共等 N 秒」。<code>wait_until</code> 同语义。<strong>默认 0</strong>。</p>
+<p>⚠️ 非 0 会<strong>显著增加耗时</strong>——历史上给 <code>find_button</code> 加过 settle 导致性能问题被回滚。
+只在「等 UI 稳定下来再确认」时开（如「消失确认」）。</p>
+<p>⚠️ 本项目 <code>src/config.py</code> 设了 <code>&quot;wait_until_settle_time&quot;: 0</code>，
+所以框架侧的 <code>settle_time=-1</code> 在本项目等价于 <code>0</code>。但它是用户可配置项，改成非 0 就会分叉。</p>
+<h3 id="计时用-active-time">计时用 <code>active_time()</code></h3>
+<p>暂停感知——脚本暂停期间不消耗 <code>time_out</code>。这受 <code>BaseGameTask</code> 覆写。</p>
+<h3 id="条件命中与动作之间会重取一帧">条件命中与动作之间会重取一帧</h3>
+<pre><code class="language-python">fresh = condition.detect(self.next_frame())
+target = fresh if fresh is not None else hit
+</code></pre>
+<p>原因：<code>settle_time &gt; 0</code> 时动作发生在条件命中之后若干毫秒，<strong>会动的目标</strong>那时可能已位移。
+取不到则沿用旧命中值，<strong>不因单帧抖动放弃</strong>。</p>
+<h3 id="draw-true-的调试框"><code>draw=True</code> 的调试框</h3>
+<ul>
+<li>绿 = 动作目标（A），蓝 = 持续目标（B）</li>
+<li>框 <strong>4 秒过期</strong>，长循环里会重复绘制</li>
+<li>⚠️ <strong>OCR 判据不要重复画</strong>——<code>ocr()</code> 内部自带调试框</li>
+</ul>
+<h3 id="返回-false-的含义">返回 <code>False</code> 的含义</h3>
+<p>阶段三也走完仍未成功。调用方据此决定重试、跳过或记录失败，
+<strong>不要在里面再写一层 <code>while True</code></strong>——重试逻辑已经由 <code>max_attempts</code> / <code>time_out</code> 表达了。</p>
+<h3 id="判据必须接受外部-frame">判据必须接受外部 <code>frame</code></h3>
+<p>自定义判据若自己调 <code>next_frame()</code>，一次判定内会多次截图导致时序错乱。
+必须写成 <code>detect(self, frame)</code>，用传入的 frame。</p>
+<hr>
+<h2 id="9-什么时候不该用它">9. 什么时候不该用它</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>该用什么</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>只等一个结果出现/消失</td>
+<td><code>wait_expectation</code></td>
+</tr>
+<tr>
+<td>只需要「等到就点」</td>
+<td><code>wait_click_feature</code> / <code>wait_click_ocr</code> / <code>wait_click_box</code></td>
+</tr>
+<tr>
+<td>一次性查一下有没有</td>
+<td><code>TemplateDetector(...).detect(frame)</code> 直接调</td>
+</tr>
+<tr>
+<td>就是要固定延时</td>
+<td><code>self.sleep(n)</code>（但优先用视觉等待）</td>
+</tr>
+<tr>
+<td>A 未命中要做恢复动作</td>
+<td><code>safe_back</code> 之类，或 <code>wait_action_result</code> + <code>raise_if_not_found</code></td>
+</tr>
+</tbody></table>
+<p>⚠️ <strong>等待只应发生在「即将点击的那一次」</strong>。给「查找」类函数加 <code>settle_time</code> 会让每帧都变慢。</p>
+<hr>
+<h2 id="10-真实落地样例">10. 真实落地样例</h2>
+<h3 id="treasureunlocktask-click-band-src-tasks-trigger-treasure-unlock-task-py"><code>TreasureUnlockTask._click_band</code>（<code>src/tasks/trigger/treasure_unlock_task.py</code>）</h3>
+<p>点条带后用「稳定消失」确认生效——只用到 C，所以走 <code>wait_expectation</code>：</p>
+<pre><code class="language-python">def _click_band(self, band: Box):
+    &quot;&quot;&quot;点击条带，并用「稳定消失」确认生效。&quot;&quot;&quot;
+    self.click(band)
+    gone = self.wait_expectation(
+        PredicateDetector(
+            lambda frame: not self._band_present(frame, band),
+            box=band,
+            name=f&quot;band_gone_y{band.y}&quot;,
+        ),
+        time_out=float(self.config.get(&quot;_消失确认超时(秒)&quot;, 3.0)),
+        settle_time=float(self.config.get(&quot;_消失确认时长(秒)&quot;, 0.35)),
+    )
+    if not gone:
+        self._on_click_failed(band)
+        return
+    self._active_bands.remove(band)
+    self.log_info(f&quot;条带 y={band.y} 已消失，剩余 {len(self._active_bands)} 条&quot;)
+</code></pre>
+<p>要点：</p>
+<ul>
+<li><code>PredicateDetector</code> 承载「条带还在不在」这段自有逻辑（用 <code>presence()</code> 而非 <code>find()</code>，
+因为钥匙压在条带上会把它切成两段）；</li>
+<li><code>settle_time=0.35</code> 要求<strong>连续 0.35 秒都不见</strong>才算消失——这正是 settle 该用的地方；</li>
+<li>超时与时长都是 <code>_</code> 前缀隐藏配置项。</li>
+</ul>
+<hr>
+<h2 id="相关文档">相关文档</h2>
+<table>
+<thead>
+<tr>
+<th>文档</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>development.md</code></td>
+<td>目录职责、各检测器实现细节、i18n、配置迁移</td>
+</tr>
+<tr>
+<td><code>quickstart.md</code></td>
+<td>从源码运行、开发环境搭建</td>
+</tr>
+<tr>
+<td><code>tests/test_action_lifecycle.py</code></td>
+<td>58 例行为固化，改 API 时会被它挡住</td>
+</tr>
+</tbody></table>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia/blob/0e6df6a9f10c1cba9b76852a0f543d2e38c2da26/docs/dev/action_lifecycle.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#目录" style="margin-left:0px">目录</a><a href="#1-它解决什么问题" style="margin-left:0px">1. 它解决什么问题</a><a href="#2-分层模型" style="margin-left:0px">2. 分层模型</a><a href="#3-快速上手" style="margin-left:0px">3. 快速上手</a><a href="#4-识别层-统一判据" style="margin-left:0px">4. 识别层：统一判据</a><a href="#4-1-hit-统一命中表示" style="margin-left:10px">4.1 Hit：统一命中表示</a><a href="#4-2-五个适配器-含全部参数" style="margin-left:10px">4.2 五个适配器（含全部参数）</a><a href="#4-3-三个组合器" style="margin-left:10px">4.3 三个组合器</a><a href="#4-4-判据的-attach-与宿主绑定" style="margin-left:10px">4.4 判据的 attach 与宿主绑定</a><a href="#5-编排层-wait-action-result" style="margin-left:0px">5. 编排层：wait_action_result</a><a href="#5-1-三阶段流程" style="margin-left:10px">5.1 三阶段流程</a><a href="#5-2-完整参数表" style="margin-left:10px">5.2 完整参数表</a><a href="#5-3-动作回调签名" style="margin-left:10px">5.3 动作回调签名</a><a href="#6-wait-expectation" style="margin-left:0px">6. wait_expectation</a><a href="#7-典型用法配方" style="margin-left:0px">7. 典型用法配方</a><a href="#7-1-等到就点-最简" style="margin-left:10px">7.1 等到就点（最简）</a><a href="#7-2-点完等结果出现-a-c" style="margin-left:10px">7.2 点完等结果出现（A ≠ C）</a><a href="#7-3-点完等元素消失" style="margin-left:10px">7.3 点完等元素消失</a><a href="#7-4-用-ocr-文本" style="margin-left:10px">7.4 用 OCR 文本</a><a href="#7-5-b-成立期间重复操作" style="margin-left:10px">7.5 B 成立期间重复操作</a><a href="#7-6-多区域-多识别源回退" style="margin-left:10px">7.6 多区域 / 多识别源回退</a><a href="#7-7-条件与预期用不同识别源" style="margin-left:10px">7.7 条件与预期用不同识别源</a><a href="#8-契约与陷阱" style="margin-left:0px">8. 契约与陷阱</a><a href="#expect-none-表示-动作成功即返回" style="margin-left:10px">expect=None 表示「动作成功即返回」</a><a href="#settle-time-的语义是-每次判定都要连续成立" style="margin-left:10px">settle_time 的语义是「每次判定都要连续成立」</a><a href="#计时用-active-time" style="margin-left:10px">计时用 active_time()</a><a href="#条件命中与动作之间会重取一帧" style="margin-left:10px">条件命中与动作之间会重取一帧</a><a href="#draw-true-的调试框" style="margin-left:10px">draw=True 的调试框</a><a href="#返回-false-的含义" style="margin-left:10px">返回 False 的含义</a><a href="#判据必须接受外部-frame" style="margin-left:10px">判据必须接受外部 frame</a><a href="#9-什么时候不该用它" style="margin-left:0px">9. 什么时候不该用它</a><a href="#10-真实落地样例" style="margin-left:0px">10. 真实落地样例</a><a href="#treasureunlocktask-click-band-src-tasks-trigger-treasure-unlock-task-py" style="margin-left:10px">TreasureUnlockTask._click_band（src/tasks/trigger/treasure_unlock_task.py）</a><a href="#相关文档" style="margin-left:0px">相关文档</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/longer-sausage/OK-AzurPromilia"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>

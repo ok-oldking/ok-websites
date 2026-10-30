@@ -1,18 +1,18 @@
 <!doctype html><html lang="zh-TW" data-theme="light"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>Combat Planner guide · Development · ok-nte · 繁體中文</title><meta name="description" content="提示 ：角色的具體程式碼實現可在 src/char 目錄中找到。 Planner 是隊伍大腦。角色只宣告一個 CombatP — ok-nte 繁體中文文件"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, 異環, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="BnanZ0">
+  <title>Combat Planner 開發指南 · 开发 · ok-nte · 繁體中文</title><meta name="description" content="提示 ：角色的具體程式碼實現可在 src/char 目錄中找到，也可檢視 GitHub 或 CNB 上的程式碼目錄。 Pla — ok-nte 繁體中文文件"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, 異環, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="BnanZ0">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-nte/zh-TW/docs/development/combat-planner/">
-  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="Combat Planner guide · Development · ok-nte · 繁體中文"><meta property="og:description" content="提示 ：角色的具體程式碼實現可在 src/char 目錄中找到。 Planner 是隊伍大腦。角色只宣告一個 CombatP — ok-nte 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-nte/zh-TW/docs/development/combat-planner/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — 異環 · 後臺自動化 · Windows">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Combat Planner guide · Development · ok-nte · 繁體中文"><meta name="twitter:description" content="提示 ：角色的具體程式碼實現可在 src/char 目錄中找到。 Planner 是隊伍大腦。角色只宣告一個 CombatP — ok-nte 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-zh-tw.png"><meta name="twitter:image:alt" content="ok-nte — 異環 · 後臺自動化 · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Combat Planner guide · Development · ok-nte · 繁體中文","description":"提示 ：角色的具體程式碼實現可在 src/char 目錄中找到。 Planner 是隊伍大腦。角色只宣告一個 CombatP — ok-nte 繁體中文文件","url":"https://ok-script.com/ok-nte/zh-TW/docs/development/combat-planner/","inLanguage":"zh-TW","dateModified":"2026-08-12T10:06:40+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="Combat Planner 開發指南 · 开发 · ok-nte · 繁體中文"><meta property="og:description" content="提示 ：角色的具體程式碼實現可在 src/char 目錄中找到，也可檢視 GitHub 或 CNB 上的程式碼目錄。 Pla — ok-nte 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-nte/zh-TW/docs/development/combat-planner/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — 異環 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Combat Planner 開發指南 · 开发 · ok-nte · 繁體中文"><meta name="twitter:description" content="提示 ：角色的具體程式碼實現可在 src/char 目錄中找到，也可檢視 GitHub 或 CNB 上的程式碼目錄。 Pla — ok-nte 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-zh-tw.png"><meta name="twitter:image:alt" content="ok-nte — 異環 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Combat Planner 開發指南 · 开发 · ok-nte · 繁體中文","description":"提示 ：角色的具體程式碼實現可在 src/char 目錄中找到，也可檢視 GitHub 或 CNB 上的程式碼目錄。 Pla — ok-nte 繁體中文文件","url":"https://ok-script.com/ok-nte/zh-TW/docs/development/combat-planner/","inLanguage":"zh-TW","dateModified":"2026-10-05T05:43:25+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20260812031515">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
     <div class="custom-dropdown project-switcher" data-dropdown>
     <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
-    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a></div>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
   </div>
     <div class="nav-links" data-nav-links>
       <a href="../../" aria-current="page">文件</a>
@@ -27,9 +27,11 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概覽</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題與反饋</a><a href="../contributing/">Contributing</a><a href="../running-from-source/">Running from source</a><a href="../flow/">Flow author guide</a><a href="./" class="active" aria-current="page">Combat Planner guide</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="combat-planner-開發指南">Combat Planner 開發指南</h1>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概覽</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題與反饋</a><a href="../contributing/">貢獻與驗證</a><a href="../running-from-source/">從原始碼執行</a><a href="../scene_flow/">SceneFlow 作者指南</a><a href="./" class="active" aria-current="page">Combat Planner 開發指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="combat-planner-開發指南">Combat Planner 開發指南</h1>
 <blockquote>
-<p><strong>提示</strong>：角色的具體程式碼實現可在 <a href="https://github.com/BnanZ0/ok-nte/tree/32a104a410f244ff732ebe0f782a550f3c9f434b/src/char"><code>src/char</code></a> 目錄中找到。</p>
+<p><strong>提示</strong>：角色的具體程式碼實現可在 <a href="https://github.com/BnanZ0/ok-nte/tree/6b10cbd5313cab784666fabcb2be54128e2079f1/src/char"><code>src/char</code></a> 目錄中找到，也可檢視
+<a href="https://github.com/BnanZ0/ok-nte/tree/main/src/char">GitHub</a> 或
+<a href="https://cnb.cool/BnanZ0/ok-nte-update/-/tree/main/src/char">CNB</a> 上的程式碼目錄。</p>
 </blockquote>
 <p>Planner 是隊伍大腦。角色只宣告一個 <code>CombatPlan</code>：</p>
 <ul>
@@ -37,11 +39,27 @@
 <li><code>claims</code>：<code>FieldClaim</code> 入場訴求，用於表達“我現在應該被切進來”。</li>
 <li><code>entry</code>：普通入場後的 Python generator 動作流。未提供時預設按 <code>actions</code> 順序執行。</li>
 </ul>
-<p>公開匯入入口固定使用：</p>
-<pre><code class="language-python">from src.combat.planner import ActionSlot, CombatContext, FieldClaim, Planner, RoleProfile
+<p>角色程式碼從 <code>src.combat.planner</code> 匯入公開型別。以下是常用型別示例，按需增刪：</p>
+<pre><code class="language-python">from src.combat.planner import (
+    ActionIntent,
+    ActionReservation,
+    ActionResult,
+    ActionSlot,
+    ActionTag,
+    CombatContext,
+    ExpectedEntry,
+    FieldClaim,
+    FollowupStep,
+    Planner,
+    RequestHandle,
+    RoleProfile,
+    SwitchInGuard,
+)
 </code></pre>
 <p><code>src.combat.planner</code> 只匯出正式開發 API。角色程式碼不要直接匯入
-<code>planner/core.py</code>、<code>planner/requests.py</code>、<code>planner/state.py</code> 等內部模組。</p>
+<code>planner/core.py</code>、<code>planner/requests.py</code>、<code>planner/state.py</code> 等內部模組。
+本文聚焦角色作者 API；切人執行生命週期由 <code>BaseCombatTask</code> 管理，角色程式碼不需要直接
+操作 <code>CombatPlanner</code> 的執行端方法。</p>
 <h2 id="快速入口">快速入口</h2>
 <p>普通角色通常只需要覆蓋 <code>describe_role()</code> 和 <code>combat_plan(context)</code>：</p>
 <pre><code class="language-python">def describe_role(self):
@@ -74,9 +92,8 @@ def combat_plan(self, context: CombatContext):
 
     return self.plan(skill, ultimate, entry=entry)
 </code></pre>
-<p><code>yield action</code> 會把 action 交給 planner 執行。planner 完成 reservation/can_execute
-檢查、執行、記錄 result、推進 request 後，把 <code>ActionResult</code> 送回 generator。
-<code>bool(ActionResult)</code> 等於 <code>result.success</code>，所以可以直接寫：</p>
+<p><code>yield action</code> 會執行該 action，並把 <code>ActionResult</code> 送回 generator。只有動作成功時
+<code>bool(ActionResult)</code> 才為 True，所以可以直接寫：</p>
 <pre><code class="language-python">a = yield action_a
 b = yield action_b
 
@@ -99,13 +116,15 @@ if a and not b:
 <p>規則：</p>
 <ul>
 <li>建立 plan 時只宣告動作和入場訴求，不要傳送輸入。</li>
-<li>不要在建立 plan 時呼叫 <code>context.request_route()</code>、<code>reserve_actions()</code> 或
-<code>request_tags()</code>；這些一次性請求應在 action execute 中釋出，或在 entry flow
-收到成功 result 後釋出。</li>
+<li>不要在建立 plan 時釋出一次性協作請求；<code>request_route()</code>、<code>request_switch()</code>、
+<code>request_role()</code>、<code>request_tags()</code> 和臨時 <code>reserve_actions()</code> 應在 action 執行期間釋出，
+或在 entry flow 收到成功 result 後釋出。隊伍級長期策略放在 <code>combat_policies()</code>。</li>
+<li>entry flow 釋出的請求會在下一次 <code>yield</code> 或流程結束時收集；收到 result 後釋出請求並直接
+<code>return</code> 也會生效。</li>
 <li><code>actions</code> 是評分和協作匹配目錄；<code>entry</code> 是普通入場執行流程。</li>
 <li><code>claims</code> 可以傳多個獨立入場理由；它們不會疊加分數，planner 只取當前匹配角色的最高優先順序 claim。</li>
 <li>strict route、expected entry、active request 的硬排程優先於普通 entry flow。</li>
-<li>普通 entry flow 最多執行 <code>MAX_ACTIONS_PER_ENTRY</code> 個動作。</li>
+<li>普通 entry flow 受 planner 的單次入場動作數上限約束。</li>
 <li>同一個 action 在同一次入場中只會真實執行一次。</li>
 </ul>
 <h2 id="actionintent">ActionIntent</h2>
@@ -121,15 +140,14 @@ if a and not b:
 <li><code>can_execute: Callable[[CombatContext], bool] | None</code>：planner 層硬限制。</li>
 <li><code>priority_ready: Callable[[CombatContext], bool] | None</code>：只用於切人評分。</li>
 </ul>
-<p><code>action.repeat_for_entry()</code> 返回一個可在同一次 entry 中再次 <code>yield</code> 的動作副本。
-它保留原 action 的執行、slot、標籤和 <code>can_execute</code> 限制，併為每次呼叫自動生成獨立
-的 entry 去重結果。因此它適合 <code>Q -&gt; E -&gt; 再尝试一次 E</code> 這類有限 entry flow；副本通常
-只在 entry flow 中 yield，不應加入 <code>CombatPlan.actions</code>。</p>
+<p><code>action.repeat_for_entry()</code> 允許同一次 entry 再次 <code>yield</code> 該動作，同時保留原 action 的
+執行內容、slot、標籤和 <code>can_execute</code> 限制。它適合 <code>Q -&gt; E -&gt; 再尝试一次 E</code> 這類有限
+entry flow；返回的副本通常只在 entry flow 中 yield，不應加入 <code>CombatPlan.actions</code>。</p>
 <p>每次 <code>yield</code> 都會計入單次 entry 的動作上限。不要在需要持續執行的長時間迴圈中 yield
 它；此類迴圈應在呼叫已有動作 helper 前，先通過
 <code>context.is_action_allowed(self, action)</code> 檢查完整 action 許可權。這樣迴圈保持由角色程式碼
 控制，同時仍遵守 planner 的 <code>can_execute</code> 和 reservation 規則。</p>
-<p>如果 action 設定了 <code>slot</code>，planner 會自動通過 <code>context.can_execute_action(...)</code>
+<p>如果 action 設定了 <code>slot</code>，planner 會自動通過 <code>context.is_slot_available(...)</code>
 檢查 reservation。開發者傳入的 <code>can_execute</code> 只需要表達額外機制限制。需要在 entry
 flow 外預查詢完整 action 時，使用 <code>context.is_action_allowed(self, action)</code>；它同時檢查
 <code>can_execute</code> 和 slot reservation。普通或有限 entry 動作仍直接 <code>yield action</code>。</p>
@@ -141,7 +159,17 @@ flow 外預查詢完整 action 時，使用 <code>context.is_action_allowed(self
 <li>返回 <code>1</code>、<code>&quot;ok&quot;</code> 這類 truthy 值不會被當成成功。</li>
 </ul>
 <p>普通角色不需要手寫 <code>ActionResult</code>。只有需要自定義 result name/tags/slot/reason
-時才手寫。</p>
+時才手寫：</p>
+<pre><code class="language-python">def execute(context):
+    return ActionResult(
+        success=True,
+        name=&quot;custom support action&quot;,
+        tags={ActionTag.SUPPORT},
+        slot=ActionSlot.CUSTOM,
+        reason=&quot;healing completed&quot;,
+    )
+</code></pre>
+<p><code>ActionResult</code> 的 <code>tags</code> 和 <code>slot</code> 也用於匹配協作請求；普通動作應優先讓 helper 自動生成結果。</p>
 <h2 id="actiontag">ActionTag</h2>
 <p><code>ActionTag</code> 表達動作意義和評分，不能表達某個角色專屬機制。</p>
 <p>常用標籤：</p>
@@ -149,9 +177,10 @@ flow 外預查詢完整 action 時，使用 <code>context.is_action_allowed(self
 <li><code>ULTIMATE_ACTION</code>：Q。</li>
 <li><code>SKILL_ACTION</code>：E。</li>
 <li><code>ARC_ACTION</code>：弧盤動作，評分為 0。</li>
+<li><code>DAMAGE</code>：通用傷害動作。</li>
 <li><code>SUPPORT</code>：輔助/治療/增益類動作。</li>
-<li><code>COORDINATION</code>：釋出協作路線或視窗的動作。</li>
-<li><code>COORDINATION_FINISHER</code>：協作完成後的收尾動作。</li>
+<li><code>TEAM_BUFF</code>：為全隊提供增益的關鍵動作。僅在該增益應優先於主 DPS 終結技施放時使用。</li>
+<li><code>HIGH_PRIORITY</code>：顯著提高動作的切人評分。用於少數特別值得優先嚐試的動作；它不會改變角色上場後的動作執行順序。</li>
 <li><code>FIELD_TIME</code>：planner 內建站場動作，角色不應自己宣告。</li>
 <li><code>LEGACY_COMBO</code>：舊出招表動作。</li>
 <li><code>DEFAULT_ACTION</code>：低價值兜底入口。</li>
@@ -174,9 +203,53 @@ action 代表該角色參賽。tag 不控制普通入場流程；普通入場由
 <p>協作和保留儘量寫：</p>
 <pre><code class="language-python">FollowupStep.for_action(zero, ActionSlot.SKILL)
 ActionReservation.for_action(nanally, ActionSlot.SKILL)
-context.can_execute_action(self, slot=ActionSlot.SKILL)
+ActionReservation.for_slots(nanally, {ActionSlot.SKILL, ActionSlot.ULTIMATE})
+context.is_slot_available(self, ActionSlot.SKILL)
 </code></pre>
+<h2 id="roleprofile">RoleProfile</h2>
+<p><code>describe_role()</code> 返回 <code>RoleProfile</code>，描述隊伍定位和普通切人時的站場偏好。<code>role</code> 與
+<code>field_preference</code> 是兩個獨立維度：前者供 <code>request_role()</code> 匹配，後者參與普通切人評分；
+它們都不是強制排程指令。</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>可選值 / 用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>role</code></td>
+<td><code>Planner.Role.MAIN_DPS</code>、<code>SUB_DPS</code>、<code>SUPPORT</code>；描述隊伍定位。預設 <code>SUB_DPS</code>。</td>
+</tr>
+<tr>
+<td><code>field_preference</code></td>
+<td><code>Planner.FieldPreference.MAIN_DPS</code>、<code>SUB_DPS</code>、<code>SUPPORT</code>、<code>SETUP_ONLY</code>；表達普通情況下的站場傾向。預設 <code>SUB_DPS</code>。</td>
+</tr>
+<tr>
+<td><code>max_field_time</code></td>
+<td>大於 0 時允許 planner 使用內建站場兜底動作，並以此作為最長站場時長；設為 0 可關閉該兜底。預設 1.5 秒。</td>
+</tr>
+<tr>
+<td><code>combat_start_priority</code></td>
+<td>僅用於開戰首切；大於 0 才成為首切候選，數值越高越優先。不會影響普通戰鬥中的切人評分。預設 0。</td>
+</tr>
+</tbody></table>
+<p><code>MAIN_DPS</code> 傾向持續站場，<code>SUB_DPS</code> 傾向短時站場，<code>SUPPORT</code> 與 <code>SETUP_ONLY</code> 更適合
+完成輔助或準備動作後輪換。協作請求和入場訴求會影響最終選擇。</p>
 <h2 id="basechar-helper">BaseChar Helper</h2>
+<h3 id="switch-in-guard">switch_in_guard</h3>
+<p>目標角色可覆蓋 <code>switch_in_guard()</code>，延遲普通切人，直到自身滿足入場條件：</p>
+<pre><code class="language-python">def switch_in_guard(self, context, from_char, has_intro):
+    return SwitchInGuard.delay_until_ready(
+        condition=self.entry_state_ready,
+        timeout=1.5,
+        reason=&quot;waiting for entry state&quot;,
+    )
+</code></pre>
+<p><code>condition</code> 返回 True 時繼續切人；超時後也會繼續切人，因此這是有上限的延遲，不是切人否決。
+<code>poll_interval</code> 控制檢查間隔，<code>while_waiting</code> 可提供等待期間的動作回撥。預設 guard 立即
+允許切入。strict route 和 strict field claim 會跳過這個等待及普通切人冷卻；需要 guard
+保護的入場不應依賴 strict 排程。</p>
 <h3 id="開戰會話與首次登場">開戰會話與首次登場</h3>
 <p><code>BaseCombatTask.begin_combat_session()</code> 是戰鬥正式開始時的統一入口。它會建立公開的
 <code>task.combat_session</code>, 呼叫首切決策並記錄實際首發角色; <code>CombatPlanner</code> 只負責決定首切
@@ -199,33 +272,61 @@ if self.consume_first_engage():
 <pre><code class="language-python">self.click_ultimate_action(
     name=None,
     tags=None,
+    add_tags=None,
     reason=&quot;ultimate action available&quot;,
     can_execute=None,
+    send_click=True,
+    wait_if_no_cd=0,
 )
 </code></pre>
 <ul>
 <li>自動設定 <code>slot=ActionSlot.ULTIMATE</code>。</li>
 <li>預設 <code>tags={ActionTag.ULTIMATE_ACTION}</code>。</li>
+<li><code>tags</code> 會完全指定基礎標籤；<code>add_tags</code> 可傳單個 tag 或 tag 集合，並會追加到它，或在未傳 <code>tags</code> 時追加到預設標籤。</li>
 <li>預設 <code>name=f&quot;{角色名}_ultimate&quot;</code>。</li>
+<li><code>can_execute</code> 預設包含 <code>self.ultimate_available()</code>；傳入的額外條件會與之合併。</li>
 <li><code>priority_ready</code> 自動使用 <code>self.ultimate_available()</code>。</li>
+<li><code>send_click</code> 為 True 時會在終結技動畫期間傳送普通點選；<code>wait_if_no_cd</code> 是冷卻未完成時最多等待的秒數。</li>
 <li><code>execute</code> 呼叫 <code>self.click_ultimate()</code>。</li>
 </ul>
 <h3 id="click-skill-action">click_skill_action</h3>
 <pre><code class="language-python">self.click_skill_action(
     name=None,
     tags=None,
+    add_tags=None,
     reason=&quot;skill action available&quot;,
     down_time=0.01,
     can_execute=None,
+    post_sleep=0,
+    has_animation=False,
+    send_click=True,
+    time_out=0,
 )
 </code></pre>
 <ul>
 <li>自動設定 <code>slot=ActionSlot.SKILL</code>。</li>
 <li>預設 <code>tags={ActionTag.SKILL_ACTION}</code>。</li>
+<li><code>tags</code> 會完全指定基礎標籤；<code>add_tags</code> 可傳單個 tag 或 tag 集合，並會追加到它，或在未傳 <code>tags</code> 時追加到預設標籤。</li>
 <li>預設 <code>name=f&quot;{角色名}_skill&quot;</code>。</li>
+<li><code>can_execute</code> 預設包含 <code>self.skill_available()</code>；傳入的額外條件會與之合併。</li>
 <li><code>priority_ready</code> 自動使用 <code>self.skill_available()</code>。</li>
-<li><code>execute</code> 呼叫 <code>self.click_skill(down_time=down_time)</code>。</li>
+<li><code>down_time</code> 控制按鍵持續時間；<code>post_sleep</code> 控制成功釋放後的額外等待；<code>has_animation</code> 指示技能是否帶動畫。</li>
+<li><code>send_click</code> 控制技能釋放期間是否傳送普通點選；<code>time_out</code> 控制等待技能釋放的超時，0 使用內建預設值。</li>
+<li><code>execute</code> 呼叫 <code>self.click_skill()</code>。</li>
 </ul>
+<h3 id="click-arc-action">click_arc_action</h3>
+<pre><code class="language-python">self.click_arc_action(
+    name=None,
+    tags=None,
+    add_tags=None,
+    reason=&quot;arc action available&quot;,
+    can_execute=None,
+    priority_ready=None,
+)
+</code></pre>
+<p>該 helper 自動設定 <code>slot=ActionSlot.ARC</code>，預設使用 <code>ActionTag.ARC_ACTION</code>。預設
+<code>priority_ready</code> 為 False，因此弧盤動作不會單獨促使角色切入；角色已在場時仍可按普通
+entry 流程嘗試。需要時可傳 <code>priority_ready</code> 改變其評分就緒條件。</p>
 <h3 id="planner-action">planner_action</h3>
 <pre><code class="language-python">self.planner_action(
     tags={ActionTag.SKILL_ACTION},
@@ -239,8 +340,12 @@ if self.consume_first_engage():
 </code></pre>
 <p>用於建立自定義 action。長動作應在 <code>execute</code> 內完成。</p>
 <h2 id="fieldclaim">FieldClaim</h2>
-<p><code>FieldClaim</code> 表達“我應該被切進來”，不是動作。它只抬高目標角色的普通入場評分；
+<p><code>FieldClaim</code> 表達“我應該被切進來”，不是動作。<code>low</code>、<code>normal</code>、<code>high</code> 和
+<code>critical</code> 抬高普通入場評分；<code>strict</code> 在下一次切人決策時直接選定該角色。
 角色切入後仍由 planner 從 <code>actions</code>、strict route/request 或 <code>entry</code> 中選擇動作。</p>
+<p>普通 claim 可通過 <code>ExpectedEntry(slot=...)</code> 指定回場後優先嚐試的槽位；需要高階精確匹配時
+可設定 <code>action_name</code>，或用 <code>ExpectedEntry.from_action(action)</code> 從動作宣告生成。strict claim
+只要求切入，不接受 <code>expected_entry</code>。</p>
 <pre><code class="language-python">def combat_plan(self, context):
     claims = []
     if self.has_burst_window():
@@ -252,11 +357,29 @@ if self.consume_first_engage():
         )
     return self.plan(self.click_ultimate_action(), claims=claims)
 </code></pre>
+<p>需要在限時視窗內回場時，可在 <code>combat_plan()</code> 中宣告 strict claim：</p>
+<pre><code class="language-python">def combat_plan(self, context):
+    ultimate = self.click_ultimate_action()
+    claims = []
+    if self.should_return_now():
+        claims.append(
+            FieldClaim.strict(
+                reason=&quot;ultimate window ending&quot;,
+            )
+        )
+    return self.plan(ultimate, claims=claims)
+</code></pre>
+<p>planner 每次切人決策都會重新讀取候選角色的 claim。已鎖定的 strict route 優先；
+之後 strict claim 優先於環合反應、active request 和普通評分。多個角色同時宣告
+strict claim 時，planner 用它們的普通評分及最近行動時間決定目標。strict claim
+只在當前角色的動作結束後生效，不會中斷動作；它只要求切入，不設定 <code>expected_entry</code>。
+切入后角色按自己的普通 <code>entry</code> 流程執行動作。</p>
 <p>使用建議：</p>
 <ul>
 <li>只是 Q/E 可用，不需要 FieldClaim；action 本身會參與評分。</li>
-<li>需要“之後搶回場”時用 FieldClaim。</li>
-<li>搶回場後需要優先做某動作時，加 <code>expected_entry</code>。</li>
+<li>需要“之後搶回場”時用普通 FieldClaim；必須在下一次切人決策中回場時用 <code>FieldClaim.strict()</code>。</li>
+<li><code>FieldClaim.critical()</code> 仍是普通評分檔位，不會強制切人。</li>
+<li>普通 claim 搶回場後需要優先做某動作時, 加 <code>expected_entry</code>。</li>
 <li>多個 FieldClaim 適合表達多個獨立機制入口；planner 不累加 claim 分，只選擇最高等級的匹配 claim。</li>
 </ul>
 <h2 id="combat-policies">combat_policies</h2>
@@ -287,17 +410,65 @@ if self.consume_first_engage():
 <p>常用 API：</p>
 <ul>
 <li><code>context.request_route(...)</code>：固定順序協作路線。</li>
+</ul>
+<p><code>FollowupStep.for_switch(target, wait_for_turn=True)</code> 預設切入後等待目標正常執行完本輪:</p>
+<pre><code class="language-python">context.request_route([
+    FollowupStep.for_switch(a),
+    FollowupStep.for_action(b, ActionSlot.ULTIMATE),
+])
+</code></pre>
+<p><code>FollowupStep.for_action(target, slot, ...)</code> 建立指定角色的動作步驟。<code>optional=True</code> 時，
+目標到場後若沒有匹配且可執行的動作，planner 會跳過該步驟；預設的必需步驟會繼續等待。
+可用 <code>required_tags</code> 或 <code>action_names</code> 新增匹配條件；普通協作優先使用 slot，動作名適合
+需要精確匹配的高階場景。標籤條件要求動作至少命中一個指定 tag。</p>
+<p>若 route 要求目標切入時觸發入場/環合反應，可使用：</p>
+<pre><code class="language-python">FollowupStep.for_entry_reaction(target, reason=&quot;trigger entry reaction&quot;)
+</code></pre>
+<p>這裡 A 按自己的正常 entry flow 執行完本輪後, 才推進到 B 的終結技。
+A 已在場時也會執行本輪, 不直接跳過。它不指定首動, 不要求入場反應,
+也不繞過動作許可或 reservation。本輪結束沿用正常流程的結束條件和動作數上限;
+無動作或全部失敗時仍可嘗試正常站場回退, 不要求某個技能成功才完成步驟。
+異常中斷不會算作完成; route 過期或被替換後不會再推進舊步驟。</p>
+<p>若只要求切入, 使用 <code>FollowupStep.for_switch(a, wait_for_turn=False)</code>。
+該模式切入成功或目標已在場時立即完成步驟。單步 route 結束後恢復正常流程;
+多步 route 會立即推進, <strong>不等待 A 正常流程結束, 也不保證 A 執行任何動作</strong>。</p>
+<p>兩種模式均繼承 strict route 的排程優先順序和生命週期。新 route 會替換已有 route,
+因此它不是單純的高優先順序 <code>request_switch()</code>; 普通獨立切人訴求仍使用後者。</p>
+<ul>
 <li><code>context.request_switch(...)</code>：請求下一次普通排程切給某角色。</li>
 <li><code>context.request_role(...)</code>：請求下一次普通排程切給某個隊伍定位的角色；多個
 匹配角色時按普通切人評分選擇。它不指定動作，也不打斷當前 entry flow。</li>
 <li><code>context.reserve_actions(...)</code>：保留隊友動作。</li>
-<li><code>context.request_tags(...)</code>：請求一定數量的 tag 動作。</li>
+<li><code>context.request_tags(...)</code>：請求不同隊友各完成一次帶指定 tag 的成功動作；任一指定 tag 匹配即可，每個角色最多計一次。可用 <code>count</code> 指定人數，預設不讓請求發起者自己滿足請求。
+設定 <code>avoid_source=False</code> 可允許發起者自己滿足請求。</li>
 </ul>
 <p><code>request_role(Planner.Role.SUPPORT)</code> 請求的是角色的靜態隊伍定位；
 <code>request_tags({Planner.ActionTag.SUPPORT})</code> 請求的是任意支援類動作。前者適合
-“讓任一輔助角色進場”，後者適合“讓任一隊友完成一次治療/增益動作”。</p>
+“讓任一輔助角色進場”，後者適合“讓任一隊友完成一次治療/增益動作”。
+<code>request_route()</code> 和 <code>request_tags()</code> 可用 <code>return_to_source=True</code> 在請求完成後提高發起者
+重新入場的優先順序。</p>
 <pre><code class="language-python">context.request_role(Planner.Role.SUPPORT, reason=&quot;need a support role&quot;)
 </code></pre>
+<p>這些請求通常返回 <code>RequestHandle</code>。可用它查詢是否完成或過期，也可用生命週期條件組合
+請求。例如，讓 reservation 在 route 完成後釋放：</p>
+<pre><code class="language-python">route = context.request_route(steps, until=self.window_expired)
+if route is not None:
+    route.on_fulfilled(self.on_route_complete)
+    route.on_expired(self.on_route_expired)
+    context.reserve_actions(reservations, until=route.when.fulfilled)
+</code></pre>
+<p><code>handle.when.fulfilled</code>、<code>expired</code>、<code>closed</code> 和 <code>any</code> 都是可傳給另一個請求 <code>until=</code> 的條件；
+<code>is_pending</code>、<code>is_fulfilled</code>、<code>is_expired</code>、<code>is_closed</code> 可直接查詢狀態。<code>handle.status</code> 為
+<code>Planner.RequestStatus.PENDING</code>、<code>FULFILLED</code> 或 <code>EXPIRED</code>；<code>closed</code> 是獨立狀態。使用
+<code>on_finish()</code> 可響應第一個完成或過期訊號；需要區分結果時使用 <code>on_fulfilled()</code> 和
+<code>on_expired()</code>。<code>request_route()</code>、<code>request_switch()</code>、<code>request_role()</code> 和 <code>request_tags()</code> 的
+<code>until</code> 預設為 None，即不會因視窗條件自動過期；
+<code>reserve_actions()</code> 必須指定 <code>until</code>，可傳 callable，或傳 <code>Planner.NEVER_EXPIRES</code> 讓它持續到
+planner reset。route 步驟完成和 route 視窗過期是不同訊號。
+<code>until=Planner.NEVER_EXPIRES</code> 的 reservation 不會自動結束，也不能配置 <code>on_finish</code>。</p>
+<p><code>CombatContext</code> 還提供 <code>has_active_request()</code>、<code>has_strict_route()</code> 和
+<code>strict_route_wants_action(char, slot=..., action_name=..., tags=...)</code>，供確實需要根據當前協作
+狀態分支的高階角色邏輯查詢。純 reservation 和純切人請求不算 active action request。</p>
 <h2 id="行為摘要">行為摘要</h2>
 <ul>
 <li>切人評分與普通 entry 執行分離。</li>
@@ -308,6 +479,6 @@ if self.consume_first_engage():
 <li>strict route、expected entry、active request 優先於普通 entry flow。</li>
 <li><code>ActionResult.tags</code> 不控制 entry flow。</li>
 </ul>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/32a104a410f244ff732ebe0f782a550f3c9f434b/docs/development/combat-planner.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年8月12日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#快速入口" style="margin-left:0px">快速入口</a><a href="#combatplan" style="margin-left:0px">CombatPlan</a><a href="#actionintent" style="margin-left:0px">ActionIntent</a><a href="#actiontag" style="margin-left:0px">ActionTag</a><a href="#actionslot" style="margin-left:0px">ActionSlot</a><a href="#basechar-helper" style="margin-left:0px">BaseChar Helper</a><a href="#開戰會話與首次登場" style="margin-left:10px">開戰會話與首次登場</a><a href="#click-ultimate-action" style="margin-left:10px">click_ultimate_action</a><a href="#click-skill-action" style="margin-left:10px">click_skill_action</a><a href="#planner-action" style="margin-left:10px">planner_action</a><a href="#fieldclaim" style="margin-left:0px">FieldClaim</a><a href="#combat-policies" style="margin-left:0px">combat_policies</a><a href="#協作請求" style="margin-left:0px">協作請求</a><a href="#行為摘要" style="margin-left:0px">行為摘要</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/6b10cbd5313cab784666fabcb2be54128e2079f1/docs/zh-CN/development/combat-planner.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#快速入口" style="margin-left:0px">快速入口</a><a href="#combatplan" style="margin-left:0px">CombatPlan</a><a href="#actionintent" style="margin-left:0px">ActionIntent</a><a href="#actiontag" style="margin-left:0px">ActionTag</a><a href="#actionslot" style="margin-left:0px">ActionSlot</a><a href="#roleprofile" style="margin-left:0px">RoleProfile</a><a href="#basechar-helper" style="margin-left:0px">BaseChar Helper</a><a href="#switch-in-guard" style="margin-left:10px">switch_in_guard</a><a href="#開戰會話與首次登場" style="margin-left:10px">開戰會話與首次登場</a><a href="#click-ultimate-action" style="margin-left:10px">click_ultimate_action</a><a href="#click-skill-action" style="margin-left:10px">click_skill_action</a><a href="#click-arc-action" style="margin-left:10px">click_arc_action</a><a href="#planner-action" style="margin-left:10px">planner_action</a><a href="#fieldclaim" style="margin-left:0px">FieldClaim</a><a href="#combat-policies" style="margin-left:0px">combat_policies</a><a href="#協作請求" style="margin-left:0px">協作請求</a><a href="#行為摘要" style="margin-left:0px">行為摘要</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
-  <script src="../../../../../assets/site.js?v=20260812031515" defer></script></body></html>
+  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>

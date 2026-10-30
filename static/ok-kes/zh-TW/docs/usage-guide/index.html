@@ -1,0 +1,170 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>使用說明 · 简体中文 · ok-kes · 繁體中文</title><meta name="description" content="本文介紹 ok-kes 的下載安裝、介面操作、遊戲設定，以及卡厄思模式和出擊模式的配置方法。 下載軟體。本軟體支援自動更新， — ok-kes 繁體中文文件"><meta name="keywords" content="ok-kes, okkes, GitHub, baoxin1100/ok-kes, baoxin1100, 卡厄思夢境, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="baoxin1100">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-kes/zh-TW/docs/usage-guide/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="使用說明 · 简体中文 · ok-kes · 繁體中文"><meta property="og:description" content="本文介紹 ok-kes 的下載安裝、介面操作、遊戲設定，以及卡厄思模式和出擊模式的配置方法。 下載軟體。本軟體支援自動更新， — ok-kes 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-kes/zh-TW/docs/usage-guide/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-kes-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-kes — 卡厄思夢境 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="使用說明 · 简体中文 · ok-kes · 繁體中文"><meta name="twitter:description" content="本文介紹 ok-kes 的下載安裝、介面操作、遊戲設定，以及卡厄思模式和出擊模式的配置方法。 下載軟體。本軟體支援自動更新， — ok-kes 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-kes-zh-tw.png"><meta name="twitter:image:alt" content="ok-kes — 卡厄思夢境 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"使用說明 · 简体中文 · ok-kes · 繁體中文","description":"本文介紹 ok-kes 的下載安裝、介面操作、遊戲設定，以及卡厄思模式和出擊模式的配置方法。 下載軟體。本軟體支援自動更新， — ok-kes 繁體中文文件","url":"https://ok-script.com/ok-kes/zh-TW/docs/usage-guide/","inLanguage":"zh-TW","dateModified":"2026-10-01T12:52:39+08:00","author":{"@type":"Organization","name":"ok-kes","url":"https://github.com/baoxin1100/ok-kes"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/baoxin1100/ok-kes"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">專案介紹</a><a href="./" class="active" aria-current="page">使用說明</a><a href="../development/index/">開發指南</a><a href="../srd/">軟體需求與設計</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-kes</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="ok-kes-使用說明">ok-kes 使用說明</h1>
+<p>本文介紹 ok-kes 的下載安裝、介面操作、遊戲設定，以及卡厄思模式和出擊模式的配置方法。</p>
+<h2 id="下載安裝">下載安裝</h2>
+<ol>
+<li>下載軟體。本軟體支援自動更新，下載舊版本後，啟動時會自動更新到最新版本。下載方式：<a href="https://github.com/baoxin1100/ok-kes/releases">GitHub</a>、<a href="https://mirrorchyan.com/zh/projects?rid=ok-kes">Mirror醬</a>、<a href="https://pan.quark.cn/s/13b266aa8e80">夸克網盤</a>。</li>
+<li>將工具安裝到全英文目錄。</li>
+</ol>
+<h2 id="軟體介面介紹">軟體介面介紹</h2>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/software-interface.png" alt="軟體啟動介面"></p>
+<ul>
+<li>啟動遊戲並以<strong>視窗模式執行</strong>；在選擇視窗區選擇遊戲視窗；互動方式選擇 <strong>PostMessage</strong>，然後點選<strong>開始</strong>。</li>
+<li><strong>匯出日誌</strong>可以匯出工具執行日誌。如果遇到 Bug，請將日誌匯出後在 QQ 交流群中 @群主。</li>
+<li>工具左下角<strong>設定</strong>內可以選擇 OCR 後端。預設選擇“自動”：記憶體大於等於 12 GB 時使用 OpenVINO，小於 12 GB 時使用 ONNX Runtime。OpenVINO 會佔用更多記憶體，約 6～8 GB；ONNX Runtime 記憶體佔用較小，約 1～2 GB，但 CPU 佔用更高。</li>
+</ul>
+<h2 id="功能介面介紹">功能介面介紹</h2>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/mode-interface.png" alt="功能介面"></p>
+<ul>
+<li>本工具包含三個功能：<strong>自動卡厄思模式</strong>（賽季卡厄思、零式系統、卡厄思具象）、<strong>自動出擊模式</strong>和<strong>半自動劇情模式</strong>。</li>
+<li>請分別進入對應模式的介面後再開啟功能。可以在包含“進入”按鈕的介面開啟，也可以進入對應模式後開啟。在遊戲主頁面開啟功能將無效並自動關閉按鈕，防止指令碼意外點選。</li>
+</ul>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/story-mode.png" alt="半自動劇情模式入口"></p>
+<ul>
+<li><strong>半自動劇情模式</strong>需要在上圖所示的介面開啟。遇到戰鬥關卡時，需要手動點選配隊人選，否則會卡在選人介面（不必關閉功能）；遇到卡厄思關卡時，需要手動開啟“自動卡厄思模式”。</li>
+</ul>
+<h2 id="遊戲設定">遊戲設定</h2>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/shortcut-display.png" alt="開啟快捷鍵顯示"></p>
+<ul>
+<li>PC 端出擊模式的自動戰鬥依賴按鍵識別。請按照上圖進入遊戲設定，將<strong>快捷鍵顯示</strong>設定為 ON，這會明顯提高出牌準確率和戰鬥勝率。</li>
+</ul>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/auto-dialogue.png" alt="開啟自動對話"></p>
+<ul>
+<li>進入遊戲後，在遊戲內右上角<strong>手動開啟自動對話</strong>。</li>
+</ul>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/mumu-key-mapping.png" alt="刪除 MuMu 模擬器手牌區數字對映"></p>
+<ul>
+<li>使用 MuMu 模擬器時，請<strong>手動刪除手牌區的數字對映</strong>，如上圖所示。</li>
+</ul>
+<h2 id="配置介紹">配置介紹</h2>
+<h3 id="卡厄思模式配置介紹">卡厄思模式配置介紹</h3>
+<p>!!! note &quot;國服與國際服配置說明&quot;</p>
+<pre><code>國服和國際服的翻譯不同，不同戰員的配置無法通用。國際服在修改對應國服配置時，無需將簡體改成繁體（簡繁均可）。例如，國服卡牌【劍雨】對應國際服卡牌【劍之雨】，填寫國際服配置時可以寫【劍之雨】或者【劍之雨】，但不能直接寫【劍雨】。
+</code></pre>
+<ul>
+<li><strong>配置操作</strong>：工具支援<strong>匯入配置碼</strong>、<strong>匯出配置碼</strong>、<strong>熱門配置</strong>、<strong>儲存配置</strong>和<strong>切換配置</strong>。熱門配置由使用本工具的使用者自動上傳。如果不願意上傳任何資訊，可以在工具設定內關閉上傳功能；關閉後將無法使用熱門配置功能。</li>
+<li><strong>遊戲語言</strong>：國服對應簡體中文，國際服對應繁體中文。</li>
+<li><strong>刷存檔主戰員</strong>：只能填寫一名主戰員。後續的裝備分配、卡牌複製、閃光、移除等功能預設優先該主戰員。卡厄思模式不支援自動選擇配隊，需要<strong>手動配隊</strong>，填寫的名字應為三名主戰員之一。</li>
+</ul>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/target-member-config.png" alt="刷存檔主戰員配置"></p>
+<ul>
+<li><strong>儲存資料儲存上限大於多少</strong>：對應下圖的資料價值層級；如果不滿足要求，會自動重新整理。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">賽季卡厄思</th>
+<th align="center">零式系統</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/save-data-level-chaos.png" alt="賽季卡厄思儲存資料價值"></td>
+<td align="center"><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/save-data-level-zero-system.png" alt="零式系統儲存資料價值"></td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>保留大於多少TB的存檔</strong>：低於該配置值的存檔會自動回收為金幣。</li>
+<li><strong>領取獎勵（只使用驗證卡）</strong>：如果想使用體力領取獎勵，需要手動將體力轉為驗證卡。驗證卡不足時，會自動關閉該功能，然後繼續刷卡厄思。</li>
+<li><strong>任務優先順序</strong>：對應下圖的選項卡內容。可以填寫標題和內容中的任意部分欄位，但所有欄位必須符合原文順序，標題和內容之間不要新增任何符號。填寫關鍵欄位即可；寫得太完整，反而可能因為 OCR 漏識別文字而匹配不上。</li>
+</ul>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/event-options.png" alt="事件任務選項"></p>
+<blockquote>
+<p>例如上圖，如果僅配置【移除】，那麼能匹配第一個和第三個選項。按照從左到右的優先順序，會優先選擇第一個選項。如果想優先選擇第三個選項，可以配置成【“移除2張”，“移除”】。</p>
+</blockquote>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/event-option-subsequence.png" alt="事件任務子序列匹配示例"></p>
+<blockquote>
+<p>再舉一個容易犯錯的例子：如上圖所示，如果配置【隨機獲得1張慾望卡牌】，那麼會優先匹配第一個選項，而不是第二個選項。因為【隨機獲得1張慾望卡牌】是【隨機獲得1張慾望：控制卡牌】這段文字的子序列，所以第一個選項也算“命中”。如果想命中第二個選項，應該填寫第一個選項中沒有的文字。這時可以考慮加入標題，配置成【裹挾慾望卡牌】。其中“裹挾”是標題，“慾望卡牌”是描述，能夠精準命中第二個選項。</p>
+</blockquote>
+<ul>
+<li><strong>拉黑任務</strong>：有些任務選項可能會無限重複，例如某些增加壓力的事件；拉黑的選項不會被選擇。</li>
+<li><strong>閃光優先順序</strong>：配置卡牌發生閃光時的選擇優先順序。對應出現如下介面時，決定優先選擇哪張卡牌。描述寫成“卡牌名 + 卡牌描述”，不需要填寫完整內容，只要欄位能正確區分卡牌即可。寫得太完整，反而可能因為 OCR 漏識別文字而匹配不上。建議不要填寫符號，例如【劍雨傷害次數增加】已經能精準匹配第三張閃光。<strong>注意</strong>：當前文字識別容易漏掉“一”字，遇到時儘量不要填寫，例如將“一縷光芒”寫成“縷光芒”。</li>
+</ul>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/flash-priority.png" alt="閃光優先順序示例"></p>
+<ul>
+<li><strong>移除卡牌列表</strong>：在牌庫中刪牌時的優先順序，建議填寫完整卡牌名。</li>
+<li><strong>閃光卡牌列表</strong>：在牌庫中選擇卡牌閃光時的優先順序，建議填寫完整卡牌名。</li>
+<li><strong>複製卡牌列表</strong>：在牌庫中選擇卡牌複製時的優先順序，建議填寫完整卡牌名。</li>
+<li><strong>需要冥想的卡牌</strong>：填寫需要通過冥想重新獲取閃光的卡牌，建議填寫完整卡牌名。當列表中的卡牌沒有獲得“閃光優先順序”指定的閃光時，工具會記錄該卡牌需要冥想，並在後續休息區嘗試選擇冥想。</li>
+<li><strong>多少信用點以上冥想</strong>：只有當前信用點同時大於該配置值和本次冥想費用時，才會選擇冥想。如果休息和冥想都可以選擇，當前生命值低於 50% 時優先休息，否則選擇冥想。</li>
+<li><strong>裝備1-3號位優先順序</strong>：按照優先順序列表替換裝備。未配置的傳說裝備無法替換配置中的普通裝備；配置中的普通裝備會替換未配置的傳說裝備；遇到未配置的裝備時，高品質裝備會替換低品質裝備。</li>
+<li><strong>卡牌獎勵優先順序</strong>：中立卡牌、慾望卡牌的優先順序，例如夢之邊境、裝備包等。未配置的中立卡牌會跳過選擇。</li>
+<li><strong>首層刷特定閃光</strong>：預設刷“閃光優先順序”中的第一張，可刷神閃；第一層沒有刷出時會自動逃脫並重新刷。例如想刷小丑“惡魔骰子”的減一費神閃，可以將“閃光優先順序”的第一個配置為【惡魔骰子此卡費用減少】。</li>
+<li><strong>刷空檔</strong>：用於給某個戰員刷空檔，參考配置見<a href="https://pd.qq.com/s/cnchz38cl">娜迦空檔配置</a>。開啟此功能時，請保證“刷初始卡牌”配置為空。</li>
+<li><strong>優先使用金幣治療</strong>：開啟後使用金幣治療崩潰角色；關閉後會優先使用旅行券治療。</li>
+<li><strong>治療崩潰</strong>：角色崩潰後是否前往創傷中心治療。</li>
+<li><strong>優先移除基礎牌</strong>：如果“移除卡牌列表”中的卡牌都刪完了，會優先刪除主戰員的基礎牌；否則會跳過刪牌。</li>
+<li><strong>進入商店</strong>：是否進入商店刪牌、購買商品。</li>
+<li><strong>指定面具卡牌</strong>：用於幻想劇場地圖中的面具卡牌選擇。填寫時不需要完整卡牌描述，只需填寫能區分不同卡牌的關鍵欄位。</li>
+<li><strong>面具卡牌刻印</strong>：選擇面具卡牌的刻印。填寫想刷的刻印的部分描述即可，目前僅支援刷一種刻印。</li>
+<li><strong>刷初始卡牌</strong>：配置卡牌名字後，會在進入卡厄思的第一個事件中反覆重新整理“傳說卡牌3選1”選項，直到刷到配置的卡牌，例如“夢之邊境”。</li>
+<li><strong>只打第一層</strong>：刷材料時可以開啟，提高刷卡厄思材料的效率。</li>
+<li><strong>路線優先順序</strong>：一般不需要修改。工具會根據配置順序選擇事件最多或休息最多的路線；如果主要刷材料，也可以自行調整，例如將精英節點提前。</li>
+<li><strong>幾輪後停止（0為不停止）</strong>：設定刷幾輪卡厄思。</li>
+<li><strong>第幾層boss前自動暫停</strong>：在 Boss 前自動暫停，一般用不到。</li>
+</ul>
+<h3 id="出擊模式配置介紹">出擊模式配置介紹</h3>
+<ul>
+<li><strong>配置操作</strong>：工具支援<strong>匯入配置碼</strong>、<strong>匯出配置碼</strong>、<strong>熱門配置</strong>、<strong>儲存配置</strong>和<strong>切換配置</strong>。熱門配置由使用本工具的使用者自動上傳。如果不願意上傳任何資訊，可以在工具設定內關閉上傳功能；關閉後將無法使用熱門配置功能。</li>
+<li><strong>遊戲語言</strong>：國服對應簡體中文，國際服對應繁體中文。</li>
+<li><strong>出戰主戰員優先順序</strong>：選擇由誰帶隊出擊。一般只填寫一名主戰員，但由於 OCR 可能不準確，也可以填寫多個名字。例如，“九”可能被識別成“力”，配置時可以填寫【“九”，“力”】。</li>
+<li><strong>戰員優先順序</strong>：隊友的優先順序，可以填寫多個；採用嚴格匹配，請填寫完整名字。</li>
+<li><strong>領取獎勵</strong>：開啟後會自動消耗腦子領取出擊獎勵；腦子消耗完後，會自動消耗體力領取獎勵；體力消耗完後，會自動關閉按鈕並繼續刷出擊模式。</li>
+<li><strong>出牌優先順序</strong>：自動戰鬥的出牌優先順序。</li>
+<li><strong>獲得卡牌優先順序</strong>：戰鬥後獲卡事件中的卡牌選擇優先順序。如果沒有命中配置中的卡牌，會跳過選擇。</li>
+<li><strong>移除卡牌列表</strong>：在牌庫中刪牌時的優先順序，建議填寫完整卡牌名。</li>
+<li><strong>閃光卡牌列表</strong>：在牌庫中選擇卡牌閃光時的優先順序，建議填寫完整卡牌名。</li>
+<li><strong>複製卡牌列表</strong>：在牌庫中選擇卡牌複製時的優先順序，建議填寫完整卡牌名。</li>
+<li><strong>裝備1-3號位優先順序</strong>：按照優先順序列表替換裝備。未配置的傳說裝備無法替換配置中的普通裝備；配置中的普通裝備會替換未配置的傳說裝備；遇到未配置的裝備時，高品質裝備會替換低品質裝備。</li>
+<li><strong>只打第一層</strong>：預設開啟，打完第一層 Boss、領取獎勵後自動逃脫。</li>
+<li><strong>進入商店</strong>：是否進入商店刪牌、購買商品。</li>
+<li><strong>優先移除基礎牌</strong>：如果“移除卡牌列表”中的卡牌都刪完了，會優先刪除主戰員的基礎牌；否則會跳過刪牌。</li>
+<li><strong>幾輪後停止（0為不停止）</strong>：設定刷幾輪出擊。</li>
+<li><strong>卡牌獎勵優先順序</strong>：遇到中立卡牌選擇事件時的優先順序；沒有命中則跳過。</li>
+<li><strong>丟棄卡牌優先順序</strong>：戰鬥中觸發棄牌事件時的優先順序，例如慢板等。</li>
+<li><strong>任務優先順序</strong>：事件選項優先順序。可以填寫標題和內容中的任意部分欄位，但所有欄位必須符合原文順序，標題和內容之間不要新增符號。填寫關鍵欄位即可；寫得太完整，反而可能因為 OCR 漏識別文字而匹配不上。</li>
+<li><strong>拉黑任務</strong>：出擊模式對勝率要求較高，一般會拉黑“咒術卡牌”“壓力增加”等選項。</li>
+<li><strong>拉黑主戰員</strong>：需要拉黑的隊友。由於適配問題，可能存在部分戰員的卡牌功能未適配，或者部分隊友失敗率較高，可以選擇拉黑。</li>
+<li><strong>生命值大於多少優先閃光（百分比）</strong>：休息區可以選擇閃光或休息，工具會根據血量百分比調整選擇。</li>
+<li><strong>路線優先順序</strong>：一般不需要修改，工具會自動規劃最優路線。</li>
+<li><strong>第幾層boss前自動暫停</strong>：一般用不到。可以在 Boss 前暫停並手動接管，以提高 Boss 戰勝率。</li>
+</ul>
+<h2 id="工具社群">工具社群</h2>
+<p>本工具的官方社群為 <a href="https://pd.qq.com/s/eopggnxcu">QQ 頻道</a>，也可以通過頻道號 <code>pd66522118</code> 搜尋，或者使用 QQ 掃描下方二維碼。QQ 頻道會發布工具更新訊息，使用者也可以分享卡厄思模式和出擊模式配置。</p>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/qq-channel-qr-code.png" alt="QQ頻道二維碼"></p>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/qq-channel.png" alt="QQ頻道"></p>
+<h3 id="匯入社群配置碼">匯入社群配置碼</h3>
+<p>例如下圖中的帖子：展開帖子並複製完整配置碼，點選對應模式的“匯入配置碼”。彈出的對話方塊會自動填充最近複製到剪貼簿的內容，點選 OK 即可匯入對應配置。</p>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/config-post.png" alt="社群配置帖子"></p>
+<p><img src="../../../../assets/sources/ok-kes/docs/images/usage-guide/config-code.png" alt="複製完整配置碼"></p>
+<p>頻道鼓勵使用者釋出自己的配置、討論遊戲日常，並向工具提出建議。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/baoxin1100/ok-kes/blob/82089f2a3496104304d94fcfcad4750678153291/docs/zh-CN/usage-guide.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#下載安裝" style="margin-left:0px">下載安裝</a><a href="#軟體介面介紹" style="margin-left:0px">軟體介面介紹</a><a href="#功能介面介紹" style="margin-left:0px">功能介面介紹</a><a href="#遊戲設定" style="margin-left:0px">遊戲設定</a><a href="#配置介紹" style="margin-left:0px">配置介紹</a><a href="#卡厄思模式配置介紹" style="margin-left:10px">卡厄思模式配置介紹</a><a href="#出擊模式配置介紹" style="margin-left:10px">出擊模式配置介紹</a><a href="#工具社群" style="margin-left:0px">工具社群</a><a href="#匯入社群配置碼" style="margin-left:10px">匯入社群配置碼</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/baoxin1100/ok-kes"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>
