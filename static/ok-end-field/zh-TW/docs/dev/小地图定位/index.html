@@ -1,0 +1,785 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>小地圖定位 · 开发与维护 · ok-end-field · 繁體中文</title><meta name="description" content="返回：文件索引 / API 參考 / 開發指南 / 網格導航 本文只說明即時定位鏈路。路徑規劃、路線跟隨和遊戲輸 — ok-end-field 繁體中文文件"><meta name="keywords" content="ok-end-field, okendfield, GitHub, AliceJump/ok-end-field, AliceJump, 終末地, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/小地图定位/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="小地圖定位 · 开发与维护 · ok-end-field · 繁體中文"><meta property="og:description" content="返回：文件索引 / API 參考 / 開發指南 / 網格導航 本文只說明即時定位鏈路。路徑規劃、路線跟隨和遊戲輸 — ok-end-field 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/小地图定位/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="小地圖定位 · 开发与维护 · ok-end-field · 繁體中文"><meta name="twitter:description" content="返回：文件索引 / API 參考 / 開發指南 / 網格導航 本文只說明即時定位鏈路。路徑規劃、路線跟隨和遊戲輸 — ok-end-field 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta name="twitter:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"小地圖定位 · 开发与维护 · ok-end-field · 繁體中文","description":"返回：文件索引 / API 參考 / 開發指南 / 網格導航 本文只說明即時定位鏈路。路徑規劃、路線跟隨和遊戲輸 — ok-end-field 繁體中文文件","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/小地图定位/","inLanguage":"zh-TW","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261104031949">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../配置导出与导入/">配置匯出與匯入</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../guide-submodule-contrib/">模板貢獻指南</a><a href="../API/">API 參考</a><a href="../运行时状态总线/">執行時狀態匯流排</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../OCR使用分类/">OCR 使用分類</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="./" class="active" aria-current="page">小地圖定位</a><a href="../网格导航/">網格導航</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务汇总报告机制/">任務彙總報告機制</a><a href="../自动拾取任务/">自動拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="小地圖定位">小地圖定位</h1>
+<p>返回：<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/zh-CN/README.md">文件索引</a> / <a href="../API/">API 參考</a> / <a href="../DEVELOPMENT/">開發指南</a> /
+<a href="../网格导航/">網格導航</a></p>
+<p>本文只說明即時定位鏈路。路徑規劃、路線跟隨和遊戲輸入見<a href="../网格导航/">網格導航</a>。</p>
+<h2 id="1-職責邊界">1. 職責邊界</h2>
+<p>定位由應用級 <code>WorldPoseService</code> 維護；服務在首次被消費者讀取時懶建立，
+不會註冊成常駐 TriggerTask：</p>
+<ul>
+<li>接收官方地圖 WS 或本地 WS 的絕對座標；</li>
+<li>從小地圖紋理估計高頻相對位移；</li>
+<li>在靜止時用 WS 座標重錨；</li>
+<li>同時產出水平座標、高度、朝向、可信狀態和診斷欄位；</li>
+<li>通過 <code>RuntimeStateHub</code> 釋出 <code>world.pose</code>。</li>
+</ul>
+<p>物品導航、網格導航、滑索和其他任務只讀取 <code>world.pose</code>，不直接啟動 WS、里程計或融合器。</p>
+<h2 id="2-模組">2. 模組</h2>
+<table>
+<thead>
+<tr>
+<th>模組</th>
+<th>職責</th>
+<th>不負責</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/localization/position_service.py</code></td>
+<td>應用級定位服務；維護位置源併發布狀態</td>
+<td>路徑規劃、遊戲輸入</td>
+</tr>
+<tr>
+<td><code>src/localization/minimap_position_mixin.py</code></td>
+<td>編排里程計、融合、位置源和可信狀態</td>
+<td>A* 與動作執行</td>
+</tr>
+<tr>
+<td><code>src/localization/minimap_odometry.py</code></td>
+<td>從小地圖紋理估計相對位移</td>
+<td>WS 校準、絕對座標</td>
+</tr>
+<tr>
+<td><code>src/localization/minimap_position_fusion.py</code></td>
+<td>用靜止 WS 座標重錨並融合位移</td>
+<td>網格通行判斷</td>
+</tr>
+<tr>
+<td><code>src/localization/ws_position_mixin.py</code></td>
+<td>官方地圖 WS、本地 WS 和認證協議</td>
+<td>路徑與業務判斷</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/runtime_state_mixin.py</code></td>
+<td>向業務任務提供統一座標讀取介面</td>
+<td>定位演算法</td>
+</tr>
+<tr>
+<td><code>src/runtime_state/</code></td>
+<td>儲存 latest-value 狀態快照與主題契約</td>
+<td>取樣和融合</td>
+</tr>
+</tbody></table>
+<h2 id="3-資料流">3. 資料流</h2>
+<pre><code class="language-mermaid">flowchart TD
+    W[官方地图 WS / 本地 WS] --&gt; FUS[绝对坐标]
+    F[游戏帧] --&gt; O[小地图里程计]
+    O --&gt; FUS
+    FUS --&gt;|静止时重锚| FUS
+    FUS --&gt; PUB[WorldPoseService 发布]
+    PUB --&gt; HUB[RuntimeStateHub: world.pose]
+    HUB --&gt; ITEM[物品导航]
+    HUB --&gt; NAV[网格导航]
+    HUB --&gt; ZIP[滑索状态判断]
+</code></pre>
+<p>ok-script 執行器是單執行緒協作排程，定位服務不是 TriggerTask，也不會在後臺固定頻率取幀。
+消費者通過 <code>RuntimeStateMixin.world_pose(frame=...)</code> 請求 <code>WorldPoseService</code> 按需取樣一幀並
+釋出快照；沒有消費者時不會做 0.2 秒一輪的小地圖視覺取樣。</p>
+<h2 id="4-座標系">4. 座標系</h2>
+<h3 id="4-1-世界系">4.1 世界系</h3>
+<ul>
+<li>水平位置統一為 <code>(x, z)</code>，單位為米；</li>
+<li>朝向使用羅盤方位角：正北 <code>0°</code>、正東 <code>90°</code>、正南 <code>180°</code>、正西 <code>270°</code>；</li>
+<li>世界 <code>+x</code> 為東，世界 <code>+z</code> 為北。</li>
+</ul>
+<h3 id="4-2-地圖系">4.2 地圖系</h3>
+<ul>
+<li>影像座標使用 OpenCV 約定：<code>x</code> 向右、<code>y</code> 向下；</li>
+<li>小地圖紋理移動方向與玩家移動方向相反；</li>
+<li>相位相關得到內容位移 <code>(dx, dy)</code> 後，玩家地圖系位移為 <code>(-dx, -dy)</code>；</li>
+<li>軸對映負責把地圖系畫素轉換為世界米：</li>
+</ul>
+<pre><code class="language-text">world_delta = map_to_world_px @ map_delta_px
+</code></pre>
+<h2 id="5-位置源">5. 位置源</h2>
+<h3 id="5-1-官方地圖-ws">5.1 官方地圖 WS</h3>
+<p>全域性 <code>Nav Config</code> 的「真值content」或「真值地圖賬號」提供登入憑證。客戶端執行：</p>
+<pre><code class="language-text">content -&gt; HG OAuth -&gt; 地图 cred/token -&gt; 角色绑定 -&gt; WebSocket token
+        -&gt; wss://ws.skland.com/ws/v1/game/endfield/map
+</code></pre>
+<p>位置訊息來源於 <code>type=1012</code>，解析 <code>mapId</code> 和 <code>pos.x/y/z</code>。</p>
+<h3 id="5-2-本地-ws">5.2 本地 WS</h3>
+<p>沒有官方真值時，定位服務監聽 <code>ws://127.0.0.1:3001</code>。油猴指令碼攔截官方地圖頁的
+WebSocket，並把原始 JSON 轉發給本地埠。該模式也需要保持網頁地圖和位置同步開啟。</p>
+<h3 id="5-3-抓包直通-實驗技術">5.3 抓包直通（實驗技術）</h3>
+<p>另一條路完全繞開上面兩條：遊戲主 TCP 連線裡週期性上報主控角色的世界座標，
+一個<strong>獨立的外部程式</strong>被動抓包並離線解密後，通過本地 HTTP 暴露<strong>同一個世界座標系</strong>的座標
+——與官方地圖 WS 逐位一致，並且額外自帶真實高度、朝向與速度。</p>
+<pre><code class="language-text">endfield-capture-backend.exe serve --no-dashboard --no-map-ws --port 8765
+        ▲                                    │
+        └──── GET /api/state（轮询）──────────┘
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>模組</th>
+<th>職責</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/localization/capture_position_source.py</code></td>
+<td>只讀後端，翻成定位契約。<strong>不含</strong>任何抓包/解密程式碼，因此應用側不需要新增依賴</td>
+</tr>
+<tr>
+<td><code>src/localization/capture_backend_installer.py</code></td>
+<td>從 GitHub Release <strong>下載</strong> exe 並檢查更新；校驗 sha256、原子落盤、失敗不阻斷</td>
+</tr>
+<tr>
+<td><code>src/localization/capture_backend_launcher.py</code></td>
+<td>按需拉起後端 exe，並做探活、冷卻重試與整棵程序樹的收尾</td>
+</tr>
+<tr>
+<td><code>src/patches/capture_backend_autostart_patch.py</code></td>
+<td>在<strong>遊戲啟動之前</strong>觸發上面那個拉起器</td>
+</tr>
+</tbody></table>
+<h4 id="後端程式的獲取與更新">後端程式的獲取與更新</h4>
+<p>exe 不再需要使用者手工放置：開啟「使用實驗技術」後由本應用從
+<code>luqing233/endfield-capture-backend</code> 的 Release 下載，並在有新版時<strong>靜默更新</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>時機</th>
+<th>做什麼</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>勾上風險開關（確認後）</td>
+<td><strong>後臺</strong>預下載，不阻塞介面。那時使用者還沒啟動遊戲，正好用這段時間</td>
+</tr>
+<tr>
+<td>點「啟動遊戲」前</td>
+<td><strong>阻塞</strong>補齊（缺了就下載/更新）。寧可啟動多等十幾秒，也不能讓遊戲先連上</td>
+</tr>
+<tr>
+<td>點「檢查並更新後端」</td>
+<td>手動觸發一次，忽略節流</td>
+</tr>
+</tbody></table>
+<p>安裝位置是 <code>&lt;应用目录&gt;/downloads/capture_backend/</code>。<strong>不能放 <code>configs/</code></strong>：那裡的東西會被配置
+匯出整個打包，而匯入側對單個成員硬性限制 16 MB（<code>config_transfer_patch._MAX_IMPORT_MEMBER_BYTES</code>），
+18 MB 的 exe 一旦進去，匯出的配置包就再也導不回來。<code>downloads/</code> 已被 <code>.gitignore</code> 覆蓋。</p>
+<p>取版本有兩條路，主用 GitHub REST API（額外給出官方 sha256 摘要，可校驗完整性）；實測<strong>未認證</strong>
+訪問會按 IP 限流（撞到過 403），所以拿不到就退回不加 API 的 <code>/releases/latest</code> 302 重定向拿 tag
+——這條路不消耗配額，代價是沒有官方摘要，只校驗檔案大小並告警一次。</p>
+<p>下載<strong>下到哪兒都不會阻斷遊戲</strong>：拿不到新版就用手上這個舊的，一個都沒有就報「後端不可用」。
+下載先落到 <code>.download</code> 暫存檔案，校驗通過才 <code>os.replace</code> 成正式 exe——不存在&quot;半截 exe 被拉起&quot;
+的視窗。</p>
+<p>指定了「實驗技術後端程式路徑」或環境變數 <code>EF_CAPTURE_BACKEND</code> 時<strong>完全跳過聯網</strong>：使用者自帶後端
+就不該再去下載。同理「自動啟動後端」關掉時也不下載。</p>
+<h4 id="執行產物的保留策略">執行產物的保留策略</h4>
+<p>後端每局建一個 <code>runs/&lt;YYYYMMDD-HHMMSS&gt;/</code>，裡面是 <code>capture.pcap</code> + <code>positions.jsonl</code>
+（+ <code>service.json</code>），<strong>一局約 20 MB</strong>，不設上限能攢到幾個 GB。</p>
+<p>我們拉起<strong>自己下載的那份</strong>時顯式傳 <code>--runs-dir</code> 指到 <code>&lt;托管目录&gt;/runs</code>，並在每次拉起<strong>探活成功
+之後</strong>按「只留最近 5 局」清理一次。順序很關鍵：後端是先建目錄、再起 HTTP 服務的，所以埠應答
+時新目錄必然已存在——放在 <code>_launch</code> 之後立刻清會早於它建目錄，穩態會留成 6 份而不是 5 份。</p>
+<p>清理<strong>只動名字像時間戳的目錄</strong>（`^\d{8}-\d{6}# 小地圖定位</p>
+<p>返回：<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/zh-CN/README.md">文件索引</a> / <a href="../API/">API 參考</a> / <a href="../DEVELOPMENT/">開發指南</a> /
+<a href="../网格导航/">網格導航</a></p>
+<p>本文只說明即時定位鏈路。路徑規劃、路線跟隨和遊戲輸入見<a href="../网格导航/">網格導航</a>。</p>
+<h2 id="1-職責邊界-2">1. 職責邊界</h2>
+<p>定位由應用級 <code>WorldPoseService</code> 維護；服務在首次被消費者讀取時懶建立，
+不會註冊成常駐 TriggerTask：</p>
+<ul>
+<li>接收官方地圖 WS 或本地 WS 的絕對座標；</li>
+<li>從小地圖紋理估計高頻相對位移；</li>
+<li>在靜止時用 WS 座標重錨；</li>
+<li>同時產出水平座標、高度、朝向、可信狀態和診斷欄位；</li>
+<li>通過 <code>RuntimeStateHub</code> 釋出 <code>world.pose</code>。</li>
+</ul>
+<p>物品導航、網格導航、滑索和其他任務只讀取 <code>world.pose</code>，不直接啟動 WS、里程計或融合器。</p>
+<h2 id="2-模組-2">2. 模組</h2>
+<table>
+<thead>
+<tr>
+<th>模組</th>
+<th>職責</th>
+<th>不負責</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/localization/position_service.py</code></td>
+<td>應用級定位服務；維護位置源併發布狀態</td>
+<td>路徑規劃、遊戲輸入</td>
+</tr>
+<tr>
+<td><code>src/localization/minimap_position_mixin.py</code></td>
+<td>編排里程計、融合、位置源和可信狀態</td>
+<td>A* 與動作執行</td>
+</tr>
+<tr>
+<td><code>src/localization/minimap_odometry.py</code></td>
+<td>從小地圖紋理估計相對位移</td>
+<td>WS 校準、絕對座標</td>
+</tr>
+<tr>
+<td><code>src/localization/minimap_position_fusion.py</code></td>
+<td>用靜止 WS 座標重錨並融合位移</td>
+<td>網格通行判斷</td>
+</tr>
+<tr>
+<td><code>src/localization/ws_position_mixin.py</code></td>
+<td>官方地圖 WS、本地 WS 和認證協議</td>
+<td>路徑與業務判斷</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/runtime_state_mixin.py</code></td>
+<td>向業務任務提供統一座標讀取介面</td>
+<td>定位演算法</td>
+</tr>
+<tr>
+<td><code>src/runtime_state/</code></td>
+<td>儲存 latest-value 狀態快照與主題契約</td>
+<td>取樣和融合</td>
+</tr>
+</tbody></table>
+<h2 id="3-資料流-2">3. 資料流</h2>
+<pre><code class="language-mermaid">flowchart TD
+    W[官方地图 WS / 本地 WS] --&gt; FUS[绝对坐标]
+    F[游戏帧] --&gt; O[小地图里程计]
+    O --&gt; FUS
+    FUS --&gt;|静止时重锚| FUS
+    FUS --&gt; PUB[WorldPoseService 发布]
+    PUB --&gt; HUB[RuntimeStateHub: world.pose]
+    HUB --&gt; ITEM[物品导航]
+    HUB --&gt; NAV[网格导航]
+    HUB --&gt; ZIP[滑索状态判断]
+</code></pre>
+<p>ok-script 執行器是單執行緒協作排程，定位服務不是 TriggerTask，也不會在後臺固定頻率取幀。
+消費者通過 <code>RuntimeStateMixin.world_pose(frame=...)</code> 請求 <code>WorldPoseService</code> 按需取樣一幀並
+釋出快照；沒有消費者時不會做 0.2 秒一輪的小地圖視覺取樣。</p>
+<h2 id="4-座標系-2">4. 座標系</h2>
+<h3 id="4-1-世界系-2">4.1 世界系</h3>
+<ul>
+<li>水平位置統一為 <code>(x, z)</code>，單位為米；</li>
+<li>朝向使用羅盤方位角：正北 <code>0°</code>、正東 <code>90°</code>、正南 <code>180°</code>、正西 <code>270°</code>；</li>
+<li>世界 <code>+x</code> 為東，世界 <code>+z</code> 為北。</li>
+</ul>
+<h3 id="4-2-地圖系-2">4.2 地圖系</h3>
+<ul>
+<li>影像座標使用 OpenCV 約定：<code>x</code> 向右、<code>y</code> 向下；</li>
+<li>小地圖紋理移動方向與玩家移動方向相反；</li>
+<li>相位相關得到內容位移 <code>(dx, dy)</code> 後，玩家地圖系位移為 <code>(-dx, -dy)</code>；</li>
+<li>軸對映負責把地圖系畫素轉換為世界米：</li>
+</ul>
+<pre><code class="language-text">world_delta = map_to_world_px @ map_delta_px
+</code></pre>
+<h2 id="5-位置源-2">5. 位置源</h2>
+<h3 id="5-1-官方地圖-ws-2">5.1 官方地圖 WS</h3>
+<p>全域性 <code>Nav Config</code> 的「真值content」或「真值地圖賬號」提供登入憑證。客戶端執行：</p>
+<pre><code class="language-text">content -&gt; HG OAuth -&gt; 地图 cred/token -&gt; 角色绑定 -&gt; WebSocket token
+        -&gt; wss://ws.skland.com/ws/v1/game/endfield/map
+</code></pre>
+<p>位置訊息來源於 <code>type=1012</code>，解析 <code>mapId</code> 和 <code>pos.x/y/z</code>。</p>
+<h3 id="5-2-本地-ws-2">5.2 本地 WS</h3>
+<p>沒有官方真值時，定位服務監聽 <code>ws://127.0.0.1:3001</code>。油猴指令碼攔截官方地圖頁的
+WebSocket，並把原始 JSON 轉發給本地埠。該模式也需要保持網頁地圖和位置同步開啟。</p>
+<h3 id="5-3-抓包直通-實驗技術-2">5.3 抓包直通（實驗技術）</h3>
+<p>另一條路完全繞開上面兩條：遊戲主 TCP 連線裡週期性上報主控角色的世界座標，
+一個<strong>獨立的外部程式</strong>被動抓包並離線解密後，通過本地 HTTP 暴露<strong>同一個世界座標系</strong>的座標
+——與官方地圖 WS 逐位一致，並且額外自帶真實高度、朝向與速度。</p>
+<pre><code class="language-text">endfield-capture-backend.exe serve --no-dashboard --no-map-ws --port 8765
+        ▲                                    │
+        └──── GET /api/state（轮询）──────────┘
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>模組</th>
+<th>職責</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/localization/capture_position_source.py</code></td>
+<td>只讀後端，翻成定位契約。<strong>不含</strong>任何抓包/解密程式碼，因此應用側不需要新增依賴</td>
+</tr>
+<tr>
+<td><code>src/localization/capture_backend_installer.py</code></td>
+<td>從 GitHub Release <strong>下載</strong> exe 並檢查更新；校驗 sha256、原子落盤、失敗不阻斷</td>
+</tr>
+<tr>
+<td><code>src/localization/capture_backend_launcher.py</code></td>
+<td>按需拉起後端 exe，並做探活、冷卻重試與整棵程序樹的收尾</td>
+</tr>
+<tr>
+<td><code>src/patches/capture_backend_autostart_patch.py</code></td>
+<td>在<strong>遊戲啟動之前</strong>觸發上面那個拉起器</td>
+</tr>
+</tbody></table>
+<h4 id="後端程式的獲取與更新-2">後端程式的獲取與更新</h4>
+<p>exe 不再需要使用者手工放置：開啟「使用實驗技術」後由本應用從
+<code>luqing233/endfield-capture-backend</code> 的 Release 下載，並在有新版時<strong>靜默更新</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>時機</th>
+<th>做什麼</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>勾上風險開關（確認後）</td>
+<td><strong>後臺</strong>預下載，不阻塞介面。那時使用者還沒啟動遊戲，正好用這段時間</td>
+</tr>
+<tr>
+<td>點「啟動遊戲」前</td>
+<td><strong>阻塞</strong>補齊（缺了就下載/更新）。寧可啟動多等十幾秒，也不能讓遊戲先連上</td>
+</tr>
+<tr>
+<td>點「檢查並更新後端」</td>
+<td>手動觸發一次，忽略節流</td>
+</tr>
+</tbody></table>
+<p>安裝位置是 <code>&lt;应用目录&gt;/downloads/capture_backend/</code>。<strong>不能放 <code>configs/</code></strong>：那裡的東西會被配置
+匯出整個打包，而匯入側對單個成員硬性限制 16 MB（<code>config_transfer_patch._MAX_IMPORT_MEMBER_BYTES</code>），
+18 MB 的 exe 一旦進去，匯出的配置包就再也導不回來。<code>downloads/</code> 已被 <code>.gitignore</code> 覆蓋。</p>
+<p>取版本有兩條路，主用 GitHub REST API（額外給出官方 sha256 摘要，可校驗完整性）；實測<strong>未認證</strong>
+訪問會按 IP 限流（撞到過 403），所以拿不到就退回不加 API 的 <code>/releases/latest</code> 302 重定向拿 tag
+——這條路不消耗配額，代價是沒有官方摘要，只校驗檔案大小並告警一次。</p>
+<p>下載<strong>下到哪兒都不會阻斷遊戲</strong>：拿不到新版就用手上這個舊的，一個都沒有就報「後端不可用」。
+下載先落到 <code>.download</code> 暫存檔案，校驗通過才 <code>os.replace</code> 成正式 exe——不存在&quot;半截 exe 被拉起&quot;
+的視窗。</p>
+<p>指定了「實驗技術後端程式路徑」或環境變數 <code>EF_CAPTURE_BACKEND</code> 時<strong>完全跳過聯網</strong>：使用者自帶後端
+就不該再去下載。同理「自動啟動後端」關掉時也不下載。</p>
+<h4 id="執行產物的保留策略-2">執行產物的保留策略</h4>
+<p>後端每局建一個 <code>runs/&lt;YYYYMMDD-HHMMSS&gt;/</code>，裡面是 <code>capture.pcap</code> + <code>positions.jsonl</code>
+（+ <code>service.json</code>），<strong>一局約 20 MB</strong>，不設上限能攢到幾個 GB。</p>
+<p>我們拉起<strong>自己下載的那份</strong>時顯式傳 <code>--runs-dir</code> 指到 <code>&lt;托管目录&gt;/runs</code>，並在每次拉起<strong>探活成功
+之後</strong>按「只留最近 5 局」清理一次。順序很關鍵：後端是先建目錄、再起 HTTP 服務的，所以埠應答
+時新目錄必然已存在——放在 <code>_launch</code> 之後立刻清會早於它建目錄，穩態會留成 6 份而不是 5 份。</p>
+<p>清理<strong>只動名字像時間戳的目錄</strong>（）。認不出的一律不碰：這個函式會刪東西，寧可漏刪
+也不能誤刪使用者放在那兒的東西。時間戳定寬，所以字典序就是時間序。</p>
+<p>使用者<strong>自帶</strong>的後端不加 <code>--runs-dir</code>——那會把它自己的產物挪到我們的目錄裡，屬越界。</p>
+<p><strong>順序是成敗關鍵</strong>：後端必須<strong>早於遊戲的主連線</strong>就緒，否則拿不到登入握手，後端會明確報
+「缺少連線起點」而不是解出錯資料。</p>
+<p>拉起的時機不能放在普通任務裡——任務要等遊戲視窗能截圖才會被執行（<code>can_capture()</code>），
+那時登入握手早就過去了。所以補丁包裝了 <code>StartController.do_start</code>，那是遊戲程序存在之前的
+最後時機；<code>WorldPoseService</code> 的按需取樣會再兜底一次（後端中途掛了、或玩家在遊戲已經跑起來
+之後才打開開關）。</p>
+<p>直通模式下整條校準體系都不參與（座標本來就是絕對值，沒有錨點可設、沒有漂移可修），
+所以只要座標可用 <code>sync_needed</code> 就恆為假——否則導航的 <code>CALIBRATE</code> 狀態會停下來等一個永遠
+不會到來的靜止校準。</p>
+<h4 id="會話邊界-座標是綁在一條-tcp-連線上的">會話邊界：座標是綁在一條 TCP 連線上的</h4>
+<p>「絕對」不等於「當前」。座標由<strong>某一條</strong> TCP 連線解出，而那條連線會隨離開遊戲、換賬號、
+重啟遊戲而結束。後端把最後一條座標一直留著（它的 <code>state.last</code> 沒有清空點），於是：</p>
+<blockquote>
+<p>舊會話結束之後、新會話報出第一條座標之前，<code>/api/state</code> 給的仍是<strong>上一局</strong>的座標。</p>
+</blockquote>
+<p>那可能是另一張地圖、乃至另一個賬號的位置。多賬號日常任務正好撞在這條路上：
+<code>BaseEfTask.iter_multi_account_context</code> 對每個賬號先調 <code>login_flow</code>，緊接著就跑送貨等導航任務。
+<strong>切號的實際動作是離開遊戲再重新進入</strong>（<code>login_flow</code> 走 UI：退出到登入介面 → 選賬號 → 進入），
+而重新進入會建立新的 TCP 連線，所以每一輪切號都自帶一次&quot;舊連線結束 + 新連線就緒&quot;的交替。</p>
+<p>這條對實現是有利的：<strong>切號不會複用連線</strong>，因此後端側那個&quot;同四元組複用會讓 flow 永久失效&quot;
+的隱患在真實切號路徑上不會出現（見下文反面情形）。但它同時說明空窗期是<strong>真實存在且必然發生</strong>
+的——遊戲退到登入介面、選賬號、再進入，這段時間裡 <code>lastPosition</code> 一直是上一個賬號的座標。</p>
+<p>所以直通模式的信任是<strong>兩條一起判</strong>，任一不成立就不給導航用（<code>_capture_trust</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>判據</th>
+<th><code>trust_reason</code></th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>產出這條座標的連線已不再喂資料</td>
+<td><code>capture_session_ended</code></td>
+<td>連線的 <code>flows[].status</code> 是終態（<code>连接已结束</code> / <code>解码停止：…</code>），或它在 <code>flows</code> 裡已查不到，或這條連線已 30 秒沒收到任何報文（兜住終態沒被捕捉到的情形）</td>
+</tr>
+<tr>
+<td>認不出地圖</td>
+<td><code>capture_no_parent_map</code> / <code>capture_unknown_map</code></td>
+<td>見 5.3 下方「不猜」一節</td>
+</tr>
+</tbody></table>
+<p>兩條都<strong>只扣信任、不清空座標</strong>：<code>x</code>/<code>z</code> 照給，讓導航停在 <code>WAIT_TRUST</code> 時能把真正的原因
+打出來，而不是含糊地報「未錨定」。網路側資訊不足時（老版本後端不報 <code>flows</code>）一律<strong>當活著的
+處理</strong>——缺資訊不等於會話已死，沒有證據就不扣信任。</p>
+<p>導航等待態的文案會帶上 pose 裡的 <code>trust_reason</code> / <code>odom_reason</code>（形如
+<code>等待坐标: capture_unavailable</code>），所以一眼能分清是「融合鏈還沒錨定」還是「抓包源沒資料」——
+這兩種情況該查的東西完全不同。</p>
+<p><strong>抓包模式不啟動小地圖定位鏈</strong>：<code>start_minimap_position()</code> 在本模式下直接返回，
+<code>minimap_position_ready</code> 也恆為真。兩處短路缺一不可——導航入口
+（<code>navigate_grid_to</code> → <code>ensure_runtime_position_service</code>）會<strong>無條件</strong>調前者、緊接著檢查後者，
+而抓包根本不需要比例尺/里程計/融合/地圖 WS。不短路的話有兩重代價：拿不到比例尺時導航會
+<strong>立刻失敗</strong>並報一條指向全域性「導航配置」和遊戲視窗的錯（該查的其實是抓包後端）；拿得到時也會
+白建兩個物件並啟動地圖 WS——正是本模式宣告要繞開的那一整套。</p>
+<p><code>sync_seq</code> 在抓包源上的含義是&quot;<strong>座標基準變了</strong>&quot;，不是&quot;座標變了&quot;：換連線時它<strong>一定</strong>推進
+（連線的 id 參與判定），所以&quot;登出後在原地重新登入&quot;這種座標逐位相同的重登也會讓導航失效
+已走過的已知格；而<strong>同一連線內怎麼移動都不推進</strong>。後者是必須的——導航把 <code>sync_seq</code> 變化當
+&quot;真重錨 → 世界座標整體平移&quot;，抓包源移動時每拍座標都在變，若按&quot;取樣變了&quot;推進，移動本身就會
+每拍清空導航的&quot;走過的已知格&quot;，偏航回退（網格導航文件 §7.5）會退化成&quot;沒有已知格可返回&quot;。</p>
+<p><strong>三類終態由兩條判據分別接住</strong>，缺一不可——後端的 <code>snapshot</code> 會把狀態<strong>計算覆蓋</strong>成
+<code>等待 TCP 补包</code>（<code>any(gaps) and not flow.failed</code> 時頂替真實狀態），而收到 FIN 的連線並不是
+<code>failed</code>，所以<strong>連線結束時若還有沒補齊的 TCP 空洞，它的終態就被遮住了</strong>：</p>
+<ul>
+<li><code>解码停止：…</code> 只可能出現在 <code>failed</code> 時 → 覆蓋不生效 → 狀態判據接住（立即）；</li>
+<li><code>连接已结束</code> 被空洞覆蓋遮住時 → 此時 <code>lastPacket</code> 已停止更新 → 30 秒靜默判據接住。</li>
+</ul>
+<p>30 秒是個刻意偏松的值：誤判為「還活著」只是讓陳舊視窗變長，誤判為「已死」卻會把一條正常
+連線的導航停掉；而活著的遊戲連線不會這麼久完全靜默（移動中約 0.27 秒一條，靜止時仍有其他
+物件的報文）。代價是登出後最長 30 秒的陳舊視窗——但比改動前的「永久信任」已經是嚴格改善。</p>
+<p>後端側還有幾條邊界值得記著（核實的是 <code>endfield-capture-backend</code> 的 <code>decoder.py</code> / <code>server.py</code>）：</p>
+<ul>
+<li><strong>只抓 30000 / 40000 兩個埠</strong>。重登若換到別的埠，後端看不見那條連線，&quot;自動接管新連線&quot;
+也就不成立；</li>
+<li><code>flows[]</code> 只回<strong>最近 12 條</strong>，更早的連線查不到——這也是&quot;查不到即判死&quot;的依據；</li>
+<li><strong><code>--seed-pcap</code> 不是重登入的解法</strong>：它只能把<em>同一條仍在使用的連線</em>的金鑰流接上（所以
+&quot;上次 <code>runs/</code> 裡的 <code>capture.pcap</code>&quot;可用）。遊戲重啟換了連線後，重放出來的是另一條已經死掉的
+連線，反而會解出一批陳舊座標；</li>
+<li>契約<strong>沒有任何版本欄位</strong>，也沒有 reset / 重連 / 健康檢查端點（<code>/api/state</code> 200 即探活，
+應用側 <code>probe_backend</code> 用的就是它）；</li>
+<li>每次輪詢都會<strong>全量返回</strong> <code>trajectory</code>（最多 1200 點，且跨連線混在一起）。應用側不消費它，
+但會在 0.2 秒的輪詢週期裡反覆傳輸與解析——真嫌這個開銷，就換成後端的命名管道
+（<code>serve --pipe --no-http</code>，事件驅動、不佔埠，欄位與 <code>lastPosition</code> 完全一致），
+應用側目前還沒接。</li>
+</ul>
+<h4 id="會話交替是自愈的-離開遊戲再進入會新建一條-tcp-連線">會話交替是自愈的：離開遊戲再進入會新建一條 TCP 連線</h4>
+<p><strong>離開遊戲再重新進入（含多賬號切號）走新 TCP 連線</strong>。所以整條恢復路徑是順的，不需要任何額外處理：</p>
+<pre><code>离开游戏  → 旧连接收 FIN → 旧 flow 终态 → 应用扣掉信任（WAIT_TRUST），导航停车
+重新进入  → 新连接 SYN → 后端按四元组新建 flow → 抓到新握手 → 报出新坐标
+          → 新 flow 活着且地图认得出 → 信任恢复，导航接着走
+</code></pre>
+<p>關鍵在於<strong>後端不需要重啟</strong>：它按 TCP 四元組歸檔連線，新連線自然是一條新 flow，
+只要後端還在抓包，新一輪握手就會被捕獲。這也是&quot;預設不在停止定位時關閉後端&quot;更有力的理由
+——後端的客戶端材料（DLL 私鑰、公鑰模數）是程序級的，會話 key/nonce 才是每連線現解的，
+所以它可以跨掉線一直用下去。同理，應用側<strong>不需要</strong>在切號時做任何特殊處理（也不必去拉一次
+後端）：<code>do_start</code> 若被再次呼叫，補丁只會探到後端已在跑並直接採用。</p>
+<p>中間那段空窗期就是上面那條 <code>capture_session_ended</code> 生效的視窗：舊 flow 已經結束、新 flow
+還沒報出座標，此時 <code>lastPosition</code> 仍是上一局的。視窗長度就是離開遊戲到重新進入的耗時。</p>
+<blockquote>
+<p>反面情形（後端側尚未處理的邊界，實際不會碰到）：若遊戲<strong>複用</strong>同一條四元組發起新會話，
+後端的 <code>Reassembler.feed</code> 只在基線為空時才接受 SYN，新明文握手會被當成加密幀、整條 flow
+永久失效（重開遊戲才能恢復，重啟後端也沒用）。這種情況由 30 秒靜默判據接住。
+<strong>真實的切號與重登都走新連線，所以這條不構成風險</strong>——但如果是用 <code>kill_game</code> 那種
+<code>TerminateProcess</code> 強殺遊戲（危險狀態守衛、任務完成後勾選的「僅退出遊戲」走的就是它），
+對端來不及發 FIN，舊 flow 會一直停在「正在解碼」、<code>lastPacket</code> 也停更，這時<strong>只剩 30 秒
+靜默判據</strong>在兜底，視窗內舊座標仍會被當成可信。</p>
+</blockquote>
+<h4 id="絕不要在遊戲執行期間重啟後端">絕不要在遊戲執行期間重啟後端</h4>
+<p>比上面那條更硬的一條約束：<strong>會話金鑰由服務端在登入響應裡下發，每個賬號、每次登入都不同</strong>
+（後端用客戶端內嵌的 RSA 私鑰從登入響應裡解出 32 位元組 key + 12 位元組 nonce）。所以
+&quot;重新登入&quot;在協議上就是一次<strong>全新的握手</strong>，金鑰只在那一刻出現過一次。</p>
+<p>推論：<strong>重啟後端不能解決任何解碼問題，只會製造問題</strong>——它把一個本來會被自動接管的局面
+（新連線新握手）變成必須重開遊戲才能恢復（新後端看到的是一條沒有 SYN 的連線，只會報
+<code>缺少连接起点</code>）。同理，「停止定位時關閉後端」開啟後如果應用在遊戲還開著時退出，下一次
+開啟應用時後端雖然會被重新拉起，但<strong>當次登入已經救不回來了</strong>，只能重開遊戲。</p>
+<p>應用側對這條約束的複查（結論：滿足）：</p>
+<ul>
+<li><code>stop_capture_backend()</code> 的生產呼叫點是 <code>WorldPoseService.on_destroy()</code>；</li>
+<li>服務銷燬由包裝後的 <code>TaskExecutor.destroy()</code> 觸發，而它來自<strong>執行器迴圈結束或
+<code>MainWindow.closeEvent</code></strong>，即<strong>應用退出</strong>，不會因為任務停用/重新載入/切號而觸發；</li>
+<li>真正殺程序還要 <code>实验技术停止定位时关闭后端</code> 為真，<strong>預設為假</strong>——所以預設連應用退出都不會
+動後端（這也正是它預設為假的原因）；</li>
+<li>反之，<code>ensure_capture_backend()</code> 每拍都會走一遍，但它<strong>只會拉起、從不重啟</strong>已在跑的後端
+（<code>BackendLauncher.running</code> 擋住重複啟動，健康期 5 秒內連探活都省掉）。</li>
+</ul>
+<p>唯一殘留的坑是<strong>人為</strong>的：若使用者打開了「停止定位時關閉後端」，又在遊戲還開著時退出應用，
+就必須重開遊戲才能恢復定位。這條已寫在那個配置項的說明裡。</p>
+<h4 id="校驗抓包是否真的接上了-沒接上就重建連線">校驗抓包是否真的接上了，沒接上就重建連線</h4>
+<p>座標缺失有好幾種成因，<strong>混在一起就沒法決定該做什麼</strong>——所以 <code>CapturePositionSource.health()</code>
+把連線狀態單獨分類出來（<code>CaptureHealth</code>），只看連線、不看座標：</p>
+<table>
+<thead>
+<tr>
+<th>狀態</th>
+<th>含義</th>
+<th>該做什麼</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ok</code> / <code>decoding</code></td>
+<td>有座標 / 握手已成、座標在路上</td>
+<td>正常</td>
+</tr>
+<tr>
+<td><code>no_connection</code></td>
+<td>後端在跑，但一條遊戲連線都沒看到</td>
+<td><strong>重建連線</strong></td>
+</tr>
+<tr>
+<td><code>handshake_pending</code></td>
+<td>連線已發現，握手還沒完成</td>
+<td>等</td>
+</tr>
+<tr>
+<td><code>backend_down</code></td>
+<td>後端不可達</td>
+<td>查後端本身</td>
+</tr>
+<tr>
+<td><code>missed_handshake</code></td>
+<td><strong>抓包晚於該連線建立</strong></td>
+<td><strong>重建連線</strong></td>
+</tr>
+</tbody></table>
+<p>判定口徑是&quot;<strong>後端在跑、但當前沒有座標且不會自己恢復</strong>&quot;：<code>no_connection</code>（這一局的位置源已經
+沒了）與 <code>missed_handshake</code>（後端沒看到 SYN，推不出金鑰流）都屬於這一類，換一條連線讓它從頭抓
+握手就行。<code>handshake_pending</code>（握手正在進行）再等一會就好，<code>backend_down</code>（後端根本沒起來）
+重建也沒用——對它們動手只會白白打斷玩家。<code>连接已结束</code>（人家正常結束）與 <code>解码停止</code>（這條流真
+出問題了）也不值得重建。</p>
+<p><strong>「一條死連線 + 一條活連線」必須判成正常</strong>：後端把歷史連線一直留著，拿舊的死連線判斷會讓
+每一次正常抓包都被誤判成需要重建。</p>
+<p>重建動作是<strong>回登入介面再進入</strong>（<code>force_new_capture_connection</code>），<strong>不切換賬號</strong>——使用者口徑是
+&quot;這個流程不需要重新選擇賬號&quot;，所以不走會點「最近」、重選賬號的 <code>login_flow</code>。實際動作委託給
+<code>LoginMixin.relogin_same_account</code>：回到主介面 → 點 <code>main_out</code> 登出入口 → 通用確認 → 回到登入
+介面（這時能匹配到 <code>fL.logout</code>，遊戲顯示&quot;點選任意位置繼續&quot;）→ 點一下螢幕中央繼續進入。拿不到
+可用的重進實現、或沒回到登入介面，都<strong>乾淨失敗</strong>並提示手動進入一次，絕不亂點。</p>
+<blockquote>
+<p>登入介面的「最近 / 登入」按鈕仍只能走 <code>click_text</code>（<code>login_ocr</code> → <code>login_screenshot</code>，<strong>從螢幕
+截視窗</strong>；普通幀通道在那種介面上取不到有效畫面）——那條路是 <code>login_flow</code> 切號用的，本重進流程
+不用它。為此 <code>WorldPoseService</code> 混入了 <code>LoginMixin</code>（它沒有 <code>__init__</code>/<code>default_config</code>，
+不會帶進「多賬戶模式」那套配置），重進直接用它現成的 <code>relogin_same_account</code>。</p>
+</blockquote>
+<p>兩次重建之間至少隔 <code>CAPTURE_RELOGIN_INTERVAL_SECONDS</code>（20 秒）。<code>ensure_capture_session</code> 在
+&quot;沒座標&quot;時每拍都會被調，沒有這個間隔三次嘗試會在一分鐘內打光——實測兩次只隔了 14 秒，而每次
+都要把玩家從遊戲裡踢回登入介面。</p>
+<p>三個時機都會校驗（<code>ensure_capture_session</code>）：<strong>啟用後第一拍</strong>、<strong>每次導航前</strong>、<strong>每次切號後</strong>。
+最後一條值得說明：切號本身會重建連線、後端會自動接管（登入金鑰隨之重抓），<strong>不需要為它做特殊
+處理</strong>——但&quot;應該會發生&quot;和&quot;確實發生了&quot;是兩回事，所以還是要校驗。</p>
+<p>最多嘗試 <strong>3 次</strong>，<strong>成功即清零</strong>（重登後能正常抓包，下次再出問題理應還能修）；用盡就停手並
+報錯——無人值守時反覆登出比不修更糟。可用「抓包失敗時自動重新登入」關掉。</p>
+<blockquote>
+<p><strong>首次使用建議盯一眼</strong>：重建動作依賴遊戲介面的特徵模板（登出入口 <code>main_out</code>、登入介面的
+<code>fL.logout</code>）。版本不符時匹配不到，這一步會乾淨失敗並提示&quot;請手動退回登入介面再進入一次&quot;，
+而不會亂點。這種情況把它關掉、手動退一次即可。</p>
+</blockquote>
+<p><code>map_id</code> 參與導航的換圖判定，而導航側算的是
+<code>str(pose.get(&quot;map_id&quot;) or session.request.map_id or &quot;&quot;)</code>——<strong>會靜默回退到呼叫方請求的地圖</strong>。
+所以「認不出地圖」必須在定位源裡就扣掉信任，不能只靠導航自己判斷：實測場景 463 是<strong>自帶獨立
+座標空間的可走區域</strong>（那 11 秒裡角色以 5.0 的速度正常行走，座標在 <code>(16, 107, -41)</code> 附近，
+而 map02 的 y≈320、相距約 1400 個世界單位），拿它當 map02 會在錯的網格上、從錯的起點規劃
+路線。這條與 <code>_resolve_map_id</code> 的「不猜」是同一條原則，只是貫徹到了 pose 的信任位上。</p>
+<p>上報是<strong>事件驅動</strong>的：移動中約每 0.27 秒一條，<strong>完全靜止時沒有位置包</strong>，同圖傳送會有數秒到
+數十秒的空檔。<code>CaptureSample.age_seconds</code>（後端 Unix 牆鍾減去當前牆鍾）因此<strong>只顯示不攔截</strong>
+——靜止時年齡大是正常的。它不進信任判定，它的用處是出現「座標跳變」或「導航拿著舊位置走」時
+一眼看出資料來源當時到底有沒有在更新。後端跑在本機、需要 Npcap 驅動與客戶端檔案，屬於使用者自行
+選擇開啟的功能（開關帶風險確認，見 <code>src/patches/danger_switch_patch.py</code>）。</p>
+<h2 id="6-融合策略">6. 融合策略</h2>
+<p>WS 座標絕對但有延遲，小地圖裡程計高頻但會漂移。融合規則是：</p>
+<pre><code class="language-text">静止时：P0 = WS(x, z)，并清零里程计
+移动时：P = P0 + map_to_world @ odometry_delta
+再次静止：用新的 WS 坐标重新校准
+</code></pre>
+<p>靜止判定要求：</p>
+<ul>
+<li>小地圖裡程計低速；</li>
+<li>已經收到至少兩次 WS 樣本時，WS 相鄰樣本的位移也必須足夠小。</li>
+</ul>
+<p>移動途中收到的 WS 樣本不會暫存，也不會在以後補用，否則會把已推進的位置拉回。</p>
+<h3 id="6-1-關鍵幀視覺錨定鏈校正-導航位置修正">6.1 關鍵幀視覺錨定鏈校正（導航位置修正）</h3>
+<p>靜止重錨只能把漂移限制在兩個靜止點之間；移動距離越長，累計錯位越大。即時鏈路額外維護
+一個關鍵幀視覺錨定鏈校正器，只輸出位置，不落盤、不截圖、不繪圖：</p>
+<ul>
+<li>每拍把當前小地圖圓環加入區域性滑動視窗；</li>
+<li>新切片和最近若干拍建立相位相關相對平移邊；</li>
+<li>靜止校準的 WS 座標作為高權重絕對錨點，並向後續關鍵幀傳播；</li>
+<li>關鍵幀之間繼續建立視覺重疊邊，使 WS 絕對基準沿 <code>A -&gt; B -&gt; C -&gt; ...</code> 傳遞；</li>
+<li>用 Huber IRLS + PCG 求解區域性視窗和關鍵幀錨定鏈，把最新位置釋出為 <code>world.pose.x/z</code>。</li>
+</ul>
+<p>原始融合座標保留在 <code>raw_x/raw_z</code>，關鍵幀視覺錨定鏈校正量、邊數、錨點數、殘差和原因記錄在
+<code>visual_anchor_chain_*</code> 欄位。校正失敗或超過安全上限時回退原始融合值。</p>
+<p>離線的 <code>MinimapPositionRecorder</code> 和 <code>stitch_records()</code> 只用於事後診斷與參考圖，
+不進入導航即時鏈路。</p>
+<h2 id="7-配置">7. 配置</h2>
+<p>定位的標定與真值引數集中在全域性 <code>Nav Config</code>：</p>
+<ul>
+<li><code>真值content</code> / <code>真值地图账号</code>：絕對座標來源；</li>
+<li><code>比例尺常数(米)</code>：非標準檔位的兜底比例尺；</li>
+<li><code>1K/2K/4K比例尺(米/像素)</code>：對應 <code>1920/2560/3840</code> 寬；</li>
+<li><code>1K/2K/4K轴映射(逗号4值)</code>：地圖系畫素到世界米的矩陣；</li>
+</ul>
+<p>執行時引數儲存在全域性 <code>Position Config</code>：</p>
+<ul>
+<li><code>WS等待稳定秒数</code> / <code>WS稳定最小位置数</code>；</li>
+<li><code>航点校准最小距离(米)</code>；</li>
+<li><code>位移提交阈值(像素)</code>。</li>
+<li><code>关键帧视觉锚定链校正</code>：是否啟用即時位置修正；</li>
+<li><code>关键帧视觉锚定链校正窗口(拍)</code> / <code>关键帧视觉锚定链校正边间隔(拍)</code> /
+<code>关键帧视觉锚定链校正最小响应</code>；</li>
+<li><code>关键帧视觉锚定链校正锚点权重</code> / <code>关键帧视觉锚定链校正修正上限(米)</code>；</li>
+<li><code>关键帧视觉锚定链校正关键帧间隔(拍)</code> / <code>关键帧视觉锚定链校正关键帧边数</code> /
+<code>关键帧视觉锚定链校正关键帧最小响应</code> / <code>关键帧视觉锚定链校正关键帧锚点权重</code>。</li>
+</ul>
+<p>實驗技術（抓包直通，見 5.3）另有一組，預設關閉；開啟風險開關後才出現：</p>
+<ul>
+<li><code>使用实验技术</code>：總開關，帶風險確認；</li>
+<li><code>实验技术后端端口</code>：預設 <code>8765</code>，探活與拉起都用它；</li>
+<li><code>实验技术后端程序路径</code>：留空則自動探測（<strong>託管下載目錄</strong>、同級
+<code>endfield-capture-backend/dist/</code>、環境變數 <code>EF_CAPTURE_BACKEND</code>、<code>PATH</code> 等）。填了就完全
+不聯網——使用者自帶後端；</li>
+<li><code>实验技术自动启动后端</code>：預設開；</li>
+<li><code>实验技术停止定位时关闭后端</code>：<strong>預設關</strong>。後端狀態綁在當前這一局連線上，關掉再拉起等於
+丟了登入握手，必須重啟遊戲才能恢復；</li>
+<li><code>检查并更新后端</code>：按鈕，立刻查一次更新（見 5.3「後端程式的獲取與更新」）。</li>
+</ul>
+<p>解析度、比例尺或軸對映變化時，定位器會重建。真值來源變化時，絕對錨點會清空並等待重新校準。</p>
+<h2 id="8-world-pose-契約">8. <code>world.pose</code> 契約</h2>
+<p>主要欄位：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>含義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x</code> / <code>y</code> / <code>z</code></td>
+<td>世界座標；<code>y</code> 為最新 WS 高度</td>
+</tr>
+<tr>
+<td><code>heading</code> / <code>heading_score</code></td>
+<td>羅盤方位角和置信度</td>
+</tr>
+<tr>
+<td><code>map_id</code></td>
+<td>當前地圖</td>
+</tr>
+<tr>
+<td><code>position_trusted</code> / <code>trust_reason</code></td>
+<td>絕對座標是否可信</td>
+</tr>
+<tr>
+<td><code>anchor_set</code> / <code>rest</code></td>
+<td>是否已錨定、當前是否靜止</td>
+</tr>
+<tr>
+<td><code>odom_ok</code> / <code>odom_reason</code></td>
+<td>是否有有效位移樣本</td>
+</tr>
+<tr>
+<td><code>sync_seq</code> / <code>sync_checked</code> / <code>sync_needed</code></td>
+<td>座標基準序號（融合源上即靜止校準序號）與校準狀態</td>
+</tr>
+<tr>
+<td><code>sync_supported</code></td>
+<td>這個資料來源上「靜止校準」這個概念是否成立。預設 <code>True</code>；抓包直通這類絕對座標源給 <code>False</code>，導航據此不斷言要等校準。<strong>刻意做成契約欄位</strong>，好讓導航依賴 pose 的介面而不是某個定位實現的名字（見 §5.3）</td>
+</tr>
+<tr>
+<td><code>sync_residual</code></td>
+<td>校準前原始融合誤差，以及上一拍關鍵幀視覺錨定鏈校正輸出誤差</td>
+</tr>
+<tr>
+<td><code>ws</code> / <code>ws_xyz</code></td>
+<td>最新 WS 水平座標和完整座標</td>
+</tr>
+<tr>
+<td><code>sample_t</code> / <code>source</code></td>
+<td>取樣時間和資料來源</td>
+</tr>
+<tr>
+<td><code>raw_x</code> / <code>raw_z</code></td>
+<td>關鍵幀視覺錨定鏈校正前的原始融合座標</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_x</code> / <code>visual_anchor_chain_z</code></td>
+<td>校正後的座標（僅有效時）</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_correction_px</code> / <code>visual_anchor_chain_correction_m</code></td>
+<td>本拍校正量</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_nodes</code> / <code>visual_anchor_chain_edges</code> / <code>visual_anchor_chain_anchors</code></td>
+<td>區域性視窗節點、邊和 WS 錨點數</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_min_response</code> / <code>visual_anchor_chain_median_response</code></td>
+<td>新邊的相關響應（最小值 / 中位數）</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_residual_median</code> / <code>visual_anchor_chain_residual_max</code></td>
+<td>校正後的邊殘差</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_reason</code></td>
+<td>區域性校正結果（<code>ok</code> / <code>no_edges</code> / <code>correction_too_large</code> 等）</td>
+</tr>
+<tr>
+<td><code>visual_anchor_chain_keyframe_reason</code></td>
+<td>關鍵幀視覺錨定鏈校正的關鍵幀更新結果</td>
+</tr>
+</tbody></table>
+<p>消費者必須檢查 <code>position_trusted</code>。快照超過 <code>max_age</code> 後返回 <code>None</code>，不能繼續拿舊座標執行動作。</p>
+<h2 id="9-除錯與測試">9. 除錯與測試</h2>
+<p>定位相關除錯任務位於 <code>src/tasks/localization/</code>：</p>
+<ul>
+<li><code>MinimapRealtimePosition</code>：逐拍檢視融合座標、朝向、速度、WS 和里程計位移；</li>
+<li><code>MinimapPositionRecorder</code>：逐拍落盤融合狀態、原始里程計位移、校準殘差和小地圖切片，
+結束後生成 <code>fused</code> / <code>odom</code> 兩種畫素對齊拼接圖；</li>
+<li><code>MinimapRegionCheck</code>：檢查當前解析度下的小地圖環帶區域；</li>
+<li><code>MinimapScaleCapture</code>：採集靜止截圖與 WS 座標，用於比例尺標定；</li>
+<li><code>MinimapTurnToHeading</code>：驗證朝向讀取和轉向閉環。</li>
+</ul>
+<p>取樣記錄的產物在 <code>logs/minimap_position_recorder/&lt;时间戳&gt;/</code>：<code>samples.jsonl</code> 是逐拍
+資料，<code>calibrations.jsonl</code> 是每次靜止校準的殘差，<code>patches/</code> 是 BGRA 圓環切片，
+<code>stitch_*_fused*.png</code> / <code>stitch_*_odom*.png</code> 分別是按融合座標和連續里程計軌跡拼接的
+參考圖。需要換拼接引數時用：</p>
+<pre><code class="language-powershell">uv run --locked python scripts/data-capture/stitch_minimap_recorder.py `
+  logs/minimap_position_recorder/&lt;时间戳&gt;
+</code></pre>
+<p>常用測試：</p>
+<pre><code class="language-powershell">uv run --locked python -m unittest tests.TestMinimapOdometry tests.TestMinimapPositionFusion tests.TestMinimapPositionMixin -v
+uv run --locked python -m unittest tests.TestRuntimeStateHub tests.TestRuntimeStateMixin -v
+uv run --locked python -m unittest tests.TestCapturePositionSource tests.TestCaptureBackendLauncher tests.TestCaptureBackendInstaller -v
+</code></pre>
+<p>定位異常排查順序：</p>
+<ol>
+<li><code>world.pose</code> 是否存在且未過期；</li>
+<li><code>anchor_set</code> 和 <code>position_trusted</code> 是否為真；</li>
+<li><code>odom_reason</code> 是否長期不是 <code>ok</code> 或 <code>shift_too_small</code>；</li>
+<li>靜止校準後的 <code>error</code> 是否接近零；</li>
+<li>比例尺、軸對映和 <code>map_id</code> 是否匹配當前解析度與地圖。</li>
+</ol>
+<p>開了實驗技術時改看這幾條：</p>
+<ol>
+<li><code>trust_reason</code> 是不是 <code>capture_unavailable</code>——是就說明後端沒資料，先看後端本身；</li>
+<li>後端日誌 <code>logs/capture_backend/backend-&lt;端口&gt;.log</code>：缺 Npcap 驅動、客戶端目錄不對、
+「缺少連線起點」（抓包晚於登入握手，需重開遊戲或用後端的 <code>--seed-pcap</code>）都會寫在那裡；</li>
+<li>exe 沒下下來：看日誌裡那句「拿不到抓包後端的釋出資訊」（網路不通或 GitHub 介面被限流）
+或「下載抓包後端 vX 失敗」。裝到哪兒了、裝的是哪個版本看
+<code>downloads/capture_backend/installed.json</code>；點「檢查並更新後端」可立刻重試；</li>
+<li><code>capture_age</code> 是不是一直很大——上報是事件驅動的，靜止時沒有新包屬正常，<strong>不攔截</strong>；</li>
+<li><code>trust_reason</code> 是 <code>capture_session_ended</code>——座標還在，但它來自已經結束的一條連線
+（離開遊戲、換賬號、重啟遊戲）。等新連線報出第一條座標即可自愈；一直不變就說明新連線沒解出來，
+回去看第 2 條；</li>
+<li><code>capture_flow</code> 是不是變了——切號會換一格，這是判斷「換了一局」最直接的現場資訊；</li>
+<li><code>capture_map_id_source</code> 是 <code>no_parent_map</code> 或 <code>capture_unknown_map</code>——該場景沒有可用的導航
+網格，導航會明確停車（前者是<strong>正確結果</strong>：試煉場這類場景本就不屬於任何大地圖，不是故障）。</li>
+</ol>
+<p>日誌裡那句「還沒有解出角色座標」會<strong>自動分成兩種</strong>，因為它們的處理方式正好相反：</p>
+<ul>
+<li>一般情形 → 提示確認後端早於本局連線啟動；</li>
+<li><code>flows[]</code> 裡有一條停在「缺少連線起點」→ 直接提示<strong>重開遊戲</strong>，並說明<strong>重啟後端沒有用</strong>
+（它看到的仍是一條沒有 SYN 的連線）。這條的典型成因就是後端被重啟過——而後端<strong>絕不該在
+遊戲執行期間被重啟</strong>，見上文。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/dev/小地图定位.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月4日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-職責邊界" style="margin-left:0px">1. 職責邊界</a><a href="#2-模組" style="margin-left:0px">2. 模組</a><a href="#3-資料流" style="margin-left:0px">3. 資料流</a><a href="#4-座標系" style="margin-left:0px">4. 座標系</a><a href="#4-1-世界系" style="margin-left:10px">4.1 世界系</a><a href="#4-2-地圖系" style="margin-left:10px">4.2 地圖系</a><a href="#5-位置源" style="margin-left:0px">5. 位置源</a><a href="#5-1-官方地圖-ws" style="margin-left:10px">5.1 官方地圖 WS</a><a href="#5-2-本地-ws" style="margin-left:10px">5.2 本地 WS</a><a href="#5-3-抓包直通-實驗技術" style="margin-left:10px">5.3 抓包直通（實驗技術）</a><a href="#1-職責邊界-2" style="margin-left:0px">1. 職責邊界</a><a href="#2-模組-2" style="margin-left:0px">2. 模組</a><a href="#3-資料流-2" style="margin-left:0px">3. 資料流</a><a href="#4-座標系-2" style="margin-left:0px">4. 座標系</a><a href="#4-1-世界系-2" style="margin-left:10px">4.1 世界系</a><a href="#4-2-地圖系-2" style="margin-left:10px">4.2 地圖系</a><a href="#5-位置源-2" style="margin-left:0px">5. 位置源</a><a href="#5-1-官方地圖-ws-2" style="margin-left:10px">5.1 官方地圖 WS</a><a href="#5-2-本地-ws-2" style="margin-left:10px">5.2 本地 WS</a><a href="#5-3-抓包直通-實驗技術-2" style="margin-left:10px">5.3 抓包直通（實驗技術）</a><a href="#6-融合策略" style="margin-left:0px">6. 融合策略</a><a href="#6-1-關鍵幀視覺錨定鏈校正-導航位置修正" style="margin-left:10px">6.1 關鍵幀視覺錨定鏈校正（導航位置修正）</a><a href="#7-配置" style="margin-left:0px">7. 配置</a><a href="#8-world-pose-契約" style="margin-left:0px">8. world.pose 契約</a><a href="#9-除錯與測試" style="margin-left:0px">9. 除錯與測試</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261104031949" defer></script></body></html>

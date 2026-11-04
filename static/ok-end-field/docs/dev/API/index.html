@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/dev/API/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="API 参考 · 开发与维护 · ok-end-field · 简体中文"><meta property="og:description" content="返回：文档索引 / README 本文只记录 ok-end-field 自己定义并由任务复用的接口 。 ocr — ok-end-field 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/dev/API/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 终末地 · 后台自动化 · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="API 参考 · 开发与维护 · ok-end-field · 简体中文"><meta name="twitter:description" content="返回：文档索引 / README 本文只记录 ok-end-field 自己定义并由任务复用的接口 。 ocr — ok-end-field 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-cn.png"><meta name="twitter:image:alt" content="ok-end-field — 终末地 · 后台自动化 · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"API 参考 · 开发与维护 · ok-end-field · 简体中文","description":"返回：文档索引 / README 本文只记录 ok-end-field 自己定义并由任务复用的接口 。 ocr — ok-end-field 简体中文文档","url":"https://ok-script.com/ok-end-field/docs/dev/API/","inLanguage":"zh-CN","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"API 参考 · 开发与维护 · ok-end-field · 简体中文","description":"返回：文档索引 / README 本文只记录 ok-end-field 自己定义并由任务复用的接口 。 ocr — ok-end-field 简体中文文档","url":"https://ok-script.com/ok-end-field/docs/dev/API/","inLanguage":"zh-CN","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -27,15 +27,18 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">文档首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题</a><a href="../../features/overview/">功能概览</a><a href="../../日常任务/">日常任务</a><a href="../../体力本/">刷体力</a><a href="../../自动战斗/">自动战斗</a><a href="../../排轴/">排轴</a><a href="../../运送委托接取/">运送委托接取</a><a href="../../自动送货/">自动送货</a><a href="../../仓库物品转移/">仓库物品转移</a><a href="../../物品导航与实时检测/">物品导航与实时检测</a><a href="../../账号配置用户指南/">账号配置</a><a href="../../配置导出与导入/">配置导出与导入</a><a href="../../Windows 计划任务/">Windows 计划任务</a><a href="../../鼠标转向标定汇总/">鼠标转向标定</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../guide-submodule-contrib/">模板贡献指南</a><a href="./" class="active" aria-current="page">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../OCR使用分类/">OCR 使用分类</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务汇总报告机制/">任务汇总报告机制</a><a href="../自动拾取任务/">自动拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="ok-ef-api-参考">ok-ef API 参考</h1>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">文档首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题</a><a href="../../features/overview/">功能概览</a><a href="../../日常任务/">日常任务</a><a href="../../体力本/">刷体力</a><a href="../../自动战斗/">自动战斗</a><a href="../../排轴/">排轴</a><a href="../../运送委托接取/">运送委托接取</a><a href="../../自动送货/">自动送货</a><a href="../../仓库物品转移/">仓库物品转移</a><a href="../../物品导航与实时检测/">物品导航与实时检测</a><a href="../../账号配置用户指南/">账号配置</a><a href="../../配置导出与导入/">配置导出与导入</a><a href="../../Windows 计划任务/">Windows 计划任务</a><a href="../../鼠标转向标定汇总/">鼠标转向标定</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../guide-submodule-contrib/">模板贡献指南</a><a href="./" class="active" aria-current="page">API 参考</a><a href="../运行时状态总线/">运行时状态总线</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../OCR使用分类/">OCR 使用分类</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../小地图定位/">小地图定位</a><a href="../网格导航/">网格导航</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务汇总报告机制/">任务汇总报告机制</a><a href="../自动拾取任务/">自动拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="ok-ef-api-参考">ok-ef API 参考</h1>
 <p>返回：<a href="../../">文档索引</a> / <a href="https://github.com/AliceJump/ok-end-field/blob/master/README.md">README</a></p>
 <p>本文只记录 <strong>ok-end-field 自己定义并由任务复用的接口</strong>。<code>ocr</code>、<code>wait_ocr</code>、<code>wait_feature</code>、<code>wait_until</code>、<code>back</code>、<code>sleep</code>、<code>send_key</code> 等框架接口来自 <code>ok-script</code>，其完整参数和返回类型应以当前安装版本为准，不在此复制。</p>
 <p>源码权威位置：</p>
 <ul>
-<li>基类组合：<a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/core/BaseEfTask.py">BaseEfTask.py</a></li>
-<li>核心能力：<a href="https://github.com/AliceJump/ok-end-field/tree/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/core/base_mixin">src/core/base_mixin/</a></li>
-<li>业务能力：<a href="https://github.com/AliceJump/ok-end-field/tree/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/tasks/mixin">src/tasks/mixin/</a></li>
-<li>配置：<a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/core/global_config_store.py">global_config_store.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/core/BattleConfig.py">BattleConfig.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/interaction/KeyConfig.py">KeyConfig.py</a></li>
+<li>基类组合：<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/core/BaseEfTask.py">BaseEfTask.py</a></li>
+<li>核心能力：<a href="https://github.com/AliceJump/ok-end-field/tree/ab759bb012dbee155224e4330c6a18342c79cc0f/src/core/base_mixin">src/core/base_mixin/</a></li>
+<li>通用业务能力：<a href="https://github.com/AliceJump/ok-end-field/tree/ab759bb012dbee155224e4330c6a18342c79cc0f/src/tasks/mixin">src/tasks/mixin/</a></li>
+<li>导航领域能力：<a href="https://github.com/AliceJump/ok-end-field/tree/ab759bb012dbee155224e4330c6a18342c79cc0f/src/tasks/navigation">src/tasks/navigation/</a></li>
+<li>运行时状态：<a href="https://github.com/AliceJump/ok-end-field/tree/ab759bb012dbee155224e4330c6a18342c79cc0f/src/runtime_state">src/runtime_state/</a></li>
+<li>导航：<a href="https://github.com/AliceJump/ok-end-field/tree/ab759bb012dbee155224e4330c6a18342c79cc0f/src/nav">src/nav/</a></li>
+<li>配置：<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/core/global_config_store.py">global_config_store.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/core/NavConfig.py">NavConfig.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/core/BattleConfig.py">BattleConfig.py</a>、<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/interaction/KeyConfig.py">KeyConfig.py</a></li>
 </ul>
 <h2 id="1-baseeftask-与-mro">1. BaseEfTask 与 MRO</h2>
 <pre><code class="language-python">from src.core.BaseEfTask import BaseEfTask
@@ -52,6 +55,7 @@
 <p>任务层 Mixin 通常最终继承 <code>BaseEfTask</code>：</p>
 <pre><code class="language-text">BattleMixin ────────────────&gt; BaseEfTask
 MapMixin ───────────────────&gt; BaseEfTask
+RuntimeStateMixin ──────────&gt; 协作 Mixin
 NavigationMixin ────────────&gt; BaseEfTask
 ├── LiaisonMixin
 └── ZipLineMixin
@@ -111,7 +115,18 @@ def box_of_screen_scaled(
 button = self.box_of_screen_scaled(1920, 1080, 1600, 900, 1800, 1020)
 </code></pre>
 <p><code>ScreenPosition</code> 当前提供：<code>top_left</code>、<code>top_right</code>、<code>bottom_left</code>、<code>bottom_right</code>、<code>bottom_right_quarter</code>、<code>left</code>、<code>right</code>、<code>top</code>、<code>bottom</code>、<code>center</code>，以及 <code>nav_b/nav_c/nav_esc/nav_panel</code>、<code>interact_pick_f</code>、<code>combat_skill_1..4</code>、<code>combat_ult_1..4</code>、<code>combat_default_link_skill</code>、<code>combat_skill_bar</code>、<code>combat_ult_bar</code>。</p>
-<h3 id="1-2-特征匹配">1.2 特征匹配</h3>
+<h3 id="1-2-运行时状态">1.2 运行时状态</h3>
+<p>业务任务通过 <code>RuntimeStateMixin</code> 读取跨任务实时状态，不要直接消费 WS 队列或直接
+调用定位所有者的内部采样方法。</p>
+<pre><code class="language-text">def world_pose(*, frame=None, max_age=1.0, refresh=True, now=None) -&gt; dict | None
+def wait_world_pose(predicate=None, *, frame=None, max_age=1.0, timeout=10.0, tick=0.1)
+def runtime_state(topic, *, max_age=None, now=None) -&gt; dict | None
+def publish_runtime_state(topic, value, *, source=&quot;&quot;, ttl=None, now=None)
+</code></pre>
+<p><code>world_pose()</code> 会通过控制面请求应用级 <code>WorldPoseService</code> 采样一帧并发布
+<code>RuntimeTopic.WORLD_POSE</code>。返回 <code>None</code> 表示没有快照或快照已超过 <code>max_age</code>。
+完整主题和扩展规则见<a href="../运行时状态总线/">运行时状态总线</a>。</p>
+<h3 id="1-3-特征匹配">1.3 特征匹配</h3>
 <p>定义于 <code>src/core/base_mixin/runtime_mixin.py</code>。</p>
 <pre><code class="language-text">def find_feature(
     self, feature_name=None, horizontal_variance=0, vertical_variance=0,
@@ -181,7 +196,7 @@ if confirm:
 )
 </code></pre>
 <p>命中后点击框内相对位置，成功返回 <code>True</code>，未命中且不抛异常时返回 <code>False</code>。<code>alt=True</code> 走 <code>click_with_alt</code>。</p>
-<h3 id="1-3-ocr-与登录截图">1.3 OCR 与登录截图</h3>
+<h3 id="1-4-ocr-与登录截图">1.4 OCR 与登录截图</h3>
 <p>普通 <code>ocr</code>、<code>wait_ocr</code> 来自 <code>ok-script</code>。项目覆盖了点击等待和登录截图入口：</p>
 <pre><code class="language-text">def wait_click_ocr(
     self, x=0, y=0, to_x=1, to_y=1, width=0, height=0,
@@ -202,7 +217,7 @@ def login_ocr(
 )
 </code></pre>
 <p>这些入口使用 Win32 屏幕捕获绕过登录界面无法由常规 WGC 帧可靠捕获的问题。</p>
-<h3 id="1-4-点击-按键和移动">1.4 点击、按键和移动</h3>
+<h3 id="1-5-点击-按键和移动">1.5 点击、按键和移动</h3>
 <pre><code class="language-text">def click(
     self, x=-1, y=-1, move_back=False, name=None, interval=-1,
     move=True, down_time=0.01, after_sleep=0,
@@ -238,7 +253,7 @@ def move_to_target_once(
 )
 </code></pre>
 <p>步长、减速半径和死区会按当前分辨率缩放。</p>
-<h3 id="1-5-场景与-ui">1.5 场景与 UI</h3>
+<h3 id="1-6-场景与-ui">1.6 场景与 UI</h3>
 <pre><code class="language-text">def is_main(self, esc=False, need_active=True) -&gt; bool
 def ensure_main(self, esc=True, time_out=90, after_sleep=2, need_active=True)
 def in_world(self)
@@ -263,7 +278,7 @@ def in_combat_world(self)
               time_out=30, once_time_out=2) -&gt; bool
 </code></pre>
 <p>至少提供 <code>match</code> 或 <code>feature</code>；目标未出现时持续返回，成功返回 <code>True</code>，总超时返回 <code>False</code>。</p>
-<h3 id="1-6-yolo">1.6 YOLO</h3>
+<h3 id="1-7-yolo">1.7 YOLO</h3>
 <pre><code class="language-text">def yolo_detect(
     self, name: str | list[str], frame=None, box=None, conf=0.7,
     detections=None, model_key=None,
@@ -273,7 +288,7 @@ def list_yolo_targets(self, model_key: str | None = None) -&gt; list[str]
 def set_yolo_model(self, model_key: str)
 def release_yolo_detector(self)
 </code></pre>
-<p>模型注册以 <a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/yolo/models.py">src/yolo/models.py</a> 为准。未传 <code>model_key</code> 时，根据第一个目标名称路由模型；传 <code>detections</code> 可跳过推理用于测试。ROI 检测结果会映射回全屏坐标，按置信度降序返回。空 <code>name</code> 抛 <code>ValueError</code>。开启框架 <code>use_overlay</code> 后，原始结果画黄色框、筛选结果画红色框。</p>
+<p>模型注册以 <a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/yolo/models.py">src/yolo/models.py</a> 为准。未传 <code>model_key</code> 时，根据第一个目标名称路由模型；传 <code>detections</code> 可跳过推理用于测试。ROI 检测结果会映射回全屏坐标，按置信度降序返回。空 <code>name</code> 抛 <code>ValueError</code>。开启框架 <code>use_overlay</code> 后，原始结果画黄色框、筛选结果画红色框。</p>
 <h2 id="2-配置-api">2. 配置 API</h2>
 <h3 id="2-1-任务配置">2.1 任务配置</h3>
 <p>任务通过框架属性增量注册配置：</p>
@@ -321,6 +336,10 @@ map_key = hotkeys.get(&quot;Map Key&quot;, &quot;m&quot;)
 <tr>
 <td><code>Zip Line Config</code></td>
 <td>送货/淤积点滑索路线与滚动设置</td>
+</tr>
+<tr>
+<td><code>Nav Config</code></td>
+<td>小地图定位真值、分辨率档位比例尺与轴映射</td>
 </tr>
 </tbody></table>
 <p><code>get_global_config(name)</code> 返回持久化 <code>ok.util.config.Config</code>。未知名称只有在已加载配置中能找到对应键时才回退返回该配置，否则抛 <code>RuntimeError</code>。全局配置页由 <code>get_all_visible_configs()</code> 和 <code>GlobalConfigTab</code> 构建。</p>
@@ -382,7 +401,7 @@ def auto_battle(self, no_battle: bool = False)
 <li>战斗结束并非通过 YOLO 单一判断；当前循环还结合战斗时间和 <code>battle_space_left</code>/<code>b</code> 特征。</li>
 </ul>
 <h3 id="3-2-mapmixin">3.2 MapMixin</h3>
-<pre><code class="language-text">from src.tasks.mixin.map_mixin import MapMixin
+<pre><code class="language-text">from src.tasks.navigation.mixin.map_mixin import MapMixin
 
 def task_to_transfer_point(self, need_location_list=None)
 def clear_icon_in_map(self, need_reserve_icon_name=None, ocr=False)
@@ -390,7 +409,7 @@ def to_near_transfer_point(self, need_track, need_location_list=None, need_reser
 </code></pre>
 <p><code>task_to_transfer_point</code> 从任务界面定位地图，地图稳定后再调用 <code>to_near_transfer_point</code>。<code>to_near_transfer_point</code> 传送至附近传送点。</p>
 <h3 id="3-3-navigationmixin">3.3 NavigationMixin</h3>
-<pre><code class="language-text">from src.tasks.mixin.navigation_mixin import NavigationMixin
+<pre><code class="language-text">from src.tasks.navigation.mixin.navigation_mixin import NavigationMixin
 
 def navigate_until_target(
     self, target, nav=None,
@@ -439,7 +458,7 @@ def collect_and_give_gifts(self)
 <li><code>collect_and_give_gifts</code> 处理当前交流界面中的收礼或送礼入口；收礼成功后继续尝试送礼。</li>
 </ul>
 <h3 id="3-5-ziplinemixin">3.5 ZipLineMixin</h3>
-<pre><code class="language-text">from src.tasks.mixin.zip_line_mixin import ZipLineMixin
+<pre><code class="language-text">from src.tasks.navigation.mixin.zip_line_mixin import ZipLineMixin
 
 def on_zip_line_start(
     self, delivery_to, need_scroll=None, target=None, need_v=True,
@@ -456,7 +475,7 @@ def ensure_click_on_zip_line(self, max_attempts=5)
 <h3 id="3-6-loginmixin">3.6 LoginMixin</h3>
 <pre><code class="language-text">from src.tasks.mixin.login_mixin import LoginMixin
 
-def login_flow(self, username: str, password: str | None = None)
+def login_flow(self, username: str)
 def click_text(
     self, match: str, box=None,
     need_wait_disappear=True, success_match=None,
@@ -466,10 +485,10 @@ def click_text(
 <ol>
 <li>判断当前是否已登录，必要时回到主界面并退出当前账号。</li>
 <li>等待登录界面的 <code>logout</code> 特征并确认登出。</li>
-<li>点击“最近”，再用 <code>username</code> 后四位 OCR 点击最近账号。</li>
+<li>点击“最近”，用 <code>username</code> 的前三位和后四位匹配同一行的可见号码。重复候选结合“最近”标识与切换前账号身份消歧，无法唯一确定时重试，超时后报错。</li>
 <li>点击“登录”，通过重新出现 <code>logout</code> 特征确认成功。</li>
 </ol>
-<p><code>password</code> 仅为旧调用兼容参数，当前不存储、不输入、也不参与账号判定。失败路径可能返回 <code>False</code> 或抛 <code>RuntimeError</code>；成功无显式返回值。后四位匹配要求最近账号列表中后四位唯一。</p>
+<p><code>login_flow</code> 只接收 <code>username</code>，不存储或输入密码。失败路径可能返回 <code>False</code> 或抛 <code>RuntimeError</code>；成功无显式返回值。账号列表旧格式中首个逗号后的内容被忽略且不持久化。</p>
 <h2 id="4-语言资源-api">4. 语言资源 API</h2>
 <pre><code class="language-python">from src.data.lang import (
     ACTIVE_LOCALES_CONFIG,
@@ -492,6 +511,6 @@ def click_text(
 </code></pre>
 <p>访问 <code>self.lang.&lt;module&gt;.&lt;key&gt;</code> 时，<code>string</code> 返回字符串、<code>pattern</code> 返回编译后的正则、<code>terms</code> 返回列表。直接属性解析的优先级是 <code>string</code>、<code>pattern</code>、<code>terms</code>；<code>LangNode.as_matcher()</code>/<code>build_matcher()</code> 的优先级是 <code>pattern</code>、<code>string</code>、<code>terms</code>。正常资源节点应只设置其中一种，避免依赖该差异。</p>
 <p>当前活动 OCR locale 只有 <code>zh_CN</code> 和 <code>zh_TW</code>；其它四种 locale 虽可存在于 JSON 和 gettext 目录，但在 <code>ACTIVE_LOCALES_CONFIG</code> 中关闭，不会进入 <code>SUPPORTED_LOCALES</code>。完整维护流程见 <a href="../i18n_OCR配置流程/">i18n 与 OCR 配置流程</a>。</p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/dev/API.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-baseeftask-与-mro" style="margin-left:0px">1. BaseEfTask 与 MRO</a><a href="#1-1-坐标" style="margin-left:10px">1.1 坐标</a><a href="#1-2-特征匹配" style="margin-left:10px">1.2 特征匹配</a><a href="#1-3-ocr-与登录截图" style="margin-left:10px">1.3 OCR 与登录截图</a><a href="#1-4-点击-按键和移动" style="margin-left:10px">1.4 点击、按键和移动</a><a href="#1-5-场景与-ui" style="margin-left:10px">1.5 场景与 UI</a><a href="#1-6-yolo" style="margin-left:10px">1.6 YOLO</a><a href="#2-配置-api" style="margin-left:0px">2. 配置 API</a><a href="#2-1-任务配置" style="margin-left:10px">2.1 任务配置</a><a href="#2-2-全局配置" style="margin-left:10px">2.2 全局配置</a><a href="#2-3-按键配置" style="margin-left:10px">2.3 按键配置</a><a href="#2-4-战斗配置与账号覆盖" style="margin-left:10px">2.4 战斗配置与账号覆盖</a><a href="#3-业务-mixin" style="margin-left:0px">3. 业务 Mixin</a><a href="#3-1-battlemixin" style="margin-left:10px">3.1 BattleMixin</a><a href="#3-2-mapmixin" style="margin-left:10px">3.2 MapMixin</a><a href="#3-3-navigationmixin" style="margin-left:10px">3.3 NavigationMixin</a><a href="#3-4-liaisonmixin" style="margin-left:10px">3.4 LiaisonMixin</a><a href="#3-5-ziplinemixin" style="margin-left:10px">3.5 ZipLineMixin</a><a href="#3-6-loginmixin" style="margin-left:10px">3.6 LoginMixin</a><a href="#4-语言资源-api" style="margin-left:0px">4. 语言资源 API</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/dev/API.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月4日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-baseeftask-与-mro" style="margin-left:0px">1. BaseEfTask 与 MRO</a><a href="#1-1-坐标" style="margin-left:10px">1.1 坐标</a><a href="#1-2-运行时状态" style="margin-left:10px">1.2 运行时状态</a><a href="#1-3-特征匹配" style="margin-left:10px">1.3 特征匹配</a><a href="#1-4-ocr-与登录截图" style="margin-left:10px">1.4 OCR 与登录截图</a><a href="#1-5-点击-按键和移动" style="margin-left:10px">1.5 点击、按键和移动</a><a href="#1-6-场景与-ui" style="margin-left:10px">1.6 场景与 UI</a><a href="#1-7-yolo" style="margin-left:10px">1.7 YOLO</a><a href="#2-配置-api" style="margin-left:0px">2. 配置 API</a><a href="#2-1-任务配置" style="margin-left:10px">2.1 任务配置</a><a href="#2-2-全局配置" style="margin-left:10px">2.2 全局配置</a><a href="#2-3-按键配置" style="margin-left:10px">2.3 按键配置</a><a href="#2-4-战斗配置与账号覆盖" style="margin-left:10px">2.4 战斗配置与账号覆盖</a><a href="#3-业务-mixin" style="margin-left:0px">3. 业务 Mixin</a><a href="#3-1-battlemixin" style="margin-left:10px">3.1 BattleMixin</a><a href="#3-2-mapmixin" style="margin-left:10px">3.2 MapMixin</a><a href="#3-3-navigationmixin" style="margin-left:10px">3.3 NavigationMixin</a><a href="#3-4-liaisonmixin" style="margin-left:10px">3.4 LiaisonMixin</a><a href="#3-5-ziplinemixin" style="margin-left:10px">3.5 ZipLineMixin</a><a href="#3-6-loginmixin" style="margin-left:10px">3.6 LoginMixin</a><a href="#4-语言资源-api" style="margin-left:0px">4. 语言资源 API</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20261104031949" defer></script></body></html>

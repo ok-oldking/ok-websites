@@ -1,0 +1,90 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>Windows 計劃任務 · 交付与维护 · ok-script · 繁體中文</title><meta name="description" content="ok-script 支援把一次性任務（ onetime tasks ）註冊為 Windows 計劃任務， 按計劃自動執 — ok-script 繁體中文文件"><meta name="keywords" content="ok-script, okscript, GitHub, ok-oldking/ok-script, ok-oldking, 開源, Python, MCP, Vibe Coding, Model Context Protocol, Codex, Claude Code, 程式設計代理, AI 自動化開發, 遊戲自動化, 圖像辨識, Windows 自動化, documentation, 文件, ok-ww, okww, 鳴潮, ok-oldking/ok-wuthering-waves, ok-wuthering-waves, okwutheringwaves, 鳴潮 後臺自動戰鬥 自動刷聲骸 一鍵日常  Automation for Wuthering Waves, ok-nte, oknte, 異環, BnanZ0/ok-nte, 異環 後臺副本掛機 Automation for Neverness to Everness, ok-duet-night-abyss, okduetnightabyss, 二重螺旋, BnanZ0/ok-duet-night-abyss, 二重螺旋 後臺副本掛機 Automation for Duet Night Abyss, ok-end-field, okendfield, 明日方舟：終末地, AliceJump/ok-end-field, 終末地 End Field Automation 基於ok-script開發的自動化, ok-gf2, okgf2, 少女前線2：追放, ok-oldking/ok-gf2, 少女前線2 追放 PC版 後臺一鍵收菜 自動化指令碼 Girls' Frontline 2: Exilium Automation Tool, ok-script-app, okscriptapp, ok-oldking/ok-script-app, Python版按鍵精靈基於ok-script開發, ok-kes, okkes, 卡厄思夢境, baoxin1100/ok-kes, ok框架卡厄思夢境自動化工具，包含自動出擊模式和自動卡厄思模式功能, ok-star-resonance, okstarresonance, 星痕共鳴, Sanheiii/ok-star-resonance, 基於ok-script的星痕共鳴自動工具, OK-AzurPromilia, OKAzurPromilia, 藍色星原：旅謠, longer-sausage/OK-AzurPromilia, 藍色星原：旅謠自動化指令碼, ok-Onmyoji, okOnmyoji, 陰陽師, YunLiuZ/ok-Onmyoji, 陰陽師(Onmyoji)自動化戰鬥基於ok-script開發, ok-genshin-impact, okgenshinimpact, 原神, ok-oldking/ok-genshin-impact, 原神 OKGI 自動拾取  | 後臺自動劇情  | 後臺一條龍 | UI Automation Genshin Impact, ok-starrailassistant, okstarrailassistant, 崩壞：星穹鐵道, Shasnow/ok-starrailassistant, 崩壞星穹鐵道自動化助手 | PC端 | 支援後臺執行"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/zh-TW/docs/Windows 计划任务/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="Windows 計劃任務 · 交付与维护 · ok-script · 繁體中文"><meta property="og:description" content="ok-script 支援把一次性任務（ onetime tasks ）註冊為 Windows 計劃任務， 按計劃自動執 — ok-script 繁體中文文件"><meta property="og:url" content="https://ok-script.com/zh-TW/docs/Windows 计划任务/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-script-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script — 開源 · Python · MCP · Vibe Coding">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Windows 計劃任務 · 交付与维护 · ok-script · 繁體中文"><meta name="twitter:description" content="ok-script 支援把一次性任務（ onetime tasks ）註冊為 Windows 計劃任務， 按計劃自動執 — ok-script 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-script-zh-tw.png"><meta name="twitter:image:alt" content="ok-script — 開源 · Python · MCP · Vibe Coding">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Windows 計劃任務 · 交付与维护 · ok-script · 繁體中文","description":"ok-script 支援把一次性任務（ onetime tasks ）註冊為 Windows 計劃任務， 按計劃自動執 — ok-script 繁體中文文件","url":"https://ok-script.com/zh-TW/docs/Windows 计划任务/","inLanguage":"zh-TW","dateModified":"2026-11-02T19:24:09+08:00","author":{"@type":"Organization","name":"ok-script","url":"https://github.com/ok-oldking/ok-script"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261104031949">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../#projects">專案</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">首頁</a><a href="../quick_start/">MCP 快速開始</a><a href="../agent-setup/">代理安裝指南（英文）</a><a href="../agent-prompts/">程式設計代理提示詞</a><a href="../mcp/">MCP 連線與執行（英文）</a><a href="../feature-crops/">模板匯出格式（英文）</a><a href="../after_quick_start/">維護和分享任務</a><a href="../plugins/">匯入外掛</a><a href="./" class="active" aria-current="page">Windows 計劃任務</a><a href="../intro_to_automation/">自動化原理</a><a href="../interface/">介面與開發工具</a><a href="../architecture/">執行時架構（英文）</a><a href="../building-site/">構建文件網站</a><a href="../agent-setup/">Agent environment setup</a><a href="../mcp/">MCP connection and execution</a><a href="../feature-crops/">Template export format</a><a href="../architecture/">Runtime architecture</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-script</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="windows-計劃任務">Windows 計劃任務</h1>
+<p>ok-script 支援把一次性任務（<code>onetime_tasks</code>）註冊為 Windows 計劃任務，
+按計劃自動執行。</p>
+<h2 id="任務定位機制-t-n">任務定位機制：<code>-t N</code></h2>
+<p>計劃任務通過 <code>-t N</code> 引數定位要執行的任務，其中 <code>N</code> 是 <code>onetime_tasks</code>
+列表中的 <strong>1-based 索引</strong>（例如 <code>-t 1</code> 表示列表第 1 個任務）。</p>
+<pre><code class="language-xml">&lt;Arguments&gt;main.py -t 1 -e&lt;/Arguments&gt;
+</code></pre>
+<p>任務被建立時，<code>CreateScheduleTaskDialog</code> 用
+<code>og.executor.onetime_tasks.index(selected_task) + 1</code> 計算索引並寫入 XML。</p>
+<h3 id="索引重排問題">索引重排問題</h3>
+<p>由於定位依賴的是<strong>索引</strong>而非任務名，一旦 <code>config.py</code> 中 <code>onetime_tasks</code>
+的順序發生變化（例如把業務任務前置、測試任務後置），<strong>已建立</strong>的計劃任務
+仍指向舊索引，就會執行到錯誤的任務（例如 <code>-t 15</code> 從「啟動一次遊戲」跑到
+<code>TestDemoGraphic</code>）。</p>
+<h2 id="啟動時自動校正與穩定標識遷移">啟動時自動校正與穩定標識遷移</h2>
+<p>為保留 ok 原生 <code>-t</code> 機制、不修改任何執行時解析 / 建立 / 修改對話方塊邏輯，
+ok-script 在<strong>每次啟動時</strong>自動校正並把 <code>-t</code> 目標統一遷移為<strong>穩定標識</strong>
+（模組路徑.類名，如 <code>src.tasks.onetime.DailyTask</code>，對排序免疫）：</p>
+<ul>
+<li>掛載點：<code>MainWindow.__init__</code>（構造 ScheduleTaskTab、載入任務快取之前，早於 <code>start_runtime</code>），原生內聯呼叫</li>
+<li>實現：<code>ok/ui/qt/tasks/schedule_index_sync.py</code>（同步邏輯），<code>MainWindow.__init__</code> 直接呼叫
+<code>sync_schedule_task_indexes()</code></li>
+<li>原理：解析快取任務當前的 <code>-t</code> 目標（數字索引 / 歷史任務名 / 模組路徑.類名），
+以快取任務名（建立時選擇的任務名，不隨排序變化）或已快取的穩定標識為權威身份，
+在當前 <code>onetime_tasks</code> 中定位目標任務，把 <code>-t X</code> 統一改寫為當前實際的
+<code>模块路径.类名</code>；同時回填快取的 <code>task_index</code> / <code>task_identifier</code> 後設資料。</li>
+</ul>
+<p>校正規則：</p>
+<ol>
+<li>只處理本應用（如 <code>\ok-ef\</code>）下的任務，其它 ok-* 應用的只讀任務不動；</li>
+<li>任務名與穩定標識都無法在當前 <code>onetime_tasks</code> 中唯一定位時跳過（可能已被刪除）；</li>
+<li>目標與後設資料均已正確時跳過（冪等，不寫快取、不調 COM）；僅缺後設資料時只回填
+快取，不重註冊 Windows 任務；</li>
+<li>有變更時同步更新快取 / <code>xml_config</code> / Windows 計劃任務
+（COM <code>RegisterTaskDefinition</code>，失敗回退 <code>schtasks /Create /XML /F</code>）；</li>
+<li>改寫本次程序 <code>sys.argv</code> 與 <code>og.ok.args[&#39;task&#39;]</code>，保證本次啟動也使用正確目標；</li>
+<li>每次程序只校正一次（程序級 guard）。</li>
+</ol>
+<blockquote>
+<p>注意：純 headless（無 GUI）的應用不經過 <code>showEvent</code> 掛載點，不會觸發
+自動校正，此時請使用下面的一次性工具。</p>
+</blockquote>
+<h2 id="一次性校正工具">一次性校正工具</h2>
+<p>當 GUI 無法正常啟動，或需要手動執行校正時，可在應用根目錄執行：</p>
+<pre><code class="language-powershell">python fix_schedule_task_refs.py
+# 或指定配置导入目标
+python fix_schedule_task_refs.py --config src.config:config
+</code></pre>
+<p>該工具與啟動時自動校正<strong>複用同一實現</strong>
+（<code>sync_schedule_task_indexes()</code>），列印被修正的任務數。</p>
+<h2 id="常見問題">常見問題</h2>
+<ul>
+<li><strong>統一為穩定標識</strong>：無論歷史格式是數字索引（<code>-t 1</code>）還是任務名
+（<code>-t 日常任务</code>），校正都會統一遷移為 <code>模块路径.类名</code> 形式，之後任務排序
+變化不再影響計劃任務；執行時按類名回退匹配，模組移動也能自動修正。</li>
+<li><strong>其它應用任務</strong>：<code>ok-*</code> 其它應用註冊的任務不會被本應用改寫。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script/blob/6814e654eb5ba5a217557a8e313d6eeddc9dc291/docs/Windows 计划任务.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月4日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#任務定位機制-t-n" style="margin-left:0px">任務定位機制：-t N</a><a href="#索引重排問題" style="margin-left:10px">索引重排問題</a><a href="#啟動時自動校正與穩定標識遷移" style="margin-left:0px">啟動時自動校正與穩定標識遷移</a><a href="#一次性校正工具" style="margin-left:0px">一次性校正工具</a><a href="#常見問題" style="margin-left:0px">常見問題</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部專案</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20261104031949" defer></script></body></html>

@@ -21,8 +21,8 @@ const simplifiedToTraditional = OpenCC.Converter({ from: 'cn', to: 'twp' });
 const copy = {
   'zh-CN': {
     skip: '跳到正文', navDocs: '文档', navProjects: '项目', navGithub: 'GitHub', theme: '切换明暗模式', menu: '打开菜单',
-    frameworkEyebrow: '开源 · Python · 视觉自动化', frameworkTitle: '让游戏自动化，\n变得简单。',
-    frameworkLead: '一个现代、纯 Python 的计算机视觉自动化框架。用几百行代码构建支持 Windows、模拟器与 ADB 的工业级自动化工具。',
+    frameworkEyebrow: '开源 · Python · MCP · Vibe Coding', frameworkTitle: '许个愿，\n得到可部署的自动化程序。',
+    frameworkLead: '在 Codex、Claude Code 或任何支持 MCP 的编程代理中描述需求。代理通过 MCP 观察 Windows 应用、游戏或安卓设备，编写 Python 任务，在真实目标上运行并修复失败；ok-script 再把任务连同桌面 GUI 打包成可独立运行的 Windows 安装包。',
     onmyojiEyebrow: '阴阳师 · 后台自动化 · Windows', onmyojiTitle: '阴阳师的日常，\n交给 ok-Onmyoji。',
     onmyojiLead: '基于图像识别的阴阳师自动化工具，支持后台运行、多开、定时任务与常用战斗、日常流程。',
     appEyebrow: '鸣潮 · 后台自动化 · Windows', appTitle: '重复的日常，\n交给 ok-ww。',
@@ -39,21 +39,21 @@ const copy = {
     apLead: '基于 ok-script 的《蓝色星原：旅谣》图像识别自动化工具，支持一键日常、家园任务、小游戏与交互辅助。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
-    getStarted: '开始开发', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
+    getStarted: 'MCP 快速开始', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
     githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区',
     faqKicker: '常见问题',
     stars: 'GitHub Stars', release: '最新版本', updated: '代码更新', online: '开源可用',
     capabilities: '核心能力', capabilitiesTitle: '为真实自动化场景而生', capabilitiesLead: '从图像感知到输入执行，从开发调试到持续发布，一套工具覆盖完整工作流。',
     projectsKicker: '项目', projectsTitle: '一个框架，多个项目', projectsLead: '每个项目拥有独立入口与自己的多语言文档，同时共享一致、清晰的使用体验。',
     explore: '访问项目 →', active: '活跃', community: '社区', archived: '归档',
-    ctaTitle: '从模板开始，构建你的自动化项目。', ctaLead: '阅读快速开始文档，连接 Windows 窗口或 ADB 设备，运行第一个计算机视觉任务。', ctaButton: '开始开发',
+    ctaTitle: '连接编程代理，开发你的第一个自动化任务。', ctaLead: '安装 ok-script，启动 MCP 运行时，让代理在你的 Windows 窗口或 ADB 设备上观察、运行并修复任务。', ctaButton: 'MCP 快速开始',
     docsFor: '文档目录', onPage: '本页内容', editGithub: '在 GitHub 查看源文件', lastGenerated: '页面生成时间',
     footer: '以 AGPL-3.0 协议开源。文档由项目源码自动生成。', allProjects: '全部项目'
   },
   en: {
     skip: 'Skip to content', navDocs: 'Docs', navProjects: 'Projects', navGithub: 'GitHub', theme: 'Toggle color theme', menu: 'Open menu',
-    frameworkEyebrow: 'Open source · Python · Visual automation', frameworkTitle: 'Game automation,\nmade approachable.',
-    frameworkLead: 'A modern, pure-Python computer-vision automation framework. Build production-grade tools for Windows, emulators, and ADB with only a few hundred lines of code.',
+    frameworkEyebrow: 'Open source · Python · MCP · Vibe coding', frameworkTitle: 'Make a wish.\nGet a deployable automation app.',
+    frameworkLead: 'Describe the automation in Codex, Claude Code, or any coding agent with MCP. Through MCP, the agent observes your Windows application, game, or Android device, writes Python tasks, runs them against the real target, and fixes what fails. ok-script packages the result with a desktop GUI into a standalone Windows installer.',
     onmyojiEyebrow: 'Onmyoji · Background automation · Windows', onmyojiTitle: 'Leave Onmyoji routines\nto ok-Onmyoji.',
     onmyojiLead: 'Image-recognition automation for Onmyoji with background mode, multi-instance support, scheduling, and common battle and daily workflows.',
     appEyebrow: 'Wuthering Waves · Background automation · Windows', appTitle: 'Leave the routine\nto ok-ww.',
@@ -70,31 +70,31 @@ const copy = {
     apLead: 'Image-recognition automation for Azur Promilia built with ok-script, covering daily routines, home tasks, minigames, and interaction assistance.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
-    getStarted: 'Start Developing', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
+    getStarted: 'Start with MCP', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
     githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community',
     faqKicker: 'FAQ',
     stars: 'GitHub stars', release: 'Latest release', updated: 'Code updated', online: 'Open source',
     capabilities: 'Capabilities', capabilitiesTitle: 'Made for real automation work', capabilitiesLead: 'From visual perception to input, development diagnostics to continuous releases—the complete workflow in one toolkit.',
     projectsKicker: 'Projects', projectsTitle: 'One framework, many projects', projectsLead: 'Each project gets its own home and multilingual documentation while sharing one consistent, focused experience.',
     explore: 'Explore project →', active: 'Active', community: 'Community', archived: 'Archived',
-    ctaTitle: 'Start with the template. Build your own automation.', ctaLead: 'Follow the quick start, connect a Windows window or ADB device, and run your first computer vision task.', ctaButton: 'Start Developing',
+    ctaTitle: 'Connect your coding agent. Build your first automation.', ctaLead: 'Install ok-script, start the MCP runtime, and let the agent observe, run, and fix tasks against your real window or ADB device.', ctaButton: 'Start with MCP',
     docsFor: 'Documentation', onPage: 'On this page', editGithub: 'View source on GitHub', lastGenerated: 'Page generated',
     footer: 'Open source under AGPL-3.0. Documentation is generated from project sources.', allProjects: 'All projects'
   },
   'zh-TW': {
     skip: '跳到正文', navDocs: '文件', navProjects: '專案', navGithub: 'GitHub', theme: '切換明暗模式', menu: '開啟選單',
-    frameworkEyebrow: '開源 · Python · 視覺自動化', frameworkTitle: '讓遊戲自動化，\n變得簡單。', frameworkLead: '現代化的純 Python 圖像辨識自動化框架。',
+    frameworkEyebrow: '開源 · Python · MCP · Vibe Coding', frameworkTitle: '許個願，\n得到可部署的自動化程式。', frameworkLead: '在 Codex、Claude Code 或任何支援 MCP 的程式設計代理中描述需求。代理透過 MCP 觀察 Windows 應用、遊戲或 Android 裝置，撰寫 Python 任務，在真實目標上執行並修復失敗；ok-script 再將任務連同桌面 GUI 打包成可獨立執行的 Windows 安裝程式。',
     onmyojiEyebrow: '陰陽師 · 背景自動化 · Windows', onmyojiTitle: '陰陽師的日常，\n交給 ok-Onmyoji。', onmyojiLead: '基於圖像辨識的陰陽師自動化工具，支援背景執行、多開、排程與常用戰鬥、日常流程。',
     appEyebrow: '鳴潮 · 背景自動化 · Windows', appTitle: '重複的日常，\n交給 ok-ww。', appLead: '基於電腦視覺的鳴潮自動化工具，支援背景執行、智慧角色辨識與 4K 解析度，不讀取記憶體、不修改遊戲檔案。',
     templateEyebrow: '專案範本 · Python · 視覺工具', templateTitle: '從可執行範本，\n開始自動化。', templateLead: '包含 GUI、任務範例、OCR、模板比對、測試與打包設定的完整 ok-script 應用範本。',
-    getStarted: '開始開發', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
+    getStarted: 'MCP 快速開始', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
     capabilities: '核心能力', capabilitiesTitle: '為實際自動化場景而生', capabilitiesLead: '完整涵蓋辨識、執行與日常使用。', projectsKicker: '專案', projectsTitle: '一個框架，多個專案', projectsLead: '每個專案都有獨立入口與多語言文件。',
-    explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '立即下載，簡化你的每日流程。', ctaLead: '閱讀使用說明並確認風險提示後開始使用。', ctaButton: '開始開發',
+    explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '連接程式設計代理，開發你的第一個自動化任務。', ctaLead: '安裝 ok-script，啟動 MCP 執行環境，讓代理在你的 Windows 視窗或 ADB 裝置上觀察、執行並修復任務。', ctaButton: 'MCP 快速開始',
     docsFor: '文件目錄', onPage: '本頁內容', editGithub: '在 GitHub 查看來源', lastGenerated: '頁面產生時間', footer: '以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。', allProjects: '全部專案'
   },
   ja: {
     skip: '本文へ移動', navDocs: 'ドキュメント', navProjects: 'プロジェクト', navGithub: 'GitHub', theme: 'テーマを切り替え', menu: 'メニューを開く',
-    frameworkEyebrow: 'オープンソース · Python · 画像認識', frameworkTitle: 'ゲーム自動化を、\nもっと身近に。', frameworkLead: '純 Python の画像認識自動化フレームワーク。',
+    frameworkEyebrow: 'オープンソース · Python · MCP · Vibe Coding', frameworkTitle: '願いを伝えれば、\n配布できる自動化アプリに。', frameworkLead: 'MCP 対応のコーディングエージェントに要望を伝えるだけ。エージェントが MCP 経由で対象アプリやデバイスを観察し、Python タスクを作成・実行・修正します。',
     appEyebrow: '鳴潮 · バックグラウンド自動化 · Windows', appTitle: '毎日のルーティンは、\nok-ww に。', appLead: 'コンピュータービジョンを活用した鳴潮自動化ツール。バックグラウンド動作、キャラクター自動認識、4K 解像度に対応し、メモリ読み取りやゲームファイルの変更は行いません。',
     templateEyebrow: 'プロジェクトテンプレート · Python · ビジュアルツール', templateTitle: '動くテンプレートから、\n自動化を始めよう。', templateLead: 'GUI、タスク例、OCR、テンプレートマッチング、テスト、配布設定を含む ok-script アプリテンプレート。',
     getStarted: '開発を始める', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
@@ -106,8 +106,8 @@ const copy = {
 
 const features = {
   framework: {
-    'zh-CN': [['⌁','自适应图像识别','模板匹配、OCR 与目标检测适配不同分辨率。'],['▣','多平台输入','同一套任务支持 Windows 窗口、模拟器与 ADB。'],['{ }','纯 Python 扩展','自由集成 PyPI、YOLO 及其他开源工具。'],['↗','完整工程链路','UI、调试、测试、打包和增量更新开箱即用。']],
-    en: [['⌁','Adaptive vision','Template matching, OCR, and detection across resolutions.'],['▣','Multi-platform input','One task model for Windows, emulators, and ADB.'],['{ }','Pure Python','Bring any PyPI package, YOLO model, or open-source tool.'],['↗','Complete workflow','UI, diagnostics, tests, packaging, and updates included.']]
+    'zh-CN': [['◉','观察真实目标','代理通过 MCP 截图已配置的窗口或 ADB 设备，看到的就是任务将要看到的。'],['▶','运行并验证','run_task 先恢复并验证起始状态，再执行任务；日志、状态和截图都保存在每次运行的目录中。'],['↻','热重载修复','list_tasks 定位任务源码，修改后用 reload_tasks 在运行中的进程里替换，无需重启。'],['↗','打包交付','任务连同桌面 GUI 打包成 Windows 安装包，交付后独立运行，不依赖代理或大模型调用。']],
+    en: [['◉','Observe the real target','Over MCP, the agent screenshots the configured window or ADB device and sees exactly what the task will see.'],['▶','Run and verify','run_task restores and verifies the starting state, then runs the task, saving logs, status, and screenshots for every attempt.'],['↻','Repair with hot reload','list_tasks finds the task source; reload_tasks swaps in the fix inside the running process without a restart.'],['↗','Ship a standalone app','Package the tasks and desktop GUI as a Windows installer that runs without an agent or LLM calls.']]
   },
   application: {
     'zh-CN': [['◫','后台模式','游戏最小化或被遮挡时仍可运行。'],['◎','智能识别','自动识别角色，无需手动配置技能序列。'],['4K','高分辨率','覆盖 720p 到 4K，并兼容部分超宽屏。'],['♪','自动静音','后台运行时可自动静音，不打扰日常使用。']],
@@ -175,7 +175,13 @@ function uniqueTerms(values) {
   });
 }
 function compactAlias(value = '') { return String(value).replace(/[^\p{L}\p{N}]+/gu, ''); }
-function localeSearchTerms(locale) {
+function localeSearchTerms(locale, project) {
+  if (project?.type === 'framework') {
+    const shared = ['MCP', 'Model Context Protocol', 'Vibe Coding', 'Codex', 'Claude Code'];
+    if (locale.code === 'zh-CN') return [...shared, '编程代理', 'AI 自动化开发', '游戏自动化', '计算机视觉', 'Windows 自动化'];
+    if (locale.code === 'zh-TW') return [...shared, '程式設計代理', 'AI 自動化開發', '遊戲自動化', '圖像辨識', 'Windows 自動化'];
+    return [...shared, 'coding agent', 'AI automation development', 'game automation', 'computer vision', 'Python automation'];
+  }
   if (locale.code === 'zh-CN') return ['游戏自动化', '电脑视觉', '计算机视觉', '开源软件', 'Windows 自动化'];
   if (locale.code === 'zh-TW') return ['遊戲自動化', '電腦視覺', '圖像辨識', '開源軟體', 'Windows 自動化'];
   if (locale.code === 'ja') return ['ゲーム自動化', 'コンピュータービジョン', '画像認識', 'オープンソース', 'Windows 自動化'];
@@ -750,10 +756,10 @@ function localizedGameName(item, locale) {
 
 function rootSeoDescription(project, locale, lead) {
   if (project.type !== 'framework') return lead;
-  if (locale.code === 'zh-CN') return 'ok-script 是纯 Python 计算机视觉自动化框架，并汇集 ok-ww、ok-nte、ok-end-field、ok-kes、ok-script-app 等开源项目。';
-  if (locale.code === 'zh-TW') return 'ok-script 是純 Python 圖像辨識自動化框架，並匯集 ok-ww、ok-nte、ok-end-field、ok-kes、ok-script-app 等開源專案。';
-  if (locale.code === 'ja') return 'ok-script は純 Python の画像認識自動化基盤です。ok-ww、ok-nte、ok-end-field、ok-kes、ok-script-app などのプロジェクトを掲載しています。';
-  return 'ok-script is a pure-Python computer-vision automation framework. Explore ok-ww, ok-nte, ok-end-field, ok-kes, ok-script-app, and more.';
+  if (locale.code === 'zh-CN') return 'ok-script 是 Vibe Coding 自动化框架：编程代理通过 MCP 观察、运行并修复 Python 任务，打包成可部署的自动化程序。汇集 ok-ww、ok-nte、ok-end-field、ok-kes 等开源项目。';
+  if (locale.code === 'zh-TW') return 'ok-script 是 Vibe Coding 自動化框架：程式設計代理透過 MCP 觀察、執行並修復 Python 任務，打包成可部署的自動化程式。匯集 ok-ww、ok-nte、ok-end-field、ok-kes 等開源專案。';
+  if (locale.code === 'ja') return 'ok-script は Vibe Coding 自動化フレームワークです。コーディングエージェントが MCP 経由で Python タスクを観察・実行・修正し、配布可能なアプリにします。';
+  return 'ok-script is a vibe coding automation framework: coding agents observe, run, and fix Python tasks over MCP, then ship them as deployable Windows apps. Explore ok-ww, ok-nte, ok-end-field, ok-kes, and more.';
 }
 
 function seoKeywords(project, locale, destination) {
@@ -762,7 +768,7 @@ function seoKeywords(project, locale, destination) {
   const terms = [
     project.name, compactAlias(project.name), project.id, compactAlias(project.id),
     'GitHub', project.github, project.github.split('/')[0], repository, compactAlias(repository),
-    marketing.eyebrow.split('·'), localeSearchTerms(locale), destination === 'docs' ? ['documentation', localeCopy(locale.code).navDocs] : []
+    marketing.eyebrow.split('·'), localeSearchTerms(locale, project), destination === 'docs' ? ['documentation', localeCopy(locale.code).navDocs] : []
   ];
   if (project.type === 'framework') {
     for (const item of config.relatedProjects) {
@@ -946,7 +952,8 @@ function landingPage(project, locale, meta, faq = null) {
   <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div>${heroTitle}<p class="hero-copy">${lead}</p>
   <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
   ${capabilitiesSection}${projectsSection}${faqSection}${ctaSection}</main>`;
-  const baseTitle = `${project.name} — ${titleA.replace(/[，,.。]/g,'')}`;
+  const headline = isFramework ? `${titleA}${singleLineHero ? '' : ' '}${titleB}` : titleA;
+  const baseTitle = `${project.name} — ${headline.replace(/[，,.。]+$/,'')}`;
   const repeatedAcrossLocales = project.locales.some(item => item.code !== locale.code && `${project.name} — ${marketingContent(project, item).titleA.replace(/[，,.。]/g,'')}` === baseTitle);
   const title = repeatedAcrossLocales ? `${baseTitle} · ${locale.label}` : baseTitle;
   return documentShell({ title, description: rootSeoDescription(project, locale, lead), project, locale, body, canonical: `${projectOrigin(project)}${landingUrl(project, locale)}` });

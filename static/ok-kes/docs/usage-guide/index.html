@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-kes/docs/usage-guide/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="使用说明 · ok-kes · 简体中文"><meta property="og:description" content="本文介绍 ok-kes 的下载安装、界面操作、游戏设置，以及卡厄思模式和出击模式的配置方法。 下载软件。本软件支持自动更新， — ok-kes 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-kes/docs/usage-guide/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-kes-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-kes — 卡厄思梦境 · 后台自动化 · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="使用说明 · ok-kes · 简体中文"><meta name="twitter:description" content="本文介绍 ok-kes 的下载安装、界面操作、游戏设置，以及卡厄思模式和出击模式的配置方法。 下载软件。本软件支持自动更新， — ok-kes 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-kes-zh-cn.png"><meta name="twitter:image:alt" content="ok-kes — 卡厄思梦境 · 后台自动化 · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"使用说明 · ok-kes · 简体中文","description":"本文介绍 ok-kes 的下载安装、界面操作、游戏设置，以及卡厄思模式和出击模式的配置方法。 下载软件。本软件支持自动更新， — ok-kes 简体中文文档","url":"https://ok-script.com/ok-kes/docs/usage-guide/","inLanguage":"zh-CN","dateModified":"2026-10-01T12:52:39+08:00","author":{"@type":"Organization","name":"ok-kes","url":"https://github.com/baoxin1100/ok-kes"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"使用说明 · ok-kes · 简体中文","description":"本文介绍 ok-kes 的下载安装、界面操作、游戏设置，以及卡厄思模式和出击模式的配置方法。 下载软件。本软件支持自动更新， — ok-kes 简体中文文档","url":"https://ok-script.com/ok-kes/docs/usage-guide/","inLanguage":"zh-CN","dateModified":"2026-10-31T07:01:45+08:00","author":{"@type":"Organization","name":"ok-kes","url":"https://github.com/baoxin1100/ok-kes"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -114,6 +114,7 @@
 <li><strong>复制卡牌列表</strong>：在牌库中选择卡牌复制时的优先级，建议填写完整卡牌名。</li>
 <li><strong>需要冥想的卡牌</strong>：填写需要通过冥想重新获取闪光的卡牌，建议填写完整卡牌名。当列表中的卡牌没有获得“闪光优先级”指定的闪光时，工具会记录该卡牌需要冥想，并在后续休息区尝试选择冥想。</li>
 <li><strong>多少信用点以上冥想</strong>：只有当前信用点同时大于该配置值和本次冥想费用时，才会选择冥想。如果休息和冥想都可以选择，当前生命值低于 50% 时优先休息，否则选择冥想。</li>
+<li><strong>商店刷新信用点阈值</strong>：德朗商店的免费刷新次数用完后，仅当信用点大于该值且足够支付本次刷新价格时，才会消耗信用点付费刷新。</li>
 <li><strong>装备1-3号位优先级</strong>：按照优先级列表替换装备。未配置的传说装备无法替换配置中的普通装备；配置中的普通装备会替换未配置的传说装备；遇到未配置的装备时，高品质装备会替换低品质装备。</li>
 <li><strong>卡牌奖励优先级</strong>：中立卡牌、欲望卡牌的优先级，例如梦之边境、装备包等。未配置的中立卡牌会跳过选择。</li>
 <li><strong>首层刷特定闪光</strong>：默认刷“闪光优先级”中的第一张，可刷神闪；第一层没有刷出时会自动逃脱并重新刷。例如想刷小丑“恶魔骰子”的减一费神闪，可以将“闪光优先级”的第一个配置为【恶魔骰子此卡费用减少】。</li>
@@ -145,6 +146,7 @@
 <li><strong>装备1-3号位优先级</strong>：按照优先级列表替换装备。未配置的传说装备无法替换配置中的普通装备；配置中的普通装备会替换未配置的传说装备；遇到未配置的装备时，高品质装备会替换低品质装备。</li>
 <li><strong>只打第一层</strong>：默认开启，打完第一层 Boss、领取奖励后自动逃脱。</li>
 <li><strong>进入商店</strong>：是否进入商店删牌、购买商品。</li>
+<li><strong>商店刷新信用点阈值</strong>：德朗商店的免费刷新次数用完后，仅当信用点大于该值且足够支付本次刷新价格时，才会消耗信用点付费刷新。</li>
 <li><strong>优先移除基础牌</strong>：如果“移除卡牌列表”中的卡牌都删完了，会优先删除主战员的基础牌；否则会跳过删牌。</li>
 <li><strong>几轮后停止（0为不停止）</strong>：设置刷几轮出击。</li>
 <li><strong>卡牌奖励优先级</strong>：遇到中立卡牌选择事件时的优先级；没有命中则跳过。</li>
@@ -165,6 +167,6 @@
 <p><img src="../../../assets/sources/ok-kes/docs/images/usage-guide/config-post.png" alt="社区配置帖子"></p>
 <p><img src="../../../assets/sources/ok-kes/docs/images/usage-guide/config-code.png" alt="复制完整配置码"></p>
 <p>频道鼓励用户发布自己的配置、讨论游戏日常，并向工具提出建议。</p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/baoxin1100/ok-kes/blob/82089f2a3496104304d94fcfcad4750678153291/docs/zh-CN/usage-guide.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#下载安装" style="margin-left:0px">下载安装</a><a href="#软件界面介绍" style="margin-left:0px">软件界面介绍</a><a href="#功能界面介绍" style="margin-left:0px">功能界面介绍</a><a href="#游戏设置" style="margin-left:0px">游戏设置</a><a href="#配置介绍" style="margin-left:0px">配置介绍</a><a href="#卡厄思模式配置介绍" style="margin-left:10px">卡厄思模式配置介绍</a><a href="#出击模式配置介绍" style="margin-left:10px">出击模式配置介绍</a><a href="#工具社区" style="margin-left:0px">工具社区</a><a href="#导入社区配置码" style="margin-left:10px">导入社区配置码</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/baoxin1100/ok-kes/blob/847e6cff1811b2db7e8dcf0c1af77a5b45240609/docs/zh-CN/usage-guide.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月4日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#下载安装" style="margin-left:0px">下载安装</a><a href="#软件界面介绍" style="margin-left:0px">软件界面介绍</a><a href="#功能界面介绍" style="margin-left:0px">功能界面介绍</a><a href="#游戏设置" style="margin-left:0px">游戏设置</a><a href="#配置介绍" style="margin-left:0px">配置介绍</a><a href="#卡厄思模式配置介绍" style="margin-left:10px">卡厄思模式配置介绍</a><a href="#出击模式配置介绍" style="margin-left:10px">出击模式配置介绍</a><a href="#工具社区" style="margin-left:0px">工具社区</a><a href="#导入社区配置码" style="margin-left:10px">导入社区配置码</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/baoxin1100/ok-kes"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../">全部项目</a></div></div></footer>
-  <script src="../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../assets/site.js?v=20261104031949" defer></script></body></html>

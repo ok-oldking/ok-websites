@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/item-navigation/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Item Navigation &amp; Realtime Detection · Features · ok-end-field · English"><meta property="og:description" content="Back: Documentation home / README This document covers two trigger/debug tasks: ItemNavigatorTask (UI name: Item Navig — ok-end-field English documentation"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/item-navigation/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Item Navigation &amp; Realtime Detection · Features · ok-end-field · English"><meta name="twitter:description" content="Back: Documentation home / README This document covers two trigger/debug tasks: ItemNavigatorTask (UI name: Item Navig — ok-end-field English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta name="twitter:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Item Navigation & Realtime Detection · Features · ok-end-field · English","description":"Back: Documentation home / README This document covers two trigger/debug tasks: ItemNavigatorTask (UI name: Item Navig — ok-end-field English documentation","url":"https://ok-script.com/ok-end-field/en/docs/item-navigation/","inLanguage":"en","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Item Navigation & Realtime Detection · Features · ok-end-field · English","description":"Back: Documentation home / README This document covers two trigger/debug tasks: ItemNavigatorTask (UI name: Item Navig — ok-end-field English documentation","url":"https://ok-script.com/ok-end-field/en/docs/item-navigation/","inLanguage":"en","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -27,20 +27,21 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/guide-submodule-contrib/">模板贡献指南</a><a href="../dev/API/">API 参考</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/OCR使用分类/">OCR 使用分类</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务汇总报告机制/">任务汇总报告机制</a><a href="../dev/自动拾取任务/">自动拾取</a><a href="../getting-started/installation/">Installation</a><a href="../getting-started/configuration/">Before you start</a><a href="../guides/quick-start/">Quick start</a><a href="../features/overview/">Overview</a><a href="../daily-tasks/">Daily Tasks</a><a href="../stamina-farming/">Stamina Farming</a><a href="../auto-combat/">Auto Combat</a><a href="../action-sequence/">Action Sequences</a><a href="../delivery-pickup/">Delivery Commission Pickup</a><a href="../auto-delivery/">Auto Delivery</a><a href="../warehouse-transfer/">Warehouse Transfer</a><a href="./" class="active" aria-current="page">Item Navigation &amp; Realtime Detection</a><a href="../account-configuration/">Account Configuration</a><a href="../config-export-import/">Config Export and Import</a><a href="../windows-task-scheduler/">Windows Task Scheduler</a><a href="../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="item-navigation-realtime-detection">Item Navigation &amp; Realtime Detection</h1>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../">Documentation home</a><a href="../update/主数据维护工作流/">主数据维护</a><a href="../update/送货地区维护工作流/">送货地区维护</a><a href="../update/日常送礼维护工作流/">日常送礼维护</a><a href="../dev/QUICKSTART/">从源码运行</a><a href="../dev/DEVELOPMENT/">开发指南</a><a href="../dev/guide-submodule-contrib/">模板贡献指南</a><a href="../dev/API/">API 参考</a><a href="../dev/运行时状态总线/">运行时状态总线</a><a href="../dev/i18n_OCR配置流程/">i18n 与 OCR</a><a href="../dev/OCR使用分类/">OCR 使用分类</a><a href="../dev/键盘操作体系/">键盘操作体系</a><a href="../dev/滑索与送货逻辑/">滑索与送货逻辑</a><a href="../dev/小地图定位/">小地图定位</a><a href="../dev/网格导航/">网格导航</a><a href="../dev/NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../dev/地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../dev/图像模板匹配示例/">图像模板匹配示例</a><a href="../dev/文字识别示例/">文字识别示例</a><a href="../dev/切换账户流程分析/">账户切换流程</a><a href="../dev/账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../dev/任务汇总报告机制/">任务汇总报告机制</a><a href="../dev/自动拾取任务/">自动拾取</a><a href="../getting-started/installation/">Installation</a><a href="../getting-started/configuration/">Before you start</a><a href="../guides/quick-start/">Quick start</a><a href="../features/overview/">Overview</a><a href="../daily-tasks/">Daily Tasks</a><a href="../stamina-farming/">Stamina Farming</a><a href="../auto-combat/">Auto Combat</a><a href="../action-sequence/">Action Sequences</a><a href="../delivery-pickup/">Delivery Commission Pickup</a><a href="../auto-delivery/">Auto Delivery</a><a href="../warehouse-transfer/">Warehouse Transfer</a><a href="./" class="active" aria-current="page">Item Navigation &amp; Realtime Detection</a><a href="../account-configuration/">Account Configuration</a><a href="../config-export-import/">Config Export and Import</a><a href="../windows-task-scheduler/">Windows Task Scheduler</a><a href="../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="item-navigation-realtime-detection">Item Navigation &amp; Realtime Detection</h1>
 <p>Back: <a href="../">Documentation home</a> / <a href="https://github.com/AliceJump/ok-end-field/blob/master/README.md">README</a></p>
 <h2 id="overview">Overview</h2>
 <p>This document covers two trigger/debug tasks:</p>
 <ul>
-<li><code>ItemNavigatorTask</code> (UI name: Item Navigation): uses the official-map WebSocket when a valid <code>content</code> is available; otherwise starts a local WebSocket service pointing to the nearest gathering point of the selected item, and supports pressing a key to mark it as collected.</li>
+<li><code>ItemNavigatorTask</code> (UI name: Item Navigation): points to the nearest gathering point of the selected item and supports pressing a key to mark it as collected. Existing configurations use the master-compatible local WS / official map client path by default; shared <code>world.pose</code> is used only when Unified Localization is selected.</li>
 <li><code>RealtimeDetectTask</code> (UI name: Realtime Detection): runs YOLO detection in a loop for observing model, target-class, and confidence performance online.</li>
 </ul>
 <hr>
 <h2 id="item-navigation">Item Navigation</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
-<li>It is recommended to save the official-map sync <code>content</code> on the account configuration page, or fill in <code>content</code> directly in the task config.</li>
-<li>When <code>content</code> is not configured, an external script or tool is needed to push position data to the local <code>ws://127.0.0.1:3001</code>.</li>
+<li>Legacy Compatible starts this task&#39;s own official-map client or local WS server; legacy <code>content</code> / <code>地图账号</code> values are migrated to the global Nav Config first.</li>
+<li>Unified Localization recommends saving the official-map sync <code>content</code> on the account configuration page and selecting its <code>真值地图账号</code> in the global Nav Config, or filling in <code>真值content</code> there directly. Without official truth, the Tampermonkey relay uses the local <code>ws://127.0.0.1:3001</code>.</li>
+<li>Unified Localization starts the application-level position service on demand when coordinates are first read; Legacy Compatible does not touch it.</li>
 <li>Item point data comes from <code>assets/items/map/summary.json</code> and <code>assets/items/map/item_names.json</code>.</li>
 <li>Mark results are written to <code>configs/marked_points.json</code>, used to avoid re-pointing to already-marked points.</li>
 </ul>
@@ -54,14 +55,9 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>content</code></td>
-<td align="right">empty string</td>
-<td>Optional. Fill in the <code>data.content</code> from the JSON returned by <code>web-api.skland.com/account/info/hg/check</code>. When present, the official-map WebSocket is preferred. See &quot;Obtaining content&quot; below.</td>
-</tr>
-<tr>
-<td><code>地图账号</code> (Map account)</td>
-<td align="right">empty string</td>
-<td>Optional. When <code>content</code> is empty, reads the map-sync content saved for that account on the account configuration page.</td>
+<td><code>定位实现</code> (Position implementation)</td>
+<td align="right"><code>旧版兼容</code></td>
+<td><code>旧版兼容</code> keeps the original WS / official map client. <code>统一定位</code> uses the application-level position service and global Nav Config.</td>
 </tr>
 <tr>
 <td><code>选择物品</code> (Select item)</td>
@@ -110,11 +106,11 @@
 <li>Switch to the <strong>Network</strong> tab and type <code>https://web-api.skland.com/account/info/hg/check</code> in the filter box.</li>
 <li>Select that request in the filtered list and read <code>data.content</code> from the <strong>Response</strong>
 (a long string).</li>
-<li>Paste it into the task&#39;s <code>content</code> parameter; <strong>or</strong> save it as <code>地图同步 content</code> on the
-account configuration page and then pick that account via <code>地图账号</code> in the task.</li>
+<li>Paste it into <code>真值content</code> in the global Nav Config; <strong>or</strong> save it on the
+account configuration page and select that account via <code>真值地图账号</code>.</li>
 </ol>
 <blockquote>
-<p>Pick either route: putting it directly in <code>content</code> is handy for a one-off run, while saving it on
+<p>Pick either route: putting it directly in <code>真值content</code> is handy for a one-off run, while saving it on
 the account page suits long-term multi-account use. <code>content</code> is equivalent to a login session —
 never paste it into issues, chat groups, or screenshots.</p>
 </blockquote>
@@ -132,26 +128,24 @@ after connecting, the script relays position data from the web map.</li>
 <blockquote>
 <p>If no position data arrives, check that the local firewall allows port <code>3001</code> and that Tampermonkey permits the script to run on the target site.</p>
 </blockquote>
-<h3 id="data-flow">Data flow</h3>
+<h3 id="data-flow-unified-localization">Data flow (Unified Localization)</h3>
 <pre><code class="language-mermaid">flowchart TD
-    A[Task content] --&gt; D{Has content}
-    B[Account config page map_contents] --&gt; D
-    C[Local WS port 3001] --&gt; H[Unified position queue]
-    D --&gt;|Yes| E[OAuth exchange for official credentials]
-    E --&gt; F[Get official WS token]
-    F --&gt; G[Connect ws.skland.com]
-    D --&gt;|No| C
-    G --&gt; H
-    H --&gt; I[Parse mapId and coordinates]
-    I --&gt; J[Query assets/items/map data]
-    J --&gt; K[Draw direction arrow]
-    K --&gt; L[Hold mark key and write configs/marked_points.json]
+    A[Nav Config 真值content / 真值地图账号] --&gt; D{Has official truth}
+    B[Local WS port 3001] --&gt; C[WorldPoseService sole producer]
+    D --&gt;|Yes| E[Official map WS]
+    D --&gt;|No| B
+    E --&gt; C
+    C --&gt; F[RuntimeStateHub: world.pose]
+    F --&gt; G[Item Navigation reads x/y/z/map_id]
+    G --&gt; H[Query assets/items/map data]
+    H --&gt; I[Draw direction arrow]
+    I --&gt; J[Hold mark key and write configs/marked_points.json]
 </code></pre>
 <h3 id="notes">Notes</h3>
 <ul>
 <li>Item Navigation depends on the current map ID and coordinate data; without point data it cannot produce a valid direction.</li>
 <li>The task draws a direction arrow on the window; if you cannot see the arrow, first check whether the WebSocket position data is working.</li>
-<li>&quot;Local WS fallback&quot; only happens when the task has no <code>content</code>. If <code>content</code> is configured but the official auth or connection fails, the current run does not automatically switch to local WS; clear the task <code>content</code> and uncheck/clear the map account to use local mode.</li>
+<li>For Unified Localization, &quot;Local WS fallback&quot; only happens when the global Nav Config has no <code>content</code>. If <code>content</code> is configured but the official auth or connection fails, the current run does not automatically switch to local WS; clear the global <code>真值content</code> and <code>真值地图账号</code> to use local mode.</li>
 <li>Marking requires holding the key for the duration set by <code>标记按住时长</code> (default 2 seconds) within a horizontal distance of 20; releasing the key early or leaving the range cancels the current timing. The value is re-read every cycle, so changes apply without restarting the task.</li>
 <li>The Tampermonkey-script help button opens the official Item Navigation guide and the script directory.</li>
 </ul>
@@ -170,8 +164,8 @@ after connecting, the script relays position data from the web map.</li>
 </thead>
 <tbody><tr>
 <td><code>YOLO模型</code> (YOLO model)</td>
-<td align="right"><code>yolo.default_model</code> in <a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/config.py">src/config.py</a></td>
-<td>Model config key; the actual model and labels are maintained in <a href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/src/yolo/models.py">src/yolo/models.py</a>.</td>
+<td align="right"><code>yolo.default_model</code> in <a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/config.py">src/config.py</a></td>
+<td>Model config key; the actual model and labels are maintained in <a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/src/yolo/models.py">src/yolo/models.py</a>.</td>
 </tr>
 <tr>
 <td><code>检测目标</code> (Detect target)</td>
@@ -195,6 +189,6 @@ after connecting, the script relays position data from the web map.</li>
 <li>This task loops; when stopped it outputs the total scan count, hit rounds, and highest confidence.</li>
 </ul>
 <p>Related documents: <a href="../dev/地图官方WS客户端实现/">Official Map WS Client Implementation</a> / <a href="../account-configuration/">Account Configuration User Guide</a></p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/en/item-navigation.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Oct 31, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#overview" style="margin-left:0px">Overview</a><a href="#item-navigation" style="margin-left:0px">Item Navigation</a><a href="#prerequisites" style="margin-left:10px">Prerequisites</a><a href="#configuration-items" style="margin-left:10px">Configuration items</a><a href="#obtaining-content" style="margin-left:10px">Obtaining content</a><a href="#local-websocket-tampermonkey" style="margin-left:10px">Local WebSocket (Tampermonkey)</a><a href="#data-flow" style="margin-left:10px">Data flow</a><a href="#notes" style="margin-left:10px">Notes</a><a href="#realtime-detection" style="margin-left:0px">Realtime Detection</a><a href="#use-cases" style="margin-left:10px">Use cases</a><a href="#configuration-items-2" style="margin-left:10px">Configuration items</a><a href="#notes-2" style="margin-left:10px">Notes</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/en/item-navigation.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Nov 4, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#overview" style="margin-left:0px">Overview</a><a href="#item-navigation" style="margin-left:0px">Item Navigation</a><a href="#prerequisites" style="margin-left:10px">Prerequisites</a><a href="#configuration-items" style="margin-left:10px">Configuration items</a><a href="#obtaining-content" style="margin-left:10px">Obtaining content</a><a href="#local-websocket-tampermonkey" style="margin-left:10px">Local WebSocket (Tampermonkey)</a><a href="#data-flow-unified-localization" style="margin-left:10px">Data flow (Unified Localization)</a><a href="#notes" style="margin-left:10px">Notes</a><a href="#realtime-detection" style="margin-left:0px">Realtime Detection</a><a href="#use-cases" style="margin-left:10px">Use cases</a><a href="#configuration-items-2" style="margin-left:10px">Configuration items</a><a href="#notes-2" style="margin-left:10px">Notes</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../en/">All projects</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20261104031949" defer></script></body></html>

@@ -1,0 +1,560 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>网格导航 · 开发与维护 · ok-end-field · English</title><meta name="description" content="返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标来源、融合和校准见 小地图定位。 网格导航接收目标世界坐标，消费可信的 world.pose ，然后： 加载当前地图的 .g — ok-end-field English documentation"><meta name="keywords" content="ok-end-field, okendfield, GitHub, AliceJump/ok-end-field, AliceJump, Arknights: Endfield, Background automation, Windows, game automation, computer vision, open source, Python automation, Windows automation, documentation, Docs"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/网格导航/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="网格导航 · 开发与维护 · ok-end-field · English"><meta property="og:description" content="返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标来源、融合和校准见 小地图定位。 网格导航接收目标世界坐标，消费可信的 world.pose ，然后： 加载当前地图的 .g — ok-end-field English documentation"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/网格导航/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="网格导航 · 开发与维护 · ok-end-field · English"><meta name="twitter:description" content="返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标来源、融合和校准见 小地图定位。 网格导航接收目标世界坐标，消费可信的 world.pose ，然后： 加载当前地图的 .g — ok-end-field English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta name="twitter:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"网格导航 · 开发与维护 · ok-end-field · English","description":"返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标来源、融合和校准见 小地图定位。 网格导航接收目标世界坐标，消费可信的 world.pose ，然后： 加载当前地图的 .g — ok-end-field English documentation","url":"https://ok-script.com/ok-end-field/en/docs/dev/网格导航/","inLanguage":"en","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261104031949">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">Docs</a>
+      <a href="../../../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../guide-submodule-contrib/">模板贡献指南</a><a href="../API/">API 参考</a><a href="../运行时状态总线/">运行时状态总线</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../OCR使用分类/">OCR 使用分类</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../小地图定位/">小地图定位</a><a href="./" class="active" aria-current="page">网格导航</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务汇总报告机制/">任务汇总报告机制</a><a href="../自动拾取任务/">自动拾取</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../config-export-import/">Config Export and Import</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="网格导航">网格导航</h1>
+<p>返回：<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/zh-CN/README.md">文档索引</a> / <a href="../API/">API 参考</a> / <a href="../DEVELOPMENT/">开发指南</a> /
+<a href="../小地图定位/">小地图定位</a></p>
+<p>本文只说明二维网格规划、路线跟随和游戏输入。坐标来源、融合和校准见
+<a href="../小地图定位/">小地图定位</a>。</p>
+<h2 id="1-职责边界">1. 职责边界</h2>
+<p>网格导航接收目标世界坐标，消费可信的 <code>world.pose</code>，然后：</p>
+<ul>
+<li>加载当前地图的 <code>*.grid.npz</code>；</li>
+<li>在可行走网格上做 A*；</li>
+<li>把路径转换成 <code>TURN/WALK/ZIP_LINE/WAIT/STUCK/REPLAN/DONE</code>；</li>
+<li>执行键盘、鼠标和滑索操作；</li>
+<li>处理重规划、卡住、脱困和周期校准。</li>
+</ul>
+<p>它不直接读取物品点位，也不启动 WS、小地图里程计或融合器。</p>
+<p>导航代码不导入 <code>src/localization/</code>。位置、朝向和朝向控制通过 <code>PoseProvider</code>
+接口获得，具体实现由运行状态适配层注入。</p>
+<h2 id="2-模块">2. 模块</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>职责</th>
+<th>不负责</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/nav/grid_io.py</code></td>
+<td>稠密网格、坐标换算、<code>*.grid.npz</code> 读写</td>
+<td>路径规划</td>
+</tr>
+<tr>
+<td><code>src/nav/grid_planner.py</code></td>
+<td>A*、风险与墙距代价、起终点吸附、滑索图接入</td>
+<td>游戏输入</td>
+</tr>
+<tr>
+<td><code>src/nav/route_follower.py</code></td>
+<td>把航点转换成动作状态</td>
+<td>直接操作游戏</td>
+</tr>
+<tr>
+<td><code>src/nav/nav_state.py</code></td>
+<td>导航主循环每一拍的状态、会话数据与输入快照</td>
+<td>判定与执行</td>
+</tr>
+<tr>
+<td><code>src/nav/zip_line_graph.py</code></td>
+<td>用户滑索点解析和连接图</td>
+<td>网格规划</td>
+</tr>
+<tr>
+<td><code>src/tasks/navigation/mixin/grid_navigation_mixin.py</code></td>
+<td>组织定位、规划、动作、重规划和脱困</td>
+<td>纯算法实现</td>
+</tr>
+<tr>
+<td><code>src/tasks/navigation/mixin/zip_line_mixin.py</code></td>
+<td>登索、上下索 UI 和滑索执行</td>
+<td>网格规划</td>
+</tr>
+</tbody></table>
+<p><code>src/nav/</code> 是纯 Python 模块，不依赖 <code>ok</code> 框架，可独立测试。</p>
+<h2 id="3-数据流">3. 数据流</h2>
+<pre><code class="language-mermaid">flowchart TD
+    HUB[RuntimeStateHub: world.pose] --&gt; NAV[GridNavigationMixin]
+    G[*.grid.npz] --&gt; P[A* Planner]
+    Z[官方地图 saveMarks] --&gt; ZG[用户滑索图]
+    ZG --&gt; P
+    NAV --&gt;|起点与终点| P
+    P --&gt;|cells / waypoints / zip_line_steps| RF[Route Follower]
+    HUB --&gt;|位置与朝向| RF
+    RF --&gt;|动作状态| NAV
+    NAV --&gt;|键盘、鼠标| GAME[游戏]
+</code></pre>
+<p>网格导航主循环必须先确认定位可信，再允许路线跟随器继续行走或重新规划。</p>
+<p><code>src/nav/</code> 只包含纯算法，不依赖定位实现；导航任务和导航 Mixin 也只依赖
+<code>world.pose</code> 与 <code>PoseProvider</code> 接口。</p>
+<h2 id="4-坐标与网格">4. 坐标与网格</h2>
+<pre><code class="language-text">world = origin + (i, j) * cell_size
+</code></pre>
+<ul>
+<li><code>i</code> 是行，沿世界 <code>z</code>；</li>
+<li><code>j</code> 是列，沿世界 <code>x</code>；</li>
+<li><code>origin</code> 是数组下标 <code>(0, 0)</code> 格最小角的世界坐标；</li>
+<li>当前导航网格是二维的，<code>origin[1]</code> 只作溯源记录，不参与换算。</li>
+</ul>
+<p><code>*.grid.npz</code> 包含：</p>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cells</code></td>
+<td><code>uint8</code> 二维数组，<code>0=未知</code>、<code>1=可行走</code>、<code>2=阻挡</code></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td>UTF-8 JSON，包含 <code>origin</code>、<code>cell_size</code>、<code>map_name</code>、<code>zoom</code> 和 schema 版本</td>
+</tr>
+</tbody></table>
+<p>读取时会校验 <code>magic</code>、<code>schema_version</code>、数组维度和状态值。</p>
+<h2 id="5-配置">5. 配置</h2>
+<p>网格参数集中在全局 <code>Nav Config</code>：</p>
+<ul>
+<li><code>地图id(留空自动)</code>；</li>
+<li><code>网格目录</code>、<code>网格文件(可选)</code>、<code>网格Zoom(可选)</code>；</li>
+<li><code>使用滑索路径</code>；</li>
+<li><code>仅规划不移动</code>；</li>
+<li><code>等待定位超时(秒)</code>；</li>
+<li>规划、代价、转向、冲刺、卡住和脱困参数。</li>
+</ul>
+<p><code>MinimapNavigateToPoint</code> 的任务配置只保留目标 <code>X/Z</code>，其余参数从 <code>Nav Config</code> 读取。</p>
+<h2 id="6-a-规划">6. A* 规划</h2>
+<p>规划器核心规则：</p>
+<ul>
+<li>可行走格基础代价为 <code>1</code>，斜向为 <code>sqrt(2)</code>；</li>
+<li>未知格可通行时乘以 <code>risk_cost</code>；</li>
+<li>阻挡格不可通行，斜向移动不能穿过阻挡墙角；</li>
+<li><code>margin</code> 和 <code>wall_penalty</code> 提供离墙偏好，但不会封死窄路；代价在 <code>clearance &gt;= margin</code>
+处饱和，因此只会把路线拉到离墙 <code>margin</code> 格以内（默认 <code>3</code>，可让宽约 5 格以内的走廊
+从正中穿过），开阔区域不受影响、不会为了居中绕远；</li>
+<li><code>frontier_margin</code> 和 <code>frontier_penalty</code> 偏好已知自由区域内部；</li>
+<li>宽度只有一格的通路由 <code>GridPlanner.is_narrow_corridor</code> 识别（正对两侧被界内阻挡格夹住），
+入口前后两格会被强制保留为航点，入口航点下标写入 <code>PlanResult.narrow_entries</code>；</li>
+<li>精确搜索超过 <code>max_expand</code> 时自动加权重搜一次（权重取 <code>max(risk_cost, 1/启发式缩放)</code>），
+降级只改扩展顺序，路线依旧不穿墙、不切角，代价最优性不再保证并记入 <code>notes</code>；</li>
+<li>失败原因区分搜索触顶、禁止穿越未知格和可达区域穷尽。</li>
+</ul>
+<p>加载了用户滑索时，规划耗时会明显上升，这是刻意付的代价：滑索边的单价是
+<code>zip_line_cost_factor</code>（默认 <code>0.2</code>）乘距离，比步行便宜得多，octile 启发只有在整体乘上
+同一系数之后才仍是<strong>代价下界</strong>，因此 A* 会退得更接近均匀代价搜索。实测同一张 520 万格
+网格上一条 535m 路线，扩展节点数从 10.7 万升到 34.7 万；未开启「允许穿越未知格」时搜索
+只覆盖已知可行走区（本仓库随附网格最大约 3.7 万格），影响有限，开启后长路线可能顶到
+<code>max_expand</code>。缩放系数记录在 <code>GridPlanner.zip_line_stats()[&quot;heuristic_scale&quot;]</code>，导航日志
+会在接入滑索时打印它；触顶诊断里也会带上这条说明，避免误判成&quot;网格数据有问题&quot;。</p>
+<h2 id="7-路线跟随与执行">7. 路线跟随与执行</h2>
+<p>任务层主循环是显式状态机，每拍只做三步：<code>_grid_nav_poll</code> 取输入快照、
+<code>_grid_nav_classify</code> 判定这一拍的状态、<code>_GRID_NAV_HANDLERS</code> 里的处理器执行它。
+状态没有跨拍记忆——每拍都按下面的固定优先级重新判定一次，所以表里的“状态”是
+“这一拍走哪个分支”。状态、会话数据和快照类型都在 <code>src/nav/nav_state.py</code>；
+状态到处理器的登记必须一一对应，<code>tests.TestGridNavigationMixin</code> 会检查。</p>
+<h3 id="7-1-每一拍的状态">7.1 每一拍的状态</h3>
+<table>
+<thead>
+<tr>
+<th align="right">优先级</th>
+<th>状态</th>
+<th>进入条件</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">1</td>
+<td><code>WAIT_POSE</code></td>
+<td>拿不到 <code>world.pose</code></td>
+<td>停车等下一拍</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td><code>WAIT_ANCHOR</code></td>
+<td><code>x/z</code> 未锚定</td>
+<td>停车等下一拍</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td><code>WAIT_TRUST</code></td>
+<td><code>position_trusted=False</code></td>
+<td>停车；静止且过了重试点则请求校准</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td><code>WAIT_ODOM</code></td>
+<td>本拍无有效位移样本</td>
+<td>停车等下一拍</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td><code>CALIBRATE</code></td>
+<td>定位服务要求校准且过了重试点</td>
+<td>停车等一次真实重锚</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td><code>WAIT_HEADING</code></td>
+<td>朝向不可用或质量低于阈值</td>
+<td>停车等下一拍</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td><code>STOP_REACHED</code></td>
+<td>已进入 <code>stop_distance</code></td>
+<td>停车并按成功结束</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td><code>PLAN</code></td>
+<td>没有路线，或检测到换图</td>
+<td>规划；成功后同一拍继续往下走</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td><code>ZIP_LINE_APPROACH</code></td>
+<td>跟随器给出了待乘滑索段</td>
+<td>先接近入口并登索，否则落回普通派发</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td><code>REPLAN</code></td>
+<td>跟随器报 <code>REPLAN</code></td>
+<td>停车；按是否在已知格决定原地校准或回退</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td><code>ZIP_LINE</code></td>
+<td>跟随器报 <code>ZIP_LINE</code></td>
+<td>执行滑索段</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td><code>WAYPOINT_ARRIVED</code></td>
+<td>到达一个航点</td>
+<td>累计；到 <code>航点校准间隔(个)</code> 就停车校准</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td><code>DONE</code></td>
+<td>跟随器报 <code>DONE</code></td>
+<td>还在回退目标上就先校准，否则判定到达</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td><code>STUCK</code></td>
+<td>跟随器报 <code>STUCK</code></td>
+<td>按脱困序列尝试；额度用完则失败</td>
+</tr>
+<tr>
+<td align="right">15</td>
+<td><code>NARROW_CALIBRATE</code></td>
+<td>跟随器报 <code>NARROW_CALIBRATE</code></td>
+<td>停车校准 + 对准入口，连续失败到上限才继续</td>
+</tr>
+<tr>
+<td align="right">16</td>
+<td><code>TURN</code></td>
+<td>跟随器报 <code>TURN</code></td>
+<td>大角度或贴近航点时停车转，否则边走边转</td>
+</tr>
+<tr>
+<td align="right">17</td>
+<td><code>WALK</code></td>
+<td>跟随器报 <code>WALK</code></td>
+<td>按住 <code>W</code> 前进</td>
+</tr>
+<tr>
+<td align="right">18</td>
+<td><code>WAIT</code></td>
+<td>跟随器报 <code>WAIT</code></td>
+<td>松开 <code>W</code> 等状态稳定</td>
+</tr>
+<tr>
+<td align="right">19</td>
+<td><code>FAILED</code></td>
+<td>跟随器报 <code>FAILED</code></td>
+<td>松开 <code>W</code> 并按失败结束</td>
+</tr>
+</tbody></table>
+<p>第 13-19 项在派发前会先记一次目标距离进展（有进展就归还重规划与脱困额度）。</p>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; Gates
+    Gates --&gt; Stopped: 已进入接近范围
+    Gates --&gt; Plan: 位置与朝向都可用
+    Plan --&gt; Follow: 规划成功
+    Follow --&gt; Plan: 未规划或换图
+    Follow --&gt; Gates: 下一拍重新判定
+    Plan --&gt; Failed: 规划失败
+    Follow --&gt; Failed: 执行失败或额度用完
+    Follow --&gt; Done: 到达目标
+    Stopped --&gt; [*]
+    Done --&gt; [*]
+    Failed --&gt; [*]
+</code></pre>
+<p><code>Gates</code> 是 7.1 表里的第 1-6 项，<code>Follow</code> 是第 9-19 项；两者都只是“这一拍命中哪一组”，
+不是可以停留在里面的长期状态。</p>
+<h3 id="7-2-跟随器输出">7.2 跟随器输出</h3>
+<p>下面是 <code>GridRouteFollower</code> 每拍输出的动作，其中执行类状态与它们同名同值，
+所以动作可以直接映射成状态：</p>
+<ul>
+<li><code>TURN</code>：转向；</li>
+<li><code>WALK</code>：按住 <code>W</code> 移动；</li>
+<li><code>ZIP_LINE</code>：执行滑索步骤；</li>
+<li><code>NARROW_CALIBRATE</code>：进入一格宽通路前停车校准；</li>
+<li><code>WAIT</code>：等待状态稳定；</li>
+<li><code>STUCK</code>：进入脱困；</li>
+<li><code>REPLAN</code>：偏航或路径失效后重新规划；</li>
+<li><code>DONE</code>：到达目标。</li>
+</ul>
+<p>普通行走开始后，如果当前规划航段超过 <code>15m</code>，导航会在按住 <code>W</code> 时按一次 <code>shift</code>
+进入冲刺。松开 <code>W</code> 后冲刺状态清除。</p>
+<h3 id="7-3-静止校准">7.3 静止校准</h3>
+<p>静止校准是导航里唯一的主动停车点，入口统一在 <code>_grid_nav_sync(ctx, reason)</code>，
+六个触发原因见 <code>SyncReason</code>：定位重新校准、定位服务请求、航点间隔、偏航后原地校准、
+回到已知格后校准、窄道入口前。原因会写进状态提示与超时告警，便于回答“为什么又停下来校准”。
+等待本身由 <code>_wait_for_minimap_sync</code> 完成，上限 8 秒（覆盖一个 WS 推送周期），
+超时或“已对齐”都按未校准处理，调用方据此决定退避 30 秒还是继续。</p>
+<p>窄道入口是最特别的一个触发点：当当前目标航点是一格宽通路的入口
+（<code>PlanResult.narrow_entries</code>）、角色已接近到「窄道前校准距离(米)」以内时，跟随器输出
+<code>NARROW_CALIBRATE</code>：主循环先停车校准，再对准入口航点方位，随后才继续走向入口，
+避免带着累积定位误差进入没有横向余量的通路。入口前最后一格也是捷径保护点，
+不会被 <code>shortcut_radius</code> 跳过；关闭「窄道前停车校准」即恢复旧行为。</p>
+<h3 id="7-4-卡住脱困">7.4 卡住脱困</h3>
+<p>脱困动作序列是显式数据（<code>_GRID_STUCK_RECOVERY</code>）：后退 → 后退 + 侧移 → 对准目标后
+跳跃。尝试次数超出序列长度时重复最后一步，所以把「卡住脱困次数」调大不会越界；
+日志里的“第几次/共几次”跟随配置，不再写死 <code>3/3</code>。</p>
+<h3 id="7-5-转向收敛">7.5 转向收敛</h3>
+<p>地面停车转向首轮使用已标定的输入比例，不把首轮角色朝向变化用于重新估计系数：
+角色可能尚未朝向镜头，首轮变化包含两者的初始偏差。按 W 后连续读取新画面，等朝向
+稳定再判断到位或按剩余角度补转；仍在变化时交回下一拍采样，不连续追加鼠标输入。
+稳定观测复用原「角度刷新等待」，正常转向不额外叠加一次固定等待。</p>
+<p>第二轮及之后才允许用同基准的稳定反馈微调本次转向比例；小位移、反向或接近半圈的
+角差不用于校准，避免取绝对值掩盖方向或跨圈歧义。滑索纯视角对准仍沿用其原有流程。</p>
+<h3 id="7-6-偏航回退">7.6 偏航回退</h3>
+<p>偏航时若当前位置不在已知可行走格，先规划回最近走过的已知格（<code>session.recovery_goal</code>），
+走到之后由 <code>DONE</code> 触发一次静止校准，校准完成再清空回退目标、继续原目标。
+真重锚会整体平移世界坐标，因此每次 <code>sync_seq</code> 变化都会清空“走过的已知格”。</p>
+<h2 id="8-定位协作">8. 定位协作</h2>
+<p>网格导航消费 <code>world.pose</code> 时按以下顺序判断：</p>
+<ol>
+<li><code>anchor_set=True</code> 且本轮存在 <code>x/z</code>；</li>
+<li><code>position_trusted=True</code>；</li>
+<li>本拍存在有效里程计样本；</li>
+<li>以上条件满足后，路线跟随器才允许 <code>WALK</code> 或重新规划。</li>
+</ol>
+<p>普通重锚后必须停车等待静止校准。<code>too_long_dt</code> 属于良性换锚，不撤销信任。</p>
+<p>达到指定航点数量或累计移动距离后，导航会主动停车请求重新校准；定位服务完成校准后，
+导航再继续原路线。</p>
+<h2 id="9-用户滑索">9. 用户滑索</h2>
+<h3 id="9-1-数据">9.1 数据</h3>
+<p>滑索点来自官方地图接口：</p>
+<pre><code class="language-text">GET /web/v1/game/endfield/map/mark/list?mapId=...&amp;roleId=...&amp;serverId=...
+</code></pre>
+<p>只读取 <code>data.saveMarks</code>，通过 <code>data.markTemplates</code> 映射：</p>
+<table>
+<thead>
+<tr>
+<th>模板名</th>
+<th align="right">最大连接距离</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>滑索架</code></td>
+<td align="right">80m</td>
+</tr>
+<tr>
+<td><code>长距滑索架</code></td>
+<td align="right">110m</td>
+</tr>
+</tbody></table>
+<p>连接约束：</p>
+<ul>
+<li>仅连接同一 <code>mapId</code>；</li>
+<li>两端都有 <code>levelId</code> 时必须同层；</li>
+<li>使用三维欧氏距离；</li>
+<li>距离不超过两端连接半径的较大值。</li>
+</ul>
+<h3 id="9-2-规划">9.2 规划</h3>
+<p>每个滑索点会吸附到最近的可通行格。可连接滑索对生成双向转移边：</p>
+<pre><code class="language-text">普通滑索边：distance * zip_line_cost_factor + zip_line_boarding_cost
+</code></pre>
+<p>规划器支持把中间滑索链合成一条 A* 边。例如 <code>A -&gt; B -&gt; C</code> 中若 <code>B</code> 位于未知格，
+只要 <code>A/C</code> 可到，仍可规划成 <code>A -&gt; C</code>，执行时依次乘坐两段。若 <code>B</code> 本身能映射到
+可行走格，正常情况下仍保持 <code>A -&gt; B -&gt; C</code> 连续执行，不在中间点重复按 <code>F</code>。只有
+后续连接确认失败并封禁后，重规划才会改为在 <code>B</code> 下索并使用普通网格路线。</p>
+<h3 id="9-3-执行">9.3 执行</h3>
+<p>执行分两段：先把角色弄上滑索架（登索），再按段轮询骑乘状态。两段各有独立的判定，
+共用「登上滑索架」模板（<code>_zip_line_on_rack_visible</code>）与最新 WS 坐标。</p>
+<h4 id="9-3-1-登索阶段">9.3.1 登索阶段</h4>
+<p><code>_grid_zip_line_enter_rack</code> 负责“按「登上滑索架」按钮并用 <code>fL.esc</code> 确认”，
+一次尝试的结果是 <code>ZipLineBoardAttempt</code>：</p>
+<table>
+<thead>
+<tr>
+<th>结果</th>
+<th>判定</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>BOARDED</code></td>
+<td><code>fL.esc</code> 已消失</td>
+<td>记「已成功登上滑索」，进入骑乘阶段</td>
+</tr>
+<tr>
+<td><code>BUTTON_MISSING</code></td>
+<td>没找到「登上滑索架」按钮</td>
+<td>直接失败：重新对准解决不了按钮不存在</td>
+</tr>
+<tr>
+<td><code>UNCONFIRMED</code></td>
+<td>点了按钮但 <code>fL.esc</code> 判定超时</td>
+<td>直接失败，不重试</td>
+</tr>
+<tr>
+<td><code>NOT_BOARDED</code></td>
+<td><code>fL.esc</code> 仍在</td>
+<td>重新对准入口滑索架后重试一次，再失败才放弃</td>
+</tr>
+</tbody></table>
+<p>重试只有一次，且只有 <code>NOT_BOARDED</code> 才值得重试。重试轮的失败文案与首轮不同
+（「重新对正后仍未找到…」「重新对正后仍检测到 fL.esc…」），日志里能直接看出是第几次。</p>
+<p>走向入口滑索架的过程由 <code>_approach_grid_zip_line_for_boarding</code> 负责：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>判定</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>待登索</td>
+<td>距计划上索点 <code>&lt;=5m</code></td>
+<td>按一次 <code>ctrl</code> 切步行；保持 <code>W</code> 连续接近，在移动中读取最新 WS 并持续搜索模板；模板出现立即停车并按 <code>F</code></td>
+</tr>
+<tr>
+<td>待续乘</td>
+<td>错误落点重规划后仍在同一滑索架</td>
+<td>跳过登索，直接对准下一段</td>
+</tr>
+<tr>
+<td>接近搜索超时</td>
+<td>连续接近 <code>20s</code> 仍未检测到模板</td>
+<td>先在入口附近短距 W/A/D/S 搜索；多轮仍失败才短暂后退约 <code>0.6s</code>，不直接长距离远离</td>
+</tr>
+<tr>
+<td>按 <code>F</code> 后未登索</td>
+<td><code>fL.esc</code> 在约 <code>1.5s</code> 后仍存在</td>
+<td>短暂按 <code>S</code> 后退约 <code>0.6s</code>，下一轮从最新 WS 重新计算入口方位后再走</td>
+</tr>
+</tbody></table>
+<h4 id="9-3-2-骑乘阶段">9.3.2 骑乘阶段</h4>
+<p><code>_wait_zip_line_motion</code> 每拍轮询一次，按下面五种情况处理。调用方负责点击并按一次 <code>E</code>，
+本函数只轮询状态、不重复发送按键：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>判定</th>
+<th>动作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>MOVING</code></td>
+<td>两个移动模板都不存在</td>
+<td>等待，不重复发送 <code>E</code></td>
+</tr>
+<tr>
+<td><code>ARRIVED</code></td>
+<td>模板存在且 WS 进入目标范围</td>
+<td>进入下一段</td>
+</tr>
+<tr>
+<td><code>WAITING_TEMPLATE</code></td>
+<td>已停稳在目标附近但到达模板还没出现</td>
+<td>继续等模板，既不算到达也不算失败</td>
+</tr>
+<tr>
+<td><code>NOT_TRIGGERED</code></td>
+<td>已停稳且 WS 仍在起点范围</td>
+<td>返回失败，交给外层重新对准后重试</td>
+</tr>
+<tr>
+<td><code>WRONG_RACK</code></td>
+<td>停稳后 WS 既不在起点也不在目标附近</td>
+<td>不下索，从实际滑索架重新规划</td>
+</tr>
+</tbody></table>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; EnterRack
+    EnterRack --&gt; Ride: BOARDED
+    EnterRack --&gt; [*]: BUTTON_MISSING / UNCONFIRMED
+    EnterRack --&gt; Reaim: NOT_BOARDED
+    Reaim --&gt; EnterRack: 重新对准后重试一次
+    Reaim --&gt; [*]: 仍失败
+    Ride --&gt; Ride: MOVING / WAITING_TEMPLATE
+    Ride --&gt; Reaim: NOT_TRIGGERED
+    Ride --&gt; Ride: ARRIVED 且还有下一段
+    Ride --&gt; [*]: 全部完成
+    Ride --&gt; [*]: WRONG_RACK 重新规划
+</code></pre>
+<p>模板是“是否在滑索架上”的视觉依据；网格登索只使用最新 WS 与入口滑索坐标计算接近方位。
+下索前必须检查滑索节点的实际坐标是否落在可通行格：可通行时 A* 会比较“原地下索步行”和“继续乘坐滑索”；不可通行时不能下索，只能继续沿滑索图移动。滑索链的目标节点也必须是可通行格，否则不能把该节点作为实际下索终点。</p>
+<h3 id="9-4-重规划">9.4 重规划</h3>
+<p>错误落点重规划不变量：</p>
+<ol>
+<li>错误落点一定是滑索架，无需先下索；</li>
+<li>最新 WS 使用三维坐标优先匹配最近滑索节点，避免同 X/Z、不同楼层误认；</li>
+<li>目标始终是原最终目标；</li>
+<li>未映射网格的滑索节点可作为起点；</li>
+<li>前缀链和后续链合并为一次执行；</li>
+<li>候选路线比较完整实际代价，不只看节点距离；</li>
+<li>直接对准失败时保留本段实际起终点的三维坐标，只封禁该连接；</li>
+<li>同一连接连续 5 次未触发后，本次任务实例内标记不可用；</li>
+<li>未映射起点的续接只尝试代价下界最小的前
+<code>zip_line_start_max_candidates</code>（默认 4）个可映射落点：每个候选都要跑一次完整 A*，
+在 <code>map02</code> 这种 520 万格的图上单次就是 1~2 秒。被截断时 <code>PlanResult.notes</code> 会写明，
+按提示调大上限即可；截断的代价是可能选到更绕的那条（例如先滑到一个落点再原路滑回）。</li>
+</ol>
+<h2 id="10-调试与测试">10. 调试与测试</h2>
+<p>导航调试任务：</p>
+<ul>
+<li><code>MinimapNavigateToPoint</code>：按世界坐标规划；开启「仅规划不移动」可只检查路径；</li>
+<li>滑索日志重点查看：<code>执行滑索链</code>、<code>已到达下一滑索附近</code>、<code>到达了非目标滑索架</code>、
+<code>滑索连接不可用</code>、<code>错误落点已匹配滑索架节点</code>。</li>
+</ul>
+<p>常用测试：</p>
+<pre><code class="language-powershell">uv run --locked python -m unittest tests.TestNavGridIO tests.TestNavGridPlanner tests.TestNavZipLineGraph tests.TestNavRouteFollower tests.TestGridNavigationMixin tests.TestFindZipLineBoardButton -v
+</code></pre>
+<p>排查顺序：</p>
+<ol>
+<li>先确认 <code>world.pose</code> 可信；</li>
+<li>检查当前地图、缩放与网格文件是否唯一匹配；</li>
+<li>判断规划失败是搜索触顶、未知格策略还是连通性问题；</li>
+<li>检查跟随器动作、滑索步骤、卡住判定和输入权限。</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/dev/网格导航.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Nov 4, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-职责边界" style="margin-left:0px">1. 职责边界</a><a href="#2-模块" style="margin-left:0px">2. 模块</a><a href="#3-数据流" style="margin-left:0px">3. 数据流</a><a href="#4-坐标与网格" style="margin-left:0px">4. 坐标与网格</a><a href="#5-配置" style="margin-left:0px">5. 配置</a><a href="#6-a-规划" style="margin-left:0px">6. A* 规划</a><a href="#7-路线跟随与执行" style="margin-left:0px">7. 路线跟随与执行</a><a href="#7-1-每一拍的状态" style="margin-left:10px">7.1 每一拍的状态</a><a href="#7-2-跟随器输出" style="margin-left:10px">7.2 跟随器输出</a><a href="#7-3-静止校准" style="margin-left:10px">7.3 静止校准</a><a href="#7-4-卡住脱困" style="margin-left:10px">7.4 卡住脱困</a><a href="#7-5-转向收敛" style="margin-left:10px">7.5 转向收敛</a><a href="#7-6-偏航回退" style="margin-left:10px">7.6 偏航回退</a><a href="#8-定位协作" style="margin-left:0px">8. 定位协作</a><a href="#9-用户滑索" style="margin-left:0px">9. 用户滑索</a><a href="#9-1-数据" style="margin-left:10px">9.1 数据</a><a href="#9-2-规划" style="margin-left:10px">9.2 规划</a><a href="#9-3-执行" style="margin-left:10px">9.3 执行</a><a href="#9-4-重规划" style="margin-left:10px">9.4 重规划</a><a href="#10-调试与测试" style="margin-left:0px">10. 调试与测试</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261104031949" defer></script></body></html>

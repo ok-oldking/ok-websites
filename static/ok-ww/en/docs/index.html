@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-ww.ok-script.com/en/docs/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:locale:alternate" content="ja"><meta property="og:title" content="English · ok-ww · English"><meta property="og:description" content="ok-ww An image-recognition-based automation tool for Wuthering Waves, with background mode support, developed with ok-script — ok-ww English documentation"><meta property="og:url" content="https://ok-ww.ok-script.com/en/docs/"><meta property="og:image" content="https://ok-ww.ok-script.com/assets/social/ok-ww-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-ww — Wuthering Waves · Background automation · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="English · ok-ww · English"><meta name="twitter:description" content="ok-ww An image-recognition-based automation tool for Wuthering Waves, with background mode support, developed with ok-script — ok-ww English documentation"><meta name="twitter:image" content="https://ok-ww.ok-script.com/assets/social/ok-ww-en.png"><meta name="twitter:image:alt" content="ok-ww — Wuthering Waves · Background automation · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"English · ok-ww · English","description":"ok-ww An image-recognition-based automation tool for Wuthering Waves, with background mode support, developed with ok-script — ok-ww English documentation","url":"https://ok-ww.ok-script.com/en/docs/","inLanguage":"en","dateModified":"2026-10-30T00:28:01+08:00","author":{"@type":"Organization","name":"ok-ww","url":"https://github.com/ok-oldking/ok-wuthering-waves"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"English · ok-ww · English","description":"ok-ww An image-recognition-based automation tool for Wuthering Waves, with background mode support, developed with ok-script — ok-ww English documentation","url":"https://ok-ww.ok-script.com/en/docs/","inLanguage":"en","dateModified":"2026-11-04T10:19:30+08:00","author":{"@type":"Organization","name":"ok-ww","url":"https://github.com/ok-oldking/ok-wuthering-waves"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -44,8 +44,6 @@
 <!-- Badges -->
 <div class="badge-row">
   <img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform" />
-  <a href="https://github.com/ok-oldking/ok-wuthering-waves/releases"><img src="https://img.shields.io/github/v/release/ok-oldking/ok-wuthering-waves" alt="GitHub release" /></a>
-  <a href="https://github.com/ok-oldking/ok-wuthering-waves/releases"><img src="https://img.shields.io/github/downloads/ok-oldking/ok-wuthering-waves/total" alt="Total Downloads" /></a>
   <a href="https://discord.gg/vVyCatEBgA"><img src="https://img.shields.io/discord/296598043787132928?color=5865f2&amp;label=%20Discord" alt="Discord" /></a>
 </div>
 
@@ -64,16 +62,6 @@ We will take strict measures against the use of unauthorized tools such as cheat
 Once verified, we will impose penalties based on the severity and frequency of the violation, including but not limited to deducting illicit gains, and suspending or permanently banning the game account.</p>
 </blockquote>
 <p><strong>By using this software, you acknowledge that you have read, understood, and agreed to the above statement, and you voluntarily assume all potential risks.</strong></p>
-<h2 id="quick-start">🚀 Quick Start</h2>
-<ol>
-<li><strong>Download the Installer</strong>: From the &quot;Downloads&quot; section below, download the latest <code>ok-ww-win32-Global-setup.exe</code> installer file.</li>
-<li><strong>Install the Program</strong>: Double-click the <code>ok-ww-win32-Global-setup.exe</code> file and follow the on-screen instructions to complete the installation.</li>
-<li><strong>Run the Program</strong>: After installation, launch <code>ok-ww</code> from the desktop shortcut or the Start Menu.</li>
-</ol>
-<h2 id="downloads">📥 Downloads</h2>
-<ul>
-<li><strong><a href="https://github.com/ok-oldking/ok-wuthering-waves/releases">GitHub</a></strong>: Official release page, fast access worldwide. (<strong>Please download the <code>setup.exe</code> installer, not the <code>Source Code</code> archive</strong>).</li>
-</ul>
 <h2 id="main-features">✨ Main Features</h2>
 <img width="1778" height="1186" alt="QQ_1762961412161" src="https://github.com/user-attachments/assets/0109c68e-d714-4c34-b016-b4b45f9861fd" />
 
@@ -157,8 +145,8 @@ Once verified, we will impose penalties based on the severity and frequency of t
 </tbody></table>
 <h3 id="command-line-arguments">Command-Line Arguments</h3>
 <p>You can use command-line arguments for automated startup.</p>
-<pre><code class="language-bash"># Example: Automatically run the first task after launch and exit the program upon completion
-ok-ww.exe -t 1 -e
+<pre><code class="language-powershell"># Example: Automatically run the first task after launch and exit the program upon completion
+.\.venv\Scripts\python.exe main.py -t 1 -e
 </code></pre>
 <ul>
 <li><code>-t</code> or <code>--task</code>: Automatically runs the Nth task in the list after launch. <code>1</code> represents the first task.</li>
@@ -178,6 +166,6 @@ ok-ww.exe -t 1 -e
 <li><a href="https://github.com/zhiyiYo/PyQt-Fluent-Widgets">zhiyiYo/PyQt-Fluent-Widgets</a></li>
 <li><a href="https://github.com/Toufool/AutoSplit">Toufool/AutoSplit</a></li>
 </ul>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-wuthering-waves/blob/fac98810b2ee4c7b803e386094e40291cd20376a/docs/en/index.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Oct 31, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#english-简体中文-繁體中文-日本語" style="margin-left:10px">English | 简体中文 | 繁體中文 | 日本語</a><a href="#disclaimer" style="margin-left:0px">⚠️ Disclaimer</a><a href="#quick-start" style="margin-left:0px">🚀 Quick Start</a><a href="#downloads" style="margin-left:0px">📥 Downloads</a><a href="#main-features" style="margin-left:0px">✨ Main Features</a><a href="#troubleshooting" style="margin-left:0px">🔧 Troubleshooting</a><a href="#developer-zone" style="margin-left:0px">💻 Developer Zone</a><a href="#running-from-source" style="margin-left:10px">Running from Source</a><a href="#ai-skills" style="margin-left:10px">AI Skills</a><a href="#command-line-arguments" style="margin-left:10px">Command-Line Arguments</a><a href="#join-us" style="margin-left:0px">💬 Join Us</a><a href="#sponsors-acknowledgements" style="margin-left:0px">❤️ Sponsors &amp; Acknowledgements</a><a href="#sponsors" style="margin-left:10px">Sponsors</a><a href="#acknowledgements" style="margin-left:10px">Acknowledgements</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-wuthering-waves/blob/24876ecaaaed4200b98e17180d78caac653b44e0/docs/en/index.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Nov 4, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#english-简体中文-繁體中文-日本語" style="margin-left:10px">English | 简体中文 | 繁體中文 | 日本語</a><a href="#disclaimer" style="margin-left:0px">⚠️ Disclaimer</a><a href="#main-features" style="margin-left:0px">✨ Main Features</a><a href="#troubleshooting" style="margin-left:0px">🔧 Troubleshooting</a><a href="#developer-zone" style="margin-left:0px">💻 Developer Zone</a><a href="#running-from-source" style="margin-left:10px">Running from Source</a><a href="#ai-skills" style="margin-left:10px">AI Skills</a><a href="#command-line-arguments" style="margin-left:10px">Command-Line Arguments</a><a href="#join-us" style="margin-left:0px">💬 Join Us</a><a href="#sponsors-acknowledgements" style="margin-left:0px">❤️ Sponsors &amp; Acknowledgements</a><a href="#sponsors" style="margin-left:10px">Sponsors</a><a href="#acknowledgements" style="margin-left:10px">Acknowledgements</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-wuthering-waves"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../en/">All projects</a></div></div></footer>
-  <script src="../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../assets/site.js?v=20261104031949" defer></script></body></html>

@@ -1,12 +1,12 @@
 <!doctype html><html lang="zh-CN" data-theme="light"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>Combat Planner 开发指南 · 开发 · ok-nte · 简体中文</title><meta name="description" content="提示 ：角色的具体代码实现可在 src/char 目录中找到，也可查看 GitHub 或 CNB 上的代码目录。 Plann — ok-nte 简体中文文档"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, 异环, 后台自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="BnanZ0">
+  <title>Combat Planner 开发指南 · 开发 · ok-nte · 简体中文</title><meta name="description" content="角色负责描述自己的动作与出招流程, Planner 负责选择切入目标和执行协作路线。 内置角色示例见 src/char。 角 — ok-nte 简体中文文档"><meta name="keywords" content="ok-nte, oknte, GitHub, BnanZ0/ok-nte, BnanZ0, 异环, 后台自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="BnanZ0">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-nte/docs/development/combat-planner/">
-  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Combat Planner 开发指南 · 开发 · ok-nte · 简体中文"><meta property="og:description" content="提示 ：角色的具体代码实现可在 src/char 目录中找到，也可查看 GitHub 或 CNB 上的代码目录。 Plann — ok-nte 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-nte/docs/development/combat-planner/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — 异环 · 后台自动化 · Windows">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Combat Planner 开发指南 · 开发 · ok-nte · 简体中文"><meta name="twitter:description" content="提示 ：角色的具体代码实现可在 src/char 目录中找到，也可查看 GitHub 或 CNB 上的代码目录。 Plann — ok-nte 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-zh-cn.png"><meta name="twitter:image:alt" content="ok-nte — 异环 · 后台自动化 · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Combat Planner 开发指南 · 开发 · ok-nte · 简体中文","description":"提示 ：角色的具体代码实现可在 src/char 目录中找到，也可查看 GitHub 或 CNB 上的代码目录。 Plann — ok-nte 简体中文文档","url":"https://ok-script.com/ok-nte/docs/development/combat-planner/","inLanguage":"zh-CN","dateModified":"2026-10-05T05:43:25+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Combat Planner 开发指南 · 开发 · ok-nte · 简体中文"><meta property="og:description" content="角色负责描述自己的动作与出招流程, Planner 负责选择切入目标和执行协作路线。 内置角色示例见 src/char。 角 — ok-nte 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-nte/docs/development/combat-planner/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-nte-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-nte — 异环 · 后台自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Combat Planner 开发指南 · 开发 · ok-nte · 简体中文"><meta name="twitter:description" content="角色负责描述自己的动作与出招流程, Planner 负责选择切入目标和执行协作路线。 内置角色示例见 src/char。 角 — ok-nte 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-nte-zh-cn.png"><meta name="twitter:image:alt" content="ok-nte — 异环 · 后台自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Combat Planner 开发指南 · 开发 · ok-nte · 简体中文","description":"角色负责描述自己的动作与出招流程, Planner 负责选择切入目标和执行协作路线。 内置角色示例见 src/char。 角 — ok-nte 简体中文文档","url":"https://ok-script.com/ok-nte/docs/development/combat-planner/","inLanguage":"zh-CN","dateModified":"2026-11-03T08:38:27+08:00","author":{"@type":"Organization","name":"ok-nte","url":"https://github.com/BnanZ0/ok-nte"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -28,457 +28,312 @@
       <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
   </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../features/overview/">功能概览</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题与反馈</a><a href="../contributing/">贡献与验证</a><a href="../running-from-source/">从源码运行</a><a href="../scene_flow/">SceneFlow 作者指南</a><a href="./" class="active" aria-current="page">Combat Planner 开发指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-nte</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="combat-planner-开发指南">Combat Planner 开发指南</h1>
-<blockquote>
-<p><strong>提示</strong>：角色的具体代码实现可在 <a href="https://github.com/BnanZ0/ok-nte/tree/6b10cbd5313cab784666fabcb2be54128e2079f1/src/char"><code>src/char</code></a> 目录中找到，也可查看
-<a href="https://github.com/BnanZ0/ok-nte/tree/main/src/char">GitHub</a> 或
-<a href="https://cnb.cool/BnanZ0/ok-nte-update/-/tree/main/src/char">CNB</a> 上的代码目录。</p>
-</blockquote>
-<p>Planner 是队伍大脑。角色只声明一个 <code>CombatPlan</code>：</p>
-<ul>
-<li><code>actions</code>：planner 可见的动作目录，用于切人评分、route/request/reservation 匹配。</li>
-<li><code>claims</code>：<code>FieldClaim</code> 入场诉求，用于表达“我现在应该被切进来”。</li>
-<li><code>entry</code>：普通入场后的 Python generator 动作流。未提供时默认按 <code>actions</code> 顺序执行。</li>
-</ul>
-<p>角色代码从 <code>src.combat.planner</code> 导入公开类型。以下是常用类型示例，按需增删：</p>
-<pre><code class="language-python">from src.combat.planner import (
-    ActionIntent,
-    ActionReservation,
-    ActionResult,
-    ActionSlot,
-    ActionTag,
-    CombatContext,
-    ExpectedEntry,
-    FieldClaim,
-    FollowupStep,
-    Planner,
-    RequestHandle,
-    RoleProfile,
-    SwitchInGuard,
-)
-</code></pre>
-<p><code>src.combat.planner</code> 只导出正式开发 API。角色代码不要直接导入
-<code>planner/core.py</code>、<code>planner/requests.py</code>、<code>planner/state.py</code> 等内部模块。
-本文聚焦角色作者 API；切人执行生命周期由 <code>BaseCombatTask</code> 管理，角色代码不需要直接
-操作 <code>CombatPlanner</code> 的执行端方法。</p>
-<h2 id="快速入口">快速入口</h2>
-<p>普通角色通常只需要覆盖 <code>describe_role()</code> 和 <code>combat_plan(context)</code>：</p>
-<pre><code class="language-python">def describe_role(self):
-    return RoleProfile(
-        role=Planner.Role.SUB_DPS,
-        field_preference=Planner.FieldPreference.SUB_DPS,
-        max_field_time=1.5,
-    )
+<p>角色负责描述自己的动作与出招流程, Planner 负责选择切入目标和执行协作路线。
+内置角色示例见 <a href="https://github.com/BnanZ0/ok-nte/tree/main/src/char">src/char</a>。
+角色只从 <code>src.combat.planner</code> 导入公开 API, 不操作 Planner 内部状态。</p>
+<h2 id="最简单的角色">最简单的角色</h2>
+<pre><code class="language-python">from src.char.BaseChar import BaseChar
+from src.combat.planner import Planner, RoleProfile
 
-def combat_plan(self, context: CombatContext):
-    return self.plan(
-        self.click_ultimate_action(),
-        self.click_skill_action(),
-    )
-</code></pre>
-<p>复杂动作顺序用同一个 plan 里的 action 变量写 entry flow。一个 action 在一次 entry 中只能
-执行一次；有限次的额外执行使用 <code>repeat_for_entry()</code>：</p>
-<pre><code class="language-python">def combat_plan(self, context: CombatContext):
-    skill = self.click_skill_action(reason=&quot;skill available&quot;)
-    ultimate = self.click_ultimate_action(reason=&quot;ultimate available&quot;)
 
-    def entry():
-        skill_result = yield skill
-        if skill_result and self.ultimate_available():
-            self.sleep(0.6)
+class ExampleChar(BaseChar):
+    def describe_role(self):
+        return RoleProfile(role=Planner.Role.SUB_DPS, max_field_time=1.5)
 
-        ultimate_result = yield ultimate
-        if ultimate_result:
-            yield skill.repeat_for_entry()
-
-    return self.plan(skill, ultimate, entry=entry)
+    def combat_plan(self):
+        plan = self.plan()
+        self.register_ultimate(plan)
+        self.register_skill(plan)
+        return plan
 </code></pre>
-<p><code>yield action</code> 会执行该 action，并把 <code>ActionResult</code> 送回 generator。只有动作成功时
-<code>bool(ActionResult)</code> 才为 True，所以可以直接写：</p>
-<pre><code class="language-python">a = yield action_a
-b = yield action_b
-
-if a and b:
-    yield action_c
-
-if a and not b:
-    yield fallback_action
-</code></pre>
-<h2 id="combatplan">CombatPlan</h2>
-<p>角色通过 <code>self.plan(*actions, claims=None, entry=None)</code> 创建 <code>CombatPlan</code>：</p>
-<pre><code class="language-python">def combat_plan(self, context):
-    setup = self.planner_action(...)
-    claims = []
-    if self.should_claim_field():
-        claims.append(FieldClaim.high(reason=&quot;burst window&quot;))
-
-    return self.plan(setup, claims=claims)
-</code></pre>
-<p>规则：</p>
-<ul>
-<li>创建 plan 时只声明动作和入场诉求，不要发送输入。</li>
-<li>不要在创建 plan 时发布一次性协作请求；<code>request_route()</code>、<code>request_switch()</code>、
-<code>request_role()</code>、<code>request_tags()</code> 和临时 <code>reserve_actions()</code> 应在 action 执行期间发布，
-或在 entry flow 收到成功 result 后发布。队伍级长期策略放在 <code>combat_policies()</code>。</li>
-<li>entry flow 发布的请求会在下一次 <code>yield</code> 或流程结束时收集；收到 result 后发布请求并直接
-<code>return</code> 也会生效。</li>
-<li><code>actions</code> 是评分和协作匹配目录；<code>entry</code> 是普通入场执行流程。</li>
-<li><code>claims</code> 可以传多个独立入场理由；它们不会叠加分数，planner 只取当前匹配角色的最高优先级 claim。</li>
-<li>strict route、expected entry、active request 的硬调度优先于普通 entry flow。</li>
-<li>普通 entry flow 受 planner 的单次入场动作数上限约束。</li>
-<li>同一个 action 在同一次入场中只会真实执行一次。</li>
-</ul>
-<h2 id="actionintent">ActionIntent</h2>
-<p><code>ActionIntent</code> 表达“角色进场后可以尝试做什么”。不要把一次普攻、等待、连点等
-内部细节拆成很多 action；这些应写在一个 action 的 <code>execute</code> 内。</p>
-<p>字段：</p>
-<ul>
-<li><code>tags: set[ActionTag]</code>：动作意义和评分依据。</li>
-<li><code>execute: Callable[[CombatContext], ActionResult | bool | None]</code>：真正执行动作。</li>
-<li><code>name: str = &quot;&quot;</code>：高级精确匹配和日志名。</li>
-<li><code>slot: ActionSlot | None = None</code>：动作槽位。协作路线和 reservation 优先用 slot 匹配。</li>
-<li><code>reason: str = &quot;&quot;</code>：planner 日志和切人理由。</li>
-<li><code>can_execute: Callable[[CombatContext], bool] | None</code>：planner 层硬限制。</li>
-<li><code>priority_ready: Callable[[CombatContext], bool] | None</code>：只用于切人评分。</li>
-</ul>
-<p><code>action.repeat_for_entry()</code> 允许同一次 entry 再次 <code>yield</code> 该动作，同时保留原 action 的
-执行内容、slot、标签和 <code>can_execute</code> 限制。它适合 <code>Q -&gt; E -&gt; 再尝试一次 E</code> 这类有限
-entry flow；返回的副本通常只在 entry flow 中 yield，不应加入 <code>CombatPlan.actions</code>。</p>
-<p>每次 <code>yield</code> 都会计入单次 entry 的动作上限。不要在需要持续运行的长时间循环中 yield
-它；此类循环应在调用已有动作 helper 前，先通过
-<code>context.is_action_allowed(self, action)</code> 检查完整 action 权限。这样循环保持由角色代码
-控制，同时仍遵守 planner 的 <code>can_execute</code> 和 reservation 规则。</p>
-<p>如果 action 设置了 <code>slot</code>，planner 会自动通过 <code>context.is_slot_available(...)</code>
-检查 reservation。开发者传入的 <code>can_execute</code> 只需要表达额外机制限制。需要在 entry
-flow 外预查询完整 action 时，使用 <code>context.is_action_allowed(self, action)</code>；它同时检查
-<code>can_execute</code> 和 slot reservation。普通或有限 entry 动作仍直接 <code>yield action</code>。</p>
-<p><code>execute</code> 返回规则：</p>
-<ul>
-<li>返回 <code>True</code>：成功。</li>
-<li>返回 <code>False</code> / <code>None</code> / 没写 <code>return</code>：失败。</li>
-<li>返回 <code>ActionResult</code>：使用 <code>ActionResult.success</code>。</li>
-<li>返回 <code>1</code>、<code>&quot;ok&quot;</code> 这类 truthy 值不会被当成成功。</li>
-</ul>
-<p>普通角色不需要手写 <code>ActionResult</code>。只有需要自定义 result name/tags/slot/reason
-时才手写：</p>
-<pre><code class="language-python">def execute(context):
-    return ActionResult(
-        success=True,
-        name=&quot;custom support action&quot;,
-        tags={ActionTag.SUPPORT},
-        slot=ActionSlot.CUSTOM,
-        reason=&quot;healing completed&quot;,
-    )
-</code></pre>
-<p><code>ActionResult</code> 的 <code>tags</code> 和 <code>slot</code> 也用于匹配协作请求；普通动作应优先让 helper 自动生成结果。</p>
-<h2 id="actiontag">ActionTag</h2>
-<p><code>ActionTag</code> 表达动作意义和评分，不能表达某个角色专属机制。</p>
-<p>常用标签：</p>
-<ul>
-<li><code>ULTIMATE_ACTION</code>：Q。</li>
-<li><code>SKILL_ACTION</code>：E。</li>
-<li><code>ARC_ACTION</code>：弧盘动作，评分为 0。</li>
-<li><code>DAMAGE</code>：通用伤害动作。</li>
-<li><code>SUPPORT</code>：辅助/治疗/增益类动作。</li>
-<li><code>TEAM_BUFF</code>：为全队提供增益的关键动作。仅在该增益应优先于主 DPS 终结技施放时使用。</li>
-<li><code>HIGH_PRIORITY</code>：显著提高动作的切人评分。用于少数特别值得优先尝试的动作；它不会改变角色上场后的动作执行顺序。</li>
-<li><code>FIELD_TIME</code>：planner 内建站场动作，角色不应自己声明。</li>
-<li><code>LEGACY_COMBO</code>：旧出招表动作。</li>
-<li><code>DEFAULT_ACTION</code>：低价值兜底入口。</li>
-</ul>
-<p>切人评分不会累加同一角色所有 action；planner 只挑该角色当前最高分的 ready
-action 代表该角色参赛。tag 不控制普通入场流程；普通入场由 <code>CombatPlan.entry</code>
-控制。</p>
-<h2 id="actionslot">ActionSlot</h2>
-<p><code>ActionSlot</code> 是协作匹配用的动作槽位，比 action name 更推荐。</p>
-<p>常用槽位：</p>
-<ul>
-<li><code>SKILL</code>：E。</li>
-<li><code>ULTIMATE</code>：Q。</li>
-<li><code>ARC</code>：弧盘。</li>
-<li><code>ENTRY_REACTION</code>：入场/环合反应，不是按键 action。</li>
-<li><code>FIELD_TIME</code>：planner 内建站场。</li>
-<li><code>LEGACY_COMBO</code>：旧出招表。</li>
-<li><code>CUSTOM</code>：特殊动作。</li>
-</ul>
-<p>协作和保留尽量写：</p>
-<pre><code class="language-python">FollowupStep.for_action(zero, ActionSlot.SKILL)
-ActionReservation.for_action(nanally, ActionSlot.SKILL)
-ActionReservation.for_slots(nanally, {ActionSlot.SKILL, ActionSlot.ULTIMATE})
-context.is_slot_available(self, ActionSlot.SKILL)
-</code></pre>
-<h2 id="roleprofile">RoleProfile</h2>
-<p><code>describe_role()</code> 返回 <code>RoleProfile</code>，描述队伍定位和普通切人时的站场偏好。<code>role</code> 与
-<code>field_preference</code> 是两个独立维度：前者供 <code>request_role()</code> 匹配，后者参与普通切人评分；
-它们都不是强制调度指令。</p>
+<p>效果: 普通入场按注册顺序尝试 Q、E。没有成功的已注册动作且协作允许时, Planner 可用普攻站场兜底。
+<code>max_field_time=0</code> 关闭该兜底; 它不限制角色自己编写的爆发循环时长。
+切人评分取角色当前最高分的可用动作, 不累加全部动作, 也不决定入场后的动作顺序。</p>
+<p><code>RoleProfile</code> 的常用设置:</p>
 <table>
 <thead>
 <tr>
 <th>字段</th>
-<th>可选值 / 用途</th>
+<th>效果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>role</code></td>
-<td><code>Planner.Role.MAIN_DPS</code>、<code>SUB_DPS</code>、<code>SUPPORT</code>；描述队伍定位。默认 <code>SUB_DPS</code>。</td>
+<td>队伍定位: <code>Planner.Role.MAIN_DPS</code>、<code>SUB_DPS</code> 或 <code>SUPPORT</code>, 默认 <code>SUB_DPS</code>。</td>
 </tr>
 <tr>
 <td><code>field_preference</code></td>
-<td><code>Planner.FieldPreference.MAIN_DPS</code>、<code>SUB_DPS</code>、<code>SUPPORT</code>、<code>SETUP_ONLY</code>；表达普通情况下的站场倾向。默认 <code>SUB_DPS</code>。</td>
+<td>普通切人时的站场倾向。默认根据 role 推导; 可显式指定 <code>Planner.FieldPreference.SETUP_ONLY</code> 等偏好。</td>
 </tr>
 <tr>
 <td><code>max_field_time</code></td>
-<td>大于 0 时允许 planner 使用内建站场兜底动作，并以此作为最长站场时长；设为 0 可关闭该兜底。默认 1.5 秒。</td>
+<td>内建普攻兜底的站场预算, 默认 1.5 秒。</td>
 </tr>
 <tr>
 <td><code>combat_start_priority</code></td>
-<td>仅用于开战首切；大于 0 才成为首切候选，数值越高越优先。不会影响普通战斗中的切人评分。默认 0。</td>
+<td>大于 0 时参与开战首切, 数值高者优先; 不影响普通切人评分。</td>
 </tr>
 </tbody></table>
-<p><code>MAIN_DPS</code> 倾向持续站场，<code>SUB_DPS</code> 倾向短时站场，<code>SUPPORT</code> 与 <code>SETUP_ONLY</code> 更适合
-完成辅助或准备动作后轮换。协作请求和入场诉求会影响最终选择。</p>
-<h2 id="basechar-helper">BaseChar Helper</h2>
-<h3 id="switch-in-guard">switch_in_guard</h3>
-<p>目标角色可覆盖 <code>switch_in_guard()</code>，延迟普通切人，直到自身满足入场条件：</p>
-<pre><code class="language-python">def switch_in_guard(self, context, from_char, has_intro):
+<h2 id="自己控制出招顺序和参数">自己控制出招顺序和参数</h2>
+<p>设置 <code>plan.entry</code> 后, 普通入场执行这个无参方法。直接调用原角色方法, 保留原生参数提示和返回值:</p>
+<pre><code class="language-python">def combat_plan(self):
+    plan = self.plan()
+    self.register_skill(plan)
+    self.register_ultimate(plan)
+    plan.entry = self.perform_entry
+    return plan
+
+
+def perform_entry(self):
+    if self.click_skill(down_time=0.3, post_sleep=0.2):
+        self.click_ultimate(send_click=False)
+    if self.skill_available():
+        self.click_skill()
+</code></pre>
+<p>每次调用都是新的尝试, 会重新检查注册的执行条件和 Reserve; Q/E helper 还提供冷却检查。
+没有入场去重或动作次数上限,
+也不会回放路线此前执行过的结果。普通 E 使用原方法的默认按键时长 0.05 秒;
+角色可覆盖自己的默认参数。</p>
+<p>普通函数按 Python 语义运行: 请求不会强制让 entry 返回, 后续注册动作仍受 Planner 限制。
+即使后续动作被阻止并返回 False, 普通赋值、等待和辅助方法也不会因此自动停止。
+希望提前结束时自行写 <code>return</code>。</p>
+<h2 id="注册动作">注册动作</h2>
+<p><code>register_skill(plan)</code>、<code>register_ultimate(plan)</code> 和 <code>register_arc(plan)</code> 分别登记
+<code>click_skill</code>、<code>click_ultimate</code>、<code>click_arc</code>, 返回值都是 <code>None</code>。
+Q/E helper 提供槽位、默认标签和冷却检查; Support 的 Q/E 还会带 <code>SUPPORT</code> 标签。
+<code>register_arc()</code> 默认不因弧盘主动切人。是否由 Planner 接管弧盘仍由角色显式设置
+<code>self.planner_handles_arc = True</code>, 注册不会修改这个开关; 未接管时默认入口仍可能额外释放一次弧盘。</p>
+<p>自定义或复合动作使用普通方法:</p>
+<pre><code class="language-python">def combat_plan(self):
+    plan = self.plan()
+    plan.register(
+        self.perform_burst,
+        slot=Planner.ActionSlot.CUSTOM,
+        tags={Planner.ActionTag.DAMAGE},
+        reason=&quot;burst available&quot;,
+    )
+    plan.entry = self.perform_entry
+    return plan
+
+
+def perform_entry(self):
+    self.perform_burst(duration=0.8)
+
+
+def perform_burst(self, duration: float = 0.5) -&gt; bool:
+    self.continues_normal_attack(duration)
+    return True
+</code></pre>
+<p>注册选项同样可传给 Q/E/弧盘 helper, 但 helper 的 slot 已由其动作种类确定:</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code> / <code>reason</code></td>
+<td>动作名称、日志和切人理由; 通常无需指定 name。</td>
+</tr>
+<tr>
+<td><code>tags</code> / <code>add_tags</code></td>
+<td>tags 替换默认标签, add_tags 追加标签。标签用于评分和协作筛选。</td>
+</tr>
+<tr>
+<td><code>can_execute</code></td>
+<td>无参硬条件, 返回 False 就不执行。通过 <code>self.combat_context</code> 查询协作状态。</td>
+</tr>
+<tr>
+<td><code>priority_ready</code></td>
+<td>无参评分条件, 返回 False 只取消该动作的切人评分资格, 不禁止执行。</td>
+</tr>
+<tr>
+<td><code>slot</code></td>
+<td><code>plan.register()</code> 的协作槽位, 例如 <code>Planner.ActionSlot.SKILL</code>。</td>
+</tr>
+</tbody></table>
+<p><code>plan.register()</code> 不根据方法名推断 slot、tags 或冷却条件。常用标签有 <code>SKILL_ACTION</code>、
+<code>ULTIMATE_ACTION</code>、<code>SUPPORT</code>、<code>TEAM_BUFF</code>、<code>HIGH_PRIORITY</code> 和 <code>DAMAGE</code>。
+<code>SKILL_ACTION</code>、<code>ULTIMATE_ACTION</code> 已有技能输出评分, 不必额外叠加 DAMAGE。</p>
+<p>同一计划内每个方法只注册一次, 同一 slot 可以注册多个不同方法。
+例如完整 E 连招和单次 E 都可属于 SKILL; slot 路线按注册顺序选首个可执行动作。
+若二者都注册, 连招内部的单次 E 也会检查许可并记账; 若只注册连招, 整个连招作为一个动作。
+直接调用未注册的辅助方法仍走普通 Python 路径, 不会自动参与评分或记账。
+首次注册前保存的旧方法引用也不会自动变成受管调用; 使用角色当前方法调用即可参与 Planner。</p>
+<p>动作应返回 <code>True</code>、<code>False</code>、<code>None</code> 或 <code>ActionResult</code>。False 表示失败, True 和 None 表示成功,
+ActionResult 按自身 success 判断; 未写 return 也算正常完成。注册方法直接调用时保留其原返回值,
+被阻止时返回 False。需要用返回值写布尔分支时, 请显式返回 True/False。
+内部动作失败不会自动传给组合函数; 需要时判断内部结果并 return False。
+参数只写在方法调用处; 默认目录和方法路线都不额外传参, 因此所需参数应有默认值。
+需要不同默认参数或许可的两种技能形态时, 可分别写成两个有意义的方法注册, 参考 Akane。</p>
+<h2 id="发布队友路线">发布队友路线</h2>
+<p>以下代码放在 entry 或动作方法中, a、b 是已找到的队友:</p>
+<pre><code class="language-python">self.combat_context.request_route(
+    [
+        Planner.Route.optional(a.click_ultimate),
+        Planner.Route.action(a, slot=Planner.ActionSlot.SKILL),
+        Planner.Route.reaction(a, b, optional=True),
+        b,
+    ],
+    reason=&quot;team setup&quot;,
+    timeout=8,
+)
+</code></pre>
+<p>这条路线依次尝试 A 的可选 Q、指定 E、A → B 的可选反应, 再让 B 执行一轮普通 entry。
+传角色对象表示完整一轮出招, 不表示仅切入。</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>a.click_skill</code></td>
+<td>切到 A 后按默认参数调用方法; 不要求注册, 已注册时沿用登记信息。</td>
+</tr>
+<tr>
+<td><code>Planner.Route.optional(a.click_skill)</code></td>
+<td>指定方法不可用或返回 False 时跳过。</td>
+</tr>
+<tr>
+<td><code>Planner.Route.action(a, slot=..., tags=..., optional=False)</code></td>
+<td>从 A 的动作中按 slot/tag 选择。至少提供一种筛选; 同时提供时两者都要满足, tags 内命中任意一个即可。</td>
+</tr>
+<tr>
+<td><code>Planner.Route.reaction(a, b, optional=False)</code></td>
+<td>从 A 触发对 B 的反应, 等待实际确认。A 不在场时先切入 A。</td>
+</tr>
+<tr>
+<td><code>a</code></td>
+<td>执行 A 的完整普通 entry。</td>
+</tr>
+</tbody></table>
+<p><code>action</code>、<code>reaction</code> 默认都是必需步骤。必需动作不可用时短暂普攻等待, 等待普攻不完成该步骤;
+返回 False 时停在该步, 下次调度重试。可选步骤不可用或失败时跳过整步;
+不会因为首个候选执行失败, 就在本次尝试其他候选。route 不读取 priority_ready。
+参数不匹配、条件函数或方法抛异常等程序错误不会被 optional 吞掉。</p>
+<p>方法步骤可以直接使用未注册的组合函数, 函数内照常写条件和循环, 并返回执行结果。
+它仅作为路线步骤记账, 不加入普通动作目录或评分, 不自动安装方法包装。
+未注册方法没有 slot、tags 和额外执行条件; 需要这些能力时再注册。
+其内部调用已注册动作时, 仍检查那些动作自身的执行条件和 Reserve。
+方法与已注册动作使用同一结果规则: 正常结束且未返回 False 时完成步骤,
+返回 ActionResult 时按其 success 判断。</p>
+<p>可选反应在来源 A 实际在场后检查资源和元素配对。不足时跳过;
+确认切入 B 却未确认反应时, 可选则跳过, 必需则重试。
+死亡目标可由可选步骤跳过, 必需步骤则结束为失败。
+路线完成后继续最后在场角色的普通 entry, 并遵守其他未完成协作请求和 Reserve。</p>
+<p>新路线在当前 entry 返回后启用, 不打断发布者的后续代码, 也不会被当前 entry 的动作提前完成:</p>
+<pre><code class="language-python">self.combat_context.request_route(teammate.click_skill)
+self.skill_done = True
+self.click_ultimate()  # 满足自身条件和 Reserve 时正常尝试。
+# 希望马上结束当前 entry 时, 在这里 return。
+</code></pre>
+<p>已生效的旧路线要等当前 entry 结束后才被新路线替换。多次发布时后发布的路线替换前面的路线;
+等待启用不会延长其期限。<code>timeout</code> 与 <code>until=无参条件</code> 二选一, 不指定则没有该期限限制。
+<code>return_to_source=True</code> 让路线完成后优先切回发布者, 不打断其他角色出招。
+发布者登场即结束返场诉求, 不要求释放技能。</p>
+<h2 id="保留动作和窗口">保留动作和窗口</h2>
+<p>只想让队友保留 E 时, 发布 Reserve。它不负责切人, 也不推进路线:</p>
+<pre><code class="language-python">context = self.combat_context
+context.reserve_actions(
+    [Planner.Reserve.action(teammate, slot=Planner.ActionSlot.SKILL)],
+    until=self.is_record_expire,
+    reason=&quot;hold teammate E&quot;,
+)
+</code></pre>
+<p>保留用于队友, 不限制发布者自己。它按角色对象和 slot 匹配, 限制该队友该槽位的所有动作;
+当前路线明确要求的动作可以消费保留。
+<code>until</code> 必填, 使用无参条件或 <code>Planner.NEVER_EXPIRES</code>。永久保留持续到 reset, 不接受 on_finish。
+多个槽位写多个 <code>Planner.Reserve.action(...)</code>。</p>
+<p>需要“路线完成后仍保留技能, 到窗口结束才释放”时使用窗口:</p>
+<pre><code class="language-python">timer = self.clock.timer(timeout=6)
+window = self.combat_context.open_window(until=timer.expired, reason=&quot;team record window&quot;)
+window.reserve_actions(
+    [Planner.Reserve.action(teammate, slot=Planner.ActionSlot.ULTIMATE)]
+)
+route = window.request_route(
+    [Planner.Route.action(teammate, slot=Planner.ActionSlot.SKILL, optional=True)]
+)
+self.record_window = window
+</code></pre>
+<p>子路线完成或失败不关闭窗口; 窗口到期结束尚未完成的子路线和保留。
+窗口可保存在角色上, 在后续 entry 中继续使用, 不必重新传入 context。
+到期后追加非空请求会报错。需要多阶段协作时, 在子路线的完成回调中通过仍有效的窗口发布下一条路线。</p>
+<h2 id="入场诉求和其他协作">入场诉求和其他协作</h2>
+<p>在 combat_plan 中用 <code>plan.add(FieldClaim.high(reason=&quot;burst window&quot;))</code> 提高角色回场意愿。
+low、normal、high、critical 是普通评分档位; <code>FieldClaim.strict(reason=&quot;return now&quot;)</code>
+要求下一次调度优先切入该角色,
+但已生效的严格路线优先。claim 不打断正在运行的 entry, 多个 claim 也不叠加评分。
+普通 claim 可加 <code>expected_entry=ExpectedEntry(slot=Planner.ActionSlot.ULTIMATE)</code> 优先尝试 Q;
+strict claim 切入后仍走普通 entry。</p>
+<table>
+<thead>
+<tr>
+<th>请求</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>context.request_switch(teammate)</code></td>
+<td>下一次普通调度优先切给指定角色, 不指定动作。</td>
+</tr>
+<tr>
+<td><code>context.request_role(Planner.Role.SUPPORT)</code></td>
+<td>选择辅助定位的角色; 多人匹配时按普通评分选择。</td>
+</tr>
+<tr>
+<td><code>context.request_tags({Planner.ActionTag.SUPPORT}, count=2)</code></td>
+<td>请求两个不同队友各完成一次支援类动作; 每个角色最多计一次, 默认排除发布者。</td>
+</tr>
+</tbody></table>
+<p><code>request_role</code> 匹配角色定位, <code>request_tags</code> 匹配动作标签。tag 请求可用
+<code>avoid_source=False</code> 包含发布者, 可用 return_to_source 请求完成后返场。
+这些请求与 route 都支持 until 和 on_finish; 它们不采用新 route 的延迟启用规则。</p>
+<p>随队伍长期生效的策略写在无参 <code>combat_policies()</code> 中, Planner reset 时会调用它。
+临时请求放在 entry、动作或生命周期回调中。combat_plan、评分条件、describe_role、
+switch_in_guard 和到期条件只做查询, 不发布请求或发送输入。</p>
+<p>目标角色可用无 context 参数的 guard 延迟普通切入:</p>
+<pre><code class="language-python">def switch_in_guard(self, from_char, has_intro):
     return SwitchInGuard.delay_until_ready(
-        condition=self.entry_state_ready,
+        condition=self.skill_available,
         timeout=1.5,
-        reason=&quot;waiting for entry state&quot;,
+        reason=&quot;wait for entry state&quot;,
     )
 </code></pre>
-<p><code>condition</code> 返回 True 时继续切人；超时后也会继续切人，因此这是有上限的延迟，不是切人否决。
-<code>poll_interval</code> 控制检查间隔，<code>while_waiting</code> 可提供等待期间的动作回调。默认 guard 立即
-允许切入。strict route 和 strict field claim 会跳过这个等待及普通切人冷却；需要 guard
-保护的入场不应依赖 strict 调度。</p>
-<h3 id="开战会话与首次登场">开战会话与首次登场</h3>
-<p><code>BaseCombatTask.begin_combat_session()</code> 是战斗正式开始时的统一入口。它会创建公开的
-<code>task.combat_session</code>, 调用首切决策并记录实际首发角色; <code>CombatPlanner</code> 只负责决定首切
-目标, 不执行输入或管理会话。<code>CombatSession.combat_start</code> 是本场战斗进入时刻;
-<code>use_ultimate</code> 与 <code>switch_enabled</code> 是本场固定的战斗策略。</p>
-<p><code>BaseChar.perform()</code> 开始时会记录本场第一个实际执行战斗逻辑的角色。角色逻辑可用：</p>
-<pre><code class="language-python">if self.is_first_engage():
-    # 本场首次实际登场的角色
-    ...
-
-if self.consume_first_engage():
-    # 全场仅成功一次
-    ...
-</code></pre>
-<p><code>is_first_engage()</code> 在本场战斗内稳定; <code>consume_first_engage()</code> 全场仅返回一次 <code>True</code>。
-两者都不依赖首切耗时或时间窗口。<code>task.combat_session</code> 在首次读取时会创建默认会话;
-任务若需要禁止首切和后续切人, 应在调用 <code>begin_combat_session()</code> 前设置
-<code>task.combat_session.switch_enabled = False</code>, 不要在运行期替换切人方法。</p>
-<h3 id="click-ultimate-action">click_ultimate_action</h3>
-<pre><code class="language-python">self.click_ultimate_action(
-    name=None,
-    tags=None,
-    add_tags=None,
-    reason=&quot;ultimate action available&quot;,
-    can_execute=None,
-    send_click=True,
-    wait_if_no_cd=0,
-)
-</code></pre>
+<p>从 <code>src.combat.planner</code> 导入 <code>FieldClaim</code>、<code>ExpectedEntry</code>、<code>SwitchInGuard</code> 等所需类型。
+guard 条件满足或超时都会继续切人; strict route 和 strict claim 跳过该等待。</p>
+<h2 id="查询状态与处理完成">查询状态与处理完成</h2>
+<p><code>self.combat_context</code> 在当前队伍运行周期内稳定可读。reset 后应重新使用角色上的 context,
+旧 context 和窗口不能再发布请求。</p>
 <ul>
-<li>自动设置 <code>slot=ActionSlot.ULTIMATE</code>。</li>
-<li>默认 <code>tags={ActionTag.ULTIMATE_ACTION}</code>。</li>
-<li><code>tags</code> 会完全指定基础标签；<code>add_tags</code> 可传单个 tag 或 tag 集合，并会追加到它，或在未传 <code>tags</code> 时追加到默认标签。</li>
-<li>默认 <code>name=f&quot;{角色名}_ultimate&quot;</code>。</li>
-<li><code>can_execute</code> 默认包含 <code>self.ultimate_available()</code>；传入的额外条件会与之合并。</li>
-<li><code>priority_ready</code> 自动使用 <code>self.ultimate_available()</code>。</li>
-<li><code>send_click</code> 为 True 时会在终结技动画期间发送普通点击；<code>wait_if_no_cd</code> 是冷却未完成时最多等待的秒数。</li>
-<li><code>execute</code> 调用 <code>self.click_ultimate()</code>。</li>
+<li><code>has_active_request()</code>: 查询协作请求, 包括已提交但等待启用的 route; 不包含窗口本身、纯保留或纯切人请求。</li>
+<li><code>has_strict_route()</code>: 只报告已经启用的严格路线。</li>
+<li><code>strict_route_wants_action(char, slot=..., tags=...)</code>: 当前路线是否正在要求该动作。</li>
+<li><code>is_slot_available(char, slot=...)</code>: 查询 slot 保留限制, 不包含冷却和 can_execute 检查。</li>
 </ul>
-<h3 id="click-skill-action">click_skill_action</h3>
-<pre><code class="language-python">self.click_skill_action(
-    name=None,
-    tags=None,
-    add_tags=None,
-    reason=&quot;skill action available&quot;,
-    down_time=0.01,
-    can_execute=None,
-    post_sleep=0,
-    has_animation=False,
-    send_click=True,
-    time_out=0,
-)
-</code></pre>
-<ul>
-<li>自动设置 <code>slot=ActionSlot.SKILL</code>。</li>
-<li>默认 <code>tags={ActionTag.SKILL_ACTION}</code>。</li>
-<li><code>tags</code> 会完全指定基础标签；<code>add_tags</code> 可传单个 tag 或 tag 集合，并会追加到它，或在未传 <code>tags</code> 时追加到默认标签。</li>
-<li>默认 <code>name=f&quot;{角色名}_skill&quot;</code>。</li>
-<li><code>can_execute</code> 默认包含 <code>self.skill_available()</code>；传入的额外条件会与之合并。</li>
-<li><code>priority_ready</code> 自动使用 <code>self.skill_available()</code>。</li>
-<li><code>down_time</code> 控制按键持续时间；<code>post_sleep</code> 控制成功释放后的额外等待；<code>has_animation</code> 指示技能是否带动画。</li>
-<li><code>send_click</code> 控制技能释放期间是否发送普通点击；<code>time_out</code> 控制等待技能释放的超时，0 使用内置默认值。</li>
-<li><code>execute</code> 调用 <code>self.click_skill()</code>。</li>
-</ul>
-<h3 id="click-arc-action">click_arc_action</h3>
-<pre><code class="language-python">self.click_arc_action(
-    name=None,
-    tags=None,
-    add_tags=None,
-    reason=&quot;arc action available&quot;,
-    can_execute=None,
-    priority_ready=None,
-)
-</code></pre>
-<p>该 helper 自动设置 <code>slot=ActionSlot.ARC</code>，默认使用 <code>ActionTag.ARC_ACTION</code>。默认
-<code>priority_ready</code> 为 False，因此弧盘动作不会单独促使角色切入；角色已在场时仍可按普通
-entry 流程尝试。需要时可传 <code>priority_ready</code> 改变其评分就绪条件。</p>
-<h3 id="planner-action">planner_action</h3>
-<pre><code class="language-python">self.planner_action(
-    tags={ActionTag.SKILL_ACTION},
-    execute=self.some_action,
-    name=None,
-    slot=None,
-    reason=&quot;&quot;,
-    can_execute=None,
-    priority_ready=None,
-)
-</code></pre>
-<p>用于创建自定义 action。长动作应在 <code>execute</code> 内完成。</p>
-<h2 id="fieldclaim">FieldClaim</h2>
-<p><code>FieldClaim</code> 表达“我应该被切进来”，不是动作。<code>low</code>、<code>normal</code>、<code>high</code> 和
-<code>critical</code> 抬高普通入场评分；<code>strict</code> 在下一次切人决策时直接选定该角色。
-角色切入后仍由 planner 从 <code>actions</code>、strict route/request 或 <code>entry</code> 中选择动作。</p>
-<p>普通 claim 可通过 <code>ExpectedEntry(slot=...)</code> 指定回场后优先尝试的槽位；需要高级精确匹配时
-可设置 <code>action_name</code>，或用 <code>ExpectedEntry.from_action(action)</code> 从动作声明生成。strict claim
-只要求切入，不接受 <code>expected_entry</code>。</p>
-<pre><code class="language-python">def combat_plan(self, context):
-    claims = []
-    if self.has_burst_window():
-        claims.append(
-            FieldClaim.high(
-                reason=&quot;burst window active&quot;,
-                expected_entry=ExpectedEntry(slot=ActionSlot.ULTIMATE),
-            )
-        )
-    return self.plan(self.click_ultimate_action(), claims=claims)
-</code></pre>
-<p>需要在限时窗口内回场时，可在 <code>combat_plan()</code> 中声明 strict claim：</p>
-<pre><code class="language-python">def combat_plan(self, context):
-    ultimate = self.click_ultimate_action()
-    claims = []
-    if self.should_return_now():
-        claims.append(
-            FieldClaim.strict(
-                reason=&quot;ultimate window ending&quot;,
-            )
-        )
-    return self.plan(ultimate, claims=claims)
-</code></pre>
-<p>planner 每次切人决策都会重新读取候选角色的 claim。已锁定的 strict route 优先；
-之后 strict claim 优先于环合反应、active request 和普通评分。多个角色同时声明
-strict claim 时，planner 用它们的普通评分及最近行动时间决定目标。strict claim
-只在当前角色的动作结束后生效，不会中断动作；它只要求切入，不设置 <code>expected_entry</code>。
-切入后角色按自己的普通 <code>entry</code> 流程执行动作。</p>
-<p>使用建议：</p>
-<ul>
-<li>只是 Q/E 可用，不需要 FieldClaim；action 本身会参与评分。</li>
-<li>需要“之后抢回场”时用普通 FieldClaim；必须在下一次切人决策中回场时用 <code>FieldClaim.strict()</code>。</li>
-<li><code>FieldClaim.critical()</code> 仍是普通评分档位，不会强制切人。</li>
-<li>普通 claim 抢回场后需要优先做某动作时, 加 <code>expected_entry</code>。</li>
-<li>多个 FieldClaim 适合表达多个独立机制入口；planner 不累加 claim 分，只选择最高等级的匹配 claim。</li>
-</ul>
-<h2 id="combat-policies">combat_policies</h2>
-<p><code>combat_policies(context)</code> 用于随队伍生命周期长期生效的策略。planner reset 当前队伍
-时会调用。适合发布常驻 reservation，不适合发布“本次 Q/E 成功后才出现”的临时窗口。</p>
-<pre><code class="language-python">def combat_policies(self, context: CombatContext):
-    context.reserve_actions(
-        [ActionReservation.for_action(zero, ActionSlot.SKILL)],
-        reason=&quot;reserve Zero skill&quot;,
-        until=Planner.NEVER_EXPIRES,
-    )
-</code></pre>
-<h2 id="协作请求">协作请求</h2>
-<p>协作请求必须在 action 执行成功后发布，或者在 <code>combat_policies()</code> 里发布长期策略。</p>
-<pre><code class="language-python">def combat_plan(self, context):
-    setup = self.click_skill_action()
-
-    def entry():
-        setup_result = yield setup
-        if setup_result:
-            context.request_route(
-                [FollowupStep.for_action(zero, ActionSlot.SKILL, reason=&quot;Zero E&quot;)],
-                reason=&quot;setup route&quot;,
-            )
-
-    return self.plan(setup, entry=entry)
-</code></pre>
-<p>常用 API：</p>
-<ul>
-<li><code>context.request_route(...)</code>：固定顺序协作路线。</li>
-</ul>
-<p><code>FollowupStep.for_switch(target, wait_for_turn=True)</code> 默认切入后等待目标正常执行完本轮:</p>
-<pre><code class="language-python">context.request_route([
-    FollowupStep.for_switch(a),
-    FollowupStep.for_action(b, ActionSlot.ULTIMATE),
-])
-</code></pre>
-<p><code>FollowupStep.for_action(target, slot, ...)</code> 创建指定角色的动作步骤。<code>optional=True</code> 时，
-目标到场后若没有匹配且可执行的动作，planner 会跳过该步骤；默认的必需步骤会继续等待。
-可用 <code>required_tags</code> 或 <code>action_names</code> 添加匹配条件；普通协作优先使用 slot，动作名适合
-需要精确匹配的高级场景。标签条件要求动作至少命中一个指定 tag。</p>
-<p>若 route 要求目标切入时触发入场/环合反应，可使用：</p>
-<pre><code class="language-python">FollowupStep.for_entry_reaction(target, reason=&quot;trigger entry reaction&quot;)
-</code></pre>
-<p>这里 A 按自己的正常 entry flow 执行完本轮后, 才推进到 B 的终结技。
-A 已在场时也会执行本轮, 不直接跳过。它不指定首动, 不要求入场反应,
-也不绕过动作许可或 reservation。本轮结束沿用正常流程的结束条件和动作数上限;
-无动作或全部失败时仍可尝试正常站场回退, 不要求某个技能成功才完成步骤。
-异常中断不会算作完成; route 过期或被替换后不会再推进旧步骤。</p>
-<p>若只要求切入, 使用 <code>FollowupStep.for_switch(a, wait_for_turn=False)</code>。
-该模式切入成功或目标已在场时立即完成步骤。单步 route 结束后恢复正常流程;
-多步 route 会立即推进, <strong>不等待 A 正常流程结束, 也不保证 A 执行任何动作</strong>。</p>
-<p>两种模式均继承 strict route 的调度优先级和生命周期。新 route 会替换已有 route,
-因此它不是单纯的高优先级 <code>request_switch()</code>; 普通独立切人诉求仍使用后者。</p>
-<ul>
-<li><code>context.request_switch(...)</code>：请求下一次普通调度切给某角色。</li>
-<li><code>context.request_role(...)</code>：请求下一次普通调度切给某个队伍定位的角色；多个
-匹配角色时按普通切人评分选择。它不指定动作，也不打断当前 entry flow。</li>
-<li><code>context.reserve_actions(...)</code>：保留队友动作。</li>
-<li><code>context.request_tags(...)</code>：请求不同队友各完成一次带指定 tag 的成功动作；任一指定 tag 匹配即可，每个角色最多计一次。可用 <code>count</code> 指定人数，默认不让请求发起者自己满足请求。
-设置 <code>avoid_source=False</code> 可允许发起者自己满足请求。</li>
-</ul>
-<p><code>request_role(Planner.Role.SUPPORT)</code> 请求的是角色的静态队伍定位；
-<code>request_tags({Planner.ActionTag.SUPPORT})</code> 请求的是任意支援类动作。前者适合
-“让任一辅助角色进场”，后者适合“让任一队友完成一次治疗/增益动作”。
-<code>request_route()</code> 和 <code>request_tags()</code> 可用 <code>return_to_source=True</code> 在请求完成后提高发起者
-重新入场的优先级。</p>
-<pre><code class="language-python">context.request_role(Planner.Role.SUPPORT, reason=&quot;need a support role&quot;)
-</code></pre>
-<p>这些请求通常返回 <code>RequestHandle</code>。可用它查询是否完成或过期，也可用生命周期条件组合
-请求。例如，让 reservation 在 route 完成后释放：</p>
-<pre><code class="language-python">route = context.request_route(steps, until=self.window_expired)
-if route is not None:
+<p>这些查询读取已提交状态, 不触发执行或清理, 也不是 entry 必须立即返回的指令。
+请求通常返回 handle; 空路线或空保留返回 None。可订阅无参回调:</p>
+<pre><code class="language-python">if route is not None:
     route.on_fulfilled(self.on_route_complete)
+    route.on_failed(self.on_route_failed)
     route.on_expired(self.on_route_expired)
-    context.reserve_actions(reservations, until=route.when.fulfilled)
 </code></pre>
-<p><code>handle.when.fulfilled</code>、<code>expired</code>、<code>closed</code> 和 <code>any</code> 都是可传给另一个请求 <code>until=</code> 的条件；
-<code>is_pending</code>、<code>is_fulfilled</code>、<code>is_expired</code>、<code>is_closed</code> 可直接查询状态。<code>handle.status</code> 为
-<code>Planner.RequestStatus.PENDING</code>、<code>FULFILLED</code> 或 <code>EXPIRED</code>；<code>closed</code> 是独立状态。使用
-<code>on_finish()</code> 可响应第一个完成或过期信号；需要区分结果时使用 <code>on_fulfilled()</code> 和
-<code>on_expired()</code>。<code>request_route()</code>、<code>request_switch()</code>、<code>request_role()</code> 和 <code>request_tags()</code> 的
-<code>until</code> 默认为 None，即不会因窗口条件自动过期；
-<code>reserve_actions()</code> 必须指定 <code>until</code>，可传 callable，或传 <code>Planner.NEVER_EXPIRES</code> 让它持续到
-planner reset。route 步骤完成和 route 窗口过期是不同信号。
-<code>until=Planner.NEVER_EXPIRES</code> 的 reservation 不会自动结束，也不能配置 <code>on_finish</code>。</p>
-<p><code>CombatContext</code> 还提供 <code>has_active_request()</code>、<code>has_strict_route()</code> 和
-<code>strict_route_wants_action(char, slot=..., action_name=..., tags=...)</code>，供确实需要根据当前协作
-状态分支的高级角色逻辑查询。纯 reservation 和纯切人请求不算 active action request。</p>
-<h2 id="行为摘要">行为摘要</h2>
-<ul>
-<li>切人评分与普通 entry 执行分离。</li>
-<li>评分使用 <code>actions</code> 中最高分 ready action，再叠加 <code>FieldClaim</code>、request 和站场偏好分。</li>
-<li>当前角色普通入场执行由 <code>entry</code> 控制；未写 entry 时按 <code>actions</code> 顺序执行。</li>
-<li><code>priority_ready=False</code> 只降低切人吸引力，不是硬阻止。</li>
-<li><code>can_execute=False</code> 是硬阻止；被阻止的 entry action 会得到失败 result，不会真实执行。</li>
-<li>strict route、expected entry、active request 优先于普通 entry flow。</li>
-<li><code>ActionResult.tags</code> 不控制 entry flow。</li>
-</ul>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/6b10cbd5313cab784666fabcb2be54128e2079f1/docs/zh-CN/development/combat-planner.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年10月31日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#快速入口" style="margin-left:0px">快速入口</a><a href="#combatplan" style="margin-left:0px">CombatPlan</a><a href="#actionintent" style="margin-left:0px">ActionIntent</a><a href="#actiontag" style="margin-left:0px">ActionTag</a><a href="#actionslot" style="margin-left:0px">ActionSlot</a><a href="#roleprofile" style="margin-left:0px">RoleProfile</a><a href="#basechar-helper" style="margin-left:0px">BaseChar Helper</a><a href="#switch-in-guard" style="margin-left:10px">switch_in_guard</a><a href="#开战会话与首次登场" style="margin-left:10px">开战会话与首次登场</a><a href="#click-ultimate-action" style="margin-left:10px">click_ultimate_action</a><a href="#click-skill-action" style="margin-left:10px">click_skill_action</a><a href="#click-arc-action" style="margin-left:10px">click_arc_action</a><a href="#planner-action" style="margin-left:10px">planner_action</a><a href="#fieldclaim" style="margin-left:0px">FieldClaim</a><a href="#combat-policies" style="margin-left:0px">combat_policies</a><a href="#协作请求" style="margin-left:0px">协作请求</a><a href="#行为摘要" style="margin-left:0px">行为摘要</a></nav></aside></main>
+<p>上述回调是角色自己定义的方法。<code>on_finish</code> 响应首次完成、失败或到期, 不重复调用。
+可用 <code>is_pending</code>、<code>is_fulfilled</code>、<code>is_failed</code>、<code>is_expired</code>、<code>is_closed</code> 查询状态;
+<code>when.fulfilled</code>、<code>failed</code>、<code>expired</code>、<code>closed</code>、<code>any</code> 可直接作为其他请求的 until 条件。
+closed 表示请求不再影响调度, 与成功、失败、到期分开; 请求回场时可能已经 fulfilled 但尚未 closed。
+需要持续窗口语义时使用 open_window, 不依靠已完成路线的到期回调维持保留。
+回调可以继续发布请求; 单个回调异常不会丢弃同批其余通知, 处理后异常会向任务上抛。</p>
+<h2 id="计时与外置代码兼容">计时与外置代码兼容</h2>
+<p>长动作使用 <code>self.clock.timer(timeout=...)</code> 和 <code>expired()</code> 控制时长, 需要时调用 check_combat。
+<code>self.clock.now()</code> 返回统一单调时间, 不使用 time.time/monotonic/perf_counter。
+首次登场逻辑可用 <code>self.is_first_engage()</code> 或全场只消费一次的 <code>self.consume_first_engage()</code>。
+详见<a href="https://github.com/BnanZ0/ok-nte/blob/b1102fa7865d50807716bc94ee430cc2df90f2e5/docs/runtime_clock.md">运行期时钟约定</a>。</p>
+<p>旧 <code>ActionIntent</code>、<code>FollowupStep</code>、<code>ActionReservation</code>、<code>click_*_action</code>、<code>planner_action</code> 及带 context 的旧 hook
+仍由兼容层支持, 已标记 deprecated, 仅供尚未迁移的外置代码使用。
+旧动作声明仍保留 None 算失败的原语义。新角色按本文的方法注册与直接调用编写。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-nte/blob/b1102fa7865d50807716bc94ee430cc2df90f2e5/docs/zh-CN/development/combat-planner.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月4日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#最简单的角色" style="margin-left:0px">最简单的角色</a><a href="#自己控制出招顺序和参数" style="margin-left:0px">自己控制出招顺序和参数</a><a href="#注册动作" style="margin-left:0px">注册动作</a><a href="#发布队友路线" style="margin-left:0px">发布队友路线</a><a href="#保留动作和窗口" style="margin-left:0px">保留动作和窗口</a><a href="#入场诉求和其他协作" style="margin-left:0px">入场诉求和其他协作</a><a href="#查询状态与处理完成" style="margin-left:0px">查询状态与处理完成</a><a href="#计时与外置代码兼容" style="margin-left:0px">计时与外置代码兼容</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-nte"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20261104031949" defer></script></body></html>

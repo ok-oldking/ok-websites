@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://app.ok-script.com/en/docs/release/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="Packaging and Release · ok-script-app · English"><meta property="og:description" content=".github/workflows/build.yml : watches v tags, tests, syncs updates, packages, and creates a GitHub Release. pyappify. — ok-script-app English documentation"><meta property="og:url" content="https://app.ok-script.com/en/docs/release/"><meta property="og:image" content="https://app.ok-script.com/assets/social/ok-script-app-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script-app — Project template · Python · Visual tools">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Packaging and Release · ok-script-app · English"><meta name="twitter:description" content=".github/workflows/build.yml : watches v tags, tests, syncs updates, packages, and creates a GitHub Release. pyappify. — ok-script-app English documentation"><meta name="twitter:image" content="https://app.ok-script.com/assets/social/ok-script-app-en.png"><meta name="twitter:image:alt" content="ok-script-app — Project template · Python · Visual tools">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Packaging and Release · ok-script-app · English","description":".github/workflows/build.yml : watches v tags, tests, syncs updates, packages, and creates a GitHub Release. pyappify. — ok-script-app English documentation","url":"https://app.ok-script.com/en/docs/release/","inLanguage":"en","dateModified":"2026-08-16T01:34:23+08:00","author":{"@type":"Organization","name":"ok-script-app","url":"https://github.com/ok-oldking/ok-script-app"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Packaging and Release · ok-script-app · English","description":".github/workflows/build.yml : watches v tags, tests, syncs updates, packages, and creates a GitHub Release. pyappify. — ok-script-app English documentation","url":"https://app.ok-script.com/en/docs/release/","inLanguage":"en","dateModified":"2026-11-03T22:54:47+08:00","author":{"@type":"Organization","name":"ok-script-app","url":"https://github.com/ok-oldking/ok-script-app"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -32,8 +32,8 @@
 <ul>
 <li><code>.github/workflows/build.yml</code>: watches <code>v*</code> tags, tests, syncs updates, packages, and creates a GitHub Release.</li>
 <li><code>pyappify.yml</code>: defines the app name, entry point, icon, Python version, and update repositories.</li>
-<li><code>pyproject.toml</code>: defines the Qt, web, and documentation dependency profiles.</li>
-<li><code>requirements.txt</code> and <code>requirements-web.txt</code>: compiled installation locks for the TOML profiles.</li>
+<li><code>pyproject.toml</code>: defines the Qt and documentation dependency profiles; <code>web</code> is a desktop compatibility alias.</li>
+<li><code>requirements.txt</code>: compiled installation lock; <code>requirements-web.txt</code> includes the same lock for compatibility.</li>
 <li><code>deploy.txt</code>: lists files copied to a dedicated update repository.</li>
 <li><code>.github/workflows/mirrorchyan_*.yml</code>: optional MirrorChyan upload and release-note workflows.</li>
 </ul>
@@ -54,6 +54,9 @@
 <li><code>.github/workflows/mirrorchyan_release_note.yml</code></li>
 </ul>
 <p>Replace <code>owner</code>, <code>repo</code>, <code>mirrorchyan_rid</code>, and installer filenames. Keep the dispatch step in <code>build.yml</code> and configure <code>MirrorChyanUploadToken</code>.</p>
+<p>PyAppify adds the release version to installer names, for example
+<code>ok-script-app-win32-China-setup-1.1.3.exe</code>. MirrorChyan matches
+<code>ok-script-app-win32-China-setup-*.exe</code> within the selected release.</p>
 <h3 id="without-mirrorchyan">Without MirrorChyan</h3>
 <p>Delete both MirrorChyan workflow files and remove the <code>Trigger MirrorChyanUploading</code> step from <code>build.yml</code>.</p>
 <h2 id="push-a-version-tag">Push a Version Tag</h2>
@@ -67,12 +70,11 @@ git push origin v0.1.0
 <p>GitHub Actions runs the tests, packages the EXE, and creates a matching GitHub Release. Search <code>.github/workflows</code> once more for stale template repositories, names, or missing secrets before release.</p>
 <p>After changing dependencies, recompile the locks with the project virtual environment:</p>
 <pre><code class="language-powershell">python -m piptools compile --extra qt --strip-extras --no-header --output-file requirements.txt pyproject.toml
-python -m piptools compile --extra web --strip-extras --no-header --output-file requirements-web.txt pyproject.toml
 python -m piptools compile --extra docs --strip-extras --no-header --output-file requirements-docs.txt pyproject.toml
 </code></pre>
-<p>The Qt lock is installed with <code>--no-deps</code>. After compilation, remove the
-generated <code>pyside6</code> and <code>pyside6-addons</code> entries while retaining
-<code>pyside6-essentials</code>, so Fluent Widgets does not restore unused PySide6 modules.</p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app/blob/f134d07ce064c49060068c0511b5592b0e78a081/docs/en/release.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Oct 31, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#release-files" style="margin-left:0px">Release Files</a><a href="#adapt-the-build-workflow" style="margin-left:0px">Adapt the Build Workflow</a><a href="#mirrorchyan" style="margin-left:0px">MirrorChyan</a><a href="#with-mirrorchyan" style="margin-left:10px">With MirrorChyan</a><a href="#without-mirrorchyan" style="margin-left:10px">Without MirrorChyan</a><a href="#push-a-version-tag" style="margin-left:0px">Push a Version Tag</a></nav></aside></main>
+<p>The Qt lock is installed with <code>--no-deps</code>. ok-script 3 uses <code>ok-pyside-minimal</code>;
+no manual removal of PySide6 dependencies is needed. Keep
+<code>requirements-web.txt</code> as an include of <code>requirements.txt</code>.</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app/blob/c3f9e1932eaa489ac29ca765999d5784779e3b3c/docs/en/release.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Nov 4, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#release-files" style="margin-left:0px">Release Files</a><a href="#adapt-the-build-workflow" style="margin-left:0px">Adapt the Build Workflow</a><a href="#mirrorchyan" style="margin-left:0px">MirrorChyan</a><a href="#with-mirrorchyan" style="margin-left:10px">With MirrorChyan</a><a href="#without-mirrorchyan" style="margin-left:10px">Without MirrorChyan</a><a href="#push-a-version-tag" style="margin-left:0px">Push a Version Tag</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../en/">All projects</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20261104031949" defer></script></body></html>

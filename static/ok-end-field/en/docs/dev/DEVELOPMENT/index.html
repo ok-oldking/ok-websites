@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/en/docs/dev/DEVELOPMENT/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="开发指南 · 开发与维护 · ok-end-field · English"><meta property="og:description" content="返回：文档索引 / README 本文以当前源码、 src/config.py 、测试目录和 workflow 为准，说明项目结构和贡献流程。具体项目自有接口见 API 参考。 ok-ef 是基于 ok-script 的 Windows — ok-end-field English documentation"><meta property="og:url" content="https://ok-script.com/ok-end-field/en/docs/dev/DEVELOPMENT/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="开发指南 · 开发与维护 · ok-end-field · English"><meta name="twitter:description" content="返回：文档索引 / README 本文以当前源码、 src/config.py 、测试目录和 workflow 为准，说明项目结构和贡献流程。具体项目自有接口见 API 参考。 ok-ef 是基于 ok-script 的 Windows — ok-end-field English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-en.png"><meta name="twitter:image:alt" content="ok-end-field — Arknights: Endfield · Background automation · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"开发指南 · 开发与维护 · ok-end-field · English","description":"返回：文档索引 / README 本文以当前源码、 src/config.py 、测试目录和 workflow 为准，说明项目结构和贡献流程。具体项目自有接口见 API 参考。 ok-ef 是基于 ok-script 的 Windows — ok-end-field English documentation","url":"https://ok-script.com/ok-end-field/en/docs/dev/DEVELOPMENT/","inLanguage":"en","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"开发指南 · 开发与维护 · ok-end-field · English","description":"返回：文档索引 / README 本文以当前源码、 src/config.py 、测试目录和 workflow 为准，说明项目结构和贡献流程。具体项目自有接口见 API 参考。 ok-ef 是基于 ok-script 的 Windows — ok-end-field English documentation","url":"https://ok-script.com/ok-end-field/en/docs/dev/DEVELOPMENT/","inLanguage":"en","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -27,7 +27,7 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="./" class="active" aria-current="page">开发指南</a><a href="../guide-submodule-contrib/">模板贡献指南</a><a href="../API/">API 参考</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../OCR使用分类/">OCR 使用分类</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务汇总报告机制/">任务汇总报告机制</a><a href="../自动拾取任务/">自动拾取</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../config-export-import/">Config Export and Import</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="ok-ef-开发指南">ok-ef 开发指南</h1>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="../../">Documentation home</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="./" class="active" aria-current="page">开发指南</a><a href="../guide-submodule-contrib/">模板贡献指南</a><a href="../API/">API 参考</a><a href="../运行时状态总线/">运行时状态总线</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../OCR使用分类/">OCR 使用分类</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../小地图定位/">小地图定位</a><a href="../网格导航/">网格导航</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务汇总报告机制/">任务汇总报告机制</a><a href="../自动拾取任务/">自动拾取</a><a href="../../getting-started/installation/">Installation</a><a href="../../getting-started/configuration/">Before you start</a><a href="../../guides/quick-start/">Quick start</a><a href="../../features/overview/">Overview</a><a href="../../daily-tasks/">Daily Tasks</a><a href="../../stamina-farming/">Stamina Farming</a><a href="../../auto-combat/">Auto Combat</a><a href="../../action-sequence/">Action Sequences</a><a href="../../delivery-pickup/">Delivery Commission Pickup</a><a href="../../auto-delivery/">Auto Delivery</a><a href="../../warehouse-transfer/">Warehouse Transfer</a><a href="../../item-navigation/">Item Navigation &amp; Realtime Detection</a><a href="../../account-configuration/">Account Configuration</a><a href="../../config-export-import/">Config Export and Import</a><a href="../../windows-task-scheduler/">Windows Task Scheduler</a><a href="../../mouse-rotation-calibration/">Mouse Rotation Calibration</a><a href="../../guides/troubleshooting/">FAQ and feedback</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>Docs</span></div><div class="markdown-body"><h1 id="ok-ef-开发指南">ok-ef 开发指南</h1>
 <p>返回：<a href="../../../../docs/">文档索引</a> / <a href="https://github.com/AliceJump/ok-end-field/blob/master/README.md">README</a></p>
 <p>本文以当前源码、<code>src/config.py</code>、测试目录和 workflow 为准，说明项目结构和贡献流程。具体项目自有接口见 <a href="../API/">API 参考</a>。</p>
 <h2 id="1-运行架构">1. 运行架构</h2>
@@ -136,7 +136,7 @@
 </tbody></table>
 <p>不要再引用旧的 <code>src/tasks/mixin/runtime_mixin.py</code>、<code>game_flow_mixin.py</code>、<code>process_manager.py</code> 或 <code>window_arrow_drawing_mixin.py</code> 路径。</p>
 <h3 id="2-2-业务-mixin">2.2 业务 Mixin</h3>
-<p><code>src/tasks/mixin/</code> 保留跨任务业务能力：</p>
+<p><code>src/tasks/mixin/</code> 保留跨领域通用能力，<code>src/tasks/navigation/mixin/</code> 保留导航领域能力：</p>
 <pre><code class="language-text">BaseEfTask
 ├── Common
 ├── MapMixin
@@ -148,7 +148,9 @@
 └── LoginMixin
     └── AccountMixin
 </code></pre>
-<p><code>EndCommandMixin</code>、<code>WsPositionMixin</code> 是无 <code>BaseEfTask</code> 基类的协作 Mixin，通过最终任务组合获得任务能力。</p>
+<p><code>EndCommandMixin</code>、<code>WsPositionMixin</code>、<code>RuntimeStateMixin</code> 是无 <code>BaseEfTask</code> 基类的
+协作 Mixin，通过最终任务组合获得任务能力。<code>WsPositionMixin</code> 是定位底层的南向适配器，
+业务任务读取实时位置时应使用 <code>RuntimeStateMixin</code>，不要直接消费 WS。</p>
 <h3 id="2-3-实际任务-mro">2.3 实际任务 MRO</h3>
 <p>主要组合以类声明顺序为准：</p>
 <pre><code class="language-text">DailyTask(
@@ -216,38 +218,68 @@ ItemNavigatorTask(WsPositionMixin, BaseEfTask, TriggerTask)
 </tr>
 <tr>
 <td>9</td>
+<td><code>MinimapRealtimePosition</code></td>
+<td><code>src.tasks.localization.MinimapRealtimePosition</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>MinimapRegionCheck</code></td>
+<td><code>src.tasks.localization.MinimapRegionCheck</code></td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>MinimapScaleCapture</code></td>
+<td><code>src.tasks.localization.MinimapScaleCapture</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>MinimapTurnToHeading</code></td>
+<td><code>src.tasks.localization.MinimapTurnToHeading</code></td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>MinimapNavigateToPoint</code></td>
+<td><code>src.tasks.navigation.MinimapNavigateToPoint</code></td>
+</tr>
+<tr>
+<td>14</td>
 <td><code>RealtimeYoloScanTask</code></td>
 <td><code>src.tasks.test.RealtimeDetectTask</code></td>
 </tr>
 <tr>
-<td>10</td>
+<td>15</td>
 <td><code>RealtimeDetectTask</code></td>
 <td><code>src.tasks.test.RealtimeDetectTask</code></td>
 </tr>
 <tr>
-<td>11</td>
+<td>16</td>
 <td><code>PeriodicScreenshotTask</code></td>
 <td><code>src.tasks.test.PeriodicScreenshotTask</code></td>
 </tr>
 <tr>
-<td>12</td>
+<td>17</td>
 <td><code>DiagnosisTask</code></td>
 <td><code>src.tasks.test.DiagnosisTask</code></td>
 </tr>
 <tr>
-<td>13</td>
+<td>18</td>
 <td><code>MouseRotationCalibration</code></td>
 <td><code>src.tasks.test.MouseRotationCalibration</code></td>
 </tr>
 <tr>
-<td>14</td>
+<td>19</td>
 <td><code>TestArrowAngle</code></td>
 <td><code>src.tasks.test.TestArrowAngle</code></td>
 </tr>
 <tr>
-<td>15</td>
+<td>20</td>
 <td><code>TestCircularPulseDetect</code></td>
 <td><code>src.tasks.test.TestCircularPulseDetect</code></td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>TeamCompositionDetectTask</code></td>
+<td><code>src.tasks.test.TeamCompositionDetectTask</code></td>
 </tr>
 </tbody></table>
 <p>一次性任务按「业务任务（<code>src.tasks.onetime.*</code>）→ 调试/测试任务（<code>src.tasks.test.*</code>）」分组排列。</p>
@@ -281,6 +313,11 @@ ItemNavigatorTask(WsPositionMixin, BaseEfTask, TriggerTask)
 <td><code>ItemNavigatorTask</code></td>
 <td><code>src.tasks.trigger.ItemNavigatorTask</code></td>
 </tr>
+<tr>
+<td>5</td>
+<td><code>TemplateMonitorTask</code></td>
+<td><code>src.tasks.trigger.TemplateMonitorTask</code></td>
+</tr>
 </tbody></table>
 <p>当前没有 <code>AutoLoginTask.py</code> 或触发式自动登录注册。登录切换能力由 <code>LoginMixin</code>/<code>AccountMixin</code> 供多账号任务调用。</p>
 <h3 id="自定义页">自定义页</h3>
@@ -303,6 +340,7 @@ ItemNavigatorTask(WsPositionMixin, BaseEfTask, TriggerTask)
 │   ├── core/
 │   │   ├── BaseEfTask.py
 │   │   ├── BattleConfig.py
+│   │   ├── NavConfig.py
 │   │   ├── config_migration.py
 │   │   ├── global_config_store.py
 │   │   ├── sequence_parser.py
@@ -312,9 +350,15 @@ ItemNavigatorTask(WsPositionMixin, BaseEfTask, TriggerTask)
 │   │       ├── process_manager.py
 │   │       ├── runtime_mixin.py
 │   │       └── window_arrow_drawing_mixin.py
+│   ├── localization/             # 小地图定位、融合、朝向与位置接口
+│   ├── nav/                      # 二维网格、A* 规划与路线跟随
+│   ├── runtime_state/            # 进程内 latest-value 状态网关与主题契约
 │   ├── tasks/
 │   │   ├── onetime/              # 一次性任务和 AutoCombatLogic
-│   │   ├── trigger/              # 四个已注册后台任务
+│   │   ├── localization/         # 定位、标定和朝向任务
+│   │   ├── navigation/           # 导航任务与导航领域 Mixin
+│   │   ├── trigger/              # 通用后台触发任务
+│   │   ├── test/                 # 通用诊断与算法测试任务
 │   │   ├── mixin/                # 业务能力 Mixin
 │   │   ├── account/              # 账号解析、稳定 ID 和覆盖存储
 │   │   └── daily/                # Feature 组合、runner、汇总和 misc 子功能
@@ -366,7 +410,7 @@ uv run python main_debug.py
 <li>依赖通过 <a href="https://docs.astral.sh/uv/">uv</a> 管理：<code>uv sync</code> 依照 <code>uv.lock</code> 创建 <code>.venv</code>；<code>uv run python ...</code> 在该环境中执行 Python。<code>requirements.txt</code> 是面向发布流水线的派生产物，不要手动编辑。</li>
 <li>Windows 交互需要进程权限不低于游戏，开发时通常以管理员权限启动 IDE/终端。</li>
 <li>从仓库根目录运行，资源和配置路径大量以当前工作目录解析。</li>
-<li>游戏窗口配置要求 16:9，最低 <code>1920x1080</code>（1080P）。</li>
+<li>游戏窗口配置要求 16:9，最低 <code>1600x900</code>（900P）。</li>
 <li>WGC 常规截图不适合登录界面；登录 Mixin 使用 Win32 屏幕捕获，通常需要窗口可见并可激活。</li>
 </ul>
 <h2 id="6-开发流程">6. 开发流程</h2>
@@ -392,7 +436,8 @@ class MyTask(BaseEfTask):
 <p>触发式任务还需在最终 MRO 中包含 <code>ok.TriggerTask</code>，并注册到 <code>trigger_tasks</code>。完整最小示例见 <a href="../QUICKSTART/">QUICKSTART</a>。</p>
 <h3 id="6-2-新增业务-mixin">6.2 新增业务 Mixin</h3>
 <ul>
-<li>跨任务业务能力放 <code>src/tasks/mixin/</code>。</li>
+<li>跨领域通用能力放 <code>src/tasks/mixin/</code>。</li>
+<li>导航、定位和滑索能力放 <code>src/tasks/navigation/mixin/</code>。</li>
 <li>基础运行时能力才放 <code>src/core/base_mixin/</code>。</li>
 <li>Mixin 不定义最终任务的 <code>name</code>、<code>description</code> 或 <code>run()</code>。</li>
 <li>若继承 <code>BaseEfTask</code>，使用协作式 <code>super()</code>。</li>
@@ -413,8 +458,12 @@ self.default_config_group.update({...})
 <li><code>Battle Config</code></li>
 <li><code>Ensure Main Once Action Sleep</code></li>
 <li><code>Zip Line Config</code></li>
+<li><code>Nav Config</code></li>
+<li><code>Position Config</code></li>
 </ul>
 <p>战斗任务通过 <code>BattleMixin.get_battle_config()</code> 读取。任务可通过「使用独立配置」开关选择全局或独立战斗配置；「使用独立配置」关闭时，<code>get_battle_config()</code> 直接返回全局配置，账号任务覆盖不会生效。仅当「使用独立配置」开启时，绑定账号上下文后，账号任务覆盖才为最高优先级。不要在多个任务中复制全局战斗默认值。</p>
+<p>网格导航的定位真值、分辨率档位比例尺与轴映射，以及网格规划、行走和脱困参数均由 <code>Nav Config</code> 统一提供；导航任务侧只保留目标 X/Z 等单次目标参数。定位链路见<a href="../小地图定位/">小地图定位</a>，规划与执行见<a href="../网格导航/">网格导航</a>。</p>
+<p><code>Position Config</code> 保存应用级 <code>WorldPoseService</code> 的运行参数（WS、里程计、融合、视觉校正和抓包后端）。该服务不是 TriggerTask，首次有消费者读取 <code>world_pose</code> 时才创建和采样；没有消费者时不会后台取帧。</p>
 <h3 id="6-4-feature-资源">6.4 Feature 资源</h3>
 <p><code>src/config.py</code> 的 <code>template_tab</code> 会生成 <code>src/data/FeatureList</code> 标签枚举，Feature 图像和标注以 <code>assets/images/</code>、<code>assets/coco_annotations.json</code> 及 <code>ok_templates/</code> 数据为准。</p>
 <pre><code class="language-python">from src.data.FeatureList import FeatureList as fL
@@ -436,7 +485,7 @@ self.press_combat_key(&quot;e&quot;)  # combat
 </code></pre>
 <p><code>KeyConfigManager</code> 只有 <code>resolve_key(key, key_type)</code>。方向移动、固定角色数字键、固定滑索键和 <code>alt</code> 等系统修饰键可按明确的不改键语义使用底层接口。若游戏设置允许改键，对应 UI 图标也不应做成固定按键字样模板。</p>
 <h3 id="6-7-登录和多账号">6.7 登录和多账号</h3>
-<p><code>LoginMixin.login_flow(username, password=None)</code> 通过登录界面的“最近账号”列表选择账号，不输入密码。旧账号行中的逗号后密码字段会被忽略且不存储。</p>
+<p><code>LoginMixin.login_flow(username)</code> 通过登录界面的“最近账号”列表选择账号，不输入密码。匹配手机号前三位和后四位；重复可见号码结合“最近”标识与切换前账号身份消歧，无法唯一确定时拒绝猜测。旧账号行中首个逗号后的内容会被忽略且不存储。</p>
 <p>多账号任务应使用 <code>iter_multi_account_context()</code> 或现有 <code>AccountMixin</code> 流程，并在读取账号覆盖配置前设置 <code>current_account_id</code>。账号覆盖优先稳定 ID，用户名仅作为后备。</p>
 <h2 id="7-测试清单">7. 测试清单</h2>
 <p>当前 <code>tests/</code> 有 42 个测试模块：</p>
@@ -664,6 +713,6 @@ self.press_combat_key(&quot;e&quot;)  # combat
 <li>测试范围：<code>tests/*.py</code></li>
 <li>发布：<code>.github/workflows/*.yml</code></li>
 </ul>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/dev/DEVELOPMENT.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Oct 31, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-运行架构" style="margin-left:0px">1. 运行架构</a><a href="#2-基类与组合" style="margin-left:0px">2. 基类与组合</a><a href="#2-1-baseeftask" style="margin-left:10px">2.1 BaseEfTask</a><a href="#2-2-业务-mixin" style="margin-left:10px">2.2 业务 Mixin</a><a href="#2-3-实际任务-mro" style="margin-left:10px">2.3 实际任务 MRO</a><a href="#3-注册清单" style="margin-left:0px">3. 注册清单</a><a href="#一次性任务" style="margin-left:10px">一次性任务</a><a href="#触发式任务" style="margin-left:10px">触发式任务</a><a href="#自定义页" style="margin-left:10px">自定义页</a><a href="#4-当前目录" style="margin-left:0px">4. 当前目录</a><a href="#5-开发环境" style="margin-left:0px">5. 开发环境</a><a href="#6-开发流程" style="margin-left:0px">6. 开发流程</a><a href="#6-1-新增任务" style="margin-left:10px">6.1 新增任务</a><a href="#6-2-新增业务-mixin" style="margin-left:10px">6.2 新增业务 Mixin</a><a href="#6-3-任务配置" style="margin-left:10px">6.3 任务配置</a><a href="#6-4-feature-资源" style="margin-left:10px">6.4 Feature 资源</a><a href="#6-5-ocr-与语言" style="margin-left:10px">6.5 OCR 与语言</a><a href="#6-6-键位" style="margin-left:10px">6.6 键位</a><a href="#6-7-登录和多账号" style="margin-left:10px">6.7 登录和多账号</a><a href="#7-测试清单" style="margin-left:0px">7. 测试清单</a><a href="#8-ci-发布与工具" style="margin-left:0px">8. CI、发布与工具</a><a href="#9-维护检查" style="margin-left:0px">9. 维护检查</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/dev/DEVELOPMENT.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Nov 4, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#1-运行架构" style="margin-left:0px">1. 运行架构</a><a href="#2-基类与组合" style="margin-left:0px">2. 基类与组合</a><a href="#2-1-baseeftask" style="margin-left:10px">2.1 BaseEfTask</a><a href="#2-2-业务-mixin" style="margin-left:10px">2.2 业务 Mixin</a><a href="#2-3-实际任务-mro" style="margin-left:10px">2.3 实际任务 MRO</a><a href="#3-注册清单" style="margin-left:0px">3. 注册清单</a><a href="#一次性任务" style="margin-left:10px">一次性任务</a><a href="#触发式任务" style="margin-left:10px">触发式任务</a><a href="#自定义页" style="margin-left:10px">自定义页</a><a href="#4-当前目录" style="margin-left:0px">4. 当前目录</a><a href="#5-开发环境" style="margin-left:0px">5. 开发环境</a><a href="#6-开发流程" style="margin-left:0px">6. 开发流程</a><a href="#6-1-新增任务" style="margin-left:10px">6.1 新增任务</a><a href="#6-2-新增业务-mixin" style="margin-left:10px">6.2 新增业务 Mixin</a><a href="#6-3-任务配置" style="margin-left:10px">6.3 任务配置</a><a href="#6-4-feature-资源" style="margin-left:10px">6.4 Feature 资源</a><a href="#6-5-ocr-与语言" style="margin-left:10px">6.5 OCR 与语言</a><a href="#6-6-键位" style="margin-left:10px">6.6 键位</a><a href="#6-7-登录和多账号" style="margin-left:10px">6.7 登录和多账号</a><a href="#7-测试清单" style="margin-left:0px">7. 测试清单</a><a href="#8-ci-发布与工具" style="margin-left:0px">8. CI、发布与工具</a><a href="#9-维护检查" style="margin-left:0px">9. 维护检查</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../en/">All projects</a></div></div></footer>
-  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../../assets/site.js?v=20261104031949" defer></script></body></html>

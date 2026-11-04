@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/地图官方WS客户端实现/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="地圖 WebSocket 客戶端 · 开发与维护 · ok-end-field · 繁體中文"><meta property="og:description" content="返回：文件索引 / README 在保留油猴指令碼轉發相容模式的同時，專案內整合終末地官方地圖的 wss://w — ok-end-field 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/地图官方WS客户端实现/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="地圖 WebSocket 客戶端 · 开发与维护 · ok-end-field · 繁體中文"><meta name="twitter:description" content="返回：文件索引 / README 在保留油猴指令碼轉發相容模式的同時，專案內整合終末地官方地圖的 wss://w — ok-end-field 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta name="twitter:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"地圖 WebSocket 客戶端 · 开发与维护 · ok-end-field · 繁體中文","description":"返回：文件索引 / README 在保留油猴指令碼轉發相容模式的同時，專案內整合終末地官方地圖的 wss://w — ok-end-field 繁體中文文件","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/地图官方WS客户端实现/","inLanguage":"zh-TW","dateModified":"2026-10-05T04:44:00Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"地圖 WebSocket 客戶端 · 开发与维护 · ok-end-field · 繁體中文","description":"返回：文件索引 / README 在保留油猴指令碼轉發相容模式的同時，專案內整合終末地官方地圖的 wss://w — ok-end-field 繁體中文文件","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/地图官方WS客户端实现/","inLanguage":"zh-TW","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -27,26 +27,28 @@
       <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
       <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
     </div>
-  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../配置导出与导入/">配置匯出與匯入</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../guide-submodule-contrib/">模板貢獻指南</a><a href="../API/">API 參考</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../OCR使用分类/">OCR 使用分類</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="./" class="active" aria-current="page">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务汇总报告机制/">任務彙總報告機制</a><a href="../自动拾取任务/">自動拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="地圖官方-websocket-客戶端實現">地圖官方 WebSocket 客戶端實現</h1>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../配置导出与导入/">配置匯出與匯入</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../guide-submodule-contrib/">模板貢獻指南</a><a href="../API/">API 參考</a><a href="../运行时状态总线/">執行時狀態匯流排</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../OCR使用分类/">OCR 使用分類</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../小地图定位/">小地圖定位</a><a href="../网格导航/">網格導航</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="./" class="active" aria-current="page">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务汇总报告机制/">任務彙總報告機制</a><a href="../自动拾取任务/">自動拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="地圖官方-websocket-客戶端實現">地圖官方 WebSocket 客戶端實現</h1>
 <p>返回：<a href="../../">文件索引</a> / <a href="https://github.com/AliceJump/ok-end-field/blob/master/README.md">README</a></p>
 <h2 id="概述">概述</h2>
 <p>在保留油猴指令碼轉發相容模式的同時，專案內整合終末地官方地圖的 <code>wss://ws.skland.com/ws/v1/game/endfield/map</code> WebSocket 客戶端。
 每個賬號（玩家角色）需要獨立的 <code>hg/check</code> credential 才能建立連線。
-憑證可填寫在任務直接輸入（<code>content</code> 欄位）或儲存在賬號配置頁（<code>map_contents</code> 中），專案自動執行 OAuth 換取流程。</p>
+憑證統一配置在全域性「導航配置」的「真值content」，或儲存在賬號配置頁
+（<code>map_contents</code> 中）後用「真值地圖賬號」選擇。專案自動執行 OAuth 換取流程。</p>
 <h2 id="憑證輸入方式">憑證輸入方式</h2>
-<h3 id="方式一-任務直接輸入">方式一：任務直接輸入</h3>
-<p><code>ItemNavigatorTask.default_config[&#39;content&#39;]</code> —— 直接填入 <code>hg/check</code> 介面返回的 <code>data.content</code> 字串。</p>
+<h3 id="方式一-全域性導航配置直接輸入">方式一：全域性導航配置直接輸入</h3>
+<p><code>Nav Config</code> 的「真值content」直接填入 <code>hg/check</code> 介面返回的 <code>data.content</code> 字串。</p>
 <h3 id="方式二-賬號配置頁-推薦">方式二：賬號配置頁（推薦）</h3>
 <p><code>AccountConfigTab</code> 中的&quot;地圖同步 content&quot;區域，每個賬號儲存一份 <code>data.content</code>。
 資料持久化在 <code>configs/account_scoped_overrides.json</code> 的 <code>map_contents</code> 欄位中。</p>
 <h3 id="憑證解析優先順序">憑證解析優先順序</h3>
 <ol>
-<li>任務 <code>content</code> 非空 → 直接使用</li>
-<li>任務 <code>地图账号</code> 非空 → 從 <code>map_contents</code> 讀取該賬號的 content</li>
-<li>任務當前登入賬號 context → 從 <code>map_contents</code> 讀取；觸發任務自身沒有 context 時，還會讀取 executor 當前執行任務的 <code>current_account_id/current_user</code></li>
+<li>全域性「真值content」非空 → 直接使用</li>
+<li>全域性「真值地圖賬號」非空 → 從 <code>map_contents</code> 讀取該賬號的 content</li>
+<li><code>WorldPoseService</code> 當前賬號 context → 從 <code>map_contents</code> 讀取</li>
 </ol>
 <h3 id="不帶憑證時的回退">不帶憑證時的回退</h3>
-<p><code>content</code> 和 <code>地图账号</code> 均為空時，自動啟動舊的本地 WS 服務端模式（監聽 <code>ws://127.0.0.1:3001</code>），相容油猴指令碼或其他外部來源。</p>
+<p>官方真值為空時，<code>WorldPoseService</code> 自動啟動本地 WS 服務端模式
+（監聽 <code>ws://127.0.0.1:3001</code>），相容油猴指令碼或其他外部來源。</p>
 <h2 id="oauth-websocket-登入全鏈路">OAuth → WebSocket 登入全鏈路</h2>
 <pre><code class="language-mermaid">flowchart TD
     A[hg/check data.content] --&gt; B[POST Hypergryph OAuth grant]
@@ -133,7 +135,8 @@ headers[&quot;sign&quot;] = sign
 <td>位置資料：<code>{data: {pos: {x,y,z}, mapId, levelId}}</code></td>
 </tr>
 </tbody></table>
-<p>客戶端收到的位置資料通過 <code>_push_ws_payload()</code> 放入統一佇列，與本地 WS 服務端模式共用同一套消費邏輯。</p>
+<p>客戶端收到的位置資料通過 <code>_push_ws_payload()</code> 放入位置所有者佇列。定位任務消費後，
+統一把融合座標釋出為 <code>RuntimeStateHub</code> 的 <code>world.pose</code> 主題，業務任務只讀取該快照。</p>
 <h3 id="角色解析規則">角色解析規則</h3>
 <ol>
 <li>先請求 <code>/web/v1/user</code>；再請求 <code>/api/v1/game/player/binding</code>。若後者失敗且 cred 響應帶 <code>userId</code>，則以 <code>uid=userId</code> 重試。</li>
@@ -146,8 +149,8 @@ headers[&quot;sign&quot;] = sign
     A[AccountConfigTab 保存地图同步 content] --&gt; B[account_scope_store.set_account_map_content]
     B --&gt; C[configs/account_scoped_overrides.json]
     C --&gt; D[map_contents account_id -&gt; content]
-    E[ItemNavigatorTask 地图账号配置] --&gt; F[get_account_map_content]
-    G[当前任务账号上下文] --&gt; F
+    E[Nav Config 真值地图账号] --&gt; F[get_account_map_content]
+    G[WorldPoseService 账号上下文] --&gt; F
     D --&gt; F
     F --&gt; H[官方地图 WS 凭证解析]
 </code></pre>
@@ -182,53 +185,22 @@ headers[&quot;sign&quot;] = sign
 <p><code>_is_game_window_alive()</code> 檢查 <code>win32gui.IsWindow(hwnd) &amp;&amp; win32gui.IsWindowVisible(hwnd)</code>。</p>
 <ul>
 <li>WS 客戶端主迴圈每輪收包前檢查，視窗不存在則 <code>return</code> 退出協程，不會自動重連。</li>
-<li><code>ItemNavigatorTask.run()</code> 第一行也檢查，失效時呼叫 <code>_cleanup_navigator_runtime()</code> 清理所有 WS 資源和箭頭。</li>
+<li><code>ItemNavigatorTask.run()</code> 第一行也檢查，失效時清理箭頭；定位任務自行管理共享 WS 生命週期。</li>
 </ul>
 <h3 id="2-消費者空閒超時">2. 消費者空閒超時</h3>
-<p>導航任務每次通過 <code>_recv_ws_position_payload()</code> 或 <code>_recv_ws_position_payload_or_cached()</code> 讀取位置時，更新 <code>_map_ws_last_consume_at = time.time()</code>。
+<p>定位任務每次通過 <code>_recv_ws_position_payload()</code> 讀取位置時，更新 <code>_map_ws_last_consume_at = time.time()</code>。
 WS 客戶端執行緒檢查 <code>_map_ws_should_stop_for_idle_consumer()</code>，若超過 <code>_map_ws_consumer_idle_timeout</code>（初始化預設 10s）未被讀取，則主動退出。每次從佇列取得新位置，或在佇列為空時返回有效快取位置，都會重新整理消費時間。
 解決 executor disable 任務後 WS 執行緒繼續空轉的問題。</p>
-<h2 id="itemnavigatortask-關鍵變更">ItemNavigatorTask 關鍵變更</h2>
-<h3 id="移除的功能">移除的功能</h3>
-<ul>
-<li><code>support_multi_account</code> 標記 —— 不再參與多賬號覆蓋 UI</li>
-<li>舊版 JSON/Cookie/<code>key=value</code> 格式憑證解析</li>
-</ul>
-<h3 id="新增配置項">新增配置項</h3>
-<table>
-<thead>
-<tr>
-<th>配置鍵</th>
-<th>型別</th>
-<th>說明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>content</code></td>
-<td>str</td>
-<td>可選。直接填寫 <code>hg/check data.content</code></td>
-</tr>
-<tr>
-<td><code>地图账号</code></td>
-<td>dropdown</td>
-<td>可選。從賬號配置頁選擇已儲存 content 的賬號</td>
-</tr>
-</tbody></table>
-<h3 id="run-流程"><code>run()</code> 流程</h3>
+<h2 id="執行時狀態消費">執行時狀態消費</h2>
+<h3 id="itemnavigatortask-run-流程"><code>ItemNavigatorTask.run()</code> 流程</h3>
 <pre><code class="language-mermaid">flowchart TD
     A[ItemNavigatorTask.run] --&gt; B{游戏窗口是否存在}
-    B --&gt;|否| C[清理 WS 和箭头]
-    B --&gt;|是| D[读取 content 或地图账号 content]
-    D --&gt; E{有凭证}
-    E --&gt;|是| F[停止本地 WS 服务]
-    F --&gt; G[启动官方地图 WS 客户端]
-    E --&gt;|否| H[停止官方 WS 客户端]
-    H --&gt; I[启动本地 WS 服务]
-    G --&gt; J[读取位置 payload 或缓存]
-    I --&gt; J
-    J --&gt; K[匹配物品点位并绘制箭头]
-    K --&gt; L[处理标记按键]
-    L --&gt; M[延迟保存 marked_points.json]
+    B --&gt;|否| C[清理箭头]
+    B --&gt;|是| D[确保小地图定位服务可用]
+    D --&gt; E[world_pose 请求采样并读取快照]
+    E --&gt; F[匹配物品点位并绘制箭头]
+    F --&gt; G[处理标记按键]
+    G --&gt; H[延迟保存 marked_points.json]
 </code></pre>
 <h2 id="相關檔案">相關檔案</h2>
 <table>
@@ -239,12 +211,20 @@ WS 客戶端執行緒檢查 <code>_map_ws_should_stop_for_idle_consumer()</code>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>src/tasks/mixin/ws_position_mixin.py</code></td>
+<td><code>src/localization/ws_position_mixin.py</code></td>
 <td>WS 客戶端核心：OAuth 換取、HTTP 簽名、WS 協議、退出控制</td>
 </tr>
 <tr>
+<td><code>src/localization/position_service.py</code></td>
+<td>應用級定位服務：憑證解析、WS 生命週期、<code>world.pose</code> 按需取樣</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/runtime_state_mixin.py</code></td>
+<td>任務側狀態讀取與定位取樣控制面</td>
+</tr>
+<tr>
 <td><code>src/tasks/trigger/ItemNavigatorTask.py</code></td>
-<td>導航任務：憑證解析、位置消費、箭頭渲染、標記邏輯</td>
+<td>物品導航：讀取 <code>world.pose</code>、箭頭渲染、標記邏輯</td>
 </tr>
 <tr>
 <td><code>src/tasks/account/account_scope_store.py</code></td>
@@ -256,6 +236,6 @@ WS 客戶端執行緒檢查 <code>_map_ws_should_stop_for_idle_consumer()</code>
 </tr>
 </tbody></table>
 <p>相關文件：<a href="../../物品导航与实时检测/">物品導航與即時檢測</a> / <a href="../../账号配置用户指南/">賬號配置使用者指南</a></p>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/826ea6bc1f9e0649f9381f6a1084d268f137ee68/docs/dev/地图官方WS客户端实现.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#憑證輸入方式" style="margin-left:0px">憑證輸入方式</a><a href="#方式一-任務直接輸入" style="margin-left:10px">方式一：任務直接輸入</a><a href="#方式二-賬號配置頁-推薦" style="margin-left:10px">方式二：賬號配置頁（推薦）</a><a href="#憑證解析優先順序" style="margin-left:10px">憑證解析優先順序</a><a href="#不帶憑證時的回退" style="margin-left:10px">不帶憑證時的回退</a><a href="#oauth-websocket-登入全鏈路" style="margin-left:0px">OAuth → WebSocket 登入全鏈路</a><a href="#http-簽名演算法" style="margin-left:0px">HTTP 簽名演算法</a><a href="#timestamp-處理" style="margin-left:10px">timestamp 處理</a><a href="#websocket-協議" style="margin-left:0px">WebSocket 協議</a><a href="#角色解析規則" style="margin-left:10px">角色解析規則</a><a href="#多賬號架構" style="margin-left:0px">多賬號架構</a><a href="#資料流" style="margin-left:10px">資料流</a><a href="#相關-api-account-scope-store-py" style="margin-left:10px">相關 API (account_scope_store.py)</a><a href="#ui-accountconfigtab-py" style="margin-left:10px">UI (AccountConfigTab.py)</a><a href="#安全退出機制" style="margin-left:0px">安全退出機制</a><a href="#1-遊戲視窗退出檢測" style="margin-left:10px">1. 遊戲視窗退出檢測</a><a href="#2-消費者空閒超時" style="margin-left:10px">2. 消費者空閒超時</a><a href="#itemnavigatortask-關鍵變更" style="margin-left:0px">ItemNavigatorTask 關鍵變更</a><a href="#移除的功能" style="margin-left:10px">移除的功能</a><a href="#新增配置項" style="margin-left:10px">新增配置項</a><a href="#run-流程" style="margin-left:10px">run() 流程</a><a href="#相關檔案" style="margin-left:0px">相關檔案</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/dev/地图官方WS客户端实现.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月4日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#概述" style="margin-left:0px">概述</a><a href="#憑證輸入方式" style="margin-left:0px">憑證輸入方式</a><a href="#方式一-全域性導航配置直接輸入" style="margin-left:10px">方式一：全域性導航配置直接輸入</a><a href="#方式二-賬號配置頁-推薦" style="margin-left:10px">方式二：賬號配置頁（推薦）</a><a href="#憑證解析優先順序" style="margin-left:10px">憑證解析優先順序</a><a href="#不帶憑證時的回退" style="margin-left:10px">不帶憑證時的回退</a><a href="#oauth-websocket-登入全鏈路" style="margin-left:0px">OAuth → WebSocket 登入全鏈路</a><a href="#http-簽名演算法" style="margin-left:0px">HTTP 簽名演算法</a><a href="#timestamp-處理" style="margin-left:10px">timestamp 處理</a><a href="#websocket-協議" style="margin-left:0px">WebSocket 協議</a><a href="#角色解析規則" style="margin-left:10px">角色解析規則</a><a href="#多賬號架構" style="margin-left:0px">多賬號架構</a><a href="#資料流" style="margin-left:10px">資料流</a><a href="#相關-api-account-scope-store-py" style="margin-left:10px">相關 API (account_scope_store.py)</a><a href="#ui-accountconfigtab-py" style="margin-left:10px">UI (AccountConfigTab.py)</a><a href="#安全退出機制" style="margin-left:0px">安全退出機制</a><a href="#1-遊戲視窗退出檢測" style="margin-left:10px">1. 遊戲視窗退出檢測</a><a href="#2-消費者空閒超時" style="margin-left:10px">2. 消費者空閒超時</a><a href="#執行時狀態消費" style="margin-left:0px">執行時狀態消費</a><a href="#itemnavigatortask-run-流程" style="margin-left:10px">ItemNavigatorTask.run() 流程</a><a href="#相關檔案" style="margin-left:0px">相關檔案</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
-  <script src="../../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../../assets/site.js?v=20261104031949" defer></script></body></html>

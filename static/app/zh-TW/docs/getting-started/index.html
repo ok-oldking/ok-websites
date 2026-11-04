@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://app.ok-script.com/zh-TW/docs/getting-started/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="快速開始 · 中文 · ok-script-app · 繁體中文"><meta property="og:description" content="點選 GitHub 上的 Use this template，建立自己的 repository，然後 clon — ok-script-app 繁體中文文件"><meta property="og:url" content="https://app.ok-script.com/zh-TW/docs/getting-started/"><meta property="og:image" content="https://app.ok-script.com/assets/social/ok-script-app-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-script-app — 專案範本 · Python · 視覺工具">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="快速開始 · 中文 · ok-script-app · 繁體中文"><meta name="twitter:description" content="點選 GitHub 上的 Use this template，建立自己的 repository，然後 clon — ok-script-app 繁體中文文件"><meta name="twitter:image" content="https://app.ok-script.com/assets/social/ok-script-app-zh-tw.png"><meta name="twitter:image:alt" content="ok-script-app — 專案範本 · Python · 視覺工具">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"快速開始 · 中文 · ok-script-app · 繁體中文","description":"點選 GitHub 上的 Use this template，建立自己的 repository，然後 clon — ok-script-app 繁體中文文件","url":"https://app.ok-script.com/zh-TW/docs/getting-started/","inLanguage":"zh-TW","dateModified":"2026-08-16T01:34:23+08:00","author":{"@type":"Organization","name":"ok-script-app","url":"https://github.com/ok-oldking/ok-script-app"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"快速開始 · 中文 · ok-script-app · 繁體中文","description":"點選 GitHub 上的 Use this template，建立自己的 repository，然後 clon — ok-script-app 繁體中文文件","url":"https://app.ok-script.com/zh-TW/docs/getting-started/","inLanguage":"zh-TW","dateModified":"2026-11-03T22:54:47+08:00","author":{"@type":"Organization","name":"ok-script-app","url":"https://github.com/ok-oldking/ok-script-app"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261030184412">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261104031949">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -45,18 +45,15 @@ cd &lt;你的仓库名&gt;
 $PypiIndex = &quot;https://pypi.org/simple/&quot;
 python -m pip install --index-url $PypiIndex --upgrade pip
 </code></pre>
-<p>根據應用的執行目標選擇一個依賴 profile。Qt 桌面介面：</p>
+<p>安裝 Qt 桌面介面的依賴（ok-script <code>3.0.0b3</code>）：</p>
 <pre><code class="language-powershell">python -m pip install --index-url $PypiIndex --no-deps --upgrade -r requirements.txt
 python main_debug.py
 </code></pre>
-<p>Web 介面：</p>
-<pre><code class="language-powershell">python -m pip install --index-url $PypiIndex --no-deps --upgrade -r requirements-web.txt
-python web_main_debug.py
-</code></pre>
+<p>ok-script 3 已移除 Web 介面。原 Web 啟動器、<code>web</code> extra 和
+<code>requirements-web.txt</code> 保留為桌面應用的相容入口。</p>
 <p>鎖定檔案用於可重複安裝，是日常開發的推薦方式。如果需要直接從
 <code>pyproject.toml</code> 解析最新的相容依賴，可以分別使用：</p>
 <pre><code class="language-powershell">python -m pip install --index-url $PypiIndex &quot;.[qt]&quot;
-python -m pip install --index-url $PypiIndex &quot;.[web]&quot;
 </code></pre>
 <p>只需執行與目標對應的一條命令。官方 PyPI 的 pip 索引入口是
 <code>https://pypi.org/simple/</code>，而不是網站首頁 <code>https://pypi.org/</code>；使用後者會導致
@@ -79,6 +76,6 @@ python -m pip install --index-url $PypiIndex &quot;.[web]&quot;
 <ol start="5">
 <li>驗證完成後，按<a href="../release/">打包與釋出</a>配置工作流並推送 tag。</li>
 </ol>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app/blob/f134d07ce064c49060068c0511b5592b0e78a081/docs/getting-started.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年10月31日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-從模板建立倉庫" style="margin-left:0px">1. 從模板建立倉庫</a><a href="#2-安裝-python-3-12-和專案依賴" style="margin-left:0px">2. 安裝 Python 3.12 和專案依賴</a><a href="#3-初始化應用" style="margin-left:0px">3. 初始化應用</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app/blob/c3f9e1932eaa489ac29ca765999d5784779e3b3c/docs/getting-started.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月4日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-從模板建立倉庫" style="margin-left:0px">1. 從模板建立倉庫</a><a href="#2-安裝-python-3-12-和專案依賴" style="margin-left:0px">2. 安裝 Python 3.12 和專案依賴</a><a href="#3-初始化應用" style="margin-left:0px">3. 初始化應用</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-script-app"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20261030184412" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20261104031949" defer></script></body></html>

@@ -1,0 +1,222 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>執行時狀態匯流排 · 开发与维护 · ok-end-field · 繁體中文</title><meta name="description" content="返回：文件索引 / 開發指南 本文定義跨任務共享即時狀態的職責邊界、主題契約和消費方式。實現以 src/runt — ok-end-field 繁體中文文件"><meta name="keywords" content="ok-end-field, okendfield, GitHub, AliceJump/ok-end-field, AliceJump, 終末地, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="AliceJump">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/zh-TW/docs/dev/运行时状态总线/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="執行時狀態匯流排 · 开发与维护 · ok-end-field · 繁體中文"><meta property="og:description" content="返回：文件索引 / 開發指南 本文定義跨任務共享即時狀態的職責邊界、主題契約和消費方式。實現以 src/runt — ok-end-field 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-end-field/zh-TW/docs/dev/运行时状态总线/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="執行時狀態匯流排 · 开发与维护 · ok-end-field · 繁體中文"><meta name="twitter:description" content="返回：文件索引 / 開發指南 本文定義跨任務共享即時狀態的職責邊界、主題契約和消費方式。實現以 src/runt — ok-end-field 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-tw.png"><meta name="twitter:image:alt" content="ok-end-field — 終末地 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"執行時狀態匯流排 · 开发与维护 · ok-end-field · 繁體中文","description":"返回：文件索引 / 開發指南 本文定義跨任務共享即時狀態的職責邊界、主題契約和消費方式。實現以 src/runt — ok-end-field 繁體中文文件","url":"https://ok-script.com/ok-end-field/zh-TW/docs/dev/运行时状态总线/","inLanguage":"zh-TW","dateModified":"2026-11-04T02:47:16Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261104031949">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-Onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/OK-AzurPromilia.png" alt=""></span><span>OK-AzurPromilia</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../../../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">文件首頁</a><a href="../../getting-started/installation/">安裝</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常見問題</a><a href="../../features/overview/">功能概覽</a><a href="../../日常任务/">日常任務</a><a href="../../体力本/">刷體力</a><a href="../../自动战斗/">自動戰鬥</a><a href="../../排轴/">排軸</a><a href="../../运送委托接取/">運送委託接取</a><a href="../../自动送货/">自動送貨</a><a href="../../仓库物品转移/">倉庫物品轉移</a><a href="../../物品导航与实时检测/">物品導航與即時檢測</a><a href="../../账号配置用户指南/">賬號配置</a><a href="../../配置导出与导入/">配置匯出與匯入</a><a href="../../Windows 计划任务/">Windows 計劃任務</a><a href="../../鼠标转向标定汇总/">滑鼠轉向標定</a><a href="../../update/主数据维护工作流/">主資料維護</a><a href="../../update/送货地区维护工作流/">送貨地區維護</a><a href="../../update/日常送礼维护工作流/">日常送禮維護</a><a href="../QUICKSTART/">從原始碼執行</a><a href="../DEVELOPMENT/">開發指南</a><a href="../guide-submodule-contrib/">模板貢獻指南</a><a href="../API/">API 參考</a><a href="./" class="active" aria-current="page">執行時狀態匯流排</a><a href="../i18n_OCR配置流程/">i18n 與 OCR</a><a href="../OCR使用分类/">OCR 使用分類</a><a href="../键盘操作体系/">鍵盤操作體系</a><a href="../滑索与送货逻辑/">滑索與送貨邏輯</a><a href="../小地图定位/">小地圖定位</a><a href="../网格导航/">網格導航</a><a href="../NPC与送货点多语言对照方案/">NPC 與送貨點多語言</a><a href="../地图官方WS客户端实现/">地圖 WebSocket 客戶端</a><a href="../图像模板匹配示例/">影像模板匹配示例</a><a href="../文字识别示例/">文字識別示例</a><a href="../切换账户流程分析/">賬戶切換流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">賬號唯一 ID 實現</a><a href="../任务汇总报告机制/">任務彙總報告機制</a><a href="../自动拾取任务/">自動拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="執行時狀態匯流排">執行時狀態匯流排</h1>
+<p>返回：<a href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/zh-CN/README.md">文件索引</a> / <a href="../DEVELOPMENT/">開發指南</a></p>
+<p>本文定義跨任務共享即時狀態的職責邊界、主題契約和消費方式。實現以
+<code>src/runtime_state/</code>、<code>src/tasks/mixin/runtime_state_mixin.py</code> 和當前單元測試為準。</p>
+<p>目錄名使用 <code>runtime_state</code> 而不是 <code>runtime</code>：後者會與
+<code>src/core/base_mixin/runtime_mixin.py</code> 的“任務執行時能力”混淆，也容易被誤解為
+整個應用執行時。這裡的包只承載跨任務共享狀態。</p>
+<h2 id="1-職責邊界">1. 職責邊界</h2>
+<table>
+<thead>
+<tr>
+<th>模組</th>
+<th>單一職責</th>
+<th>不負責</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>src/runtime_state/state_hub.py</code></td>
+<td>儲存 latest-value 快照、序號和時效</td>
+<td>取樣、融合、任務排程</td>
+</tr>
+<tr>
+<td><code>src/runtime_state/topics.py</code></td>
+<td>定義穩定主題名</td>
+<td>資料型別和業務邏輯</td>
+</tr>
+<tr>
+<td><code>src/runtime_state/world_pose.py</code></td>
+<td>把定位內部狀態對映為穩定座標契約</td>
+<td>WS 連線、小地圖計算</td>
+</tr>
+<tr>
+<td><code>src/tasks/mixin/runtime_state_mixin.py</code></td>
+<td>給任務提供釋出、讀取、等待和定位取樣入口</td>
+<td>識別演算法、路徑規劃</td>
+</tr>
+<tr>
+<td><code>WorldPoseService</code></td>
+<td>唯一維護應用級定位服務併發布 <code>world.pose</code></td>
+<td>導航、物品選擇、遊戲輸入</td>
+</tr>
+<tr>
+<td>普通業務任務</td>
+<td>讀取快照並執行自己的狀態機</td>
+<td>直接啟動 WS、里程計或融合</td>
+</tr>
+</tbody></table>
+<p><code>RuntimeStateHub</code> 使用 latest-value 語義：新快照覆蓋舊快照，消費者按
+<code>max_age</code> 判斷是否仍可用。過期資料返回 <code>None</code>，不能繼續偽裝成即時狀態。</p>
+<h2 id="2-主題">2. 主題</h2>
+<table>
+<thead>
+<tr>
+<th>主題</th>
+<th>型別</th>
+<th>當前生產者</th>
+<th>典型消費者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>world.pose</code></td>
+<td>最新值</td>
+<td><code>WorldPoseService</code></td>
+<td>物品導航、網格導航、滑索、除錯任務</td>
+</tr>
+<tr>
+<td><code>world.scene</code></td>
+<td>最新值</td>
+<td>預留</td>
+<td>自動互動、自動拾取、任務狀態機</td>
+</tr>
+<tr>
+<td><code>world.targets</code></td>
+<td>最新值</td>
+<td>預留</td>
+<td>物品導航、自動拾取</td>
+</tr>
+<tr>
+<td><code>sensor.ws</code></td>
+<td>最新值</td>
+<td>預留</td>
+<td>狀態列、診斷</td>
+</tr>
+<tr>
+<td><code>system.health</code></td>
+<td>最新值</td>
+<td>預留</td>
+<td>除錯面板、日誌</td>
+</tr>
+</tbody></table>
+<p>主題名通過 <code>RuntimeTopic</code> 引用，業務程式碼不要散落字串。</p>
+<h2 id="3-座標契約">3. 座標契約</h2>
+<p><code>world.pose</code> 至少包含：</p>
+<table>
+<thead>
+<tr>
+<th>欄位</th>
+<th>含義</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>x</code> / <code>y</code> / <code>z</code></td>
+<td>世界座標；<code>x/z</code> 為融合水平座標，<code>y</code> 為最新 WS 高度</td>
+</tr>
+<tr>
+<td><code>heading</code> / <code>heading_score</code></td>
+<td>羅盤方位角和朝向置信度</td>
+</tr>
+<tr>
+<td><code>map_id</code></td>
+<td>當前地圖</td>
+</tr>
+<tr>
+<td><code>position_trusted</code> / <code>trust_reason</code></td>
+<td>絕對座標是否可信及原因</td>
+</tr>
+<tr>
+<td><code>anchor_set</code> / <code>rest</code></td>
+<td>是否已錨定、當前是否靜止</td>
+</tr>
+<tr>
+<td><code>odom_ok</code> / <code>odom_reason</code></td>
+<td>本拍是否有有效里程計樣本</td>
+</tr>
+<tr>
+<td><code>sync_seq</code> / <code>sync_checked</code> / <code>sync_needed</code></td>
+<td>靜止校準狀態</td>
+</tr>
+<tr>
+<td><code>ws</code> / <code>ws_xyz</code></td>
+<td>原始 WS 水平座標和完整座標</td>
+</tr>
+<tr>
+<td><code>sample_t</code></td>
+<td>定位所有者使用的取樣時間</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>official_ws</code>、<code>local_ws</code> 或 <code>minimap</code></td>
+</tr>
+</tbody></table>
+<p>狀態閘道器會在信封中附加 <code>sequence</code>、<code>published_at</code>、<code>expires_at</code> 和釋出者名稱。</p>
+<p><code>PoseProvider</code> 是導航側依賴的最小定位介面，包含位置取樣、朝向控制、朝向閾值和
+靜止診斷。導航模組不得匯入 <code>src/localization/</code> 的具體實現。</p>
+<h2 id="4-消費方式">4. 消費方式</h2>
+<p>普通任務繼承 <code>RuntimeStateMixin</code>，只調用下列介面：</p>
+<pre><code class="language-python">pose = self.world_pose(frame=frame, max_age=0.6)
+if pose is None:
+    return
+
+x = pose[&quot;x&quot;]
+z = pose[&quot;z&quot;]
+if not pose.get(&quot;position_trusted&quot;) or x is None or z is None:
+    return
+
+map_id = pose[&quot;map_id&quot;]
+</code></pre>
+<p>等待條件成立時使用：</p>
+<pre><code class="language-python">pose = self.wait_world_pose(
+    lambda value: bool(value.get(&quot;position_trusted&quot;)),
+    frame=frame,
+    max_age=1.0,
+    timeout=10.0,
+    tick=0.1,
+)
+</code></pre>
+<p>其他資訊使用通用介面釋出和讀取：</p>
+<pre><code class="language-python">self.publish_runtime_state(
+    RuntimeTopic.WORLD_SCENE,
+    {&quot;scene&quot;: &quot;world&quot;},
+    source=&quot;SceneDetector&quot;,
+    ttl=2.0,
+)
+
+scene = self.runtime_state(RuntimeTopic.WORLD_SCENE, max_age=1.0)
+</code></pre>
+<h2 id="5-排程約束">5. 排程約束</h2>
+<p>ok-script 的執行器是單執行緒協作排程。長任務執行期間，其他 <code>TriggerTask</code>
+不會並行執行，因此定位不能假設自己會獨立按固定週期執行。</p>
+<p><code>RuntimeStateMixin.world_pose(refresh=True)</code> 會通過統一控制面呼叫定位所有者的
+<code>sample_world_pose()</code>。消費者不接觸 WS、小地圖或融合物件，但可以請求所有者
+採一幀併發布快照。這樣同時滿足單所有者、單執行緒排程和統一消費介面。</p>
+<h2 id="6-擴充套件規則">6. 擴充套件規則</h2>
+<ul>
+<li>高頻變化的資料使用 latest-value，消費者慢時丟棄舊值，不能阻塞生產者。</li>
+<li>離散狀態變化使用事件流，每個訂閱者擁有獨立佇列，禁止共享單消費者佇列。</li>
+<li>OCR、模板掃描等按需任務使用請求響應，不要把所有請求廣播給全部消費者。</li>
+<li>配置、物品點位、地圖檔案和網格檔案屬於參考資料，繼續通過 Config 或資料服務讀取。</li>
+<li>狀態值必須帶時間、來源和可信狀態；需要舊值時返回過期錯誤，不返回陳舊值。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/ab759bb012dbee155224e4330c6a18342c79cc0f/docs/dev/运行时状态总线.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月4日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#1-職責邊界" style="margin-left:0px">1. 職責邊界</a><a href="#2-主題" style="margin-left:0px">2. 主題</a><a href="#3-座標契約" style="margin-left:0px">3. 座標契約</a><a href="#4-消費方式" style="margin-left:0px">4. 消費方式</a><a href="#5-排程約束" style="margin-left:0px">5. 排程約束</a><a href="#6-擴充套件規則" style="margin-left:0px">6. 擴充套件規則</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261104031949" defer></script></body></html>
