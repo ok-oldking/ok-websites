@@ -187,6 +187,12 @@ function localeSearchTerms(locale, project) {
   if (locale.code === 'ja') return ['ゲーム自動化', 'コンピュータービジョン', '画像認識', 'オープンソース', 'Windows 自動化'];
   return ['game automation', 'computer vision', 'open source', 'Python automation', 'Windows automation'];
 }
+function formatStars(value) {
+  const count = Number(value || 0);
+  if (count < 1000) return String(count);
+  const [divisor, suffix] = count >= 999950 ? [1e6, 'm'] : [1e3, 'k'];
+  return `${(Math.round(count / divisor * 10) / 10).toFixed(1).replace(/\.0$/, '')}${suffix}`;
+}
 function posix(value) { return value.split(path.sep).join('/'); }
 function cleanSlug(value) { return value.toLowerCase().replace(/<[^>]+>/g, '').replace(/&[a-z]+;/g, '').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-|-$/g, '') || 'section'; }
 function formatDate(iso, locale) { try { return new Intl.DateTimeFormat(locale, { year:'numeric', month:'short', day:'numeric' }).format(new Date(iso)); } catch { return iso?.slice(0,10) || '—'; } }
@@ -919,7 +925,7 @@ function landingPage(project, locale, meta, faq = null) {
     const targetLocale = localProject && (localProject.locales.find(candidate => candidate.code === locale.code) || localProject.locales.find(candidate => candidate.code === 'en') || localProject.locales[0]);
     const itemUrl = localProject ? relativeSiteUrl(project, currentUrl, localProject, landingUrl(localProject, targetLocale)) : item.url;
     const lastGroup = item.status === 'archived' || item.stale;
-    return `<article class="project-card${lastGroup ? ' project-last' : ''}" data-description-source="${item.descriptionSource || 'fallback'}"><a class="project-card-link" href="${itemUrl}" aria-label="${escapeHtml(`${t.explore}: ${item.name}${gameName ? ` — ${gameName}` : ''}`)}"></a><div class="project-top"><span class="project-logo">${icon}</span><div class="project-top-meta"><a class="project-stars" href="https://github.com/${item.github}" aria-label="${escapeHtml(`${item.name}: ${Number(item.stars || 0).toLocaleString()} GitHub stars`)}">★ ${Number(item.stars || 0).toLocaleString()}</a><a class="github-link" href="https://github.com/${item.github}">${githubIcon(project, currentUrl)}GitHub</a></div></div><h3><span>${escapeHtml(item.name)}</span>${gameName ? `<span class="project-game">— ${escapeHtml(gameName)}</span>` : ''}</h3><p class="project-description">${escapeHtml(desc)}</p><div class="project-meta"><span><small>${t.release}</small><strong>${escapeHtml(item.release || '—')}</strong></span><span><small>${t.updated}</small><time datetime="${escapeHtml(item.updatedAt || '')}">${formatDate(item.updatedAt, locale.code)}</time></span></div></article>`;
+    return `<article class="project-card${lastGroup ? ' project-last' : ''}" data-description-source="${item.descriptionSource || 'fallback'}"><a class="project-card-link" href="${itemUrl}" aria-label="${escapeHtml(`${t.explore}: ${item.name}${gameName ? ` — ${gameName}` : ''}`)}"></a><div class="project-top"><span class="project-logo">${icon}</span><div class="project-top-meta"><a class="project-stars" href="https://github.com/${item.github}" aria-label="${escapeHtml(`${item.name}: ${Number(item.stars || 0).toLocaleString()} GitHub stars`)}">★ ${formatStars(item.stars)}</a><a class="github-link" href="https://github.com/${item.github}">${githubIcon(project, currentUrl)}GitHub</a></div></div><h3><span>${escapeHtml(item.name)}</span>${gameName ? `<span class="project-game">— ${escapeHtml(gameName)}</span>` : ''}</h3><p class="project-description">${escapeHtml(desc)}</p><div class="project-meta"><span><small>${t.release}</small><strong>${escapeHtml(item.release || '—')}</strong></span><span><small>${t.updated}</small><time datetime="${escapeHtml(item.updatedAt || '')}">${formatDate(item.updatedAt, locale.code)}</time></span></div></article>`;
   }).join('');
   const sourceButton = `<a class="button" href="https://github.com/${project.github}">${githubIcon(project, currentUrl)}${t.viewSource}</a>`;
   const chinaLabel = locale.code === 'zh-CN' ? '大陆版' : 'China';
@@ -950,7 +956,7 @@ function landingPage(project, locale, meta, faq = null) {
   const community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
   const body = `<main id="main">
   <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div>${heroTitle}<p class="hero-copy">${lead}</p>
-  <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${meta.stars.toLocaleString()}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
+  <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${formatStars(meta.stars)}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
   ${capabilitiesSection}${projectsSection}${faqSection}${ctaSection}</main>`;
   const headline = isFramework ? `${titleA}${singleLineHero ? '' : ' '}${titleB}` : titleA;
   const baseTitle = `${project.name} — ${headline.replace(/[，,.。]+$/,'')}`;
