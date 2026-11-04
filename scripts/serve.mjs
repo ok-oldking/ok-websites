@@ -28,6 +28,11 @@ const server = http.createServer((request, response) => {
   const requestHost = (request.headers.host || '').split(':')[0].toLowerCase();
   const projectHosts = { 'ok-ww.ok-script.com': 'ok-ww', 'app.ok-script.com': 'app' };
   const projectFolder = projectHosts[requestHost];
+  if (!projectFolder && /^\/ok-ww\/?$/.test(request.url.split('?')[0])) {
+    response.writeHead(301, { Location: 'https://github.com/ok-oldking/ok-wuthering-waves' });
+    response.end();
+    return;
+  }
   const siteRoot = request.url.startsWith('/assets/') ? root : path.join(root, projectFolder || '');
   const file = resolveFile(request.url, siteRoot);
   if (!file) {

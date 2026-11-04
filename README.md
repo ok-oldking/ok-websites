@@ -27,6 +27,8 @@ npm run deploy
 
 Server deployment uploads one immutable release, switches the `current` symlink only after extraction, installs/reloads nginx, and verifies all three hosts. Each project domain serves its own generated folder at `/`: `ok-ww.ok-script.com` serves `static/ok-ww`, while `app.ok-script.com` serves `static/app`. Shared assets remain under `static/assets`.
 
+The main-site paths `/ok-ww` and `/ok-ww/` redirect directly to `https://github.com/ok-oldking/ok-wuthering-waves`. nginx and the local server return HTTP 301; GitHub Pages uses a browser redirect before language selection. The project subdomain continues to serve its documentation.
+
 The GitHub Actions workflow regenerates and validates the site every day and on pushes to `main`, then publishes `static/` as a GitHub Pages artifact. Enable **Settings → Pages → Source → GitHub Actions** once in the repository.
 
 DNS should point both `ok-script.com` and `*.ok-script.com` at the production server. nginx maps the main domain and other wildcard hosts to the framework site, with exact virtual hosts for `ok-ww.ok-script.com` and `app.ok-script.com`. Add a trusted TLS certificate at the server or reverse-proxy layer before enforcing HTTPS.
