@@ -39,11 +39,11 @@
       "fallbackMetadata": {
         "stars": 6971,
         "forks": 588,
-        "release": "v3.5.27",
-        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.5.27",
+        "release": "v3.7.19",
+        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.7.19",
         "releaseAssets": [
-          { "name": "ok-ww-win32-China-setup.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-China-setup.exe" },
-          { "name": "ok-ww-win32-Global-setup.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-Global-setup.exe" }
+          { "name": "ok-ww-win32-China-setup-3.7.19.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-China-setup-3.7.19.exe" },
+          { "name": "ok-ww-win32-Global-setup-3.7.19.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-Global-setup-3.7.19.exe" }
         ],
         "mirrors": [
           { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=okww&source=ok-ww-release" },
@@ -104,11 +104,10 @@
       "fallbackMetadata": {
         "stars": 1097,
         "forks": 77,
-        "release": "v1.2.29",
-        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.2.29",
+        "release": "v1.5.2",
+        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.5.2",
         "releaseAssets": [
-          { "name": "ok-nte-win32-China-setup.exe", "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.2.29/ok-nte-win32-China-setup.exe" },
-          { "name": "ok-nte-win32-Global-setup.exe", "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.2.29/ok-nte-win32-Global-setup.exe" }
+          { "name": "ok-nte-win32-China-setup-1.5.2.exe", "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.2/ok-nte-win32-China-setup-1.5.2.exe" }
         ],
         "mirrors": [
           { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte&channel=stable" },

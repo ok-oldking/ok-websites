@@ -669,8 +669,12 @@ function githubIcon(project, currentUrl) {
 
 function releaseDownloads(meta) {
   const fallbackAsset = meta.releaseAssets?.find(asset => /\.exe$/i.test(asset.name))?.browser_download_url;
-  const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url || fallbackAsset || meta.releaseUrl;
-  return { china: find(/China-setup(?:-v?[\d.]+)?\.exe$/i), global: find(/Global-setup(?:-v?[\d.]+)?\.exe$/i) };
+  // Installer names may carry the release version, e.g. ok-ww-win32-China-setup-3.7.19.exe.
+  const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url;
+  const china = find(/China-setup(?:-v?[\d.]+)?\.exe$/i);
+  const global = find(/Global-setup(?:-v?[\d.]+)?\.exe$/i);
+  const fallback = fallbackAsset || meta.releaseUrl;
+  return { china: china || global || fallback, global: global || china || fallback, hasChina: Boolean(china), hasGlobal: Boolean(global) };
 }
 
 function communityLinks(links = [], label = '', compact = false, localeCode = 'en', project, currentUrl, ownerId = project?.id) {
@@ -910,7 +914,7 @@ function landingPage(project, locale, meta, faq = null) {
   const { eyebrow, titleA, titleB, lead } = marketingContent(project, locale);
   const docsUrl = relativeSiteUrl(project, currentUrl, project, `${docRoot(project, locale)}/`);
   const downloads = releaseDownloads(meta);
-  const chinaDefault = locale.code === 'zh-CN';
+  const chinaDefault = locale.code === 'zh-CN' ? (downloads.hasChina || !downloads.hasGlobal) : (downloads.hasChina && !downloads.hasGlobal);
   const primaryUrl = isFramework ? docsUrl : downloads[chinaDefault ? 'china' : 'global'];
   const pypiUrl = `https://pypi.org/project/${encodeURIComponent(project.pypi || 'ok-script')}/`;
   const pypiVersion = meta.pypiVersion || meta.release;
@@ -932,9 +936,9 @@ function landingPage(project, locale, meta, faq = null) {
   const globalLabel = 'Global';
   const defaultDownloadLabel = chinaDefault ? chinaLabel : globalLabel;
   const downloadOptions = [
-    { label: chinaLabel, url: downloads.china },
-    { label: globalLabel, url: downloads.global }
-  ].map(option => `<a class="dropdown-option download-option" role="menuitem" target="_blank" rel="noopener" href="${escapeHtml(option.url)}" data-download-link><span>${option.label}</span><strong>${escapeHtml(meta.release)}</strong></a>`).join('');
+    { label: chinaLabel, url: downloads.china, show: downloads.hasChina || !downloads.hasGlobal },
+    { label: globalLabel, url: downloads.global, show: downloads.hasGlobal || !downloads.hasChina }
+  ].filter(option => option.show).map(option => `<a class="dropdown-option download-option" role="menuitem" target="_blank" rel="noopener" href="${escapeHtml(option.url)}" data-download-link><span>${option.label}</span><strong>${escapeHtml(meta.release)}</strong></a>`).join('');
   const downloadControl = `<div class="custom-dropdown download-split" data-dropdown data-download-control data-downloading-label="${escapeHtml(t.downloading)}" data-download-guide="${escapeHtml(t.downloadGuide || copy.en.downloadGuide)}">
     <a class="button primary download-main" target="_blank" rel="noopener" href="${escapeHtml(primaryUrl)}" data-download-link>${githubIcon(project, currentUrl)}<span data-download-label>${t.downloadGithub}</span><strong>${escapeHtml(meta.release)}</strong><small>${defaultDownloadLabel}</small><span aria-hidden="true">↓</span></a>
     <button class="download-toggle" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Choose download version"><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>

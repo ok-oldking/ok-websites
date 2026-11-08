@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-04T03:22:32.992Z",
+  "generatedAt": "2026-11-08T02:37:30.791Z",
   "projects": [
     {
       "id": "ok-script",
-      "commit": "6814e654eb5ba5a217557a8e313d6eeddc9dc291",
-      "updated": "2026-11-02T19:24:09+08:00",
+      "commit": "f90444e11713496bd41de389a886501673531bad",
+      "updated": "2026-11-07T04:20:35+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -19,13 +19,13 @@
         "releaseUrl": "https://github.com/ok-oldking/ok-script/releases",
         "releaseAssets": [],
         "mirrors": [],
-        "updated": "2026-11-02T19:24:09+08:00"
+        "updated": "2026-11-07T04:20:35+08:00"
       }
     },
     {
       "id": "ok-ww",
-      "commit": "24876ecaaaed4200b98e17180d78caac653b44e0",
-      "updated": "2026-11-04T10:19:30+08:00",
+      "commit": "f497bd8400372ac514b810700241a663ff53b79f",
+      "updated": "2026-11-06T01:15:48+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -36,17 +36,17 @@
         "stars": 6971,
         "forks": 588,
         "description": "",
-        "release": "v3.5.27",
-        "pypiVersion": "v3.5.27",
-        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.5.27",
+        "release": "v3.7.19",
+        "pypiVersion": "v3.7.19",
+        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.7.19",
         "releaseAssets": [
           {
-            "name": "ok-ww-win32-China-setup.exe",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-China-setup.exe"
+            "name": "ok-ww-win32-China-setup-3.7.19.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-China-setup-3.7.19.exe"
           },
           {
-            "name": "ok-ww-win32-Global-setup.exe",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.5.27/ok-ww-win32-Global-setup.exe"
+            "name": "ok-ww-win32-Global-setup-3.7.19.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-Global-setup-3.7.19.exe"
           }
         ],
         "mirrors": [
@@ -63,7 +63,7 @@
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-11-04T10:19:30+08:00"
+        "updated": "2026-11-06T01:15:48+08:00"
       }
     },
     {
@@ -107,8 +107,8 @@
     },
     {
       "id": "ok-nte",
-      "commit": "b1102fa7865d50807716bc94ee430cc2df90f2e5",
-      "updated": "2026-11-03T08:38:27+08:00",
+      "commit": "d3336eb10d2c8dd00d460740056e7ab85abc9baf",
+      "updated": "2026-11-07T22:07:45+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -118,17 +118,13 @@
         "stars": 1097,
         "forks": 77,
         "description": "",
-        "release": "v1.2.29",
-        "pypiVersion": "v1.2.29",
-        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.2.29",
+        "release": "v1.5.2",
+        "pypiVersion": "v1.5.2",
+        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.5.2",
         "releaseAssets": [
           {
-            "name": "ok-nte-win32-China-setup.exe",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.2.29/ok-nte-win32-China-setup.exe"
-          },
-          {
-            "name": "ok-nte-win32-Global-setup.exe",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.2.29/ok-nte-win32-Global-setup.exe"
+            "name": "ok-nte-win32-China-setup-1.5.2.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.2/ok-nte-win32-China-setup-1.5.2.exe"
           }
         ],
         "mirrors": [
@@ -145,7 +141,7 @@
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-11-03T08:38:27+08:00"
+        "updated": "2026-11-07T22:07:45+08:00"
       }
     },
     {
@@ -227,8 +223,8 @@
     },
     {
       "id": "ok-end-field",
-      "commit": "ab759bb012dbee155224e4330c6a18342c79cc0f",
-      "updated": "2026-11-04T02:47:16Z",
+      "commit": "9effdf998dcb5a37d51d606afdf9b33e6285228a",
+      "updated": "2026-11-08T01:56:03Z",
       "locales": [
         "zh-CN",
         "en",
@@ -248,7 +244,7 @@
           }
         ],
         "mirrors": [],
-        "updated": "2026-11-04T02:47:16Z"
+        "updated": "2026-11-08T01:56:03Z"
       }
     },
     {
