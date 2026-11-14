@@ -4,9 +4,9 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-end-field/docs/dev/网格导航/">
   <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="网格导航 · 开发与维护 · ok-end-field · 简体中文"><meta property="og:description" content="返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标 — ok-end-field 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-end-field/docs/dev/网格导航/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-end-field-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-end-field — 终末地 · 后台自动化 · Windows">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="网格导航 · 开发与维护 · ok-end-field · 简体中文"><meta name="twitter:description" content="返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标 — ok-end-field 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-end-field-zh-cn.png"><meta name="twitter:image:alt" content="ok-end-field — 终末地 · 后台自动化 · Windows">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"网格导航 · 开发与维护 · ok-end-field · 简体中文","description":"返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标 — ok-end-field 简体中文文档","url":"https://ok-script.com/ok-end-field/docs/dev/网格导航/","inLanguage":"zh-CN","dateModified":"2026-11-08T01:56:03Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"网格导航 · 开发与维护 · ok-end-field · 简体中文","description":"返回：文档索引 / API 参考 / 开发指南 / 小地图定位 本文只说明二维网格规划、路线跟随和游戏输入。坐标 — ok-end-field 简体中文文档","url":"https://ok-script.com/ok-end-field/docs/dev/网格导航/","inLanguage":"zh-CN","dateModified":"2026-11-14T02:46:21Z","author":{"@type":"Organization","name":"ok-end-field","url":"https://github.com/AliceJump/ok-end-field"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
   
-  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261108023730">
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261114034944">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
   </head><body><a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header"><nav class="container nav" aria-label="Primary">
@@ -28,7 +28,7 @@
       <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
   </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../../">文档首页</a><a href="../../getting-started/installation/">安装</a><a href="../../getting-started/configuration/">使用前配置</a><a href="../../guides/quick-start/">快速上手</a><a href="../../guides/troubleshooting/">常见问题</a><a href="../../features/overview/">功能概览</a><a href="../../日常任务/">日常任务</a><a href="../../体力本/">刷体力</a><a href="../../自动战斗/">自动战斗</a><a href="../../排轴/">排轴</a><a href="../../运送委托接取/">运送委托接取</a><a href="../../自动送货/">自动送货</a><a href="../../仓库物品转移/">仓库物品转移</a><a href="../../物品导航与实时检测/">物品导航与实时检测</a><a href="../../账号配置用户指南/">账号配置</a><a href="../../配置导出与导入/">配置导出与导入</a><a href="../../Windows 计划任务/">Windows 计划任务</a><a href="../../鼠标转向标定汇总/">鼠标转向标定</a><a href="../../update/主数据维护工作流/">主数据维护</a><a href="../../update/送货地区维护工作流/">送货地区维护</a><a href="../../update/日常送礼维护工作流/">日常送礼维护</a><a href="../QUICKSTART/">从源码运行</a><a href="../DEVELOPMENT/">开发指南</a><a href="../guide-submodule-contrib/">模板贡献指南</a><a href="../API/">API 参考</a><a href="../运行时状态总线/">运行时状态总线</a><a href="../i18n_OCR配置流程/">i18n 与 OCR</a><a href="../OCR使用分类/">OCR 使用分类</a><a href="../键盘操作体系/">键盘操作体系</a><a href="../滑索与送货逻辑/">滑索与送货逻辑</a><a href="../小地图定位/">小地图定位</a><a href="./" class="active" aria-current="page">网格导航</a><a href="../NPC与送货点多语言对照方案/">NPC 与送货点多语言</a><a href="../地图官方WS客户端实现/">地图 WebSocket 客户端</a><a href="../图像模板匹配示例/">图像模板匹配示例</a><a href="../文字识别示例/">文字识别示例</a><a href="../切换账户流程分析/">账户切换流程</a><a href="../账号唯一ID与多账户覆盖默认逻辑/">账号唯一 ID 实现</a><a href="../任务汇总报告机制/">任务汇总报告机制</a><a href="../自动拾取任务/">自动拾取</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-end-field</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="网格导航">网格导航</h1>
-<p>返回：<a href="https://github.com/AliceJump/ok-end-field/blob/9effdf998dcb5a37d51d606afdf9b33e6285228a/docs/zh-CN/README.md">文档索引</a> / <a href="../API/">API 参考</a> / <a href="../DEVELOPMENT/">开发指南</a> /
+<p>返回：<a href="https://github.com/AliceJump/ok-end-field/blob/13f9340b3296573507b13ad7bd29ce25866f7f15/docs/zh-CN/README.md">文档索引</a> / <a href="../API/">API 参考</a> / <a href="../DEVELOPMENT/">开发指南</a> /
 <a href="../小地图定位/">小地图定位</a></p>
 <p>本文只说明二维网格规划、路线跟随和游戏输入。坐标来源、融合和校准见
 <a href="../小地图定位/">小地图定位</a>。</p>
@@ -132,6 +132,26 @@
 </tr>
 </tbody></table>
 <p>读取时会校验 <code>magic</code>、<code>schema_version</code>、数组维度和状态值。</p>
+<h3 id="4-1-用实走轨迹补充路线">4.1 用实走轨迹补充路线</h3>
+<ol>
+<li><strong>MCP 采集路线</strong>：<ul>
+<li>用 <code>screenshot</code> 核对实际传送点；任务执行期间截图可能是缓存帧，应检查返回时间和缓存状态。</li>
+<li>用 <code>run_task</code> 运行 <a href="https://github.com/AliceJump/ok-end-field/blob/13f9340b3296573507b13ad7bd29ce25866f7f15/scripts/navigation/mcp_record_walk.py">采集任务示例</a> 的绝对路径；它先用 <code>ensure_main</code> 返回大世界，不主动移动或拍照；遇到登录界面或抓包需要重新登录时停止并报错。它只将可信的地图 ID、<code>x/z</code> 和时间写到 <code>logs/navigation/manual_walk.jsonl</code>（每次覆盖，需保留时先备份）。</li>
+<li>查看该 JSONL，确认已有起点可信样本后再手动行走；结束时用 <code>stop_task</code> 停止，通过 <code>get_run_status</code> 等待终态后读取轨迹。示例会逐条刷新文件，最长运行五分钟。</li>
+</ul>
+</li>
+<li><strong>补充网格</strong>：<ul>
+<li>在 <code>assets/nav-grid-data</code> 对应地图中结合实走轨迹和底图标记可走格，保留原有阻挡格；采样缺口不能仅凭连线认定可走。</li>
+<li>深水、悬崖等边缘尽量留一格；已确认可通行的浅水不按颜色排除，窄路结合实际地形处理。</li>
+</ul>
+</li>
+<li><strong>验证和提交</strong>：<ul>
+<li>更新子仓库 <code>dataset.json</code> 中对应文件大小与 SHA-256，检查路线预览、离线规划及起终点吸附，再从同一传送点实测。离线连通不等于实机走通。</li>
+<li>修改已注册任务后，用 MCP <code>list_tasks</code> 查找、<code>reload_tasks</code> 重载并等待完成；修改独立路线辅助模块后须重启运行时，再确认游戏状态并复测。定位失败时结合日志、地图标记和画面排查。</li>
+<li>先合并导航数据子仓库，再将主仓库子模块指针更新到已合并的提交。</li>
+</ul>
+</li>
+</ol>
 <h2 id="5-配置">5. 配置</h2>
 <p>网格参数集中在全局 <code>Nav Config</code>：</p>
 <ul>
@@ -203,7 +223,7 @@
 <tr>
 <td align="right">4</td>
 <td><code>WAIT_ODOM</code></td>
-<td>本拍无有效位移样本</td>
+<td>本拍既无有效位移样本，也无独立确认的绝对坐标</td>
 <td>停车等下一拍</td>
 </tr>
 <tr>
@@ -228,7 +248,7 @@
 <td align="right">8</td>
 <td><code>PLAN</code></td>
 <td>没有路线，或检测到换图</td>
-<td>规划；成功后同一拍继续往下走</td>
+<td>停车规划；成功后重新取位置和朝向</td>
 </tr>
 <tr>
 <td align="right">9</td>
@@ -252,7 +272,7 @@
 <td align="right">12</td>
 <td><code>WAYPOINT_ARRIVED</code></td>
 <td>到达一个航点</td>
-<td>累计；到 <code>航点校准间隔(个)</code> 就停车校准</td>
+<td>记录后立即执行新动作；仅支持静止校准的源按间隔停车</td>
 </tr>
 <tr>
 <td align="right">13</td>
@@ -302,7 +322,8 @@
     [*] --&gt; Gates
     Gates --&gt; Stopped: 已进入接近范围
     Gates --&gt; Plan: 位置与朝向都可用
-    Plan --&gt; Follow: 规划成功
+    Plan --&gt; Gates: 规划成功，重新取帧
+    Gates --&gt; Follow: 路线有效
     Follow --&gt; Plan: 未规划或换图
     Follow --&gt; Gates: 下一拍重新判定
     Plan --&gt; Failed: 规划失败
@@ -327,14 +348,27 @@
 <li><code>REPLAN</code>：偏航或路径失效后重新规划；</li>
 <li><code>DONE</code>：到达目标。</li>
 </ul>
-<p>普通行走开始后，如果当前规划航段超过 <code>15m</code>，导航会在按住 <code>W</code> 时按一次 <code>shift</code>
-进入冲刺。松开 <code>W</code> 后冲刺状态清除。</p>
+<p>普通行走开始后，如果当前规划航段与剩余航段都超过 <code>15m</code>，导航会在按住 <code>W</code> 时按一次
+<code>shift</code> 进入冲刺。松开 <code>W</code> 后冲刺状态清除，接近拐点时不会重新开启冲刺。</p>
+<p>导航测量每次取帧与定位的耗时，并保留最近一次可信移动速度（增加 20% 余量）。
+接近航点时为当前画面延迟和下一次识别留出距离，缩短 W 持续时间、松键后再采样；
+长直道继续按住 W。首次尚无速度观测时按 8m/s 留余量，静止后的零速度不会覆盖移动估计。</p>
+<p>对距当前点 5 米以内、转折不超过 20 度的中间航点，跟随器可提前看向下一点，
+前提是完整直连线可通行且不增加未知格风险；不会越过未确认的窄道入口或滑索断点。
+关闭路径点捷径时也关闭这项前瞻。该规则不改变终点到达半径或 A* 规划代价。
+不超过 20 度的小角度修正还会按移动速度、两次采样耗时和输入时间计算制动距离，
+允许在原近点停车阈值内继续移动转向；速度未知、采样较慢或大角度时继续保守停车。</p>
+<p>如果已进入航点半径，但安全直连检查仍不允许切到下一段，继续用不超过剩余距离一半的
+短步靠近当前格，不再因固定刹车余量而一直停在半径内。未知格、禁切角和碰撞检查仍有效。</p>
 <h3 id="7-3-静止校准">7.3 静止校准</h3>
-<p>静止校准是导航里唯一的主动停车点，入口统一在 <code>_grid_nav_sync(ctx, reason)</code>，
+<p>静止校准入口统一在 <code>_grid_nav_sync(ctx, reason)</code>，
 六个触发原因见 <code>SyncReason</code>：定位重新校准、定位服务请求、航点间隔、偏航后原地校准、
 回到已知格后校准、窄道入口前。原因会写进状态提示与超时告警，便于回答“为什么又停下来校准”。
 等待本身由 <code>_wait_for_minimap_sync</code> 完成，上限 8 秒（覆盖一个 WS 推送周期），
 超时或“已对齐”都按未校准处理，调用方据此决定退避 30 秒还是继续。</p>
+<p>独立视觉源与抓包源声明 <code>sync_supported=False</code>，不进入这套旧式静止校准流程。
+视觉地图匹配和锚定链在移动中持续更新；首次确认、真正失去可信位置、加载画面或
+楼层证据不足时，仍先停车等待有效定位。规划、大角度转向与窄道入口也可能需要停车。</p>
 <p>窄道入口是最特别的一个触发点：当当前目标航点是一格宽通路的入口
 （<code>PlanResult.narrow_entries</code>）、角色已接近到「窄道前校准距离(米)」以内时，跟随器输出
 <code>NARROW_CALIBRATE</code>：主循环先停车校准，再对准入口航点方位，随后才继续走向入口，
@@ -351,6 +385,23 @@
 稳定观测复用原「角度刷新等待」，正常转向不额外叠加一次固定等待。</p>
 <p>第二轮及之后才允许用同基准的稳定反馈微调本次转向比例；小位移、反向或接近半圈的
 角差不用于校准，避免取绝对值掩盖方向或跨圈歧义。滑索纯视角对准仍沿用其原有流程。</p>
+<p>普通地面导航每拍最多执行一轮停车转向，之后立即重新采样位置、楼层和朝向，重新计算
+目标方向。转向中的 W 点按会改变位置，因此不能连续多轮追逐旧航点方位。
+会话内保留已经稳定的转向反馈，使分拍转向仍可修正输入比例；输入设置变化、朝向
+不连续、定位失效或其他控制动作会使旧反馈失效。独立的定向工具仍可使用多轮闭环。</p>
+<p>增益观测还要求实际转角至少 6 度，实际与预期输入转角均小于 135 度，方向一致；
+保存最近三次有效读数，使用相互一致读数的中位数。孤立异常值不替换已有增益；
+超过配置比例 0.5–2 倍的变化需至少两次一致反馈。极端配置误差可能比此前多用一轮确认，
+避免用一次可疑读数改变后续输入。会话反馈超过两秒后不再沿用。</p>
+<p>地面导航向转向器传入本次 <code>max_probe_s</code>，把 W 探步限制为预计剩余路程的一半，速度按
+最近观测且至少 6m/s 估计；探步最低为 1/30 秒，仍不得超过用户原有的长按时间。
+若截图处理期间的预计前进距离已经耗尽余量，先松开 W 换帧，再决定是否需要转向。
+短探步仍必须通过实际朝向反馈校验，不能直接把目标方向当成已到位。
+若短探步后箭头仍未响应，随后最多两拍只补有距离上限的 W 探步和朝向确认，不重复
+发送镜头旋转；已出现目标朝向时只等待稳定，无需再按 W。仍无有效响应则清除该会话，
+重新使用配置比例；探步继续计入通用卡住检测。没有针对具体坐标或人为障碍的特殊处理。</p>
+<p>航点切换后，跟随器已经算出下一动作，导航在同一拍执行它，避免继续持有旧方向直到
+下一次完整定位结束。规划或实际静止校准会耗时，结束后必须先换帧，不能复用旧快照。</p>
 <h3 id="7-6-偏航回退">7.6 偏航回退</h3>
 <p>偏航时若当前位置不在已知可行走格，先规划回最近走过的已知格（<code>session.recovery_goal</code>），
 走到之后由 <code>DONE</code> 触发一次静止校准，校准完成再清空回退目标、继续原目标。
@@ -360,12 +411,25 @@
 <ol>
 <li><code>anchor_set=True</code> 且本轮存在 <code>x/z</code>；</li>
 <li><code>position_trusted=True</code>；</li>
-<li>本拍存在有效里程计样本；</li>
+<li>本拍存在有效里程计样本，或 <code>absolute_position_valid=True</code>；</li>
 <li>以上条件满足后，路线跟随器才允许 <code>WALK</code> 或重新规划。</li>
 </ol>
-<p>普通重锚后必须停车等待静止校准。<code>too_long_dt</code> 属于良性换锚，不撤销信任。</p>
-<p>达到指定航点数量或累计移动距离后，导航会主动停车请求重新校准；定位服务完成校准后，
-导航再继续原路线。</p>
+<p><code>absolute_position_valid</code> 只表示当前画面提供了通过严格确认的绝对定位。它允许刚建立
+里程计基线时直接使用绝对坐标，不绕过 <code>position_trusted</code>、朝向或楼层检查，也不改变
+加载画面拒绝、首次连续帧确认和两秒画面过期门槛。</p>
+<p>转向后的采样间隔略超两秒时，仅当间隔不超过四秒、地图和明确楼层未变、当前画面
+通过严格匹配门槛，且独立相位相关位移有效（响应至少 0.4）并与绝对定位相差不超过
+一米，才允许保留原跟踪链。它不输出旧坐标，也不允许依靠抓包或恒速外推通过确认；
+加载、弱匹配、楼层不明、位移失效和长时间断帧仍须重新确认。</p>
+<p>转向执行器只要实际按过前进键，就向路线跟随器报告移动尝试。连续转向而位置始终没有
+推进时，应计入脱困计时，不能每次因状态仍为 <code>TURN</code> 就清零；纯相机旋转不算移动失败。</p>
+<h3 id="8-1-日志与界面状态">8.1 日志与界面状态</h3>
+<p>高频界面值使用 <code>info_set(..., log=False)</code> 更新，保持账号后缀与原有显示格式。
+导航 INFO 进度每 5 秒汇总；STUCK、REPLAN、DONE、FAILED 立即记录。航点细节、完整路径
+与单轮转向诊断放在 DEBUG。定位丢失、恢复、地图或楼层变化立即记录，健康位置每 30 秒
+汇总，持续无定位时每 5 秒汇总。定位 DEBUG 快照每 2 秒采样，可信状态变化不等待采样周期。
+<code>rest</code>、<code>shift_too_small</code> 和锚定链小数变化不再重置节流计时；输入比例提示最多每 30 秒一次。
+参数适配和导航决策仍逐拍执行，日志限频不影响控制频率。</p>
 <h2 id="9-用户滑索">9. 用户滑索</h2>
 <h3 id="9-1-数据">9.1 数据</h3>
 <p>滑索点来自官方地图接口：</p>
@@ -555,6 +619,6 @@
 <li>判断规划失败是搜索触顶、未知格策略还是连通性问题；</li>
 <li>检查跟随器动作、滑索步骤、卡住判定和输入权限。</li>
 </ol>
-</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/9effdf998dcb5a37d51d606afdf9b33e6285228a/docs/dev/网格导航.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月8日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-职责边界" style="margin-left:0px">1. 职责边界</a><a href="#2-模块" style="margin-left:0px">2. 模块</a><a href="#3-数据流" style="margin-left:0px">3. 数据流</a><a href="#4-坐标与网格" style="margin-left:0px">4. 坐标与网格</a><a href="#5-配置" style="margin-left:0px">5. 配置</a><a href="#6-a-规划" style="margin-left:0px">6. A* 规划</a><a href="#7-路线跟随与执行" style="margin-left:0px">7. 路线跟随与执行</a><a href="#7-1-每一拍的状态" style="margin-left:10px">7.1 每一拍的状态</a><a href="#7-2-跟随器输出" style="margin-left:10px">7.2 跟随器输出</a><a href="#7-3-静止校准" style="margin-left:10px">7.3 静止校准</a><a href="#7-4-卡住脱困" style="margin-left:10px">7.4 卡住脱困</a><a href="#7-5-转向收敛" style="margin-left:10px">7.5 转向收敛</a><a href="#7-6-偏航回退" style="margin-left:10px">7.6 偏航回退</a><a href="#8-定位协作" style="margin-left:0px">8. 定位协作</a><a href="#9-用户滑索" style="margin-left:0px">9. 用户滑索</a><a href="#9-1-数据" style="margin-left:10px">9.1 数据</a><a href="#9-2-规划" style="margin-left:10px">9.2 规划</a><a href="#9-3-执行" style="margin-left:10px">9.3 执行</a><a href="#9-4-重规划" style="margin-left:10px">9.4 重规划</a><a href="#10-调试与测试" style="margin-left:0px">10. 调试与测试</a></nav></aside></main>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/AliceJump/ok-end-field/blob/13f9340b3296573507b13ad7bd29ce25866f7f15/docs/dev/网格导航.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月14日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#1-职责边界" style="margin-left:0px">1. 职责边界</a><a href="#2-模块" style="margin-left:0px">2. 模块</a><a href="#3-数据流" style="margin-left:0px">3. 数据流</a><a href="#4-坐标与网格" style="margin-left:0px">4. 坐标与网格</a><a href="#4-1-用实走轨迹补充路线" style="margin-left:10px">4.1 用实走轨迹补充路线</a><a href="#5-配置" style="margin-left:0px">5. 配置</a><a href="#6-a-规划" style="margin-left:0px">6. A* 规划</a><a href="#7-路线跟随与执行" style="margin-left:0px">7. 路线跟随与执行</a><a href="#7-1-每一拍的状态" style="margin-left:10px">7.1 每一拍的状态</a><a href="#7-2-跟随器输出" style="margin-left:10px">7.2 跟随器输出</a><a href="#7-3-静止校准" style="margin-left:10px">7.3 静止校准</a><a href="#7-4-卡住脱困" style="margin-left:10px">7.4 卡住脱困</a><a href="#7-5-转向收敛" style="margin-left:10px">7.5 转向收敛</a><a href="#7-6-偏航回退" style="margin-left:10px">7.6 偏航回退</a><a href="#8-定位协作" style="margin-left:0px">8. 定位协作</a><a href="#8-1-日志与界面状态" style="margin-left:10px">8.1 日志与界面状态</a><a href="#9-用户滑索" style="margin-left:0px">9. 用户滑索</a><a href="#9-1-数据" style="margin-left:10px">9.1 数据</a><a href="#9-2-规划" style="margin-left:10px">9.2 规划</a><a href="#9-3-执行" style="margin-left:10px">9.3 执行</a><a href="#9-4-重规划" style="margin-left:10px">9.4 重规划</a><a href="#10-调试与测试" style="margin-left:0px">10. 调试与测试</a></nav></aside></main>
   <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/AliceJump/ok-end-field"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../">全部项目</a></div></div></footer>
-  <script src="../../../../assets/site.js?v=20261108023730" defer></script></body></html>
+  <script src="../../../../assets/site.js?v=20261114034944" defer></script></body></html>

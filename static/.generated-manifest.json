@@ -1,31 +1,31 @@
 {
-  "generatedAt": "2026-11-08T02:37:30.791Z",
+  "generatedAt": "2026-11-14T03:49:44.042Z",
   "projects": [
     {
       "id": "ok-script",
-      "commit": "f90444e11713496bd41de389a886501673531bad",
-      "updated": "2026-11-07T04:20:35+08:00",
+      "commit": "fd508b73f8ea4cd6a8470a62988c8e476749a5a5",
+      "updated": "2026-11-14T11:34:21+08:00",
       "locales": [
         "zh-CN",
         "en",
         "zh-TW"
       ],
       "meta": {
-        "stars": 681,
-        "forks": 188,
-        "description": "",
-        "release": "1.0.184",
-        "pypiVersion": "1.0.184",
-        "releaseUrl": "https://github.com/ok-oldking/ok-script/releases",
+        "stars": 842,
+        "forks": 243,
+        "description": "Vibe Coding Automation Framework",
+        "release": "v3.0.4",
+        "releaseUrl": "https://github.com/ok-oldking/ok-script/releases/tag/v3.0.4",
+        "pypiVersion": "3.0.4",
         "releaseAssets": [],
         "mirrors": [],
-        "updated": "2026-11-07T04:20:35+08:00"
+        "updated": "2026-11-14T03:34:36Z"
       }
     },
     {
       "id": "ok-ww",
-      "commit": "f497bd8400372ac514b810700241a663ff53b79f",
-      "updated": "2026-11-06T01:15:48+08:00",
+      "commit": "e04bfc3c45d9c22f0ddfbfa755eb2b9f6d464fb6",
+      "updated": "2026-11-12T20:05:14+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -33,20 +33,32 @@
         "ja"
       ],
       "meta": {
-        "stars": 6971,
-        "forks": 588,
-        "description": "",
-        "release": "v3.7.19",
+        "stars": 8632,
+        "forks": 794,
+        "description": "鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves",
+        "release": "v3.8.0",
+        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.8.0",
         "pypiVersion": "v3.7.19",
-        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.7.19",
         "releaseAssets": [
           {
-            "name": "ok-ww-win32-China-setup-3.7.19.exe",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-China-setup-3.7.19.exe"
+            "name": "ok-ww-win32-China-3.8.0.7z",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.0/ok-ww-win32-China-3.8.0.7z",
+            "size": 222244101
           },
           {
-            "name": "ok-ww-win32-Global-setup-3.7.19.exe",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-Global-setup-3.7.19.exe"
+            "name": "ok-ww-win32-Global-3.8.0.7z",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.0/ok-ww-win32-Global-3.8.0.7z",
+            "size": 225238107
+          },
+          {
+            "name": "ok-ww-win32.zip",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.0/ok-ww-win32.zip",
+            "size": 5036676
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.0/win32_sha256.txt",
+            "size": 64
           }
         ],
         "mirrors": [
@@ -63,7 +75,7 @@
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-11-06T01:15:48+08:00"
+        "updated": "2026-11-12T12:06:02Z"
       }
     },
     {
@@ -76,20 +88,37 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 178,
-        "forks": 266,
-        "description": "",
-        "release": "v1.0.29",
+        "stars": 226,
+        "forks": 273,
+        "description": "Python版按键精灵基于ok-script开发",
+        "release": "v1.1.3",
+        "releaseUrl": "https://github.com/ok-oldking/ok-script-app/releases/tag/v1.1.3",
         "pypiVersion": "v1.0.29",
-        "releaseUrl": "https://github.com/ok-oldking/ok-script-app/releases/tag/v1.0.29",
         "releaseAssets": [
           {
-            "name": "ok-script-app-win32-China-setup.exe",
-            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-China-setup.exe"
+            "name": "ok-script-app-win32-China-setup-1.1.3.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.1.3/ok-script-app-win32-China-setup-1.1.3.exe",
+            "size": 182028093
           },
           {
-            "name": "ok-script-app-win32-Global-setup.exe",
-            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.0.29/ok-script-app-win32-Global-setup.exe"
+            "name": "ok-script-app-win32-Global-setup-1.1.3.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.1.3/ok-script-app-win32-Global-setup-1.1.3.exe",
+            "size": 192391538
+          },
+          {
+            "name": "ok-script-app-win32-online-setup-1.1.3.exe",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.1.3/ok-script-app-win32-online-setup-1.1.3.exe",
+            "size": 4182199
+          },
+          {
+            "name": "ok-script-app-win32.zip",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.1.3/ok-script-app-win32.zip",
+            "size": 4842810
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/ok-oldking/ok-script-app/releases/download/v1.1.3/win32_sha256.txt",
+            "size": 64
           }
         ],
         "mirrors": [
@@ -102,35 +131,70 @@
             "url": "https://pan.quark.cn/s/a1052cec4d13"
           }
         ],
-        "updated": "2026-11-03T22:54:47+08:00"
+        "updated": "2026-11-03T14:54:51Z"
       }
     },
     {
       "id": "ok-nte",
-      "commit": "d3336eb10d2c8dd00d460740056e7ab85abc9baf",
-      "updated": "2026-11-07T22:07:45+08:00",
+      "commit": "f6160c4ce9b550c149df7d3f7595b3fd9d68f11c",
+      "updated": "2026-11-13T13:02:07+08:00",
       "locales": [
         "zh-CN",
         "en",
         "zh-TW"
       ],
       "meta": {
-        "stars": 1097,
-        "forks": 77,
-        "description": "",
-        "release": "v1.5.2",
+        "stars": 1371,
+        "forks": 112,
+        "description": "异环 后台副本挂机 Automation for Neverness to Everness",
+        "release": "v1.5.4",
+        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.5.4",
         "pypiVersion": "v1.5.2",
-        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.5.2",
         "releaseAssets": [
           {
-            "name": "ok-nte-win32-China-setup-1.5.2.exe",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.2/ok-nte-win32-China-setup-1.5.2.exe"
+            "name": "ok-nte-win-x86_64-v1.5.4-body.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/ok-nte-win-x86_64-v1.5.4-body.zip",
+            "size": 341931543
+          },
+          {
+            "name": "ok-nte-win-x86_64-v1.5.4-full.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/ok-nte-win-x86_64-v1.5.4-full.zip",
+            "size": 347841763
+          },
+          {
+            "name": "ok-nte-win32-China-setup-1.5.4.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/ok-nte-win32-China-setup-1.5.4.exe",
+            "size": 382196279
+          },
+          {
+            "name": "ok-nte-win32-Global-setup-1.5.4.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/ok-nte-win32-Global-setup-1.5.4.exe",
+            "size": 440766981
+          },
+          {
+            "name": "ok-nte-win32-online-setup-1.5.4.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/ok-nte-win32-online-setup-1.5.4.exe",
+            "size": 4911470
+          },
+          {
+            "name": "ok-nte-win32.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/ok-nte-win32.zip",
+            "size": 5803883
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.4/win32_sha256.txt",
+            "size": 64
           }
         ],
         "mirrors": [
           {
             "label": "Mirror酱",
-            "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte&channel=stable"
+            "url": "https://mirrorchyan.com/zh/get-start"
+          },
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte-zip&channel=stable"
           },
           {
             "label": "百度网盘",
@@ -138,10 +202,18 @@
           },
           {
             "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/24433f3febc1"
+          },
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte&channel=stable"
+          },
+          {
+            "label": "夸克网盘",
             "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
-        "updated": "2026-11-07T22:07:45+08:00"
+        "updated": "2026-11-13T05:08:59Z"
       }
     },
     {
@@ -153,20 +225,37 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 114,
-        "forks": 19,
-        "description": "",
-        "release": "v1.4.5",
+        "stars": 121,
+        "forks": 20,
+        "description": "基于ok-script的星痕共鸣自动工具",
+        "release": "v1.5.7",
+        "releaseUrl": "https://github.com/Sanheiii/ok-star-resonance/releases/tag/v1.5.7",
         "pypiVersion": "v1.4.5",
-        "releaseUrl": "https://github.com/Sanheiii/ok-star-resonance/releases/tag/v1.4.5",
         "releaseAssets": [
           {
             "name": "ok-star-resonance-win32-China-setup.exe",
-            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.4.5/ok-star-resonance-win32-China-setup.exe"
+            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.5.7/ok-star-resonance-win32-China-setup.exe",
+            "size": 425503798
           },
           {
             "name": "ok-star-resonance-win32-Global-setup.exe",
-            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.4.5/ok-star-resonance-win32-Global-setup.exe"
+            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.5.7/ok-star-resonance-win32-Global-setup.exe",
+            "size": 425567566
+          },
+          {
+            "name": "ok-star-resonance-win32-online-setup.exe",
+            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.5.7/ok-star-resonance-win32-online-setup.exe",
+            "size": 3876500
+          },
+          {
+            "name": "ok-star-resonance-win32.zip",
+            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.5.7/ok-star-resonance-win32.zip",
+            "size": 4807556
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/Sanheiii/ok-star-resonance/releases/download/v1.5.7/win32_sha256.txt",
+            "size": 64
           }
         ],
         "mirrors": [
@@ -175,7 +264,7 @@
             "url": "https://pan.quark.cn/s/53ef87577da9?pwd=nVL9"
           }
         ],
-        "updated": "2026-10-19T15:07:30+08:00"
+        "updated": "2026-10-19T07:11:56Z"
       }
     },
     {
@@ -188,16 +277,32 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 81,
-        "forks": 20,
-        "description": "",
-        "release": "v1.3.36",
+        "stars": 125,
+        "forks": 39,
+        "description": "ok框架卡厄思梦境自动化工具，包含自动出击模式和自动卡厄思模式功能",
+        "release": "v1.4.13",
+        "releaseUrl": "https://github.com/baoxin1100/ok-kes/releases/tag/v1.4.13",
         "pypiVersion": "v1.3.36",
-        "releaseUrl": "https://github.com/baoxin1100/ok-kes/releases/tag/v1.3.36",
         "releaseAssets": [
           {
             "name": "ok-kes-win32-China-setup.exe",
-            "browser_download_url": "https://github.com/baoxin1100/ok-kes/releases/download/v1.3.36/ok-kes-win32-China-setup.exe"
+            "browser_download_url": "https://github.com/baoxin1100/ok-kes/releases/download/v1.4.13/ok-kes-win32-China-setup.exe",
+            "size": 326960791
+          },
+          {
+            "name": "ok-kes-win32-online-setup.exe",
+            "browser_download_url": "https://github.com/baoxin1100/ok-kes/releases/download/v1.4.13/ok-kes-win32-online-setup.exe",
+            "size": 4029087
+          },
+          {
+            "name": "ok-kes-win32.zip",
+            "browser_download_url": "https://github.com/baoxin1100/ok-kes/releases/download/v1.4.13/ok-kes-win32.zip",
+            "size": 4968158
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/baoxin1100/ok-kes/releases/download/v1.4.13/win32_sha256.txt",
+            "size": 64
           }
         ],
         "mirrors": [
@@ -218,58 +323,126 @@
             "url": "https://drive.uc.cn/s/fee4cb3d65cd4?public=1"
           }
         ],
-        "updated": "2026-10-31T07:01:45+08:00"
+        "updated": "2026-10-30T23:01:50Z"
       }
     },
     {
       "id": "ok-end-field",
-      "commit": "9effdf998dcb5a37d51d606afdf9b33e6285228a",
-      "updated": "2026-11-08T01:56:03Z",
+      "commit": "13f9340b3296573507b13ad7bd29ce25866f7f15",
+      "updated": "2026-11-14T02:46:21Z",
       "locales": [
         "zh-CN",
         "en",
         "zh-TW"
       ],
       "meta": {
-        "stars": 348,
-        "forks": 15,
-        "description": "",
-        "release": "v0.0.74",
+        "stars": 569,
+        "forks": 37,
+        "description": "终末地 End Field Automation 基于ok-script开发的自动化",
+        "release": "v2.0.20",
+        "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v2.0.20",
         "pypiVersion": "v0.0.74",
-        "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v0.0.74",
         "releaseAssets": [
           {
-            "name": "ok-ef-win32-China-setup.exe",
-            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v0.0.74/ok-ef-win32-China-setup.exe"
+            "name": "ok-ef-win32-China-setup-v2.0.20.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.20/ok-ef-win32-China-setup-v2.0.20.exe",
+            "size": 572870835
+          },
+          {
+            "name": "ok-ef-win32-Global-setup-v2.0.20.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.20/ok-ef-win32-Global-setup-v2.0.20.exe",
+            "size": 654586600
+          },
+          {
+            "name": "ok-ef-win32-online-setup-v2.0.20.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.20/ok-ef-win32-online-setup-v2.0.20.exe",
+            "size": 4279142
+          },
+          {
+            "name": "ok-ef-win32-v2.0.20.zip",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.20/ok-ef-win32-v2.0.20.zip",
+            "size": 5157451
+          },
+          {
+            "name": "win32_sha256-v2.0.20.txt",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.20/win32_sha256-v2.0.20.txt",
+            "size": 64
           }
         ],
-        "mirrors": [],
-        "updated": "2026-11-08T01:56:03Z"
+        "mirrors": [
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=ok-end-field&source=ok-ef-release"
+          },
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/24433f3febc1"
+          },
+          {
+            "label": "百度网盘",
+            "url": "https://pan.baidu.com/s/1rxLRLkSx34xIL-nGib04sg?pwd=479z"
+          }
+        ],
+        "updated": "2026-11-14T02:46:24Z"
       }
     },
     {
       "id": "ok-onmyoji",
-      "commit": "638c29d6e2bbadd5ec0d911f74cbcf3f16b7591e",
-      "updated": "2026-11-02T00:15:06+08:00",
+      "commit": "94ce917e0c9adc3a247bde87838657f091007e7e",
+      "updated": "2026-11-13T15:50:59+08:00",
       "locales": [
         "zh-CN",
         "zh-TW"
       ],
       "meta": {
-        "stars": 8,
-        "forks": 1,
-        "description": "",
-        "release": "—",
+        "stars": 53,
+        "forks": 5,
+        "description": "阴阳师(Onmyoji)自动化战斗基于ok-script开发",
+        "release": "v1.4.2",
+        "releaseUrl": "https://github.com/YunLiuZ/ok-Onmyoji/releases/tag/v1.4.2",
         "pypiVersion": "—",
-        "releaseUrl": "https://github.com/YunLiuZ/ok-Onmyoji/releases",
-        "releaseAssets": [],
+        "releaseAssets": [
+          {
+            "name": "ok-Onmyoji-win32-China-setup.exe",
+            "browser_download_url": "https://github.com/YunLiuZ/ok-Onmyoji/releases/download/v1.4.2/ok-Onmyoji-win32-China-setup.exe",
+            "size": 332560879
+          },
+          {
+            "name": "ok-Onmyoji-win32-Global-setup.exe",
+            "browser_download_url": "https://github.com/YunLiuZ/ok-Onmyoji/releases/download/v1.4.2/ok-Onmyoji-win32-Global-setup.exe",
+            "size": 345010926
+          },
+          {
+            "name": "ok-Onmyoji-win32-online-setup.exe",
+            "browser_download_url": "https://github.com/YunLiuZ/ok-Onmyoji/releases/download/v1.4.2/ok-Onmyoji-win32-online-setup.exe",
+            "size": 4168972
+          },
+          {
+            "name": "ok-Onmyoji-win32.zip",
+            "browser_download_url": "https://github.com/YunLiuZ/ok-Onmyoji/releases/download/v1.4.2/ok-Onmyoji-win32.zip",
+            "size": 4994704
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/YunLiuZ/ok-Onmyoji/releases/download/v1.4.2/win32_sha256.txt",
+            "size": 64
+          }
+        ],
         "mirrors": [
           {
             "label": "Mirror酱",
             "url": "https://mirrorchyan.com/zh/projects?rid=ok-Onmyoji"
+          },
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/80730a808d0e"
+          },
+          {
+            "label": "百度网盘",
+            "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww"
           }
         ],
-        "updated": "2026-11-02T00:15:06+08:00"
+        "updated": "2026-11-13T07:52:07Z"
       }
     },
     {
@@ -281,24 +454,54 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 92,
-        "forks": 3,
-        "description": "",
+        "stars": 103,
+        "forks": 4,
+        "description": "蓝色星原：旅谣自动化脚本",
         "release": "v0.3.6",
-        "pypiVersion": "v0.3.6",
         "releaseUrl": "https://github.com/longer-sausage/OK-AzurPromilia/releases/tag/v0.3.6",
+        "pypiVersion": "v0.3.6",
         "releaseAssets": [
           {
             "name": "ok-ap-win32-China-setup-v0.3.6.exe",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-China-setup-v0.3.6.exe"
+            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-China-setup-v0.3.6.exe",
+            "size": 251601938
           },
           {
             "name": "ok-ap-win32-Global-setup-v0.3.6.exe",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-Global-setup-v0.3.6.exe"
+            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-Global-setup-v0.3.6.exe",
+            "size": 251649879
+          },
+          {
+            "name": "ok-ap-win32-online-setup-v0.3.6.exe",
+            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-online-setup-v0.3.6.exe",
+            "size": 4202021
+          },
+          {
+            "name": "ok-ap-win32-v0.3.6.zip",
+            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-v0.3.6.zip",
+            "size": 5020022
+          },
+          {
+            "name": "win32_sha256-v0.3.6.txt",
+            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/win32_sha256-v0.3.6.txt",
+            "size": 64
           }
         ],
-        "mirrors": [],
-        "updated": "2026-11-01T19:47:33+08:00"
+        "mirrors": [
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=OK-AzurPromilia"
+          },
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/5f0cb1150fc4"
+          },
+          {
+            "label": "百度网盘",
+            "url": "https://pan.baidu.com/s/1gz4JZyMtvcXL6lL9xIPEQQ?pwd=okap"
+          }
+        ],
+        "updated": "2026-11-01T11:47:33Z"
       }
     }
   ]

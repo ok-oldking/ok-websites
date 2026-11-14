@@ -668,11 +668,12 @@ function githubIcon(project, currentUrl) {
 }
 
 function releaseDownloads(meta) {
-  const fallbackAsset = meta.releaseAssets?.find(asset => /\.exe$/i.test(asset.name))?.browser_download_url;
+  const fallbackAsset = meta.releaseAssets?.find(asset => /\.(?:exe|7z)$/i.test(asset.name))?.browser_download_url;
   // Installer names may carry the release version, e.g. ok-ww-win32-China-setup-3.7.19.exe.
-  const find = pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url;
-  const china = find(/China-setup(?:-v?[\d.]+)?\.exe$/i);
-  const global = find(/Global-setup(?:-v?[\d.]+)?\.exe$/i);
+  // Some releases ship 7z packages instead, e.g. ok-ww-win32-China-3.8.0.7z; prefer the setup .exe.
+  const find = (...patterns) => patterns.map(pattern => meta.releaseAssets?.find(asset => pattern.test(asset.name))?.browser_download_url).find(Boolean);
+  const china = find(/China-setup(?:-v?[\d.]+)?\.exe$/i, /China(?:-v?[\d.]+)?\.7z$/i);
+  const global = find(/Global-setup(?:-v?[\d.]+)?\.exe$/i, /Global(?:-v?[\d.]+)?\.7z$/i);
   const fallback = fallbackAsset || meta.releaseUrl;
   return { china: china || global || fallback, global: global || china || fallback, hasChina: Boolean(china), hasGlobal: Boolean(global) };
 }

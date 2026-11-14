@@ -99,8 +99,8 @@ if (!/<section class="section faq-section">[\s\S]*?<h2>常见问题<\/h2>/.test(
 if (wwLanding.includes('class="cta"')) failures.push('Project landing page still has a bottom download CTA.');
 if (/product-window|code-panel|float-card/.test(wwLanding)) failures.push('Decorative fake code or floating release card still exists.');
 if (wwLanding.includes('meta-release-button')) failures.push('Project release download is still present in the stats row.');
-if (!/class="button primary download-main"[^>]*href="[^"]*China-setup(?:-v?[\d.]+)?\.exe"[^>]*>[\s\S]*?<strong>v?\d[^<]*<\/strong>/.test(wwLanding)) failures.push('Simplified Chinese does not default to the versioned China download button.');
-if (!wwLanding.includes('class="dropdown-menu download-menu"') || !/China-setup(?:-v?[\d.]+)?\.exe/.test(wwLanding) || !/Global-setup(?:-v?[\d.]+)?\.exe/.test(wwLanding)) failures.push('China/Global download choices are missing.');
+if (!/class="button primary download-main"[^>]*href="[^"]*China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*>[\s\S]*?<strong>v?\d[^<]*<\/strong>/.test(wwLanding)) failures.push('Simplified Chinese does not default to the versioned China download button.');
+if (!wwLanding.includes('class="dropdown-menu download-menu"') || !/China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)/.test(wwLanding) || !/Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)/.test(wwLanding)) failures.push('China/Global download choices are missing.');
 if (!/data-download-control data-downloading-label="正在下载…"/.test(wwLanding) || !/data-download-link/.test(wwLanding)) failures.push('Download controls are missing their localized downloading state.');
 if (!wwLanding.includes('class="community-icon"')) failures.push('Community links are missing icons.');
 if (!wwLanding.includes('src="../assets/discord.svg"')) failures.push('Discord community icon is missing.');
@@ -127,7 +127,7 @@ if (!wwLanding.includes('href="../"') || !wwLanding.includes('href="../app/"')) 
 const wwDocs = await fs.readFile(path.join(root, 'ok-ww', 'docs', 'index.html'), 'utf8');
 if (!/<div class="breadcrumb"><a href="\.\.\//.test(wwDocs)) failures.push('Documentation back link is not relative.');
 const wwEnglish = await fs.readFile(path.join(root, 'ok-ww', 'en', 'index.html'), 'utf8');
-if (!/class="button primary download-main"[^>]*href="[^"]*Global-setup(?:-v?[\d.]+)?\.exe"/.test(wwEnglish)) failures.push('Non-Chinese locale does not default to the Global installer.');
+if (!/class="button primary download-main"[^>]*href="[^"]*Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"/.test(wwEnglish)) failures.push('Non-Chinese locale does not default to the Global installer.');
 if (/class="section-kicker">Capabilities|From visual perception to input/.test(wwEnglish)) failures.push('Capabilities heading copy is still visible.');
 if (wwEnglish.includes('data-copy=') || /qq\.svg/.test(wwEnglish)) failures.push('Non-Chinese project page exposes QQ links.');
 const appChinese = await fs.readFile(path.join(root, 'app', 'index.html'), 'utf8');
