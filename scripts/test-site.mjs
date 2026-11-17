@@ -99,9 +99,11 @@ if (!/<section class="section faq-section">[\s\S]*?<h2>常见问题<\/h2>/.test(
 if (wwLanding.includes('class="cta"')) failures.push('Project landing page still has a bottom download CTA.');
 if (/product-window|code-panel|float-card/.test(wwLanding)) failures.push('Decorative fake code or floating release card still exists.');
 if (wwLanding.includes('meta-release-button')) failures.push('Project release download is still present in the stats row.');
-if (!/class="button primary download-main"[^>]*href="[^"]*China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*>[\s\S]*?<strong>v?\d[^<]*<\/strong>/.test(wwLanding)) failures.push('Simplified Chinese does not default to the versioned China download button.');
-if (!wwLanding.includes('class="dropdown-menu download-menu"') || !/China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)/.test(wwLanding) || !/Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)/.test(wwLanding)) failures.push('China/Global download choices are missing.');
-if (!/data-download-control data-downloading-label="正在下载…"/.test(wwLanding) || !/data-download-link/.test(wwLanding)) failures.push('Download controls are missing their localized downloading state.');
+if (!/class="button primary download-open"[^>]*data-download-chooser-open[^>]*>[\s\S]*?<strong>v?\d[^<]*<\/strong>/.test(wwLanding) || /download-main/.test(wwLanding)) failures.push('Simplified Chinese download button does not open the versioned source chooser.');
+const wwDialog = wwLanding.match(/<dialog class="download-dialog"[\s\S]*?<\/dialog>/)?.[0] || '';
+if (!/China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*data-download-source="github"/.test(wwDialog)) failures.push('Source chooser is missing the GitHub China download.');
+if (!/Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*data-download-source="github"/.test(wwDialog)) failures.push('Source chooser is missing the GitHub Global download.');
+if (!/data-download-source="mirror"/.test(wwDialog) || wwLanding.includes('class="download-alternatives"')) failures.push('Source chooser does not list the mirrors, or mirrors are still duplicated below the hero.');
 if (!wwLanding.includes('class="community-icon"')) failures.push('Community links are missing icons.');
 if (!wwLanding.includes('src="../assets/discord.svg"')) failures.push('Discord community icon is missing.');
 const wwQqButtons = [...wwLanding.matchAll(/<button\b[^>]*class="community-chip qq"[^>]*data-copy="(\d{6,12})"[^>]*>([\s\S]*?)<\/button>/g)];
@@ -128,6 +130,7 @@ const wwDocs = await fs.readFile(path.join(root, 'ok-ww', 'docs', 'index.html'),
 if (!/<div class="breadcrumb"><a href="\.\.\//.test(wwDocs)) failures.push('Documentation back link is not relative.');
 const wwEnglish = await fs.readFile(path.join(root, 'ok-ww', 'en', 'index.html'), 'utf8');
 if (!/class="button primary download-main"[^>]*href="[^"]*Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"/.test(wwEnglish)) failures.push('Non-Chinese locale does not default to the Global installer.');
+if (wwEnglish.includes('data-download-chooser') || !wwEnglish.includes('class="dropdown-menu download-menu"') || !/data-download-control data-downloading-label="Downloading…"/.test(wwEnglish)) failures.push('Non-Chinese locales should keep the direct GitHub download split button.');
 if (/class="section-kicker">Capabilities|From visual perception to input/.test(wwEnglish)) failures.push('Capabilities heading copy is still visible.');
 if (wwEnglish.includes('data-copy=') || /qq\.svg/.test(wwEnglish)) failures.push('Non-Chinese project page exposes QQ links.');
 const appChinese = await fs.readFile(path.join(root, 'app', 'index.html'), 'utf8');

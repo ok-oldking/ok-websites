@@ -142,6 +142,37 @@ h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(54px, 7vw, 108px)
 @keyframes download-guide-bounce { from { transform: translate(0, 2px); } to { transform: translate(4px, -3px); } }
 .download-option[aria-disabled="true"] { opacity: .6; pointer-events: none; }
 @keyframes download-pulse { to { transform: translateY(3px); } }
+.download-open strong { padding-left: 2px; }
+.download-dialog { width: min(480px, calc(100vw - 32px)); box-sizing: border-box; max-height: calc(100vh - 32px); padding: 20px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; color: var(--text); background: var(--surface-solid); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+.download-dialog::backdrop { background: rgba(9,13,20,.48); backdrop-filter: blur(4px); animation: download-backdrop-in .28s ease-out; }
+.download-dialog[open] { animation: download-dialog-in .42s cubic-bezier(.2,1.25,.35,1) both; }
+.download-dialog[open] .download-source-group > * { animation: download-source-in .38s cubic-bezier(.2,.9,.3,1) both; animation-delay: calc(.08s + var(--i, 0) * .05s); }
+.download-dialog.closing { animation: download-dialog-out .2s ease-in both; }
+.download-dialog.closing::backdrop { animation: download-backdrop-out .2s ease-in both; }
+@keyframes download-dialog-in { from { opacity: 0; transform: translateY(22px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes download-dialog-out { to { opacity: 0; transform: translateY(12px) scale(.96); } }
+@keyframes download-backdrop-in { from { opacity: 0; backdrop-filter: blur(0); } }
+@keyframes download-backdrop-out { to { opacity: 0; backdrop-filter: blur(0); } }
+@keyframes download-source-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.download-open > span:last-child { transition: transform .2s ease; }
+.download-open:hover > span:last-child { transform: translateY(2px); }
+@media (prefers-reduced-motion: reduce) { .download-dialog[open], .download-dialog[open] .download-source-group > *, .download-dialog::backdrop, .download-dialog.closing, .download-dialog.closing::backdrop { animation: none; } }
+.download-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.download-dialog-head h2 { margin: 0 0 4px; font-size: 20px; }
+.download-dialog-head p { margin: 0; color: var(--muted); font-size: 13px; }
+.download-dialog-head p strong { color: var(--accent-strong); font: 650 12px var(--font-mono); }
+.download-dialog-close { width: 34px; height: 34px; flex: none; display: grid; place-items: center; color: var(--muted); background: transparent; border: 1px solid var(--border); border-radius: 10px; cursor: pointer; font-size: 20px; line-height: 1; }
+.download-dialog-close:hover { color: var(--text); border-color: color-mix(in srgb,var(--accent) 50%,var(--border)); }
+.download-source-group { display: grid; gap: 7px; margin-top: 12px; }
+.download-source-group h3 { margin: 0; color: var(--muted); font-size: 12px; font-weight: 750; letter-spacing: .02em; }
+.download-source { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 7px 12px; color: var(--text); border: 1px solid var(--border); border-radius: 13px; transition: border-color .15s ease, background .15s ease; }
+.download-source:hover, .download-source:focus-visible { color: var(--text); background: color-mix(in srgb,var(--accent) 9%,transparent); border-color: color-mix(in srgb,var(--accent) 55%,var(--border)); outline: 0; }
+.download-source-icon { width: 34px; height: 34px; flex: none; display: grid; place-items: center; background: color-mix(in srgb,var(--accent) 12%,transparent); border-radius: 10px; color: var(--accent-strong); font-weight: 800; }
+.download-source-icon .inline-icon { width: 18px; height: 18px; margin: 0; }
+.download-source-text { min-width: 0; flex: 1; display: grid; gap: 2px; }
+.download-source-text strong { font-size: 15px; }
+.download-source-text small { overflow: hidden; color: var(--muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.download-source-action { flex: none; color: var(--accent-strong); font-weight: 800; }
 .download-alternatives { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 16px; color: var(--muted); font-size: 12px; }
 .download-alternatives span { font-weight: 650; }.download-alternatives a { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 3px; }
 .community-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 17px; }

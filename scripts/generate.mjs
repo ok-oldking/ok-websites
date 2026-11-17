@@ -945,10 +945,32 @@ function landingPage(project, locale, meta, faq = null) {
     <button class="download-toggle" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Choose download version"><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
     <div class="dropdown-menu download-menu" data-dropdown-menu role="menu" hidden>${downloadOptions}</div>
   </div>`;
+  // Simplified Chinese visitors often cannot reach GitHub, so the button opens a
+  // chooser listing every source (GitHub China/Global builds and domestic mirrors).
+  const useSourceChooser = !isFramework && locale.code === 'zh-CN';
+  const assetFor = url => meta.releaseAssets?.find(asset => asset.browser_download_url === url);
+  const formatSize = bytes => bytes ? `${(bytes / 1024 / 1024).toFixed(bytes >= 100 * 1024 * 1024 ? 0 : 1)} MB` : '';
+  const githubSources = [
+    { label: 'GitHub · 大陆版', url: downloads.china, show: downloads.hasChina || !downloads.hasGlobal },
+    { label: 'GitHub · 国际版 Global', url: downloads.global, show: downloads.hasGlobal && downloads.global !== downloads.china }
+  ].filter(source => source.show).map(source => {
+    const asset = assetFor(source.url);
+    const detail = asset ? [asset.name, formatSize(asset.size)].filter(Boolean).join(' · ') : 'GitHub Releases';
+    return `<a class="download-source" target="_blank" rel="noopener" href="${escapeHtml(source.url)}" data-download-source="github"><span class="download-source-icon">${githubIcon(project, currentUrl)}</span><span class="download-source-text"><strong>${source.label}</strong><small>${escapeHtml(detail)}</small></span><span class="download-source-action" aria-hidden="true">↓</span></a>`;
+  }).join('');
+  const mirrorSources = (meta.mirrors || []).map(link => `<a class="download-source" target="_blank" rel="noopener" href="${escapeHtml(link.url)}" data-download-source="mirror"><span class="download-source-icon mirror" aria-hidden="true">${escapeHtml([...link.label][0] || '↓')}</span><span class="download-source-text"><strong>${escapeHtml(link.label)}</strong><small>国内镜像 · 在新页面打开</small></span><span class="download-source-action" aria-hidden="true">↗</span></a>`).join('');
+  const sourceChooser = `<div class="download-chooser" data-download-chooser data-download-guide="${escapeHtml(t.downloadGuide)}">
+    <button class="button primary download-open" type="button" data-download-chooser-open aria-haspopup="dialog">${t.download}<strong>${escapeHtml(meta.release)}</strong><span aria-hidden="true">↓</span></button>
+    <dialog class="download-dialog" aria-labelledby="download-dialog-title-${project.id}">
+      <div class="download-dialog-head"><div><h2 id="download-dialog-title-${project.id}">选择下载渠道</h2><p>${escapeHtml(project.name)} <strong>${escapeHtml(meta.release)}</strong> · 各渠道内容相同，选择访问最快的即可</p></div><button class="download-dialog-close" type="button" data-download-chooser-close aria-label="关闭">×</button></div>
+      ${mirrorSources ? `<div class="download-source-group"><h3>国内镜像</h3>${mirrorSources}</div>` : ''}
+      <div class="download-source-group"><h3>GitHub 直接下载</h3>${githubSources}</div>
+    </dialog>
+  </div>`;
   const heroActions = isFramework
     ? `<a class="button primary" href="${primaryUrl}">${primaryLabel} <span aria-hidden="true">→</span></a><a class="button pip-button" href="${pypiUrl}"><span class="pip-mark" aria-hidden="true">PyPI</span><code>pip install ok-script==${escapeHtml(pypiVersion)}</code></a>${sourceButton}`
-    : `${downloadControl}<a class="button" href="${docsUrl}">${t.readDocs}</a>${sourceButton}`;
-  const mirrorLinks = !isFramework && locale.code === 'zh-CN' && meta.mirrors?.length
+    : `${useSourceChooser ? sourceChooser : downloadControl}<a class="button" href="${docsUrl}">${t.readDocs}</a>${sourceButton}`;
+  const mirrorLinks = !isFramework && !useSourceChooser && locale.code === 'zh-CN' && meta.mirrors?.length
     ? `<div class="download-alternatives"><span>${t.githubUnavailable}</span>${meta.mirrors.map(link => `<a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join('')}</div>` : '';
   const singleLineHero = locale.code === 'zh-CN' || locale.code === 'zh-TW';
   const heroTitle = singleLineHero

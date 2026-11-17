@@ -81,6 +81,50 @@
     }));
   });
 
+  const showDownloadGuide = message => {
+    document.querySelector('.download-guide')?.remove();
+    const guide = document.createElement('div');
+    guide.className = 'download-guide';
+    guide.setAttribute('role', 'status');
+    guide.innerHTML = `<span class="download-guide-arrow" aria-hidden="true">↗</span><span>${message}</span>`;
+    document.body.append(guide);
+    requestAnimationFrame(() => guide.classList.add('visible'));
+    setTimeout(() => { guide.classList.remove('visible'); setTimeout(() => guide.remove(), 260); }, 5200);
+  };
+
+  document.querySelectorAll('[data-download-chooser]').forEach(chooser => {
+    const dialog = chooser.querySelector('dialog');
+    const open = chooser.querySelector('[data-download-chooser-open]');
+    if (!dialog || !open) return;
+    if (typeof dialog.showModal !== 'function') {
+      // Very old browsers: fall back to the first listed source.
+      const first = dialog.querySelector('[data-download-source]');
+      open.addEventListener('click', () => first && window.open(first.href, '_blank', 'noopener'));
+      return;
+    }
+    // Stagger the entrance of each source row.
+    dialog.querySelectorAll('.download-source-group > *').forEach((item, index) => item.style.setProperty('--i', index));
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    // Play the exit animation before actually closing the modal.
+    const closeDialog = () => {
+      if (!dialog.open || dialog.classList.contains('closing')) return;
+      if (reducedMotion.matches) { dialog.close(); return; }
+      dialog.classList.add('closing');
+      const finish = () => { dialog.classList.remove('closing'); dialog.close(); };
+      dialog.addEventListener('animationend', event => { if (event.target === dialog) finish(); }, { once: true });
+      setTimeout(() => dialog.classList.contains('closing') && finish(), 300);
+    };
+    open.addEventListener('click', () => dialog.showModal());
+    chooser.querySelector('[data-download-chooser-close]')?.addEventListener('click', closeDialog);
+    // Escape and backdrop clicks also go through the animated close.
+    dialog.addEventListener('cancel', event => { event.preventDefault(); closeDialog(); });
+    dialog.addEventListener('click', event => { if (event.target === dialog) closeDialog(); });
+    dialog.querySelectorAll('[data-download-source]').forEach(link => link.addEventListener('click', () => {
+      closeDialog();
+      if (link.dataset.downloadSource === 'github') showDownloadGuide(chooser.dataset.downloadGuide || 'Download started');
+    }));
+  });
+
   document.querySelectorAll('[data-copy]').forEach(button => {
     button.addEventListener('click', async () => {
       const value = button.dataset.copy;
