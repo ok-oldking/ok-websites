@@ -4,6 +4,44 @@
   const preferred = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   root.dataset.theme = stored || preferred;
 
+  const communityTabs = [...document.querySelectorAll('[data-community-tab]')];
+  if (communityTabs.length) {
+    const panels = [...document.querySelectorAll('[data-community-panel]')];
+    const selectCommunity = (id, updateUrl) => {
+      communityTabs.forEach(tab => {
+        const selected = tab.dataset.communityTab === id;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach(panel => { panel.hidden = panel.dataset.communityPanel !== id; });
+      // Keep the chosen project when switching language.
+      document.querySelectorAll('[data-language-code]').forEach(link => {
+        const url = new URL(link.href);
+        url.searchParams.set('project', id);
+        link.href = url.href;
+      });
+      if (updateUrl) {
+        const url = new URL(location.href);
+        url.searchParams.set('project', id);
+        history.replaceState(null, '', url);
+      }
+    };
+    const requested = (new URLSearchParams(location.search).get('project') || '').toLowerCase();
+    const initial = communityTabs.find(tab => requested && [tab.dataset.communityTab, ...(tab.dataset.aliases || '').split(' ')].includes(requested)) || communityTabs[0];
+    selectCommunity(initial.dataset.communityTab, false);
+    communityTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectCommunity(tab.dataset.communityTab, true));
+      tab.addEventListener('keydown', event => {
+        const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+        if (!step) return;
+        event.preventDefault();
+        const next = communityTabs[(index + step + communityTabs.length) % communityTabs.length];
+        next.focus();
+        selectCommunity(next.dataset.communityTab, true);
+      });
+    });
+  }
+
   document.querySelectorAll('[data-language-code]').forEach(link => {
     link.addEventListener('click', () => localStorage.setItem('ok-language', link.dataset.languageCode));
   });
@@ -96,12 +134,33 @@
     const dialog = chooser.querySelector('dialog');
     const open = chooser.querySelector('[data-download-chooser-open]');
     if (!dialog || !open) return;
+    const warningText = chooser.dataset.downloadWarningText;
     if (typeof dialog.showModal !== 'function') {
-      // Very old browsers: fall back to the first listed source.
+      // Very old browsers: confirm the warning natively, then open the first listed source.
       const first = dialog.querySelector('[data-download-source]');
-      open.addEventListener('click', () => first && window.open(first.href, '_blank', 'noopener'));
+      open.addEventListener('click', () => {
+        if (warningText && !window.confirm(warningText)) return;
+        if (first) window.open(first.href, '_blank', 'noopener');
+      });
       return;
     }
+    const warning = dialog.querySelector('[data-download-warning]');
+    const sources = dialog.querySelector('[data-download-sources]');
+    const title = dialog.querySelector('[data-sources-title]');
+    const initialTitle = title?.textContent;
+    // Every opening starts on the warning step until the visitor confirms it.
+    const showWarningStep = () => {
+      if (!warning || !sources) return;
+      warning.hidden = false;
+      sources.hidden = true;
+      if (title) title.textContent = initialTitle;
+    };
+    dialog.querySelector('[data-download-warning-confirm]')?.addEventListener('click', () => {
+      warning.hidden = true;
+      sources.hidden = false;
+      if (title) title.textContent = title.dataset.sourcesTitle;
+      sources.querySelector('[data-download-source]')?.focus();
+    });
     // Stagger the entrance of each source row.
     dialog.querySelectorAll('.download-source-group > *').forEach((item, index) => item.style.setProperty('--i', index));
     const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -114,8 +173,8 @@
       dialog.addEventListener('animationend', event => { if (event.target === dialog) finish(); }, { once: true });
       setTimeout(() => dialog.classList.contains('closing') && finish(), 300);
     };
-    open.addEventListener('click', () => dialog.showModal());
-    chooser.querySelector('[data-download-chooser-close]')?.addEventListener('click', closeDialog);
+    open.addEventListener('click', () => { showWarningStep(); dialog.showModal(); });
+    chooser.querySelectorAll('[data-download-chooser-close]').forEach(button => button.addEventListener('click', closeDialog));
     // Escape and backdrop clicks also go through the animated close.
     dialog.addEventListener('cancel', event => { event.preventDefault(); closeDialog(); });
     dialog.addEventListener('click', event => { if (event.target === dialog) closeDialog(); });

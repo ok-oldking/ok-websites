@@ -29,7 +29,7 @@ function diskTarget(href, fromFile) {
   return path.extname(target) ? target : path.join(target, 'index.html');
 }
 
-const mustExist = ['index.html', 'en/index.html', 'ok-ww/index.html', 'ok-ww/en/index.html', 'ok-ww/zh-TW/index.html', 'ok-ww/ja/index.html', 'app/index.html', 'app/en/index.html', 'ok-end-field/index.html', 'ok-end-field/zh-TW/index.html', 'assets/site.css', 'assets/site.js', 'assets/github-mark.svg', 'assets/qq.svg', 'assets/discord.svg', 'assets/project-icons/ok-script.svg', 'sitemap.xml', 'ok-ww/sitemap.xml', 'app/sitemap.xml', 'ok-end-field/sitemap.xml', '.nojekyll'];
+const mustExist = ['index.html', 'en/index.html', 'ok-ww/index.html', 'ok-ww/en/index.html', 'ok-ww/zh-TW/index.html', 'ok-ww/ja/index.html', 'app/index.html', 'app/en/index.html', 'ok-end-field/index.html', 'ok-end-field/zh-TW/index.html', 'community/index.html', 'en/community/index.html', 'zh-TW/community/index.html', 'assets/site.css', 'assets/site.js', 'assets/github-mark.svg', 'assets/qq.svg', 'assets/discord.svg', 'assets/project-icons/ok-script.svg', 'sitemap.xml', 'ok-ww/sitemap.xml', 'app/sitemap.xml', 'ok-end-field/sitemap.xml', '.nojekyll'];
 for (const rel of mustExist) {
   try { await fs.access(path.join(root, rel)); } catch { failures.push(`Missing required output: ${rel}`); }
 }
@@ -103,6 +103,7 @@ if (!/class="button primary download-open"[^>]*data-download-chooser-open[^>]*>[
 const wwDialog = wwLanding.match(/<dialog class="download-dialog"[\s\S]*?<\/dialog>/)?.[0] || '';
 if (!/China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*data-download-source="github"/.test(wwDialog)) failures.push('Source chooser is missing the GitHub China download.');
 if (!/Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*data-download-source="github"/.test(wwDialog)) failures.push('Source chooser is missing the GitHub Global download.');
+if (!/data-download-warning role="alert"[\s\S]*?封号风险[\s\S]*?data-download-warning-confirm/.test(wwDialog) || !/data-download-sources hidden/.test(wwDialog)) failures.push('ok-ww download chooser does not ask to confirm the release risk warning first.');
 if (!/data-download-source="mirror"/.test(wwDialog) || wwLanding.includes('class="download-alternatives"')) failures.push('Source chooser does not list the mirrors, or mirrors are still duplicated below the hero.');
 if (!wwLanding.includes('class="community-icon"')) failures.push('Community links are missing icons.');
 if (!wwLanding.includes('src="../assets/discord.svg"')) failures.push('Discord community icon is missing.');
@@ -117,7 +118,8 @@ for (const pathname of ['/ok-ww', '/ok-ww/', '/']) {
       location: { pathname, replace: url => { target = url; } },
       localStorage: { getItem: () => 'en' }
     });
-    const expected = pathname === '/' ? './en/' : 'https://github.com/ok-oldking/ok-wuthering-waves';
+    // ok-ww is a regular project page; every entry path routes by language.
+    const expected = './en/';
     if (target !== expected) failures.push(`Incorrect ok-ww routing for ${pathname}: ${target}`);
   } catch (error) {
     failures.push(`Invalid ok-ww routing script: ${error.message}`);

@@ -31,6 +31,7 @@
       "github": "ok-oldking/ok-wuthering-waves",
       "domain": "https://ok-ww.ok-script.com",
       "outputFolder": "ok-ww",
+      "hideMirrors": ["mirrorchyan.com"],
       "mkdocs": "mkdocs.yml",
       "basePath": "",
       "accent": "violet",
@@ -41,12 +42,12 @@
         "forks": 588,
         "release": "v3.7.19",
         "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.7.19",
+        "releaseWarning": "使用本工具存在封号风险。如果你不清楚自己在做什么，请不要使用。",
         "releaseAssets": [
           { "name": "ok-ww-win32-China-setup-3.7.19.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-China-setup-3.7.19.exe" },
           { "name": "ok-ww-win32-Global-setup-3.7.19.exe", "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.7.19/ok-ww-win32-Global-setup-3.7.19.exe" }
         ],
         "mirrors": [
-          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=okww&source=ok-ww-release" },
           { "label": "百度网盘", "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww" },
           { "label": "夸克网盘", "url": "https://pan.quark.cn/s/418018ddf7a0" }
         ]
@@ -263,7 +264,7 @@
       { "type": "qq", "label": "QQ 1121173471", "value": "1121173471" }
     ] },
     { "name": "ok-Onmyoji", "gameName": { "zh-CN": "阴阳师", "zh-TW": "陰陽師", "en": "Onmyoji" }, "description": { "zh-CN": "阴阳师后台自动化战斗、日常与定时任务", "en": "Onmyoji background automation for battles, daily routines, and scheduling" }, "url": "https://ok-script.com/ok-onmyoji/", "github": "YunLiuZ/ok-Onmyoji", "status": "active", "stars": 8, "communityLinks": [
-      { "type": "qq", "label": "QQ 938132715", "value": "938132715", "joinAnswer": "老王同学OK" }
+      { "type": "qq", "label": "QQ 938132715", "value": "938132715" }
     ] },
     { "name": "ok-ww", "gameName": { "zh-CN": "鸣潮", "zh-TW": "鳴潮", "en": "Wuthering Waves" }, "description": { "zh-CN": "鸣潮后台自动战斗、自动刷声骸与一键日常", "en": "Background combat, Echo farming, and one-click daily automation for Wuthering Waves" }, "url": "https://ok-ww.ok-script.com/", "github": "ok-oldking/ok-wuthering-waves", "status": "active", "stars": 6971, "communityLinks": [
       { "type": "qq", "label": "QQ 1035795301", "value": "1035795301" },

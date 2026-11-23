@@ -40,7 +40,7 @@ const copy = {
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
     getStarted: 'MCP 快速开始', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
-    githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区',
+    githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区', communityAll: '全部群聊与频道',
     faqKicker: '常见问题',
     stars: 'GitHub Stars', release: '最新版本', updated: '代码更新', online: '开源可用',
     capabilities: '核心能力', capabilitiesTitle: '为真实自动化场景而生', capabilitiesLead: '从图像感知到输入执行，从开发调试到持续发布，一套工具覆盖完整工作流。',
@@ -71,7 +71,7 @@ const copy = {
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
     getStarted: 'Start with MCP', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
-    githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community',
+    githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community', communityAll: 'All community links',
     faqKicker: 'FAQ',
     stars: 'GitHub stars', release: 'Latest release', updated: 'Code updated', online: 'Open source',
     capabilities: 'Capabilities', capabilitiesTitle: 'Made for real automation work', capabilitiesLead: 'From visual perception to input, development diagnostics to continuous releases—the complete workflow in one toolkit.',
@@ -87,7 +87,7 @@ const copy = {
     onmyojiEyebrow: '陰陽師 · 背景自動化 · Windows', onmyojiTitle: '陰陽師的日常，\n交給 ok-Onmyoji。', onmyojiLead: '基於圖像辨識的陰陽師自動化工具，支援背景執行、多開、排程與常用戰鬥、日常流程。',
     appEyebrow: '鳴潮 · 背景自動化 · Windows', appTitle: '重複的日常，\n交給 ok-ww。', appLead: '基於電腦視覺的鳴潮自動化工具，支援背景執行、智慧角色辨識與 4K 解析度，不讀取記憶體、不修改遊戲檔案。',
     templateEyebrow: '專案範本 · Python · 視覺工具', templateTitle: '從可執行範本，\n開始自動化。', templateLead: '包含 GUI、任務範例、OCR、模板比對、測試與打包設定的完整 ok-script 應用範本。',
-    getStarted: 'MCP 快速開始', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
+    getStarted: 'MCP 快速開始', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', communityAll: '全部群聊與頻道', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
     capabilities: '核心能力', capabilitiesTitle: '為實際自動化場景而生', capabilitiesLead: '完整涵蓋辨識、執行與日常使用。', projectsKicker: '專案', projectsTitle: '一個框架，多個專案', projectsLead: '每個專案都有獨立入口與多語言文件。',
     explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '連接程式設計代理，開發你的第一個自動化任務。', ctaLead: '安裝 ok-script，啟動 MCP 執行環境，讓代理在你的 Windows 視窗或 ADB 裝置上觀察、執行並修復任務。', ctaButton: 'MCP 快速開始',
     docsFor: '文件目錄', onPage: '本頁內容', editGithub: '在 GitHub 查看來源', lastGenerated: '頁面產生時間', footer: '以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。', allProjects: '全部專案'
@@ -97,7 +97,7 @@ const copy = {
     frameworkEyebrow: 'オープンソース · Python · MCP · Vibe Coding', frameworkTitle: '願いを伝えれば、\n配布できる自動化アプリに。', frameworkLead: 'MCP 対応のコーディングエージェントに要望を伝えるだけ。エージェントが MCP 経由で対象アプリやデバイスを観察し、Python タスクを作成・実行・修正します。',
     appEyebrow: '鳴潮 · バックグラウンド自動化 · Windows', appTitle: '毎日のルーティンは、\nok-ww に。', appLead: 'コンピュータービジョンを活用した鳴潮自動化ツール。バックグラウンド動作、キャラクター自動認識、4K 解像度に対応し、メモリ読み取りやゲームファイルの変更は行いません。',
     templateEyebrow: 'プロジェクトテンプレート · Python · ビジュアルツール', templateTitle: '動くテンプレートから、\n自動化を始めよう。', templateLead: 'GUI、タスク例、OCR、テンプレートマッチング、テスト、配布設定を含む ok-script アプリテンプレート。',
-    getStarted: '開発を始める', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
+    getStarted: '開発を始める', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', communityAll: 'コミュニティ一覧', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
     capabilities: '主な機能', capabilitiesTitle: '実用的な自動化のために', capabilitiesLead: '認識から操作、日常の実行までを一つのツールで。', projectsKicker: 'プロジェクト', projectsTitle: '一つの基盤、多彩なプロジェクト', projectsLead: 'プロジェクトごとに独立した入口と多言語ドキュメントを提供します。',
     explore: 'プロジェクトへ →', active: '開発中', community: 'コミュニティ', archived: 'アーカイブ', ctaTitle: '最新版をダウンロードして始めましょう。', ctaLead: '説明とリスクに関する注意事項を確認してからご利用ください。', ctaButton: '開発を始める',
     docsFor: 'ドキュメント', onPage: 'このページ', editGithub: 'GitHub でソースを見る', lastGenerated: 'ページ生成日時', footer: 'AGPL-3.0 でオープンソース。ドキュメントはプロジェクトソースから自動生成されます。', allProjects: '全プロジェクト'
@@ -250,6 +250,7 @@ async function githubWebMetadata(item) {
 function localePrefix(project, locale) { return `${project.basePath}${locale.code === 'zh-CN' ? '' : `/${locale.code}`}`; }
 function landingUrl(project, locale) { return `${localePrefix(project, locale) || ''}/` || '/'; }
 function docRoot(project, locale) { return `${localePrefix(project, locale)}/docs`; }
+function communityUrl(project, locale) { return `${localePrefix(project, locale)}/community/`; }
 function projectOrigin(project) { return project.domain || config.site.url; }
 function outputPathFromUrl(project, url) { return path.join(staticDir, project.outputFolder || '', url.replace(/^\//, ''), 'index.html'); }
 function routeKey(project, url) {
@@ -308,38 +309,48 @@ function extractReleaseMirrors(body = '') {
     .filter((item, index, all) => all.findIndex(other => other.url === item.url) === index);
 }
 
+// Release notes open with a risk warning (e.g. "**使用本工具存在封号风险…**") before
+// the first heading; Simplified Chinese visitors must confirm it before downloading.
+function extractReleaseWarning(body = '') {
+  const intro = body.split(/^\s*#{1,6}\s/m)[0];
+  return intro.split(/\r?\n/)
+    .map(line => line.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/<[^>]+>/g, '').replace(/[*_`>]/g, '').trim())
+    .filter(line => /风险|封号|封禁|警告|后果|risk|\bban\b|warning/i.test(line))
+    .join('\n');
+}
+
 function extractCommunity(markdown = '') {
   const links = [];
-  const joinAnswer = text => {
-    const match = text.match(/入群答案\s*[:：]\s*(?:`([^`]+)`|[“"']?([^\s，,；;。\)\]]+)[”"']?)/i);
-    return (match?.[1] || match?.[2])?.trim();
-  };
   const add = item => {
     const identity = item.value || item.url || item.label;
     const existing = links.find(link => link.type === item.type && (link.value || link.url || link.label) === identity);
-    if (existing) existing.joinAnswer ||= item.joinAnswer;
-    else links.push(item);
+    if (!existing) links.push(item);
   };
   for (const [, label, url] of markdown.matchAll(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g)) {
     const developer = /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(label);
     if (/discord(?:\.gg|\.com\/invite)/i.test(url)) add({ type: 'discord', label: 'Discord', url });
     else if (/pd\.qq\.com/i.test(url)) add({ type: 'qq-channel', label: /频道|頻道/i.test(label) ? label : 'QQ Channel', url });
-    else if (/qm\.qq\.com/i.test(url)) add({ type: 'qq', label: label || 'QQ', value: label.match(/\d{6,12}/)?.[0], url, groupKind: developer ? 'developer' : 'user', joinAnswer: joinAnswer(`${label} ${url}`) });
+    else if (/qm\.qq\.com/i.test(url)) add({ type: 'qq', label: label || 'QQ', value: label.match(/\d{6,12}/)?.[0], url, groupKind: developer ? 'developer' : 'user' });
   }
-  let recentQq;
   for (const line of markdown.split(/\r?\n/)) {
-    const answer = joinAnswer(line);
-    if (!/(?:QQ|用户群|用戶群|交流群|開發者群|开发者群)/i.test(line)) {
-      if (answer && recentQq) recentQq.joinAnswer ||= answer;
-      continue;
-    }
+    if (!/(?:QQ|用户群|用戶群|交流群|開發者群|开发者群)/i.test(line)) continue;
     const developer = /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(line);
     for (const match of line.matchAll(/(?<!\d)(\d{6,12})(?!\d)/g)) {
-      add({ type: 'qq', label: `${developer ? '开发者群' : 'QQ'} ${match[1]}`, value: match[1], groupKind: developer ? 'developer' : 'user', joinAnswer: answer });
-      recentQq = links.find(link => link.type === 'qq' && link.value === match[1]);
+      add({ type: 'qq', label: `${developer ? '开发者群' : 'QQ'} ${match[1]}`, value: match[1], groupKind: developer ? 'developer' : 'user' });
     }
   }
   return links;
+}
+
+// projects.json `hideMirrors` lists hosts whose download mirrors a project does not
+// offer on the site, even when its release notes link them.
+function visibleMirrors(project, mirrors) {
+  const hidden = (project.hideMirrors || []).map(host => host.toLowerCase());
+  return mirrors.filter(mirror => {
+    let host = '';
+    try { host = new URL(mirror.url).hostname.toLowerCase(); } catch {}
+    return !hidden.some(item => host === item || host.endsWith(`.${item}`));
+  });
 }
 
 async function githubMetadata(project, fallback) {
@@ -361,7 +372,8 @@ async function githubMetadata(project, fallback) {
       // accepted by pip (for example, a leading "v").
       pypiVersion: pypi?.info?.version || configured.release || null,
       releaseAssets: release ? release.assets.map(asset => ({ name: asset.name, browser_download_url: asset.browser_download_url, size: asset.size })) : (configured.releaseAssets || []),
-      mirrors: [...releaseMirrors, ...fallbackMirrors],
+      mirrors: visibleMirrors(project, [...releaseMirrors, ...fallbackMirrors]),
+      releaseWarning: release ? extractReleaseWarning(release.body ?? '') : (configured.releaseWarning || ''),
       updated: repo.pushed_at || fallback.updated
     };
   } catch (error) {
@@ -369,7 +381,7 @@ async function githubMetadata(project, fallback) {
     return {
       stars: configured.stars || 0, forks: configured.forks || 0, description: configured.description || '',
       release: configured.release || '—', pypiVersion: configured.release || null, releaseUrl: configured.releaseUrl || `https://github.com/${project.github}/releases`,
-      releaseAssets: configured.releaseAssets || [], mirrors: configured.mirrors || [], updated: fallback.updated
+      releaseAssets: configured.releaseAssets || [], mirrors: visibleMirrors(project, configured.mirrors || []), releaseWarning: configured.releaseWarning || '', updated: fallback.updated
     };
   }
 }
@@ -518,6 +530,7 @@ async function enrichRelatedProjects(items) {
       const updatedAt = repo.pushed_at || repo.updated_at;
       return {
         ...item,
+        defaultBranch: repo.default_branch,
         description: descriptions.values,
         descriptionSource: descriptions.source,
         stars: repo.stargazers_count || 0,
@@ -656,7 +669,7 @@ function projectSwitcher(project, locale, currentUrl) {
 
 function languageSwitcher(project, currentLocale, destination = 'landing', currentUrl = landingUrl(project, currentLocale)) {
   const options = project.locales.map(locale => {
-    const targetUrl = destination === 'docs' ? `${docRoot(project, locale)}/` : landingUrl(project, locale);
+    const targetUrl = destination === 'docs' ? `${docRoot(project, locale)}/` : destination === 'community' ? communityUrl(project, locale) : landingUrl(project, locale);
     const href = relativeSiteUrl(project, currentUrl, project, targetUrl);
     return `<a class="dropdown-option language-option" role="menuitem" href="${href}" data-language-code="${escapeHtml(locale.code)}"${locale.code === currentLocale.code ? ' aria-current="page"' : ''}><span class="language-code">${escapeHtml(locale.code)}</span><span>${escapeHtml(locale.label)}</span></a>`;
   }).join('');
@@ -696,7 +709,7 @@ function communityLinks(links = [], label = '', compact = false, localeCode = 'e
     if (link.type === 'qq') {
       const number = link.value || (link.label || '').match(/\d{6,12}/)?.[0];
       const developer = link.groupKind === 'developer' || /开发者\s*(?:QQ\s*)?群|開發者\s*(?:QQ\s*)?群|developer\s*(?:qq\s*)?group/i.test(link.label || '');
-      if (number) return `<button class="${className}" type="button" data-copy="${number}" aria-label="复制 QQ 群 ${number}" title="点击复制群号">${icon}<span>${developer ? '开发者群' : '群'}${number}${link.joinAnswer ? ` 入群答案:${escapeHtml(link.joinAnswer)}` : ''}</span></button>`;
+      if (number) return `<button class="${className}" type="button" data-copy="${number}" aria-label="复制 QQ 群 ${number}" title="点击复制群号">${icon}<span>${developer ? '开发者群' : '群'}${number}</span></button>`;
     }
     const content = `${icon}<span>${escapeHtml(link.label)}</span>`;
     return link.url ? `<a class="${className}" href="${escapeHtml(link.url)}">${content}</a>` : `<span class="${className}">${content}</span>`;
@@ -869,11 +882,8 @@ function documentShell({ title, description, project, locale, body, destination 
     : '';
   const alternateLocales = project.locales.filter(item => item.code !== locale.code).map(item => `<meta property="og:locale:alternate" content="${escapeHtml(item.code.replace('-', '_'))}">`).join('');
   const languageRoutes = Object.fromEntries(project.locales.map(item => [item.code, relativeSiteUrl(project, currentUrl, project, landingUrl(project, item))]));
-  const projectRedirect = project.id === 'ok-ww'
-    ? `if (/^\\/ok-ww\\/?$/.test(location.pathname)) { location.replace(${JSON.stringify(`https://github.com/${project.github}`)}); return; }`
-    : '';
   const languageRouting = destination === 'landing' && currentUrl === landingUrl(project, project.locales.find(item => item.code === 'zh-CN') || project.locales[0]) && project.locales.length > 1
-    ? `<script data-language-routing>(()=>{${projectRedirect}try{const routes=${JSON.stringify(languageRoutes).replace(/</g, '\\u003c')};const available=Object.keys(routes);const select=raw=>{const value=String(raw||'').toLowerCase();if(!value)return null;const exact=available.find(code=>code.toLowerCase()===value);if(exact)return exact;if(value.startsWith('zh-')&&/(?:hant|tw|hk|mo)/.test(value)){const traditional=available.find(code=>code.toLowerCase()==='zh-tw');if(traditional)return traditional;}if(value.startsWith('zh')){const simplified=available.find(code=>code.toLowerCase()==='zh-cn');if(simplified)return simplified;}const base=value.split('-')[0];return available.find(code=>code.toLowerCase().split('-')[0]===base)||null};const saved=localStorage.getItem('ok-language');const requested=saved?[saved]:Array.from(navigator.languages||[navigator.language]);const selected=requested.map(select).find(Boolean)||select('${escapeHtml(config.site.defaultLocale)}')||available[0];if(selected&&selected!=='${escapeHtml(locale.code)}')location.replace(routes[selected])}catch{}})();</script>`
+    ? `<script data-language-routing>(()=>{try{const routes=${JSON.stringify(languageRoutes).replace(/</g, '\\u003c')};const available=Object.keys(routes);const select=raw=>{const value=String(raw||'').toLowerCase();if(!value)return null;const exact=available.find(code=>code.toLowerCase()===value);if(exact)return exact;if(value.startsWith('zh-')&&/(?:hant|tw|hk|mo)/.test(value)){const traditional=available.find(code=>code.toLowerCase()==='zh-tw');if(traditional)return traditional;}if(value.startsWith('zh')){const simplified=available.find(code=>code.toLowerCase()==='zh-cn');if(simplified)return simplified;}const base=value.split('-')[0];return available.find(code=>code.toLowerCase().split('-')[0]===base)||null};const saved=localStorage.getItem('ok-language');const requested=saved?[saved]:Array.from(navigator.languages||[navigator.language]);const selected=requested.map(select).find(Boolean)||select('${escapeHtml(config.site.defaultLocale)}')||available[0];if(selected&&selected!=='${escapeHtml(locale.code)}')location.replace(routes[selected])}catch{}})();</script>`
     : '';
   const keywords = seoKeywords(project, locale, destination);
   const socialImage = project.state.socialImages?.[locale.code] || project.state.socialImages?.en || Object.values(project.state.socialImages || {})[0];
@@ -910,6 +920,17 @@ function documentShell({ title, description, project, locale, body, destination 
   </head><body>${header(project, locale, destination, currentUrl)}${body}
   <footer class="site-footer"><div class="container footer-row"><span>${t.footer}</span><div class="footer-links"><a class="github-link" href="https://github.com/${project.github}">${githubIcon(project, currentUrl)}GitHub</a><a href="${allProjectsUrl}">${t.allProjects}</a></div></div></footer>
   <script src="${asset(`site.js?v=${assetVersion}`)}" defer></script></body></html>`;
+}
+
+// Link to the shared community page when the project publishes community_links.yml.
+// Relative, like the project switcher (site tests forbid domain-based internal links).
+function projectCommunityHref(project, locale, currentUrl) {
+  const entry = (config.communityProjects || []).find(item => item.item.github === project.github);
+  const framework = config.projects.find(item => item.type === 'framework');
+  if (!entry || !framework) return '';
+  const frameworkLocale = framework.locales.find(item => item.code === locale.code) || framework.locales.find(item => item.code === 'en') || framework.locales[0];
+  const target = communityUrl(framework, frameworkLocale);
+  return `${relativeSiteUrl(project, currentUrl, framework, target)}?project=${encodeURIComponent(entry.id)}`;
 }
 
 function landingPage(project, locale, meta, faq = null) {
@@ -962,12 +983,22 @@ function landingPage(project, locale, meta, faq = null) {
     return `<a class="download-source" target="_blank" rel="noopener" href="${escapeHtml(source.url)}" data-download-source="github"><span class="download-source-icon">${githubIcon(project, currentUrl)}</span><span class="download-source-text"><strong>${source.label}</strong><small>${escapeHtml(detail)}</small></span><span class="download-source-action" aria-hidden="true">↓</span></a>`;
   }).join('');
   const mirrorSources = (meta.mirrors || []).map(link => `<a class="download-source" target="_blank" rel="noopener" href="${escapeHtml(link.url)}" data-download-source="mirror"><span class="download-source-icon mirror" aria-hidden="true">${escapeHtml([...link.label][0] || '↓')}</span><span class="download-source-text"><strong>${escapeHtml(link.label)}</strong><small>国内镜像 · 在新页面打开</small></span><span class="download-source-action" aria-hidden="true">↗</span></a>`).join('');
-  const sourceChooser = `<div class="download-chooser" data-download-chooser data-download-guide="${escapeHtml(t.downloadGuide)}">
+  // When the release carries a risk warning, the dialog opens on a confirmation
+  // step and only reveals the download sources after the visitor accepts it.
+  const releaseWarning = meta.releaseWarning || '';
+  const warningStep = releaseWarning ? `<div class="download-warning" data-download-warning role="alert">
+        <div class="download-warning-body"><span class="download-warning-icon" aria-hidden="true">!</span><p>${releaseWarning.split('\n').map(escapeHtml).join('<br>')}</p></div>
+        <div class="download-warning-actions"><button class="button" type="button" data-download-chooser-close>取消</button><button class="button primary" type="button" data-download-warning-confirm>我已了解风险，继续下载</button></div>
+      </div>` : '';
+  const sourceChooser = `<div class="download-chooser" data-download-chooser data-download-guide="${escapeHtml(t.downloadGuide)}"${releaseWarning ? ` data-download-warning-text="${escapeHtml(releaseWarning)}"` : ''}>
     <button class="button primary download-open" type="button" data-download-chooser-open aria-haspopup="dialog">${t.download}<strong>${escapeHtml(meta.release)}</strong><span aria-hidden="true">↓</span></button>
     <dialog class="download-dialog" aria-labelledby="download-dialog-title-${project.id}">
-      <div class="download-dialog-head"><div><h2 id="download-dialog-title-${project.id}">选择下载渠道</h2><p>${escapeHtml(project.name)} <strong>${escapeHtml(meta.release)}</strong> · 各渠道内容相同，选择访问最快的即可</p></div><button class="download-dialog-close" type="button" data-download-chooser-close aria-label="关闭">×</button></div>
+      <div class="download-dialog-head"><div><h2 id="download-dialog-title-${project.id}" data-sources-title="选择下载渠道">${releaseWarning ? '下载前请确认' : '选择下载渠道'}</h2><p>${escapeHtml(project.name)} <strong>${escapeHtml(meta.release)}</strong> · 各渠道内容相同，选择访问最快的即可</p></div><button class="download-dialog-close" type="button" data-download-chooser-close aria-label="关闭">×</button></div>
+      ${warningStep}
+      <div class="download-sources" data-download-sources${releaseWarning ? ' hidden' : ''}>
       ${mirrorSources ? `<div class="download-source-group"><h3>国内镜像</h3>${mirrorSources}</div>` : ''}
       <div class="download-source-group"><h3>GitHub 直接下载</h3>${githubSources}</div>
+      </div>
     </dialog>
   </div>`;
   const heroActions = isFramework
@@ -983,7 +1014,14 @@ function landingPage(project, locale, meta, faq = null) {
   const faqSection = faq ? `<section class="section faq-section"><div class="container landing-container"><div class="section-head compact"><h2>${t.faqKicker}</h2></div><div class="faq-content markdown-body">${faq.html}</div></div></section>` : '';
   const capabilitiesSection = `<section class="section section-muted"><div class="container landing-container"><div class="feature-grid">${featureSet.map(f => `<article class="feature-card"><div class="feature-icon">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></article>`).join('')}</div></div></section>`;
   const ctaSection = isFramework ? `<section class="section"><div class="container"><div class="cta"><div><h2>${t.ctaTitle}</h2><p>${t.ctaLead}</p></div><a class="button" href="${primaryUrl}">${t.ctaButton} →</a></div></div></section>` : '';
-  const community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
+  let community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
+  const communityPageHref = projectCommunityHref(project, locale, currentUrl);
+  if (communityPageHref) {
+    const pageLink = `<a class="community-chip community-page-link" href="${escapeHtml(communityPageHref)}"><span>${t.communityAll || copy.en.communityAll} →</span></a>`;
+    community = community
+      ? community.replace(/<\/div>$/,`${pageLink}</div>`)
+      : `<div class="community-row"><span class="community-label"><span class="community-heading-icon" aria-hidden="true">◎</span>${escapeHtml(t.communityLabel)}</span>${pageLink}</div>`;
+  }
   const body = `<main id="main">
   <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div>${heroTitle}<p class="hero-copy">${lead}</p>
   <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${formatStars(meta.stars)}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>
@@ -993,6 +1031,157 @@ function landingPage(project, locale, meta, faq = null) {
   const repeatedAcrossLocales = project.locales.some(item => item.code !== locale.code && `${project.name} — ${marketingContent(project, item).titleA.replace(/[，,.。]/g,'')}` === baseTitle);
   const title = repeatedAcrossLocales ? `${baseTitle} · ${locale.label}` : baseTitle;
   return documentShell({ title, description: rootSeoDescription(project, locale, lead), project, locale, body, canonical: `${projectOrigin(project)}${landingUrl(project, locale)}` });
+}
+
+// Community page: each project may publish a community_links.yml at its
+// repository root listing qq_groups, qq_channel, and discord entries.
+const communityCopy = {
+  'zh-CN': {
+    title: '加入社区', lead: '选择项目，加入对应的 QQ 群、QQ 频道或 Discord 服务器。', chooseProject: '选择项目',
+    qqGroups: 'QQ 群', qqChannels: 'QQ 频道', channelName: 'QQ 频道', discord: 'Discord', count: n => `共 ${n} 个`, groupHint: '群满时请尝试下一个群。',
+    join: '加群', open: '打开', source: '在 GitHub 编辑社区链接', empty: '暂时没有可加入的社区。',
+    groupNumber: '群号', members: (count, max) => max ? `${count} / ${max} 人` : `${count} 人`, full: '已满', membersAsOf: '人数更新于'
+  },
+  en: {
+    title: 'Join the community', lead: 'Choose a project to find its Discord server, QQ groups, and QQ channels.', chooseProject: 'Choose a project',
+    qqGroups: 'QQ groups', qqChannels: 'QQ channels', channelName: 'QQ channel', discord: 'Discord', count: n => `${n} ${n === 1 ? 'link' : 'links'}`, groupHint: 'If a group is full, try the next one.',
+    join: 'Join', open: 'Open', source: 'Edit community links on GitHub', empty: 'No community links are available yet.',
+    groupNumber: 'Group', members: (count, max) => max ? `${count} / ${max} members` : `${count} members`, full: 'Full', membersAsOf: 'Member counts as of'
+  }
+};
+
+async function fetchTextWithRetry(url, attempts = 4) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const response = await fetch(url, { headers: { 'User-Agent': 'ok-websites-generator' } }).catch(() => null);
+    if (response?.ok) return { text: await response.text() };
+    // raw.githubusercontent.com intermittently answers 5xx/429; anything else is final.
+    if (response && response.status < 500 && response.status !== 429) return { missing: true };
+    await new Promise(resolve => setTimeout(resolve, 600 * 2 ** attempt));
+  }
+  return { failed: true };
+}
+
+function parseCommunityLinks(text) {
+  const data = YAML.parse(text) || {};
+  const list = (...keys) => keys.flatMap(key => Array.isArray(data[key]) ? data[key] : [])
+    .filter(entry => entry && typeof entry === 'object' && /^https?:\/\//i.test(String(entry.url || '')))
+    .map(entry => ({ name: String(entry.name || '').trim(), url: String(entry.url).trim(), number: entry.number ? String(entry.number).trim() : '', max: Number(entry.max) > 0 ? Number(entry.max) : null }));
+  return { qqGroups: list('qq_groups', 'qq_group'), qqChannels: list('qq_channel', 'qq_channels'), discord: list('discord') };
+}
+
+// QQ does not publish a group's member limit; groups are created at one of these
+// sizes, so the smallest tier that fits the current count is the likely limit.
+// A `max:` entry in community_links.yml overrides the estimate.
+const qqGroupTiers = [200, 500, 1000, 2000, 3000];
+
+// The qm.qq.com invite page embeds the group number and current member count in
+// its server-rendered Nuxt payload. Browsers cannot read it cross-origin, so the
+// counts are captured at generation time.
+async function addQqGroupInfo(group) {
+  if (!/^https?:\/\/qm\.qq\.com\//i.test(group.url)) return group;
+  const { text } = await fetchTextWithRetry(group.url, 3);
+  const memberCount = Number(text?.match(/\\?"memberCnt\\?"\s*:\s*(\d+)/)?.[1]);
+  const groupCode = text?.match(/\\?"groupcode\\?"\s*:\s*\\?"(\d{5,12})/)?.[1];
+  if (!memberCount) {
+    console.warn(`QQ group info unavailable: ${group.url}`);
+    return group;
+  }
+  const max = group.max || qqGroupTiers.find(tier => tier >= memberCount) || null;
+  const number = group.number || groupCode || '';
+  // Group portraits live at p.qlogo.cn/gh/<code>/<code>/<size>; the page gives the
+  // size-less form, so request the 100px variant.
+  const pageAvatar = text.match(/\\?"avatar\\?"\s*:\s*\\?"(https?:\/\/p\.qlogo\.cn\/gh\/[^"\\]+)/)?.[1];
+  const avatar = pageAvatar ? pageAvatar.replace(/^http:/, 'https:').replace(/\/?$/, '/100') : (number ? `https://p.qlogo.cn/gh/${number}/${number}/100` : '');
+  return { ...group, number, memberCount, max, avatar };
+}
+
+async function loadCommunityProjects() {
+  // Configured projects missing from relatedProjects (the ok-script framework itself) are listed too.
+  const unlisted = config.projects.filter(project => !config.relatedProjects.some(item => item.github === project.github))
+    .map(project => ({ name: project.name, github: project.github, iconUrl: project.state?.iconUrl, communityLinks: project.state?.communityLinks || [] }));
+  const results = await Promise.all([...config.relatedProjects, ...unlisted].map(async item => {
+    const localProject = config.projects.find(candidate => candidate.github === item.github);
+    let text = null;
+    if (localProject?.state?.repoDir) text = await fs.readFile(path.join(localProject.state.repoDir, 'community_links.yml'), 'utf8').catch(() => null);
+    if (text === null) {
+      let failed = false;
+      for (const branch of [...new Set([item.defaultBranch, 'master', 'main'].filter(Boolean))]) {
+        const result = await fetchTextWithRetry(`https://raw.githubusercontent.com/${item.github}/${branch}/community_links.yml`);
+        if (result.text !== undefined) { text = result.text; break; }
+        failed ||= Boolean(result.failed);
+      }
+      if (text === null) {
+        if (failed) console.warn(`Community links unavailable for ${item.name} (GitHub raw kept failing)`);
+        return null;
+      }
+    }
+    let links;
+    try { links = parseCommunityLinks(text); } catch (error) { console.warn(`Invalid community_links.yml for ${item.name}: ${error.message}`); return null; }
+    // The YAML is authoritative for QQ groups; QQ channels and Discord fall back to
+    // the links configured in projects.json (or found in the README) when it lists none.
+    const configured = (type, kind) => {
+      if (links[kind].length) return;
+      links[kind] = (item.communityLinks || []).filter(link => link.type === type && /^https?:\/\//i.test(link.url || ''))
+        .filter((link, index, all) => all.findIndex(other => other.url === link.url) === index)
+        .map(link => ({ name: type === 'discord' ? 'Discord' : '', url: link.url, number: '' }));
+    };
+    configured('qq-channel', 'qqChannels');
+    configured('discord', 'discord');
+    if (!links.qqGroups.length && !links.qqChannels.length && !links.discord.length) return null;
+    links.qqGroups = await Promise.all(links.qqGroups.map(addQqGroupInfo));
+    const id = (localProject?.id || item.name).toLowerCase();
+    const aliases = uniqueTerms([item.name, item.github.split('/').at(-1), localProject?.name || ''].map(value => value.toLowerCase())).filter(alias => alias !== id);
+    return { item, id, aliases, links };
+  }));
+  return results.filter(Boolean);
+}
+
+function communityPage(framework, locale, communityProjects) {
+  const currentUrl = communityUrl(framework, locale);
+  const t = communityCopy[locale.code] || (locale.code.startsWith('zh') ? translateToTraditional(communityCopy['zh-CN']) : communityCopy.en);
+  const count = locale.code.startsWith('zh') && !communityCopy[locale.code] ? n => simplifiedToTraditional(communityCopy['zh-CN'].count(n)) : t.count;
+  const text = value => locale.autoTranslated ? simplifiedToTraditional(value) : value;
+  const asset = file => relativeAssetUrl(framework, currentUrl, `/assets/${file}`);
+  const chinese = locale.code.startsWith('zh');
+  const entry = (link, index, kind) => {
+    const iconFile = kind === 'discord' ? 'discord.svg' : 'qq.svg';
+    const name = text(link.name) || (kind === 'discord' ? 'Discord' : kind === 'qqChannels' ? t.channelName : `${t.qqGroups} ${index + 1}`);
+    const detail = link.number ? (kind === 'qqGroups' ? `${t.groupNumber} ${link.number}` : link.number) : link.url.replace(/^https?:\/\//i, '').replace(/\/$/, '');
+    const order = kind === 'qqGroups' ? `<span class="community-entry-order">${index + 1}</span>` : '';
+    const full = Boolean(link.memberCount && link.max && link.memberCount >= link.max);
+    const usage = link.memberCount ? `<span class="community-members${full ? ' is-full' : ''}"><span>${escapeHtml(t.members(link.memberCount, link.max))}${full ? ` · ${t.full}` : ''}</span>${link.max ? `<span class="community-meter" aria-hidden="true"><span style="width:${Math.min(100, Math.round(link.memberCount / link.max * 100))}%"></span></span>` : ''}</span>` : '';
+    return `<a class="download-source community-entry${full ? ' is-full' : ''}" target="_blank" rel="noopener" href="${escapeHtml(link.url)}">${order}${link.avatar ? `<span class="download-source-icon community-avatar"><img src="${escapeHtml(link.avatar)}" alt="" loading="lazy" referrerpolicy="no-referrer" width="40" height="40"></span>` : `<span class="download-source-icon"><img class="inline-icon" src="${asset(iconFile)}" alt="" aria-hidden="true"></span>`}<span class="download-source-text"><strong>${escapeHtml(name)}</strong><small>${escapeHtml(detail)}</small>${usage}</span><span class="download-source-action">${kind === 'qqGroups' ? t.join : t.open} ↗</span></a>`;
+  };
+  const group = (kind, links) => links.length ? `<div class="download-source-group community-group community-${kind}"><h3>${t[kind]} <span>· ${escapeHtml(count(links.length))}</span></h3>${kind === 'qqGroups' ? `<p class="community-hint">${[links.length > 1 ? t.groupHint : '', links.some(link => link.memberCount) ? `${t.membersAsOf} ${formatDate(generatedAt, locale.code)}` : ''].filter(Boolean).join(' ')}</p>` : ''}<div class="community-entries">${links.map((link, index) => entry(link, index, kind)).join('')}</div></div>` : '';
+  // Simplified Chinese users mostly use QQ; everyone else sees Discord first.
+  const order = locale.code === 'zh-CN' ? ['qqGroups', 'qqChannels', 'discord'] : ['discord', 'qqGroups', 'qqChannels'];
+  const tabs = communityProjects.map((project, index) => {
+    const gameName = localizedGameName(project.item, locale);
+    const icon = project.item.iconUrl ? `<img src="${relativeAssetUrl(framework, currentUrl, project.item.iconUrl)}" alt="">` : escapeHtml(project.item.name.slice(0, 2).toUpperCase());
+    return `<button class="community-tab" type="button" role="tab" id="community-tab-${project.id}" aria-controls="community-panel-${project.id}" aria-selected="${index === 0}" tabindex="${index === 0 ? 0 : -1}" data-community-tab="${escapeHtml(project.id)}" data-aliases="${escapeHtml(project.aliases.join(' '))}"><span class="community-tab-icon">${icon}</span><span class="community-tab-text"><strong>${escapeHtml(project.item.name)}</strong>${gameName ? `<small>${escapeHtml(gameName)}</small>` : ''}</span></button>`;
+  }).join('');
+  const panels = communityProjects.map((project, index) => {
+    const groups = order.map(kind => group(kind, project.links[kind])).join('');
+    return `<section class="community-panel" role="tabpanel" id="community-panel-${project.id}" aria-labelledby="community-tab-${project.id}" data-community-panel="${escapeHtml(project.id)}"${index === 0 ? '' : ' hidden'}>${groups}<p class="community-source"><a class="github-link" href="https://github.com/${project.item.github}/blob/HEAD/community_links.yml">${githubIcon(framework, currentUrl)}${t.source} ↗</a></p></section>`;
+  }).join('');
+  const content = communityProjects.length
+    ? `<div class="community-picker"><span class="community-picker-label">${t.chooseProject}</span><div class="community-tabs" role="tablist" aria-label="${t.chooseProject}">${tabs}</div></div>${panels}`
+    : `<p class="community-hint">${t.empty}</p>`;
+  const body = `<main id="main"><section class="section community-section"><div class="container community-container"><div class="eyebrow">${chinese ? 'QQ · Discord' : 'Discord · QQ'}</div><h1>${t.title}</h1><p class="hero-copy">${t.lead}</p>${content}</div></section></main>`;
+  const projectNames = communityProjects.map(project => project.item.name).join(', ');
+  const description = `${t.lead}${projectNames ? ` ${projectNames}` : ''}`.slice(0, 155);
+  return documentShell({ title: `${t.title} — ${chinese ? 'QQ 群 · Discord' : 'Discord · QQ'} · ${config.site.name}`, description, project: framework, locale, body, destination: 'community', canonical: `${projectOrigin(framework)}${currentUrl}`, currentUrl });
+}
+
+async function generateCommunityPages(communityProjects) {
+  const framework = config.projects.find(item => item.type === 'framework');
+  if (!framework) return;
+  for (const locale of framework.locales) {
+    const file = outputPathFromUrl(framework, communityUrl(framework, locale));
+    await fs.mkdir(path.dirname(file), { recursive: true });
+    await fs.writeFile(file, communityPage(framework, locale, communityProjects));
+  }
+  console.log(`Community page lists ${communityProjects.length} project(s): ${communityProjects.map(project => project.id).join(', ') || 'none'}`);
 }
 
 function navTitleFromMarkdown(content, fallback) {
@@ -1014,12 +1203,16 @@ async function docsPage(project, locale, page, pages) {
   return documentShell({ title: seoTitle, description, project, locale, body, destination: 'docs', canonical: `${projectOrigin(project)}${currentUrl}`, currentUrl });
 }
 
-async function generateProject(project) {
+// Sync sources first so the community page data is known before landing pages render.
+async function prepareProject(project) {
   project.state = await syncProject(project);
   project.state.mkdocs = await loadMkDocs(project);
   project.locales = addAutomaticTraditionalLocale(discoverLocales(project, project.state.mkdocs));
   project.state.iconUrl = project.siteIcon || (project.icon ? await saveLocalProjectIcon(project) : null);
   project.state.communityLinks = extractCommunity(await collectProjectMarkdown(project));
+}
+
+async function generateProject(project) {
   const meta = await githubMetadata(project, project.state);
   project.state.meta = meta;
   project.state.socialImages = Object.fromEntries(await Promise.all(project.locales.map(async locale => [locale.code, await saveSocialImage(project, locale)])));
@@ -1076,7 +1269,10 @@ await fs.rm(staticDir, { recursive: true, force: true });
 await writeSharedAssets();
 config.relatedProjects = await enrichRelatedProjects(config.relatedProjects);
 const manifestProjects = [];
+for (const project of config.projects) await prepareProject(project);
+config.communityProjects = await loadCommunityProjects();
 for (const project of config.projects) manifestProjects.push(await generateProject(project));
+await generateCommunityPages(config.communityProjects);
 const htmlFiles = await listHtml(staticDir);
 const projectRoots = config.projects.filter(project => project.outputFolder).map(project => path.resolve(staticDir, project.outputFolder) + path.sep);
 for (const project of config.projects) {
