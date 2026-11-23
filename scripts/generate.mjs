@@ -304,6 +304,7 @@ async function githubGet(endpoint) {
 function extractReleaseMirrors(body = '') {
   return [...body.matchAll(/\[([^\]]*(?:Mirror|镜|網盤|网盘|Quark|Baidu)[^\]]*)\]\((https?:\/\/[^)]+)\)/gi)]
     .map(([, label, url]) => ({ label: label.replace(/下载渠道|下載渠道|下载|下載/g, '').trim(), url }))
+    .filter(({ url }) => !/^https?:\/\/(?:www\.)?mirrorchyan\.com\/(?:[\w-]+\/)?get-start(?:[/?#]|$)/i.test(url))
     .filter((item, index, all) => all.findIndex(other => other.url === item.url) === index);
 }
 
@@ -349,6 +350,10 @@ async function githubMetadata(project, fallback) {
       githubGet(`/repos/${project.github}/releases/latest`).catch(() => null),
       project.pypi ? fetch(`https://pypi.org/pypi/${encodeURIComponent(project.pypi)}/json`).then(response => response.ok ? response.json() : null).catch(() => null) : null
     ]);
+    const releaseMirrors = extractReleaseMirrors(release?.body ?? '');
+    const fallbackMirrors = (configured.mirrors || []).filter(fallbackMirror =>
+      !releaseMirrors.some(link => link.label === fallbackMirror.label || link.url === fallbackMirror.url)
+    );
     return {
       stars: repo.stargazers_count, forks: repo.forks_count, description: repo.description,
       release: release?.tag_name || pypi?.info?.version || configured.release || '—', releaseUrl: release?.html_url || configured.releaseUrl || `https://github.com/${project.github}/releases`,
@@ -356,9 +361,7 @@ async function githubMetadata(project, fallback) {
       // accepted by pip (for example, a leading "v").
       pypiVersion: pypi?.info?.version || configured.release || null,
       releaseAssets: release ? release.assets.map(asset => ({ name: asset.name, browser_download_url: asset.browser_download_url, size: asset.size })) : (configured.releaseAssets || []),
-      mirrors: release
-        ? [...extractReleaseMirrors(release.body), ...(configured.mirrors || [])].filter((item, index, all) => all.findIndex(other => other.url === item.url) === index)
-        : (configured.mirrors || []),
+      mirrors: [...releaseMirrors, ...fallbackMirrors],
       updated: repo.pushed_at || fallback.updated
     };
   } catch (error) {

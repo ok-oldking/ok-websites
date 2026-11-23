@@ -190,10 +190,6 @@
         "mirrors": [
           {
             "label": "Mirror酱",
-            "url": "https://mirrorchyan.com/zh/get-start"
-          },
-          {
-            "label": "Mirror酱",
             "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte-zip&channel=stable"
           },
           {
@@ -203,14 +199,6 @@
           {
             "label": "夸克网盘",
             "url": "https://pan.quark.cn/s/24433f3febc1"
-          },
-          {
-            "label": "Mirror酱",
-            "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte&channel=stable"
-          },
-          {
-            "label": "夸克网盘",
-            "url": "https://pan.quark.cn/s/418018ddf7a0"
           }
         ],
         "updated": "2026-11-17T02:29:52Z"

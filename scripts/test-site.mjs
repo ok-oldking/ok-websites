@@ -139,6 +139,9 @@ const nteChinese = await fs.readFile(path.join(root, 'ok-nte', 'index.html'), 'u
 const nteEnglish = await fs.readFile(path.join(root, 'ok-nte', 'en', 'index.html'), 'utf8');
 const nteTraditional = await fs.readFile(path.join(root, 'ok-nte', 'zh-TW', 'index.html'), 'utf8');
 if (!nteChinese.includes('探索海特洛市') || !nteChinese.includes('https://ok-script.com/ok-nte/') || !/ok-nte-win32-China-setup(?:-v?[\d.]+)?\.exe/.test(nteChinese)) failures.push('ok-nte Chinese landing page is incomplete.');
+const nteMirrors = [...nteChinese.matchAll(/href="([^"]+)" data-download-source="mirror"[^]*?<strong>([^<]+)<\/strong>/g)];
+const nteMirrorLabels = new Set(nteMirrors.map(([, , label]) => label));
+if (!nteMirrors.length || nteMirrors.length !== nteMirrorLabels.size || nteMirrors.some(([, url]) => /mirrorchyan\.com\/[^/]*\/get-start/.test(url))) failures.push('ok-nte download chooser has missing or duplicate mirrors, or links to the MirrorChyan setup guide.');
 // Upstream may publish only the China installer; non-Chinese locales then fall back to it.
 if (!nteEnglish.includes('Explore Hethereau') || !/ok-nte-win32-(?:Global|China)-setup(?:-v?[\d.]+)?\.exe/.test(nteEnglish)) failures.push('ok-nte English landing page is incomplete.');
 if (!nteChinese.includes('faq-section') || !nteEnglish.includes('faq-section')) failures.push('ok-nte FAQ content was not generated from MkDocs.');

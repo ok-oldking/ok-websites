@@ -110,9 +110,9 @@
           { "name": "ok-nte-win32-China-setup-1.5.2.exe", "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.2/ok-nte-win32-China-setup-1.5.2.exe" }
         ],
         "mirrors": [
-          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte&channel=stable" },
+          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=ok-nte-zip&channel=stable" },
           { "label": "百度网盘", "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww" },
-          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/418018ddf7a0" }
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/24433f3febc1" }
         ]
       },
       "locales": [
