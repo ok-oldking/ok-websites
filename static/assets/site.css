@@ -142,6 +142,7 @@ h1 { width: 100%; max-width: none; margin: 0; font-size: clamp(54px, 7vw, 108px)
 @keyframes download-guide-bounce { from { transform: translate(0, 2px); } to { transform: translate(4px, -3px); } }
 .download-option[aria-disabled="true"] { opacity: .6; pointer-events: none; }
 @keyframes download-pulse { to { transform: translateY(3px); } }
+.download-open { cursor: pointer; }
 .download-open strong { padding-left: 2px; }
 .download-dialog { width: min(480px, calc(100vw - 32px)); box-sizing: border-box; max-height: calc(100vh - 32px); padding: 20px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; color: var(--text); background: var(--surface-solid); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
 .download-dialog::backdrop { background: rgba(9,13,20,.48); backdrop-filter: blur(4px); animation: download-backdrop-in .28s ease-out; }
