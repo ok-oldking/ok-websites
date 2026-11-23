@@ -1130,7 +1130,9 @@ async function loadCommunityProjects() {
     configured('qq-channel', 'qqChannels');
     configured('discord', 'discord');
     if (!links.qqGroups.length && !links.qqChannels.length && !links.discord.length) return null;
-    links.qqGroups = await Promise.all(links.qqGroups.map(addQqGroupInfo));
+    // Emptiest groups first so visitors join where there is room; unknown counts go last.
+    links.qqGroups = (await Promise.all(links.qqGroups.map(addQqGroupInfo)))
+      .sort((a, b) => (a.memberCount ?? Infinity) - (b.memberCount ?? Infinity));
     const id = (localProject?.id || item.name).toLowerCase();
     const aliases = uniqueTerms([item.name, item.github.split('/').at(-1), localProject?.name || ''].map(value => value.toLowerCase())).filter(alias => alias !== id);
     return { item, id, aliases, links };
