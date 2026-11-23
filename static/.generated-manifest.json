@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T14:51:45.194Z",
+  "generatedAt": "2026-11-23T15:17:45.750Z",
   "projects": [
     {
       "id": "ok-script",
@@ -25,8 +25,8 @@
     },
     {
       "id": "ok-ww",
-      "commit": "7b06c407f1b062e20b9ad466ec892fbea7c557cc",
-      "updated": "2026-11-23T22:19:24+08:00",
+      "commit": "ca383ecf8a81bc4e6553353850c6df42e4670524",
+      "updated": "2026-11-23T23:08:10+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -34,7 +34,7 @@
         "ja"
       ],
       "meta": {
-        "stars": 8707,
+        "stars": 8706,
         "forks": 818,
         "description": "鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves",
         "release": "v3.8.13",
@@ -73,7 +73,7 @@
           }
         ],
         "releaseWarning": "使用本工具存在封号风险。如果你不清楚自己在做什么，请不要使用。",
-        "updated": "2026-11-23T14:19:31Z"
+        "updated": "2026-11-23T15:08:18Z"
       }
     },
     {
@@ -135,8 +135,8 @@
     },
     {
       "id": "ok-nte",
-      "commit": "c2b211d99d87d8d93e4893abd2f9861bbc68ae21",
-      "updated": "2026-11-23T22:29:05+08:00",
+      "commit": "fdf4fea00d4e0fffa09908f7cc44d2583a1be8c5",
+      "updated": "2026-11-23T23:16:11+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -201,7 +201,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-23T14:29:05Z"
+        "updated": "2026-11-23T15:17:50Z"
       }
     },
     {
@@ -308,8 +308,8 @@
     },
     {
       "id": "ok-end-field",
-      "commit": "a8f3e8b7710baecefd970f5a6ad46ac15ad009f9",
-      "updated": "2026-11-23T06:29:39Z",
+      "commit": "88b869d4a3f10a302d5301ba78276b3f106790c2",
+      "updated": "2026-11-23T23:16:09+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -354,7 +354,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-23T14:18:54Z"
+        "updated": "2026-11-23T15:16:21Z"
       }
     },
     {

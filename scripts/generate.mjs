@@ -40,7 +40,7 @@ const copy = {
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
     templateLead: '基于 ok-script 的完整自动化项目模板，包含 GUI、任务示例、OCR、模板匹配、测试与打包配置。',
     getStarted: 'MCP 快速开始', download: '下载最新版本', downloadGithub: '从 GitHub 下载', downloading: '正在下载…', downloadGuide: '下载已开始，请查看浏览器右上角', viewSource: '查看源码', readDocs: '阅读文档',
-    githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区', communityAll: '全部群聊与频道',
+    githubUnavailable: 'GitHub 下载不可用？', communityLabel: '加入社区',
     faqKicker: '常见问题',
     stars: 'GitHub Stars', release: '最新版本', updated: '代码更新', online: '开源可用',
     capabilities: '核心能力', capabilitiesTitle: '为真实自动化场景而生', capabilitiesLead: '从图像感知到输入执行，从开发调试到持续发布，一套工具覆盖完整工作流。',
@@ -71,7 +71,7 @@ const copy = {
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
     templateLead: 'A complete ok-script application template with a GUI, task examples, OCR, template matching, tests, and release packaging.',
     getStarted: 'Start with MCP', download: 'Download latest', downloadGithub: 'Download from GitHub', downloading: 'Downloading…', downloadGuide: 'Download started — check the top-right of your browser', viewSource: 'View source', readDocs: 'Read docs',
-    githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community', communityAll: 'All community links',
+    githubUnavailable: 'GitHub download unavailable?', communityLabel: 'Join the community',
     faqKicker: 'FAQ',
     stars: 'GitHub stars', release: 'Latest release', updated: 'Code updated', online: 'Open source',
     capabilities: 'Capabilities', capabilitiesTitle: 'Made for real automation work', capabilitiesLead: 'From visual perception to input, development diagnostics to continuous releases—the complete workflow in one toolkit.',
@@ -87,7 +87,7 @@ const copy = {
     onmyojiEyebrow: '陰陽師 · 背景自動化 · Windows', onmyojiTitle: '陰陽師的日常，\n交給 ok-Onmyoji。', onmyojiLead: '基於圖像辨識的陰陽師自動化工具，支援背景執行、多開、排程與常用戰鬥、日常流程。',
     appEyebrow: '鳴潮 · 背景自動化 · Windows', appTitle: '重複的日常，\n交給 ok-ww。', appLead: '基於電腦視覺的鳴潮自動化工具，支援背景執行、智慧角色辨識與 4K 解析度，不讀取記憶體、不修改遊戲檔案。',
     templateEyebrow: '專案範本 · Python · 視覺工具', templateTitle: '從可執行範本，\n開始自動化。', templateLead: '包含 GUI、任務範例、OCR、模板比對、測試與打包設定的完整 ok-script 應用範本。',
-    getStarted: 'MCP 快速開始', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', communityAll: '全部群聊與頻道', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
+    getStarted: 'MCP 快速開始', download: '下載最新版本', downloadGithub: '從 GitHub 下載', downloading: '正在下載…', downloadGuide: '下載已開始，請查看瀏覽器右上角', viewSource: '查看原始碼', readDocs: '閱讀文件', githubUnavailable: 'GitHub 無法下載？', communityLabel: '加入社群', faqKicker: '常見問題', stars: 'GitHub Stars', release: '最新版本', updated: '程式更新', online: '開源可用',
     capabilities: '核心能力', capabilitiesTitle: '為實際自動化場景而生', capabilitiesLead: '完整涵蓋辨識、執行與日常使用。', projectsKicker: '專案', projectsTitle: '一個框架，多個專案', projectsLead: '每個專案都有獨立入口與多語言文件。',
     explore: '前往專案 →', active: '活躍', community: '社群', archived: '封存', ctaTitle: '連接程式設計代理，開發你的第一個自動化任務。', ctaLead: '安裝 ok-script，啟動 MCP 執行環境，讓代理在你的 Windows 視窗或 ADB 裝置上觀察、執行並修復任務。', ctaButton: 'MCP 快速開始',
     docsFor: '文件目錄', onPage: '本頁內容', editGithub: '在 GitHub 查看來源', lastGenerated: '頁面產生時間', footer: '以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。', allProjects: '全部專案'
@@ -97,7 +97,7 @@ const copy = {
     frameworkEyebrow: 'オープンソース · Python · MCP · Vibe Coding', frameworkTitle: '願いを伝えれば、\n配布できる自動化アプリに。', frameworkLead: 'MCP 対応のコーディングエージェントに要望を伝えるだけ。エージェントが MCP 経由で対象アプリやデバイスを観察し、Python タスクを作成・実行・修正します。',
     appEyebrow: '鳴潮 · バックグラウンド自動化 · Windows', appTitle: '毎日のルーティンは、\nok-ww に。', appLead: 'コンピュータービジョンを活用した鳴潮自動化ツール。バックグラウンド動作、キャラクター自動認識、4K 解像度に対応し、メモリ読み取りやゲームファイルの変更は行いません。',
     templateEyebrow: 'プロジェクトテンプレート · Python · ビジュアルツール', templateTitle: '動くテンプレートから、\n自動化を始めよう。', templateLead: 'GUI、タスク例、OCR、テンプレートマッチング、テスト、配布設定を含む ok-script アプリテンプレート。',
-    getStarted: '開発を始める', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', communityAll: 'コミュニティ一覧', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
+    getStarted: '開発を始める', download: '最新版をダウンロード', downloadGithub: 'GitHub からダウンロード', downloading: 'ダウンロード中…', viewSource: 'ソースを見る', readDocs: 'ドキュメント', githubUnavailable: 'GitHub から取得できない場合', communityLabel: 'コミュニティ', faqKicker: 'よくある質問', stars: 'GitHub Stars', release: '最新リリース', updated: '最終更新', online: 'オープンソース',
     capabilities: '主な機能', capabilitiesTitle: '実用的な自動化のために', capabilitiesLead: '認識から操作、日常の実行までを一つのツールで。', projectsKicker: 'プロジェクト', projectsTitle: '一つの基盤、多彩なプロジェクト', projectsLead: 'プロジェクトごとに独立した入口と多言語ドキュメントを提供します。',
     explore: 'プロジェクトへ →', active: '開発中', community: 'コミュニティ', archived: 'アーカイブ', ctaTitle: '最新版をダウンロードして始めましょう。', ctaLead: '説明とリスクに関する注意事項を確認してからご利用ください。', ctaButton: '開発を始める',
     docsFor: 'ドキュメント', onPage: 'このページ', editGithub: 'GitHub でソースを見る', lastGenerated: 'ページ生成日時', footer: 'AGPL-3.0 でオープンソース。ドキュメントはプロジェクトソースから自動生成されます。', allProjects: '全プロジェクト'
@@ -1001,9 +1001,16 @@ function landingPage(project, locale, meta, faq = null) {
       </div>
     </dialog>
   </div>`;
+  const communityPageHref = projectCommunityHref(project, locale, currentUrl);
+  // Same button in every language; like the community page, QQ leads in Chinese and Discord elsewhere.
+  const communityIcons = (locale.code.startsWith('zh') ? ['qq.svg', 'discord.svg'] : ['discord.svg', 'qq.svg'])
+    .map(file => `<span class="community-button-icon"><img src="${relativeAssetUrl(project, currentUrl, `/assets/${file}`)}" alt=""></span>`).join('');
+  const communityButton = communityPageHref
+    ? `<a class="button community-button" href="${escapeHtml(communityPageHref)}"><span class="community-button-icons" aria-hidden="true">${communityIcons}</span>${escapeHtml(t.communityLabel)}<span aria-hidden="true">→</span></a>`
+    : '';
   const heroActions = isFramework
-    ? `<a class="button primary" href="${primaryUrl}">${primaryLabel} <span aria-hidden="true">→</span></a><a class="button pip-button" href="${pypiUrl}"><span class="pip-mark" aria-hidden="true">PyPI</span><code>pip install ok-script==${escapeHtml(pypiVersion)}</code></a>${sourceButton}`
-    : `${useSourceChooser ? sourceChooser : downloadControl}<a class="button" href="${docsUrl}">${t.readDocs}</a>${sourceButton}`;
+    ? `<a class="button primary" href="${primaryUrl}">${primaryLabel} <span aria-hidden="true">→</span></a>${communityButton}<a class="button pip-button" href="${pypiUrl}"><span class="pip-mark" aria-hidden="true">PyPI</span><code>pip install ok-script==${escapeHtml(pypiVersion)}</code></a>${sourceButton}`
+    : `${useSourceChooser ? sourceChooser : downloadControl}${communityButton}<a class="button" href="${docsUrl}">${t.readDocs}</a>${sourceButton}`;
   const mirrorLinks = !isFramework && !useSourceChooser && locale.code === 'zh-CN' && meta.mirrors?.length
     ? `<div class="download-alternatives"><span>${t.githubUnavailable}</span>${meta.mirrors.map(link => `<a href="${escapeHtml(link.url)}">${escapeHtml(link.label)}</a>`).join('')}</div>` : '';
   const singleLineHero = locale.code === 'zh-CN' || locale.code === 'zh-TW';
@@ -1014,14 +1021,8 @@ function landingPage(project, locale, meta, faq = null) {
   const faqSection = faq ? `<section class="section faq-section"><div class="container landing-container"><div class="section-head compact"><h2>${t.faqKicker}</h2></div><div class="faq-content markdown-body">${faq.html}</div></div></section>` : '';
   const capabilitiesSection = `<section class="section section-muted"><div class="container landing-container"><div class="feature-grid">${featureSet.map(f => `<article class="feature-card"><div class="feature-icon">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></article>`).join('')}</div></div></section>`;
   const ctaSection = isFramework ? `<section class="section"><div class="container"><div class="cta"><div><h2>${t.ctaTitle}</h2><p>${t.ctaLead}</p></div><a class="button" href="${primaryUrl}">${t.ctaButton} →</a></div></div></section>` : '';
-  let community = communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
-  const communityPageHref = projectCommunityHref(project, locale, currentUrl);
-  if (communityPageHref) {
-    const pageLink = `<a class="community-chip community-page-link" href="${escapeHtml(communityPageHref)}"><span>${t.communityAll || copy.en.communityAll} →</span></a>`;
-    community = community
-      ? community.replace(/<\/div>$/,`${pageLink}</div>`)
-      : `<div class="community-row"><span class="community-label"><span class="community-heading-icon" aria-hidden="true">◎</span>${escapeHtml(t.communityLabel)}</span>${pageLink}</div>`;
-  }
+  // With community_links.yml the hero's community button replaces the individual chips.
+  const community = communityPageHref ? '' : communityLinks(project.state.communityLinks, t.communityLabel, false, locale.code, project, currentUrl, project.id);
   const body = `<main id="main">
   <section class="hero${isFramework ? ' hero-framework' : ''}"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">${eyebrow}</div>${heroTitle}<p class="hero-copy">${lead}</p>
   <div class="hero-actions">${heroActions}</div>${mirrorLinks}<div class="community-meta-row">${community}<a class="community-stars" href="https://github.com/${project.github}" aria-label="${escapeHtml(`${meta.stars.toLocaleString()} ${t.stars}`)}">★ <strong>${formatStars(meta.stars)}</strong> ${t.stars}</a><span class="community-updated">↻ <strong>${formatDate(meta.updated, locale.code)}</strong> ${t.updated}</span></div></div></div></section>

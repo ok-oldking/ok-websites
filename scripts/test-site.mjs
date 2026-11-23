@@ -70,14 +70,18 @@ if (/Latest release<\/small><b>source<\/b>/i.test(rootLanding)) failures.push('F
 if (!/href="https:\/\/pypi\.org\/project\/ok-script\/"/.test(rootLanding) || !/pip install ok-script==[^<\s]+<\/code>/.test(rootLanding)) failures.push('ok-script PyPI installation link is missing its latest version.');
 if (rootLanding.includes('meta-release-button')) failures.push('Release download is still present in the stats row.');
 if (rootLanding.includes('data-copy=')) failures.push('Non-Chinese pages expose QQ groups.');
-if (!rootChinese.includes('data-copy="938132715"') || !rootChinese.includes('开发者群938132715')) failures.push('ok-script developer QQ group is not identified correctly.');
+// The developer group is listed on the community page; the homepage links there instead of showing chips.
+if (!rootChinese.includes('<a class="button community-button" href="./community/?project=ok-script">') || rootChinese.includes('data-copy=')) failures.push('ok-script Chinese homepage does not link its community page in place of QQ chips.');
+const communityChinese = await fs.readFile(path.join(root, 'community', 'index.html'), 'utf8');
+if (!/data-community-panel="ok-script"[\s\S]*?ok-script开发群/.test(communityChinese)) failures.push('Community page does not list the ok-script developer group.');
 if (!/<section class="hero hero-framework"><div class="container landing-container hero-grid/.test(rootLanding) || !/<section class="section section-muted"><div class="container landing-container">/.test(rootLanding) || !/id="projects"><div class="container landing-container">/.test(rootLanding)) failures.push('Hero, features, and projects do not share the landing container.');
 if (!/class="section-kicker">Projects<\/div>/.test(rootLanding)) failures.push('English projects section label is incorrect.');
 if (!/class="section-kicker">项目<\/div>/.test(rootChinese)) failures.push('Chinese projects section label is incorrect.');
 if (!/data-language-routing[\s\S]*navigator\.languages[\s\S]*select\('en'\)/.test(rootChinese) || !/data-language-code="en"/.test(rootChinese)) failures.push('Root landing page does not detect browser language with an English fallback.');
 if (/data-language-routing/.test(rootLanding)) failures.push('Explicit English URL should not automatically redirect.');
 if (rootLanding.indexOf('section-muted') > rootLanding.indexOf('id="projects"')) failures.push('Feature grid does not appear before projects.');
-if (!/community-meta-row[\s\S]*?community-row[\s\S]*?community-stars/.test(rootLanding)) failures.push('Community links and GitHub stars are not combined in one row.');
+// ok-script publishes community_links.yml, so the hero links to the community page.
+if (!rootLanding.includes('<a class="button community-button" href="./community/?project=ok-script">') || !/community-meta-row[\s\S]*?community-stars/.test(rootLanding)) failures.push('Root landing page is missing the community button or the GitHub stars row.');
 if (!/community-meta-row[\s\S]*?community-stars[\s\S]*?community-updated/.test(rootLanding) || rootLanding.includes('class="meta-row"')) failures.push('Code-updated metadata is not merged into the community/stars row.');
 if (!/class="project-meta"[\s\S]*?Latest release[\s\S]*?<time datetime="[^"]*">/.test(rootLanding)) failures.push('Project cards do not show the latest version and update date.');
 if (!/data-description-source="github"/.test(rootLanding)) failures.push('Project descriptions are not sourced from GitHub metadata.');
@@ -105,8 +109,11 @@ if (!/China(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*data-download-source="gith
 if (!/Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"[^>]*data-download-source="github"/.test(wwDialog)) failures.push('Source chooser is missing the GitHub Global download.');
 if (!/data-download-warning role="alert"[\s\S]*?封号风险[\s\S]*?data-download-warning-confirm/.test(wwDialog) || !/data-download-sources hidden/.test(wwDialog)) failures.push('ok-ww download chooser does not ask to confirm the release risk warning first.');
 if (!/data-download-source="mirror"/.test(wwDialog) || wwLanding.includes('class="download-alternatives"')) failures.push('Source chooser does not list the mirrors, or mirrors are still duplicated below the hero.');
-if (!wwLanding.includes('class="community-icon"')) failures.push('Community links are missing icons.');
-if (!wwLanding.includes('src="../assets/discord.svg"')) failures.push('Discord community icon is missing.');
+// ok-ww publishes community_links.yml, so one hero button replaces the individual chips.
+const wwCommunityButton = wwLanding.match(/<a class="button community-button" href="([^"]+)">([\s\S]*?)<\/a>/);
+if (!wwCommunityButton || wwCommunityButton[1] !== '../community/?project=ok-ww') failures.push('ok-ww hero is missing the community page button.');
+else if (!wwCommunityButton[2].includes('src="../assets/qq.svg"') || !wwCommunityButton[2].includes('src="../assets/discord.svg"')) failures.push('Community button is missing its QQ and Discord icons.');
+if (/class="community-chip/.test(wwLanding)) failures.push('ok-ww still shows individual community chips next to the community button.');
 const wwQqButtons = [...wwLanding.matchAll(/<button\b[^>]*class="community-chip qq"[^>]*data-copy="(\d{6,12})"[^>]*>([\s\S]*?)<\/button>/g)];
 // Upstream can remove QQ groups; validate any that are still published.
 if (wwQqButtons.some(([, number, content]) => !content.includes('src="../assets/qq.svg"') || content.match(/<span>群(\d{6,12})(?:\s|<\/span>)/)?.[1] !== number)) failures.push('User QQ group is not formatted as a copy button with an icon.');
@@ -134,7 +141,7 @@ const wwEnglish = await fs.readFile(path.join(root, 'ok-ww', 'en', 'index.html')
 if (!/class="button primary download-main"[^>]*href="[^"]*Global(?:-setup)?(?:-v?[\d.]+)?\.(?:exe|7z)"/.test(wwEnglish)) failures.push('Non-Chinese locale does not default to the Global installer.');
 if (wwEnglish.includes('data-download-chooser') || !wwEnglish.includes('class="dropdown-menu download-menu"') || !/data-download-control data-downloading-label="Downloading…"/.test(wwEnglish)) failures.push('Non-Chinese locales should keep the direct GitHub download split button.');
 if (/class="section-kicker">Capabilities|From visual perception to input/.test(wwEnglish)) failures.push('Capabilities heading copy is still visible.');
-if (wwEnglish.includes('data-copy=') || /qq\.svg/.test(wwEnglish)) failures.push('Non-Chinese project page exposes QQ links.');
+if (wwEnglish.includes('data-copy=') || !wwEnglish.includes('class="button community-button"')) failures.push('Non-Chinese project page lists QQ groups or lacks the community button.');
 const appChinese = await fs.readFile(path.join(root, 'app', 'index.html'), 'utf8');
 if (!appChinese.includes('data-copy="1097603920"') || /938132715|开发者群/.test(appChinese)) failures.push('App community does not show only its user QQ group.');
 const nteChinese = await fs.readFile(path.join(root, 'ok-nte', 'index.html'), 'utf8');
@@ -147,8 +154,9 @@ if (!nteMirrors.length || nteMirrors.length !== nteMirrorLabels.size || nteMirro
 // Upstream may publish only the China installer; non-Chinese locales then fall back to it.
 if (!nteEnglish.includes('Explore Hethereau') || !/ok-nte-win32-(?:Global|China)-setup(?:-v?[\d.]+)?\.exe/.test(nteEnglish)) failures.push('ok-nte English landing page is incomplete.');
 if (!nteChinese.includes('faq-section') || !nteEnglish.includes('faq-section')) failures.push('ok-nte FAQ content was not generated from MkDocs.');
-if ((nteChinese.match(/data-copy="1105569444"/g) || []).length !== 1 || /1087276729|开发者群/.test(nteChinese)) failures.push('ok-nte does not show exactly its user QQ group.');
-if (nteEnglish.includes('data-copy=') || /qq\.svg/.test(nteEnglish)) failures.push('ok-nte English landing page exposes QQ links.');
+// ok-nte publishes community_links.yml: the hero links to the community page instead of listing groups.
+if (!nteChinese.includes('<a class="button community-button" href="../community/?project=ok-nte">') || /data-copy=|1087276729|开发者群/.test(nteChinese)) failures.push('ok-nte does not link its community page in place of individual QQ groups.');
+if (nteEnglish.includes('data-copy=') || !nteEnglish.includes('class="button community-button"')) failures.push('ok-nte English landing page lists QQ groups or lacks the community button.');
 if (!nteTraditional.includes('繁體中文') || !nteTraditional.includes('計算機視覺') || !nteTraditional.includes('遊戲檔案') || nteTraditional.includes('计算机视觉')) failures.push('ok-nte automatic Traditional Chinese translation is missing or incomplete.');
 if (!rootChinese.includes('href=".\/ok-nte\/"')) failures.push('Project ecosystem does not link to the local ok-nte site.');
 await fs.access(path.join(root, 'ok-nte', 'docs', 'guides', 'troubleshooting', 'index.html')).catch(() => failures.push('ok-nte Chinese MkDocs routes are missing.'));
