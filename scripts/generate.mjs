@@ -929,8 +929,9 @@ function projectCommunityHref(project, locale, currentUrl) {
   const framework = config.projects.find(item => item.type === 'framework');
   if (!entry || !framework) return '';
   const frameworkLocale = framework.locales.find(item => item.code === locale.code) || framework.locales.find(item => item.code === 'en') || framework.locales[0];
-  const target = communityUrl(framework, frameworkLocale);
-  return `${relativeSiteUrl(project, currentUrl, framework, target)}?project=${encodeURIComponent(entry.id)}`;
+  const target = relativeSiteUrl(project, currentUrl, framework, communityUrl(framework, frameworkLocale));
+  // The main site's button opens the page on its default tab rather than ok-script's.
+  return project.type === 'framework' ? target : `${target}?project=${encodeURIComponent(entry.id)}`;
 }
 
 function landingPage(project, locale, meta, faq = null) {

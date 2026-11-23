@@ -71,7 +71,7 @@ if (!/href="https:\/\/pypi\.org\/project\/ok-script\/"/.test(rootLanding) || !/p
 if (rootLanding.includes('meta-release-button')) failures.push('Release download is still present in the stats row.');
 if (rootLanding.includes('data-copy=')) failures.push('Non-Chinese pages expose QQ groups.');
 // The developer group is listed on the community page; the homepage links there instead of showing chips.
-if (!rootChinese.includes('<a class="button community-button" href="./community/?project=ok-script">') || rootChinese.includes('data-copy=')) failures.push('ok-script Chinese homepage does not link its community page in place of QQ chips.');
+if (!rootChinese.includes('<a class="button community-button" href="./community/">') || rootChinese.includes('data-copy=')) failures.push('ok-script Chinese homepage does not link its community page in place of QQ chips.');
 const communityChinese = await fs.readFile(path.join(root, 'community', 'index.html'), 'utf8');
 if (!/data-community-panel="ok-script"[\s\S]*?ok-script开发群/.test(communityChinese)) failures.push('Community page does not list the ok-script developer group.');
 if (!/<section class="hero hero-framework"><div class="container landing-container hero-grid/.test(rootLanding) || !/<section class="section section-muted"><div class="container landing-container">/.test(rootLanding) || !/id="projects"><div class="container landing-container">/.test(rootLanding)) failures.push('Hero, features, and projects do not share the landing container.');
@@ -81,7 +81,7 @@ if (!/data-language-routing[\s\S]*navigator\.languages[\s\S]*select\('en'\)/.tes
 if (/data-language-routing/.test(rootLanding)) failures.push('Explicit English URL should not automatically redirect.');
 if (rootLanding.indexOf('section-muted') > rootLanding.indexOf('id="projects"')) failures.push('Feature grid does not appear before projects.');
 // ok-script publishes community_links.yml, so the hero links to the community page.
-if (!rootLanding.includes('<a class="button community-button" href="./community/?project=ok-script">') || !/community-meta-row[\s\S]*?community-stars/.test(rootLanding)) failures.push('Root landing page is missing the community button or the GitHub stars row.');
+if (!rootLanding.includes('<a class="button community-button" href="./community/">') || !/community-meta-row[\s\S]*?community-stars/.test(rootLanding)) failures.push('Root landing page is missing the community button or the GitHub stars row.');
 if (!/community-meta-row[\s\S]*?community-stars[\s\S]*?community-updated/.test(rootLanding) || rootLanding.includes('class="meta-row"')) failures.push('Code-updated metadata is not merged into the community/stars row.');
 if (!/class="project-meta"[\s\S]*?Latest release[\s\S]*?<time datetime="[^"]*">/.test(rootLanding)) failures.push('Project cards do not show the latest version and update date.');
 if (!/data-description-source="github"/.test(rootLanding)) failures.push('Project descriptions are not sourced from GitHub metadata.');
