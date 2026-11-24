@@ -1,0 +1,156 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>项目架构 · 开发说明 · ok-bd2 · 简体中文</title><meta name="description" content="ok-bd2 是基于 ok-script 的 Windows PC 端图像识别自动化应用。项目自身负责 Brown Dust — ok-bd2 简体中文文档"><meta name="keywords" content="ok-bd2, okbd2, GitHub, GodRaymond233/ok-bd2, GodRaymond233, 棕色尘埃2, PC 自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="GodRaymond233">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-bd2/docs/architecture/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="项目架构 · 开发说明 · ok-bd2 · 简体中文"><meta property="og:description" content="ok-bd2 是基于 ok-script 的 Windows PC 端图像识别自动化应用。项目自身负责 Brown Dust — ok-bd2 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-bd2/docs/architecture/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-bd2-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-bd2 — 棕色尘埃2 · PC 自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="项目架构 · 开发说明 · ok-bd2 · 简体中文"><meta name="twitter:description" content="ok-bd2 是基于 ok-script 的 Windows PC 端图像识别自动化应用。项目自身负责 Brown Dust — ok-bd2 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-bd2-zh-cn.png"><meta name="twitter:image:alt" content="ok-bd2 — 棕色尘埃2 · PC 自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"项目架构 · 开发说明 · ok-bd2 · 简体中文","description":"ok-bd2 是基于 ok-script 的 Windows PC 端图像识别自动化应用。项目自身负责 Brown Dust — ok-bd2 简体中文文档","url":"https://ok-script.com/ok-bd2/docs/architecture/","inLanguage":"zh-CN","dateModified":"2026-11-24T21:10:59+09:00","author":{"@type":"Organization","name":"ok-bd2","url":"https://github.com/GodRaymond233/ok-bd2"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261124131401">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-gf2/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-duet-night-abyss/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">首页</a><a href="../guides/quick-hunt/">快速狩猎</a><a href="../guides/trade/">每日跑商</a><a href="../guides/collection/">每周跑图</a><a href="../guides/equipment-daily/">装备分解与精炼</a><a href="../guides/mission-rewards/">每日及每周奖励</a><a href="../guides/main-story/">推主线与快速探索</a><a href="./" class="active" aria-current="page">项目架构</a><a href="../release-checklist/">发布检查清单</a><a href="../pyappify-release-flow/">PyAppify 发布流程</a><a href="../release-setup-guide.zh-CN/">发布配置指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-bd2</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="项目架构">项目架构</h1>
+<p><code>ok-bd2</code> 是基于 <code>ok-script</code> 的 Windows PC 端图像识别自动化应用。项目自身负责
+Brown Dust 2 的窗口适配、识图/OCR 规则、鼠标交互和任务状态机；任务调度、基础截图、
+配置界面等通用能力由 <code>ok-script</code> 提供。</p>
+<h2 id="运行链路">运行链路</h2>
+<pre><code class="language-text">main.py / main_debug.py
+        ↓
+src.config.config
+        ↓
+ok.OK：GUI、设备、截图、OCR、任务执行器
+        ↓
+BD2Interaction + BD2Scene + BaseBD2Task
+        ↓
+触发任务 / 一次性任务
+        ↓
+截图 → ROI → 模板匹配或 OCR → 状态确认 → 鼠标操作
+</code></pre>
+<ol>
+<li><code>main.py</code> 或 <code>main_debug.py</code> 创建 <code>ok.OK</code>，后者仅额外打开调试配置。</li>
+<li><code>src/config.py</code> 注册窗口、截图方式、交互类、场景、任务和自定义页面。</li>
+<li><code>ok-script</code> 连接游戏窗口并创建任务执行器。</li>
+<li><code>AutoLoginTask</code> 等触发任务维护登录状态；可见的一次性任务执行具体业务流程。</li>
+<li>所有正式游戏交互通过 <code>BaseBD2Task.operate_click()</code> 或鼠标滚轮/拖动完成。</li>
+</ol>
+<h2 id="分层与职责">分层与职责</h2>
+<h3 id="1-启动与装配">1. 启动与装配</h3>
+<ul>
+<li><code>main.py</code>、<code>main_debug.py</code>：生产和调试入口。</li>
+<li><code>src/config.py</code>：应用的组合根，只负责装配组件和注册任务。</li>
+<li><code>src/game_path.py</code>：发现运行中的游戏或解析安装路径。</li>
+<li><code>src/compat/</code>：对上游框架或 Windows 版本差异做窄范围兼容。</li>
+</ul>
+<p>这一层可以依赖所有被装配组件，但业务任务不应反向依赖 <code>config</code>。</p>
+<h3 id="2-平台适配与共享运行时">2. 平台适配与共享运行时</h3>
+<ul>
+<li><code>src/interaction/BD2Interaction.py</code>：BD2 的鼠标点击、滚轮、前台激活和光标恢复。</li>
+<li><code>src/scene/BD2Scene.py</code>：跨任务共享的登录/战斗场景状态。</li>
+<li><code>src/globals.py</code>：线程池和周期任务生命周期。</li>
+<li><code>src/tasks/BaseBD2Task.py</code>：任务共同基类，提供截图、OCR、操作封装、动作节流、
+探针输出和标准快速选卡入口。</li>
+</ul>
+<p>PC 客户端不能可靠接收自动化键盘输入，因此平台层和业务层都不得自行增加键盘发送、
+按键映射或热键方案。</p>
+<h3 id="3-纯识别与坐标工具">3. 纯识别与坐标工具</h3>
+<ul>
+<li><code>src/utils/template_resolution.py</code>：离线模板目录标定、基础倍率、绿幕目录标记和
+<code>Main*</code> 模板的共享搜索区域。</li>
+<li><code>src/utils/image_utils.py</code>：灰度转换、模板/遮罩缩放、像素相似度、多倍率生成，
+以及相对/参考坐标 ROI 裁剪。</li>
+<li><code>src/utils/ocr_utils.py</code>：OCR 文本归一化、关键词计数和容错子串匹配。</li>
+<li><code>src/utils/vision_utils.py</code>：与框架 <code>Box</code> 相关的轻量坐标辅助。</li>
+</ul>
+<p>这些模块不持有任务状态，不点击游戏，适合优先添加单元测试并被多个任务复用。
+参考坐标 ROI 必须同时缩放左上角、右下角、宽高和位移，不能只缩放区域尺寸。</p>
+<h3 id="4-业务任务">4. 业务任务</h3>
+<ul>
+<li><code>src/tasks/trigger/AutoLoginTask.py</code>：持续触发的登录状态机。</li>
+<li><code>DailyTask</code>、<code>FreeGachaTask</code>、<code>PVPTask</code>、<code>SquareGoddessTask</code>：日常业务状态机。</li>
+<li><code>BargainLevelTask</code>、<code>QuickSuppressionTask</code>：独立循环任务。</li>
+<li><code>BD2ProbeTask</code>、<code>BD2InputTestTask</code>、<code>BD2DiagnosisTask</code>：诊断和适配工具。</li>
+</ul>
+<p>任务类负责“先识别并确认状态，再执行鼠标动作”。底层图像算法应放入 <code>src/utils</code>，
+稳定的跨任务页面流应放入 <code>BaseBD2Task</code>；只属于单个玩法的状态转换保留在对应任务中。</p>
+<h3 id="5-跑图-跑商领域模块">5. 跑图/跑商领域模块</h3>
+<p>跑图和跑商已按领域对象拆分在 <code>src/tasks/map_trade/</code>：</p>
+<ul>
+<li><code>models.py</code>：不可变数据模型、界面状态和结果类型。</li>
+<li><code>data.py</code>：卡带、商店、物品、坐标和模板规格。</li>
+<li><code>vision.py</code>：该领域的模板/OCR 门面，复用通用识别工具。</li>
+<li><code>navigator.py</code>：主页、选卡、地图、商店之间的导航状态机。</li>
+<li><code>trader.py</code>：购买、出售、料理和收藏重建。</li>
+<li><code>collector.py</code>：剧情、角色与活动卡带的地图采集。</li>
+<li><code>collection_selection.py</code>：每周跑图的自选卡带、屏蔽范围与配置校验。</li>
+<li><code>calendar.py</code>：北京时间下的价表和库存业务日期。</li>
+<li><code>progress.py</code>：每日/每周断点进度的持久化与恢复。</li>
+<li><code>MapTradeTask.py</code>、<code>MapCollectionTask.py</code>：配置卡片、依赖装配和阶段编排。</li>
+</ul>
+<p>推荐依赖方向为：</p>
+<pre><code class="language-text">Task shell → Trader / Collector → Navigator → Vision → utils
+                    ├→ Progress       └→ models / data
+                    └→ Calendar
+</code></pre>
+<p>领域模块不应导入具体 UI 页面；UI 仅通过任务配置和状态字段观察任务。</p>
+<h3 id="6-ui-配置和资源">6. UI、配置和资源</h3>
+<ul>
+<li><code>src/ui/</code>：状态页、实时截图、日志入口和响应式任务配置补丁。</li>
+<li><code>configs/</code>：运行时配置与进度文件；不是业务常量的唯一来源。</li>
+<li><code>recognition-assets/template-assets/</code>：正式模板资源。</li>
+<li><code>assets/map_trade/</code>：随程序发布的跑商业务数据。</li>
+<li><code>.local-dev/</code>：不发布的一次性探针、样本和实验输出。</li>
+</ul>
+<h2 id="模板识别约束">模板识别约束</h2>
+<ul>
+<li>根目录模板在 1920×1080 客户区的基础倍率为 <code>1.0</code>。</li>
+<li><code>image/</code> 下模板的统一基础倍率为 <code>1.25</code>。</li>
+<li><code>image/green/</code> 自动启用纯绿与透明区域遮罩。</li>
+<li>正式加载必须经 <code>offline_template_scale()</code> 计算当前客户区倍率。</li>
+<li>识别到目标时点击匹配框中心；稳定固定位置才可使用相对坐标。</li>
+</ul>
+<p>这些规则集中在 <code>template_resolution.py</code>，任务不得复制另一套目录倍率判断。</p>
+<h2 id="状态-失败与可观测性">状态、失败与可观测性</h2>
+<ul>
+<li>跨任务的“已登录/战斗中”状态由 <code>BD2Scene</code> 保存。</li>
+<li>单个任务的阶段和诊断信息通过 <code>info_set()</code> 暴露给状态页与日志。</li>
+<li>跑图/跑商的持久进度由 <code>ProgressStore</code> 管理，并区分北京时间下的每日和每周周期。</li>
+<li>跑图资源每周一08:00、技能额度每日08:00刷新；完成记录包含本次配置范围与业务周期。升级账本前保留旧版本备份，回退程序时使用对应版本的账本。</li>
+<li>页面确认失败必须返回失败或记录失败阶段，不能继续盲点。</li>
+<li>重试应有次数或时限上限，避免无限点击。</li>
+</ul>
+<h2 id="扩展指南">扩展指南</h2>
+<p>新增任务时按以下顺序选择落点：</p>
+<ol>
+<li>纯坐标、图像或 OCR 算法放入 <code>src/utils</code>，先写单元测试。</li>
+<li>多个任务共享且长期稳定的页面流放入 <code>BaseBD2Task</code>。</li>
+<li>单个玩法的状态机放入独立任务；超过一个明确领域时再拆子模块。</li>
+<li>任务在 <code>src/config.py</code> 注册，用户可调参数放在任务的配置声明中。</li>
+<li>一次性探针和样本先放 <code>.local-dev/</code>，确认成为正式能力后再迁入源码和测试。</li>
+</ol>
+<h2 id="验证">验证</h2>
+<p>开发完成前运行：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m ruff check src tests
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+</code></pre>
+<p>此外要检查 <code>src</code> 中没有项目自定义的键盘发送、按下、释放、热键注册或键盘映射实现。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2/blob/ded5865e002c13bde3b82de200e50f0c7d0c5566/docs/architecture.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月24日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#运行链路" style="margin-left:0px">运行链路</a><a href="#分层与职责" style="margin-left:0px">分层与职责</a><a href="#1-启动与装配" style="margin-left:10px">1. 启动与装配</a><a href="#2-平台适配与共享运行时" style="margin-left:10px">2. 平台适配与共享运行时</a><a href="#3-纯识别与坐标工具" style="margin-left:10px">3. 纯识别与坐标工具</a><a href="#4-业务任务" style="margin-left:10px">4. 业务任务</a><a href="#5-跑图-跑商领域模块" style="margin-left:10px">5. 跑图/跑商领域模块</a><a href="#6-ui-配置和资源" style="margin-left:10px">6. UI、配置和资源</a><a href="#模板识别约束" style="margin-left:0px">模板识别约束</a><a href="#状态-失败与可观测性" style="margin-left:0px">状态、失败与可观测性</a><a href="#扩展指南" style="margin-left:0px">扩展指南</a><a href="#验证" style="margin-left:0px">验证</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../">全部项目</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20261124131401" defer></script></body></html>

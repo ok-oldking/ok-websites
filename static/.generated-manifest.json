@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T09:13:13.809Z",
+  "generatedAt": "2026-11-24T13:14:01.038Z",
   "projects": [
     {
       "id": "ok-script",
@@ -34,8 +34,8 @@
         "ja"
       ],
       "meta": {
-        "stars": 8709,
-        "forks": 822,
+        "stars": 8706,
+        "forks": 823,
         "description": "鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves",
         "release": "v3.8.14",
         "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.8.14",
@@ -135,8 +135,8 @@
     },
     {
       "id": "ok-nte",
-      "commit": "b5384597330792f534edcaf43e466fb001b6eb43",
-      "updated": "2026-11-24T00:29:43+08:00",
+      "commit": "11874c664043839b414a0e294c28c71ee7551be5",
+      "updated": "2026-11-24T20:00:29+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -146,43 +146,43 @@
         "stars": 1391,
         "forks": 115,
         "description": "异环 后台副本挂机 Automation for Neverness to Everness",
-        "release": "v1.5.10",
-        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.5.10",
+        "release": "v1.5.11",
+        "releaseUrl": "https://github.com/BnanZ0/ok-nte/releases/tag/v1.5.11",
         "pypiVersion": "v1.5.2",
         "releaseAssets": [
           {
-            "name": "ok-nte-win-x86_64-v1.5.10-body.zip",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/ok-nte-win-x86_64-v1.5.10-body.zip",
-            "size": 336102654
+            "name": "ok-nte-win-x86_64-v1.5.11-body.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/ok-nte-win-x86_64-v1.5.11-body.zip",
+            "size": 380189777
           },
           {
-            "name": "ok-nte-win-x86_64-v1.5.10-full.zip",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/ok-nte-win-x86_64-v1.5.10-full.zip",
-            "size": 342110894
+            "name": "ok-nte-win-x86_64-v1.5.11-full.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/ok-nte-win-x86_64-v1.5.11-full.zip",
+            "size": 386204267
           },
           {
-            "name": "ok-nte-win32-China-setup-1.5.10.exe",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/ok-nte-win32-China-setup-1.5.10.exe",
-            "size": 317527779
+            "name": "ok-nte-win32-China-setup-1.5.11.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/ok-nte-win32-China-setup-1.5.11.exe",
+            "size": 346881587
           },
           {
-            "name": "ok-nte-win32-Global-setup-1.5.10.exe",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/ok-nte-win32-Global-setup-1.5.10.exe",
-            "size": 323341517
+            "name": "ok-nte-win32-Global-setup-1.5.11.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/ok-nte-win32-Global-setup-1.5.11.exe",
+            "size": 352808325
           },
           {
-            "name": "ok-nte-win32-online-setup-1.5.10.exe",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/ok-nte-win32-online-setup-1.5.10.exe",
-            "size": 4979040
+            "name": "ok-nte-win32-online-setup-1.5.11.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/ok-nte-win32-online-setup-1.5.11.exe",
+            "size": 4977747
           },
           {
             "name": "ok-nte-win32.zip",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/ok-nte-win32.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/ok-nte-win32.zip",
             "size": 5905272
           },
           {
             "name": "win32_sha256.txt",
-            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.10/win32_sha256.txt",
+            "browser_download_url": "https://github.com/BnanZ0/ok-nte/releases/download/v1.5.11/win32_sha256.txt",
             "size": 64
           }
         ],
@@ -201,7 +201,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-23T16:29:50Z"
+        "updated": "2026-11-24T12:04:07Z"
       }
     },
     {
@@ -316,7 +316,7 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 570,
+        "stars": 571,
         "forks": 39,
         "description": "终末地 End Field Automation 基于ok-script开发的自动化",
         "release": "v2.0.26",
@@ -416,7 +416,7 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 107,
+        "stars": 109,
         "forks": 6,
         "description": "蓝色星原：旅谣自动化脚本",
         "release": "v0.3.6",
@@ -538,7 +538,7 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 656,
+        "stars": 657,
         "forks": 62,
         "description": "二重螺旋 后台副本挂机 Automation for Duet Night Abyss",
         "release": "v1.6.8",
@@ -579,6 +579,45 @@
         ],
         "releaseWarning": "",
         "updated": "2026-11-24T08:55:43Z"
+      }
+    },
+    {
+      "id": "ok-bd2",
+      "commit": "ded5865e002c13bde3b82de200e50f0c7d0c5566",
+      "updated": "2026-11-24T21:10:59+09:00",
+      "locales": [
+        "zh-CN",
+        "zh-TW"
+      ],
+      "meta": {
+        "stars": 137,
+        "forks": 5,
+        "description": "",
+        "release": "v2.1.1",
+        "pypiVersion": "v2.1.1",
+        "releaseUrl": "https://github.com/GodRaymond233/ok-bd2/releases/tag/v2.1.1",
+        "releaseAssets": [
+          {
+            "name": "ok-bd2-win32-China-setup-2.1.1.exe",
+            "browser_download_url": "https://github.com/GodRaymond233/ok-bd2/releases/download/v2.1.1/ok-bd2-win32-China-setup-2.1.1.exe"
+          },
+          {
+            "name": "ok-bd2-win32-Global-setup-2.1.1.exe",
+            "browser_download_url": "https://github.com/GodRaymond233/ok-bd2/releases/download/v2.1.1/ok-bd2-win32-Global-setup-2.1.1.exe"
+          }
+        ],
+        "mirrors": [
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/80730a808d0e"
+          },
+          {
+            "label": "百度网盘",
+            "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww"
+          }
+        ],
+        "releaseWarning": "",
+        "updated": "2026-11-24T21:10:59+09:00"
       }
     }
   ]

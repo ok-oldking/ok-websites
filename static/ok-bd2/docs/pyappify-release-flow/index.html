@@ -1,0 +1,139 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>PyAppify 发布流程 · 开发说明 · ok-bd2 · 简体中文</title><meta name="description" content="ok-bd2 follows the release shape used by BnanZ0/ok-nte . The u — ok-bd2 简体中文文档"><meta name="keywords" content="ok-bd2, okbd2, GitHub, GodRaymond233/ok-bd2, GodRaymond233, 棕色尘埃2, PC 自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="GodRaymond233">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-bd2/docs/pyappify-release-flow/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="PyAppify 发布流程 · 开发说明 · ok-bd2 · 简体中文"><meta property="og:description" content="ok-bd2 follows the release shape used by BnanZ0/ok-nte . The u — ok-bd2 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-bd2/docs/pyappify-release-flow/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-bd2-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-bd2 — 棕色尘埃2 · PC 自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="PyAppify 发布流程 · 开发说明 · ok-bd2 · 简体中文"><meta name="twitter:description" content="ok-bd2 follows the release shape used by BnanZ0/ok-nte . The u — ok-bd2 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-bd2-zh-cn.png"><meta name="twitter:image:alt" content="ok-bd2 — 棕色尘埃2 · PC 自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"PyAppify 发布流程 · 开发说明 · ok-bd2 · 简体中文","description":"ok-bd2 follows the release shape used by BnanZ0/ok-nte . The u — ok-bd2 简体中文文档","url":"https://ok-script.com/ok-bd2/docs/pyappify-release-flow/","inLanguage":"zh-CN","dateModified":"2026-11-24T21:10:59+09:00","author":{"@type":"Organization","name":"ok-bd2","url":"https://github.com/GodRaymond233/ok-bd2"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261124131401">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-gf2/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-duet-night-abyss/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文档</a>
+      <a href="../../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="../">首页</a><a href="../guides/quick-hunt/">快速狩猎</a><a href="../guides/trade/">每日跑商</a><a href="../guides/collection/">每周跑图</a><a href="../guides/equipment-daily/">装备分解与精炼</a><a href="../guides/mission-rewards/">每日及每周奖励</a><a href="../guides/main-story/">推主线与快速探索</a><a href="../architecture/">项目架构</a><a href="../release-checklist/">发布检查清单</a><a href="./" class="active" aria-current="page">PyAppify 发布流程</a><a href="../release-setup-guide.zh-CN/">发布配置指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-bd2</a><span>/</span><span>文档</span></div><div class="markdown-body"><h1 id="pyappify-release-flow">PyAppify release flow</h1>
+<p><code>ok-bd2</code> follows the release shape used by <code>BnanZ0/ok-nte</code>.</p>
+<h2 id="what-the-installed-exe-does">What the installed EXE does</h2>
+<p>The user downloads a single installer such as <code>ok-bd2-win32-China-setup-1.4.13.exe</code>.
+After installation, Windows starts an outer launcher <code>ok-bd2.exe</code>. That launcher
+is generated by PyAppify. It opens the white update window, checks the configured
+update repository, installs Python dependencies when needed, syncs the app code
+into its working directory, and then runs <code>main.py</code>.</p>
+<p>The dark <code>ok-script</code> window is still created by the existing application entry:</p>
+<pre><code class="language-text">ok-bd2.exe -&gt; PyAppify launcher/update window -&gt; main.py -&gt; ok.OK(config).start()
+</code></pre>
+<p>No separate update UI is needed in <code>main.py</code>.</p>
+<h2 id="source-repository-vs-update-repository">Source repository vs update repository</h2>
+<p>The main repository keeps source code, tests, docs, and training material. The
+update repository is intentionally smaller and is generated during release.</p>
+<p><code>deploy.txt</code> is the sync list for the update repository. The core payload builder
+bundles <code>ok-script</code>, <code>pyappify</code>, and PP-OCRv6 in the update tree and removes their
+pins from the payload requirements. Installed releases load PP-OCRv6 from the
+versioned <code>ocr_bundle/onnxocr</code> directory. Older releases keep loading their installed PP-OCRv5 even if the
+launcher preserves that directory when switching tags.
+The builder replaces the <code>src/config.py</code> marker <code>version = &quot;release-tag-unset&quot;</code>
+with the tag being released. The source package version has
+one authority: <code>pyproject.toml</code> (currently <code>0.1.1</code>), which
+<code>src.config.runtime_version()</code> reads whenever that file is present. Generated
+update content excludes <code>pyproject.toml</code>, so <code>runtime_version()</code> falls back to
+the inlined release tag there. A PyAppify tag, such as <code>v0.1.18</code>, identifies the
+update delivery and does not by itself change the package version.</p>
+<h2 id="required-repositories-and-secrets">Required repositories and secrets</h2>
+<p>Create these repositories before publishing a tag:</p>
+<pre><code class="language-text">https://github.com/GodRaymond233/ok-bd2
+https://github.com/GodRaymond233/ok-bd2-update
+https://cnb.cool/GodRaymond233/ok-bd2-update.git
+</code></pre>
+<p>Configure these GitHub Actions secrets:</p>
+<pre><code class="language-text">OK_GH     GitHub token that can push to GodRaymond233/ok-bd2-update
+CNB_GH    CNB token that can push to cnb.cool/GodRaymond233/ok-bd2-update.git
+</code></pre>
+<h2 id="packaging-modes">Packaging modes</h2>
+<p>The <code>Build</code> workflow supports two modes. Configure the repository Actions
+variable <code>PACKAGE_BUILD_MODE</code> to switch between them; a missing or empty value
+defaults to <code>fast</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>NSIS compression</th>
+<th>China/Global strategy</th>
+<th>Intended use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>fast</code></td>
+<td>ZLIB</td>
+<td>Built sequentially in one job</td>
+<td>Normal releases; prioritizes build speed</td>
+</tr>
+<tr>
+<td><code>compact</code></td>
+<td>LZMA</td>
+<td>Built in parallel matrix jobs</td>
+<td>Smaller installers; accepts more compression time</td>
+</tr>
+</tbody></table>
+<p>Both modes always publish the China full installer, Global full installer,
+online installer, launcher ZIP, and checksum. Global packaging is not optional
+and the workflow fails if its installer is missing.</p>
+<p>When launcher inputs have not changed since the previous release, both modes
+reuse the launcher from the previous <code>ok-bd2-win32.zip</code>. Changes to
+<code>pyappify.yml</code>, <code>icons/</code>, or <code>scripts/prepare_pyappify_launcher.ps1</code> disable
+reuse automatically and force a fresh launcher compilation. This makes reuse a
+safe optimization instead of a manual release setting.</p>
+<p>The launcher source is pinned to PyAppify 1.2.4. Preparation and packaging use
+<code>RUNNER_TEMP/p</code> in Actions (<code>p/</code> for local builds). Reused launchers must be at
+least 1.2.4, because setup selects the exact application tag before installing
+dependencies and the action checks that the prepared <code>app.json</code> names that tag.
+Installer filenames include the application version; the launcher ZIP keeps
+its fixed name for existing update URLs.</p>
+<p>To switch modes, open the repository&#39;s <strong>Settings → Secrets and variables →
+Actions → Variables</strong>, create or edit <code>PACKAGE_BUILD_MODE</code>, and set it to
+<code>fast</code> or <code>compact</code>. The value is read at the start of every tag build, so no
+workflow edit or commit is required when switching.</p>
+<p>The manual <strong>Check installer</strong> workflow packages an explicitly selected tag
+that already exists in both update repositories. It runs the checked-out
+branch&#39;s tests and validates its inlined payload separately, then uploads
+installer artifacts without synchronizing update repositories or publishing a
+release. The installer payload is the selected existing tag, not unpublished
+changes from the checked-out branch.</p>
+<h2 id="publishing">Publishing</h2>
+<p>Use a stable semantic version tag. The build workflow only creates installer
+assets for tags like <code>v0.1.0</code>.</p>
+<p>Before creating the tag, confirm it names the intended delivery revision. Do
+not change <code>pyproject.toml</code> merely to match a historical PyAppify tag; change it
+only when making an intentional package-version release.</p>
+<pre><code class="language-powershell">git tag v0.1.0
+git push origin v0.1.0
+</code></pre>
+<p>The workflow will:</p>
+<ol>
+<li>Install dependencies and run the final quality gate on Windows.</li>
+<li>Validate the dependency lock and inline <code>ok-script</code> and PyAppify for the update repository.</li>
+<li>Validate the inlined update payload, including the PP-OCRv6 models, dictionary
+and license, and check that the visualization font, orientation model and demo are excluded.</li>
+<li>Sync the update repositories using <code>deploy.txt</code>.</li>
+<li>Resolve <code>PACKAGE_BUILD_MODE</code> and safely reuse or compile the PyAppify launcher.</li>
+<li>Prepare the exact application tag and build both China and Global installer assets from <code>pyappify.yml</code>.</li>
+<li>Validate every required download before publishing the GitHub Release.</li>
+</ol>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2/blob/ded5865e002c13bde3b82de200e50f0c7d0c5566/docs/pyappify-release-flow.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月24日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#what-the-installed-exe-does" style="margin-left:0px">What the installed EXE does</a><a href="#source-repository-vs-update-repository" style="margin-left:0px">Source repository vs update repository</a><a href="#required-repositories-and-secrets" style="margin-left:0px">Required repositories and secrets</a><a href="#packaging-modes" style="margin-left:0px">Packaging modes</a><a href="#publishing" style="margin-left:0px">Publishing</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../">全部项目</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20261124131401" defer></script></body></html>

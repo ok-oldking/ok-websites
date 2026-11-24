@@ -1,0 +1,72 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>每日跑商 · 使用指南 · ok-bd2 · 繁體中文</title><meta name="description" content="固定角色位置 ：請確保角色在第 6 章卡帶中的停留位置為「施塔因之塔倉庫」內，具體位置見圖一。 設定料理技能 ：將「料理」天 — ok-bd2 繁體中文文件"><meta name="keywords" content="ok-bd2, okbd2, GitHub, GodRaymond233/ok-bd2, GodRaymond233, 棕色塵埃2, PC 自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="GodRaymond233">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-bd2/zh-TW/docs/guides/trade/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:title" content="每日跑商 · 使用指南 · ok-bd2 · 繁體中文"><meta property="og:description" content="固定角色位置 ：請確保角色在第 6 章卡帶中的停留位置為「施塔因之塔倉庫」內，具體位置見圖一。 設定料理技能 ：將「料理」天 — ok-bd2 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-bd2/zh-TW/docs/guides/trade/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-bd2-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-bd2 — 棕色塵埃2 · PC 自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="每日跑商 · 使用指南 · ok-bd2 · 繁體中文"><meta name="twitter:description" content="固定角色位置 ：請確保角色在第 6 章卡帶中的停留位置為「施塔因之塔倉庫」內，具體位置見圖一。 設定料理技能 ：將「料理」天 — ok-bd2 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-bd2-zh-tw.png"><meta name="twitter:image:alt" content="ok-bd2 — 棕色塵埃2 · PC 自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"每日跑商 · 使用指南 · ok-bd2 · 繁體中文","description":"固定角色位置 ：請確保角色在第 6 章卡帶中的停留位置為「施塔因之塔倉庫」內，具體位置見圖一。 設定料理技能 ：將「料理」天 — ok-bd2 繁體中文文件","url":"https://ok-script.com/ok-bd2/zh-TW/docs/guides/trade/","inLanguage":"zh-TW","dateModified":"2026-11-24T21:10:59+09:00","author":{"@type":"Organization","name":"ok-bd2","url":"https://github.com/GodRaymond233/ok-bd2"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261124131401">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-gf2/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-duet-night-abyss/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../quick-hunt/">快速狩獵</a><a href="./" class="active" aria-current="page">每日跑商</a><a href="../collection/">每週跑圖</a><a href="../equipment-daily/">裝備分解與精煉</a><a href="../mission-rewards/">每日及每週獎勵</a><a href="../main-story/">推主線與快速探索</a><a href="../../architecture/">專案架構</a><a href="../../release-checklist/">釋出檢查清單</a><a href="../../pyappify-release-flow/">PyAppify 釋出流程</a><a href="../../release-setup-guide.zh-CN/">釋出配置指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-bd2</a><span>/</span><span>文件</span></div><div class="markdown-body"><h2 id="老手須知">老手須知</h2>
+<ol>
+<li><strong>固定角色位置</strong>：請確保角色在第 6 章卡帶中的停留位置為「施塔因之塔倉庫」內，具體位置見圖一。</li>
+</ol>
+<p><a href="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-warehouse.png"><img src="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-warehouse.png" alt="圖一：施塔因之塔倉庫內的角色位置"></a></p>
+<ol start="2">
+<li><strong>設定料理技能</strong>：將「料理」天賦技能放在<strong>第二組技能欄</strong>中，組內具體位置不限，設定示例見圖二。</li>
+</ol>
+<p><a href="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-skill-group.png"><img src="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-skill-group.png" alt="圖二：料理天賦技能放在第二組技能欄"></a></p>
+<ol start="3">
+<li><strong>購買與製作</strong>按跑圖和戰鬥能補充食材的情況配置。重建收藏時，指令碼按 31 張卡帶核對收藏，包含劇情 3 的蘑菇，排除劇情 3、13、16 的蝦，劇情 9 留空。</li>
+</ol>
+<h2 id="新手須知">新手須知</h2>
+<p>跑商需要先解鎖全部卡帶。想通過料理和跑商獲得收益，還需要完成以下準備：</p>
+<ul>
+<li>將圖三所示的<strong>砍價技能練至傳說等級</strong>。</li>
+</ul>
+<p><a href="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-bargain-skill.png"><img src="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-bargain-skill.png" alt="圖三：砍價技能"></a></p>
+<ul>
+<li>將圖四所示的<strong>料理製作技能練至傳說等級</strong>。</li>
+</ul>
+<p><a href="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-cooking-skill.png"><img src="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-cooking-skill.png" alt="圖四：料理製作技能"></a></p>
+<ul>
+<li>儘量收集齊圖五所示的食譜，跑商需要用到其中幾乎全部食譜。</li>
+</ul>
+<p><a href="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-recipes.png"><img src="../../../../../assets/sources/ok-bd2/docs/images/usage/trade-recipes.png" alt="圖五：需要收集的食譜"></a></p>
+<ul>
+<li>通過跑圖和戰鬥補充蝦仁等食材。自行維護遊戲內收藏時，可將<strong>收藏重建週期</strong>設為<strong>永不</strong>。</li>
+</ul>
+<h2 id="料理和庫存設定">料理和庫存設定</h2>
+<ul>
+<li><strong>黃框料理</strong>優先做 5 道，接著做 10 道<strong>紅框料理</strong>，最後做 6 道<strong>藍框料理</strong>。預設全選，同色按圖五中從上到下、同排從左到右的順序執行。取消全部食譜會跳過料理。</li>
+<li>每一批都核對詳情、MAX、製作結果和返回列表。同一道料理還能製作時繼續做，變灰後再做下一道。
+<strong>單道料理批次上限</strong>預設 20 批，達到上限時仍可製作會報告未完成。</li>
+<li>隨程式附帶的新版出售價表按有效市場日期從 2026 年 11 月 19 日啟用，即北京時間 11 月 18 日 23:00。</li>
+<li><strong>商品保留量</strong>每行寫完整商品名和數量，例如 <code>杏仁=5000</code>；<code>豆子=-1</code> 表示全部保留。
+未填寫的商品沿用價表保留量。該設定不會使不在最高價表內、標記為不出售或被黑名單
+排除的商品進入出售流程。格式錯誤時停止出售。</li>
+<li>出售跨過23:00重新整理點時，停止舊價表的後續商品和最終出售確認；重新執行會載入新日期價表。</li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2/blob/ded5865e002c13bde3b82de200e50f0c7d0c5566/docs/guides/trade.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月24日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#老手須知" style="margin-left:0px">老手須知</a><a href="#新手須知" style="margin-left:0px">新手須知</a><a href="#料理和庫存設定" style="margin-left:0px">料理和庫存設定</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261124131401" defer></script></body></html>

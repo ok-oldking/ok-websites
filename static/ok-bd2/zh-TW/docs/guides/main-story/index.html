@@ -1,0 +1,293 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>推主線與快速探索 · 使用指南 · ok-bd2 · 繁體中文</title><meta name="description" content="這個任務包含兩條主線流程，預設會自己挑一條來跑： 快速探索 ：主線卡帶裡，高難度關卡通關後會解鎖「快速探索」。進關卡後右上角 — ok-bd2 繁體中文文件"><meta name="keywords" content="ok-bd2, okbd2, GitHub, GodRaymond233/ok-bd2, GodRaymond233, 棕色塵埃2, PC 自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="GodRaymond233">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-bd2/zh-TW/docs/guides/main-story/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:title" content="推主線與快速探索 · 使用指南 · ok-bd2 · 繁體中文"><meta property="og:description" content="這個任務包含兩條主線流程，預設會自己挑一條來跑： 快速探索 ：主線卡帶裡，高難度關卡通關後會解鎖「快速探索」。進關卡後右上角 — ok-bd2 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-bd2/zh-TW/docs/guides/main-story/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-bd2-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-bd2 — 棕色塵埃2 · PC 自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="推主線與快速探索 · 使用指南 · ok-bd2 · 繁體中文"><meta name="twitter:description" content="這個任務包含兩條主線流程，預設會自己挑一條來跑： 快速探索 ：主線卡帶裡，高難度關卡通關後會解鎖「快速探索」。進關卡後右上角 — ok-bd2 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-bd2-zh-tw.png"><meta name="twitter:image:alt" content="ok-bd2 — 棕色塵埃2 · PC 自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"推主線與快速探索 · 使用指南 · ok-bd2 · 繁體中文","description":"這個任務包含兩條主線流程，預設會自己挑一條來跑： 快速探索 ：主線卡帶裡，高難度關卡通關後會解鎖「快速探索」。進關卡後右上角 — ok-bd2 繁體中文文件","url":"https://ok-script.com/ok-bd2/zh-TW/docs/guides/main-story/","inLanguage":"zh-TW","dateModified":"2026-11-24T21:10:59+09:00","author":{"@type":"Organization","name":"ok-bd2","url":"https://github.com/GodRaymond233/ok-bd2"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../../assets/site.css?v=20261124131401">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-end-field/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-onmyoji/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-ap/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-gf2/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="../../../../../ok-duet-night-abyss/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a><a class="dropdown-option" role="menuitem" href="../../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../../" aria-current="page">文件</a>
+      <a href="../../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../../">首頁</a><a href="../quick-hunt/">快速狩獵</a><a href="../trade/">每日跑商</a><a href="../collection/">每週跑圖</a><a href="../equipment-daily/">裝備分解與精煉</a><a href="../mission-rewards/">每日及每週獎勵</a><a href="./" class="active" aria-current="page">推主線與快速探索</a><a href="../../architecture/">專案架構</a><a href="../../release-checklist/">釋出檢查清單</a><a href="../../pyappify-release-flow/">PyAppify 釋出流程</a><a href="../../release-setup-guide.zh-CN/">釋出配置指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../../">ok-bd2</a><span>/</span><span>文件</span></div><div class="markdown-body"><h2 id="01-這個任務做什麼">01 這個任務做什麼</h2>
+<p>這個任務包含兩條主線流程，預設會自己挑一條來跑：</p>
+<ol>
+<li><strong>快速探索</strong>：主線卡帶裡，高難度關卡通關後會解鎖「快速探索」。進關卡後右上角出現
+「進行快速探索」，點開是一張任務列表，遊戲可以自動推進節點、自動接手戰鬥。任務替你在
+正確的時候點「自動進行 / 戰鬥 / 離開」，把整條流程迴圈跑下去。</li>
+<li><strong>推主線</strong>：直接推進主線劇情本身。點右上角任務追蹤條讓遊戲自動尋路，遇戰鬥讓它自己打，
+遇劇情點 F2 跳過，畫面出現「F」互動鍵帽就自己點。目標很久沒有變化時，判定需要你手動處理
+（解謎、機關、對話選項），會彈一個置頂彈框並停下任務。</li>
+</ol>
+<p>開關「主線自動開始難度」開啟時，快速探索還能<strong>從大廳自己開跑</strong>：點右上角任務追蹤條上的
+「開始困難難度 / 開始極難難度」→ 彈窗裡點「領取探索」→ 跳過劇情 → 點「立刻前往」，
+接著進「快速探索」列表迴圈刷。開關關閉時只處理已經開啟的關卡/列表頁。</p>
+<h2 id="02-起任務前先看-跑哪條模式">02 起任務前先看：跑哪條模式</h2>
+<p>設定裡的「主線模式」決定跑哪條，預設「自動（優先快速探索）」：</p>
+<table>
+<thead>
+<tr>
+<th>主線模式</th>
+<th>什麼時候用</th>
+<th>起任務前人物要在哪裡</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>自動（預設）</td>
+<td>不知道從哪開始</td>
+<td>都可以。任務先找快速探索入口，找不到就按推主線處理</td>
+</tr>
+<tr>
+<td>只刷快速探索</td>
+<td>只想刷已通關的高難關卡</td>
+<td>關卡內右上角已有「進行快速探索」；或站在大廳並開啟「主線自動開始難度」</td>
+</tr>
+<tr>
+<td>只推主線（野外）</td>
+<td>只想推進主線劇情</td>
+<td>主線野外場景裡，右上角追蹤條寫著「主線」和當前目標</td>
+</tr>
+</tbody></table>
+<p>判斷過程：開跑前最多看 10 秒畫面。認出「進行快速探索」、任務列表的「自動進行 / 戰鬥」、
+大廳追蹤條的「開始XX難度」等快速探索介面，就走快速探索；認出主線野外追蹤條（或野外
+「F」互動鍵帽），就走推主線；兩者都沒認出來時按推主線處理，由它自己提示你該站在哪兒。</p>
+<p>推主線需要滿足的條件（缺一不可）：</p>
+<ul>
+<li>遊戲已經進入<strong>主線野外場景</strong>，不是主頁/城鎮/抽卡/日常介面；</li>
+<li>右上角任務追蹤條寫著「主線」和當前目標（例如「前往丟棄鐵假面的地方」）；</li>
+<li>遊戲視窗沒有被其它視窗長時間遮擋（點選會打到擋在前面的視窗上）。</li>
+</ul>
+<h2 id="03-第一次怎麼執行">03 第一次怎麼執行</h2>
+<ol>
+<li>選起點：<ul>
+<li>刷快速探索：站在大廳（城鎮）裡即可（「主線自動開始難度」保持開啟）；也可以自己先進到
+目標關卡，確認右上角已經有「進行快速探索」；</li>
+<li>推主線：先手動走到主線野外場景裡，確認右上角追蹤條有「主線」和目標文字。</li>
+</ul>
+</li>
+<li>開啟「主線快速探索」的設定：「主線模式」保持「自動」就行；只想刷其中一條時再手動選。</li>
+<li>刷快速探索時，把「主線關卡標題校驗」填成列表頁標題的一部分，例如 <code>血骑士-极难</code>。留空則不校驗。</li>
+<li>設定「主線戰鬥次數上限」和「主線時間上限分鐘」，0 表示不限。
+推主線的卡住判定用「推主線停滯秒數」（預設 240 秒），想早點知道卡住就改小。</li>
+<li>回到遊戲，點選任務旁的「開始」。</li>
+</ol>
+<h2 id="04-快速探索是怎麼判斷的">04 快速探索是怎麼判斷的</h2>
+<p>每一步都讀當前畫面，不按固定順序點選：</p>
+<table>
+<thead>
+<tr>
+<th>看到的介面</th>
+<th>判定依據</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>大廳追蹤條</td>
+<td>右上角追蹤條讀到「開始」+「難度」</td>
+<td>點它，彈出難度確認框</td>
+</tr>
+<tr>
+<td>難度確認彈窗</td>
+<td>彈窗裡讀到「難度僅適用於主線任務戰鬥」</td>
+<td>點「領取探索」</td>
+</tr>
+<tr>
+<td>跳過對話確認</td>
+<td>彈窗裡讀到「跳過對話」+「是否結束劇情觀看」或「可於劇情選單重新檢視」</td>
+<td>點「確認」，點不到就等一會兒重來</td>
+</tr>
+<tr>
+<td>劇情過場</td>
+<td>右上角讀到「F2」，或上下黑邊+中間有畫面</td>
+<td>點右上角跳過圖示（最多 10 次）</td>
+</tr>
+<tr>
+<td>劇情演出</td>
+<td>底部讀到一行對白（這時沒有跳過圖示）</td>
+<td>點那句對白繼續下一句（最多 120 次）</td>
+</tr>
+<tr>
+<td>快速探索彈窗</td>
+<td>彈窗裡讀到「是否前往快速探索介面」</td>
+<td>點「立刻前往」</td>
+</tr>
+<tr>
+<td>關卡內</td>
+<td>右上角讀到「進行快速探索」</td>
+<td>點開列表</td>
+</tr>
+<tr>
+<td>任務列表</td>
+<td>右下角按鈕讀到「自動進行」</td>
+<td>點它，讓遊戲自動推進</td>
+</tr>
+<tr>
+<td>任務列表</td>
+<td>右下角按鈕讀到「戰鬥」</td>
+<td>點它，進入戰鬥</td>
+</tr>
+<tr>
+<td>戰鬥內</td>
+<td>右下角長條讀到「TURN. N」+「BATTLE」</td>
+<td>點「BATTLE」開這一回合，下一回合再點，直到打完</td>
+</tr>
+<tr>
+<td>戰鬥結算</td>
+<td>右下角讀到「離開」</td>
+<td>點它，回到關卡內繼續下一輪</td>
+</tr>
+<tr>
+<td>全部刷完</td>
+<td>畫面中部讀到「完成主線任務」「所有探索」</td>
+<td>存圖，按<strong>正常完成</strong>結束任務</td>
+</tr>
+<tr>
+<td>其他</td>
+<td>都讀不到</td>
+<td>等待，超時才停止（並彈置頂框）</td>
+</tr>
+</tbody></table>
+<p>節點順序不固定，中間還會夾雜劇情、掉落等介面，所以<strong>認不出來時只等待、不亂點</strong>；
+兩個例外都是「畫面明明白白在等你點」的時候：劇情演出底部讀到了一整句對白，
+就點那句對白讓它往下走；戰鬥內右下角讀到「TURN. N / BATTLE」，就點 BATTLE 開這一回合。
+其餘戰鬥畫面認不出來屬於正常，用「主線戰鬥等待秒數」兜底。</p>
+<h2 id="05-推主線是怎麼判斷的">05 推主線是怎麼判斷的</h2>
+<table>
+<thead>
+<tr>
+<th>看到的介面</th>
+<th>判定依據</th>
+<th>動作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>野外</td>
+<td>右上角追蹤條讀到「主線」標題或目標文字（≥2 字）</td>
+<td>畫面靜止一段時間後點追蹤條目標行，讓遊戲重新尋路</td>
+</tr>
+<tr>
+<td>野外互動</td>
+<td>畫面裡匹配到「F」鍵帽（NPC、可疑物品、機關）</td>
+<td>點提示條；提示沒消失就再點右下角圓形互動按鈕</td>
+</tr>
+<tr>
+<td>戰鬥內</td>
+<td>右下角讀到「結束自動戰鬥」</td>
+<td>只等，不點</td>
+</tr>
+<tr>
+<td>戰鬥待開回合</td>
+<td>右下角讀到「TURN. N」+「BATTLE」</td>
+<td>點 BATTLE 開這一回合</td>
+</tr>
+<tr>
+<td>戰鬥結算</td>
+<td>右下角讀到「離開」</td>
+<td>點「離開」；失敗頁讀到「重試」就先重打一次</td>
+</tr>
+<tr>
+<td>獎勵彈窗</td>
+<td>讀到「點選畫面即可返回」</td>
+<td>點提示關閉</td>
+</tr>
+<tr>
+<td>劇情過場 / 跳過確認 / 劇情演出</td>
+<td>同快速探索</td>
+<td>點跳過 / 點「確認」/ 點對白</td>
+</tr>
+<tr>
+<td>大廳追蹤條</td>
+<td>讀到「開始XX難度」</td>
+<td>報「請先進入主線野外場景」並停機</td>
+</tr>
+<tr>
+<td>認不出</td>
+<td>持續 20 秒</td>
+<td>報「介面持續無法識別」並停機</td>
+</tr>
+</tbody></table>
+<p>「有沒有在推進」只認兩個訊號：<strong>目標文字變化</strong>和<strong>介面狀態變化</strong>。畫面在動只說明遊戲
+自己在尋路，不算推進；目標文字與介面狀態連續「推主線停滯秒數」（預設 240 秒）都沒變化，
+就判定卡住——解謎、機關、對話選項這類需要你動手的介面會走這個出口。</p>
+<p>這個客戶端<strong>不接收指令碼注入的鍵盤按鍵</strong>（實測 F / E / ESC 都無效），所以「推」、互動、
+跳過全部用滑鼠點選實現：點追蹤條目標行、點「F」提示條、點右上角跳過圖示。也正因如此，
+「推主線推進方式」裡的「按 E 鍵」也是點那個 E 鍵帽，不是真的發按鍵。</p>
+<h2 id="06-停下來的時候看什麼">06 停下來的時候看什麼</h2>
+<ul>
+<li>狀態面板裡的「主線當前模式」會寫明這輪跑的是快速探索還是推主線，以及判定依據；
+「主線當前介面」「推主線當前介面」顯示當前判定和各塊 ROI 的原始文字，方便對照。</li>
+<li>非正常停止會把畫面存到 <code>probe_outputs/main_story_stuck.png</code>（快速探索）或
+<code>probe_outputs/main_story_walk_stuck.png</code>（推主線），停止原因寫在「主線停止原因」/
+「推主線停止原因」，同時發系統通知並彈一個置頂訊息框。</li>
+<li>指令碼本身報錯（不是「卡住」而是拋異常）時，同樣會彈置頂的「ok-bd2 任務執行失敗」
+訊息框，寫明任務名和錯誤內容。最常見的原因是鎖屏/UAC：Windows 切換輸入桌面後
+<code>SetCursorPos</code> 會被拒絕，任務會先等最多 30 秒等桌面恢復再繼續；一直恢復不了才停止。</li>
+<li>「主線戰鬥次數」「主線自動進行次數」「主線完成輪次」是快速探索的計數；
+「推主線戰鬥次數」「推主線推進次數」「推主線互動次數」是推主線的計數。</li>
+</ul>
+<h2 id="07-常見問題">07 常見問題</h2>
+<p><strong>它會自己從大廳開始跑嗎？</strong></p>
+<p>開著「主線自動開始難度」就會：它只在追蹤條上同時讀到「開始」和「難度」時才點，
+所以追蹤條上寫的「主線」兩個字不會讓它亂點。接著依次處理「領取探索」「跳過劇情」
+「立刻前往」三個介面，然後進正常刷取迴圈。只想刷已經在關卡里的流程就把這個開關關掉，
+這幾個介面會按「認不出的介面」處理（等待，超時停止）。</p>
+<p><strong>為什麼一開始就停了，提示「未識別到主線野外場景」？</strong></p>
+<p>說明人物還站在大廳（追蹤條顯示「開始XX難度」），任務沒有替你導航進主線野外場景。
+先手動走進主線野外場景再啟動；如果其實想刷快速探索，把「主線模式」改成「自動」或
+「只刷快速探索」。</p>
+<p><strong>點了跳過以後卡住了？</strong></p>
+<p>不管是在關卡里的劇情演出，還是全黑的過場，點掉跳過之後遊戲都會再問一次「跳過對話」，
+彈窗裡只有「取消 / 確認」。這個彈窗有兩種樣子：</p>
+<ul>
+<li>全黑過場裡：正文是「跳過對話。/ 是否結束劇情觀看？」，位置靠下；</li>
+<li>劇情演出裡：正文是「跳過對話。/ 可於劇情選單重新檢視。」，位置居中偏上，
+而且右上角的「F2」提示還留在彈窗背後——所以判定必須讓彈窗優先於過場，
+否則會一直去點跳過圖示。</li>
+</ul>
+<p>兩種都認，都會點「確認」。之後如果還有不帶跳過圖示的劇情演出（底部說話 + 一個小三角），
+就一路點著對白往下走。</p>
+<p><strong>進戰鬥以後不動了，Boss 血量一點沒掉？</strong></p>
+<p>那是這一場戰鬥沒有自動跑起來：右下角停在「TURN. N | BATTLE」上等玩家開回合。
+任務會讀這一條，點到「BATTLE」文字上，一回合一次；打完這一回合再讀一次接著點，
+直到結算。一場戰鬥最多點 200 次，點滿還沒打完就退回等待（照舊由戰鬥等待秒數超時兜底），
+不會在這裡直接判失敗。</p>
+<p><strong>會不會點一次沒成就算失敗？</strong></p>
+<p>不會，都是有冗餘的：每次點選內部重試 3 次（間隔 8 秒確認介面有沒有變化）；
+大廳開跑那三步（開始難度 / 領取探索 / 立刻前往）整輪點不動還會歇 3 秒重來，最多 3 輪；
+劇情過場跳過熱鍵最多點 10 次，劇情演出最多點 120 次。全都用完才存圖停機。</p>
+<p><strong>打完一整條主線，彈「完成主線任務」以後為什麼任務就結束了？</strong></p>
+<p>那是這一難度的終局提示（「已完成XX難度的所有探索。」），此時畫面上沒有任何可點的按鈕。
+存圖 <code>probe_outputs/main_story_all_clear.png</code>，把停止原因寫成「該難度主線已全部探索完成」，
+按<strong>正常完成</strong>收工。想繼續刷就換一個難度或換一關再接任務。</p>
+<p><strong>為什麼一開始就停了，提示按鈕文字未知？</strong></p>
+<p>列表頁右下角既不是「自動進行」也不是「戰鬥」，通常是這一關已經沒有可推進的節點，
+或者遊戲改版換了按鈕文案。先手動看一眼那個按鈕寫的是什麼，再決定要不要繼續。</p>
+<p><strong>為什麼點了沒反應，反覆停在同一個介面？</strong></p>
+<p>先確認遊戲視窗沒有被其它視窗擋住、解析度比例是 16:9。若確實點不動，多半是介面位置
+變了，需要重新標定 ROI。</p>
+<p><strong>會不會誤點到別的功能？</strong></p>
+<p>不會。每個點選位置都限定在一塊很小的按鈕區域內，並且每次點選前都要先在這塊區域裡
+讀到對應文字（追蹤條要同時讀到「開始」和「難度」，確認彈窗要讀到彈窗裡的那行說明），
+讀不到就退回該按鈕實測標定的中心點，不會點到別的按鈕上。劇情過場只點右上角那個跳過圖示；
+野外互動必須先匹配到「F」鍵帽才會點，且點完要看到提示消失才算成功。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2/blob/ded5865e002c13bde3b82de200e50f0c7d0c5566/docs/guides/main-story.md"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月24日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#01-這個任務做什麼" style="margin-left:0px">01 這個任務做什麼</a><a href="#02-起任務前先看-跑哪條模式" style="margin-left:0px">02 起任務前先看：跑哪條模式</a><a href="#03-第一次怎麼執行" style="margin-left:0px">03 第一次怎麼執行</a><a href="#04-快速探索是怎麼判斷的" style="margin-left:0px">04 快速探索是怎麼判斷的</a><a href="#05-推主線是怎麼判斷的" style="margin-left:0px">05 推主線是怎麼判斷的</a><a href="#06-停下來的時候看什麼" style="margin-left:0px">06 停下來的時候看什麼</a><a href="#07-常見問題" style="margin-left:0px">07 常見問題</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../../assets/site.js?v=20261124131401" defer></script></body></html>

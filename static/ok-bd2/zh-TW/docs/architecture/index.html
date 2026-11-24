@@ -1,0 +1,156 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>專案架構 · 开发说明 · ok-bd2 · 繁體中文</title><meta name="description" content="ok-bd2 是基於 ok-script 的 Windows PC 端影像識別自動化應用。專案自身負責 Brown Dust — ok-bd2 繁體中文文件"><meta name="keywords" content="ok-bd2, okbd2, GitHub, GodRaymond233/ok-bd2, GodRaymond233, 棕色塵埃2, PC 自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化, documentation, 文件"><meta name="author" content="GodRaymond233">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-bd2/zh-TW/docs/architecture/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:title" content="專案架構 · 开发说明 · ok-bd2 · 繁體中文"><meta property="og:description" content="ok-bd2 是基於 ok-script 的 Windows PC 端影像識別自動化應用。專案自身負責 Brown Dust — ok-bd2 繁體中文文件"><meta property="og:url" content="https://ok-script.com/ok-bd2/zh-TW/docs/architecture/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-bd2-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-bd2 — 棕色塵埃2 · PC 自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="專案架構 · 开发说明 · ok-bd2 · 繁體中文"><meta name="twitter:description" content="ok-bd2 是基於 ok-script 的 Windows PC 端影像識別自動化應用。專案自身負責 Brown Dust — ok-bd2 繁體中文文件"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-bd2-zh-tw.png"><meta name="twitter:image:alt" content="ok-bd2 — 棕色塵埃2 · PC 自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"專案架構 · 开发说明 · ok-bd2 · 繁體中文","description":"ok-bd2 是基於 ok-script 的 Windows PC 端影像識別自動化應用。專案自身負責 Brown Dust — ok-bd2 繁體中文文件","url":"https://ok-script.com/ok-bd2/zh-TW/docs/architecture/","inLanguage":"zh-TW","dateModified":"2026-11-24T21:10:59+09:00","author":{"@type":"Organization","name":"ok-bd2","url":"https://github.com/GodRaymond233/ok-bd2"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../../assets/site.css?v=20261124131401">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../../zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-end-field/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-onmyoji/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-ap/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-gf2/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="../../../../ok-duet-night-abyss/zh-TW/"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a><a class="dropdown-option" role="menuitem" href="../../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../../assets/project-icons/ok-bd2.png" alt=""></span><span>ok-bd2</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="../" aria-current="page">文件</a>
+      <a href="../../../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文件目錄</h2><nav class="docs-nav" aria-label="文件目錄"><a href="../">首頁</a><a href="../guides/quick-hunt/">快速狩獵</a><a href="../guides/trade/">每日跑商</a><a href="../guides/collection/">每週跑圖</a><a href="../guides/equipment-daily/">裝備分解與精煉</a><a href="../guides/mission-rewards/">每日及每週獎勵</a><a href="../guides/main-story/">推主線與快速探索</a><a href="./" class="active" aria-current="page">專案架構</a><a href="../release-checklist/">釋出檢查清單</a><a href="../pyappify-release-flow/">PyAppify 釋出流程</a><a href="../release-setup-guide.zh-CN/">釋出配置指南</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../../">ok-bd2</a><span>/</span><span>文件</span></div><div class="markdown-body"><h1 id="專案架構">專案架構</h1>
+<p><code>ok-bd2</code> 是基於 <code>ok-script</code> 的 Windows PC 端影像識別自動化應用。專案自身負責
+Brown Dust 2 的視窗適配、識圖/OCR 規則、滑鼠互動和任務狀態機；任務排程、基礎截圖、
+配置介面等通用能力由 <code>ok-script</code> 提供。</p>
+<h2 id="執行鏈路">執行鏈路</h2>
+<pre><code class="language-text">main.py / main_debug.py
+        ↓
+src.config.config
+        ↓
+ok.OK：GUI、设备、截图、OCR、任务执行器
+        ↓
+BD2Interaction + BD2Scene + BaseBD2Task
+        ↓
+触发任务 / 一次性任务
+        ↓
+截图 → ROI → 模板匹配或 OCR → 状态确认 → 鼠标操作
+</code></pre>
+<ol>
+<li><code>main.py</code> 或 <code>main_debug.py</code> 建立 <code>ok.OK</code>，後者僅額外開啟除錯配置。</li>
+<li><code>src/config.py</code> 註冊視窗、截圖方式、互動類、場景、任務和自定義頁面。</li>
+<li><code>ok-script</code> 連線遊戲視窗並建立任務執行器。</li>
+<li><code>AutoLoginTask</code> 等觸發任務維護登入狀態；可見的一次性任務執行具體業務流程。</li>
+<li>所有正式遊戲互動通過 <code>BaseBD2Task.operate_click()</code> 或滑鼠滾輪/拖動完成。</li>
+</ol>
+<h2 id="分層與職責">分層與職責</h2>
+<h3 id="1-啟動與裝配">1. 啟動與裝配</h3>
+<ul>
+<li><code>main.py</code>、<code>main_debug.py</code>：生產和除錯入口。</li>
+<li><code>src/config.py</code>：應用的組合根，只負責裝配元件和註冊任務。</li>
+<li><code>src/game_path.py</code>：發現執行中的遊戲或解析安裝路徑。</li>
+<li><code>src/compat/</code>：對上游框架或 Windows 版本差異做窄範圍相容。</li>
+</ul>
+<p>這一層可以依賴所有被裝配元件，但業務任務不應反向依賴 <code>config</code>。</p>
+<h3 id="2-平臺適配與共享執行時">2. 平臺適配與共享執行時</h3>
+<ul>
+<li><code>src/interaction/BD2Interaction.py</code>：BD2 的滑鼠點選、滾輪、前臺啟用和游標恢復。</li>
+<li><code>src/scene/BD2Scene.py</code>：跨任務共享的登入/戰鬥場景狀態。</li>
+<li><code>src/globals.py</code>：執行緒池和週期任務生命週期。</li>
+<li><code>src/tasks/BaseBD2Task.py</code>：任務共同基類，提供截圖、OCR、操作封裝、動作節流、
+探針輸出和標準快速選卡入口。</li>
+</ul>
+<p>PC 客戶端不能可靠接收自動化鍵盤輸入，因此平臺層和業務層都不得自行增加鍵盤傳送、
+按鍵對映或熱鍵方案。</p>
+<h3 id="3-純識別與座標工具">3. 純識別與座標工具</h3>
+<ul>
+<li><code>src/utils/template_resolution.py</code>：離線模板目錄標定、基礎倍率、綠幕目錄標記和
+<code>Main*</code> 模板的共享搜尋區域。</li>
+<li><code>src/utils/image_utils.py</code>：灰度轉換、模板/遮罩縮放、畫素相似度、多倍率生成，
+以及相對/參考座標 ROI 裁剪。</li>
+<li><code>src/utils/ocr_utils.py</code>：OCR 文本歸一化、關鍵詞計數和容錯子串匹配。</li>
+<li><code>src/utils/vision_utils.py</code>：與框架 <code>Box</code> 相關的輕量座標輔助。</li>
+</ul>
+<p>這些模組不持有任務狀態，不點選遊戲，適合優先新增單元測試並被多個任務複用。
+參考座標 ROI 必須同時縮放左上角、右下角、寬高和位移，不能只縮放區域尺寸。</p>
+<h3 id="4-業務任務">4. 業務任務</h3>
+<ul>
+<li><code>src/tasks/trigger/AutoLoginTask.py</code>：持續觸發的登入狀態機。</li>
+<li><code>DailyTask</code>、<code>FreeGachaTask</code>、<code>PVPTask</code>、<code>SquareGoddessTask</code>：日常業務狀態機。</li>
+<li><code>BargainLevelTask</code>、<code>QuickSuppressionTask</code>：獨立迴圈任務。</li>
+<li><code>BD2ProbeTask</code>、<code>BD2InputTestTask</code>、<code>BD2DiagnosisTask</code>：診斷和適配工具。</li>
+</ul>
+<p>任務類負責“先識別並確認狀態，再執行滑鼠動作”。底層影像演算法應放入 <code>src/utils</code>，
+穩定的跨任務頁面流應放入 <code>BaseBD2Task</code>；只屬於單個玩法的狀態轉換保留在對應任務中。</p>
+<h3 id="5-跑圖-跑商領域模組">5. 跑圖/跑商領域模組</h3>
+<p>跑圖和跑商已按領域物件拆分在 <code>src/tasks/map_trade/</code>：</p>
+<ul>
+<li><code>models.py</code>：不可變資料模型、介面狀態和結果型別。</li>
+<li><code>data.py</code>：卡帶、商店、物品、座標和模板規格。</li>
+<li><code>vision.py</code>：該領域的模板/OCR 門面，複用通用識別工具。</li>
+<li><code>navigator.py</code>：主頁、選卡、地圖、商店之間的導航狀態機。</li>
+<li><code>trader.py</code>：購買、出售、料理和收藏重建。</li>
+<li><code>collector.py</code>：劇情、角色與活動卡帶的地圖採集。</li>
+<li><code>collection_selection.py</code>：每週跑圖的自選卡帶、遮蔽範圍與配置校驗。</li>
+<li><code>calendar.py</code>：北京時間下的價表和庫存業務日期。</li>
+<li><code>progress.py</code>：每日/每週斷點進度的持久化與恢復。</li>
+<li><code>MapTradeTask.py</code>、<code>MapCollectionTask.py</code>：配置卡片、依賴裝配和階段編排。</li>
+</ul>
+<p>推薦依賴方向為：</p>
+<pre><code class="language-text">Task shell → Trader / Collector → Navigator → Vision → utils
+                    ├→ Progress       └→ models / data
+                    └→ Calendar
+</code></pre>
+<p>領域模組不應匯入具體 UI 頁面；UI 僅通過任務配置和狀態欄位觀察任務。</p>
+<h3 id="6-ui-配置和資源">6. UI、配置和資源</h3>
+<ul>
+<li><code>src/ui/</code>：狀態頁、即時截圖、日誌入口和響應式任務配置補丁。</li>
+<li><code>configs/</code>：執行時配置與進度檔案；不是業務常量的唯一來源。</li>
+<li><code>recognition-assets/template-assets/</code>：正式模板資源。</li>
+<li><code>assets/map_trade/</code>：隨程式釋出的跑商業務資料。</li>
+<li><code>.local-dev/</code>：不釋出的一次性探針、樣本和實驗輸出。</li>
+</ul>
+<h2 id="模板識別約束">模板識別約束</h2>
+<ul>
+<li>根目錄模板在 1920×1080 客戶區的基礎倍率為 <code>1.0</code>。</li>
+<li><code>image/</code> 下模板的統一基礎倍率為 <code>1.25</code>。</li>
+<li><code>image/green/</code> 自動啟用純綠與透明區域遮罩。</li>
+<li>正式載入必須經 <code>offline_template_scale()</code> 計算當前客戶區倍率。</li>
+<li>識別到目標時點選匹配框中心；穩定固定位置才可使用相對座標。</li>
+</ul>
+<p>這些規則集中在 <code>template_resolution.py</code>，任務不得複製另一套目錄倍率判斷。</p>
+<h2 id="狀態-失敗與可觀測性">狀態、失敗與可觀測性</h2>
+<ul>
+<li>跨任務的“已登入/戰鬥中”狀態由 <code>BD2Scene</code> 儲存。</li>
+<li>單個任務的階段和診斷資訊通過 <code>info_set()</code> 暴露給狀態頁與日誌。</li>
+<li>跑圖/跑商的持久進度由 <code>ProgressStore</code> 管理，並區分北京時間下的每日和每週週期。</li>
+<li>跑圖資源每週一08:00、技能額度每日08:00重新整理；完成記錄包含本次配置範圍與業務週期。升級賬本前保留舊版本備份，回退程式時使用對應版本的賬本。</li>
+<li>頁面確認失敗必須返回失敗或記錄失敗階段，不能繼續盲點。</li>
+<li>重試應有次數或時限上限，避免無限點選。</li>
+</ul>
+<h2 id="擴充套件指南">擴充套件指南</h2>
+<p>新增任務時按以下順序選擇落點：</p>
+<ol>
+<li>純座標、影像或 OCR 演算法放入 <code>src/utils</code>，先寫單元測試。</li>
+<li>多個任務共享且長期穩定的頁面流放入 <code>BaseBD2Task</code>。</li>
+<li>單個玩法的狀態機放入獨立任務；超過一個明確領域時再拆子模組。</li>
+<li>任務在 <code>src/config.py</code> 註冊，使用者可調引數放在任務的配置宣告中。</li>
+<li>一次性探針和樣本先放 <code>.local-dev/</code>，確認成為正式能力後再遷入原始碼和測試。</li>
+</ol>
+<h2 id="驗證">驗證</h2>
+<p>開發完成前執行：</p>
+<pre><code class="language-powershell">.\.venv\Scripts\python.exe -m ruff check src tests
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+</code></pre>
+<p>此外要檢查 <code>src</code> 中沒有專案自定義的鍵盤傳送、按下、釋放、熱鍵註冊或鍵盤對映實現。</p>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2/blob/ded5865e002c13bde3b82de200e50f0c7d0c5566/docs/architecture.md"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看來源 ↗</a> · 頁面產生時間: 2026年11月24日</div></article><aside class="docs-toc"><h2>本頁內容</h2><nav class="toc-list"><a href="#執行鏈路" style="margin-left:0px">執行鏈路</a><a href="#分層與職責" style="margin-left:0px">分層與職責</a><a href="#1-啟動與裝配" style="margin-left:10px">1. 啟動與裝配</a><a href="#2-平臺適配與共享執行時" style="margin-left:10px">2. 平臺適配與共享執行時</a><a href="#3-純識別與座標工具" style="margin-left:10px">3. 純識別與座標工具</a><a href="#4-業務任務" style="margin-left:10px">4. 業務任務</a><a href="#5-跑圖-跑商領域模組" style="margin-left:10px">5. 跑圖/跑商領域模組</a><a href="#6-ui-配置和資源" style="margin-left:10px">6. UI、配置和資源</a><a href="#模板識別約束" style="margin-left:0px">模板識別約束</a><a href="#狀態-失敗與可觀測性" style="margin-left:0px">狀態、失敗與可觀測性</a><a href="#擴充套件指南" style="margin-left:0px">擴充套件指南</a><a href="#驗證" style="margin-left:0px">驗證</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/GodRaymond233/ok-bd2"><img class="inline-icon" src="../../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../../../assets/site.js?v=20261124131401" defer></script></body></html>
