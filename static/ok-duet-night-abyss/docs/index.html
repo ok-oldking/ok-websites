@@ -1,0 +1,219 @@
+<!doctype html><html lang="zh-CN" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>简体中文 · ok-duet-night-abyss · 简体中文</title><meta name="description" content="English 简体中文 ok-dna 一款基于图像识别的《二重螺旋》自动化工具，支持后台运行。 — ok-duet-night-abyss 简体中文文档"><meta name="keywords" content="ok-duet-night-abyss, okduetnightabyss, GitHub, BnanZ0/ok-duet-night-abyss, BnanZ0, 二重螺旋, 后台自动化, Windows, 游戏自动化, 电脑视觉, 计算机视觉, 开源软件, Windows 自动化, documentation, 文档"><meta name="author" content="BnanZ0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-duet-night-abyss/docs/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="简体中文 · ok-duet-night-abyss · 简体中文"><meta property="og:description" content="English 简体中文 ok-dna 一款基于图像识别的《二重螺旋》自动化工具，支持后台运行。 — ok-duet-night-abyss 简体中文文档"><meta property="og:url" content="https://ok-script.com/ok-duet-night-abyss/docs/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-duet-night-abyss-zh-cn.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-duet-night-abyss — 二重螺旋 · 后台自动化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="简体中文 · ok-duet-night-abyss · 简体中文"><meta name="twitter:description" content="English 简体中文 ok-dna 一款基于图像识别的《二重螺旋》自动化工具，支持后台运行。 — ok-duet-night-abyss 简体中文文档"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-duet-night-abyss-zh-cn.png"><meta name="twitter:image:alt" content="ok-duet-night-abyss — 二重螺旋 · 后台自动化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"简体中文 · ok-duet-night-abyss · 简体中文","description":"English 简体中文 ok-dna 一款基于图像识别的《二重螺旋》自动化工具，支持后台运行。 — ok-duet-night-abyss 简体中文文档","url":"https://ok-script.com/ok-duet-night-abyss/docs/","inLanguage":"zh-CN","dateModified":"2026-11-24T16:55:42+08:00","author":{"@type":"Organization","name":"ok-duet-night-abyss","url":"https://github.com/BnanZ0/ok-duet-night-abyss"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20261124091313">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../ok-nte/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../ok-kes/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../ok-end-field/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ap/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../ok-gf2/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="../" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="./" aria-current="page">文档</a>
+      <a href="../../#projects">项目</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-duet-night-abyss"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>简体中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="./" data-language-code="zh-CN" aria-current="page"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../en/docs/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切换明暗模式" title="切换明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>文档目录</h2><nav class="docs-nav" aria-label="文档目录"><a href="./" class="active" aria-current="page">简体中文</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../">ok-duet-night-abyss</a><span>/</span><span>文档</span></div><div class="markdown-body"><p><a href="../en/docs/">English</a> | <a href="./">简体中文</a></p>
+<div align="center">
+  <img src="../../assets/sources/ok-duet-night-abyss/icons/icon.png" alt="icon" width="200"><br>
+  <h1 id="ok-dna">ok-dna</h1>
+  <p>一款基于图像识别的《二重螺旋》自动化工具，支持后台运行。</p>
+  <p>基于 <a href="https://github.com/ok-oldking/ok-script">ok-script</a> 框架开发。</p>
+  
+  <p>
+    <img src="https://img.shields.io/badge/platform-Windows-blue" alt="平台">
+    <img src="https://img.shields.io/badge/python-3.12-skyblue" alt="Python版本">
+    <a href="https://github.com/BnanZ0/ok-duet-night-abyss/releases"><img src="https://img.shields.io/github/downloads/BnanZ0/ok-duet-night-abyss/total" alt="总下载量"></a>
+    <a href="https://github.com/BnanZ0/ok-duet-night-abyss/releases"><img src="https://img.shields.io/github/v/release/BnanZ0/ok-duet-night-abyss" alt="最新版本"></a>
+    <a href="https://discord.gg/vVyCatEBgA"><img alt="Discord" src="https://img.shields.io/discord/296598043787132928?color=5865f2&label=%20Discord"></a>
+  </p>
+</div>
+
+<h2 id="免责声明">⚠️ 免责声明</h2>
+<p>本软件为开源、免费的外部工具，仅供学习和交流使用，旨在通过模拟操作简化《二重螺旋》的游戏玩法。</p>
+<ul>
+<li><strong>工作原理</strong>：程序仅通过识别现有用户界面与游戏进行交互，不修改任何游戏文件或代码。</li>
+<li><strong>使用目的</strong>：旨在为用户提供便利，无意破坏游戏平衡或提供任何不公平优势。</li>
+<li><strong>法律责任</strong>：使用本软件产生的所有问题及后果，均与本项目及开发者团队无关。开发者团队拥有对本项目的最终解释权。</li>
+<li><strong>商业行为</strong>：若您遇到商家使用本软件进行代练并收费，此行为可能涉及设备与时间成本，与本软件本身无关。</li>
+</ul>
+<blockquote>
+<p><strong>请注意：根据<a href="https://dna.yingxiong.com/#/news/list?id=14453&type=2523">《二重螺旋》公平游戏宣言</a>：</strong></p>
+<blockquote>
+<p>&quot;严禁使用任何外挂、第三方工具以及其他破坏游戏公平性的行为。&quot;
+&quot;一经核实，运营团队将根据情节严重程度和次数，采取扣除违规收益、冻结或永久封禁游戏账号等措施，以维护玩家的公平权益。&quot;</p>
+</blockquote>
+<p><strong>您应充分了解并自愿承担使用本工具可能带来的所有风险。</strong></p>
+</blockquote>
+<details>
+<summary><strong>Disclaimer in English</strong></summary>
+
+<p>This software is an open-source, free external tool intended for learning and exchange purposes only. It is designed to automate the gameplay of <em>Duet Night Abyss</em> by interacting with the game solely through the existing user interface and in compliance with relevant laws and regulations. The package is intended to provide a simplified way for users to interact with the game and is not meant to disrupt the game balance or provide any unfair advantage. This package does not modify any game files or game code in any way.</p>
+<p>All issues and consequences arising from the use of this software are not related to this project or its development team. The development team reserves the final right of interpretation for this project. If you encounter vendors using this software for services and charging a fee, this may cover their costs for equipment and time; any resulting problems or consequences are not associated with this software.</p>
+</details>
+
+<h2 id="主要功能">✨ 主要功能</h2>
+<img width="100%" alt="功能演示" src="https://github.com/user-attachments/assets/cb7f145b-b304-4a0e-891a-3b6d5acff65d" />
+
+<ul>
+<li><strong>副本自动挂机</strong><ul>
+<li>支持全自动与半自动模式</li>
+<li>自动连战</li>
+<li>兼容外部移动逻辑 (Mod)</li>
+</ul>
+</li>
+<li><strong>自动钓鱼</strong> (核心逻辑原作者: B站 @无敌大蜜瓜)</li>
+<li><strong>快速移动</strong><ul>
+<li>自动穿引共鸣</li>
+</ul>
+</li>
+<li><strong>自动花序弓蓄力</strong></li>
+<li><strong>后台运行</strong><ul>
+<li>支持 PC 版游戏在后台运行时进行自动化操作</li>
+</ul>
+</li>
+</ul>
+<h2 id="运行环境与兼容性">🖥️ 运行环境与兼容性</h2>
+<ul>
+<li><strong>操作系统</strong>：Windows</li>
+<li><strong>游戏分辨率</strong>：1600x900 或更高（推荐 16:9 宽高比）</li>
+<li><strong>游戏语言</strong>：简体中文 / English</li>
+</ul>
+<h2 id="安装指南">🚀 安装指南</h2>
+<h3 id="方式一-使用安装包-推荐">方式一：使用安装包 (推荐)</h3>
+<p>此方法适合绝大多数用户，简单快捷，并支持自动更新。</p>
+<ol>
+<li>前往 <a href="https://github.com/BnanZ0/ok-duet-night-abyss/releases"><strong>Releases</strong></a> 页面。</li>
+<li>下载最新的 <code>ok-dna-win32-China-setup.exe</code> 文件。</li>
+<li>双击运行安装程序，按提示完成安装即可。</li>
+</ol>
+<h3 id="方式二-从源码运行-适合开发者">方式二：从源码运行 (适合开发者)</h3>
+<p>此方法需要您具备 Python 环境，适合希望进行二次开发或调试的用户。</p>
+<ol>
+<li><strong>环境要求</strong>：确保已安装 <strong>Python 3.12</strong> 或更高版本。</li>
+<li><strong>克隆仓库</strong>：<pre><code class="language-bash">git clone https://github.com/BnanZ0/ok-duet-night-abyss.git
+cd ok-duet-night-abyss
+</code></pre>
+</li>
+<li><strong>安装依赖</strong>：<pre><code class="language-bash">pip install -r requirements.txt --upgrade
+</code></pre>
+<em>提示：每次更新代码后，建议重新运行此命令以确保依赖库为最新版本。</em></li>
+<li><strong>运行程序</strong>：<pre><code class="language-bash"># 运行正式版
+python main.py
+
+# 运行调试版 (会输出更详细的日志)
+python main_debug.py
+</code></pre>
+</li>
+</ol>
+<h2 id="使用指南与-faq">📖 使用指南与 FAQ</h2>
+<p>为确保程序稳定运行，请在使用前仔细阅读以下配置要求和常见问题解答。</p>
+<h3 id="一-使用前配置-必读">一、 使用前配置 (必读)</h3>
+<p>在启动自动化前，请务必检查并确认以下设置：</p>
+<ul>
+<li><strong>图形设置</strong><ul>
+<li><strong>显卡滤镜</strong>：<strong>关闭</strong> 所有显卡滤行和锐化效果（如 NVIDIA Freestyle, AMD FidelityFX）。</li>
+<li><strong>游戏亮度</strong>：使用游戏 <strong>默认亮度</strong>。</li>
+<li><strong>游戏UI缩放</strong>：使用游戏 <strong>默认缩放100%</strong>。</li>
+</ul>
+</li>
+<li><strong>分辨率</strong><ul>
+<li>推荐使用 <strong>1600x900</strong> 或以上的主流分辨率。</li>
+</ul>
+</li>
+<li><strong>按键设置</strong><ul>
+<li>请务必使用游戏 <strong>默认</strong> 按键绑定。</li>
+</ul>
+</li>
+<li><strong>第三方软件</strong><ul>
+<li>关闭任何在游戏画面上显示信息的悬浮窗，如 MSI Afterburner (小飞机) 的 <strong>帧率显示</strong>。</li>
+</ul>
+</li>
+<li><strong>窗口与系统状态</strong><ul>
+<li><strong>鼠标干扰</strong>：当游戏窗口处于 <strong>前台</strong> 时，请勿移动鼠标，否则会干扰程序的模拟点击。</li>
+<li><strong>窗口状态</strong>：游戏窗口可以置于后台，但 <strong>不可最小化</strong>。</li>
+<li><strong>系统状态</strong>：请勿让电脑 <strong>熄屏</strong> 或 <strong>锁屏</strong>，否则将导致程序中断。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二-快速上手">二、 快速上手</h3>
+<ol>
+<li>进入您想要自动化的关卡或场景。</li>
+<li>在程序界面上点击 <strong>“开始”</strong> 按钮即可。</li>
+</ol>
+<h3 id="三-安装外部逻辑-mod">三、 安装外部逻辑 (Mod)</h3>
+<p>您可以安装社区开发的外部逻辑模块来扩展程序功能。</p>
+<ol>
+<li>在程序主页，点击 <strong>“安装目录”</strong> 按钮打开程序文件夹。</li>
+<li>将下载的 Mod 文件放入 <code>mod</code> 文件夹内。</li>
+<li>重启程序即可加载。</li>
+</ol>
+<h3 id="四-常见问题解答-faq">四、 常见问题解答 (FAQ)</h3>
+<p><strong>Q1: 角色移动时经常撞墙，或者无法准确走到目标点？</strong></p>
+<ul>
+<li><strong>原因</strong>：游戏引擎的移动速度与帧率 (FPS) 强相关。</li>
+<li><strong>解决方案</strong>：<ol>
+<li><strong>调整游戏帧率</strong>：在游戏设置中，依次尝试将帧率上限设为 <strong>60 FPS</strong> / <strong>120 FPS</strong> / <strong>无限制</strong>，找到表现最稳定的一档。</li>
+<li><strong>调整按键时长</strong>：在对应任务或 Mod 的设置中，微调 <strong>按键时长</strong> 参数。</li>
+<li><strong>等待官方优化</strong>：此问题可能需要等待游戏官方后续更新修复。</li>
+</ol>
+</li>
+</ul>
+<p><strong>Q2: 我安装的 Mod 没有生效，或者识别不正确？</strong></p>
+<ul>
+<li><strong>原因</strong>：Mod 内置的图像识别素材可能无法适配所有分辨率。</li>
+<li><strong>解决方案</strong>：<ol>
+<li><strong>切换分辨率</strong>：尝试更换一个常见分辨率（如 1920x1080 或 1600x900）。</li>
+<li><strong>手动更新素材</strong>：如果您了解 Mod 制作，可以为您当前的分辨率重新录制识图所需的截图。</li>
+</ol>
+</li>
+</ul>
+<p><strong>Q3: 程序卡在结算或复位界面，不再继续执行？</strong></p>
+<ul>
+<li><strong>原因</strong>：很可能是无意的鼠标移动干扰了程序的图像识别。</li>
+<li><strong>解决方案</strong>：<ol>
+<li>在程序左下角点击 <strong>“设置”</strong>。</li>
+<li>切换到 <strong>“挂机设置”</strong> 选项卡。</li>
+<li>勾选并启用 <strong>“防止鼠标干扰”</strong> 功能。</li>
+</ol>
+</li>
+</ul>
+<h3 id="五-问题反馈">五、 问题反馈</h3>
+<p>如果以上方法未能解决您的问题，欢迎通过 <a href="https://github.com/BnanZ0/ok-duet-night-abyss/issues"><strong>Issues</strong></a> 向我们反馈。为帮助我们快速定位问题，请在提交时提供以下信息：</p>
+<ul>
+<li><strong>问题截图</strong>：清晰展示异常界面或错误提示。</li>
+<li><strong>日志文件</strong>：附上程序目录下的 <code>.log</code> 日志文件。</li>
+<li><strong>详细描述</strong>：您进行了哪些操作？问题具体表现是什么？问题是稳定复现还是偶尔发生？</li>
+</ul>
+<h2 id="社区与交流">💬 社区与交流</h2>
+<ul>
+<li><strong>Discord</strong>: <a href="https://discord.gg/vVyCatEBgA">https://discord.gg/vVyCatEBgA</a></li>
+</ul>
+<h2 id="使用ok-script开发的项目">🔗 使用<a href="https://github.com/ok-oldking/ok-script">ok-script</a>开发的项目：</h2>
+<ul>
+<li>鸣潮 <a href="https://github.com/ok-oldking/ok-wuthering-waves">https://github.com/ok-oldking/ok-wuthering-wave</a></li>
+<li>原神(停止维护,
+但是后台过剧情可用) <a href="https://github.com/ok-oldking/ok-genshin-impact">https://github.com/ok-oldking/ok-genshin-impact</a></li>
+<li>少前2 <a href="https://github.com/ok-oldking/ok-gf2">https://github.com/ok-oldking/ok-gf2</a></li>
+<li>星铁 <a href="https://github.com/Shasnow/ok-starrailassistant">https://github.com/Shasnow/ok-starrailassistant</a></li>
+<li>星痕共鸣 <a href="https://github.com/Sanheiii/ok-star-resonance">https://github.com/Sanheiii/ok-star-resonance</a></li>
+<li>二重螺旋 <a href="https://github.com/BnanZ0/ok-duet-night-abyss">https://github.com/BnanZ0/ok-duet-night-abyss</a></li>
+<li>白荆回廊(停止更新) <a href="https://github.com/ok-oldking/ok-baijing">https://github.com/ok-oldking/ok-baijing</a></li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/BnanZ0/ok-duet-night-abyss/blob/1afaa3cf1402e9fb86de77036993c8ba78543bd9/README.md"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">在 GitHub 查看源文件 ↗</a> · 页面生成时间: 2026年11月24日</div></article><aside class="docs-toc"><h2>本页内容</h2><nav class="toc-list"><a href="#免责声明" style="margin-left:0px">⚠️ 免责声明</a><a href="#主要功能" style="margin-left:0px">✨ 主要功能</a><a href="#运行环境与兼容性" style="margin-left:0px">🖥️ 运行环境与兼容性</a><a href="#安装指南" style="margin-left:0px">🚀 安装指南</a><a href="#方式一-使用安装包-推荐" style="margin-left:10px">方式一：使用安装包 (推荐)</a><a href="#方式二-从源码运行-适合开发者" style="margin-left:10px">方式二：从源码运行 (适合开发者)</a><a href="#使用指南与-faq" style="margin-left:0px">📖 使用指南与 FAQ</a><a href="#一-使用前配置-必读" style="margin-left:10px">一、 使用前配置 (必读)</a><a href="#二-快速上手" style="margin-left:10px">二、 快速上手</a><a href="#三-安装外部逻辑-mod" style="margin-left:10px">三、 安装外部逻辑 (Mod)</a><a href="#四-常见问题解答-faq" style="margin-left:10px">四、 常见问题解答 (FAQ)</a><a href="#五-问题反馈" style="margin-left:10px">五、 问题反馈</a><a href="#社区与交流" style="margin-left:0px">💬 社区与交流</a><a href="#使用ok-script开发的项目" style="margin-left:0px">🔗 使用ok-script开发的项目：</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 协议开源。文档由项目源码自动生成。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-duet-night-abyss"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../">全部项目</a></div></div></footer>
+  <script src="../../assets/site.js?v=20261124091313" defer></script></body></html>

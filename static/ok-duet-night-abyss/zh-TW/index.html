@@ -1,0 +1,117 @@
+<!doctype html><html lang="zh-TW" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>ok-duet-night-abyss — 二重螺旋副本掛機</title><meta name="description" content="基於影像識別的《二重螺旋》自動化工具，支援後臺副本掛機，不讀取遊戲記憶體、不修改遊戲檔案。"><meta name="keywords" content="ok-duet-night-abyss, okduetnightabyss, GitHub, BnanZ0/ok-duet-night-abyss, BnanZ0, 二重螺旋, 後臺自動化, Windows, 遊戲自動化, 電腦視覺, 圖像辨識, 開源軟體, Windows 自動化"><meta name="author" content="BnanZ0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-duet-night-abyss/zh-TW/"><link rel="alternate" hreflang="zh-CN" href="https://ok-script.com/ok-duet-night-abyss/"><link rel="alternate" hreflang="en" href="https://ok-script.com/ok-duet-night-abyss/en/"><link rel="alternate" hreflang="zh-TW" href="https://ok-script.com/ok-duet-night-abyss/zh-TW/"><link rel="alternate" hreflang="x-default" href="https://ok-script.com/ok-duet-night-abyss/en/">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="zh_TW"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="en"><meta property="og:title" content="ok-duet-night-abyss — 二重螺旋副本掛機"><meta property="og:description" content="基於影像識別的《二重螺旋》自動化工具，支援後臺副本掛機，不讀取遊戲記憶體、不修改遊戲檔案。"><meta property="og:url" content="https://ok-script.com/ok-duet-night-abyss/zh-TW/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-duet-night-abyss-zh-tw.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-duet-night-abyss — 二重螺旋 · 後臺自動化 · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="ok-duet-night-abyss — 二重螺旋副本掛機"><meta name="twitter:description" content="基於影像識別的《二重螺旋》自動化工具，支援後臺副本掛機，不讀取遊戲記憶體、不修改遊戲檔案。"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-duet-night-abyss-zh-tw.png"><meta name="twitter:image:alt" content="ok-duet-night-abyss — 二重螺旋 · 後臺自動化 · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ok-duet-night-abyss","description":"基於影像識別的《二重螺旋》自動化工具，支援後臺副本掛機，不讀取遊戲記憶體、不修改遊戲檔案。","url":"https://ok-script.com/ok-duet-night-abyss/zh-TW/","inLanguage":"zh-TW","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows","codeRepository":"https://github.com/BnanZ0/ok-duet-night-abyss","dateModified":"2026-11-24T16:55:42+08:00","author":{"@type":"Organization","name":"BnanZ0","url":"https://github.com/BnanZ0"}}</script>
+  
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../assets/site.css?v=20261124091313">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ww/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../app/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../ok-nte/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../ok-star-resonance/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../ok-kes/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../ok-end-field/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../ok-onmyoji/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../ok-ap/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../../ok-gf2/zh-TW/"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a><a class="dropdown-option" role="menuitem" href="./" aria-current="page"><span class="dropdown-option-icon"><img src="../../assets/project-icons/ok-duet-night-abyss.png" alt=""></span><span>ok-duet-night-abyss</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="./docs/">文件</a>
+      <a href="../../zh-TW/#projects">專案</a>
+      <a class="github-link" href="https://github.com/BnanZ0/ok-duet-night-abyss"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>繁體中文</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="../en/" data-language-code="en"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="./" data-language-code="zh-TW" aria-current="page"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="切換明暗模式" title="切換明暗模式">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main">
+  <section class="hero"><div class="container landing-container hero-grid hero-single"><div><div class="eyebrow">二重螺旋 · 後臺自動化 · Windows</div><h1 class="hero-title-single"><span>二重螺旋副本掛機，</span><span class="gradient-text">交給 ok-duet-night-abyss。</span></h1><p class="hero-copy">基於影像識別的《二重螺旋》自動化工具，支援後臺副本掛機，不讀取遊戲記憶體、不修改遊戲檔案。</p>
+  <div class="hero-actions"><div class="custom-dropdown download-split" data-dropdown data-download-control data-downloading-label="正在下載…" data-download-guide="下載已開始，請查看瀏覽器右上角">
+    <a class="button primary download-main" target="_blank" rel="noopener" href="https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32-Global-setup.exe" data-download-link><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true"><span data-download-label>從 GitHub 下載</span><strong>v1.6.8</strong><small>Global</small><span aria-hidden="true">↓</span></a>
+    <button class="download-toggle" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Choose download version"><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu download-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option download-option" role="menuitem" target="_blank" rel="noopener" href="https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32-China-setup.exe" data-download-link><span>China</span><strong>v1.6.8</strong></a><a class="dropdown-option download-option" role="menuitem" target="_blank" rel="noopener" href="https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32-Global-setup.exe" data-download-link><span>Global</span><strong>v1.6.8</strong></a></div>
+  </div><a class="button community-button" href="../../zh-TW/community/?project=ok-duet-night-abyss"><span class="community-button-icons" aria-hidden="true"><span class="community-button-icon"><img src="../../assets/qq.svg" alt=""></span><span class="community-button-icon"><img src="../../assets/discord.svg" alt=""></span></span>加入社群<span aria-hidden="true">→</span></a><a class="button" href="./docs/">閱讀文件</a><a class="button" href="https://github.com/BnanZ0/ok-duet-night-abyss"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">查看原始碼</a></div><div class="community-meta-row"><a class="community-stars" href="https://github.com/BnanZ0/ok-duet-night-abyss" aria-label="656 GitHub Stars">★ <strong>656</strong> GitHub Stars</a><span class="community-updated">↻ <strong>2026年11月24日</strong> 程式更新</span></div></div></div></section>
+  <section class="section section-muted"><div class="container landing-container"><div class="feature-grid"><article class="feature-card"><div class="feature-icon">◫</div><h3>背景模式</h3><p>遊戲最小化或被遮擋時仍可執行。</p></article><article class="feature-card"><div class="feature-icon">◎</div><h3>智慧辨識</h3><p>自動辨識角色，不必手動設定技能序列。</p></article><article class="feature-card"><div class="feature-icon">4K</div><h3>高解析度</h3><p>支援 720p 至 4K，並相容部分超寬螢幕。</p></article><article class="feature-card"><div class="feature-icon">♪</div><h3>自動靜音</h3><p>背景執行時可自動靜音。</p></article></div></div></section><section class="section faq-section"><div class="container landing-container"><div class="section-head compact"><h2>常見問題</h2></div><div class="faq-content markdown-body"><p>為確保程式穩定執行，請在使用前仔細閱讀以下配置要求和常見問題解答。</p>
+<h3 id="一-使用前配置-必讀">一、 使用前配置 (必讀)</h3>
+<p>在啟動自動化前，請務必檢查並確認以下設定：</p>
+<ul>
+<li><strong>圖形設定</strong><ul>
+<li><strong>顯示卡濾鏡</strong>：<strong>關閉</strong> 所有顯示卡濾行和銳化效果（如 NVIDIA Freestyle, AMD FidelityFX）。</li>
+<li><strong>遊戲亮度</strong>：使用遊戲 <strong>預設亮度</strong>。</li>
+<li><strong>遊戲UI縮放</strong>：使用遊戲 <strong>預設縮放100%</strong>。</li>
+</ul>
+</li>
+<li><strong>解析度</strong><ul>
+<li>推薦使用 <strong>1600x900</strong> 或以上的主流解析度。</li>
+</ul>
+</li>
+<li><strong>按鍵設定</strong><ul>
+<li>請務必使用遊戲 <strong>預設</strong> 按鍵繫結。</li>
+</ul>
+</li>
+<li><strong>第三方軟體</strong><ul>
+<li>關閉任何在遊戲畫面上顯示資訊的懸浮窗，如 MSI Afterburner (小飛機) 的 <strong>幀率顯示</strong>。</li>
+</ul>
+</li>
+<li><strong>視窗與系統狀態</strong><ul>
+<li><strong>滑鼠干擾</strong>：當遊戲視窗處於 <strong>前臺</strong> 時，請勿移動滑鼠，否則會干擾程式的模擬點選。</li>
+<li><strong>視窗狀態</strong>：遊戲視窗可以置於後臺，但 <strong>不可最小化</strong>。</li>
+<li><strong>系統狀態</strong>：請勿讓電腦 <strong>熄屏</strong> 或 <strong>鎖屏</strong>，否則將導致程式中斷。</li>
+</ul>
+</li>
+</ul>
+<h3 id="二-快速上手">二、 快速上手</h3>
+<ol>
+<li>進入您想要自動化的關卡或場景。</li>
+<li>在程式介面上點選 <strong>“開始”</strong> 按鈕即可。</li>
+</ol>
+<h3 id="三-安裝外部邏輯-mod">三、 安裝外部邏輯 (Mod)</h3>
+<p>您可以安裝社群開發的外部邏輯模組來擴充套件程式功能。</p>
+<ol>
+<li>在程式主頁，點選 <strong>“安裝目錄”</strong> 按鈕開啟程式資料夾。</li>
+<li>將下載的 Mod 檔案放入 <code>mod</code> 資料夾內。</li>
+<li>重啟程式即可載入。</li>
+</ol>
+<h3 id="四-常見問題解答-faq">四、 常見問題解答 (FAQ)</h3>
+<p><strong>Q1: 角色移動時經常撞牆，或者無法準確走到目標點？</strong></p>
+<ul>
+<li><strong>原因</strong>：遊戲引擎的移動速度與幀率 (FPS) 強相關。</li>
+<li><strong>解決方案</strong>：<ol>
+<li><strong>調整遊戲幀率</strong>：在遊戲設定中，依次嘗試將幀率上限設為 <strong>60 FPS</strong> / <strong>120 FPS</strong> / <strong>無限制</strong>，找到表現最穩定的一檔。</li>
+<li><strong>調整按鍵時長</strong>：在對應任務或 Mod 的設定中，微調 <strong>按鍵時長</strong> 引數。</li>
+<li><strong>等待官方最佳化</strong>：此問題可能需要等待遊戲官方後續更新修復。</li>
+</ol>
+</li>
+</ul>
+<p><strong>Q2: 我安裝的 Mod 沒有生效，或者識別不正確？</strong></p>
+<ul>
+<li><strong>原因</strong>：Mod 內建的影像識別素材可能無法適配所有解析度。</li>
+<li><strong>解決方案</strong>：<ol>
+<li><strong>切換解析度</strong>：嘗試更換一個常見解析度（如 1920x1080 或 1600x900）。</li>
+<li><strong>手動更新素材</strong>：如果您瞭解 Mod 製作，可以為您當前的解析度重新錄製識圖所需的截圖。</li>
+</ol>
+</li>
+</ul>
+<p><strong>Q3: 程式卡在結算或復位介面，不再繼續執行？</strong></p>
+<ul>
+<li><strong>原因</strong>：很可能是無意的滑鼠移動干擾了程式的影像識別。</li>
+<li><strong>解決方案</strong>：<ol>
+<li>在程式左下角點選 <strong>“設定”</strong>。</li>
+<li>切換到 <strong>“掛機設定”</strong> 選項卡。</li>
+<li>勾選並啟用 <strong>“防止滑鼠干擾”</strong> 功能。</li>
+</ol>
+</li>
+</ul>
+<h3 id="五-問題反饋">五、 問題反饋</h3>
+<p>如果以上方法未能解決您的問題，歡迎通過 <a href="https://github.com/BnanZ0/ok-duet-night-abyss/issues"><strong>Issues</strong></a> 向我們反饋。為幫助我們快速定位問題，請在提交時提供以下資訊：</p>
+<ul>
+<li><strong>問題截圖</strong>：清晰展示異常介面或錯誤提示。</li>
+<li><strong>日誌檔案</strong>：附上程式目錄下的 <code>.log</code> 日誌檔案。</li>
+<li><strong>詳細描述</strong>：您進行了哪些操作？問題具體表現是什麼？問題是穩定復現還是偶爾發生？</li>
+</ul>
+</div></div></section></main>
+  <footer class="site-footer"><div class="container footer-row"><span>以 AGPL-3.0 授權開源。文件由專案原始碼自動產生。</span><div class="footer-links"><a class="github-link" href="https://github.com/BnanZ0/ok-duet-night-abyss"><img class="inline-icon" src="../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../zh-TW/">全部專案</a></div></div></footer>
+  <script src="../../assets/site.js?v=20261124091313" defer></script></body></html>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T06:28:51.308Z",
+  "generatedAt": "2026-11-24T09:13:13.809Z",
   "projects": [
     {
       "id": "ok-script",
@@ -12,7 +12,7 @@
       ],
       "meta": {
         "stars": 858,
-        "forks": 250,
+        "forks": 251,
         "description": "Vibe Coding Automation Framework",
         "release": "v3.0.13",
         "releaseUrl": "https://github.com/ok-oldking/ok-script/releases/tag/v3.0.13",
@@ -35,7 +35,7 @@
       ],
       "meta": {
         "stars": 8709,
-        "forks": 821,
+        "forks": 822,
         "description": "鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves",
         "release": "v3.8.14",
         "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.8.14",
@@ -86,7 +86,7 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 229,
+        "stars": 230,
         "forks": 275,
         "description": "Python版按键精灵基于ok-script开发",
         "release": "v1.1.3",
@@ -308,15 +308,15 @@
     },
     {
       "id": "ok-end-field",
-      "commit": "88b869d4a3f10a302d5301ba78276b3f106790c2",
-      "updated": "2026-11-23T23:16:09+08:00",
+      "commit": "3947d25354925fa8ba9791bc26558257b27f6843",
+      "updated": "2026-11-24T08:59:27Z",
       "locales": [
         "zh-CN",
         "en",
         "zh-TW"
       ],
       "meta": {
-        "stars": 569,
+        "stars": 570,
         "forks": 39,
         "description": "终末地 End Field Automation 基于ok-script开发的自动化",
         "release": "v2.0.26",
@@ -354,7 +354,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-24T03:34:07Z"
+        "updated": "2026-11-24T08:59:31Z"
       }
     },
     {
@@ -416,7 +416,7 @@
         "zh-TW"
       ],
       "meta": {
-        "stars": 106,
+        "stars": 107,
         "forks": 6,
         "description": "蓝色星原：旅谣自动化脚本",
         "release": "v0.3.6",
@@ -469,8 +469,8 @@
     },
     {
       "id": "ok-gf2",
-      "commit": "d1301ca6e360cde951cfd7df9c5382e4924fd070",
-      "updated": "2026-11-23T23:21:22+08:00",
+      "commit": "15005c9c45d26b712a29a7dacdbb26b30e92a6df",
+      "updated": "2026-11-24T08:22:18Z",
       "locales": [
         "zh-CN",
         "en",
@@ -525,7 +525,60 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-24T02:46:30Z"
+        "updated": "2026-11-24T08:22:19Z"
+      }
+    },
+    {
+      "id": "ok-duet-night-abyss",
+      "commit": "1afaa3cf1402e9fb86de77036993c8ba78543bd9",
+      "updated": "2026-11-24T16:55:42+08:00",
+      "locales": [
+        "zh-CN",
+        "en",
+        "zh-TW"
+      ],
+      "meta": {
+        "stars": 656,
+        "forks": 62,
+        "description": "二重螺旋 后台副本挂机 Automation for Duet Night Abyss",
+        "release": "v1.6.8",
+        "releaseUrl": "https://github.com/BnanZ0/ok-duet-night-abyss/releases/tag/v1.6.8",
+        "pypiVersion": "v1.6.8",
+        "releaseAssets": [
+          {
+            "name": "ok-dna-win32-China-setup.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32-China-setup.exe",
+            "size": 430970972
+          },
+          {
+            "name": "ok-dna-win32-Global-setup.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32-Global-setup.exe",
+            "size": 537511021
+          },
+          {
+            "name": "ok-dna-win32-online-setup.exe",
+            "browser_download_url": "https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32-online-setup.exe",
+            "size": 3911383
+          },
+          {
+            "name": "ok-dna-win32.zip",
+            "browser_download_url": "https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/ok-dna-win32.zip",
+            "size": 4867983
+          },
+          {
+            "name": "win32_sha256.txt",
+            "browser_download_url": "https://github.com/BnanZ0/ok-duet-night-abyss/releases/download/v1.6.8/win32_sha256.txt",
+            "size": 64
+          }
+        ],
+        "mirrors": [
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/a1052cec4d13"
+          }
+        ],
+        "releaseWarning": "",
+        "updated": "2026-11-24T08:55:43Z"
       }
     }
   ]

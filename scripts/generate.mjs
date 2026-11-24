@@ -37,6 +37,8 @@ const copy = {
     endLead: '基于图像识别的《明日方舟：终末地》自动化工具，支持后台运行，不读取游戏内存、不修改游戏文件。',
     gf2Eyebrow: '少女前线2：追放 · 后台自动化 · Windows', gf2Title: '少前2日常，\n交给 ok-gf2。',
     gf2Lead: '基于图像识别的《少女前线2：追放》PC 版自动化工具，一键完成日常、周常与清图，支持后台运行，不读取游戏内存、不修改游戏文件。',
+    dnaEyebrow: '二重螺旋 · 后台自动化 · Windows', dnaTitle: '二重螺旋副本挂机，\n交给 ok-duet-night-abyss。',
+    dnaLead: '基于图像识别的《二重螺旋》自动化工具，支持后台副本挂机，不读取游戏内存、不修改游戏文件。',
     apEyebrow: '蓝色星原：旅谣 · 视觉自动化 · Windows', apTitle: '星原旅途，\n日常交给 ok-ap。',
     apLead: '基于 ok-script 的《蓝色星原：旅谣》图像识别自动化工具，支持一键日常、家园任务、小游戏与交互辅助。',
     templateEyebrow: '项目模板 · Python · 可视化工具', templateTitle: '从可运行模板，\n开始自动化。',
@@ -70,6 +72,8 @@ const copy = {
     endLead: 'Image-recognition automation for Arknights: Endfield with background operation, without reading game memory or modifying game files.',
     gf2Eyebrow: "Girls' Frontline 2: Exilium · Background automation · Windows", gf2Title: 'Leave GF2 routines\nto ok-gf2.',
     gf2Lead: "Image-recognition automation for Girls' Frontline 2: Exilium on PC: one-click dailies, weeklies, and map clearing with background operation, without reading game memory or modifying game files.",
+    dnaEyebrow: 'Duet Night Abyss · Background automation · Windows', dnaTitle: 'Leave dungeon farming\nto ok-duet-night-abyss.',
+    dnaLead: 'Image-recognition automation for Duet Night Abyss with background dungeon farming, without reading game memory or modifying game files.',
     apEyebrow: 'Azur Promilia · Visual automation · Windows', apTitle: 'Enjoy Azur Promilia.\nLeave the routine to ok-ap.',
     apLead: 'Image-recognition automation for Azur Promilia built with ok-script, covering daily routines, home tasks, minigames, and interaction assistance.',
     templateEyebrow: 'Project template · Python · Visual tools', templateTitle: 'Start with a working template.\nBuild your automation.',
@@ -767,7 +771,7 @@ async function faqFromMarkdown(project, locale) {
 function marketingContent(project, locale) {
   const t = localeCopy(locale.code);
   const isFramework = project.type === 'framework';
-  const key = project.id === 'ok-ap' ? 'ap' : project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : project.id === 'ok-gf2' ? 'gf2' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
+  const key = project.id === 'ok-ap' ? 'ap' : project.id === 'ok-onmyoji' ? 'onmyoji' : project.id === 'ok-nte' ? 'nte' : project.id === 'ok-star-resonance' ? 'star' : project.id === 'ok-kes' ? 'kes' : project.id === 'ok-end-field' ? 'end' : project.id === 'ok-gf2' ? 'gf2' : project.id === 'ok-duet-night-abyss' ? 'dna' : isFramework ? 'framework' : project.type === 'template' ? 'template' : 'app';
   const localized = name => t[name] || (locale.autoTranslated ? simplifiedToTraditional(copy['zh-CN'][name]) : copy.en[name]);
   const [titleA, titleB] = localized(`${key}Title`).split('\n');
   return { key, eyebrow: localized(`${key}Eyebrow`), titleA, titleB, lead: localized(`${key}Lead`) };
