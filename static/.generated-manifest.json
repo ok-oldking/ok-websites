@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-24T03:02:29.741Z",
+  "generatedAt": "2026-11-24T06:28:51.308Z",
   "projects": [
     {
       "id": "ok-script",
-      "commit": "b0cb86c7344beef029cd70e161e16a38596e5719",
-      "updated": "2026-11-24T04:24:21+08:00",
+      "commit": "e74c3f24226b1edeac1a4e8084e2c043ea2770d1",
+      "updated": "2026-11-24T11:44:46+08:00",
       "locales": [
         "zh-CN",
         "en",
         "zh-TW"
       ],
       "meta": {
-        "stars": 857,
+        "stars": 858,
         "forks": 250,
         "description": "Vibe Coding Automation Framework",
         "release": "v3.0.13",
@@ -20,7 +20,7 @@
         "releaseAssets": [],
         "mirrors": [],
         "releaseWarning": "",
-        "updated": "2026-11-23T20:27:21Z"
+        "updated": "2026-11-24T03:44:51Z"
       }
     },
     {
@@ -319,24 +319,24 @@
         "stars": 569,
         "forks": 39,
         "description": "终末地 End Field Automation 基于ok-script开发的自动化",
-        "release": "v2.0.25",
-        "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v2.0.25",
+        "release": "v2.0.26",
+        "releaseUrl": "https://github.com/AliceJump/ok-end-field/releases/tag/v2.0.26",
         "pypiVersion": "v0.0.74",
         "releaseAssets": [
           {
-            "name": "ok-ef-win32-China-setup-v2.0.25.exe",
-            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.25/ok-ef-win32-China-setup-v2.0.25.exe",
-            "size": 567759857
+            "name": "ok-ef-win32-China-setup-v2.0.26.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.26/ok-ef-win32-China-setup-v2.0.26.exe",
+            "size": 567710899
           },
           {
-            "name": "ok-ef-win32-Global-setup-v2.0.25.exe",
-            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.25/ok-ef-win32-Global-setup-v2.0.25.exe",
-            "size": 642284170
+            "name": "ok-ef-win32-Global-setup-v2.0.26.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.26/ok-ef-win32-Global-setup-v2.0.26.exe",
+            "size": 642274202
           },
           {
-            "name": "ok-ef-win32-online-setup-v2.0.25.exe",
-            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.25/ok-ef-win32-online-setup-v2.0.25.exe",
-            "size": 4294344
+            "name": "ok-ef-win32-online-setup-v2.0.26.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-end-field/releases/download/v2.0.26/ok-ef-win32-online-setup-v2.0.26.exe",
+            "size": 4293609
           }
         ],
         "mirrors": [
@@ -354,7 +354,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-24T02:44:14Z"
+        "updated": "2026-11-24T03:34:07Z"
       }
     },
     {
@@ -465,6 +465,67 @@
         ],
         "releaseWarning": "",
         "updated": "2026-11-24T01:36:43Z"
+      }
+    },
+    {
+      "id": "ok-gf2",
+      "commit": "d1301ca6e360cde951cfd7df9c5382e4924fd070",
+      "updated": "2026-11-23T23:21:22+08:00",
+      "locales": [
+        "zh-CN",
+        "en",
+        "zh-TW"
+      ],
+      "meta": {
+        "stars": 298,
+        "forks": 22,
+        "description": "少女前线2 追放 PC版 后台一键收菜 自动化脚本 Girls' Frontline 2: Exilium Automation Tool ",
+        "release": "v1.3.3",
+        "releaseUrl": "https://github.com/AliceJump/ok-gf2/releases/tag/v1.3.3",
+        "pypiVersion": "v1.3.3",
+        "releaseAssets": [
+          {
+            "name": "ok-gf2-win32-china-setup-v1.3.3.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-gf2/releases/download/v1.3.3/ok-gf2-win32-china-setup-v1.3.3.exe",
+            "size": 333875867
+          },
+          {
+            "name": "ok-gf2-win32-global-setup-v1.3.3.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-gf2/releases/download/v1.3.3/ok-gf2-win32-global-setup-v1.3.3.exe",
+            "size": 340073456
+          },
+          {
+            "name": "ok-gf2-win32-online-setup-v1.3.3.exe",
+            "browser_download_url": "https://github.com/AliceJump/ok-gf2/releases/download/v1.3.3/ok-gf2-win32-online-setup-v1.3.3.exe",
+            "size": 3975062
+          },
+          {
+            "name": "ok-gf2-win32-v1.3.3.zip",
+            "browser_download_url": "https://github.com/AliceJump/ok-gf2/releases/download/v1.3.3/ok-gf2-win32-v1.3.3.zip",
+            "size": 4965021
+          },
+          {
+            "name": "win32_sha256-v1.3.3.txt",
+            "browser_download_url": "https://github.com/AliceJump/ok-gf2/releases/download/v1.3.3/win32_sha256-v1.3.3.txt",
+            "size": 64
+          }
+        ],
+        "mirrors": [
+          {
+            "label": "Mirror酱",
+            "url": "https://mirrorchyan.com/zh/projects?rid=okgf&source=ok-gf-release"
+          },
+          {
+            "label": "夸克网盘",
+            "url": "https://pan.quark.cn/s/80730a808d0e"
+          },
+          {
+            "label": "百度网盘",
+            "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww"
+          }
+        ],
+        "releaseWarning": "",
+        "updated": "2026-11-24T02:46:30Z"
       }
     }
   ]

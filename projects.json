@@ -257,6 +257,37 @@
       "locales": [
         { "code": "zh-CN", "label": "简体中文", "source": "docs", "index": "index.md" }
       ]
+    },
+    {
+      "id": "ok-gf2",
+      "name": "ok-gf2",
+      "repository": "https://github.com/ok-oldking/ok-gf2.git",
+      "github": "ok-oldking/ok-gf2",
+      "domain": "https://ok-script.com/ok-gf2",
+      "outputFolder": "ok-gf2",
+      "basePath": "",
+      "accent": "indigo",
+      "type": "application",
+      "icon": "icons/icon.png",
+      "fallbackMetadata": {
+        "stars": 298,
+        "forks": 22,
+        "release": "v1.3.3",
+        "releaseUrl": "https://github.com/ok-oldking/ok-gf2/releases/tag/v1.3.3",
+        "releaseAssets": [
+          { "name": "ok-gf2-win32-china-setup-v1.3.3.exe", "browser_download_url": "https://github.com/ok-oldking/ok-gf2/releases/download/v1.3.3/ok-gf2-win32-china-setup-v1.3.3.exe" },
+          { "name": "ok-gf2-win32-global-setup-v1.3.3.exe", "browser_download_url": "https://github.com/ok-oldking/ok-gf2/releases/download/v1.3.3/ok-gf2-win32-global-setup-v1.3.3.exe" }
+        ],
+        "mirrors": [
+          { "label": "Mirror酱", "url": "https://mirrorchyan.com/zh/projects?rid=okgf2" },
+          { "label": "夸克网盘", "url": "https://pan.quark.cn/s/80730a808d0e" },
+          { "label": "百度网盘", "url": "https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww" }
+        ]
+      },
+      "locales": [
+        { "code": "zh-CN", "label": "简体中文", "source": ".", "index": "README.md" },
+        { "code": "en", "label": "English", "source": ".", "index": "README_en.md" }
+      ]
     }
   ],
   "relatedProjects": [
@@ -271,21 +302,20 @@
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-script-app", "description": { "zh-CN": "基于 ok-script 开发的 Python 版按键精灵", "en": "A Python automation toolkit built with ok-script" }, "url": "https://app.ok-script.com/", "github": "ok-oldking/ok-script-app", "status": "active", "stars": 178, "communityLinks": [
+    { "name": "ok-script-app", "description": { "zh-CN": "基于 ok-script 开发的 Python 版按键精灵", "en": "A Python automation toolkit built with ok-script" }, "url": "https://app.ok-script.com/", "github": "ok-oldking/ok-script-app", "status": "active", "bottomOrder": 2, "stars": 178, "communityLinks": [
       { "type": "qq", "label": "QQ 1097603920", "value": "1097603920" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-gf2", "gameName": { "zh-CN": "少女前线2：追放", "zh-TW": "少女前線2：追放", "en": "Girls' Frontline 2: Exilium" }, "description": { "zh-CN": "少女前线 2：追放 PC 版后台一键日常自动化", "en": "Background, one-click daily automation for Girls' Frontline 2: Exilium on PC" }, "url": "https://github.com/ok-oldking/ok-gf2", "github": "ok-oldking/ok-gf2", "status": "active", "stars": 257, "communityLinks": [
+    { "name": "ok-gf2", "gameName": { "zh-CN": "少女前线2：追放", "zh-TW": "少女前線2：追放", "en": "Girls' Frontline 2: Exilium" }, "description": { "zh-CN": "少女前线 2：追放 PC 版后台一键日常自动化", "en": "Background, one-click daily automation for Girls' Frontline 2: Exilium on PC" }, "url": "https://ok-script.com/ok-gf2/", "github": "ok-oldking/ok-gf2", "status": "active", "stars": 257, "communityLinks": [
       { "type": "qq", "label": "QQ 1033950808", "value": "1033950808" }
     ] },
-    { "name": "ok-starrailassistant", "gameName": { "zh-CN": "崩坏：星穹铁道", "zh-TW": "崩壞：星穹鐵道", "en": "Honkai: Star Rail" }, "description": { "zh-CN": "支持 PC 后台运行的崩坏：星穹铁道自动化助手", "en": "A Honkai: Star Rail automation assistant for PC with background operation" }, "url": "https://github.com/Shasnow/ok-starrailassistant", "github": "Shasnow/ok-starrailassistant", "status": "community", "stars": 56 },
     { "name": "ok-star-resonance", "gameName": { "zh-CN": "星痕共鸣", "zh-TW": "星痕共鳴", "en": "Star Resonance" }, "description": { "zh-CN": "基于 ok-script 的星痕共鸣自动化工具", "en": "A Star Resonance automation tool built with ok-script" }, "url": "https://github.com/Sanheiii/ok-star-resonance", "github": "Sanheiii/ok-star-resonance", "status": "community", "stars": 114 },
     { "name": "ok-kes", "gameName": { "zh-CN": "卡厄思梦境", "zh-TW": "卡厄思夢境", "en": "Chaos Zero Nightmare" }, "description": { "zh-CN": "卡厄思梦境自动出击、自动卡厄思与半自动剧情工具", "en": "Automation for Chaos Zero Nightmare sorties, Chaos Mode, and story progression" }, "url": "https://github.com/baoxin1100/ok-kes", "github": "baoxin1100/ok-kes", "status": "community", "stars": 81, "communityLinks": [
       { "type": "qq", "label": "QQ 901988096", "value": "901988096" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/eopggnxcu" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
     ] },
-    { "name": "ok-duet-night-abyss", "gameName": { "zh-CN": "二重螺旋", "zh-TW": "二重螺旋", "en": "Duet Night Abyss" }, "description": { "zh-CN": "二重螺旋后台副本挂机自动化", "en": "Background dungeon farming automation for Duet Night Abyss" }, "url": "https://github.com/BnanZ0/ok-duet-night-abyss", "github": "BnanZ0/ok-duet-night-abyss", "status": "community", "stars": 656, "communityLinks": [
+    { "name": "ok-duet-night-abyss", "gameName": { "zh-CN": "二重螺旋", "zh-TW": "二重螺旋", "en": "Duet Night Abyss" }, "description": { "zh-CN": "二重螺旋后台副本挂机自动化", "en": "Background dungeon farming automation for Duet Night Abyss" }, "url": "https://github.com/BnanZ0/ok-duet-night-abyss", "github": "BnanZ0/ok-duet-night-abyss", "status": "community", "bottomOrder": 1, "stars": 656, "communityLinks": [
       { "type": "qq", "label": "QQ 1063846003", "value": "1063846003" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
@@ -299,7 +329,6 @@
       { "type": "qq", "label": "QQ 1105569444", "url": "https://qm.qq.com/q/bIiSLoUTVS" },
       { "type": "qq-channel", "label": "QQ 频道", "url": "https://pd.qq.com/s/djmm6l44y" },
       { "type": "discord", "label": "Discord", "url": "https://discord.gg/vVyCatEBgA" }
-    ] },
-    { "name": "ok-genshin-impact", "gameName": { "zh-CN": "原神", "zh-TW": "原神", "en": "Genshin Impact" }, "description": { "zh-CN": "原神自动拾取、后台剧情与后台一条龙自动化", "en": "Genshin Impact automation for auto-loot, background story, and daily routines" }, "url": "https://github.com/ok-oldking/ok-genshin-impact", "github": "ok-oldking/ok-genshin-impact", "status": "archived", "stars": 250 }
+    ] }
   ]
 }

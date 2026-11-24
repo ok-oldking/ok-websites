@@ -1,0 +1,228 @@
+<!doctype html><html lang="en" data-theme="light"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+  <title>English · ok-gf2 · English</title><meta name="description" content="ok-gf2 An image-recognition-based automation tool for Girls' Frontline 2, with background mode support, developed with ok-sc — ok-gf2 English documentation"><meta name="keywords" content="ok-gf2, okgf2, GitHub, ok-oldking/ok-gf2, ok-oldking, Girls' Frontline 2: Exilium, Background automation, Windows, game automation, computer vision, open source, Python automation, Windows automation, documentation, Docs"><meta name="author" content="ok-oldking">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="googlebot" content="index,follow"><link rel="canonical" href="https://ok-script.com/ok-gf2/en/docs/">
+  <meta property="og:type" content="article"><meta property="og:site_name" content="OK Automation"><meta property="og:locale" content="en"><meta property="og:locale:alternate" content="zh_CN"><meta property="og:locale:alternate" content="zh_TW"><meta property="og:title" content="English · ok-gf2 · English"><meta property="og:description" content="ok-gf2 An image-recognition-based automation tool for Girls' Frontline 2, with background mode support, developed with ok-sc — ok-gf2 English documentation"><meta property="og:url" content="https://ok-script.com/ok-gf2/en/docs/"><meta property="og:image" content="https://ok-script.com/assets/social/ok-gf2-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ok-gf2 — Girls' Frontline 2: Exilium · Background automation · Windows">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="English · ok-gf2 · English"><meta name="twitter:description" content="ok-gf2 An image-recognition-based automation tool for Girls' Frontline 2, with background mode support, developed with ok-sc — ok-gf2 English documentation"><meta name="twitter:image" content="https://ok-script.com/assets/social/ok-gf2-en.png"><meta name="twitter:image:alt" content="ok-gf2 — Girls' Frontline 2: Exilium · Background automation · Windows">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"English · ok-gf2 · English","description":"ok-gf2 An image-recognition-based automation tool for Girls' Frontline 2, with background mode support, developed with ok-sc — ok-gf2 English documentation","url":"https://ok-script.com/ok-gf2/en/docs/","inLanguage":"en","dateModified":"2026-11-23T23:21:22+08:00","author":{"@type":"Organization","name":"ok-gf2","url":"https://github.com/ok-oldking/ok-gf2"},"isPartOf":{"@type":"WebSite","name":"OK Automation","url":"https://ok-script.com"}}</script>
+  
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../../../assets/site.css?v=20261124062851">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ok-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}</script>
+  </head><body><a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="container nav" aria-label="Primary">
+    <div class="custom-dropdown project-switcher" data-dropdown>
+    <button class="dropdown-trigger project-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false"><span class="dropdown-current-icon"><img src="../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu project-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option" role="menuitem" href="../../../en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script.svg" alt=""></span><span>ok-script</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ww/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ww.png" alt=""></span><span>ok-ww</span></a><a class="dropdown-option" role="menuitem" href="../../../app/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-script-app.png" alt=""></span><span>ok-script-app</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-nte/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-nte.png" alt=""></span><span>ok-nte</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-star-resonance/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-star-resonance.png" alt=""></span><span>ok-star-resonance</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-kes/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-kes.png" alt=""></span><span>ok-kes</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-end-field/en/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-end-field.png" alt=""></span><span>ok-end-field</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-onmyoji/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-onmyoji.png" alt=""></span><span>ok-Onmyoji</span></a><a class="dropdown-option" role="menuitem" href="../../../ok-ap/"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-ap.png" alt=""></span><span>ok-ap</span></a><a class="dropdown-option" role="menuitem" href="../" aria-current="page"><span class="dropdown-option-icon"><img src="../../../assets/project-icons/ok-gf2.png" alt=""></span><span>ok-gf2</span></a></div>
+  </div>
+    <div class="nav-links" data-nav-links>
+      <a href="./" aria-current="page">Docs</a>
+      <a href="../../../en/#projects">Projects</a>
+      <a class="github-link" href="https://github.com/ok-oldking/ok-gf2"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a>
+    </div>
+    <div class="nav-actions">
+      <div class="custom-dropdown language-dropdown" data-dropdown>
+    <button class="dropdown-trigger language-trigger" type="button" data-dropdown-trigger aria-haspopup="menu" aria-expanded="false" aria-label="Language"><span class="language-symbol" aria-hidden="true">文</span><span>English</span><span class="dropdown-arrow" aria-hidden="true">⌄</span></button>
+    <div class="dropdown-menu language-menu" data-dropdown-menu role="menu" hidden><a class="dropdown-option language-option" role="menuitem" href="../../docs/" data-language-code="zh-CN"><span class="language-code">zh-CN</span><span>简体中文</span></a><a class="dropdown-option language-option" role="menuitem" href="./" data-language-code="en" aria-current="page"><span class="language-code">en</span><span>English</span></a><a class="dropdown-option language-option" role="menuitem" href="../../zh-TW/docs/" data-language-code="zh-TW"><span class="language-code">zh-TW</span><span>繁體中文</span></a></div>
+  </div>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+      <button class="icon-button menu-button" type="button" data-menu aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav></header><main id="main" class="docs-layout"><aside class="docs-sidebar"><h2>Documentation</h2><nav class="docs-nav" aria-label="Documentation"><a href="./" class="active" aria-current="page">English</a></nav></aside><article class="docs-main"><div class="breadcrumb"><a href="../">ok-gf2</a><span>/</span><span>Docs</span></div><div class="markdown-body"><p align="center">
+  <img 
+    src="../../../assets/sources/ok-gf2/icons/icon.png"
+    alt="ok-gf2 game automation tool logo"
+    width="256"
+    height="256"
+  />
+</p>
+
+<h1 align="center">ok-gf2</h1>
+
+<p>
+An image-recognition-based automation tool for Girls' Frontline 2, with background mode support, developed with <a href="https://github.com/ok-oldking/ok-script">ok-script</a>.
+<br />
+Automates parts of Girls' Frontline 2 via screen recognition and simulated user inputs.
+</p>
+
+<p><i>Operates by simulating Windows user input. No memory reading, no file modification.</i></p>
+
+
+<!-- Badges -->
+<div align="center">
+
+<p><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform">
+<a href="https://github.com/alicejump/ok-gf2/releases"><img src="https://img.shields.io/github/v/release/alicejump/ok-gf2" alt="GitHub release"></a>
+<a href="https://github.com/alicejump/ok-gf2/releases"><img src="https://img.shields.io/github/downloads/alicejump/ok-gf2/total" alt="Total downloads"></a></p>
+</div>
+
+<h3 id="中文说明-english-readme"><a href="../../docs/">中文说明</a> | English Readme</h3>
+<hr>
+<h2 id="disclaimer">⚠️ Disclaimer</h2>
+<p>This software is an external assistance tool intended to automate parts of Girls&#39; Frontline 2. It interacts with the game by
+simulating normal user interface operations and complies with relevant laws and regulations. The project aims to reduce
+repetitive actions, does not break game balance or provide unfair advantages, and never modifies any game files or data.</p>
+<p>This software is open-source and free for personal learning and communication only. Commercial or profit-oriented use is
+prohibited. The development team reserves the right of final interpretation. Any issues arising from use of this
+software are unrelated to the project or its developers.</p>
+<p><strong>By using this software, you acknowledge that you have read, understood, and agreed to the above statement and assume
+all potential risks.</strong></p>
+<h2 id="quick-start">🚀 Quick Start</h2>
+<ol>
+<li><strong>Download the package</strong>: Choose a source below and download the latest <code>ok-gf2</code> archive.</li>
+<li><strong>Extract and run</strong>: Extract the archive and double-click <code>ok-gf2.exe</code> to run.</li>
+<li><strong>Configure tasks</strong>: Set up task parameters in the software interface as needed.</li>
+</ol>
+<h2 id="download-sources">📥 Download Sources</h2>
+<ul>
+<li><strong><a href="https://github.com/alicejump/ok-gf2/releases">GitHub</a></strong>: Official release page with fast global access. (<strong>Download the <code>7z</code> archive, not the <code>Source Code</code> archive</strong>)</li>
+<li><strong><a href="https://mirrorchyan.com/zh/projects?rid=okgf2&source=okgf2readme">Mirrorchyan</a></strong>: China mirror (may require a CD-KEY purchase).</li>
+<li><strong><a href="https://pan.quark.cn/s/80730a808d0e">Quark Drive</a></strong>: Free download (requires registration and Quark Drive client).</li>
+<li><strong><a href="https://pan.baidu.com/s/102Mh1djq2B1T-cIJhct9Gg?pwd=okww">Baidu Netdisk</a></strong>: Free download (extraction code: <code>okww</code>).</li>
+</ul>
+<h2 id="runtime-requirements-recommendations">Runtime Requirements &amp; Recommendations</h2>
+<ul>
+<li>OS: Windows</li>
+<li>Game: PC version of Girls&#39; Frontline 2, supports native background mode</li>
+<li>Resolution: All 16:9 resolutions supported</li>
+<li>Frame rate: 120 FPS recommended, higher is better</li>
+<li>Language: Simplified Chinese / English (English may have issues)</li>
+<li>Display: Windows Auto HDR must be disabled, RTX HDR is acceptable</li>
+<li>Background: <strong>Dark</strong> home screen background required (white background causes recognition failure)</li>
+<li>Privilege: Run as Administrator recommended (required for source mode)</li>
+<li>Path: Prefer pure-English install/runtime path</li>
+</ul>
+<hr>
+<h2 id="feature-overview">🎮 Feature Overview</h2>
+<h3 id="one-time-tasks">One-time tasks</h3>
+<ul>
+<li><strong>Daily Task</strong>: One-click daily routine operations</li>
+<li><strong>Clear Map Task</strong>: Auto clear map stages</li>
+<li><strong>Pioneers Task</strong>: Auto play pioneers mode</li>
+<li><strong>Event Stamina Sweep</strong>: Auto sweep event stages</li>
+<li><strong>Arena</strong>: Auto battle in arena</li>
+<li><strong>Dust Front</strong>: Auto complete dust front mode</li>
+<li><strong>Commission</strong>: Auto complete commission tasks</li>
+<li><strong>Weekly Task</strong>: Auto complete weekly tasks</li>
+<li><strong>Diagnosis</strong>: Simple wrapper around the built-in framework diagnosis task</li>
+</ul>
+<h3 id="trigger-tasks-background-loop-detection">Trigger tasks (background loop detection)</h3>
+<ul>
+<li><strong>Auto Combat</strong>: Battle-state detection and automatic skill release</li>
+<li><strong>Auto Pickup</strong>: Auto pickup dropped items</li>
+<li><strong>Auto Interaction</strong>: Auto skip story dialogs</li>
+</ul>
+<h3 id="scheduled-tasks">Scheduled tasks</h3>
+<ul>
+<li>You can add one-time tasks into Windows Task Scheduler for automatic launch</li>
+</ul>
+<hr>
+<h2 id="troubleshooting">🔧 Troubleshooting</h2>
+<p>If you encounter issues, check the following in order:</p>
+<ol>
+<li><strong>Install path</strong>: Install under a pure English path. Avoid folders with non-ASCII characters.</li>
+<li><strong>Antivirus</strong>: Add the install directory to your antivirus (including Windows Defender) allow-list.</li>
+<li><strong>Display settings</strong>:<ul>
+<li>Disable Windows Auto HDR (required), RTX HDR is acceptable.</li>
+<li>Use the game&#39;s default brightness settings.</li>
+<li>Use <strong>dark</strong> home screen background.</li>
+</ul>
+</li>
+<li><strong>Game frame rate</strong>: <strong>120 FPS</strong> recommended, higher is better.</li>
+<li><strong>Game language</strong>: Simplified Chinese preferred, English may have issues.</li>
+<li><strong>Software version</strong>: Ensure you&#39;re running the latest release.</li>
+<li><strong>Get help</strong>: If all above fails, submit a detailed error report via the QQ group.</li>
+</ol>
+<h2 id="join-us">💬 Join Us</h2>
+<ul>
+<li><strong>Community</strong>: <a href="https://ok-script.com/en/community/?project=ok-gf2">QQ groups and Discord</a> (links are maintained in <a href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/community_links.yml">community_links.yml</a>).</li>
+<li><strong>QQ Group</strong>: <a href="https://qm.qq.com/q/oKHdK7P8lO">Girls&#39; Frontline 2 · 1033950808</a> (answer: <code>老王同学OK</code>)</li>
+</ul>
+<p>This project is built on <a href="https://github.com/ok-oldking/ok-script">ok-script</a>, which is easy to maintain. Developers are
+welcome to build their own automation projects with ok-script.</p>
+<h2 id="projects-using-ok-script">🔗 Projects using ok-script</h2>
+<ul>
+<li>End Field <a href="https://github.com/AliceJump/ok-end-field">https://github.com/AliceJump/ok-end-field</a></li>
+<li>Wuthering Waves <a href="https://github.com/ok-oldking/ok-wuthering-waves">https://github.com/ok-oldking/ok-wuthering-waves</a></li>
+<li>Wuthering Waves (Enhanced) <a href="https://github.com/zzc-tongji/ok-ww-enhanced">https://github.com/zzc-tongji/ok-ww-enhanced</a></li>
+<li>Genshin Impact (maintenance stopped) <a href="https://github.com/ok-oldking/ok-genshin-impact">https://github.com/ok-oldking/ok-genshin-impact</a></li>
+<li>Girls&#39; Frontline 2 <a href="https://github.com/ok-oldking/ok-gf2">https://github.com/ok-oldking/ok-gf2</a></li>
+<li>Star Rail <a href="https://github.com/Shasnow/ok-starrailassistant">https://github.com/Shasnow/ok-starrailassistant</a></li>
+<li>Star Resonance <a href="https://github.com/Sanheiii/ok-star-resonance">https://github.com/Sanheiii/ok-star-resonance</a></li>
+<li>Duet Night Abyss <a href="https://github.com/BnanZ0/ok-duet-night-abyss">https://github.com/BnanZ0/ok-duet-night-abyss</a></li>
+<li>Bai Jing Corridor (maintenance stopped) <a href="https://github.com/ok-oldking/ok-baijing">https://github.com/ok-oldking/ok-baijing</a></li>
+</ul>
+<hr>
+<h2 id="developer-zone">💻 Developer Zone</h2>
+<h3 id="run-from-source-python">Run from source (Python)</h3>
+<p>This project supports <strong>Python 3.12 only</strong>. Run CMD, PyCharm, or VSCode as <strong>Administrator</strong>.</p>
+<pre><code class="language-bash"># If your first clone did not include submodules, initialize them first
+git submodule update --init --recursive
+
+# CPU version, using OpenVINO
+pip install -r requirements.txt --upgrade
+
+# Run Release version
+python main.py
+
+# Run Debug version
+python main_debug.py
+</code></pre>
+<pre><code class="language-bash"># CUDA version, using paddle-gpu, recommended for NVIDIA 30 series and above
+pip install -r requirements-dml.txt --upgrade
+
+# Run Release version
+python main_direct_ml.py
+
+# Run Debug version
+python main_direct_ml_debug.py
+</code></pre>
+<h3 id="command-line-arguments">Command-line arguments</h3>
+<pre><code class="language-pwsh"># Start and automatically run the 1st task, then exit upon completion
+ok-gf2.exe -t 1 -e
+</code></pre>
+<ul>
+<li><code>-t</code> or <code>--task</code>: Automatically run the Nth task.</li>
+<li><code>-e</code> or <code>--exit</code>: Exit automatically after the task completes.</li>
+</ul>
+<h3 id="developer-documentation">Developer Documentation</h3>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/docs/dev/QUICKSTART.md">Quick Start Guide (QUICKSTART.md)</a></td>
+<td>Minimal workflow to run from source, launch the software, and create tasks</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/docs/dev/DEVELOPMENT.md">Development Guide (DEVELOPMENT.md)</a></td>
+<td>Architecture overview, directory structure, development workflow, testing, CI/CD</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/docs/dev/API.md">API Reference (API.md)</a></td>
+<td>Detailed API docs for BaseGfTask, Mixin, ScreenPosition, and more</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/docs/dev/i18n_OCR%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B.md">i18n &amp; OCR Configuration</a></td>
+<td>Runtime locale, language JSON, OCR matching, and text-fix workflow</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/docs/dev/%E9%94%AE%E7%9B%98%E6%93%8D%E4%BD%9C%E4%BD%93%E7%B3%BB.md">Keyboard System</a></td>
+<td>Hotkey mapping, key binding conventions</td>
+</tr>
+</tbody></table>
+<h2 id="sponsors-acknowledgements">❤️ Sponsors &amp; Acknowledgements</h2>
+<h3 id="sponsors">Sponsors</h3>
+<p><a href="https://patreon.com/ok_oldking"><img src="https://img.shields.io/badge/Patreon-Support-orange?style=flat-square" alt="Patreon"></a>
+<a href="https://www.paypal.com/ncp/payment/JWQBH7JZKNGCQ"><img src="https://img.shields.io/badge/PayPal-Donate-blue?style=flat-square" alt="PayPal"></a></p>
+<h3 id="acknowledgements">Acknowledgements</h3>
+<ul>
+<li><a href="https://github.com/ok-oldking/OnnxOCR">ok-oldking/OnnxOCR</a></li>
+<li><a href="https://github.com/zhiyiYo/PyQt-Fluent-Widgets">zhiyiYo/PyQt-Fluent-Widgets</a></li>
+<li><a href="https://github.com/ok-oldking/ok-script">ok-oldking/ok-script</a></li>
+</ul>
+</div><div class="page-meta"><a class="github-link" href="https://github.com/ok-oldking/ok-gf2/blob/d1301ca6e360cde951cfd7df9c5382e4924fd070/README_en.md"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">View source on GitHub ↗</a> · Page generated: Nov 24, 2026</div></article><aside class="docs-toc"><h2>On this page</h2><nav class="toc-list"><a href="#中文说明-english-readme" style="margin-left:10px">中文说明 | English Readme</a><a href="#disclaimer" style="margin-left:0px">⚠️ Disclaimer</a><a href="#quick-start" style="margin-left:0px">🚀 Quick Start</a><a href="#download-sources" style="margin-left:0px">📥 Download Sources</a><a href="#runtime-requirements-recommendations" style="margin-left:0px">Runtime Requirements &amp; Recommendations</a><a href="#feature-overview" style="margin-left:0px">🎮 Feature Overview</a><a href="#one-time-tasks" style="margin-left:10px">One-time tasks</a><a href="#trigger-tasks-background-loop-detection" style="margin-left:10px">Trigger tasks (background loop detection)</a><a href="#scheduled-tasks" style="margin-left:10px">Scheduled tasks</a><a href="#troubleshooting" style="margin-left:0px">🔧 Troubleshooting</a><a href="#join-us" style="margin-left:0px">💬 Join Us</a><a href="#projects-using-ok-script" style="margin-left:0px">🔗 Projects using ok-script</a><a href="#developer-zone" style="margin-left:0px">💻 Developer Zone</a><a href="#run-from-source-python" style="margin-left:10px">Run from source (Python)</a><a href="#command-line-arguments" style="margin-left:10px">Command-line arguments</a><a href="#developer-documentation" style="margin-left:10px">Developer Documentation</a><a href="#sponsors-acknowledgements" style="margin-left:0px">❤️ Sponsors &amp; Acknowledgements</a><a href="#sponsors" style="margin-left:10px">Sponsors</a><a href="#acknowledgements" style="margin-left:10px">Acknowledgements</a></nav></aside></main>
+  <footer class="site-footer"><div class="container footer-row"><span>Open source under AGPL-3.0. Documentation is generated from project sources.</span><div class="footer-links"><a class="github-link" href="https://github.com/ok-oldking/ok-gf2"><img class="inline-icon" src="../../../assets/github-mark.svg" alt="" aria-hidden="true">GitHub</a><a href="../../../en/">All projects</a></div></div></footer>
+  <script src="../../../assets/site.js?v=20261124062851" defer></script></body></html>
