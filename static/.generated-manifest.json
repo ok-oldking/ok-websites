@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T20:28:42.066Z",
+  "generatedAt": "2026-11-24T03:02:29.741Z",
   "projects": [
     {
       "id": "ok-script",
@@ -12,7 +12,7 @@
       ],
       "meta": {
         "stars": 857,
-        "forks": 249,
+        "forks": 250,
         "description": "Vibe Coding Automation Framework",
         "release": "v3.0.13",
         "releaseUrl": "https://github.com/ok-oldking/ok-script/releases/tag/v3.0.13",
@@ -25,8 +25,8 @@
     },
     {
       "id": "ok-ww",
-      "commit": "a725386565b8dba00cfdb1a421ed42ae57277278",
-      "updated": "2026-11-23T23:41:22+08:00",
+      "commit": "0224d2ff2c632e85322ae23e0930fac2f95a6139",
+      "updated": "2026-11-24T04:32:12+08:00",
       "locales": [
         "zh-CN",
         "en",
@@ -34,31 +34,31 @@
         "ja"
       ],
       "meta": {
-        "stars": 8708,
-        "forks": 819,
+        "stars": 8709,
+        "forks": 821,
         "description": "鸣潮 后台自动战斗 自动刷声骸 一键日常  Automation for Wuthering Waves",
-        "release": "v3.8.13",
-        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.8.13",
+        "release": "v3.8.14",
+        "releaseUrl": "https://github.com/ok-oldking/ok-wuthering-waves/releases/tag/v3.8.14",
         "pypiVersion": "v3.7.19",
         "releaseAssets": [
           {
-            "name": "ok-ww-win32-China-3.8.13.7z",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.13/ok-ww-win32-China-3.8.13.7z",
-            "size": 261325458
+            "name": "ok-ww-win32-China-3.8.14.7z",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.14/ok-ww-win32-China-3.8.14.7z",
+            "size": 261041638
           },
           {
-            "name": "ok-ww-win32-Global-3.8.13.7z",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.13/ok-ww-win32-Global-3.8.13.7z",
-            "size": 263027158
+            "name": "ok-ww-win32-Global-3.8.14.7z",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.14/ok-ww-win32-Global-3.8.14.7z",
+            "size": 263021268
           },
           {
             "name": "ok-ww-win32.zip",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.13/ok-ww-win32.zip",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.14/ok-ww-win32.zip",
             "size": 5036624
           },
           {
             "name": "win32_sha256.txt",
-            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.13/win32_sha256.txt",
+            "browser_download_url": "https://github.com/ok-oldking/ok-wuthering-waves/releases/download/v3.8.14/win32_sha256.txt",
             "size": 64
           }
         ],
@@ -69,11 +69,11 @@
           },
           {
             "label": "夸克网盘",
-            "url": "https://pan.quark.cn/s/418018ddf7a0"
+            "url": "https://pan.quark.cn/s/80730a808d0e"
           }
         ],
         "releaseWarning": "使用本工具存在封号风险。如果你不清楚自己在做什么，请不要使用。",
-        "updated": "2026-11-23T15:41:30Z"
+        "updated": "2026-11-23T20:32:26Z"
       }
     },
     {
@@ -354,7 +354,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-23T16:03:51Z"
+        "updated": "2026-11-24T02:44:14Z"
       }
     },
     {
@@ -409,8 +409,8 @@
     },
     {
       "id": "ok-ap",
-      "commit": "cfdc6de02a074ee985b85fe7c51160cfed4be91d",
-      "updated": "2026-11-23T23:24:35+08:00",
+      "commit": "6b11512bf4e28f315db381e586b97e30c889963e",
+      "updated": "2026-11-24T09:36:42+08:00",
       "locales": [
         "zh-CN",
         "zh-TW"
@@ -420,32 +420,32 @@
         "forks": 6,
         "description": "蓝色星原：旅谣自动化脚本",
         "release": "v0.3.6",
-        "releaseUrl": "https://github.com/longer-sausage/OK-AzurPromilia/releases/tag/v0.3.6",
+        "releaseUrl": "https://github.com/longer-sausage/ok-ap/releases/tag/v0.3.6",
         "pypiVersion": "v0.3.6",
         "releaseAssets": [
           {
             "name": "ok-ap-win32-China-setup-v0.3.6.exe",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-China-setup-v0.3.6.exe",
+            "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/ok-ap-win32-China-setup-v0.3.6.exe",
             "size": 251601938
           },
           {
             "name": "ok-ap-win32-Global-setup-v0.3.6.exe",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-Global-setup-v0.3.6.exe",
+            "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/ok-ap-win32-Global-setup-v0.3.6.exe",
             "size": 251649879
           },
           {
             "name": "ok-ap-win32-online-setup-v0.3.6.exe",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-online-setup-v0.3.6.exe",
+            "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/ok-ap-win32-online-setup-v0.3.6.exe",
             "size": 4202021
           },
           {
             "name": "ok-ap-win32-v0.3.6.zip",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-v0.3.6.zip",
+            "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/ok-ap-win32-v0.3.6.zip",
             "size": 5020022
           },
           {
             "name": "win32_sha256-v0.3.6.txt",
-            "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/win32_sha256-v0.3.6.txt",
+            "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/win32_sha256-v0.3.6.txt",
             "size": 64
           }
         ],
@@ -464,7 +464,7 @@
           }
         ],
         "releaseWarning": "",
-        "updated": "2026-11-23T15:24:36Z"
+        "updated": "2026-11-24T01:36:43Z"
       }
     }
   ]

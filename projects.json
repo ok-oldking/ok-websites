@@ -234,9 +234,9 @@
     },
     {
       "id": "ok-ap",
-      "name": "OK-AzurPromilia",
-      "repository": "https://github.com/longer-sausage/OK-AzurPromilia.git",
-      "github": "longer-sausage/OK-AzurPromilia",
+      "name": "ok-ap",
+      "repository": "https://github.com/longer-sausage/ok-ap.git",
+      "github": "longer-sausage/ok-ap",
       "domain": "https://ok-script.com/ok-ap",
       "outputFolder": "ok-ap",
       "mkdocs": "mkdocs.yml",
@@ -248,10 +248,10 @@
         "stars": 92,
         "forks": 3,
         "release": "v0.3.6",
-        "releaseUrl": "https://github.com/longer-sausage/OK-AzurPromilia/releases/tag/v0.3.6",
+        "releaseUrl": "https://github.com/longer-sausage/ok-ap/releases/tag/v0.3.6",
         "releaseAssets": [
-          { "name": "ok-ap-win32-China-setup-v0.3.6.exe", "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-China-setup-v0.3.6.exe" },
-          { "name": "ok-ap-win32-Global-setup-v0.3.6.exe", "browser_download_url": "https://github.com/longer-sausage/OK-AzurPromilia/releases/download/v0.3.6/ok-ap-win32-Global-setup-v0.3.6.exe" }
+          { "name": "ok-ap-win32-China-setup-v0.3.6.exe", "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/ok-ap-win32-China-setup-v0.3.6.exe" },
+          { "name": "ok-ap-win32-Global-setup-v0.3.6.exe", "browser_download_url": "https://github.com/longer-sausage/ok-ap/releases/download/v0.3.6/ok-ap-win32-Global-setup-v0.3.6.exe" }
         ]
       },
       "locales": [
@@ -260,7 +260,7 @@
     }
   ],
   "relatedProjects": [
-    { "name": "OK-AzurPromilia", "gameName": { "zh-CN": "蓝色星原：旅谣", "zh-TW": "藍色星原：旅謠", "en": "Azur Promilia" }, "description": { "zh-CN": "蓝色星原：旅谣日常、小游戏与辅助功能自动化", "en": "Azur Promilia automation for daily routines, minigames, and assistance" }, "url": "https://ok-script.com/ok-ap/", "github": "longer-sausage/OK-AzurPromilia", "status": "community", "communityLinks": [
+    { "name": "ok-ap", "gameName": { "zh-CN": "蓝色星原：旅谣", "zh-TW": "藍色星原：旅謠", "en": "Azur Promilia" }, "description": { "zh-CN": "蓝色星原：旅谣日常、小游戏与辅助功能自动化", "en": "Azur Promilia automation for daily routines, minigames, and assistance" }, "url": "https://ok-script.com/ok-ap/", "github": "longer-sausage/ok-ap", "status": "community", "communityLinks": [
       { "type": "qq", "label": "QQ 1121173471", "value": "1121173471" }
     ] },
     { "name": "ok-Onmyoji", "gameName": { "zh-CN": "阴阳师", "zh-TW": "陰陽師", "en": "Onmyoji" }, "description": { "zh-CN": "阴阳师后台自动化战斗、日常与定时任务", "en": "Onmyoji background automation for battles, daily routines, and scheduling" }, "url": "https://ok-script.com/ok-onmyoji/", "github": "YunLiuZ/ok-Onmyoji", "status": "active", "stars": 8, "communityLinks": [
